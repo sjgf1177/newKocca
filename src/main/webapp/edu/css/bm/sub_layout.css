@@ -26,8 +26,8 @@ wrapper.sub_layout_page 는 1depth의 하위 서브페이지들(2, 3depth)
 
 
 .sub_contents_wrap{}
-.sub_contents_wrap .sub_contents{background-image: url("/edu/images/bm/sub_contents_img.png"); background-repeat:no-repeat; background-position: right top; padding-top: 47px; padding-bottom: 100px;}
-.contents_view_page .sub_contents_wrap .sub_contents{background-image: url("/edu/images/bm/sub_contents_img_contents_view.png");}
+.sub_contents_wrap .sub_contents{padding-top: 47px; padding-bottom: 100px;}
+/*.contents_view_page .sub_contents_wrap .sub_contents{background-image: url("/edu/images/bm/sub_contents_img_contents_view.png");}*/
 .wrapper.sub_layout_main .sub_contents_wrap {margin-top:0; padding-left:0;}
 .wrapper.sub_layout_main .sub_contents_wrap.sub_main_online_edu_tab_contents_wrap {margin-top:-46px;}
 .wrapper.sub_layout_main .sub_contents_wrap > div{overflow:hidden;}
@@ -366,7 +366,7 @@ table.board_type_1 .upload_file_delete_btn{width:17px; height:17px; box-sizing: 
 .board_util_btn_con .btn_style_0.radius{border-radius: 3px; padding-left: 26px; padding-right: 26px;}
 .board_util_btn_con .btn_style_0.listBook{background-image:url('/edu/images/bm/btn_style_0_listBook_w.png'); padding: 10px 15px 9px 38px; background-position: left 14px center;}
 .board_util_btn_con .btn_style_0.full.list{background-image:url('/edu/images/bm/btn_style_0_list_w.png')}
-.board_util_btn_con .btn_style_0.full{color:#fff; border-color:#FF5200; background-color:#FF5200;}
+.board_util_btn_con .btn_style_0.full{color:#fff; background-color:#3B85FF;}
 .board_util_btn_con .btn_style_0.full.img_none{padding-left:20px; padding-right:20px;}
 .contents_view_page .board_util_btn_con .btn_style_0.full{border-color:#009DA5; background-color:#009DA5;}
 .board_util_btn_con .btn_style_0.blue{color:#fff; border-color:#0480A9; background-color:#0480A9;}

@@ -248,7 +248,7 @@ var fnNaverLoginCallback = function(id,name,email,birthday,gender) {
 					<p class="h_desc6">
 						본인이 사용하는 휴대폰 또는 이메일 주소에
 						인증번호를 발송하여 입력하는 방식입니다.
-						(휴대폰이 반드시 본인 소유가 아니라도 가능합니다. )
+						(휴대폰이 반드시 본인 소유가 아니라도 가능합니다... )
 					</p>
 				</div>
 				<div class="signup_method_wrap left">

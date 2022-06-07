@@ -87,7 +87,7 @@ table.sitemap_table td .sitemap_depth2 {padding-left: 19px;}
 table.sitemap_table td .sitemap_depth2 > li > a {background: url("/edu/images/bm/sitemap_dash.png") no-repeat left center; padding-left: 13px; font-size:13px; font-size:1.3rem; line-height:28px; line-height:2.8rem; color: #828282;}
 
 /* 로그인 */
-.login_wrap{max-width:320px; margin-left:auto; margin-right:auto; margin-top:34px;}
+.login_wrap{max-width:410px; margin-left:auto; margin-right:auto; margin-top:34px;}
 form.login_form{width:100%; padding-bottom:30px; border-bottom:1px solid #eeeeee; margin-bottom:30px;}
 .login_box{}
 .input_style_1_con{margin-bottom:10px; position: relative;}
@@ -3446,9 +3446,8 @@ input[type=text].input_style_3{font-size:14.5px; font-size:1.45rem; line-height:
 
 
 /* 프로그램 신청정보 체크박스, 라디오 간격 조절 */
-    .input-interval{margin-bottom:5px !important;}
-    /* label btn있을시  input 제거 */
-     input[type=checkbox].input_delete, input[type=radio].input_delete{display:none;}
-     
-     textarea:disabled{background: rgba(239, 239, 239, 0.3) ! important;}
+.input-interval{margin-bottom:5px !important;}
+/* label btn있을시  input 제거 */
+ input[type=checkbox].input_delete, input[type=radio].input_delete{display:none;}
 
+ textarea:disabled{background: rgba(239, 239, 239, 0.3) ! important;}

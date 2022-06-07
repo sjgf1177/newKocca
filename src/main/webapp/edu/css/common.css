@@ -1,35 +1,36 @@
 @charset "utf-8";
-@font-face {
-  font-family: 'Nanum Gothic'; font-style: normal;font-weight: 400;src: url(/fonts/NanumGothic.eot);
-  src: url(/fonts/NanumGothic.eot?#iefix) format('embedded-opentype'),
-       url(/fonts/NanumGothic.woff) format('woff'), url(/fonts/NanumGothic.ttf) format('truetype');
-}
- url(/fonts/NanumGothic.woff2) format('woff2'),
-@font-face {
-    font-family: 'Nanum Barun Gothic';
-    font-style: normal;
-    font-weight: 400;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-}
 
 @font-face {
-    font-family: 'Nanum Barun Gothic';
-    font-style: normal;
-    font-weight: 700;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
-}
-
-@font-face {
-    font-family: 'Nanum Barun Gothic';
+    font-family: 'NotoSansKR_Regular';
     font-style: normal;
     font-weight: 300;
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
-    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf');
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Regular.otf') format('opentype'), url('/fonts/NanumSquareRoundR.woff') format('woff'), url('/fonts/NanumSquareRoundR.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'NotoSansKR_Light';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Light.otf');
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Light.otf') format('opentype'), url('/fonts/NanumSquareRoundB.woff') format('woff'), url('/fonts/NanumSquareRoundB.ttf') format('truetype');
+}
 
+@font-face {
+    font-family: 'NotoSansKR_Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Medium.otf');
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Medium.otf') format('opentype'), url('/fonts/NanumSquareRoundEB.woff') format('woff'), url('/fonts/NanumSquareRoundEB.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NotoSansKR_Bold';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Bold.otf');
+    src: url('/fonts/fonts/Noto_Sans_KR/NotoSansKR-Bold.otf') format('opentype'), url('/fonts/NanumSquareRoundL.woff') format('woff'), url('/fonts/NanumSquareRoundL.ttf') format('truetype');
+}
 
 body { font-size:0.875em; color: #737373; line-height: 1.5em }
 body, button, input, textarea, select { font-family:'Nanum Gothic', 'NanumGothicWeb', "맑은고딕", "malgun gothic", "AppleGothic", "돋움", "dotum", Helvetica, Arial, sans-serif; }
@@ -242,7 +243,7 @@ h1, h2, h3, h4, h5, h6{font-family:"맑은고딕", "malgun gothic", "AppleGothic
 .fs36{font-size: 36px !important;line-height:40px !important}
 
 
-.agreeScrBtm{padding: 10px 15px;background:#eee}
+.agreeScrBtm{padding: 10px 15px;}
 .scrollY{height: 300px;overflow: hidden;overflow-y:scroll;border:1px solid #c8c8c8;padding:10px 20px;}
 
 
@@ -275,3 +276,12 @@ h1, h2, h3, h4, h5, h6{font-family:"맑은고딕", "malgun gothic", "AppleGothic
 .loadingBox .loading{position: absolute;left:50%; top: 50%;margin-left: -50px}
 
 .footerSet select{height: 32px;line-height:32px}
+
+
+/************************************ 2022 renew ************************************/
+
+/**
+ 회원가입
+ **/
+
+

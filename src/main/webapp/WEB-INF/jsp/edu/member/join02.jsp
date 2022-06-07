@@ -761,42 +761,29 @@
 		<div id="joinStep2">
 		
 			<div class="signup_step_bar">
-				<div class="step_wrap">
-					<p class="step_box">
-						<span class="step_title">STEP1</span> 인증방식선택
-					</p>
-				</div>
-				<div class="step_line_wrap">
-					<div class="step_right_arrow"></div>
-				</div>
+
 				<div class="step_wrap active">
 					<p class="step_box">
-						<span class="step_title">STEP2</span> 이용약관동의
+						<span class="step_title">STEP1</span> 이용약관동의
 					</p>
 				</div>
-				<div class="step_line_wrap">
-					<div class="step_right_arrow"></div>
-				</div>
+
 				<div class="step_wrap">
 					<p class="step_box">
-						<span class="step_title">STEP3</span> 입력항목작성
+						<span class="step_title">STEP2</span> 입력항목작성
 					</p>
 				</div>
-				<div class="step_line_wrap">
-					<div class="step_right_arrow"></div>
-				</div>
+
 				<div class="step_wrap">
 					<p class="step_box">
-						<span class="step_title">STEP4</span> 가입완료
+						<span class="step_title">STEP3</span> 가입완료
 					</p>
 				</div>
 			</div>
 		
 			<div>
-	            <p class="signup_agree_notice">회원가입을 진행하기 위해서 개인정보보호약관을 우선 주의 깊게 읽어 주십시오.</p>
-	            <p class="signup_agree_notice last">개인정보보호약관을 읽고 내용에 동의해 주십시오. </p>
 	            <div class="signup_agree_con">
-	                <h3>(필수) 개인정보 수집 및 이용동의</h3>
+	                <h3>이용약관</h3>
 	                <div tabindex="0" class="agreeScr" style="font-size: 1.4rem; line-height: 2.05rem;">
 	                    
 	                	에듀코카는 회원가입, 원활한 고객상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 필수 정보를 수집합니다.
@@ -823,7 +810,7 @@
 	                <div class="agreeScrBtm" style="line-height: 2.05rem; font-size: 1.6rem; text-align:right;">
 	                    <span class="radio_box_con">
 		                    <input type="checkbox" name="essentialAgreAt"  id="agreAt1" value="Y" title="동의합니다." tabindex="0"> <!-- class="radio_style_0" -->
-		                    <label for="agreAt1">&nbsp;&nbsp;&nbsp;&nbsp;(필수) 개인정보 수집 및 이용 내용에 동의합니다.</label>
+		                    <label for="agreAt1">&nbsp;&nbsp;&nbsp;&nbsp; 동의합니다.</label>
 	                    </span>
 	                </div>
 	            </div>
@@ -831,7 +818,7 @@
 	        
 	        <div>
 	            <div class="signup_agree_con">
-	                <h3>(선택) 개인정보 수집 및 이용동의</h3>
+	                <h3>개인정보 수집 및 이용동의</h3>
 	                <div tabindex="0" class="agreeScr" style="font-size: 1.4rem; line-height: 2.05rem;">
 	                    
 	                	에듀코카는 회원가입, 원활한 고객상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 선택정보를 수집합니다.
@@ -855,15 +842,15 @@
 	                    
 	                    <span class="radio_box_con">
 		                    <input type="checkbox" name="optionalAgreAt" value="Y" id="agreAt2" title="동의합니다." tabindex="0"> <!-- class="radio_style_0" -->
-		                    <label for="agreAt2">&nbsp;&nbsp;&nbsp;&nbsp;(선택) 개인정보 수집 및 이용 내용에 동의합니다.</label>
+		                    <label for="agreAt2">&nbsp;&nbsp;&nbsp;&nbsp; 동의합니다.</label>
 	                    </span>
 	                </div>
 	            </div>
 	        </div>
 			
 			<div class="fr board_util_btn_con">
-				<a href="javascript:void(0);" class="btn_style_0 full right" id="joinNextStep3" title="다음">다음</a>
-                <a href="/edu/member/join01.do?menuNo=500076" onclick="return confirm('취소하시겠습니까?');" class="btn_style_0 close" title="취소">취소</a>
+				<a href="javascript:void(0);" class="btn_style_0 full" id="joinNextStep3" title="다음">다음</a>
+                <a href="/edu/member/join01.do?menuNo=500076" onclick="return confirm('취소하시겠습니까?');" class="btn_style_0 gray" title="취소">취소</a>
             </div>
 		
 		</div>
@@ -876,39 +863,26 @@
 
 		<div id="joinStep3" style="display: none;">
 			<div class="signup_step_bar">
+
 				<div class="step_wrap">
 					<p class="step_box">
-						<span class="step_title">STEP1</span> 인증방식선택
+						<span class="step_title">STEP1</span> 이용약관동의
 					</p>
 				</div>
-				<div class="step_line_wrap">
-					<div class="step_right_arrow"></div>
-				</div>
-				<div class="step_wrap">
-					<p class="step_box">
-						<span class="step_title">STEP2</span> 이용약관동의
-					</p>
-				</div>
-				<div class="step_line_wrap">
-					<div class="step_right_arrow"></div>
-				</div>
+
 				<div class="step_wrap active">
 					<p class="step_box">
-						<span class="step_title">STEP3</span> 입력항목작성
+						<span class="step_title">STEP2</span> 입력항목작성
 					</p>
 				</div>
-				<div class="step_line_wrap">
-					<div class="step_right_arrow"></div>
-				</div>
+
 				<div class="step_wrap">
 					<p class="step_box">
-						<span class="step_title">STEP4</span> 가입완료
+						<span class="step_title">STEP3</span> 가입완료
 					</p>
 				</div>
 			</div>
 			<div class="signup_write_con">
-				<!--기본정보-->
-				<h5 class="line">기본정보</h5>
 				<table class="table_style_0">
 					<caption>기본정보 테이블 입니다</caption>
 					<colgroup>
@@ -947,10 +921,7 @@
 					</tr>
 					</tbody>
 				</table>
-				<!--//기본정보-->
-	
-				<!--로그인정보-->
-				<h5 class="line">로그인 정보</h5>
+
 				<table class="table_style_0">
 					<caption>로그인 정보 테이블 입니다</caption>
 					<colgroup>
@@ -1010,10 +981,7 @@
 					</tr>
 					</tbody>
 				</table>
-				<!--//로그인정보-->
-	
-				<!--필수항목-->
-				<h5 class="line">필수항목</h5>
+
 				<table class="table_style_0">
 					<caption>필수항목 테이블 입니다</caption>
 					<colgroup>
@@ -1189,16 +1157,13 @@
 										<option value="${code.code}" title="<c:out value="${code.codeNm}"/>" ><c:out value="${code.codeNm}"/></option>
 									</c:forEach>
 								</select>
-								<label for="job">직업</label>
+								<label for="job"></label>
 							</span>
 						</td>
 					</tr>
 					</tbody>
 				</table>
-				<!--//필수항목-->
-	
-				<!--선택항목-->
-				<h5 class="line">선택항목</h5>
+
 				<table class="table_style_0">
 					<caption>선택항목 테이블 입니다</caption>
 					<colgroup>
@@ -1219,6 +1184,7 @@
 								<input type="radio" class="radio_style_0" name="resdncSe" value="02" id="resdncSe2" title="거주지 선택 라디오 - 해외">
 								<label for="resdncSe2">해외</label>
 							</span>
+							<!--
 							<span class="board_type_1_select_con">
 								<select class="select_style_1 arrow" name="sido" id="sido" title="거주지 시도를 선택해 주세요.">
 									<option value="" title="시도 선택">시도 선택</option>
@@ -1235,6 +1201,7 @@
 								<input type="text" name="resdncOvsea" id="resdncOvsea" value="" title="거주지가 해외인 경우 입력해주세요.">
 								<label for="resdncOvsea">구군</label>
 							</span>
+							-->
 						</td>
 					</tr>
 					</tbody>
@@ -1292,11 +1259,11 @@
 			</div>
 			
 			<div class="fl board_util_btn_con">
-				<a href="javascript:void(0);" class="btn_style_0 blue left" id="joinPrevStep3" title="이전">이전</a>
+				<a href="javascript:void(0);" class="btn_style_0 gray" id="joinPrevStep3" title="이전">이전</a>
 			</div>
 			<div class="fr board_util_btn_con">
-				<a class="btn_style_0 full check" href="javascript:checkForm();" title="저장">저장</a>
-				<a href="/edu/member/join01.do?menuNo=500076" onclick="return confirm('취소하시겠습니까?');" class="btn_style_0 close" title="취소">취소</a>
+				<a class="btn_style_0 full" href="javascript:checkForm();" title="저장">저장</a>
+				<a href="/edu/member/join01.do?menuNo=500076" onclick="return confirm('취소하시겠습니까?');" class="btn_style_0 gray" title="취소">취소</a>
 			</div>
 		</div>
 
