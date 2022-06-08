@@ -5,14 +5,16 @@
 
 <div class="fontsize0 sub_contents_body">
 	<!-- list obj -->
-   	<div class="tab_style_1_con">
+   	<%--<div class="tab_style_1_con">
 	    <ul class="tab_style_1 inner_tab">
 	        <li><a href="javascript:void(0)"><span>비전 및 미션</span></a></li>
 	        <li><a href="javascript:void(0)"><span>주요 사업</span></a></li>
 	    </ul>
-	</div>
+	</div>--%>
+
 	
 	<!-- 비전 및 미션 -->
+	<h5 class="bd_rd_rb_tit"><span>비전 및 미션</span></h5>
 	<div class="tab_contents">
 		<div class="Introduce_header">
 		    <div class="col-12 col-sm-6 text_box">
@@ -121,6 +123,7 @@
 	<!-- //비전 및 미션 -->
 	
 	<!-- 주요사업 -->
+	<h5 class="bd_rd_rb_tit"><span>주요사업</span></h5>
 	<div class="tab_contents">
 	    <ul class="mb25 list_style_2">
 	        <li class="sub_desc">

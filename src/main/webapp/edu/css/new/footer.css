@@ -90,12 +90,22 @@ span{display:inline-block;}
 
 /**** 공통 ****/
 
+/* 색상 */
+.contents_view_page .point0{color: #3B85FF !important;}
+.list_style_12_title{color: #3B85FF !important; background-image: url('/edu/images/renew2022/renew_list_style_12_title_dot.png')}
+.facilities_body_con .facilities_text_box .h_desc5.facilities{color: #3B85FF !important;}
+table.board_type_0 thead th{border-color:#3B85FF !important;}
+.contents_view_page .sub_section .board_title h4 .board_count{color: #3B85FF;}
+.contents_view_page .board_sorting_con .search_summit{background-color: #3B85FF;}
+
+
 /* 공통 헤더 가이드 */
 .sub_section .sub_contents_header{display: none;}
 
 /* btn */
 .board_util_btn_con .btn_style_0{padding: 10px 25px;}
 .board_util_btn_con .btn_style_0.gray{color:#fff; background-color: #707070; border-color: #707070; }
+.btn-primary{border-color:transparent;}
 
 
 /* input */
@@ -154,4 +164,18 @@ span{display:inline-block;}
 	.sub_section .sub_contents_body table.table_style_0 .input_wrap .radio_box_con, .sub_section .sub_contents_body table.table_style_0 .radio_wrap .radio_box_con{margin-bottom: 5px;}
 }
 
-/* GNB */
+/**
+콘텐츠문화광장
+**/
+
+/* 소개 */
+.bd_rd_rb_tit{text-align: center;}
+.bd_rd_rb_tit span{width: 215px; height: 44px; background-color: #3B85FF; color:#fff; line-height: 44px; border-bottom-right-radius: 25px; font-weight: 600;}
+.tab_contents{display: block;}
+.contents_view_page ul.list_style_2 > li{background-image: url('/edu/images/renew2022/renew_list_style_2_line_contents_view.png');}
+.facilities_title{background-image: url('/edu/images/renew2022/renew_facilities_title_slash.png');}
+.sub_section .sub_contents_body.is_on_top{background-image: url('/edu/images/renew2022/renew_facilities_contents_body_top_bg.png');}
+
+/* 공지사항 */
+.contents_view_page table.board_type_0.detail.notice th .writer_info > span:first-child{color:#3B85FF;}
+
