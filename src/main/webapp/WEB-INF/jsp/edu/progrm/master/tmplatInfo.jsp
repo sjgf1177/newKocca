@@ -28,8 +28,8 @@
 					<c:out value="${param.infoData}"/>
 				</c:if>
 				<c:if test="${empty param.mode}">
-				<fmt:parseDate value="${user.brthdy}" var="brthdy" pattern="yyyy-MM-dd"/>
-				<c:set var="brthdy"><fmt:formatDate value="${brthdy}" pattern="yyyy-MM-dd"/></c:set>
+					<fmt:parseDate value="${user.brthdy}" var="brthdy" pattern="yyyy-MM-dd"/>
+					<c:set var="brthdy"><fmt:formatDate value="${brthdy}" pattern="yyyy-MM-dd"/></c:set>
 					<span class="input_style_1_con">
 						<input type="text" name="infoData${idx}" id="infoData${idx}" class="sdate maskdate input_style_1" title="생년월일" style="width:130px" value='<c:out value="${empty info.brthdy ? brthdy : info.brthdy}"/>' />
 					</span>
@@ -46,7 +46,14 @@
 					<c:if test="${empty info.sex}"><c:set var="sex" value="${user.sex}" /></c:if>
 					<c:forEach var="code" items="${COM079CodeList}" varStatus="status">
 						<span class="radio_box_con">
-							<input type="radio" name="infoData${idx}" id="infoData${idx}_${status.count}" value="${code.code}" <c:if test="${sex eq code.code}">checked="checked"</c:if> class="radio_style_0" title="성별 라디오 <c:out value="${code.codeNm}"/>"/>
+							<c:set var="sexType" value="" />
+							<c:if test="${code.codeNm eq '남'}">
+								<c:set var="sexType" value="M" />
+							</c:if>
+							<c:if test="${code.codeNm eq '여'}">
+								<c:set var="sexType" value="W" />
+							</c:if>
+							<input type="radio" name="infoData${idx}" id="infoData${idx}_${status.count}" value="${sexType}" <c:if test="${sex eq code.code}">checked="checked"</c:if> class="radio_style_0" title="성별 라디오 <c:out value="${code.codeNm}"/>"/>
 							<label for="infoData${idx}_${status.count}"><c:out value="${code.codeNm}"/></label>
 						</span>
 					</c:forEach>
@@ -71,31 +78,31 @@
 						<option selected="selected">메일주소선택</option>
 						<option value="gmail.com">gmail.com</option>
 						<option value="naver.com">naver.com</option>
-	                    <option value="hanmail.net">hanmail.net</option>
-	                    <option value="daum.net">daum.net</option>
-	                    <option value="hotmail.com">hotmail.com</option>
-	                    <option value="nate.com">nate.com</option>
-	                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+						<option value="hanmail.net">hanmail.net</option>
+						<option value="daum.net">daum.net</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="nate.com">nate.com</option>
+						<option value="yahoo.co.kr">yahoo.co.kr</option>
 						<option value="emaildomain_false">직접입력</option>
 					</select>
 				</c:if>
 				<script type="text/javascript">
-				//<![CDATA[
-				jQuery(function(){
-					$('.emaildomain_form${idx}').attr('readonly',true);
-					$('select.select_email_js').change(function() {
-						if ($(this).val()=='emaildomain_false') {
-							$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
-							$('.emaildomain_form${idx}').attr('readonly',false).focus();
-						}
-						else {
-							$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
-							$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val($(this).val());
-							$('.emaildomain_form${idx}').attr('readonly',true);
-						}
+					//<![CDATA[
+					jQuery(function(){
+						$('.emaildomain_form${idx}').attr('readonly',true);
+						$('select.select_email_js').change(function() {
+							if ($(this).val()=='emaildomain_false') {
+								$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
+								$('.emaildomain_form${idx}').attr('readonly',false).focus();
+							}
+							else {
+								$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
+								$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val($(this).val());
+								$('.emaildomain_form${idx}').attr('readonly',true);
+							}
+						});
 					});
-				});
-				//]]>
+					//]]>
 				</script>
 			</c:when>
 			<c:when test="${param.key eq 'addEmail'}">
@@ -112,30 +119,30 @@
 						<option selected="selected">메일주소선택</option>
 						<option value="gmail.com">gmail.com</option>
 						<option value="naver.com">naver.com</option>
-	                    <option value="hanmail.net">hanmail.net</option>
-	                    <option value="daum.net">daum.net</option>
-	                    <option value="hotmail.com">hotmail.com</option>
-	                    <option value="nate.com">nate.com</option>
-	                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+						<option value="hanmail.net">hanmail.net</option>
+						<option value="daum.net">daum.net</option>
+						<option value="hotmail.com">hotmail.com</option>
+						<option value="nate.com">nate.com</option>
+						<option value="yahoo.co.kr">yahoo.co.kr</option>
 						<option value="emaildomain_false2">직접입력</option>
 					</select>
 				</c:if>
 				<script type="text/javascript">
-				//<![CDATA[
-				jQuery(function(){
-					$('.emaildomain_form${idx}').attr('readonly',true);
-					$('select.select_email_js2').change(function() {
-						if ($(this).val()=='emaildomain_false2') {
-							$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
-							$('.emaildomain_form${idx}').attr('readonly',false).focus();
-						}else{
-							$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
-							$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val($(this).val());
-							$('.emaildomain_form${idx}').attr('readonly',true);
-						}
+					//<![CDATA[
+					jQuery(function(){
+						$('.emaildomain_form${idx}').attr('readonly',true);
+						$('select.select_email_js2').change(function() {
+							if ($(this).val()=='emaildomain_false2') {
+								$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
+								$('.emaildomain_form${idx}').attr('readonly',false).focus();
+							}else{
+								$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val('');
+								$('.emaildomain_form${idx}:text[name=infoData${idx}_2]').val($(this).val());
+								$('.emaildomain_form${idx}').attr('readonly',true);
+							}
+						});
 					});
-				});
-				//]]>
+					//]]>
 				</script>
 			</c:when>
 			<c:when test="${param.key eq 'ownhomTelno'}">
@@ -295,43 +302,43 @@
 					<c:set var="data" value="${fn:split(info.resdnc,'|')}" />
 					<c:if test="${empty info.resdnc}"><c:set var="data" value="${fn:split(user.address,'|')}" /></c:if>
 					<script type="text/javascript">
-					//<![CDATA[
-					var sidoVal = "${data[0]}";
-					var gugunVal = "${data[1]}";
+						//<![CDATA[
+						var sidoVal = "${data[0]}";
+						var gugunVal = "${data[1]}";
 
-					jQuery(function(){
-						if (sidoVal != "") getCodeList("infoData${idx}_2", 'COM063', $("#infoData${idx}_1").val(), 2, gugunVal);
+						jQuery(function(){
+							if (sidoVal != "") getCodeList("infoData${idx}_2", 'COM063', $("#infoData${idx}_1").val(), 2, gugunVal);
 
-						$("select[name=infoData${idx}_1]").change(function(){
-							var val = $(this).val();
-							getCodeList("infoData${idx}_2", 'COM063', val, 2);
+							$("select[name=infoData${idx}_1]").change(function(){
+								var val = $(this).val();
+								getCodeList("infoData${idx}_2", 'COM063', val, 2);
+							});
 						});
-					});
 
-					//공통 코드목록 화면처리
-					function getCodeList(elemntId, codeId, upperCode, depth, code) {
-						var $obj = $("#"+ elemntId);
-						var url = "/cmmn/cmmncode/codeListJson.do";
-						var params = {
-							codeId : codeId,
-							upperCode : upperCode
-						};
-						$.get(url, params, function(data) {
-							if (data) {
-								$obj.empty();
-								$("<option>").text("구군 선택").attr("value","").appendTo($obj);
-								$.each(data.list, function(key,item) {
-									var $codeItem = $("<option>").attr("value", item.code).text(item.codeNm);
-									if (code == item.code) $codeItem.attr("selected",true);
-									$codeItem.appendTo($obj);
-								});
-								if ("infoData${idx}_2" == elemntId && "" == upperCode) {
-									$("<option>").text("구군 선택").attr("value","").appendTo($("#infoData${idx}_2").empty());
+						//공통 코드목록 화면처리
+						function getCodeList(elemntId, codeId, upperCode, depth, code) {
+							var $obj = $("#"+ elemntId);
+							var url = "/cmmn/cmmncode/codeListJson.do";
+							var params = {
+								codeId : codeId,
+								upperCode : upperCode
+							};
+							$.get(url, params, function(data) {
+								if (data) {
+									$obj.empty();
+									$("<option>").text("구군 선택").attr("value","").appendTo($obj);
+									$.each(data.list, function(key,item) {
+										var $codeItem = $("<option>").attr("value", item.code).text(item.codeNm);
+										if (code == item.code) $codeItem.attr("selected",true);
+										$codeItem.appendTo($obj);
+									});
+									if ("infoData${idx}_2" == elemntId && "" == upperCode) {
+										$("<option>").text("구군 선택").attr("value","").appendTo($("#infoData${idx}_2").empty());
+									}
 								}
-							}
-						},"json");
-					}
-					//]]>
+							},"json");
+						}
+						//]]>
 					</script>
 
 					<%-- <input type="text" name="infoData${idx}" id="infoData${idx}" value='<c:out value="${info.resdnc}"/>' > --%>
