@@ -21,40 +21,72 @@ $(function(){
 		return true;
 	}	
 	
+    //메인배너 슬라이드
     var swiper0 = new Swiper('#main_visual_slide', {
 		autoplay: 6000
 		,loot: true
-		,speed : 700 
+		,speed : 700
 		,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
 		,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
 		,spaceBetween: 0 // 슬라이드 사이의 간격 px 단위
+		,autoplayDisableOnInteraction: false,
+        //pagination: '.swiper_page_all_box .swiper-pagination',
+        paginationClickable: true,
+        //페이징
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction'
+        //구버전 swiper 방향표
+        ,nextButton: '.swiper-button-next'
+        ,prevButton: '.swiper-button-prev',
+	});
+
+    //메인 배너 정지버튼
+    $('.swiper-button-pause').click(function() {
+        swiper0.stopAutoplay();
+        $('.swiper-button-play').show();
+        $('.swiper-button-pause').hide();
+    });
+    //메인 배너 재성버튼
+    $('.swiper-button-play').click(function() {
+        swiper0.startAutoplay();
+        $('.swiper-button-play').hide();
+        $('.swiper-button-pause').show();
+    });
+
+
+    
+    //메인 아이콘카테고리(방송영상,게임,만애캐,문화일반,인경교일) 슬라이드
+    var swiper1 = new Swiper('.main_news_contents .swiper-container', {
+
+		speed : 700
+		,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+		,slidesPerView: 5 // 한번에 보이는 슬라이드 갯수
 		,autoplayDisableOnInteraction: false
-	});
-    
-    var swiper1 = new Swiper('.main_slide_banner .swiper-container', {
-    	autoplay:4000,
-    	speed:300,
-    	pagination: '.main_slide_banner .swiper-pagination',
-    	paginationClickable: true,
-    	centeredSlides: true,
-    	slidesPerView: 5,
-    	spaceBetween : 0,
-    	autoHeight: true,
-    	autoplayDisableOnInteraction: false,
-    	breakpoints :{
-    		960:{
-    			slidesPerView: 3
-    		}
-    		,580:{
-    			slidesPerView: 1
-    		}
-    	},
-    	paginationBulletRender: function (swiper, index, className) {
-    		return '<button class="' + className + '" tabindex="0"><span class="ally-hidden">'+(index+1)+'번째 배너로 이동</span></button>';
-    	}
-	});
-    
-    $(".main_slide_banner .swiper-button-pause").click(function(){
+
+        //구버전 swiper 방향표
+        ,nextButton: '.swiper-button-next'
+        ,prevButton: '.swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //메인 KOCCA는 창작자 여러분에게 열려 있습니다 슬라이드
+    var swiper2 = new Swiper('.main_place_contents .swiper-container', {
+
+        speed : 300
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 'auto' // 한번에 보이는 슬라이드 갯수
+        ,keyboardControl: true
+        ,spaceBetween: 20
+
+    });
+
+
+    /*$(".main_slide_banner .swiper-button-pause").click(function(){
     	swiper1.stopAutoplay();
     	$(".main_slide_banner .swiper-button-pause").attr({"disabled":true}).css({"opacity":"0.6"});
     	$(".main_slide_banner .swiper-button-play").attr({"disabled":false}).css({"opacity":"1"});
@@ -64,7 +96,7 @@ $(function(){
     	swiper1.startAutoplay();
     	$(".main_slide_banner .swiper-button-play").attr({"disabled":true}).css({"opacity":"0.6"});
     	$(".main_slide_banner .swiper-button-pause").attr({"disabled":false}).css({"opacity":"1"});
-    });
+    });*/
     
     
     /*$(".visual_searchBox form input").focusin(function(){

@@ -13,7 +13,7 @@
 	.visual_wrap h2{margin-bottom:100px !important;}
 }
 .lnb_wrap {display: none !important;}
-.sub_contents_wrap .sub_contents {padding-left:0 !important;}
+
 </style>
 
 <!--content-->
@@ -21,37 +21,28 @@
 	<!-- <div class="board_util_btn_con left">
 		<a href="/upload/onlineEdu/kocca_subj.xlsx" class="btn_style_0 full down">한국 콘텐츠 아카데미 과정 리스트 다운로드</a>
 	</div> -->
-	
-	
-	<div>
-		<ul class="photoTab photoTab-size5 online_edu_tab_style mg_b50" id="tabNavCtrl">
-			<!-- 분류별 탭 목록 s -->
-			<c:forEach items="${realmTabList }" var="item" varStatus="status">
-					<c:set var="selectedGubun" value=""/>
-					<c:set var="selectedGubunAtag" value=""/>
-					<c:if test="${(empty param.pGubun1 and empty param.gubun and item.code eq 'A') or param.pGubun1 eq item.code or param.gubun eq item.code}">
-						<c:set var="selectedGubun" value="class=\"active\""/>
-						<c:set var="selectedGubunAtag" value="title=\"현재탭\""/>
-					</c:if>
-					<c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0')}">
-					<li ${selectedGubun } <c:if test="${(item.code eq 'T0' && param.pGubun1 ne 'T0') }">style="display:none"</c:if> >
-						<a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>
-							${item.codenm }
-						</a>
-					</li>
-					</c:if>
-			</c:forEach>
-			<c:if test="${userVO.userId eq 'kkj9699' or userVO.userId eq 'jmh8263' or userVO.userId eq 'lee1'}">
-				<li <c:if test="${param.pGubun1 eq 'T0' or param.gubun eq 'T0' }">class="active"</c:if>>
-					<a href="javascript:void(0);" onclick="fnCmdSearchList('T0', '', '', '', ''); return false;">콘텐츠검수</a>
-				</li>
-			</c:if>
-		</ul>
+	<div class="over-hidden sub_contents_header">
+		<div class="linemap_wrap"> <!-- fl class 삭제 -->
+			<ul class="col-12 linemap_con">
+				<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+				<li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
+				<li><a href="javascript:void(0);" tabindex="-1"><span>방송영상</span></a></li>
+			</ul>
+		</div>
 	</div>
 
+	<div class="sub_title s_tit02">
+		<div class="col-center mw-1280">카테고리 - 방송영상</div>
+	</div>
+
+	<ul class="sub_two_tab_box col-center mw-1280">
+		<li class="after_line active"><a href="">정규과정</a></li>
+		<li><a href="">열린강좌</a></li>
+	</ul>
+
 	<div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20">
-		<div>
-			<span>과정검색 </span>
+		<div class="col-center mw-1280">
+
 			<div>
 				<c:if test="${param.pGubun1 eq 'A' or empty param.pGubun1}">
 					<select  class="relation_site SL01 gubunBox" ordr="2">
@@ -85,157 +76,453 @@
 			    		</c:forEach>
 			    	</c:if>			    	
 			    </select>
+
+				<div class="show-tablecell fn vm tr board_sorting_con">
+					<form id="frm" name="frm" action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>" method="post">
+
+						<input type="hidden" name="pGubun1" id="pGubun1" value='<c:out value="${not empty param.pGubun1?param.pGubun1:param.gubun }" />' />
+						<input type="hidden" name="pGubun2" id="pGubun2" value='<c:out value="${not empty param.pGubun2?param.pGubun2:param.option1 }" />' />
+						<input type="hidden" name="pGubun3" id="pGubun3" value='<c:out value="${not empty param.pGubun3?param.pGubun3:param.option5 }" />' />
+
+						<input type="hidden" name="p_ordersnm" id="p_ordersnm" value='<c:out value="${param.p_ordersnm }"/>' />
+						<input type="hidden" name="p_orders" id="p_orders" value='<c:out value="${param.p_orders }"/>' />
+
+						<input type="hidden" name="p_subj" id="p_subj" value="" />
+						<input type="hidden" name="p_subjnm" id="p_subjnm" value="" />
+						<input type="hidden" name="p_isonoff" id="p_isonoff" value="" />
+						<input type="hidden" name="p_scupperclass" id="p_scupperclass" value="" />
+						<input type="hidden" name="p_uclassnm" id="p_uclassnm" value="" />
+						<input type="hidden" name="p_year" id="p_year" value="" />
+						<input type="hidden" name="p_subjseq" id="p_subjseq" value="" />
+
+						<input type="hidden" name="s_subj" id="s_subj" value="" />
+						<input type="hidden" name="s_year" id="s_year" value="" />
+						<input type="hidden" name="s_subjseq" id="s_subjseq" value="" />
+
+						<input type="hidden" name="p_type" id="p_type" value="${param.p_type }" />
+						<input type="hidden" name="p_gcd1" id="p_gcd1" value="${param.p_gcd1}" />
+						<input type="hidden" name="p_gcd2" id="p_gcd2" value="${param.p_gcd2}" />
+						<input type="hidden" name="p_level" id="p_level" value="${param.p_level}" />
+						<input type="hidden" name="p_sort" id="p_sort" value="${param.p_sort}" />
+
+						<!-- paging s -->
+						<input type="hidden" name="gubun" id="gubun" value="<c:out value='${param.gubun }' />" />
+						<input type="hidden" name="pageIndex" id="pageIndex" value="<c:out value='${param.pageIndex }' />" />
+						<!-- paging e -->
+
+						<fieldset class="mo-ta_lt">
+							<legend>검색 입력폼</legend>
+							<%--<span class="process_icon_wrap">
+								<span class="icon_con">
+									<img src="/edu/images/bm/online_pc_icon.png" alt="pc과정">
+								</span>
+								<span class="icon_text">
+									PC과정
+								</span>
+							</span>
+							<span class="process_icon_wrap">
+								<span class="icon_con">
+									<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일과정">
+								</span>
+								<span class="icon_text">
+									모바일과정
+								</span>
+							</span>--%>
+							<span class="tl input_search_con">
+								<input type="text" name="p_searchtext" id="p_searchtext" placeholder="검색어를 입력해 주세요." title="검색어를 입력해 주세요." value="${param.p_searchtext }" maxlength="30" class="board_search"/>
+								<a href="javascript:void(0);" onclick="fnCmdSearchList2('${empty param.pGubun1 ? 'A':param.pGubun1}', '${param.pGubun2 }', '${param.pGubun3 }', '', ''); return false;" class="search_summit nav_search_btn">검색</a>
+							</span>
+							<button type="button" class="close_block_btn">닫기</button>
+							<button type="button" class="filter_btn">필터</button>
+						</fieldset>
+					</form>
+				</div>
 			</div>
 		</div>
-		
-		<div class="show-tablecell fn vm tr board_sorting_con">
-			<form id="frm" name="frm" action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>" method="post">
-					
-				<input type="hidden" name="pGubun1" id="pGubun1" value='<c:out value="${not empty param.pGubun1?param.pGubun1:param.gubun }" />' />
-				<input type="hidden" name="pGubun2" id="pGubun2" value='<c:out value="${not empty param.pGubun2?param.pGubun2:param.option1 }" />' />
-				<input type="hidden" name="pGubun3" id="pGubun3" value='<c:out value="${not empty param.pGubun3?param.pGubun3:param.option5 }" />' />
-				
-				<input type="hidden" name="p_ordersnm" id="p_ordersnm" value='<c:out value="${param.p_ordersnm }"/>' />
-				<input type="hidden" name="p_orders" id="p_orders" value='<c:out value="${param.p_orders }"/>' />
-				
-				<input type="hidden" name="p_subj" id="p_subj" value="" />
-				<input type="hidden" name="p_subjnm" id="p_subjnm" value="" />
-				<input type="hidden" name="p_isonoff" id="p_isonoff" value="" />
-				<input type="hidden" name="p_scupperclass" id="p_scupperclass" value="" />
-				<input type="hidden" name="p_uclassnm" id="p_uclassnm" value="" />
-				<input type="hidden" name="p_year" id="p_year" value="" />
-				<input type="hidden" name="p_subjseq" id="p_subjseq" value="" />
-			
-				<input type="hidden" name="s_subj" id="s_subj" value="" />
-				<input type="hidden" name="s_year" id="s_year" value="" />
-				<input type="hidden" name="s_subjseq" id="s_subjseq" value="" />
-				
-				<input type="hidden" name="p_type" id="p_type" value="${param.p_type }" />
-				<input type="hidden" name="p_gcd1" id="p_gcd1" value="${param.p_gcd1}" />
-				<input type="hidden" name="p_gcd2" id="p_gcd2" value="${param.p_gcd2}" />
-				<input type="hidden" name="p_level" id="p_level" value="${param.p_level}" />
-				<input type="hidden" name="p_sort" id="p_sort" value="${param.p_sort}" />
-				
-				<!-- paging s -->
-				<input type="hidden" name="gubun" id="gubun" value="<c:out value='${param.gubun }' />" />
-				<input type="hidden" name="pageIndex" id="pageIndex" value="<c:out value='${param.pageIndex }' />" />
-				<!-- paging e -->
-				
-				<fieldset class="mo-ta_lt">
-					<legend>검색 입력폼</legend>
-					<span class="process_icon_wrap">
-						<span class="icon_con">
-							<img src="/edu/images/bm/online_pc_icon.png" alt="pc과정">
-						</span>
-						<span class="icon_text">
-							PC과정
-						</span>
-					</span>
-					<span class="process_icon_wrap">
-						<span class="icon_con">
-							<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일과정">
-						</span>
-						<span class="icon_text">
-							모바일과정
-						</span>
-					</span>
-					<span class="tl input_search_con">
-						<input type="text" name="p_searchtext" id="p_searchtext" placeholder="검색어 입력" title="검색어를 입력해 주세요." value="${param.p_searchtext }" maxlength="30" class="board_search"/> 
-						<a href="javascript:void(0);" onclick="fnCmdSearchList2('${empty param.pGubun1 ? 'A':param.pGubun1}', '${param.pGubun2 }', '${param.pGubun3 }', '', ''); return false;" class="search_summit">검색</a>
-					</span>
-				</fieldset>
-			</form>
+
+	</div>
+
+	<div class="bg_gray_slide_box">
+		<!-- 창작자를 위한 추천과정 start -->
+		<div class="fwo_card_list_box fwo_card01 col-center mw-1280">
+			<span class="main_title">창작자를 위한 추천 과정!</span>
+			<div class="fwo_card swiper-container">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+				</ul>
+
+			</div>
+			<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+			<div class="swiper_btn_box">
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+
 		</div>
+		<!-- 창작자를 위한 추천과정 end -->
+
+		<!-- 나만 빼고 다 수강한 과정 start -->
+		<div class="fwo_card_list_box fwo_card02 col-center mw-1280">
+			<span class="main_title">나만 빼고 다 수강한 과정!</span>
+			<div class="fwo_card swiper-container">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+					<li class="swiper-slide">
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+								<span class="tag L1">초급</span>
+								<p>온라인교육ㆍ유통</p>
+								<a href="" class="go_page_a"></a>
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+
+					</li>
+				</ul>
+
+			</div>
+			<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+			<div class="swiper_btn_box">
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+
+		</div>
+		<!-- 나만 빼고 다 수강한 과정 end -->
 	</div>
 	
-	<div class="mo-ta_lt mo-mb_20 show-tablecell fn vm board_title online_edu_board_title">
-		<h4 class="display_IB pd_t12">
+	<div class="mo-ta_lt mo-mb_20 show-tablecell fn vm board_title online_edu_board_title col-center mw-1280">
+		<%--<h4 class="display_IB pd_t12">
 			검색 건 수 :  <span class="board_count">${resultCnt}</span> 건
-		</h4>
-		<select class="relation_site sortBox" id="s_sort" name="s_sort" title="정렬순서">
+		</h4>--%>
+		<select class="relation_site sortBox mg_t20" id="s_sort" name="s_sort" title="정렬순서">
 			<option value="N" title="최신순" <c:if test="${param.p_sort eq 'N'}">selected="selected"</c:if>>최신순</option>
 			<option value="O" title="오래된순" <c:if test="${param.p_sort eq 'O'}">selected="selected"</c:if>>오래된순</option>
 			<option value="V" title="시청많은순" <c:if test="${param.p_sort eq 'V'}">selected="selected"</c:if>>시청많은순</option>
 	    </select>
 	</div>	
-	
-	<div class="photoGallery2 photoLine1 mg_t5">
-		<div class="col-12 calc_wrap20">
+
+	<!-- 기획 -->
+	<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
+		<span class="main_title">기획</span>
+		<div class="fwo_card swiper-container">
+			<div class="swiper-wrapper">
 			<c:if test="${fn:length(resultList) > 0}">
 			<c:forEach items="${resultList }" var="item3" varStatus="status3">
-				<div class="col-12 col-md-3 online_edu_card_wrap">
-					<div class="col-12 online_edu_card_list">
+				<div class="swiper-slide">
+					<div class="">
 						<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
 							<% pageContext.setAttribute("crlf", "\\"); %>
-							<div class="img_box">
-								<c:choose>
-									<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-										<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-									</c:when>
-									<c:otherwise>
-										<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
-									</c:otherwise>
-								</c:choose>
-							</div>
-							<div class="text_box">
-								<div class="online_edu_card_icon_con">
-									<span class="online_edu_card_icon">
-										<img src="/edu/images/bm/online_pc_icon.png" alt="pc에서 재생가능" title="pc에서 재생가능">
-									</span>
-									
-									<c:if test="${item3.mobileUseYn eq 'Y' }">
-										<span class="online_edu_card_icon">
-											<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일에서 재생가능" title="모바일에서 재생가능" />
-										</span>
-									</c:if>
-									
-						<c:if test="${not empty item3.lvnm}">
-							<c:choose>
-								<c:when test="${item3.lvcd eq 'L0101' or item3.lvcd eq 'L0201'}">
-									<span class="tag L1">${item3.lvnm}</span>
-								</c:when>
-								<c:when test="${item3.lvcd eq 'L0102' or item3.lvcd eq 'L0202'}">
-									<span class="tag L2">${item3.lvnm}</span>
-								</c:when>
-								<c:when test="${item3.lvcd eq 'L0103' or item3.lvcd eq 'L0203'}">
-									<span class="tag L3">${item3.lvnm}</span>
-								</c:when>								
-							</c:choose>
-						</c:if>
-						
-								<c:if test="${not empty item3.g3nm}">
-									<span class="gray_txt">${item3.g3nm}</span>
-								</c:if>		
-								
-								<c:if test="${empty item3.g3nm}">
-									<span class="gray_txt">${item3.g2nm}</span>
-								</c:if>					
-									
-								</div>
-								<div class="online_edu_card_title">
-									<h4>
-										<c:if test="${item3.isnew eq 'Y' }">
-											<c:if test="${ item3.ishit eq 'N'}">
-												<c:if test="${ item3.isrecom eq 'Y'}">
-													<span style="color: #FF5200;">[New]</span>
-													<!--
-													<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-													-->
+							<div class="fwo_snail_box">
+								<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
+									<c:choose>
+										<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+											<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+										</c:when>
+										<c:otherwise>
+											<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
+										</c:otherwise>
+									</c:choose>
+								</a>
+								<!-- 설명란 start-->
+								<div class="fwo_info_box">
+									<h3 class="fwo_tit_box">
+										<a href="">
+											<c:if test="${item3.isnew eq 'Y' }">
+												<c:if test="${ item3.ishit eq 'N'}">
+													<c:if test="${ item3.isrecom eq 'Y'}">
+														<span style="color: #3B85FF;">[New]</span>
+														<!--
+														<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+														-->
+													</c:if>
 												</c:if>
 											</c:if>
-										</c:if>
-										${item3.subjnm }
-									</h4>
-								</div>
-								<div class="online_edu_desc">
-									<c:if test="${not empty item3.subjsummary }">
-										<c:set var="arrayofsubjintro" value="${fn:split(item3.subjsummary,'-')}"/>
-										<c:forEach var="i" begin="0" end="${fn:length(arrayofsubjintro)-1 }">
-											${arrayofsubjintro[i] }<br />
-										</c:forEach>
+												${item3.subjnm }
+										</a>
+
+									</h3>
+
+									<c:if test="${not empty item3.lvnm}">
+										<c:choose>
+											<c:when test="${item3.lvcd eq 'L0101' or item3.lvcd eq 'L0201'}">
+												<span class="tag L1">${item3.lvnm}</span>
+											</c:when>
+											<c:when test="${item3.lvcd eq 'L0102' or item3.lvcd eq 'L0202'}">
+												<span class="tag L2">${item3.lvnm}</span>
+											</c:when>
+											<c:when test="${item3.lvcd eq 'L0103' or item3.lvcd eq 'L0203'}">
+												<span class="tag L3">${item3.lvnm}</span>
+											</c:when>
+										</c:choose>
 									</c:if>
+
+									<p>
+										온라인교육ㆍ
+										<c:if test="${not empty item3.g3nm}">
+											${item3.g3nm}
+										</c:if>
+
+										<c:if test="${empty item3.g3nm}">
+											${item3.g2nm}
+										</c:if>
+									</p>
+
+									<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
 								</div>
+								<!-- 설명란 start-->
 							</div>
+
+							<<c:if test="${item3.isnew eq 'Y' }">
+							<c:if test="${ item3.ishit eq 'N'}">
+								<c:if test="${ item3.isrecom eq 'Y'}">
+									<span style="color: #3B85FF;">[New]</span>
+									<!--
+									<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+									-->
+								</c:if>
+							</c:if>
+						</c:if>
+								${item3.subjnm }
 						</a>
 					</div>
 				</div>
@@ -244,18 +531,226 @@
 			<c:if test="${fn:length(resultList) < 1}">
 				<div style="text-align: center; vertical-align: middle">검색된 데이터가 없습니다.</div>
 			</c:if>
+			</div>
+
+		</div>
+		<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+		<div class="swiper_btn_box">
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 		</div>
 	</div>
+
+	<!-- 제작 -->
+	<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
+		<span class="main_title">제작</span>
+		<div class="fwo_card swiper-container">
+			<div class="swiper-wrapper">
+				<c:if test="${fn:length(resultList) > 0}">
+					<c:forEach items="${resultList }" var="item3" varStatus="status3">
+						<div class="swiper-slide">
+							<div class="">
+								<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
+									<% pageContext.setAttribute("crlf", "\\"); %>
+									<div class="fwo_snail_box">
+										<a href="">
+											<c:choose>
+												<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+													<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+												</c:when>
+												<c:otherwise>
+													<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
+												</c:otherwise>
+											</c:choose>
+										</a>
+										<!-- 설명란 start-->
+										<div class="fwo_info_box">
+											<h3 class="fwo_tit_box">
+												<a href="">
+													<c:if test="${item3.isnew eq 'Y' }">
+														<c:if test="${ item3.ishit eq 'N'}">
+															<c:if test="${ item3.isrecom eq 'Y'}">
+																<span style="color: #3B85FF;">[New]</span>
+																<!--
+																<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+																-->
+															</c:if>
+														</c:if>
+													</c:if>
+														${item3.subjnm }
+												</a>
+											</h3>
+
+											<c:if test="${not empty item3.lvnm}">
+												<c:choose>
+													<c:when test="${item3.lvcd eq 'L0101' or item3.lvcd eq 'L0201'}">
+														<span class="tag L1">${item3.lvnm}</span>
+													</c:when>
+													<c:when test="${item3.lvcd eq 'L0102' or item3.lvcd eq 'L0202'}">
+														<span class="tag L2">${item3.lvnm}</span>
+													</c:when>
+													<c:when test="${item3.lvcd eq 'L0103' or item3.lvcd eq 'L0203'}">
+														<span class="tag L3">${item3.lvnm}</span>
+													</c:when>
+												</c:choose>
+											</c:if>
+
+											<p>
+												온라인교육ㆍ
+												<c:if test="${not empty item3.g3nm}">
+													${item3.g3nm}
+												</c:if>
+
+												<c:if test="${empty item3.g3nm}">
+													${item3.g2nm}
+												</c:if>
+											</p>
+
+											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+										</div>
+										<!-- 설명란 start-->
+									</div>
+
+									<c:if test="${item3.isnew eq 'Y' }">
+										<c:if test="${ item3.ishit eq 'N'}">
+											<c:if test="${ item3.isrecom eq 'Y'}">
+												<span style="color: #3B85FF;">[New]</span>
+												<!--
+												<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+												-->
+											</c:if>
+										</c:if>
+									</c:if>
+										${item3.subjnm }
+								</a>
+							</div>
+						</div>
+					</c:forEach>
+				</c:if>
+				<c:if test="${fn:length(resultList) < 1}">
+					<div style="text-align: center; vertical-align: middle">검색된 데이터가 없습니다.</div>
+				</c:if>
+			</div>
+
+		</div>
+		<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+		<div class="swiper_btn_box">
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+	</div>
+
+	<!-- 비즈니스 -->
+	<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
+		<span class="main_title">비즈니스</span>
+		<div class="fwo_card swiper-container">
+			<div class="swiper-wrapper">
+				<c:if test="${fn:length(resultList) > 0}">
+					<c:forEach items="${resultList }" var="item3" varStatus="status3">
+						<div class="swiper-slide">
+							<div class="">
+								<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
+									<% pageContext.setAttribute("crlf", "\\"); %>
+									<div class="fwo_snail_box">
+										<a href="">
+											<c:choose>
+												<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+													<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+												</c:when>
+												<c:otherwise>
+													<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
+												</c:otherwise>
+											</c:choose>
+										</a>
+										<!-- 설명란 start-->
+										<div class="fwo_info_box">
+											<h3 class="fwo_tit_box">
+												<a href="">
+													<c:if test="${item3.isnew eq 'Y' }">
+														<c:if test="${ item3.ishit eq 'N'}">
+															<c:if test="${ item3.isrecom eq 'Y'}">
+																<span style="color: #3B85FF;">[New]</span>
+																<!--
+																<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+																-->
+															</c:if>
+														</c:if>
+													</c:if>
+														${item3.subjnm }
+												</a>
+											</h3>
+
+											<c:if test="${not empty item3.lvnm}">
+												<c:choose>
+													<c:when test="${item3.lvcd eq 'L0101' or item3.lvcd eq 'L0201'}">
+														<span class="tag L1">${item3.lvnm}</span>
+													</c:when>
+													<c:when test="${item3.lvcd eq 'L0102' or item3.lvcd eq 'L0202'}">
+														<span class="tag L2">${item3.lvnm}</span>
+													</c:when>
+													<c:when test="${item3.lvcd eq 'L0103' or item3.lvcd eq 'L0203'}">
+														<span class="tag L3">${item3.lvnm}</span>
+													</c:when>
+												</c:choose>
+											</c:if>
+
+											<p>
+												온라인교육ㆍ
+												<c:if test="${not empty item3.g3nm}">
+													${item3.g3nm}
+												</c:if>
+
+												<c:if test="${empty item3.g3nm}">
+													${item3.g2nm}
+												</c:if>
+											</p>
+
+											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+										</div>
+										<!-- 설명란 start-->
+									</div>
+
+									<c:if test="${item3.isnew eq 'Y' }">
+										<c:if test="${ item3.ishit eq 'N'}">
+											<c:if test="${ item3.isrecom eq 'Y'}">
+												<span style="color: #3B85FF;">[New]</span>
+												<!--
+												<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+												-->
+											</c:if>
+										</c:if>
+									</c:if>
+										${item3.subjnm }
+								</a>
+							</div>
+						</div>
+					</c:forEach>
+				</c:if>
+				<c:if test="${fn:length(resultList) < 1}">
+					<div style="text-align: center; vertical-align: middle">검색된 데이터가 없습니다.</div>
+				</c:if>
+			</div>
+
+		</div>
+		<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+		<div class="swiper_btn_box">
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
+	</div>
+
+
 	
-	<c:if test="${fn:length(resultList) > 0}">
+	<%--<c:if test="${fn:length(resultList) > 0}">
 		<div class="paging">${pageNav}</div>
-	</c:if>
+	</c:if>--%>
 
 
 
 <script type="text/javascript">
 //<![CDATA[
 	$(document).ready(function(){
+
 		var tabNavControl = $('#tabNavCtrl>li>a').not(':first');
 		var subNavLayer = $('.tabSubNav')
 		$(tabNavControl).each(function(index, el) {

@@ -7,75 +7,44 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc" %>
 <ccc:constantsMap className="kr.co.unp.bbs.vo.SearchVO" var="SearchVO"/>
-<div class="tab_style_1_con"> 
-	<ul class="tab_style_1 three_tab">
-		<li>
-			<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500204">
-				<span>테마과정</span>
-			</a>
-		</li>
-		<li class="active">
-			<a href="/edu/bbs/B0000048/list.do?menuNo=500205" title="현재탭">
-				<span>이벤트</span>
-			</a>
-		</li>
-		<li>
-			<a href="/edu/bbs/B0000023/list.do?menuNo=500206">
-				<span>콘텐츠이야기</span>
-			</a>
-		</li>
-	</ul>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>이벤트</span></a></li>
+		</ul>
+	</div>
 </div>
-	<!-- bdView -->
-<table class="board_type_0 detail notice">
-	<caption>이벤트 게시판 뷰 페이지</caption>
-	<colgroup>
-		<col width="100%">
-	</colgroup>
-	<thead>
-	<tr>
-		<th>
-			<span>
-				<c:out  value="${result.nttSj }" escapeXml="false"/>
-			</span>
-			<span class="writer_info">
-				<span>
-					Hit.<c:out value="${result.inqireCo}"></c:out>
-				</span>
-				<span>
-					<c:out value="${result.frstRegisterPnttm}" escapeXml="false" />
-				</span>
-			</span>
-		</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td>
-			<div class="table_info_header">
-				<div class="view_info">
-					<p>이벤트 기간 : <span><c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></p>
-					<c:if test="${not empty result.option1 and result.option1 ne '' }">
-						<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >[이벤트 페이지 바로가기]</a>
-					</c:if>
-				</div>
-			</div>
-			<div class="contents_view_area">
-				<c:choose>
-					<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
-					<c:otherwise>
-						<% pageContext.setAttribute("crlf", "\n"); %>
-						${fn:replace(result.nttCn, crlf, "<br/>")}
-					</c:otherwise>
-				</c:choose>
+<div class="sub_title">이벤트</div>
 
-				<!-- 본문이미지 대체텍스트 -->
-				<!-- <div class="hidden">${result.imgDescCn}</div> -->
-			</div>
-		</td>
-	</tr>
-	</tbody>
-</table>
+	<!-- bdView -->
+<div class="evt_top_box">
+	<div class="evt_info_box">
+		<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
+		<p class="date_tag_on">D-10</p>
+		<p class="data">이벤트기간 : <span><c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></p>
+	</div>
+	<div class="evt_btn_box">
+		<p>지금 참여하시겠습니까?</p>
+		<c:if test="${not empty result.option1 and result.option1 ne '' }">
+			<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >이벤트 참여</a>
+		</c:if>
+	</div>
+</div>
+<div class="contents_view_area">
+	<c:choose>
+		<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
+		<c:otherwise>
+			<% pageContext.setAttribute("crlf", "\n"); %>
+			${fn:replace(result.nttCn, crlf, "<br/>")}
+		</c:otherwise>
+	</c:choose>
+
+	<!-- 본문이미지 대체텍스트 -->
+	<!-- <div class="hidden">${result.imgDescCn}</div> -->
+</div>
+
+
 <div class="paging view_paging">
 	<ul class="pagination">
 		<c:if test="${prevNextMap['PREV'].prevNttId > 0}">

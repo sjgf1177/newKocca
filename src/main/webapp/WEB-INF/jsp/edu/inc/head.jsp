@@ -86,14 +86,11 @@
 	//]]>
 </script>
 
-<header>
+<%--<header>
 	<div class="container h-100">
 		<div class="header_util_wrap">
 			<div class="show vm header_util_text_con">
-				<span class="show vm fontsize14 header_util_item">
-					<a href="#subContainer" class="ico3" title="본문으로" tabindex="1">본문으로</a>
-				</span>
-				<sec:authorize ifAnyGranted="ROLE_USER">
+				&lt;%&ndash;<sec:authorize ifAnyGranted="ROLE_USER">
 					<c:if test="${paramVO.siteName eq 'edu' }">
 						<c:set var="mypageNm" value="마이페이지" />
 						<c:set var="mypageUrl" value="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" />
@@ -145,7 +142,8 @@
 					<a href="/edu/main/contents.do?menuNo=500074" class="ico3" title="사이트맵">사이트맵</a>
 				</span>
 			</div>
-			<div class="show vm header_util_icon_con">
+			&ndash;%&gt;
+			&lt;%&ndash;<div class="show vm header_util_icon_con">
 				<span class="show header_util_icon_item">
 					<a href="https://www.facebook.com/edukocca" target="_blank" title="새창열림">
 						<img src="/edu/images/bm/facebook_icon.png" alt="페이스북 바로가기">
@@ -171,7 +169,7 @@
 						<img src="/edu/new_image/instargram_icon.png" alt="인스타그램 바로가기">
 					</a>
 				</span>
-			</div>
+			</div>&ndash;%&gt;
 		</div>
 		<!-- gnb 영역! -->
 		<nav class="navbar navbar-expand-xl">
@@ -190,11 +188,17 @@
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+
+			<div class="nav_search_box">
+				<input type="text" placeholder="검색어를 입력해주세요.">
+				<button class="nav_search_btn"></button>
+			</div>
+
 			<!-- gnb -->
-			<div class="collapse navbar-collapse" id="main_nav">	
+			<div class="collapse navbar-collapse" id="main_nav">
 				<c:set var="topCategories" value="${menuAll5['menu_0']}" />
 				<c:set var="curD" value="${topCategories[depth01]}" />
-				
+
 				<ul class="navbar-nav">
 					<c:forEach var="x" begin="0" end="4">
 						<li>
@@ -230,7 +234,7 @@
                                             	<c:otherwise>
                                             		<c:set var="d03Categories" value="${menuAll5[d03menuKey]}" />
                                             	</c:otherwise>
-                                            </c:choose>											
+                                            </c:choose>
 											<c:if test="${fn:length(d03Categories)>0}">
 												<ul>
 													<c:forEach var="z" begin="0" end="${fn:length(d03Categories)-1}">
@@ -257,19 +261,695 @@
 					</c:forEach>
 				</ul>
 			</div>
-			<div class="ml-auto searchCon" style="height:50px;">		
-				<%-- <input type="image" src="/edu/images/bm/search_icon.png" id="all_search_label" style="padding:0;" alt="통합검색"> --%>
+			<div class="ml-auto searchCon">
+				<span class="nav_support_box"><a href=""><img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원"></a></span>
+				<span class="nav_my_box"><a href=""><img src="/edu/images/renew2022/my.png" alt="마이페이지"></a></span>
+				&lt;%&ndash; <input type="image" src="/edu/images/bm/search_icon.png" id="all_search_label" style="padding:0;" alt="통합검색"> &ndash;%&gt;
 				<!-- 검색창 -->
 				<span class="show vm tl input_con">
-<%-- 					<form name="frmSearch2" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
+&lt;%&ndash; 					<form name="frmSearch2" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
 						<input type="text" class="q2" name="q" id="q2" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요.">
 						<input type="image" src="/edu/images/bm/search_icon.png" alt="검색 확인" class="all_search_image">
-					</form> --%>
+					</form> &ndash;%&gt;
 				</span>
 				<!-- //검색창 -->
 				<input type="image" src="/edu/img/gnb_icon.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
 				<input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
 			</div>
+		</nav>
+	</div>
+</header>--%>
+
+<header>
+	<div class="container h-100">
+
+		<nav class="navbar navbar-expand-xl">
+			<a href="/" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+				<img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+			</a>
+			<!-- 모바일 햄버거 start -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- 모바일 햄버거 end -->
+
+			<div class="nav_search_box">
+				<input type="text" placeholder="검색어를 입력해주세요.">
+				<button class="nav_search_btn"></button>
+			</div>
+
+			<!-- nav start -->
+			<div class="collapse navbar-collapse" id="main_nav">
+
+				<ul class="navbar-nav">
+					<!-- nav 이벤트 one-daps start -->
+					<li>
+						<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"   >
+							이벤트
+						</a>
+						<!-- nav 이벤트 two-daps start -->
+						<ul>
+							<li>
+								<a href="">
+									참여 이벤트
+								</a>
+							</li>
+							<li>
+								<a href="">
+									추천 강좌
+								</a>
+							</li>
+							<li>
+								<a href="">
+									콘텐츠인사이트
+								</a>
+							</li>
+							<li>
+								<a href="">
+									콘텐츠스텝업
+								</a>
+							</li>
+							<li>
+								<a href="">
+									게임인재원
+								</a>
+							</li>
+							<li>
+								<a href="">
+									게임이해하기
+								</a>
+							</li>
+						</ul>
+						<!-- nav 이벤트 two-daps end -->
+					</li>
+					<!-- nav 이벤트 one-daps end -->
+
+					<!-- nav 카테고리 one-daps start -->
+					<li>
+						<a href="">
+							카테고리
+						</a>
+						<!-- nav 카테고리 two-daps start -->
+						<ul>
+							<li>
+								<a href="">
+									학습로드맵
+								</a>
+							</li>
+							<li>
+								<a href="">
+									방송영상
+								</a>
+							</li>
+							<li>
+								<a href="">
+									게임
+								</a>
+							</li>
+							<li>
+								<a href="">
+									만화,애니,캐릭터
+								</a>
+							</li>
+							<li>
+								<a href="">
+									문화일반
+								</a>
+							</li>
+							<li>
+								<a href="">
+									인문/경영/교양/일반
+								</a>
+							</li>
+						</ul>
+						<!-- nav 카테고리 two-daps end -->
+					</li>
+					<!-- nav 카테고리 one-daps end -->
+
+					<!-- nav 사업안내 one-daps start -->
+					<li>
+						<a href=""   >
+							사업안내
+						</a>
+						<!-- nav 이벤트 two-daps start -->
+						<ul>
+							<li>
+								<a href="">
+									창의인재동반
+								</a>
+							</li>
+							<li>
+								<a href="">
+									실감콘텐츠창작
+								</a>
+							</li>
+							<li>
+								<a href="">
+									AI콘텐츠창작
+								</a>
+							</li>
+							<li>
+								<a href="">
+									콘텐츠원캠퍼스
+								</a>
+							</li>
+							<li>
+								<a href="">
+									콘텐츠임팩트
+								</a>
+							</li>
+							<li>
+								<a href="">
+									콘텐츠인사이트
+								</a>
+							</li>
+						</ul>
+						<!-- nav 사업안내 two-daps end -->
+					</li>
+					<!-- nav 사업안내 one-daps end -->
+
+					<!-- nav 시설안내 one-daps start -->
+					<li>
+						<a href=""   >
+							시설안내
+						</a>
+						<!-- nav 시설안내 two-daps start -->
+						<ul>
+							<li>
+								<a href="">
+									콘텐츠문화광장
+								</a>
+							</li>
+							<li>
+								<a href="">
+									콘텐츠인재캠퍼스
+								</a>
+							</li>
+						</ul>
+						<!-- nav 시설안내 two-daps end -->
+					</li>
+					<!-- nav 시설안내 one-daps end -->
+				</ul>
+
+				<!--
+                renew이전 nav
+                <ul class="navbar-nav">
+
+                    <li>
+                        <a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"   >
+                            온라인교육
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500159"  >
+                                    나의 강의실
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"  >
+                                    정규과정
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/onlineEdu/openLecture/list.do?sortOrder=newOrdr&amp;menuNo=500085"  >
+                                    열린강좌
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157"  >
+                                    테마과정
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/bbs/B0000048/list.do?menuNo=500203"  >
+                                    에듀코카이야기
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500033"  >
+                                    학습지원
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500005"  >
+                                    기업맞춤교육지원
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"   >
+                            오프라인교육
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"  >
+                                    창의인재동반
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500263"  >
+                                    AI 콘텐츠 창작
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500110"  >
+                                    실감 콘텐츠 창작
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500179"  >
+                                    콘텐츠원캠퍼스
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500213"  >
+                                    콘텐츠임팩트
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=13&amp;menuNo=500215"  >
+                                    콘텐츠인사이트
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216"  >
+                                    콘텐츠스텝업
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+
+                        <a href="/testbed/main/main.do?menuNo=500108"   >
+                            교육 인프라
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="/testbed/main/contents.do?menuNo=700101"  >
+                                    콘텐츠문화광장
+                                </a>
+                                <ul>
+                                    <li class="">
+                                        <a	href="/testbed/bbs/B0000061/list.do?menuNo=700112" >
+                                            공지사항
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700101" >
+                                            콘텐츠문화광장 소개
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700103" >
+                                            시설 안내
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700108" >
+                                            대관 안내
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2" >
+                                            대관 현황
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700104" >
+                                            찾아오시는 길
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/bbs/B0000066/list.do?menuNo=700126" >
+                                            자료실
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/testbed/main/contents.do?menuNo=700133"  >
+                                    콘텐츠인재캠퍼스
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/edu/bbs/B0000011/list.do?menuNo=500220"   >
+                            함께 : 톡톡
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="/edu/bbs/B0000011/list.do?menuNo=500008"  >
+                                    공지사항
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/bbs/B0000046/list.do?menuNo=500073"  >
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/bbs/B0000076/list.do?menuNo=500221"  >
+                                    함께 : 톡톡
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1"   >
+                            성과 아카이브
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/edu/archiveUser/list.do?menuNo=500251&amp;workField=1"  >
+                                    주요성과
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1"  >
+                                    콘텐츠 창의인재동반
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500260&amp;workField=3"  >
+                                    콘텐츠 원캠퍼스
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500261&amp;workField=4"  >
+                                    콘텐츠 임팩트
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500262&amp;workField=2"  >
+                                    실감콘텐츠창작
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500264&amp;workField=5"  >
+                                    AI연계콘텐츠창작
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>-->
+			</div>
+			<div class="ml-auto searchCon">
+				<span class="nav_support_box"><a href=""><img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원"></a></span>
+				<span class="nav_my_box"><a href=""><img src="/edu/images/renew2022/my.png" alt="마이페이지"></a></span>
+				<input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
+
+			</div>
+			<!-- pc 햄버거 버튼 눌렀을때 start-->
+			<div class="collapse navbar-collapse" id="main_nav_full">
+
+				<div class="cy_navbar-nav">
+					<a href="/" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+						<img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+					</a>
+					<input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
+					<h2>콘텐츠커리큘럼</h2>
+					<div class="cy_contents_box">
+						<div class="cy_list_box">
+							<h3>방송영상</h3>
+							<ul>
+								<li><a href="">방송영상 기획 Track</a></li>
+								<li><a href="">방송영상 제작(촬영/편집) Track</a></li>
+								<li><a href="">방송영상 비즈니스 Track</a></li>
+								<li><a href="">방송영상 교양 Track</a></li>
+							</ul>
+						</div>
+
+						<div class="cy_list_box">
+							<h3>게임</h3>
+							<ul>
+								<li><a href="">게임 기획 Track</a></li>
+								<li><a href="">게임 제작(그래픽/프로그래밍) Track</a></li>
+								<li><a href="">게임 비즈니스 Track</a></li>
+								<li><a href="">게임 교양 Track</a></li>
+							</ul>
+						</div>
+
+						<div class="cy_list_box">
+							<h3>만화/애니/캐릭터</h3>
+							<ul>
+								<li><a href="">만화/애니/캐릭터 기획 Track</a></li>
+								<li><a href="">만화/애니/캐릭터 제작 Track</a></li>
+								<li><a href="">만화/애니/캐릭터 비즈니스 Track</a></li>
+								<li><a href="">만화/애니/캐릭터 교양 Track</a></li>
+							</ul>
+						</div>
+
+						<div class="cy_list_box">
+							<h3>음악공연/문화일반</h3>
+							<ul>
+								<li><a href="">음악공연/문화일반 기획 Track</a></li>
+								<li><a href="">음악공연/문화일반 제작 Track</a></li>
+								<li><a href="">음악공연/문화일반 비즈니스 Track</a></li>
+								<li><a href="">음악공연/문화일반 교양 Track</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!--
+                renew이전 nav
+                <ul class="navbar-nav">
+
+                    <li>
+                        <a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"   >
+                            온라인교육
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500159"  >
+                                    나의 강의실
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"  >
+                                    정규과정
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/onlineEdu/openLecture/list.do?sortOrder=newOrdr&amp;menuNo=500085"  >
+                                    열린강좌
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157"  >
+                                    테마과정
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/bbs/B0000048/list.do?menuNo=500203"  >
+                                    에듀코카이야기
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500033"  >
+                                    학습지원
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500005"  >
+                                    기업맞춤교육지원
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"   >
+                            오프라인교육
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"  >
+                                    창의인재동반
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500263"  >
+                                    AI 콘텐츠 창작
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500110"  >
+                                    실감 콘텐츠 창작
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500179"  >
+                                    콘텐츠원캠퍼스
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/main/contents.do?menuNo=500213"  >
+                                    콘텐츠임팩트
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=13&amp;menuNo=500215"  >
+                                    콘텐츠인사이트
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216"  >
+                                    콘텐츠스텝업
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+
+                        <a href="/testbed/main/main.do?menuNo=500108"   >
+                            교육 인프라
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="/testbed/main/contents.do?menuNo=700101"  >
+                                    콘텐츠문화광장
+                                </a>
+                                <ul>
+                                    <li class="">
+                                        <a	href="/testbed/bbs/B0000061/list.do?menuNo=700112" >
+                                            공지사항
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700101" >
+                                            콘텐츠문화광장 소개
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700103" >
+                                            시설 안내
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700108" >
+                                            대관 안내
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2" >
+                                            대관 현황
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/main/contents.do?menuNo=700104" >
+                                            찾아오시는 길
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a	href="/testbed/bbs/B0000066/list.do?menuNo=700126" >
+                                            자료실
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/testbed/main/contents.do?menuNo=700133"  >
+                                    콘텐츠인재캠퍼스
+                                </a>
+                                <ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/edu/bbs/B0000011/list.do?menuNo=500220"   >
+                            함께 : 톡톡
+                        </a>
+                        <ul>
+
+                            <li>
+                                <a href="/edu/bbs/B0000011/list.do?menuNo=500008"  >
+                                    공지사항
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/bbs/B0000046/list.do?menuNo=500073"  >
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/bbs/B0000076/list.do?menuNo=500221"  >
+                                    함께 : 톡톡
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1"   >
+                            성과 아카이브
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="/edu/archiveUser/list.do?menuNo=500251&amp;workField=1"  >
+                                    주요성과
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1"  >
+                                    콘텐츠 창의인재동반
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500260&amp;workField=3"  >
+                                    콘텐츠 원캠퍼스
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500261&amp;workField=4"  >
+                                    콘텐츠 임팩트
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500262&amp;workField=2"  >
+                                    실감콘텐츠창작
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/edu/archiveUser/contentsList.do?menuNo=500264&amp;workField=5"  >
+                                    AI연계콘텐츠창작
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>-->
+			</div>
+			<!-- pc 햄버거 버튼 눌렀을때 end -->
 		</nav>
 	</div>
 </header>

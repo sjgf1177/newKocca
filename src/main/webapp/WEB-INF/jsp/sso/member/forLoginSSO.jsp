@@ -438,7 +438,6 @@
 			<div id="naver_id_login" style="display: none;"></div>
 		</div>
 	</div>
-	
 	<%} %>
 </body>
 </html>

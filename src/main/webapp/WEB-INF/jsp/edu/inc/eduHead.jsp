@@ -42,9 +42,8 @@
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/main.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_layout.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_page.css"/>
-	
-
 	<link rel="stylesheet" type="text/css" href="/js/jquery-ui/jquery-ui.css" />
+
 	<c:if test="${param.menuNo  eq '500034' || param.menuNo  eq '500046'}">
 		<link rel="stylesheet" type="text/css" href="/edu/css/submain.css" />
 	</c:if>
@@ -96,6 +95,35 @@
 	<script type="text/javascript" src="/edu/js/new/subjs.js"></script>
 	
 	<script type="text/javascript" src="/edu/js/new/mainHeader.js"></script>
+
+	<!-- renew2022 CSS start -->
+	<link rel="stylesheet" href="/edu/js/bm/swiper/swiper.min.css"/>
+	<!-- Link Swiper's 8.4.2 CSS -->
+	<%--<link rel="stylesheet"  href="https://unpkg.com/swiper/swiper-bundle.min.css"/>--%>
+
+
+	<link rel="stylesheet" href="/edu/css/renew2022/assets/plugins/animation/css/animate.min.css">
+	<link rel="stylesheet" href="/edu/css/renew2022/assets/css/style.css">
+	<link rel="stylesheet" href="/edu/css/renew2022/renew.css">
+	<!-- renew2022 CSS end -->
+
+	<!-- renew2022 JavaScript start -->
+	<script type="text/javascript" src="/edu/js/bm/swiper/swiper.min.js"></script>
+	<script src="/edu/css/renew2022/renew.js"></script>
+	<!-- Required Js -->
+	<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
+	<script src="/edu/css/renew2022/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>
+
+	<!-- sweet alert Js -->
+	<script src="/edu/css/renew2022/assets/plugins/sweetalert/js/sweetalert.min.js"></script>
+	<!-- Swiper8.4.2 JS -->
+	<%--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>--%>
+	<script src="/edu/css/renew2022/assets/js/pages/ac-alert.js"></script>
+	<!-- 챗봇js-->
+	<script id="happytalkSDK" src="https://design.happytalkio.com/sdk/happytalk.chat.v2.min.js"></script>
+
+	<!-- renew2022 JavaScript end -->
 	
 <!-- 끝 -->
 

@@ -58,254 +58,274 @@
 <%--<jsp:include page="/WEB-INF/jsp/edu/onlineEdu/realm/eduStep.jsp" flush="true" />--%>
 <!-- step 영역 e -->
 
-<p class="online_edu_card_view_title">과정정보</p>
-
-<div class="mb20 alert big_box type_1 pb_30" style="overflow:hidden;">
-	<p class="fl alert_title" style="margin:0;">
-  		${view.subjnm}
-		<c:if test="${not empty view.lvnm}">
-			<c:choose>
-				<c:when test="${view.lvcd eq 'L0101' or view.lvcd eq 'L0201'}">
-					<span class="tag L1">${view.lvnm}</span>
-				</c:when>
-				<c:when test="${view.lvcd eq 'L0102' or view.lvcd eq 'L0202'}">
-					<span class="tag L2">${view.lvnm}</span>
-				</c:when>
-				<c:when test="${view.lvcd eq 'L0103' or view.lvcd eq 'L0203'}">
-					<span class="tag L3">${view.lvnm}</span>
-				</c:when>								
-			</c:choose>
-		</c:if>
-	</p>
-	
-	<span class="gray_txt view">
-		<c:if test="${not empty view.g1nm}">
-			${view.g1nm}
-		</c:if>
-		<c:if test="${not empty view.g2nm}">
-			> ${view.g2nm}
-		</c:if>
-		<c:if test="${not empty view.g3nm}">
-			> ${view.g3nm}
-		</c:if>
-	</span>
-</div>
-
-<div class="col-12 online_edu_card_view_wrap">
-<!-- 	<img src="/edu/images/edupro/030205_bx.gif" alt="" class="fl mr30" /> -->
-	
-	<% pageContext.setAttribute("crlf", "\\"); %>
-	<div class="img_box">
-		<c:choose>
-			<c:when test="${view.introducefilenamenew != null and view.introducefilenamenew != '' }">
-				<img alt="${view.subjnm }" src="<c:out value="${fn:replace(view.introducefilenamenew, crlf, '/') }" />" width="260px;" height="206px;" />
-			</c:when>
-			<c:otherwise>
-				<img alt="${view.subjnm }" src="/edu/images/edupro/stepsub-03.png" width="260px;" height="206px;"  />
-			</c:otherwise>
-		</c:choose>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>방송영상</span></a></li>
+		</ul>
 	</div>
-	
-	<div class="info_box">
-		<div class="sub_board_body">
-			<table class="contents_insight_view style_2">
-				<caption>과정정보</caption>
-				<colgroup>
-					<col width="20%">
-					<col width="auto">
-				</colgroup>
-				<tbody>
-				<tr>
-					<th>신청기간</th>
-					<td class="color_gray">상시</td>
-				</tr>
-				<tr>
-					<th>학습기간</th>
-					<td class="color_gray">신청일로 부터 30 일</td>
-				</tr>
-				<tr>
-					<th>복습기간</th>
-					<td class="color_gray">1개월</td>
-				</tr>
-				<tr>
-					<th>교육비</th>
-					<td class="color_gray">무료</td>
-				</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<%-- <dl>
-		<dt>${view.subjnm }</dt>
-		<dd class="hrBg">
-			<div class="coment">이런 분들에게 추천합니다.</div>
-			<div class="btnEdus">
-				<a href="javascript:void(0);" onclick="fnCmdLrnAction('${view.year}', '', '', '', '${view.contenttype }', '${view.subj }', '${view.subjseq }', '', '${view.subjnm }'); return false;"><img src="/edu/images/edupro/btnEdus.gif" alt="${view.subjnm } 과정 학습하기"></a>
-			</div>
-		</dd>
-	</dl> --%>
-<!-- <div class="btnEdus"><a href="#self"><img src="/edu/images/edupro/btnEdus.gif" alt="" /></a></div> -->
-
 </div>
+<div class="sub_title s_tit02 col-center mw-1280 mg_b0">정규과정</div>
 
-<div class="col-12 mt15 mb65 board_util_btn_con">
-<%-- 	<a href="javascript:void(0);" class="fl btn_style_0 green edu_prev_view online_edu" onclick="window.open('${view.preurl }', '강의 미리보기 ${view.subjseq }', 'top=50px, left=50px, width=${view.prewidth }, height=${view.preheight }')"> --%>
-	<c:if test='${view.preurl != null }'>
-		<a href="javascript:openWindowPopup('${view.preurl }', '강의 미리보기', '${view.prewidth }', '${view.preheight }');" class="fl btn_style_0 green edu_prev_view online_edu" title="새창열림">
-			강의 미리보기
-		</a>
-	</c:if>
-	
-							<a href="javascript:void(0);" class="btn_style_0 blue edit online_edu img_left" onclick="fnCmdLrnAction('${view.year}', '', '', '', '${view.contenttype }', '${view.subj }', '${view.subjseq }', '', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
-							학습하기
-						</a>
-
-<%-- 	<c:set var="done_loop" value="false" />
-	<c:forEach items="${lessonList }" var="item" varStatus="status">
-		<c:if test="${done_loop ne true }">
-			<c:if test="${empty item.firstedu }">
+<!-- 과정 상세정보 -->
+<div class="lecture_info_box">
+	<div class="col-center mw-1280">
+	<div class="mb20 alert big_box type_1 pb_30" style="overflow:hidden;">
+		<p class="fl alert_title" style="margin:0;">
+			${view.subjnm}
+			<c:if test="${not empty view.lvnm}">
 				<c:choose>
-					<c:when test="${status.first }">
-						<a href="javascript:void(0);" class="btn_style_0 blue edit online_edu img_left" onclick="fnCmdLrnAction('${view.year}', '', '', '', '${view.contenttype }', '${view.subj }', '${view.subjseq }', '', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
-							학습하기
-						</a>
+					<c:when test="${view.lvcd eq 'L0101' or view.lvcd eq 'L0201'}">
+						<span class="tag L1">${view.lvnm}</span>
 					</c:when>
-					<c:otherwise>
+					<c:when test="${view.lvcd eq 'L0102' or view.lvcd eq 'L0202'}">
+						<span class="tag L2">${view.lvnm}</span>
+					</c:when>
+					<c:when test="${view.lvcd eq 'L0103' or view.lvcd eq 'L0203'}">
+						<span class="tag L3">${view.lvnm}</span>
+					</c:when>
+				</c:choose>
+			</c:if>
+		</p>
+
+		<span class="gray_txt view">
+			<c:if test="${not empty view.g1nm}">
+				${view.g1nm}
+			</c:if>
+			<c:if test="${not empty view.g2nm}">
+				> ${view.g2nm}
+			</c:if>
+			<c:if test="${not empty view.g3nm}">
+				> ${view.g3nm}
+			</c:if>
+		</span>
+	</div>
+
+	<div class="col-12 online_edu_card_view_wrap">
+	<!-- 	<img src="/edu/images/edupro/030205_bx.gif" alt="" class="fl mr30" /> -->
+
+		<% pageContext.setAttribute("crlf", "\\"); %>
+		<div class="img_box">
+			<c:choose>
+				<c:when test="${view.introducefilenamenew != null and view.introducefilenamenew != '' }">
+					<%--<img alt="${view.subjnm }" src="<c:out value="${fn:replace(view.introducefilenamenew, crlf, '/') }" />" width="381px;" height="247px;" />--%>
+					<img alt="${view.subjnm }" src="/edu/images/renew2022/table_tnail01.png" width="381px;" height="247px;" />
+				</c:when>
+				<c:otherwise>
+					<img alt="${view.subjnm }" src="/edu/images/edupro/stepsub-03.png" width="381px;" height="247px;"  />
+				</c:otherwise>
+			</c:choose>
+		</div>
+
+		<div class="info_box">
+			<div class="sub_board_body">
+				<table class="contents_insight_view style_2">
+					<caption>과정정보</caption>
+					<colgroup>
+						<col width="20%">
+						<col width="auto">
+					</colgroup>
+					<tbody>
+					<tr>
+						<th>신청기간</th>
+						<td class="color_gray">상시</td>
+					</tr>
+					<tr>
+						<th>학습기간</th>
+						<td class="color_gray">신청일로 부터 30 일</td>
+					</tr>
+					<tr>
+						<th>복습기간</th>
+						<td class="color_gray">1개월</td>
+					</tr>
+					<tr>
+						<th>교육비</th>
+						<td class="color_gray">무료</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<%-- <dl>
+			<dt>${view.subjnm }</dt>
+			<dd class="hrBg">
+				<div class="coment">이런 분들에게 추천합니다.</div>
+				<div class="btnEdus">
+					<a href="javascript:void(0);" onclick="fnCmdLrnAction('${view.year}', '', '', '', '${view.contenttype }', '${view.subj }', '${view.subjseq }', '', '${view.subjnm }'); return false;"><img src="/edu/images/edupro/btnEdus.gif" alt="${view.subjnm } 과정 학습하기"></a>
+				</div>
+			</dd>
+		</dl> --%>
+	<!-- <div class="btnEdus"><a href="#self"><img src="/edu/images/edupro/btnEdus.gif" alt="" /></a></div> -->
+
+	</div>
+
+	<div class="col-12 mt15 board_util_btn_con">
+	<%-- 	<a href="javascript:void(0);" class="fl btn_style_0 green edu_prev_view online_edu" onclick="window.open('${view.preurl }', '강의 미리보기 ${view.subjseq }', 'top=50px, left=50px, width=${view.prewidth }, height=${view.preheight }')"> --%>
+		<c:if test='${view.preurl != null }'>
+			<a href="javascript:openWindowPopup('${view.preurl }', '강의 미리보기', '${view.prewidth }', '${view.preheight }');" class="fl btn_style_0 green edu_prev_view online_edu" title="새창열림">
+				강의 미리보기
+			</a>
+		</c:if>
+
+		<span>
+			<a href="javascript:void(0);" class="btn_style_0 blue edit online_edu" onclick="fnCmdLrnAction('${view.year}', '', '', '', '${view.contenttype }', '${view.subj }', '${view.subjseq }', '', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
+				학습하기
+			</a>
+
+			<%-- 	<c:set var="done_loop" value="false" />
+				<c:forEach items="${lessonList }" var="item" varStatus="status">
+					<c:if test="${done_loop ne true }">
+						<c:if test="${empty item.firstedu }">
+							<c:choose>
+								<c:when test="${status.first }">
+									<a href="javascript:void(0);" class="btn_style_0 blue edit online_edu img_left" onclick="fnCmdLrnAction('${view.year}', '', '', '', '${view.contenttype }', '${view.subj }', '${view.subjseq }', '', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
+										학습하기
+									</a>
+								</c:when>
+								<c:otherwise>
+									<a href="javascript:void(0);" class="btn_style_0 blue edit online_edu img_left" onclick="fnCmdLrnAction('${view.year}','','','${view.company }','${view.contenttype }','${view.subj }','${view.subjseq }', '${item.lesson }', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
+										학습하기
+									</a>
+								</c:otherwise>
+							</c:choose>
+							<c:set var="done_loop" value="true" />
+						</c:if>
+					</c:if>
+
+					<c:if test="${status.last && done_loop ne true}">
 						<a href="javascript:void(0);" class="btn_style_0 blue edit online_edu img_left" onclick="fnCmdLrnAction('${view.year}','','','${view.company }','${view.contenttype }','${view.subj }','${view.subjseq }', '${item.lesson }', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
 							학습하기
-						</a>					
-					</c:otherwise>
-				</c:choose>
-				<c:set var="done_loop" value="true" />
-			</c:if>
-		</c:if>
-		
-		<c:if test="${status.last && done_loop ne true}">
-			<a href="javascript:void(0);" class="btn_style_0 blue edit online_edu img_left" onclick="fnCmdLrnAction('${view.year}','','','${view.company }','${view.contenttype }','${view.subj }','${view.subjseq }', '${item.lesson }', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
-				학습하기
-			</a>	
-		</c:if>
-	</c:forEach> --%>
+						</a>
+					</c:if>
+				</c:forEach> --%>
 
-	<a href="javascript:void(0);" class="btn_style_0 gray online_edu" onclick="fnCmdSearchList('${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }', '${param.p_ordersnm }', '${param.p_orders }'); return false;">
-		다른 과정 보기
-	</a>
-	
-	
+			<a href="javascript:void(0);" class="btn_style_0 gray online_edu" onclick="fnCmdSearchList('${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }', '${param.p_ordersnm }', '${param.p_orders }'); return false;">
+				다른 과정 보기
+			</a>
+		</span>
+
+
+	</div>
+	</div>
 </div>
 
-<p class="col-12 online_edu_card_view_title">
-	과정소개
-</p>
-<div class="col-12 mb70 sub_board_body">
-	<table class="contents_insight_view style_2">
-		<caption>과정소개</caption>
-		<colgroup>
-			<col width="20%">
-			<col width="auto">
-		</colgroup>
-		<tbody>
-		<tr>
-			<th>교육대상</th>
-			<td class="color_gray">
-				<c:set var="arrayofedumans" value="${fn:split(view.edumans,'-')}"/>
-				<c:forEach var="i" begin="0" end="${fn:length(arrayofedumans)-1 }">
-					<div>${arrayofedumans[i] }</div>
-				</c:forEach>
-			</td>
-		</tr>
-		<c:if test="${fn:length(view.tutor) > 0 }">
-		<tr>
-			<th>강사명</th>
-			<td class="color_gray">
-				<div>${view.tutor }</div>
-			</td>
-		</tr>
-		</c:if>
-		<tr>
-			<th>교육목표</th>
-			<td class="color_gray">
-				<c:set var="arrayofsubjintro" value="${fn:split(view.intro,'-')}"/>
-				<c:forEach var="i" begin="0" end="${fn:length(arrayofsubjintro) }">
-					<div>
-						<c:out value="${arrayofsubjintro[i] }" />
-					</div>
-				</c:forEach>
-			</td>
-		</tr>
-		<tr>
-			<th>교육내용</th>
-			<td class="color_gray">
-				<c:set var="arrayofsubjexplain" value="${fn:split(view.explain,'-')}"/>
-				<c:forEach var="i" begin="0" end="${fn:length(arrayofsubjexplain) }">
-					<div>${arrayofsubjexplain[i] }</div>
-				</c:forEach>
-			</td>
-		</tr>
-		<c:if test="${view.memo != null }">
+
+<!-- 과정소개 -->
+<div class="col-center mw-1280">
+	<p class="col-12 online_edu_card_view_title">과정소개</p>
+	<div class="col-12 mb70 sub_board_body">
+		<table class="contents_insight_view style_2">
+			<caption>과정소개</caption>
+			<colgroup>
+				<col width="20%">
+				<col width="auto">
+			</colgroup>
+			<tbody>
 			<tr>
-				<th>참고문헌</th>
+				<th>교육대상</th>
 				<td class="color_gray">
-					<c:set var="arrayofsubjmemo" value="${fn:split(view.memo,'-')}"/>
-					<c:forEach var="i" begin="0" end="${fn:length(arrayofsubjmemo) }">
-						<div>${arrayofsubjmemo[i] }</div>
+					<c:set var="arrayofedumans" value="${fn:split(view.edumans,'-')}"/>
+					<c:forEach var="i" begin="0" end="${fn:length(arrayofedumans)-1 }">
+						<div>${arrayofedumans[i] }</div>
 					</c:forEach>
 				</td>
 			</tr>
-		</c:if>
-		</tbody>
-	</table>
+			<c:if test="${fn:length(view.tutor) > 0 }">
+			<tr>
+				<th>강사명</th>
+				<td class="color_gray">
+					<div>${view.tutor }</div>
+				</td>
+			</tr>
+			</c:if>
+			<tr>
+				<th>교육목표</th>
+				<td class="color_gray">
+					<c:set var="arrayofsubjintro" value="${fn:split(view.intro,'-')}"/>
+					<c:forEach var="i" begin="0" end="${fn:length(arrayofsubjintro) }">
+						<div>
+							<c:out value="${arrayofsubjintro[i] }" />
+						</div>
+					</c:forEach>
+				</td>
+			</tr>
+			<tr>
+				<th>교육내용</th>
+				<td class="color_gray">
+					<c:set var="arrayofsubjexplain" value="${fn:split(view.explain,'-')}"/>
+					<c:forEach var="i" begin="0" end="${fn:length(arrayofsubjexplain) }">
+						<div>${arrayofsubjexplain[i] }</div>
+					</c:forEach>
+				</td>
+			</tr>
+			<c:if test="${view.memo != null }">
+				<tr>
+					<th>참고문헌</th>
+					<td class="color_gray">
+						<c:set var="arrayofsubjmemo" value="${fn:split(view.memo,'-')}"/>
+						<c:forEach var="i" begin="0" end="${fn:length(arrayofsubjmemo) }">
+							<div>${arrayofsubjmemo[i] }</div>
+						</c:forEach>
+					</td>
+				</tr>
+			</c:if>
+			</tbody>
+		</table>
+	</div>
 </div>
 <%-- 
 미리보기 URL: ${view.preurl }<br/>
 미리보기 창 가로 사이즈 : ${view.prewidth }<br/>
 미리보기 창 세로사이즈 : ${view.preheight }<br/> --%>
 
-
-<p class="col-12 online_edu_card_view_title">차시리스트</p>
-
-<div class="col-12 mb70 sub_board_body">
-	<table class="board_type_0 online_edu">
-		<caption>차시리스트 목록(차시, 강의주제로 구분되는 표)</caption>
-		<colgroup>
-		<col style="width:10%;" />
-		<col  />
-		<col style="width:100px;" />
-		</colgroup>
-		<thead>
-			<tr>
-				<th scope="col">차시</th>
-				<th scope="col" colspan="2">강의주제</th>
-			</tr>
-		</thead>
-		<tbody>
-		
-			<!-- 차시 목록 s -->
-			<c:forEach items="${lessonList }" var="item" varStatus="status">
+<!-- 차시리스트 -->
+<div class="col-center mw-1280">
+	<p class="col-12 online_edu_card_view_title">차시리스트</p>
+	<div class="col-12 mb70 sub_board_body">
+		<table class="board_type_0 online_edu">
+			<caption>차시리스트 목록(차시, 강의주제로 구분되는 표)</caption>
+			<colgroup>
+			<col style="width:20%;" />
+			<col  />
+			<col style="width:100px;" />
+			</colgroup>
+			<thead>
 				<tr>
-					<td>${item.lesson }</td>
-					<td class="contents_text">${item.sdesc }</td>
-					<td>
-						<div class="board_util_btn_con center">
-							<c:choose>
-								<c:when test="${empty item.firstedu }">
-									<a href="javascript:void(0);" class="btn_style_0 end_online_edu_edu" onclick="fnCmdLrnAction('${view.year}','','','${view.company }','${view.contenttype }','${view.subj }','${view.subjseq }', '${item.lesson }', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
-										학습하기
-									</a>
-								</c:when>
-								<c:otherwise>
-									<a href="javascript:void(0);" class="btn_style_0 end_online_edu_edu end_btn" onclick="fnCmdLrnAction('${view.year}','','','${view.company }','${view.contenttype }','${view.subj }','${view.subjseq }', '${item.lesson }', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
-										<span class="end_online_edu_edu">학습완료</span>
-									</a>
-								</c:otherwise>
-							</c:choose>
-						</div>
-					</td>
+					<th scope="col">차시</th>
+					<th scope="col" colspan="2">강의주제</th>
 				</tr>
-			</c:forEach>
-			<!-- 차시 목록 e -->
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+
+				<!-- 차시 목록 s -->
+				<c:forEach items="${lessonList }" var="item" varStatus="status">
+					<tr>
+						<td>${item.lesson }</td>
+						<td class="contents_text">${item.sdesc }</td>
+						<td>
+							<div class="board_util_btn_con center">
+								<c:choose>
+									<c:when test="${empty item.firstedu }">
+										<a href="javascript:void(0);" class="btn_style_0 end_online_edu_edu" onclick="fnCmdLrnAction('${view.year}','','','${view.company }','${view.contenttype }','${view.subj }','${view.subjseq }', '${item.lesson }', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
+											학습하기
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a href="javascript:void(0);" class="btn_style_0 end_online_edu_edu end_btn" onclick="fnCmdLrnAction('${view.year}','','','${view.company }','${view.contenttype }','${view.subj }','${view.subjseq }', '${item.lesson }', '${view.subjnm }', '${param.p_scupperclass }'); return false;">
+											<span class="end_online_edu_edu">학습완료</span>
+										</a>
+									</c:otherwise>
+								</c:choose>
+							</div>
+						</td>
+					</tr>
+				</c:forEach>
+				<!-- 차시 목록 e -->
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <%-- <c:if test="${view.memo ne null and view.memo ne '' }">
@@ -380,6 +400,187 @@
 </c:forEach>
 --%>
 
+<!-- 참여 강사 정보-->
+<div class="col-center mw-1280">
+	<p class="col-12 online_edu_card_view_title">참여 강사 정보</p>
+	<ul class="col-12 mb70 teach_table_box">
+		<li>
+			<table class="contents_insight_view style_2">
+				<caption>참여 강사 정보</caption>
+				<colgroup>
+					<col width="10%">
+					<col width="auto">
+				</colgroup>
+				<tbody>
+				<tr>
+					<th><div><img src="" alt=""></div></th>
+					<td class="color_gray">
+						<p class="teach_name">강사이름</p>
+						<p class="teach_intr">강사 소개글 2줄</p>
+						<p class="teach_port">강사의 이력</p>
+						<p class="teach_port">강사의 이력</p>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</li>
+		<li>
+			<table class="contents_insight_view style_2">
+				<caption>참여 강사 정보</caption>
+				<colgroup>
+					<col width="10%">
+					<col width="auto">
+				</colgroup>
+				<tbody>
+				<tr>
+					<th><div><img src="" alt=""></div></th>
+					<td class="color_gray">
+						<p class="teach_name">강사이름</p>
+						<p class="teach_intr">강사 소개글 2줄</p>
+						<p class="teach_port">강사의 이력</p>
+						<p class="teach_port">강사의 이력</p>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</li>
+	</ul>
+</div>
+
+<!-- 연계과정 html -->
+<div class="fwo_card_list_box fwo_card01 col-center mw-1280">
+	<span class="main_title">연계과정</span>
+	<div class="fwo_card swiper-container swiper-container-horizontal">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide swiper-slide-active" style="width: 305px; margin-right: 20px;">
+				<!-- 썸네일 start -->
+				<div class="fwo_snail_box">
+					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+					<!-- 설명란 start-->
+					<div class="fwo_info_box">
+						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+						<span class="tag L1">초급</span>
+						<p>온라인교육ㆍ유통</p>
+						<a href="" class="go_page_a"></a>
+						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+					</div>
+					<!-- 설명란 start-->
+
+				</div>
+				<!-- 썸네일 end -->
+
+			</li>
+
+			<li class="swiper-slide swiper-slide-next" style="width: 305px; margin-right: 20px;">
+				<!-- 썸네일 start -->
+				<div class="fwo_snail_box">
+					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+					<!-- 설명란 start-->
+					<div class="fwo_info_box">
+						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+						<span class="tag L1">초급</span>
+						<p>온라인교육ㆍ유통</p>
+						<a href="" class="go_page_a"></a>
+						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+					</div>
+					<!-- 설명란 start-->
+
+				</div>
+				<!-- 썸네일 end -->
+
+			</li>
+
+			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
+				<!-- 썸네일 start -->
+				<div class="fwo_snail_box">
+					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+					<!-- 설명란 start-->
+					<div class="fwo_info_box">
+						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+						<span class="tag L1">초급</span>
+						<p>온라인교육ㆍ유통</p>
+						<a href="" class="go_page_a"></a>
+						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+					</div>
+					<!-- 설명란 start-->
+
+				</div>
+				<!-- 썸네일 end -->
+
+			</li>
+
+			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
+				<!-- 썸네일 start -->
+				<div class="fwo_snail_box">
+					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+					<!-- 설명란 start-->
+					<div class="fwo_info_box">
+						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+						<span class="tag L1">초급</span>
+						<p>온라인교육ㆍ유통</p>
+						<a href="" class="go_page_a"></a>
+						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+					</div>
+					<!-- 설명란 start-->
+
+				</div>
+				<!-- 썸네일 end -->
+
+			</li>
+
+			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
+				<!-- 썸네일 start -->
+				<div class="fwo_snail_box">
+					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+					<!-- 설명란 start-->
+					<div class="fwo_info_box">
+						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+						<span class="tag L1">초급</span>
+						<p>온라인교육ㆍ유통</p>
+						<a href="" class="go_page_a"></a>
+						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+					</div>
+					<!-- 설명란 start-->
+
+				</div>
+				<!-- 썸네일 end -->
+
+			</li>
+
+			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
+				<!-- 썸네일 start -->
+				<div class="fwo_snail_box">
+					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+
+					<!-- 설명란 start-->
+					<div class="fwo_info_box">
+						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
+						<span class="tag L1">초급</span>
+						<p>온라인교육ㆍ유통</p>
+						<a href="" class="go_page_a"></a>
+						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+					</div>
+					<!-- 설명란 start-->
+
+				</div>
+				<!-- 썸네일 end -->
+
+			</li>
+		</ul>
+
+	</div>
+	<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+	<div class="swiper_btn_box">
+		<div class="swiper-button-prev swiper-button-disabled"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+
+</div>
 
 <!-- 이 부분이 viewEdu.jsp 제일 하단 부분에 들어가야 함 -->
 <c:if test="${nextProposeSubjList ne null and nextProposeSubjList.size() > 0 }">
@@ -612,8 +813,7 @@
 	
 	//학습하기
 	function fnCmdLrnAction(year, cpsubj, cpsubjseq, company, contenttype, subj, subjseq, lesson, subjnm, upperclass){
-		
-		
+
 		var msg = "";
 		
 		if(lesson != ""){
