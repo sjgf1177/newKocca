@@ -100,6 +100,7 @@
 /************************************ 2022 renew ************************************/
 
 h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'Pretendard', sans-serif !important;}
+.txt_ct{text-align: center !important;}
 /**** 공통 ****/
 /*#wrap{height: 100%;}*/
 .wrapper, .contents_section{padding-top: 70px;}
@@ -108,13 +109,17 @@ h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'Pretendard', sans-serif !
 #footer .container{display: flex;}
 #footer > div:first-child ul:first-child li{font-size: 16px;}
 #footer > div:first-child span:nth-child(2), #footer > div:first-child ul:nth-child(3) li{font-size: 14px;}
+.tit_row1{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 1; -webkit-box-orient: vertical; word-break: break-all;}
+.tit_row2{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-all;}
+.tit_row3{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: break-all;}
+
 
 @media (max-width:640px) {
     #footer .container{display: block;}
+
     #footer > div:first-child ul:first-child li:first-child a,
     #footer > div:first-child ul:first-child li,
     #footer > div > div:first-child ul:nth-child(3) li:nth-child(4){font-size: 12px;}
-
     #footer > div > div:first-child span:nth-child(2),
     #footer > div > div:first-child ul:nth-child(3) li:nth-child(1),
     #footer > div > div:first-child ul:nth-child(3) li:nth-child(2),
@@ -389,7 +394,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .fwo_card_list_box .swiper-slide a img{width: 100%; height:auto;}
 .fwo_info_box{position: absolute; top: 88%; width: 100%; padding: 25px 36px 23px 20px; border: 1px solid #EEEEEE;background-color: #fff; border-radius: 32px;}
 .fwo_info_box button.fwo_like_box{position: absolute; top: -23px; right: 20px; background-color: transparent;}
-.fwo_info_box .fwo_tit_box a{display:-webkit-box; width:100%; height:60px; margin-bottom:0px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-all;}
+.fwo_info_box .fwo_tit_box{display:-webkit-box; width:100%; height:55px; margin-bottom:20px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-all;}
 .fwo_info_box p{font-size: 12px; color: #666666;}
 .fwo_card_list_box .go_page_a{width: 100%; height: 100%; display: inline-block; position: absolute; top: 0; left: 0;}
 .fwo_card_list_box .swiper_btn_box{position: absolute; top: 0; right: 0; display: flex; width: 108px; justify-content: space-between;}
@@ -417,7 +422,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .fwo_card_list_box .fwo_info_box .fwo_tit_box{margin-bottom: 20px; font-size: 1.4rem; line-height: 2rem; margin-top: 0 !important;}
     .photoGallery2 h3 a span{font-size: 1.4rem;}
     .fwo_card_list_box .fwo_info_box{padding: 25px 10px 20px 20px;}
-    .fwo_card_list_box .fwo_info_box .fwo_tit_box a{height: 40px;}
+    .fwo_card_list_box .fwo_info_box .fwo_tit_box{height: 40px;}
     .fwo_card_list_box .swiper_btn_box{right: 20px;}
     .control_board_header .relation_site{height: 100%;}
     .board_sorting_con .input_search_con{width: 69%;}
@@ -667,8 +672,8 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 /* 정규과정 상세 */
 /*.lecture_info_box:before{content: ""; position: fixed; top: 220px; left: 0; width: 100%; height: 500px; background-color: #222;}*/
 .lecture_info_box{background-color: #222222; margin-bottom: 70px;}
-.lecture_info_box .alert.big_box.type_1{background-color: transparent; border: none; padding: 35px 0 15px 0;}
-.lecture_info_box .alert.big_box.type_1 .alert_title{font-size: 33px; color:#fff;}
+.lecture_info_box .alert.big_box.type_1{background-color: transparent; border: none; padding: 35px 0 30px 0;}
+.lecture_info_box .alert.big_box.type_1 .alert_title{font-size: 33px; color:#fff; line-height: 40px;}
 .lecture_info_box .online_edu_card_view_wrap{height: 247px;}
 .lecture_info_box .online_edu_card_view_wrap .img_box{width: 381px; height: 247px;}
 .lecture_info_box .online_edu_card_view_wrap .info_box, .online_edu_card_view_wrap .info_box .sub_board_body, .sub_section .sub_contents_body table.contents_insight_view{height: 100%; border:none;}
@@ -718,8 +723,8 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 @media all and (max-width:640px) {
     .lecture_info_box{margin-bottom: 60px;}
     .lecture_info_box .alert.big_box.type_1{padding:15px 0 30px 0;}
-    .lecture_info_box .alert.big_box.type_1 .alert_title{font-size: 2.5rem; line-height: 3rem; height: 60px;}
-    .lecture_info_box [class*="tag"]{position: absolute; bottom: 0; left: 0; margin-bottom: 0; width: 45px; height: 25px; font-size: 1.2rem; line-height: 9px;}
+    .lecture_info_box .alert.big_box.type_1 .alert_title{font-size: 2.5rem; line-height: 3rem;}
+    .lecture_info_box [class*="tag"]{width: 45px; height: 25px; font-size: 1.2rem; line-height: 9px;}
     .lecture_info_box .gray_txt.view{bottom: 5px;}
     .lecture_info_box .online_edu_card_view_wrap{flex-wrap: wrap;}
     .sub_section .sub_contents_body table.contents_insight_view.style_2 th, .sub_section .sub_contents_body table.contents_insight_view td{font-size: 1.5rem;}
@@ -735,7 +740,70 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
     .lecture_info_box .board_util_btn_con .btn_style_0.edu_prev_view{background-size: 32px; background-position: left 105px center;}
     .lecture_info_box .board_util_btn_con .btn_style_0.edit, .lecture_info_box .board_util_btn_con .btn_style_0.gray, .lecture_info_box .board_util_btn_con .btn_style_0.edu_prev_view{height: 40px; line-height: 24px; font-size: 1.6rem;}
 }
-    /*******************************************************  콘텐츠문화광장 *********************************************************/
+
+/* 열린강좌 */
+    .control_board_style2.control_board_header .board_sorting_con{display: flex; width: calc(100% - 50px);}
+    .control_board_style2.control_board_header .mo-ta_lt .relation_site{width: 45%; text-align: left;}
+    .control_board_style2.control_board_header .board_sorting_con .input_search_con{width: 100%;}
+
+@media all and (max-width:1280px) {
+    .control_board_style2.control_board_header .board_sorting_con{width: calc(100% - 1.6%);}
+    .control_board_style2.control_board_header .board_sorting_con .input_search_con{width: 100%; height: 100%;}
+    .control_board_style2.control_board_header .close_block_btn{top: -130px; right: 0;}
+    .control_board_style2.control_board_header .filter_btn{right: 0;}
+}
+@media all and (max-width:780px) {}
+@media all and (max-width:640px) {}
+
+/* 열린강좌 상세 */
+.lecture_info_box.style_2{background-color: transparent;}
+.lecture_info_box.style_2 .mw-1280{padding: 0 20px; background-color: #222;}
+.lecture_info_box.style_2 .alert.big_box.type_1 .alert_title{line-height: 45px;}
+.openlecture_text_box{margin-bottom: 50px;}
+.mw-1280 .openlecture_text_box {border-top: 2px solid #707070; background-color: #f8f8f8;}
+.openlecture_text_box .openlecture_text_box_header{background-color: transparent; color: #222; border: none; font-size: 18px;}
+.openlecture_text_box .openlecture_text_box_contents{background-color: transparent; border: none; font-size: 16px;}
+
+@media all and (max-width:1280px) {
+
+}
+@media all and (max-width:780px) {}
+@media all and (max-width:640px) {
+    .lecture_info_box.style_2 .alert.big_box.type_1 .alert_title{line-height: 30px;}
+    .openlecture_text_box .openlecture_text_box_header{font-size: 15px;}
+    .openlecture_text_box .openlecture_text_box_contents{font-size: 15px;}
+}
+
+/* 공지사항 */
+.table_search_box01 .control_board_header {padding: 10px;}
+.table_search_box01 .control_board_header .board_sorting_con fieldset{display: flex; justify-content: end;}
+.table_search_box01 .control_board_header span{margin-right: 5px;}
+.table_search_box01 .control_board_header .relation_site{padding: 0; border-bottom: 0; height: 100%;}
+.table_search_box01 .show-tablecell select{width: 100%; height: 37px;}
+
+@media all and (max-width:1280px) {
+    .table_search_box01 .control_board_header{display: flex;}
+    .table_search_box01 .control_board_header .board_title{position: relative;}
+    .sub_section .table_search_box01 .board_title h4{line-height: 3.3rem; background: url("/edu/images/bm/board_title_icon.png") no-repeat left 9px;}
+    .table_search_box01 .control_board_header .relation_site{width: 15%; margin-bottom: 0;}
+}
+@media all and (max-width:780px) {}
+@media all and (max-width:640px) {
+    .table_search_box01 .control_board_header{display: block;}
+    .table_search_box01 .control_board_header .relation_site{width: 25%;}
+    .table_search_box01 .board_sorting_con .input_search_con{width: calc(100% - 25%);}
+
+    .mo_table .table_list{background-color: #f8f8f8; border-radius: 32px; margin-bottom: 30px;}
+    .mo_table .table_list .table_info_box{display: flex; padding: 20px;}
+    .mo_table .table_list .table_info_box .left_box{width: 20%; text-align: center; display: flex; align-items: center; font-size: 14px;}
+    .mo_table .table_list .table_info_box .right_box{width: calc(100% - 20%);}
+    .mo_table .table_list .table_info_box .right_box .title{width: calc(100% - 20%); font-size: 16px;}
+    .mo_table .table_list .table_info_box .right_box .date_view{font-size:13px; margin-top: 15px;}
+    .mo_table .table_list .table_info_box .right_box .date_view span{color:#828282;}
+    .mo_table .table_list .table_info_box .right_box .date_view span:first-child{margin-right: 10px;}
+}
+
+/*******************************************************  콘텐츠문화광장 *********************************************************/
 
 /* 소개 */
 .bd_rd_rb_tit{text-align: center;}

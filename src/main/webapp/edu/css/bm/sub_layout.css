@@ -195,7 +195,7 @@ wrapper.sub_layout_page 는 1depth의 하위 서브페이지들(2, 3depth)
 .sub_section .board_title.online_edu_board_title h4{font-size:15px; font-size:1.5rem; line-height:21px; line-height:2.1rem; background:none; padding-left:0; font-weight:400;  letter-spacing:-0.025em;}
 .sub_section .board_title.online_edu_board_title h4 .board_count{color:#1b96c5;}
 .contents_view_page .sub_section .board_title h4 .board_count{color:#dc2979;}
-.sub_section .board_title h4 .board_count{color:#FF5200;}
+.sub_section .board_title h4 .board_count{color:#40abd4;}
 .board_sorting_con{font-size:0;}
 .board_sorting_con .select_box{display:inline-block; vertical-align: middle; padding:3px;}
 .board_sorting_con .select_box select.select_style_0::-ms-expand{display:none;}
@@ -369,7 +369,7 @@ table.board_type_1 .upload_file_delete_btn{width:17px; height:17px; box-sizing: 
 .board_util_btn_con .btn_style_0.full{color:#fff; background-color:#3B85FF;}
 .board_util_btn_con .btn_style_0.full.img_none{padding-left:20px; padding-right:20px;}
 .contents_view_page .board_util_btn_con .btn_style_0.full{border-color:#009DA5; background-color:#009DA5;}
-.board_util_btn_con .btn_style_0.blue{color:#fff; border-color:#0480A9; background-color:#0480A9;}
+.board_util_btn_con .btn_style_0.blue{color:#fff; background-color:#3B85FF;}
 .board_util_btn_con .btn_style_0.grey{color:#313131; border-color:#eeeeee; background-color:#eeeeee; }
 .board_util_btn_con .btn_style_0.green{color:#fff; border-color:#1da28d; background-color:#1da28d; }
 .board_util_btn_con .btn_style_0.full.right{position:relative;}
@@ -389,7 +389,7 @@ table.board_type_1 .upload_file_delete_btn{width:17px; height:17px; box-sizing: 
 .board_util_btn_con .btn_style_0.end_online_edu_edu{font-size:14.5px; line-height:20.5px;
 	border:2px solid #1196de; background-color:transparent; padding-left:14px; padding-right:14px; padding-top:3px; padding-bottom:2px; color:#1196de; border-radius:3px;}
 .board_util_btn_con .btn_style_0.end_online_edu_edu .end_online_edu_edu{color:#828282;}
-.board_util_btn_con .btn_style_0.openlecture_eye{background-image:url('/edu/images/bm/openlecture_eye.png'); padding-top:7px; padding-bottom:7px; padding-left:12px; padding-right:41px;
+.board_util_btn_con .btn_style_0.openlecture_eye{/*background-image:url('/edu/images/bm/openlecture_eye.png');*/ padding-top:7px; padding-bottom:7px;
 	background-position:right 12px center;}
 .board_util_btn_con .btn_style_0.openlecture_eye.close_w{background-image:url('/edu/images/bm/btn_style_0_close_w.png')}
 .board_util_btn_con .btn_style_0.grey.padding_equal{padding-right:20px; padding-left:20px; color:#fff;}
@@ -647,7 +647,7 @@ body label.back_label { visibility: visible; opacity:1; display: block; width: a
 
 .mo_table{display:none;}
 
-@media all and (max-width: 500px){
+@media all and (max-width: 640px){
 	.pc_table{display:none;}
 	.mo_table{display:block;}
 }

@@ -1912,13 +1912,13 @@ if( StringUtils.hasText(menuNo) ) {
 						</ul>
 					</div>
 					<div class="ml-auto searchCon" style="height:29px;">
-						<%-- <input type="image" src="/edu/images/bm/search_icon.png" id="all_search_label" style="padding:0;" alt="통합검색"> --%>
+						&lt;%&ndash; <input type="image" src="/edu/images/bm/search_icon.png" id="all_search_label" style="padding:0;" alt="통합검색"> &ndash;%&gt;
 						<!-- 검색창 -->
 						<span class="show vm tl input_con">
-							<%-- 					        <form name="frmSearch2" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
+							&lt;%&ndash; 					        <form name="frmSearch2" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
                                                             <input type="text" class="q2" name="q" id="q2" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요.">
                                                             <input type="image" src="/edu/images/bm/search_icon.png" alt="검색 확인" class="all_search_image">
-                                                        </form> --%>
+                                                        </form> &ndash;%&gt;
 						</span>
 						<!-- //검색창 -->
 						<input type="image" src="/edu/img/gnb_icon.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">

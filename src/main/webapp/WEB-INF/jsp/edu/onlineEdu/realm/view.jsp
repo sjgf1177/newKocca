@@ -73,8 +73,7 @@
 <div class="lecture_info_box">
 	<div class="col-center mw-1280">
 	<div class="mb20 alert big_box type_1 pb_30" style="overflow:hidden;">
-		<p class="fl alert_title" style="margin:0;">
-			${view.subjnm}
+		<p>
 			<c:if test="${not empty view.lvnm}">
 				<c:choose>
 					<c:when test="${view.lvcd eq 'L0101' or view.lvcd eq 'L0201'}">
@@ -88,6 +87,10 @@
 					</c:when>
 				</c:choose>
 			</c:if>
+		</p>
+		<p class="fl alert_title" style="margin:0;">
+			${view.subjnm}
+
 		</p>
 
 		<span class="gray_txt view">

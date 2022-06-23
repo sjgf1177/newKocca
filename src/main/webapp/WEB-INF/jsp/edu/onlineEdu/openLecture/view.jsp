@@ -292,117 +292,212 @@
 	}
 </script>
 
-<div class="alert big_box type_1" style="overflow:hidden;">
-	<p style="margin-bottom: 3px;">
-		<c:if test="${not empty result.lvnm}">
-			<c:choose>
-				<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
-					<span class="tag L1" style="margin-left: 0;">${result.lvnm}</span>
-				</c:when>
-				<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
-					<span class="tag L2" style="margin-left: 0;">${result.lvnm}</span>
-				</c:when>
-				<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
-					<span class="tag L3" style="margin-left: 0;">${result.lvnm}</span>
-				</c:when>								
-			</c:choose>
-		</c:if>
-		<span class="gray_txt" style="line-height: 20px;">
-			<c:if test="${not empty result.g1nm}">
-				${result.g1nm}
-			</c:if>
-			<c:if test="${not empty result.g2nm}">
-				&gt; ${result.g2nm}
-			</c:if>
-			<c:if test="${not empty result.g3nm}">
-				&gt; ${result.g3nm}
-			</c:if>			
-		</span>
-	</p>
-	<p class="fl alert_title" style="margin-bottom:0;">
-		<c:out value="${result.lecnm }" escapeXml="false" />
-	</p>
-	<div class="online_edu_alert_link_item">
-		<ul>
-			<li>
-				<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">정규과정 목록으로</a>
-			</li>
-			<li>
-				<c:choose>
-				<c:when test="${not empty param.myOpenLecture and param.myOpenLecture eq 'Y' }">
-					<c:url value="/edu/onlineEdu/openLecture/myOpenLetureList.do?${pageQueryString }&amp;pLectureCls=${param.pLectureCls }" var="listUrl" />
-				</c:when>
-				<c:otherwise>
-					<c:url value="/edu/onlineEdu/openLecture/list.do?${pageQueryString }&amp;pLectureCls=${param.pLectureCls }" var="listUrl" />
-				</c:otherwise>
-				</c:choose>
-				<a href="${listUrl }" escapeXml="false">
-					열린강좌 목록으로
-				</a>
-			</li>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>열린강좌</span></a></li>
 		</ul>
+	</div>
+</div>
+<div class="sub_title s_tit02 col-center mw-1280">열린강좌</div>
+
+<div class="lecture_info_box style_2">
+	<div class="col-center mw-1280">
+		<div class="alert big_box type_1" style="overflow:hidden;">
+			<p>
+				<c:if test="${not empty result.lvnm}">
+					<c:choose>
+						<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
+							<span class="tag L1" style="margin-left: 0;">${result.lvnm}</span>
+						</c:when>
+						<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
+							<span class="tag L2" style="margin-left: 0;">${result.lvnm}</span>
+						</c:when>
+						<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
+							<span class="tag L3" style="margin-left: 0;">${result.lvnm}</span>
+						</c:when>
+					</c:choose>
+				</c:if>
+			</p>
+			<p class="fl alert_title" style="margin-bottom:0;">
+				<c:out value="${result.lecnm }" escapeXml="false" />
+			</p>
+
+			<span class="gray_txt view" style="line-height: 20px;">
+				<c:if test="${not empty result.g1nm}">
+					${result.g1nm}
+				</c:if>
+				<c:if test="${not empty result.g2nm}">
+					&gt; ${result.g2nm}
+				</c:if>
+				<c:if test="${not empty result.g3nm}">
+					&gt; ${result.g3nm}
+				</c:if>
+			</span>
+			<%--<div class="online_edu_alert_link_item">
+				<ul>
+					<li>
+						<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">정규과정 목록으로</a>
+					</li>
+					<li>
+						<c:choose>
+						<c:when test="${not empty param.myOpenLecture and param.myOpenLecture eq 'Y' }">
+							<c:url value="/edu/onlineEdu/openLecture/myOpenLetureList.do?${pageQueryString }&amp;pLectureCls=${param.pLectureCls }" var="listUrl" />
+						</c:when>
+						<c:otherwise>
+							<c:url value="/edu/onlineEdu/openLecture/list.do?${pageQueryString }&amp;pLectureCls=${param.pLectureCls }" var="listUrl" />
+						</c:otherwise>
+						</c:choose>
+						<a href="${listUrl }" escapeXml="false">
+							열린강좌 목록으로
+						</a>
+					</li>
+				</ul>
+			</div>--%>
+		</div>
 	</div>
 </div>
 
 <!-- Movie Player  width: 1080px;height: 630;기본 사이즈 -->
 <div class="mt20 lectMovSet" id="vodArea">
-	<a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />');" > <!-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" -->
-	<img src="<c:out value="${result.vodimg }"/>" style="width: 1080px;height: 664;"   alt="강좌보기"/>
-	<span class="maskPlay"></span>
-	</a>
+	<div class="col-center mw-1280">
+		<a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />');" > <!-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" -->
+		<img src="<c:out value="${result.vodimg }"/>" style="width: 1080px;height: 664;"   alt="강좌보기"/>
+		<span class="maskPlay"></span>
+		</a>
+	</div>
 </div>
 
 <!-- Movie Player -->
 <div id="vodAreaHtml" style="display:none;"></div>
-<div class="mt15 board_util_btn_con" style="max-width:1080px; margin-left:auto; margin-right:auto;">
-	<a href="javascript:void(0);" class="btn_style_0 green openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
-		자막닫기
-	</a>
-	<a href="javascript:void(0);" class="${(fn:length(fn:replace(result.subtitle,' ','')) == 0?'hidden':'') } btn_style_0 green openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;"  >
-		자막보기
-	</a>
-</div>
+<div class="mt15 board_util_btn_con">
+	<div class="col-center mw-1280">
+		<a href="javascript:void(0);" class="btn_style_0 blue openlecture_eye eye_off" style="display:none; margin-right:0; margin-bottom:0;">
+			자막닫기
+		</a>
+		<a href="javascript:void(0);" class="${(fn:length(fn:replace(result.subtitle,' ','')) == 0?'hidden':'') } btn_style_0 blue openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;"  >
+			자막보기
+		</a>
 
-<div class="movDescTxt" tabindex="0" style="display: none; max-width:1080px; margin-left:auto; margin-right:auto; box-sizing:border-box;
-	font-size: 14.5px; font-size: 1.45rem; line-height: 26px; line-height: 2.6rem; color: #313131; letter-spacing: -0.025em;
-    padding-top:20px; padding-left:25px; padding-right:25px; padding-bottom:20px; border:2px solid #5ac9b7; text-align: left; max-height:300px; overflow-y: auto;
-    -ms-user-select:none; -moz-user-select:-moz-none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;">
-	<% pageContext.setAttribute("crlf", "\n"); %>
-	${fn:replace(result.subtitle, crlf, "<br />")}
-</div>
-
-<div class="openlecture_text_box">
-	<div class="openlecture_text_box_header">
-		01. 이 강좌에 대해서
-	</div>
-	<div class="openlecture_text_box_contents">
-		<c:out value="${result.intro }"/>
-	</div>
-</div>
-<div class="openlecture_text_box">
-	<div class="openlecture_text_box_header">
-		02. 강사 소개
-	</div>
-	<div class="openlecture_text_box_contents">
-		<c:out value="${result.tutornm }"/>
-		<c:if test="${fn:length(result.tutornm) == 0 }">강사에 대한 정보가 업습니다.</c:if>	
+		<div class="movDescTxt" tabindex="0" style="display: none; box-sizing:border-box;font-size: 14.5px; font-size: 1.45rem; line-height: 26px; line-height: 2.6rem; color: #313131; letter-spacing: -0.025em;
+			padding-top:20px; padding-left:25px; padding-right:25px; padding-bottom:20px; border:2px solid #5ac9b7; text-align: left; max-height:300px; overflow-y: auto;
+			-ms-user-select:none; -moz-user-select:-moz-none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;">
+			<% pageContext.setAttribute("crlf", "\n"); %>
+			${fn:replace(result.subtitle, crlf, "<br />")}
+		</div>
 	</div>
 </div>
 
-<div class="mb90 openlecture_text_box">
-	<div class="openlecture_text_box_header">
-		03. 강사 이력
+
+
+<div class="col-center mw-1280">
+	<div class="openlecture_text_box">
+		<div class="openlecture_text_box_header">
+			01. 이 강좌에 대해서
+		</div>
+		<div class="openlecture_text_box_contents">
+			<c:out value="${result.intro }"/>
+		</div>
 	</div>
-	<div class="openlecture_text_box_contents">
-		<% pageContext.setAttribute("crlf","\r\n"); %>
-		${fn:replace(fn:replace(fn:escapeXml(result.tutorcareer), crlf, '<br/>') , ' ', '&nbsp;')}
-		${fn:replace(fn:replace(fn:escapeXml(result.tutorauthor), crlf, '<br/>') , ' ', '&nbsp;')}
+</div>
+<div class="col-center mw-1280">
+	<div class="openlecture_text_box">
+		<div class="openlecture_text_box_header">
+			02. 강사 소개
+		</div>
+		<div class="openlecture_text_box_contents">
+			<c:out value="${result.tutornm }"/>
+			<c:if test="${fn:length(result.tutornm) == 0 }">강사에 대한 정보가 업습니다.</c:if>
+		</div>
+	</div>
+</div>
+
+<div class="col-center mw-1280">
+	<div class="mb90 openlecture_text_box">
+		<div class="openlecture_text_box_header">
+			03. 강사 이력
+		</div>
+		<div class="openlecture_text_box_contents">
+			<% pageContext.setAttribute("crlf","\r\n"); %>
+			${fn:replace(fn:replace(fn:escapeXml(result.tutorcareer), crlf, '<br/>') , ' ', '&nbsp;')}
+			${fn:replace(fn:replace(fn:escapeXml(result.tutorauthor), crlf, '<br/>') , ' ', '&nbsp;')}
+		</div>
 	</div>
 </div>
 
 <!-- consumer_seq = 1077 /  -->
 <!-- 아카데미이야기 24725 : MTA3Ny8yNDcyNS8xNTA5  livere_seq = 24892  / 강좌 24892 : MTA3Ny8yNDg5Mi8xNTA5   livere_seq = 1509 -->
+<!-- 연계과정 html -->
 
+<div class="fwo_card_list_box fwo_card01 col-center mw-1280">
+	<span class="main_title">연계과정</span>
+	<div class="fwo_card swiper-container swiper-container-horizontal">
+		<ul class="swiper-wrapper">
+			<c:forEach items="${nextList }" var="nextResult">
+				<li class="swiper-slide">
+					<c:url var="url" value="/edu/onlineEdu/openLecture/view.do?pSeq=${nextResult.seq }&amp;${pageQueryString }&amp;pageIndex=${param.pageIndex }&amp;pageIndex2=&amp;pLectureCls=${param.pLectureCls }"/>
+
+					<c:choose>
+						<c:when test="${nextResult.type == 'S'}">
+							<a class="show-block" href="/edu/onlineEdu/realm/view.do?p_gubun=&amp;p_subj=${nextResult.courseId }&amp;p_subjseq=${nextResult.subjseq }&amp;p_year=${nextResult.year }&amp;menuNo=500027">
+						</c:when>
+						<c:otherwise>
+							<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${nextResult.type }', '${nextResult.courseId }', '${nextResult.courseName }', '${nextResult.isonoff }', '${nextResult.scupperclass }', '${nextResult.uclassnm }', '${nextResult.year }', '${nextResult.subjseq }'); return false;">
+						</c:otherwise>
+					</c:choose>
+						<!-- 썸네일 start -->
+						<div class="fwo_snail_box">
+							<img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='<c:out value="${nextResult.imgfile }" />'  />
+							<!-- 설명란 start-->
+							<div class="fwo_info_box">
+								<h3 class="fwo_tit_box"><c:out value="${nextResult.courseName }" escapeXml="false" /></h3>
+								<c:if test="${not empty nextResult.lvnm}">
+									<c:choose>
+										<c:when test="${nextResult.lvcd eq 'L0101' or nextResult.lvcd eq 'L0201'}">
+											<span class="tag L1">${nextResult.lvnm}</span>
+										</c:when>
+										<c:when test="${nextResult.lvcd eq 'L0102' or nextResult.lvcd eq 'L0202'}">
+											<span class="tag L2">${nextResult.lvnm}</span>
+										</c:when>
+										<c:when test="${nextResult.lvcd eq 'L0103' or nextResult.lvcd eq 'L0203'}">
+											<span class="tag L3">${nextResult.lvnm}</span>
+										</c:when>
+									</c:choose>
+								</c:if>
+								<p>온라인교육ㆍ
+									<c:if test="${not empty nextResult.g3nm}">
+										${nextResult.g3nm}
+									</c:if>
+
+									<c:if test="${empty nextResult.g3nm}">
+										${nextResult.g2nm}
+									</c:if>
+								</p>
+
+								<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+							</div>
+							<!-- 설명란 start-->
+
+						</div>
+						<!-- 썸네일 end -->
+							</a>
+				</li>
+			</c:forEach>
+
+		</ul>
+
+	</div>
+	<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+	<div class="swiper_btn_box">
+		<div class="swiper-button-prev swiper-button-disabled"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+
+</div>
+<%--
+ 연계과정 원본
 <p class="online_edu_card_view_title">
 	연계 과정
 </p>
@@ -462,7 +557,7 @@
 									</c:if>
 								</div>
 								<div class="online_edu_card_title">
-									<h4><%-- [${nextResult.type }] --%><c:out value="${nextResult.courseName }" escapeXml="false" /></h4>
+									<h4>&lt;%&ndash; [${nextResult.type }] &ndash;%&gt;<c:out value="${nextResult.courseName }" escapeXml="false" /></h4>
 								</div>
 								<div class="online_edu_desc">
 									<c:out value="${nextResult.tutornm }" />
@@ -486,7 +581,7 @@
 			</div>
 		</button>
 	</div>
-</c:if>
+</c:if>--%>
 
 <form id="frm" name="frm" method="post" class="form-inline">
 	<input type="hidden" name="p_subj" id="p_subj" />
