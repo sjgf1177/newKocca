@@ -17,7 +17,9 @@
 			</ul>
 		</div>
 	</div>
-	<div class="sub_title s_tit02 col-center mw-1280">공지사항</div>
+	<div class="sub_title s_tit02">
+		<div class="col-center mw-1280">공지사항</div>
+	</div>
 
 	<!-- bdList -->
 	<div class="col-center mw-1280 table_search_box01">

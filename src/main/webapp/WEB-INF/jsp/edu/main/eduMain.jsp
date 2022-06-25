@@ -301,7 +301,7 @@ if( StringUtils.hasText(menuNo) ) {
 	</div> -->
 
 	<!-- html 작업본-->
-	<%--<div id="wrap" class="over-hidden">
+	<div id="wrap" class="over-hidden">
 		<!-- header start -->
 		<header>
 			<div class="container h-100">
@@ -1770,10 +1770,10 @@ if( StringUtils.hasText(menuNo) ) {
 		<!-- //footer -->
 	</div>
 	</div>
-	<div class="op_bg_box"></div>--%>
+	<div class="op_bg_box"></div>
 
 	<!-- 원본 -->
-	<div id="wrap" class="over-hidden">
+	<%--<div id="wrap" class="over-hidden">
 		<header>
 			<div class="container h-100">
 				<div class="header_util_wrap">
@@ -2221,6 +2221,6 @@ if( StringUtils.hasText(menuNo) ) {
 			<jsp:include page="/WEB-INF/jsp/edu/inc/eduFooter.jsp" flush="true" />
 		</div>
 		<!-- //footer -->
-	</div>
+	</div>--%>
 </body>
 </html>

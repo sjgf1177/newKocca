@@ -67,7 +67,9 @@
 		</ul>
 	</div>
 </div>
-<div class="sub_title s_tit02 col-center mw-1280 mg_b0">정규과정</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">정규과정</div>
+</div>
 
 <!-- 과정 상세정보 -->
 <div class="lecture_info_box">

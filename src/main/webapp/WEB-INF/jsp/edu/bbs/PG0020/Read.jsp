@@ -15,23 +15,28 @@
 		</ul>
 	</div>
 </div>
-<div class="sub_title">이벤트</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">이벤트</div>
+</div>
 
 	<!-- bdView -->
 <div class="evt_top_box">
-	<div class="evt_info_box">
-		<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
-		<p class="date_tag_on">D-10</p>
-		<p class="data">이벤트기간 : <span><c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></p>
-	</div>
-	<div class="evt_btn_box">
-		<p>지금 참여하시겠습니까?</p>
-		<c:if test="${not empty result.option1 and result.option1 ne '' }">
-			<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >이벤트 참여</a>
-		</c:if>
+	<div class="col-center mw-1280">
+		<div class="evt_info_box">
+			<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
+			<p class="date_tag_on">D-10</p>
+			<p class="data">이벤트기간 : <span><c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></p>
+		</div>
+		<div class="evt_btn_box">
+			<p>지금 참여하시겠습니까?</p>
+			<c:if test="${not empty result.option1 and result.option1 ne '' }">
+				<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >이벤트 참여</a>
+			</c:if>
+		</div>
 	</div>
 </div>
 <div class="contents_view_area">
+	<div class="col-center mw-1280">
 	<c:choose>
 		<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
 		<c:otherwise>
@@ -42,6 +47,7 @@
 
 	<!-- 본문이미지 대체텍스트 -->
 	<!-- <div class="hidden">${result.imgDescCn}</div> -->
+	</div>
 </div>
 
 
@@ -64,8 +70,10 @@
 	</ul>
 </div>
 <div class="board_util_btn_con">
-	<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}" />
-	<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">
-		목록
-	</a>
+	<div class="col-center mw-1280">
+		<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}" />
+		<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">
+			목록
+		</a>
+	</div>
 </div>

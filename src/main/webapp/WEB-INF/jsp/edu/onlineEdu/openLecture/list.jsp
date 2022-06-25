@@ -23,7 +23,9 @@
 		</ul>
 	</div>
 </div>
-<div class="sub_title s_tit02 col-center mw-1280">열린강좌</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">열린강좌</div>
+</div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
 	<li class="after_line"><a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027">정규과정</a></li>

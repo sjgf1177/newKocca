@@ -301,7 +301,9 @@
 		</ul>
 	</div>
 </div>
-<div class="sub_title s_tit02 col-center mw-1280">열린강좌</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">열린강좌</div>
+</div>
 
 <div class="lecture_info_box style_2">
 	<div class="col-center mw-1280">

@@ -606,19 +606,19 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 /*.event_card_wrap .swiper-wrapper{display: flex; flex-wrap: wrap;}*/
 
 /* 이벤트 상세 */
-.evt_top_box {margin-bottom: 40px; padding: 50px 60px 50px 60px; border-radius: 32px; background-color: #3B0080;}
+.evt_top_box .mw-1280{margin-bottom: 40px; padding: 50px 60px 50px 60px; border-radius: 32px; background-color: #3B0080;}
 .sub_title{font-size: 3.3rem; line-height: 5rem; margin-bottom: 25px;}
 .evt_top_box .evt_info_box{margin-bottom: 40px; padding-bottom: 25px; border-bottom: 1px solid #fff;}
 .evt_top_box .evt_info_box h2{color:#fff; font-size: 33px; margin-bottom: 20px;}
 .evt_top_box .evt_info_box .sub_title{color: #fff; font-size: 33px; margin-bottom: 20px;}
-.evt_top_box .evt_info_box .date_tag_on{display:inline-block; width:50px; height:30px; line-height:30px; color: #fff; font-size: 12px; background-color: #3B85FF; border-radius: 5px; text-align: center; margin-bottom: 15px; padding-bottom: 20px;}
+.evt_top_box .evt_info_box .date_tag_on{display:inline-block; width:50px; height:30px; padding:0; line-height:30px; color: #fff; font-size: 12px; background-color: #3B85FF; border-radius: 5px; text-align: center; margin-bottom: 15px; padding-bottom: 20px;}
 .evt_top_box .evt_info_box .data{color: #fff; font-size: 18px; text-align: left;}
 .evt_top_box .evt_info_box .data span{color: #fff;}
 .evt_top_box .evt_btn_box{text-align: center;}
 .evt_top_box .evt_btn_box p{text-align: center; font-size: 20px; color: #fff; margin-bottom: 30px;}
 .evt_top_box .evt_btn_box a{color: #fff; background-color: #3B85FF; width: 150px; height: 50px; font-size: 18px; line-height: 50px;}
 .board_util_btn_con .btn_style_0.full.list{background-image: none;}
-.contents_view_area > p{text-align: center;}
+.contents_view_area .mw-1280 > p{text-align: center;}
 
 @media all and (max-width:1280px) {
     .sub_title{
@@ -775,11 +775,16 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 }
 
 /* 공지사항 */
+
 .table_search_box01 .control_board_header {padding: 10px;}
 .table_search_box01 .control_board_header .board_sorting_con fieldset{display: flex; justify-content: end;}
 .table_search_box01 .control_board_header span{margin-right: 5px;}
 .table_search_box01 .control_board_header .relation_site{padding: 0; border-bottom: 0; height: 100%;}
 .table_search_box01 .show-tablecell select{width: 100%; height: 37px;}
+.contents_view_page table.board_type_0.detail.notice th .writer_info > span:first-child{color:#3B85FF;}
+
+.sub_section .sub_contents_body table.board_type_0.notice thead th, table.board_type_0.notice tbody tr td{background-color: transparent;}
+table.board_type_0.notice thead th{font-size: 15px;}
 
 @media all and (max-width:1280px) {
     .table_search_box01 .control_board_header{display: flex;}
@@ -803,6 +808,10 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
     .mo_table .table_list .table_info_box .right_box .date_view span:first-child{margin-right: 10px;}
 }
 
+/* 창의인재동반 */
+.dream_list .tab_style_1_con{margin-bottom: 33px;}
+.sub_section .edu_together_view_inner .edu_youtube_subtitle_view_btn_con .edu_youtube_subtitle_view_btn{padding: 10px 25px; background-image: none; background-color: #3B85FF;}
+.sub_section .edu_together_three_card_con{display: flex; flex-wrap: wrap;}
 /*******************************************************  콘텐츠문화광장 *********************************************************/
 
 /* 소개 */
@@ -813,8 +822,7 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 .facilities_title{background-image: url('/edu/images/renew2022/renew_facilities_title_slash.png');}
 .sub_section .sub_contents_body.is_on_top{background-image: url('/edu/images/renew2022/renew_facilities_contents_body_top_bg.png');}
 
-/* 공지사항 */
-.contents_view_page table.board_type_0.detail.notice th .writer_info > span:first-child{color:#3B85FF;}
+
 
 
 

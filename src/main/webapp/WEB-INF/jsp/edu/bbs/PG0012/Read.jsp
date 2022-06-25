@@ -12,77 +12,89 @@
 <script type="text/javascript">
 
 </script>
-
-
-	<table class="board_type_0 detail notice">
-		<caption>일반형 게시판 뷰 페이지</caption>
-		<colgroup>
-			<col width="100%">
-		</colgroup>
-		<thead>
-		<tr>
-			<th>
-				<span>
-					<c:out value="${result.nttSj}" />
-				</span>
-				<span class="writer_info">
-					<span>
-					Hit.<c:out value="${result.inqireCo}"></c:out>
-					</span>
-					<span>
-						<c:out value="${result.frstRegisterPnttm}" />
-					</span>
-				</span>
-			</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>
-				<div class="table_info_header">
-					<div class="upload_file">
-						<c:forEach var="fileVO" items="${fileList}" varStatus="status">
-                        <a href="/edu/cmm/fms/FileDown.do?atchFileId=${fileVO.atchFileId}&amp;fileSn=${fileVO.fileSn}&amp;bbsId=${param.bbsId}" class="${icn}">
-                            첨부파일 : <c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte] <br />
-                        </a>
-                        </c:forEach>
-                        <c:if test="${fn:length(fileList) == 0}"><a href="javascript:void(0)">첨부파일 : 등록된 첨부파일이 없습니다.</a></c:if>
-					</div>
-				</div>
-				<div class="contents_view_area">
-					<c:choose>
-						<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
-						<c:otherwise>
-								<% pageContext.setAttribute("crlf", "\n"); %>
-							${fn:replace(result.nttCn, crlf, "<br/>")}
-						</c:otherwise>
-					</c:choose>
-					<!-- 본문이미지 대체텍스트 -->
-					<!-- <div class="hidden">${result.imgDescCn}</div> -->
-				</div>
-			</td>
-		</tr>
-	</tbody>
-	</table>
-	<div class="paging view_paging">
-		<ul class="pagination">
-			<c:if test="${prevNextMap['PREV'].prevNttId > 0}">
-				<li class="btn_singlePage prev">
-					<a href="/<c:out value="${paramVO.siteName }"/>/bbs/<c:out value='${paramVO.bbsId}'/>/view.do?nttId=<c:out value="${prevNextMap['PREV'].prevNttId}" />&amp;<c:out value="${pageQueryString}" escapeXml="false" />"> <c:out value="${prevNextMap['PREV'].nttSj }" />
-					</a>
-				</li>
-			</c:if>
-			<c:if test="${prevNextMap['NEXT'].nextNttId > 0}">
-				<li class="btn_singlePage next">
-					<a href="/<c:out value="${paramVO.siteName }"/>/bbs/<c:out value='${paramVO.bbsId}'/>/view.do?nttId=<c:out value="${prevNextMap['NEXT'].nextNttId}" />&amp;<c:out value="${pageQueryString}" escapeXml="false" />"> <c:out value="${prevNextMap['NEXT'].nttSj }" />	
-					</a>
-				</li>
-			</c:if>
-		</ul>
+	<div class="over-hidden sub_contents_header">
+		<div class="linemap_wrap"> <!-- fl class 삭제 -->
+			<ul class="col-12 linemap_con">
+				<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+				<li><a href="javascript:void(0);" tabindex="-1"><span>공지사항</span></a></li>
+			</ul>
+		</div>
 	</div>
-	<div class="board_util_btn_con">
-		<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}" />
-		<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">
-			목록
-		</a>
+	<div class="sub_title s_tit02">
+		<div class="col-center mw-1280">공지사항</div>
+	</div>
+
+	<div class="col-center mw-1280">
+		<table class="board_type_0 detail notice">
+			<caption>일반형 게시판 뷰 페이지</caption>
+			<colgroup>
+				<col width="100%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th>
+					<span>
+						<c:out value="${result.nttSj}" />
+					</span>
+					<span class="writer_info">
+						<span>
+						Hit.<c:out value="${result.inqireCo}"></c:out>
+						</span>
+						<span>
+							<c:out value="${result.frstRegisterPnttm}" />
+						</span>
+					</span>
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					<div class="table_info_header">
+						<div class="upload_file">
+							<c:forEach var="fileVO" items="${fileList}" varStatus="status">
+							<a href="/edu/cmm/fms/FileDown.do?atchFileId=${fileVO.atchFileId}&amp;fileSn=${fileVO.fileSn}&amp;bbsId=${param.bbsId}" class="${icn}">
+								첨부파일 : <c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte] <br />
+							</a>
+							</c:forEach>
+							<c:if test="${fn:length(fileList) == 0}"><a href="javascript:void(0)">첨부파일 : 등록된 첨부파일이 없습니다.</a></c:if>
+						</div>
+					</div>
+					<div class="contents_view_area">
+						<c:choose>
+							<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
+							<c:otherwise>
+									<% pageContext.setAttribute("crlf", "\n"); %>
+								${fn:replace(result.nttCn, crlf, "<br/>")}
+							</c:otherwise>
+						</c:choose>
+						<!-- 본문이미지 대체텍스트 -->
+						<!-- <div class="hidden">${result.imgDescCn}</div> -->
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		<div class="paging view_paging">
+			<ul class="pagination">
+				<c:if test="${prevNextMap['PREV'].prevNttId > 0}">
+					<li class="btn_singlePage prev">
+						<a href="/<c:out value="${paramVO.siteName }"/>/bbs/<c:out value='${paramVO.bbsId}'/>/view.do?nttId=<c:out value="${prevNextMap['PREV'].prevNttId}" />&amp;<c:out value="${pageQueryString}" escapeXml="false" />"> <c:out value="${prevNextMap['PREV'].nttSj }" />
+						</a>
+					</li>
+				</c:if>
+				<c:if test="${prevNextMap['NEXT'].nextNttId > 0}">
+					<li class="btn_singlePage next">
+						<a href="/<c:out value="${paramVO.siteName }"/>/bbs/<c:out value='${paramVO.bbsId}'/>/view.do?nttId=<c:out value="${prevNextMap['NEXT'].nextNttId}" />&amp;<c:out value="${pageQueryString}" escapeXml="false" />"> <c:out value="${prevNextMap['NEXT'].nttSj }" />
+						</a>
+					</li>
+				</c:if>
+			</ul>
+		</div>
+		<div class="board_util_btn_con">
+			<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}" />
+			<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">
+				목록
+			</a>
+		</div>
 	</div>
