@@ -307,7 +307,7 @@ if( StringUtils.hasText(menuNo) ) {
 			<div class="container h-100">
 
 				<nav class="navbar navbar-expand-xl">
-					<a href="/" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+					<a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
 						<img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
 					</a>
 					<!-- 모바일 햄버거 start -->
@@ -327,13 +327,13 @@ if( StringUtils.hasText(menuNo) ) {
 						<ul class="navbar-nav">
 							<!-- nav 이벤트 one-daps start -->
 							<li>
-								<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"   >
+								<a href="/edu/bbs/B0000048/list.do?menuNo=500203"   >
 									이벤트
 								</a>
 								<!-- nav 이벤트 two-daps start -->
 								<ul>
 									<li>
-										<a href="">
+										<a href="/edu/bbs/B0000048/list.do?menuNo=500203">
 											참여 이벤트
 										</a>
 									</li>
@@ -343,16 +343,16 @@ if( StringUtils.hasText(menuNo) ) {
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
 											콘텐츠인사이트
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=12&menuNo=500216">
 											콘텐츠스텝업
 										</a>
 									</li>
-									<li>
+<%--									<li>
 										<a href="">
 											게임인재원
 										</a>
@@ -361,7 +361,7 @@ if( StringUtils.hasText(menuNo) ) {
 										<a href="">
 											게임이해하기
 										</a>
-									</li>
+									</li>--%>
 								</ul>
 								<!-- nav 이벤트 two-daps end -->
 							</li>
@@ -369,38 +369,38 @@ if( StringUtils.hasText(menuNo) ) {
 
 							<!-- nav 카테고리 one-daps start -->
 							<li>
-								<a href="">
+								<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">
 									카테고리
 								</a>
 								<!-- nav 카테고리 two-daps start -->
 								<ul>
 									<li>
-										<a href="">
+										<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">
 											학습로드맵
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 											방송영상
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 											게임
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 											만화,애니,캐릭터
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 											문화일반
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 											인문/경영/교양/일반
 										</a>
 									</li>
@@ -411,38 +411,38 @@ if( StringUtils.hasText(menuNo) ) {
 
 							<!-- nav 사업안내 one-daps start -->
 							<li>
-								<a href=""   >
+								<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"   >
 									사업안내
 								</a>
 								<!-- nav 이벤트 two-daps start -->
 								<ul>
 									<li>
-										<a href="">
+										<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
 											창의인재동반
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/main/contents.do?menuNo=500110">
 											실감콘텐츠창작
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/main/contents.do?menuNo=500263">
 											AI콘텐츠창작
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/main/contents.do?menuNo=500179">
 											콘텐츠원캠퍼스
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/main/contents.do?menuNo=500213">
 											콘텐츠임팩트
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
 											콘텐츠인사이트
 										</a>
 									</li>
@@ -453,18 +453,18 @@ if( StringUtils.hasText(menuNo) ) {
 
 							<!-- nav 시설안내 one-daps start -->
 							<li>
-								<a href=""   >
+								<a href="/testbed/main/main.do?menuNo=500108"   >
 									시설안내
 								</a>
 								<!-- nav 시설안내 two-daps start -->
 								<ul>
 									<li>
-										<a href="">
+										<a href="/testbed/main/main.do?menuNo=500108">
 											콘텐츠문화광장
 										</a>
 									</li>
 									<li>
-										<a href="">
+										<a href="/testbed/main/contents.do?menuNo=700133">
 											콘텐츠인재캠퍼스
 										</a>
 									</li>
@@ -1034,42 +1034,18 @@ if( StringUtils.hasText(menuNo) ) {
 							<span class="title">공지사항</span>
 							<div class="list_box notice_list_box swiper-container">
 								<ul class="swiper-wrapper">
-									<li class="swiper-slide">
-										<a href="/edu/bbs/B0000011/view.do?nttId=75146&amp;menuNo=500008">
-											<span class="abbreviation2">찾아가는 케이녹 투자유치 상담회 참가사 모집</span>
-											<span>
-                                                    2022.06.14
-                                                </span>
-										</a>
-									</li>
-
-									<li class="swiper-slide">
-										<a href="/edu/bbs/B0000011/view.do?nttId=75144&amp;menuNo=500008">
-											<span class="abbreviation">2022년 게임인재원 4기 교육생 모집</span>
-											<span>
-                                                    2022.06.13
-                                                </span>
-										</a>
-									</li>
-
-									<li class="swiper-slide">
-										<a href="/edu/bbs/B0000011/view.do?nttId=75143&amp;menuNo=500008">
-											<span class="abbreviation">2022년 콘텐츠 창의인재동반사업 오픈특강(순천향대학교 산학협력단)</span>
-											<span>
-                                                    2022.06.13
-                                                </span>
-										</a>
-									</li>
-
-									<li class="swiper-slide">
-										<a href="/edu/bbs/B0000011/view.do?nttId=75141&amp;menuNo=500008">
-											<span class="abbreviation">2022 콘텐츠임팩트 교육생 모집</span>
-											<span>
-                                                    2022.06.10
-                                                </span>
-										</a>
-									</li>
-
+									<c:forEach var="result" items="${B0000011List}" end="3" varStatus="status">
+										<li class="swiper-slide">
+											<a href="/edu/bbs/<c:out value="${result.bbsId}"/>/view.do?nttId=<c:out value="${result.nttId}"/>&amp;menuNo=500008">
+												<span class="abbreviation<c:if test="${status.first}">2</c:if>"><c:out value="${result.nttSj}"/></span>
+												<span>
+	                                        	<fmt:parseDate var="dateFmt" pattern="yyyy-MM-dd" value="${fn:substring(result.regDate,0,10)}"/>
+	                                        	<fmt:formatDate var="dateTempParse" pattern="yyyy.MM.dd" value="${dateFmt}"/>
+	                                        	<c:out value="${dateTempParse}"/>
+	                                        </span>
+											</a>
+										</li>
+									</c:forEach>
 								</ul>
 							</div>
 							<a href="/edu/bbs/B0000011/list.do?menuNo=500008">더보기</a>

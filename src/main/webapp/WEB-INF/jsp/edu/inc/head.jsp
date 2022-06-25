@@ -284,7 +284,7 @@
 	<div class="container h-100">
 
 		<nav class="navbar navbar-expand-xl">
-			<a href="/" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+			<a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
 				<img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
 			</a>
 			<!-- 모바일 햄버거 start -->
@@ -304,13 +304,13 @@
 				<ul class="navbar-nav">
 					<!-- nav 이벤트 one-daps start -->
 					<li>
-						<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"   >
+						<a href="/edu/bbs/B0000048/list.do?menuNo=500203"   >
 							이벤트
 						</a>
 						<!-- nav 이벤트 two-daps start -->
 						<ul>
 							<li>
-								<a href="">
+								<a href="/edu/bbs/B0000048/list.do?menuNo=500203">
 									참여 이벤트
 								</a>
 							</li>
@@ -320,16 +320,16 @@
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
 									콘텐츠인사이트
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=12&menuNo=500216">
 									콘텐츠스텝업
 								</a>
 							</li>
-							<li>
+<%--							<li>
 								<a href="">
 									게임인재원
 								</a>
@@ -338,7 +338,7 @@
 								<a href="">
 									게임이해하기
 								</a>
-							</li>
+							</li>--%>
 						</ul>
 						<!-- nav 이벤트 two-daps end -->
 					</li>
@@ -346,38 +346,38 @@
 
 					<!-- nav 카테고리 one-daps start -->
 					<li>
-						<a href="">
+						<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">
 							카테고리
 						</a>
 						<!-- nav 카테고리 two-daps start -->
 						<ul>
 							<li>
-								<a href="">
+								<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">
 									학습로드맵
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 									방송영상
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 									게임
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 									만화,애니,캐릭터
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 									문화일반
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
 									인문/경영/교양/일반
 								</a>
 							</li>
@@ -388,38 +388,38 @@
 
 					<!-- nav 사업안내 one-daps start -->
 					<li>
-						<a href=""   >
+						<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"   >
 							사업안내
 						</a>
 						<!-- nav 이벤트 two-daps start -->
 						<ul>
 							<li>
-								<a href="">
+								<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
 									창의인재동반
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/main/contents.do?menuNo=500110">
 									실감콘텐츠창작
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/main/contents.do?menuNo=500263">
 									AI콘텐츠창작
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/main/contents.do?menuNo=500179">
 									콘텐츠원캠퍼스
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/main/contents.do?menuNo=500213">
 									콘텐츠임팩트
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
 									콘텐츠인사이트
 								</a>
 							</li>
@@ -430,18 +430,18 @@
 
 					<!-- nav 시설안내 one-daps start -->
 					<li>
-						<a href=""   >
+						<a href="/testbed/main/main.do?menuNo=500108"   >
 							시설안내
 						</a>
 						<!-- nav 시설안내 two-daps start -->
 						<ul>
 							<li>
-								<a href="">
+								<a href="/testbed/main/main.do?menuNo=500108">
 									콘텐츠문화광장
 								</a>
 							</li>
 							<li>
-								<a href="">
+								<a href="/testbed/main/contents.do?menuNo=700133">
 									콘텐츠인재캠퍼스
 								</a>
 							</li>
