@@ -186,10 +186,11 @@ table.board_type_0 thead th{border-color:#3B85FF !important;}
 
 .op_bg_box.active{width: 100%;height: 100%; background-color: rgb(0,0,0,0.35);}
 header{position:fixed; padding: 0; height:auto; border-bottom: 1px solid #707070; background-color: #222;}
-header nav #main_nav .navbar-nav > li{position: relative; margin:0 20px;}
+header nav #main_nav .navbar-nav > li{position: relative;}
 header nav:not(.gnbActive) #main_nav .navbar-nav > li > ul{top:45px; left:0; padding-top:0; background-color: #f8f8f8; border-radius: 13px;}
 header nav #main_nav .navbar-nav > li > ul > li{display:block; border-bottom: 1px solid #707070;}
 header nav #main_nav .navbar-nav > li > a:after{content: ""; display:block; position:absolute; right:-5px; top:50%; transform:translateY(-50%); width: 24px; height: 24px; background-image: url("/edu/images/renew2022/ico_down_white.png"); background-repeat: no-repeat;}
+header nav #main_nav .navbar-nav > li:first-child > a:after{display: none;}
 /*header nav #main_nav .navbar-nav > li:hover a:after{transform: translateY(-50%) rotate(180deg);}*/
 header nav #main_nav .navbar-nav > li > ul > li a{padding: 10px 13px; color:#222; font-weight: 500;}
 header nav #main_nav .navbar-nav > li > ul > li:hover a{color:#3B85FF;}
@@ -608,10 +609,14 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .tab_style_1_con .tab_style_1 > li.active span{color: #222222; border-top: none; border-right: none; border-left: none; border-bottom: 4px solid #222222;  background-color: transparent;}
 .tab_style_1_con .tab_style_1 > li.active > a:hover > span{background-color: transparent; color: #222222;}
 
+@media all and (max-width:1280px) {
+    .tab_style_1_con .tab_style_1 > li span{padding-bottom: 10px; font-size: 1.6rem;}
+}
+
 /* 이벤트 콘텐츠 */
 .sub_section .sub_contents_body .event_card_wrap{padding: 90px 0 180px 0; background-color: #F8F8F8;}
 .sub_section .sub_contents_body .event_card_wrap > div{height: 1300px;}
-.calc_wrap19{margin-left: auto;}
+
 .sub_section .sub_contents_body .event_card_wrap .event_card_list{height: 483px !important; padding: 0; margin-top: 40px;}
 .event_card_wrap .col-sm-4{flex:0 0 31.8%;}
 .sub_section .sub_contents_body .event_card_wrap .event_card_list:nth-child(3n){margin-right: 0!important;}
@@ -671,9 +676,9 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .board_sorting_con .input_search_con input[type=text].board_search{width: 100%;}
 .board_sorting_con .nav_search_btn{position:absolute; top:50%; transform:translateY(-50%); right:10px; width: 26px; height: 26px; background-image: url("/edu/images/renew2022/ico_search.png"); background-repeat: no-repeat; background-color: #fff;}
 .close_block_btn{position:absolute; top:50%; transform:translateY(-50%); right:0; width: 35px; height: 35px; background-color: transparent; background-image: url("/edu/images/renew2022/ico_close_block.png"); background-repeat: no-repeat;text-indent: -9999px; background-size: contain;}
-.filter_btn{position:absolute; top:50%; transform:translateY(-50%); right:0; display: none; width: 35px; height: 35px; background-color: transparent; background-image: url("/edu/images/renew2022/ico_filter.png"); background-repeat: no-repeat; text-indent: -9999px; background-size: contain;}
+.filter_btn{position:absolute; top:50%;  right:0; display: none; width: 35px; height: 35px; background-color: transparent; background-image: url("/edu/images/renew2022/ico_filter.png"); background-repeat: no-repeat; text-indent: -9999px; background-size: contain;}
 .control_board_header{height: 57px;}
-[class*="col-"]{float:initial;}
+[class*="col-"]{float:none;}
 
 /* 공지사항 */
 .sub_two_tab_box{padding: 40px 0; text-align: center; display: flex; justify-content: center;}
@@ -837,10 +842,32 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .sub_section .edu_together_view_inner .edu_youtube_subtitle_view_btn_con .edu_youtube_subtitle_view_btn{padding: 10px 25px; background-image: none; background-color: #3B85FF;}
 .sub_section .edu_together_three_card_con{display: flex; flex-wrap: wrap;}
 
+/* 창의현장 */
+.fieldstory_card_wrap{margin-top: 30px;}
+
+
+/* 성과아카이브 */
+.col-12.calc_wrap20 .online_edu_card_wrap{float:left;}
+.board_sorting_con dd .input_search_con{width: 100%;}
+
+@media all and (max-width:640px) {
+    .sub_section .sub_contents_body .platform_card_wrap .platform_list .platform_card{max-width: 100%;}
+    .sub_section .sub_contents_body .fieldstory_card_wrap .fieldstory_card{max-width: 100%;}
+    .col-12.calc_wrap20{margin-left: 0;}
+    .tab_style_1_con .tab_style_1.five_tab > li{width: 50%;}
+    .tab_style_1_con .tab_style_1.five_tab > li span{margin-bottom: 10px;}
+    .board_sorting_con dd .input_search_con{padding: 3px;}
+}
 
 /* 정규과정 상세 */
 .content{width:75%; !important;}
 .contentFrame{text-align: left; !important;}
+
+/* 콘텐츠인사이트 */
+.sub_section .sub_contents_body .contents_insight_header{float:left;}
+.sub_section .sub_contents_body .contents_insight_header > .text_box, .sub_section .sub_contents_body .contents_stepup_header > .text_box{float: left;}
+.sub_section .sub_contents_body .contents_stepup_header > .img_box, .sub_section .sub_contents_body .contents_insight_header > .img_box{float:left;}
+.sub_section .sub_contents_body .contents_card_con, .sub_section .sub_contents_body .contents_stepup_header{float:left;}
 /*******************************************************  콘텐츠문화광장 *********************************************************/
 
 /* 소개 */

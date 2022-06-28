@@ -12,11 +12,28 @@
 @media all and(min-width:992px){
 	.visual_wrap h2{margin-bottom:100px !important;}
 }
+@media all and (min-width: 576px){
+	.control_board_header .board_title{position: sticky;}
+}
 .lnb_wrap {display: none !important;}
 .sub_contents_wrap .sub_contents {padding-left:0 !important;}
 </style>
 
 <link rel="stylesheet" type="text/css" href="/archive/css/archive.css" /><!-- 성과아카이브 css-->
+
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>창의인재동반</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>성과아카이브</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">성과아카이브</div>
+</div>
+<div class="col-center mw-1280 dream_list">
      <div class="sub_contents_body archive">
      <!-- archive 클래스 추가. kmy -->
         <!--content-->
@@ -92,7 +109,7 @@
                               <dd>
                                   <span class="tl input_search_con">
                                       <input type="text" name="taskNm" id="taskNm" value="${param.taskNm}" class="board_search"/>
-                                      <input type="submit" class="search_summit btn-primary" id="input2" name="input2" value="" title="검색">
+                                      <input type="submit" class="search_summit btn-primary nav_search_btn" id="input2" name="input2" value="" title="검색">
                                   </span>
                               </dd>
                         </dl>
@@ -149,3 +166,4 @@
 <script type="text/javascript">
 
 </script>
+</div>

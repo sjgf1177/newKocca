@@ -8,6 +8,19 @@
 <link rel="stylesheet" type="text/css" href="/archive/css/archive.css" /><!-- 성과아카이브 css-->
 
 <div class="col-center mw-1280">
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>창의인재동반</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>성과아카이브</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">성과아카이브</div>
+</div>
+
 <!-- 연도 사업구분 주관기관명 과제명 불러오기 -->
 <form id="frm" name="frm" method="post" action="/edu/archiveUser/contentsDeptList.do?taskSeq=${param.archiveTaskSeq}&menuNo=${param.menuNo}" class="form-inline" >
    <div class="sub_contents_body archive"><!-- archive 클래스 추가. kmy -->
@@ -72,7 +85,7 @@
               	  	  </dd>
               </dl>
 </form>
-</div>
+
 
 <!--레이어팝업 시작-->
 	<div class="archive_layer">

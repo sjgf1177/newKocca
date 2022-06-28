@@ -172,7 +172,9 @@ $(document).ready(function() {
     //이벤트 투뎁스
     $('.two_tab li').click(function () {
         $('.two_tab li').removeClass('active');
+        $('.two_tab li a').removeAttr('title','현재탭');
         $(this).addClass('active');
+        $(this).children('a').attr('title','현재탭');
     });
 
 

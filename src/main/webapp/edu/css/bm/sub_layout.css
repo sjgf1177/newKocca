@@ -199,7 +199,7 @@ wrapper.sub_layout_page 는 1depth의 하위 서브페이지들(2, 3depth)
 .board_sorting_con{font-size:0;}
 .board_sorting_con .select_box{display:inline-block; vertical-align: middle; padding:3px;}
 .board_sorting_con .select_box select.select_style_0::-ms-expand{display:none;}
-.board_sorting_con .select_box select.select_style_0{border:1px solid #f1f1f1; background: url('/edu/images/bm/select_type_0_arrow.png') no-repeat right 15px center; height:37px;
+.board_sorting_con .select_box select.select_style_0{border:1px solid #f1f1f1; background-image: url('/edu/images/bm/select_type_0_arrow.png'); background-repeat: no-repeat; background-position: right 15px center; height:37px;
     font-size:13px; font-size:1.3rem; line-height:19px; line-height:1.9rem; color:#313131; padding-top:9px; padding-bottom:7px; padding-left:16px; padding-right:16px; min-width:131px; box-sizing: border-box; 
     appearance:none; -moz-appearance: none; -webkit-appearance:none; cursor: pointer; text-align:left;}
 .board_sorting_con .select_box select.select_style_0 option{background-color:#fff;}
