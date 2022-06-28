@@ -53,78 +53,92 @@
 
 </form>
 
-
-<div class="col-12 mb30 alert big_box">
-		<p class="fl alert_title" style="margin-bottom:0;">${view.subjnm }</p>
-			<%-- <c:set var="arrayofedumans" value="${fn:split(view.edumans,'-')}"/>
-			<c:forEach var="i" begin="0" end="${fn:length(arrayofedumans)-1 }" varStatus="status">
-				- ${arrayofedumans[i] } <c:if test="${not status.last }"> <br /></c:if>
-			</c:forEach> --%>
-		<!-- step 영역 s -->
-		<jsp:include page="/WEB-INF/jsp/edu/onlineEdu/realm/eduStep.jsp" flush="true" />
-		<!-- step 영역 e -->
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>정규과정</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>상세</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">정규과정 상세</div>
 </div>
 
-
-<!-- 차시목록 -->
-<div class="col-12 lectListSet" style="min-height:auto;">
-	<div class="lectMenu">
-		<a href="javascript:void(0);" class="icon lectToggle eduR_lt45" onclick="return false;"></a>
+<div class="col-center mw-1280">
+	<!-- 차시제목 -->
+	<div class="col-12 mb30 alert big_box">
+			<p class="fl alert_title" style="margin-bottom:0;">${view.subjnm }</p>
+				<%-- <c:set var="arrayofedumans" value="${fn:split(view.edumans,'-')}"/>
+				<c:forEach var="i" begin="0" end="${fn:length(arrayofedumans)-1 }" varStatus="status">
+					- ${arrayofedumans[i] } <c:if test="${not status.last }"> <br /></c:if>
+				</c:forEach> --%>
+			<!-- step 영역 s -->
+			<jsp:include page="/WEB-INF/jsp/edu/onlineEdu/realm/eduStep.jsp" flush="true" />
+			<!-- step 영역 e -->
 	</div>
-	
 
-	<!-- Movie Player -->
-	<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative">
-		<!-- 차시내용 -->
-		<div id="lectListTemp" style="display:none">
-			<jsp:include page="lectList.jsp"></jsp:include>
+
+	<!-- 차시목록 -->
+	<div class="col-12 lectListSet" style="min-height:auto;">
+		<div class="lectMenu">
+			<a href="javascript:void(0);" class="icon lectToggle eduR_lt45" onclick="return false;"></a>
 		</div>
-		<!-- //차시내용 -->
-		<div class="lectListBox eduR_lt45" style="position:absolute;top:0px;left:0px;background:#000;width:373px;height:100%;z-index:1000;">
-			<iframe id="lectFrame" style="background:#000;width:100%;height:100%;" scrolling="yes" title="본 프레임은 강의 목차 정보를 제공합니다."></iframe>
-		</div>
-	
-		<%-- <div style="width: ${view.prewidth }px; height:${view.preheight }px; margin: 0 auto; overflow:hidden; z-index:-10; " > --%>
-		<div style="position:relative; padding-bottom:60%; height:0; margin: 0 auto; overflow:hidden; z-index:999; " >
-			<iframe name="openstudy" 
-				id="openstudy" 
-				<%--src="${p_url }"--%>
-				src="http://172.30.1.1:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="
-				width="${view.prewidth }" 
-				height="${view.preheight }" 
-				frameborder="0" 
-				title="본 프레임은 동영상 강의 정보를 제공합니다." 
-				scrolling="no" 
-				allowfullscreen="true"
-				style="position:absolute; top:0; left:0; width:100%; height:100%;">
-			</iframe>
-		</div>
-	</div>
-	<!-- Movie Player -->
-	<script type="text/javascript">
-		document.getElementById("lectFrame").contentWindow.document.write("<div class='col-12 sub_section'>"+$('#lectListTemp').html()+"</div>");//rsg20171010
-		//lectFrame.document.write($('#lectListTemp').html());
-		//$('#lectFrame').write($('#lectListTemp').html());
-	</script>
 
-	<!-- movDescTxt -->
-	<div class="mt15 board_util_btn_con" style="max-width:1000px; margin-left:auto; margin-right:auto;">
-		<a href="javascript:void(0);" class="btn_style_0 green openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
-			자막닫기
-		</a>
-		<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 green openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
-			자막보기
-		</a>
-	</div>
-	<!-- movDescTxt -->
-	<div class="movDescTxt" tabindex="0" style="display: none; max-width:1000px; margin-left:auto; margin-right:auto; box-sizing:border-box;
-	font-size: 14.5px; font-size: 1.45rem; line-height: 26px; line-height: 2.6rem; color: #313131; letter-spacing: -0.025em;
-    padding-top:20px; padding-left:25px; padding-right:25px; padding-bottom:20px; border:2px solid #5ac9b7; text-align: left; max-height:300px; overflow-y: auto;
-    -ms-user-select:none; -moz-user-select:-moz-none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;">
-		<% pageContext.setAttribute("crlf", "\n"); %>
-		${fn:replace(lessonView.subtitle, crlf, "<br />")}
-	</div>
+		<!-- Movie Player -->
+		<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative">
+			<!-- 차시내용 -->
+			<div id="lectListTemp" style="display:none">
+				<jsp:include page="lectList.jsp"></jsp:include>
+			</div>
+			<!-- //차시내용 -->
+			<div class="lectListBox eduR_lt45" style="position:absolute;top:0px;left:0px;background:#000;width:373px;height:100%;z-index:1000;">
+				<iframe id="lectFrame" style="background:#000;width:100%;height:100%;" scrolling="yes" title="본 프레임은 강의 목차 정보를 제공합니다."></iframe>
+			</div>
 
+			<%-- <div style="width: ${view.prewidth }px; height:${view.preheight }px; margin: 0 auto; overflow:hidden; z-index:-10; " > --%>
+			<div style="position:relative; padding-bottom:60%; height:0; margin: 0 auto; overflow:hidden; z-index:999; " >
+				<iframe name="openstudy"
+					id="openstudy"
+					<%--src="${p_url }"--%>
+					src="http://172.30.1.1:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="
+					width="${view.prewidth }"
+					height="${view.preheight }"
+					frameborder="0"
+					title="본 프레임은 동영상 강의 정보를 제공합니다."
+					scrolling="no"
+					allowfullscreen="true"
+					style="position:absolute; top:0; left:0; width:100%; height:100%;">
+				</iframe>
+			</div>
+		</div>
+		<!-- Movie Player -->
+		<script type="text/javascript">
+			document.getElementById("lectFrame").contentWindow.document.write("<div class='col-12 sub_section'>"+$('#lectListTemp').html()+"</div>");//rsg20171010
+			//lectFrame.document.write($('#lectListTemp').html());
+			//$('#lectFrame').write($('#lectListTemp').html());
+		</script>
+
+		<!-- movDescTxt -->
+		<div class="mt15 board_util_btn_con" style="max-width:1000px; margin-left:auto; margin-right:auto;">
+			<a href="javascript:void(0);" class="btn_style_0 green openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
+				자막닫기
+			</a>
+			<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 green openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
+				자막보기
+			</a>
+		</div>
+		<!-- movDescTxt -->
+		<div class="movDescTxt" tabindex="0" style="display: none; max-width:1000px; margin-left:auto; margin-right:auto; box-sizing:border-box;
+		font-size: 14.5px; font-size: 1.45rem; line-height: 26px; line-height: 2.6rem; color: #313131; letter-spacing: -0.025em;
+		padding-top:20px; padding-left:25px; padding-right:25px; padding-bottom:20px; border:2px solid #5ac9b7; text-align: left; max-height:300px; overflow-y: auto;
+		-ms-user-select:none; -moz-user-select:-moz-none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;">
+			<% pageContext.setAttribute("crlf", "\n"); %>
+			${fn:replace(lessonView.subtitle, crlf, "<br />")}
+		</div>
+
+	</div>
 </div>
 <%--
 	<!-- liveRe Solution -->

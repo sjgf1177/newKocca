@@ -301,6 +301,41 @@
 			<!-- nav start -->
 			<div class="collapse navbar-collapse" id="main_nav">
 
+				<!-- 모바일 로그인/회원가입 start -->
+				<!-- 로그인 후-->
+				<sec:authorize ifAnyGranted="ROLE_USER">
+					<div class="nav_my_box mo">
+						<a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061">
+							<img src="/edu/images/renew2022/my.png" alt="마이페이지">
+						</a>
+						<ul>
+							<li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
+							<li id="myPageMenu"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="마이페이지">마이페이지</a></li>
+							<li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
+							<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>
+							<li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
+							<li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="나의 문의내역">나의 문의내역</a></li>
+						</ul>
+					</div>
+					<%--<input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">--%>
+				</sec:authorize>
+				<!-- 로그인 전-->
+				<sec:authorize ifNotGranted="ROLE_USER">
+					<c:url var="loginUrl" value="/edu/member/forLogin.do">
+						<c:param name="menuNo" value="500077" />
+						<c:param name="_targetUrl" value="${_targetUrl}" />
+					</c:url>
+					<span class="login_out_box mo">
+								<span class="show vm fontsize14 header_util_item">
+									<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
+								</span>
+								<span class="show vm fontsize14 header_util_item">
+									<a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+								</span>
+							</span>
+				</sec:authorize>
+				<!-- 모바일 로그인/회원가입 end -->
+
 				<ul class="navbar-nav">
 					<!-- nav 이벤트 one-daps start -->
 					<li>
@@ -329,16 +364,16 @@
 									콘텐츠스텝업
 								</a>
 							</li>
-<%--							<li>
-								<a href="">
-									게임인재원
-								</a>
-							</li>
-							<li>
-								<a href="">
-									게임이해하기
-								</a>
-							</li>--%>
+							<%--									<li>
+                                                                    <a href="">
+                                                                        게임인재원
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="">
+                                                                        게임이해하기
+                                                                    </a>
+                                                                </li>--%>
 						</ul>
 						<!-- nav 이벤트 two-daps end -->
 					</li>
@@ -449,233 +484,70 @@
 						<!-- nav 시설안내 two-daps end -->
 					</li>
 					<!-- nav 시설안내 one-daps end -->
+
+					<sec:authorize ifAnyGranted="ROLE_USER">
+						<!-- 학습지원 모바일 one-daps start -->
+						<li class="nav_support_box mo">
+							<a href="/testbed/main/main.do?menuNo=500108">
+								학습지원
+							</a>
+							<!-- 학습지원 two-daps start -->
+							<ul>
+								<li><a href="/edu/member/logout.do" class="" title="학습가이드">학습가이드</a></li>
+								<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="학습환경 설정">학습환경 설정</a></li>
+								<li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="원격지원서비스">원격지원서비스</a></li>
+								<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="교육체계도">교육체계도</a></li>
+							</ul>
+							<!-- nav 학습지원 two-daps end -->
+						</li>
+						<!-- 학습지원 모바일 one-daps end -->
+					</sec:authorize>
 				</ul>
-
-				<!--
-                renew이전 nav
-                <ul class="navbar-nav">
-
-                    <li>
-                        <a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"   >
-                            온라인교육
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500159"  >
-                                    나의 강의실
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027"  >
-                                    정규과정
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/onlineEdu/openLecture/list.do?sortOrder=newOrdr&amp;menuNo=500085"  >
-                                    열린강좌
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157"  >
-                                    테마과정
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/bbs/B0000048/list.do?menuNo=500203"  >
-                                    에듀코카이야기
-                                </a>
-                                <ul>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/edu/main/contents.do?menuNo=500033"  >
-                                    학습지원
-                                </a>
-                                <ul>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/edu/main/contents.do?menuNo=500005"  >
-                                    기업맞춤교육지원
-                                </a>
-                                <ul>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"   >
-                            오프라인교육
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"  >
-                                    창의인재동반
-                                </a>
-                                <ul>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/edu/main/contents.do?menuNo=500263"  >
-                                    AI 콘텐츠 창작
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/main/contents.do?menuNo=500110"  >
-                                    실감 콘텐츠 창작
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/main/contents.do?menuNo=500179"  >
-                                    콘텐츠원캠퍼스
-                                </a>
-                                <ul>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/edu/main/contents.do?menuNo=500213"  >
-                                    콘텐츠임팩트
-                                </a>
-                                <ul>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=13&amp;menuNo=500215"  >
-                                    콘텐츠인사이트
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216"  >
-                                    콘텐츠스텝업
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-
-                        <a href="/testbed/main/main.do?menuNo=500108"   >
-                            교육 인프라
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="/testbed/main/contents.do?menuNo=700101"  >
-                                    콘텐츠문화광장
-                                </a>
-                                <ul>
-                                    <li class="">
-                                        <a	href="/testbed/bbs/B0000061/list.do?menuNo=700112" >
-                                            공지사항
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a	href="/testbed/main/contents.do?menuNo=700101" >
-                                            콘텐츠문화광장 소개
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a	href="/testbed/main/contents.do?menuNo=700103" >
-                                            시설 안내
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a	href="/testbed/main/contents.do?menuNo=700108" >
-                                            대관 안내
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a	href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2" >
-                                            대관 현황
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a	href="/testbed/main/contents.do?menuNo=700104" >
-                                            찾아오시는 길
-                                        </a>
-                                    </li>
-                                    <li class="">
-                                        <a	href="/testbed/bbs/B0000066/list.do?menuNo=700126" >
-                                            자료실
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/testbed/main/contents.do?menuNo=700133"  >
-                                    콘텐츠인재캠퍼스
-                                </a>
-                                <ul>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/edu/bbs/B0000011/list.do?menuNo=500220"   >
-                            함께 : 톡톡
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="/edu/bbs/B0000011/list.do?menuNo=500008"  >
-                                    공지사항
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/bbs/B0000046/list.do?menuNo=500073"  >
-                                    FAQ
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/bbs/B0000076/list.do?menuNo=500221"  >
-                                    함께 : 톡톡
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1"   >
-                            성과 아카이브
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="/edu/archiveUser/list.do?menuNo=500251&amp;workField=1"  >
-                                    주요성과
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1"  >
-                                    콘텐츠 창의인재동반
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/archiveUser/contentsList.do?menuNo=500260&amp;workField=3"  >
-                                    콘텐츠 원캠퍼스
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/archiveUser/contentsList.do?menuNo=500261&amp;workField=4"  >
-                                    콘텐츠 임팩트
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/archiveUser/contentsList.do?menuNo=500262&amp;workField=2"  >
-                                    실감콘텐츠창작
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/edu/archiveUser/contentsList.do?menuNo=500264&amp;workField=5"  >
-                                    AI연계콘텐츠창작
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>-->
 			</div>
 			<div class="ml-auto searchCon">
-				<span class="nav_support_box"><a href=""><img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원"></a></span>
-				<span class="nav_my_box"><a href=""><img src="/edu/images/renew2022/my.png" alt="마이페이지"></a></span>
-				<input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
-
+				<!-- 로그인 후-->
+				<sec:authorize ifAnyGranted="ROLE_USER">
+					<div class="nav_support_box">
+						<a href="/edu/main/contents.do?menuNo=500033">
+							<img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
+						</a>
+						<ul>
+							<li><a href="/edu/member/logout.do" class="" title="학습가이드">학습가이드</a></li>
+							<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="학습환경 설정">학습환경 설정</a></li>
+							<li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="원격지원서비스">원격지원서비스</a></li>
+							<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="교육체계도">교육체계도</a></li>
+						</ul>
+					</div>
+					<div class="nav_my_box pc">
+						<a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061">
+							<img src="/edu/images/renew2022/my.png" alt="마이페이지">
+						</a>
+						<ul>
+							<li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
+							<li id="myPageMenu"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="마이페이지">마이페이지</a></li>
+							<li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
+							<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>
+							<li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
+							<li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="나의 문의내역">나의 문의내역</a></li>
+						</ul>
+					</div>
+					<input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
+				</sec:authorize>
+				<!-- 로그인 전-->
+				<sec:authorize ifNotGranted="ROLE_USER">
+					<c:url var="loginUrl" value="/edu/member/forLogin.do">
+						<c:param name="menuNo" value="500077" />
+						<c:param name="_targetUrl" value="${_targetUrl}" />
+					</c:url>
+					<span class="login_out_box">
+								<span class="show vm fontsize14 header_util_item">
+									<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
+								</span>
+								<span class="show vm fontsize14 header_util_item">
+									<a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+								</span>
+							</span>
+				</sec:authorize>
 			</div>
 			<!-- pc 햄버거 버튼 눌렀을때 start-->
 			<div class="collapse navbar-collapse" id="main_nav_full">
