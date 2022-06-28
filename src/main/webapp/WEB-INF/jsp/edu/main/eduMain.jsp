@@ -362,11 +362,11 @@ if( StringUtils.hasText(menuNo) ) {
 						<ul class="navbar-nav">
 							<!-- nav 이벤트 one-daps start -->
 							<li>
-								<a href="/edu/bbs/B0000048/list.do?menuNo=500203"   >
+								<a href="/edu/bbs/B0000048/list.do?menuNo=500203">
 									이벤트
 								</a>
 								<!-- nav 이벤트 two-daps start -->
-								<ul>
+								<%--<ul>
 									<li>
 										<a href="/edu/bbs/B0000048/list.do?menuNo=500203">
 											참여 이벤트
@@ -387,7 +387,7 @@ if( StringUtils.hasText(menuNo) ) {
 											콘텐츠스텝업
 										</a>
 									</li>
-<%--									<li>
+									<li>
 										<a href="">
 											게임인재원
 										</a>
@@ -396,8 +396,8 @@ if( StringUtils.hasText(menuNo) ) {
 										<a href="">
 											게임이해하기
 										</a>
-									</li>--%>
-								</ul>
+									</li>
+								</ul>--%>
 								<!-- nav 이벤트 two-daps end -->
 							</li>
 							<!-- nav 이벤트 one-daps end -->
@@ -479,6 +479,16 @@ if( StringUtils.hasText(menuNo) ) {
 									<li>
 										<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
 											콘텐츠인사이트
+										</a>
+									</li>
+								<%--<li>
+										<a href="#">
+											에듀코카
+										</a>
+									</li>--%>
+									<li>
+										<a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1">
+											주요성과
 										</a>
 									</li>
 								</ul>

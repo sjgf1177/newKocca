@@ -20,81 +20,84 @@
 <link rel="stylesheet" type="text/css" href="/archive/css/archive.css" /><!-- 성과아카이브 css-->
 
 	<!--content-->
-	<div>
-		<ul class="photoTab photoTabSize5 online_edu_tab_style tab_wrap" id="tabNavCtrl">
-			<!-- 분류별 탭 목록 s -->
-			<li id="tab1" class="active">
-                <a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=1" title="현재탭">콘텐츠 창의인재동반</a>
-            </li>
-            <li id="tab3">
-                <a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=3">콘텐츠 원캠퍼스</a>
-            </li>
-            <li id="tab4">
-                <a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=4">콘텐츠 임팩트</a>
-            </li>
-            <li id="tab2">
-                <a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=2">실감 콘텐츠 창작 양성</a>
-            </li>
-            <li id="tab5">
-                <a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=5">AI연계콘텐츠창작</a>
-            </li>            
-		</ul>
+
+	<div class="over-hidden sub_contents_header">
+		<div class="linemap_wrap"> <!-- fl class 삭제 -->
+			<ul class="col-12 linemap_con">
+				<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+				<li><a href="javascript:void(0);" tabindex="-1"><span>주요성과</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="sub_title s_tit02">
+		<div class="col-center mw-1280">주요성과</div>
 	</div>
 
-	<div class="col-12 show-table sub_board_header control_board_header">
-		<div class="col-3 show-tablecell fn vm board_title online_edu_board_title">
-			<h4>
-				총 <span class="board_count">${resultCnt}</span> 건의 검색 결과가 있습니다.
-			</h4>
+	<div class="col-center mw-1280 dream_list">
+		<div class="tab_style_1_con">
+			<ul class="tab_style_1 five_tab size_24" id="tabNavCtrl">
+				<li id="tab1" class="active"><a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=1" title="현재탭"><span>콘텐츠 창의인재동반</span></a></li>
+				<li id="tab3"><a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=3"><span>콘텐츠 원캠퍼스</span></a></li>
+				<li id="tab4"><a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=4"><span>콘텐츠 임팩트</span></a></li>
+				<li id="tab2"><a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=2"><span>실감 콘텐츠 창작 양성</span></a></li>
+				<li id="tab5"><a href="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=5"><span>AI연계콘텐츠창작</span></a></li>
+			</ul>
 		</div>
-		
-		<form id="frm" name="frm" action="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=${param.workField }" method="post">
-				<input type="hidden" name="workField"  id="workField"  value="<c:out value='${param.workField }' />" />
-		</form>
-	</div>
-	
-	<div class="photoGallery2 photoLine1">
-	
-		<div class="col-12 calc_wrap20">
-			<c:forEach items="${resultList }" var="item3" varStatus="status3">
-				<div class="col-12 col-md-3 online_edu_card_wrap">
-					<div class="col-12 online_edu_card_list">
-						<a class="show-block" href="javascript:void(0);" onclick="layer_open('layerOpen1','<c:out value="${item3.archiveProjectSeq}" />'); return false;">
-							<div class="img_box">
-							<c:choose>
-				  			     <c:when test="${item3.atchFileId == null or item3.atchFileId == '' }">
-				  			     	<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.atchFileId } 임시 이미지"/>
-				  			     </c:when>
-				  			     <c:otherwise>             
-				  			     	<img alt="${item3.atchFileId } - 메인 이미지" src='/cmm/fms/getImage.do?atchFileId=<c:out value="${item3.atchFileId}&fileSn=1 "/>'  />
-				  			     </c:otherwise>
-				  			</c:choose>
-							</div>
-							<div class="text_box">
-								<div class="online_edu_card_title">
-									<h4>${item3.projectNm }</h4>
+
+		<div class="col-12 show-table sub_board_header control_board_header">
+			<div class="show-tablecell fn vm board_title online_edu_board_title">
+				<h4>
+					총 <span class="board_count">${resultCnt}</span> 건의 검색 결과가 있습니다.
+				</h4>
+			</div>
+
+			<form id="frm" name="frm" action="/edu/archiveUser/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&workField=${param.workField }" method="post">
+					<input type="hidden" name="workField"  id="workField"  value="<c:out value='${param.workField }' />" />
+			</form>
+		</div>
+
+		<div class="photoGallery2 photoLine1">
+
+			<div class="col-12 calc_wrap20">
+				<c:forEach items="${resultList }" var="item3" varStatus="status3">
+					<div class="col-12 col-md-3 online_edu_card_wrap">
+						<div class="col-12 online_edu_card_list">
+							<a class="show-block" href="javascript:void(0);" onclick="layer_open('layerOpen1','<c:out value="${item3.archiveProjectSeq}" />'); return false;">
+								<div class="img_box">
+								<c:choose>
+									 <c:when test="${item3.atchFileId == null or item3.atchFileId == '' }">
+										<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.atchFileId } 임시 이미지"/>
+									 </c:when>
+									 <c:otherwise>
+										<img alt="${item3.atchFileId } - 메인 이미지" src='/cmm/fms/getImage.do?atchFileId=<c:out value="${item3.atchFileId}&fileSn=1 "/>'  />
+									 </c:otherwise>
+								</c:choose>
 								</div>
-								<div class="">
-									${item3.organNm }
+								<div class="text_box">
+									<div class="online_edu_card_title">
+										<h4>${item3.projectNm }</h4>
+									</div>
+									<div class="">
+										${item3.organNm }
+									</div>
+									<div class="">
+										${item3.archiveFieldFullNm}
+									</div>
+									<div class="">
+										${item3.year }
+									</div>
 								</div>
-								<div class="">
-									${item3.archiveFieldFullNm}
-								</div>
-								<div class="">
-									${item3.year }
-								</div>
-							</div>
-						</a>
+							</a>
+						</div>
 					</div>
-				</div>
-			</c:forEach>
+				</c:forEach>
+			</div>
 		</div>
-	</div>
-	
-	<c:if test="${resultCnt > 0}">
-		<div class="paging">${pageNav}</div>
-	</c:if>
 
+		<c:if test="${resultCnt > 0}">
+			<div class="paging">${pageNav}</div>
+		</c:if>
+	</div>
 	<!--레이어팝업 시작-->
 	<div class="archive_layer">
 	    <!--레이어배경-->

@@ -33,7 +33,7 @@
 			<li class="active"><a href="/edu/dream/pltfomList/list.do?menuNo=500117" title="현재탭"><span>플랫폼기관</span></a></li>
 			<!-- <li><a href="/edu/dream/mentorManage/list.do?menuNo=500119"><span>멘토라인업</span></a></li> -->
 			<li><a href="/edu/bbs/B0000041/list.do?menuNo=500211"><span>창의현장</span></a></li>
-			<li><a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1"><span>성과아카이브</span></a></li>
+			<li><a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1"><span>성과아카이브</span></a></li>
 		</ul>
 	</div>
 
@@ -48,7 +48,7 @@
 					</c:if>
 				</c:forEach>
 			</c:if>
-			<div class="col-12 col-sm-4 platform_list">
+			<div class="col-12 col-sm-3 platform_list">
 				<div class="platform_card">
 					<div class="img_box">
 						<c:if test="${not empty file }">
@@ -77,6 +77,7 @@
 
 <style>
 	.linemap_wrap .linemap_con li:nth-child(4) { display:none }
+
 </style>
 
 

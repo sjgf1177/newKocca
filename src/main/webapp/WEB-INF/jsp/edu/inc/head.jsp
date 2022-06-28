@@ -343,7 +343,7 @@
 							이벤트
 						</a>
 						<!-- nav 이벤트 two-daps start -->
-						<ul>
+						<%--<ul>
 							<li>
 								<a href="/edu/bbs/B0000048/list.do?menuNo=500203">
 									참여 이벤트
@@ -364,17 +364,17 @@
 									콘텐츠스텝업
 								</a>
 							</li>
-							<%--									<li>
-                                                                    <a href="">
-                                                                        게임인재원
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">
-                                                                        게임이해하기
-                                                                    </a>
-                                                                </li>--%>
-						</ul>
+						<li>
+								<a href="">
+									게임인재원
+								</a>
+							</li>
+							<li>
+								<a href="">
+									게임이해하기
+								</a>
+							</li>-
+						</ul>--%>
 						<!-- nav 이벤트 two-daps end -->
 					</li>
 					<!-- nav 이벤트 one-daps end -->
@@ -423,7 +423,7 @@
 
 					<!-- nav 사업안내 one-daps start -->
 					<li>
-						<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"   >
+						<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
 							사업안내
 						</a>
 						<!-- nav 이벤트 two-daps start -->
@@ -456,6 +456,16 @@
 							<li>
 								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
 									콘텐츠인사이트
+								</a>
+							</li>
+							<%--<li>
+								<a href="#">
+									에듀코카
+								</a>
+							</li>--%>
+							<li>
+								<a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1">
+									주요성과
 								</a>
 							</li>
 						</ul>

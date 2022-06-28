@@ -5,8 +5,23 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="util" uri="http://www.unp.co.kr/util" %>
 
+<style>
 
+</style>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>이벤트</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠인사이트</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">콘텐츠인사이트</div>
+</div>
 <!-- ========== 잡페어 =========== -->
+<div class="col-center mw-1280">
 <c:if test="${param.prgSe eq '06'}">
 	
 	<c:choose>
@@ -57,7 +72,7 @@
 			<jsp:include page="/WEB-INF/jsp/edu/cts/500198.jsp" flush="true"/>
 		</c:when>
 	</c:choose>
-	
+
 	<div class="col-12 contents_card_list">
 		<div class="over-hidden calc_wrap19">
 			<c:forEach var="result" items="${resultList}" varStatus="status">
@@ -145,4 +160,5 @@
 
 </c:if>
 <!-- ========== //오프라인교육 =========== -->
+</div>
  

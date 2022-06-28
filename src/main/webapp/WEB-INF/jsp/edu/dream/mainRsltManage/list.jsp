@@ -40,7 +40,7 @@
 			<li><a href="/edu/dream/pltfomList/list.do?menuNo=500117"><span>플랫폼기관</span></a></li>
 			<!-- <li><a href="/edu/dream/mentorManage/list.do?menuNo=500119"><span>멘토라인업</span></a></li> -->
 			<li><a href="/edu/bbs/B0000041/list.do?menuNo=500211"><span>창의현장</span></a></li>
-			<li><a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1"><span>성과아카이브</span></a></li>
+			<li><a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1"><span>성과아카이브</span></a></li>
 		</ul>
 	</div>
 
