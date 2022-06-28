@@ -27,7 +27,19 @@
 	<link rel="stylesheet" type="text/css" href="/edu/css/animate.min.css" />
 	<link rel="stylesheet" type="text/css" href="/edu/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/layout.css"/>
-	<link rel="stylesheet" type="text/css" href="/edu/js/bm/swiper/swiper.min.css"/>
+
+<c:choose>
+	<c:when test="${param.menuNo eq '500205'}">
+		<link rel="stylesheet"  href="//unpkg.com/swiper/swiper-bundle.min.css"/>
+	</c:when>
+	<c:when test="${param.menuNo eq '500203'}">
+		<link rel="stylesheet"  href="//unpkg.com/swiper/swiper-bundle.min.css"/>
+	</c:when>
+	<c:otherwise>
+		<link rel="stylesheet" type="text/css" href="/edu/js/bm/swiper/swiper.min.css"/>
+	</c:otherwise>
+</c:choose>
+
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/animate.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/bootstrap.reset.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/common_prev.css"/>
@@ -96,8 +108,7 @@
 	
 	<script type="text/javascript" src="/edu/js/new/mainHeader.js"></script>
 
-	<!-- renew2022 CSS start -->
-	<link rel="stylesheet" href="/edu/js/bm/swiper/swiper.min.css"/>
+
 	<!-- Link Swiper's 8.4.2 CSS -->
 	<%--<link rel="stylesheet"  href="https://unpkg.com/swiper/swiper-bundle.min.css"/>--%>
 
@@ -108,7 +119,19 @@
 	<!-- renew2022 CSS end -->
 
 	<!-- renew2022 JavaScript start -->
-	<script type="text/javascript" src="/edu/js/bm/swiper/swiper.min.js"></script>
+
+<c:choose>
+	<c:when test="${param.menuNo eq '500205'}">
+		<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+	</c:when>
+	<c:when test="${param.menuNo eq '500203'}">
+		<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+	</c:when>
+	<c:otherwise>
+		<script type="text/javascript" src="/edu/js/bm/swiper/swiper.min.js"></script>
+	</c:otherwise>
+</c:choose>
+
 	<script src="/edu/css/renew2022/renew.js"></script>
 	<!-- Required Js -->
 	<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
@@ -121,7 +144,7 @@
 	<%--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>--%>
 	<script src="/edu/css/renew2022/assets/js/pages/ac-alert.js"></script>
 	<!-- 챗봇js-->
-	<script id="happytalkSDK" src="https://design.happytalkio.com/sdk/happytalk.chat.v2.min.js"></script>
+	<script id="happytalkSDK" src="//design.happytalkio.com/sdk/happytalk.chat.v2.min.js"></script>
 
 	<!-- renew2022 JavaScript end -->
 	

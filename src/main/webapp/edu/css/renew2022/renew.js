@@ -1,4 +1,4 @@
-/*$(function(){
+$(function(){
     //이벤트
     var swiper3 = new Swiper('.calc_wrap19', {
         slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
@@ -6,22 +6,22 @@
             rows: 2,
         }
         ,spaceBetween: 0
-        ,pagination: { //페이지 수
+/*        ,pagination: { //페이지 수
             el: ".event_card_wrap .swiper-pagination",
             clickable: true,
-        }
+        }*/
         //구버전 swiper 방향표
-        /!*,nextButton: '.event_card_wrap .swiper-button-next'
+        ,nextButton: '.event_card_wrap .swiper-button-next'
         ,prevButton: '.event_card_wrap .swiper-button-prev'
         ,breakpoints: {
             640: {
                 slidesPerView: 3,
                 spaceBetween: 20
             },
-        }*!/
+        }
 
     });
-});*/
+});
 
 
 

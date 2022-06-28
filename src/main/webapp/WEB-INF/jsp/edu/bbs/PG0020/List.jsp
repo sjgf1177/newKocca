@@ -137,8 +137,8 @@
 </div>
 
 <!-- paging -->
-<c:if test="${fn:length(resultList) > 0}">
+<%--<c:if test="${fn:length(resultList) > 0}">
 	<div class="paging">${pageNav}</div>
 	<!-- paging end //-->
-</c:if>
+</c:if>--%>
 <!-- //paging -->
