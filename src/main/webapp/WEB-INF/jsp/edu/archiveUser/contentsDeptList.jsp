@@ -7,6 +7,7 @@
 <script src="/archive/js/layer_pop_archive.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="/archive/css/archive.css" /><!-- 성과아카이브 css-->
 
+<div class="col-center mw-1280">
 <!-- 연도 사업구분 주관기관명 과제명 불러오기 -->
 <form id="frm" name="frm" method="post" action="/edu/archiveUser/contentsDeptList.do?taskSeq=${param.archiveTaskSeq}&menuNo=${param.menuNo}" class="form-inline" >
    <div class="sub_contents_body archive"><!-- archive 클래스 추가. kmy -->
@@ -71,7 +72,7 @@
               	  	  </dd>
               </dl>
 </form>
-
+</div>
 
 <!--레이어팝업 시작-->
 	<div class="archive_layer">
