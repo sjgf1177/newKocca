@@ -169,4 +169,11 @@ $(document).ready(function() {
         $(".close_block_btn").css({display: 'block'});
     });
 
+    //이벤트 투뎁스
+    $('.two_tab li').click(function () {
+        $('.two_tab li').removeClass('active');
+        $(this).addClass('active');
+    });
+
+
 });

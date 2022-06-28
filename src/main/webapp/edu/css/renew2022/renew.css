@@ -203,6 +203,20 @@ header nav .searchCon .gnb_menu:before{content: none;}
 .nav_search_box input{height:40px; padding: 0 40px 0 15px; border-radius: 5px; font-size: 14px;}
 .nav_search_btn{position:absolute; top:50%; transform:translateY(-50%); right:10px; width: 26px; height: 26px; background-image: url("/edu/images/renew2022/ico_search.png"); background-repeat: no-repeat; background-color: #fff;}
 
+
+header nav .searchCon .header_util_item:first-child a{margin-right: 24px; position: relative;}
+header nav .searchCon .header_util_item:first-child a:after{content: ""; position: absolute; right: -15px; top: 3px; width: 2px; height: 14px; background-image: url(/edu/images/renew2022/ico_line_gray.png); background-repeat: no-repeat;}
+.login_out_box.mo, .nav_support_box.mo, .nav_my_box.mo{display: none;}
+.login_out_box .header_util_item a{color:#fff; font-size: 1.8rem;}
+.login_out_box .header_util_item:hover a{font-weight: 700;}
+
+.nav_my_box, .nav_support_box{display:inline-block; position: relative;}
+.nav_my_box ul, .nav_support_box ul{display:none; position:fixed; background-color: #f8f8f8; border-radius: 13px;}
+.nav_my_box.pc:hover ul, .nav_support_box:hover ul{display: block;}
+.nav_my_box li, .nav_support_box li{border-bottom: 1px solid #707070; line-height: normal;}
+.nav_my_box li a, .nav_support_box li a{padding: 10px 13px; line-height:1.5rem; color:#222; font-weight: 500;}
+.nav_my_box li a:hover, .nav_support_box li a:hover{color: #3B85FF;}
+.nav_my_box li:last-child, .nav_support_box li:last-child{border-bottom: none;}
 /*******************************************************  NAV 콘텐츠 커리큘럼 *******************************************************/
 #main_nav_full{display: none !important;}
 #main_nav_full.gnbActive{display: block !important; position: fixed; width: 100%; height:1080px; top: 0; left: 0;background-color: #222;}
@@ -233,6 +247,11 @@ header nav .searchCon .gnb_menu:before{content: none;}
     .cy_list_box:nth-child(1),.cy_list_box:nth-child(2){padding-bottom: 30px;}
     .cy_list_box:nth-child(3),.cy_list_box:nth-child(4){padding:60px 0 30px; border-top: 1px solid #707070; border-bottom: 1px solid #707070;}
 }
+@media all and (max-width:1300px) {
+    header nav, header .navbar{padding: 10px 20px;}
+    .login_out_box.mo, .nav_support_box.mo, .nav_my_box.mo{display: block;}
+
+}
 /* 햄버거 */
 header nav.gnbActive{background: #222222;}
 
@@ -250,7 +269,7 @@ header nav.gnbActive{background: #222222;}
     .nav_search_box{width: 100%; margin-top: 15px;}
     .nav_search_box input{width: 100%;}
 
-    header nav .navbar-toggler{background-color: transparent;}
+    header nav .navbar-toggler{background-color: transparent; background-position: right;}
 
     header.active{background: #222;}
     .navbar-nav{max-height: initial !important;}
@@ -260,6 +279,11 @@ header nav.gnbActive{background: #222222;}
     header nav #main_nav .navbar-nav > li > a{margin-bottom: 10px; font-weight: 600; padding-left: 20px;}
     header nav #main_nav .navbar-nav > li > a:after{top:25px;}
     header nav:not(.gnbActive) #main_nav .navbar-nav > li > ul{top:0;}
+
+    .nav_my_box li a, .nav_support_box li a{line-height: 3rem;}
+    .login_out_box.mo, .nav_my_box.mo{width: 100%; text-align: right; display: flex; align-items: center; justify-content: flex-end; margin: 30px 0 10px 0;}
+    .login_out_box.mo .header_util_item:first-child a{margin-right: 24px; position: relative;}
+    .login_out_box.mo .header_util_item:first-child a:after{content: ""; position: absolute; right: -15px; top: 3px; width: 2px; height: 14px; background-image: url(/edu/images/renew2022/ico_line_gray.png); background-repeat: no-repeat;}
 }
 
 
@@ -812,6 +836,11 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .dream_list .tab_style_1_con{margin-bottom: 33px;}
 .sub_section .edu_together_view_inner .edu_youtube_subtitle_view_btn_con .edu_youtube_subtitle_view_btn{padding: 10px 25px; background-image: none; background-color: #3B85FF;}
 .sub_section .edu_together_three_card_con{display: flex; flex-wrap: wrap;}
+
+
+/* 정규과정 상세 */
+.content{width:75%; !important;}
+.contentFrame{text-align: left; !important;}
 /*******************************************************  콘텐츠문화광장 *********************************************************/
 
 /* 소개 */

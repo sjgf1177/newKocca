@@ -121,15 +121,17 @@ $(function(){
 
 		if($("header").hasClass("active")){
 			$("header").removeClass("active");
-			$('.op_bg_box').removeClass("active");
+			/*$('.op_bg_box').removeClass("active");*/
 			$('header').css({"height":"140px"});
 			$('#main_nav').css({"display":"none"});
+			$(this).css({"background-image": "url(/edu/img/gnb_icon.png)"});
 
 		}else{
 			$("header").addClass("active");
-			$('.op_bg_box').addClass("active");
+			/*$('.op_bg_box').addClass("active");*/
 			$('header').css({"height":"100%"});
 			$('#main_nav').css({"display":"block"});
+			$(this).css({"background-image": "url(/edu/img/gnb_close.png)"});
 
 
 		}
