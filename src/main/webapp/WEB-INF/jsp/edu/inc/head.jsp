@@ -330,7 +330,7 @@
 									<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
 								</span>
 								<span class="show vm fontsize14 header_util_item">
-									<a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+									<a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 								</span>
 							</span>
 				</sec:authorize>
@@ -554,7 +554,7 @@
 									<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
 								</span>
 								<span class="show vm fontsize14 header_util_item">
-									<a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+									<a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 								</span>
 							</span>
 				</sec:authorize>
