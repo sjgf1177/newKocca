@@ -25,15 +25,15 @@
 <div class="sub_title s_tit02">
 	<div class="col-center mw-1280">이벤트</div>
 </div>
-<form id="frm" name="frm" method="post">
+<form id="eventFrm" name="eventFrm" method="post">
 	<input type="hidden" id="op3" name="op3" value="">
 </form>
 
 <script>
 	function goEvent(type){
-		document.frm.op3.value = type;
-		document.frm.action = "/edu/bbs/B0000048/list.do?menuNo=500205";
-		document.frm.submit();
+		document.eventFrm.op3.value = type;
+		document.eventFrm.action = "/edu/bbs/B0000048/list.do?menuNo=500205";
+		document.eventFrm.submit();
 	}
 </script>
 

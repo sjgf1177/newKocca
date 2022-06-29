@@ -140,7 +140,7 @@ public class RealmService extends DefaultCmmProgramService {
 			
 		}else{
 			super.setCountQueryId("realmListDAO.realmSubjListCnt");
-			super.setListQueryId("realmListDAO.realmSubjList");
+			super.setListQueryId("realmListDAO.realmSubjList2");
 		}
 		
 		paramCtx.setSqlDAO(lmsSqlDao);

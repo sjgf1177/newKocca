@@ -103,6 +103,10 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			List<ZValue> onlineEduSubjList = lmsSqlDao.listDAO("realmListDAO.realmSubjList", param);
 			model.addAttribute("onlineEduSubjList", onlineEduSubjList);
 
+			//분류별 탭 1depth 목록
+			List<ZValue> realmTabList = lmsSqlDao.listDAO("realmListDAO.realmTabList", param);
+			model.addAttribute("realmTabList",realmTabList);
+
 			// 열린강좌 목록
 			log.debug("// 열린강좌 목록");
 			List<ZValue> openLectureList = lmsSqlDao.listDAO("openLecture.selectMainList", param);
@@ -317,10 +321,10 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 	private List<ZValue> getRecentNoticeList() throws Exception {
 		ZValue param = new ZValue();
 		List<ZValue> recentNoticeList = sqlDao.listDAO("optionalBoardDAO.selectRecentNoticeList", param);
-		
-		
+
+
 		cacheUtil.save(PORTAL_MAIN_CACHE_NAME, "recentNoticeList", recentNoticeList);
-		
+
 
 		Map<String, List<FileVO>> fileMap = listHandler.getFileMap(param, recentNoticeList);
 		UnpCollectionUtils.setFirstFile(recentNoticeList, fileMap, "atchFileId");
@@ -338,8 +342,6 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		UnpCollectionUtils.setFirstFile(recentEventList, fileMap, "atchFileId");
 		return recentEventList;
 	}
-	
-	
 
 	private ServletContext servletContext;
 	@Override

@@ -323,6 +323,254 @@
 		]]>
 	</select>
 
+	<!-- 과정 목록 페이지 없음-->
+	<select id="realmListDAO.realmSubjList2" parameterClass="zvl" resultClass="zvl">
+		<![CDATA[ /* realmListDAO.realmSubjList2 */
+		SELECT
+				ROWNUM RNUM,
+				ALL_LIST.*
+			FROM (
+		]]>
+		<isNotEqual property="pGubun1" compareValue="A">
+			SELECT AA.*
+			FROM (
+		</isNotEqual>
+		<![CDATA[
+					    SELECT DISTINCT A.SUBJ
+					         , A.INTRODUCEFILENAMENEW
+					         , A.SUBJSEQ
+					 		 , A.SUBJNM
+					         , A.SCYEAR
+					         , A.HITNUMBER
+					         , A.ISONOFF
+					         , A.SCUPPERCLASS
+					         , A.SCMIDDLECLASS
+					         , A.SCLOWERCLASS
+					         , USEBOOK
+					         , A.PREWIDTH
+					         , A.PREHEIGHT
+					         , A.PROPSTART AS PS
+					         , A.WJ_CLASSKEY
+					         , A.MOBILE_PREURL
+					         , A.MOBILE_USE_YN
+					         , (
+					         	SELECT DECODE(COUNT(SUBJ), 0, 'FALSE', 'TRUE')
+					              FROM TZ_PROPOSE
+					             WHERE SUBJ    = A.SUBJ
+					               AND SUBJSEQ = A.SUBJSEQ
+					               AND YEAR    = A.SCYEAR
+					               AND USERID  = ''
+					           ) AS EXISTPROPOSE
+					         , TO_CHAR(TO_DATE(A.PROPSTART, 'YYYYMMDDHH24'), 'YYYY.MM.DD') AS PROPSTART
+					         , TO_CHAR(TO_DATE(A.PROPEND,   'YYYYMMDDHH24'), 'YYYY.MM.DD') AS PROPEND
+					         , TO_CHAR(TO_DATE(A.EDUSTART,  'YYYYMMDDHH24'), 'YYYY.MM.DD') AS EDUSTART
+					         , TO_CHAR(TO_DATE(A.EDUEND,    'YYYYMMDDHH24'), 'YYYY.MM.DD') AS EDUEND
+					         , A.SCBIYONG
+					         , A.BIYONG
+					         , A.PREURL
+					         , A.ISUNIT
+					         , A.STUDENTLIMIT
+					         , SUBSTRING(A.SPECIALS,1,1) AS ISNEW
+					         , SUBSTRING(A.SPECIALS,2,1) AS ISHIT
+					         , SUBSTRING(A.SPECIALS,3,1) AS ISRECOM
+					         , (SELECT CLASSNAME
+					         	  FROM TZ_SUBJATT X
+					         	 WHERE X.UPPERCLASS  = A.SCUPPERCLASS
+					         	   AND X.MIDDLECLASS = '000'
+					         	   AND X.LOWERCLASS  = '000') AS UCLASSNM
+					         , (SELECT CLASSNAME
+					         	  FROM TZ_SUBJATT X
+					         	 WHERE X.UPPERCLASS  = A.SCUPPERCLASS
+					         	   AND X.MIDDLECLASS = A.SCMIDDLECLASS
+					         	   AND X.LOWERCLASS  = '000') AS MCLASSNM
+					         , (SELECT CLASSNAME
+					         	  FROM TZ_SUBJATT X
+					         	 WHERE X.UPPERCLASS  = A.SCUPPERCLASS
+					         	   AND X.MIDDLECLASS = A.SCMIDDLECLASS
+					         	   AND X.LOWERCLASS  = A.SCLOWERCLASS) AS LCLASSNM
+					         , A.COURSE
+					         , A.COURSESEQ
+					         , A.COURSENM
+					         , A.ISBELONGCOURSE
+					         , A.SUBJCNT
+					         , A.AREA
+					         , A.AREANAME
+					         , A.SPECIALS
+					         , (SELECT NVL(ROUND(SUM(NVL(DISTCODE1_AVG, 0))/COUNT(*), 1), 0)
+					          	  FROM TZ_SULEACH
+					          	 WHERE SUBJ   = A.SUBJ
+					          	   AND GRCODE = A.GRCODE) AS SUL_AVG
+					         , (CASE
+					            	WHEN TO_CHAR(SYSDATE,'YYYYMMDDHH24') BETWEEN A.PROPSTART AND A.PROPEND THEN 'Y'
+					            	ELSE 'N'
+					            END) AS PROPYN
+					         , INTRO
+					         , EDUURL
+					         , ISOUTSOURCING
+					         , CPSUBJ
+					         , CPSUBJSEQ
+					         , CONTENTTYPE
+					         , (SELECT COMP
+					         	  FROM TZ_MEMBER
+					         	 WHERE USERID IN (#userid#)
+					         	   AND GRCODE IN (#grcode#)) AS COMPANY
+					         , A.FAVORSUBJCNT
+					         , A.LDATE
+					         , A.INDATE
+					         , (SELECT CODENM
+					         	  FROM TZ_CODE
+					         	 WHERE GUBUN IN ('0110')
+					         	   AND CODE   = (SELECT GUBUN_1
+					         	                   FROM TZ_SUBJHOMEGUBUN
+					         	                  WHERE ROWNUM IN (1)
+					         	                    AND GUBUN IN ('GS')
+					         	                    AND SUBJ = A.SUBJ)) AS CODENM
+					         , (SELECT SUBJSUMMARY
+					         	  FROM TZ_SUBJ
+					         	 WHERE SUBJ    = A.SUBJ
+					         	   AND YEAR    = A.SCYEAR
+					         	   AND SUBJSEQ = A.SUBJSEQ) AS SUBJSUMMARY
+                             , (SELECT X.GUBUN_1
+                              	  FROM TZ_SUBJHOMEGUBUN X
+                              	 WHERE X.GUBUN = 'GS'
+                              	   AND X.SUBJ  = A.SUBJ) AS G1CD
+                             , (SELECT X.GUBUN_2
+                              	  FROM TZ_SUBJHOMEGUBUN X
+                              	 WHERE X.GUBUN = 'GS'
+                              	   AND X.SUBJ  = A.SUBJ) AS G2CD
+					         , (SELECT Z.CODENM
+					         	  FROM TZ_CODE Z
+					         	 WHERE Z.GUBUN  = '0110'
+					         	   AND Z.LEVELS = 2
+					         	   AND Z.CODE   = (SELECT X.GUBUN_2
+					         	   					 FROM TZ_SUBJHOMEGUBUN X
+					         	   					WHERE X.GUBUN = 'GS'
+					         	   					  AND X.SUBJ  = A.SUBJ)) AS G2NM
+					         , (SELECT X.GUBUN_3
+					         	  FROM TZ_SUBJHOMEGUBUN X
+					         	 WHERE X.GUBUN = 'GS'
+					         	   AND X.SUBJ  = A.SUBJ) AS G3CD
+					         , (SELECT Z.CODENM
+					         	  FROM TZ_CODE Z
+					         	 WHERE Z.GUBUN  = '0110'
+					         	   AND Z.LEVELS = 3
+					         	   AND Z.CODE   = (SELECT X.GUBUN_3
+					         	   					 FROM TZ_SUBJHOMEGUBUN X
+					         	   					WHERE X.GUBUN = 'GS'
+					         	   					  AND X.SUBJ  = A.SUBJ)) AS G3NM
+							 , (SELECT X.LVCODE
+							 	  FROM TZ_SUBJHOMEGUBUN_LEVEL X
+							 	 WHERE X.SUBJ = A.SUBJ) AS LVCD
+							 , (SELECT Z.CODENM
+							      FROM TZ_CODE Z
+							     WHERE Z.GUBUN  = '0121'
+							       AND Z.LEVELS = 2
+							       AND Z.CODE   = (SELECT X.LVCODE
+							       				     FROM TZ_SUBJHOMEGUBUN_LEVEL X
+							       				    WHERE X.SUBJ = A.SUBJ)) AS LVNM
+					    FROM (SELECT S1.*
+					    		   , (SELECT NVL(COUNT(USERID),0)
+					    		        FROM TZ_STUDENT
+					    		       WHERE SUBJ 	 = S1.SUBJ
+					    		         AND YEAR 	 = S1.SCYEAR
+					    		         AND SUBJSEQ = S1.SUBJSEQ) AS FAVORSUBJCNT
+					        	FROM VZ_SCSUBJSEQIMGMOBILE S1
+					           WHERE S1.PROPSTART NOT IN (' ')
+					             AND TO_CHAR(SYSDATE,'YYYYMM') BETWEEN REPLACE(SUBSTR(S1.PROPSTART,1,6), '.', '')
+					             AND REPLACE(SUBSTR(S1.PROPEND,1,6), '.', '')
+					]]>
+		<isNotEmpty prepend="AND" property="p_searchtext">
+			<![CDATA[ lower(S1.SUBJNM) LIKE lower('%$p_searchtext$%') OR lower(S1.SEARCH_NM) LIKE lower('%$p_searchtext$%')]]>
+		</isNotEmpty>
+
+		<![CDATA[
+					    ) A
+					    WHERE
+					        A.GRCODE IN (#grcode#)
+					        AND A.ISUSE = 'Y'
+					]]>
+		<isEqual property="pGubun1" compareValue="A">
+			AND A.SUBJ NOT IN (SELECT DISTINCT SUBJ FROM TZ_SUBJHOMEGUBUN WHERE GUBUN='GS' AND GUBUN_1 IN 'T0' )
+		</isEqual>
+		AND (TO_CHAR (SYSDATE, 'YYYYMMDDHH24') BETWEEN A.PROPSTART AND A.PROPEND
+		<isNotEmpty property="pGubun1">
+			<isNotEqual prepend="OR" property="pGubun1" compareValue="A">
+				A.SUBJ IN (SELECT SUBJ FROM TZ_SUBJ_CLS_MNG WHERE CLS_CD = '1006')
+			</isNotEqual>
+		</isNotEmpty>
+		)
+		AND SUBJ NOT IN ( SELECT SUBJ FROM TZ_SUBJ WHERE SUBJ BETWEEN 'CK14014' AND 'CK14048' OR ( A.SUBJ BETWEEN 'CK15003' AND 'CK15030' ))
+
+		<isNotEmpty property="p_type">
+			<isNotEqual	property="p_type" compareValue="A">
+				AND A.SUBJ IN (SELECT DISTINCT SUBJ FROM TZ_SUBJHOMEGUBUN WHERE GUBUN='GS' AND GUBUN_1 = #p_type#
+			</isNotEqual>
+
+			<isNotEmpty property="p_gcd1">
+				AND GUBUN_2 = #p_gcd1#
+			</isNotEmpty>
+
+			<isNotEmpty property="p_gcd2">
+				AND GUBUN_3 = #p_gcd2#
+			</isNotEmpty>
+			)
+		</isNotEmpty>
+
+		<isNotEmpty property="p_level">
+			AND A.SUBJ IN (SELECT DISTINCT SUBJ FROM TZ_SUBJHOMEGUBUN_LEVEL WHERE LVCODE = #p_level#)
+		</isNotEmpty>
+
+		<isNotEqual property="pGubun1" compareValue="A">
+			)AA
+			INNER JOIN (SELECT DISTINCT SUBJ
+			FROM TZ_SUBJHOMEGUBUN
+			WHERE GUBUN='GS'
+
+			<isNotEmpty prepend="AND" property="pGubun1">
+				<![CDATA[ GUBUN_1 IN (#pGubun1#) ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="pGubun2">
+				<![CDATA[ GUBUN_2 IN (#pGubun2#) ]]>
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="pGubun3">
+				<![CDATA[ GUBUN_3 IN (#pGubun3#) ]]>
+			</isNotEmpty>
+			) BB
+			ON AA.SUBJ = BB.SUBJ
+		</isNotEqual>
+		ORDER BY
+		<isEmpty property="p_ordersnm">
+			<isNotEmpty property="pOrdersnm">
+				<![CDATA[ specials desc, EDUSTART desc, ldate DESC, $p_ordersnm$ $p_orders$, HITNUMBER DESC, SCUPPERCLASS, SCMIDDLECLASS ]]>
+			</isNotEmpty>
+			<isEmpty property="pOrdersnm">
+				<isNotEmpty property="p_sort">
+					<isEqual property="p_sort" compareValue="N">
+						<![CDATA[ g2cd, specials desc, ldate desc, EDUSTART desc, HITNUMBER DESC, SCUPPERCLASS, SCMIDDLECLASS ]]>
+					</isEqual>
+					<isEqual property="p_sort" compareValue="O">
+						<![CDATA[ ldate, specials desc, EDUSTART desc, HITNUMBER DESC, SCUPPERCLASS, SCMIDDLECLASS ]]>
+					</isEqual>
+					<isEqual property="p_sort" compareValue="V">
+						<isNotEqual property="pGubun1" compareValue="A">
+							<![CDATA[ (SELECT COUNT(COUNT(*)) FROM TZ_PROGRESS X WHERE X.SUBJ = AA.SUBJ GROUP BY X.SUBJ, X.YEAR, X.SUBJSEQ, X.USERID) DESC, specials desc, ldate DESC, EDUSTART desc, HITNUMBER DESC, SCUPPERCLASS, SCMIDDLECLASS ]]>
+						</isNotEqual>
+						<isEqual property="pGubun1" compareValue="A">
+							<![CDATA[ (SELECT COUNT(COUNT(*)) FROM TZ_PROGRESS X WHERE X.SUBJ = A.SUBJ GROUP BY X.SUBJ, X.YEAR, X.SUBJSEQ, X.USERID) DESC, specials desc, ldate DESC, EDUSTART desc, HITNUMBER DESC, SCUPPERCLASS, SCMIDDLECLASS ]]>
+						</isEqual>
+					</isEqual>
+				</isNotEmpty>
+				<isEmpty property="p_sort">
+					<![CDATA[ specials desc, ldate desc, EDUSTART desc, HITNUMBER DESC, SCUPPERCLASS, SCMIDDLECLASS ]]>
+				</isEmpty>
+			</isEmpty>
+		</isEmpty>
+		<isNotEmpty property="p_ordersnm">
+			<![CDATA[specials desc, EDUSTART desc, ldate DESC, $p_ordersnm$ $p_orders$, HITNUMBER DESC, SCUPPERCLASS, SCMIDDLECLASS ]]>
+		</isNotEmpty>
+		<![CDATA[ ) ALL_LIST ]]>
+	</select>
+
 	<!-- 과정 목록 랜덤조회 -->
 	<select id="realmListDAO.realmSubjRandomList" parameterClass="zvl" resultClass="zvl">
 		<![CDATA[ /* realmListDAO.realmSubjRandomList */

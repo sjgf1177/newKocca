@@ -257,14 +257,14 @@ if( StringUtils.hasText(menuNo) ) {
         });
         
 		function fnCmdSearchList(gubun1, gubun2, gubun3, ordersnm, orders){
-			$.post()
+			$.post();
 			$("#pGubun1").val(gubun1);
 			$("#pGubun2").val(gubun2);
 			$("#pGubun3").val(gubun3);
 			$("#p_ordersnm").val(ordersnm);
 			$("#p_orders").val(orders);
-			
 			$("#pageIndex").val("1");
+
 			$("#frm").attr({
 				action:"/edu/onlineEdu/realm/list.do?menuNo=500027",
 				method:"post",
@@ -301,6 +301,14 @@ if( StringUtils.hasText(menuNo) ) {
 	</div> -->
 
 	<!-- html 작업본-->
+	<form id="frm" name="frm" action="/edu/onlineEdu/realm/list.do?menuNo=50027" method="post" class="main_online_category">
+		<input type="hidden" name="pGubun1" id="pGubun1" value="">
+		<input type="hidden" name="pGubun2" id="pGubun2" value="">
+		<input type="hidden" name="pGubun3" id="pGubun3" value="">
+		<input type="hidden" name="p_ordersnm" id="p_ordersnm" value="ldate">
+		<input type="hidden" name="p_orders" id="p_orders" value="desc">
+		<input type="hidden" name="pageIndex" id="pageIndex" value="">
+	</form>
 	<div id="wrap" class="over-hidden">
 		<!-- header start -->
 		<header>
@@ -404,7 +412,7 @@ if( StringUtils.hasText(menuNo) ) {
 
 							<!-- nav 카테고리 one-daps start -->
 							<li>
-								<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">
+								<a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">
 									카테고리
 								</a>
 								<!-- nav 카테고리 two-daps start -->
@@ -414,31 +422,21 @@ if( StringUtils.hasText(menuNo) ) {
 											학습로드맵
 										</a>
 									</li>
-									<li>
-										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
-											방송영상
-										</a>
-									</li>
-									<li>
-										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
-											게임
-										</a>
-									</li>
-									<li>
-										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
-											만화,애니,캐릭터
-										</a>
-									</li>
-									<li>
-										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
-											문화일반
-										</a>
-									</li>
-									<li>
-										<a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&p_orders=desc&menuNo=500027">
-											인문/경영/교양/일반
-										</a>
-									</li>
+									<!-- 분류별 목록 s -->
+									<c:forEach items="${realmTabList }" var="item" varStatus="status">
+										<c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
+											<li ${selectedGubun } >
+												<a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>
+														${item.codenm }
+												</a>
+											</li>
+										</c:if>
+									</c:forEach>
+									<c:if test="${userVO.userId eq 'kkj9699' or userVO.userId eq 'jmh8263' or userVO.userId eq 'lee1'}">
+										<li <c:if test="${param.pGubun1 eq 'T0' or param.gubun eq 'T0' }">class="active"</c:if>>
+											<a href="javascript:void(0);" onclick="fnCmdSearchList('T0', '', '', '', ''); return false;">콘텐츠검수</a>
+										</li>
+									</c:if>
 								</ul>
 								<!-- nav 카테고리 two-daps end -->
 							</li>
@@ -1189,21 +1187,15 @@ if( StringUtils.hasText(menuNo) ) {
 					<div class="swiper-container">
 
 						<ul class="swiper-wrapper">
-							<li class="swiper-slide">
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">방송영상</a>
-							</li>
-							<li class="swiper-slide">
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('G0', '', '', '', ''); return false;">게임</a>
-							</li>
-							<li class="swiper-slide">
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('K0', '', '', '', ''); return false;">만화/애니/캐릭터</a>
-							</li>
-							<li class="swiper-slide">
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('O0', '', '', '', ''); return false;">문화일반(음악공연)</a>
-							</li>
-							<li class="swiper-slide">
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('S0', '', '', '', ''); return false;">인문/경영/교양/일반</a>
-							</li>
+							<c:forEach items="${realmTabList }" var="item" varStatus="status">
+								<c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
+									<li class="swiper-slide" >
+										<a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>
+												${item.codenm }
+										</a>
+									</li>
+								</c:if>
+							</c:forEach>
 						</ul>
 
 						<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
