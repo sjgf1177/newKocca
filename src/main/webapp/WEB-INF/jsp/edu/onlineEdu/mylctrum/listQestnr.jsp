@@ -63,13 +63,72 @@
 	
 </form>
 
+<div class="sub_title s_tit02">
+	<div class="">
+		<div class="col-12 mb30 alert big_box">
+			<!-- 수업진도율 -->
+			<div class="lectProgressSet">
+				<div class="lecProgress"></div>
+				<div class="lectProBar mt5">
+					<div class="progress-bar progress-bar-success" style="width:<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%" title="<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />% 진도율">
+						<%--<span class="icon progressInfo"><fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" /><span class="sr-only">% 진도율</span></span>--%>
+					</div>
+					<%--<c:choose>
+                        <c:when test="${p_subj eq 'CK20010'}">
+                            <div class="progress-bar progressIng" style="width: 100%;" title="수료기준 진도100%">
+                                <span class="sr-only">수료기준 진도100%</span>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="progress-bar progressIng" style="width: 70%;" title="수료기준 진도70%">
+                                <span class="sr-only">수료기준 진도70%</span>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>--%>
+
+				</div>
+				<p class="point" align="left"><strong>진도율 : <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%</strong></p>
+				<%--<c:choose>
+                    <c:when test="${p_subj eq 'CK20010'}">
+                        <div class="row">
+                            <div class="col-md-6">수료기준 진도 100%</div>
+                            <c:if test="${myProgress ge 100.0 }">
+                                <div class="col-md-6 tar"><span class="icon icoSm lectCheck"></span> 수료함</div>
+                            </c:if>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="row">
+                            <div class="col-md-6">수료기준 진도 70%</div>
+                            <c:if test="${myProgress ge 70.0 }">
+                                <div class="col-md-6 tar"><span class="icon icoSm lectCheck"></span> 수료함</div>
+                            </c:if>
+                        </div>
+                    </c:otherwise>
+                </c:choose>--%>
+			</div>
+			<!-- //수업진도율 -->
+			<%--<p class="alert_title" style="margin-bottom:0;">${view.subjnm }</p>--%>
+			<%-- <c:set var="arrayofedumans" value="${fn:split(view.edumans,'-')}"/>
+            <c:forEach var="i" begin="0" end="${fn:length(arrayofedumans)-1 }" varStatus="status">
+                - ${arrayofedumans[i] } <c:if test="${not status.last }"> <br /></c:if>
+            </c:forEach> --%>
+			<a href="javascript:void(0);" onclick="fnCmdSubjList('${paramVO.menuNo }', '${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }'); return false;" class="return_list_box gnb_close">
+				<img src="/edu/img/gnb_close.png" alt="GNB 메뉴 닫기" style="padding: 0px; display: inline-block;">
+				<%--<input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding: 0px; display: inline-block;">--%>
+			</a>
+		</div>
+	</div>
+</div>
+
 <!-- step 영역 s -->
 <jsp:include page="/WEB-INF/jsp/edu/onlineEdu/realm/eduStep.jsp" flush="true" />
 <!-- step 영역 e -->
 
 
-<div class="col-12 mt30 sub_board_body">
-	<table class="board_type_0">
+<div class="col-center mw-1280">
+	<div class="table-responsive">
+		<table class="table table-styling pc_table table-hover txt_ct">
 		<caption>설문지 목록(번호, 설문지, 응시진도율, 참여로 구분되는 표)</caption>
 		<colgroup>
 		<col style="width:10%;" />
@@ -89,18 +148,18 @@
 			<!-- 과정 설문 목록 -->
 			<c:forEach items="${subjQestnrList }" var="item" varStatus="status">
 				<tr>
-					<td><c:out value="${status.count }" /></td>
-					<td class="tal">[<c:out value="${item.subjnm }" />] <c:out value="${item.sulpapernm }" /> </td>
-					<td><fmt:parseNumber integerOnly="true" value="${item.tstep }" type="number" /> / <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" /></td>
-					<td>
+					<td class="vt_mid"><c:out value="${status.count }" /></td>
+					<td class="tal vt_mid">[<c:out value="${item.subjnm }" />] <c:out value="${item.sulpapernm }" /> </td>
+					<td class="vt_mid"><fmt:parseNumber integerOnly="true" value="${item.tstep }" type="number" /> / <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" /></td>
+					<td class="vt_mid">
 						<c:choose>
 							<c:when test="${item.eachcnt eq '1'}">
-								<a href="javascript:void(0);" onclick="return false;" class="btn btn-xs btn-default"><span class="ico icoEdu"></span>완료</a>	
+								<a href="javascript:void(0);" onclick="return false;" class="btn btn-xs btn-default">완료</a>
 							</c:when>
 							<c:when test="${item.eachcnt eq '0' and myProgress >= item.progress }">
 								<c:choose>
 									<c:when test="${item.dispyn eq 'Y' }">
-										<a href="javascript:void(0);" onclick="fnCmdQestnr('${item.subjnm}', '${item.subj }', '${item.grcode }', '${item.year }', '${item.subjseq }', '${item.sulpapernum }', '${item.sulpapernm }', '', '', '${item.sulnums }'); return false;" class="btn btn-xs btn-default"><span class="ico icoEdu"></span>참여</a>
+										<a href="javascript:void(0);" onclick="fnCmdQestnr('${item.subjnm}', '${item.subj }', '${item.grcode }', '${item.year }', '${item.subjseq }', '${item.sulpapernum }', '${item.sulpapernm }', '', '', '${item.sulnums }'); return false;" class="btn btn-xs btn-default" style="color:#3B85FF; font-weight: 600;">참여</a>
 									</c:when>
 									<c:otherwise>
 										설문기간아님
@@ -170,6 +229,79 @@
 
 	
 	
+</div>
+
+	<!-- mobile table -->
+	<ul class="board_type_0 mo_table">
+		<!-- 과정 설문 목록 -->
+		<c:forEach items="${subjQestnrList }" var="item" varStatus="status">
+			<li class="table_list _notice">
+					<div class="left_box">
+						<c:out value="${status.count }" />
+					</div>
+					<div class="right_box">
+						<p class="title">
+							[<c:out value="${item.subjnm }" />] <c:out value="${item.sulpapernm }" />
+						</p>
+						<p class="date_view">
+							<span><fmt:parseNumber integerOnly="true" value="${item.tstep }" type="number" /> / <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" /></span>
+							<span>
+							참여 :
+								<c:choose>
+									<c:when test="${item.eachcnt eq '1'}">
+										<a href="javascript:void(0);" onclick="return false;" class="btn btn-xs btn-default"></span>완료</a>
+									</c:when>
+									<c:when test="${item.eachcnt eq '0' and myProgress >= item.progress }">
+										<c:choose>
+											<c:when test="${item.dispyn eq 'Y' }">
+												<a href="javascript:void(0);" onclick="fnCmdQestnr('${item.subjnm}', '${item.subj }', '${item.grcode }', '${item.year }', '${item.subjseq }', '${item.sulpapernum }', '${item.sulpapernm }', '', '', '${item.sulnums }'); return false;" class="btn btn-xs btn-default"></span>참여</a>
+											</c:when>
+											<c:otherwise>
+												설문기간아님
+											</c:otherwise>
+										</c:choose>
+									</c:when>
+									<c:when test="${item.eachcnt eq '0' and myProgress < item.progress }">
+										<c:choose>
+											<c:when test="${item.dispyn eq 'Y' }">
+												진도미달
+											</c:when>
+											<c:otherwise>
+												설문기간아님
+											</c:otherwise>
+										</c:choose>
+									</c:when>
+									<c:otherwise>정보없음</c:otherwise>
+								</c:choose>
+							</span>
+						</p>
+					</div>
+			</li>
+		</c:forEach>
+
+		<!-- 일반 설문 목록 -->
+		<c:forEach items="${contentsQestnrList }" var="item" varStatus="status">
+			<tr>
+				<td><c:out value="${status.count }" /></td>
+				<td class="tal">[<c:out value="${item.subjnm }" />] <c:out value="${item.sulpapernm }" /> </td>
+				<td><fmt:parseNumber integerOnly="true" value="${item.tstep }" type="number" /> / <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" /></td>
+				<td>
+					<c:choose>
+						<c:when test="${item.contentsdata eq '0'}">
+							<a href="javascript:void(0);" onclick="fnCmdQestnr('${item.subjnm}', '${item.subj }', '${item.grcode }', '${item.year }', '${item.subjseq }', '${item.sulpapernum }', '${item.sulpapernm }', '', '', '${item.sulnums }'); return false;" class="btn btn-xs btn-default"><span class="ico icoEdu"></span>참여</a>
+						</c:when>
+						<c:otherwise>
+							<a href="javascript:void(0);" onclick="return false;" class="btn btn-xs btn-default"><span class="ico icoEdu"></span>완료</a>
+						</c:otherwise>
+					</c:choose>
+				</td>
+			</tr>
+		</c:forEach>
+
+		<c:if test="${empty contentsQestnrList && empty subjQestnrList }">
+			<tr><td colspan="4" style="text-align: center">해당 목록이 없습니다</td></tr>
+		</c:if>
+	</ul>
 </div>
 
 

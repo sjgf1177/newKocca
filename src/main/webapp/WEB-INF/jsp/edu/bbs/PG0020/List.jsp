@@ -132,7 +132,7 @@
 						</div>
 					</a>
 
-					<c:if test='${(nowDate-strDate) > 0}'><div class="e_end_back_box"></div></c:if>
+					<c:if test='${(nowDate-strDate) > 0}'><div class="e_end_back_box"><a href="<c:out value="${url }" escapeXml="false" />" style="display: inline-block; width: 100%; height: 100%;"></a></div></c:if>
 				</div>
 				<c:set var="resultCnt" value="${resultCnt-1}" />
 				</c:forEach>

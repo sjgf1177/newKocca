@@ -8,9 +8,11 @@
 
 <%-- <ccc:constantsMap className="kr.co.unp.bbs.vo.SearchVO" var="SearchVO" /> --%>
 
-	<style type="text/css">
-/* 	.lnb_con{display: none} */
-/* 	.sub_contents_wrap .sub_contents {padding-left: 0;} */
+	<style>
+		/* 	.lnb_con{display: none} */
+		/* 	.sub_contents_wrap .sub_contents {padding-left: 0;} */
+		.bg_gray_slide_box, .sub_title.s_tit02{padding-top: 0;}
+
 	</style>
 <form id="frm" name="frm" action="/edu/onlineEdu/${paramVO.programId}/viewEdu.do?menuNo=<c:out value='${paramVO.menuNo }'/>" method="post" class="form-inline">
 
@@ -52,141 +54,210 @@
 	<!-- 학습하기 파라미터 e -->
 
 </form>
-
-<div class="over-hidden sub_contents_header">
-	<div class="linemap_wrap"> <!-- fl class 삭제 -->
-		<ul class="col-12 linemap_con">
-			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
-			<li><a href="javascript:void(0);" tabindex="-1"><span>정규과정</span></a></li>
-			<li><a href="javascript:void(0);" tabindex="-1"><span>상세</span></a></li>
-		</ul>
-	</div>
-</div>
-<div class="sub_title s_tit02">
-	<div class="col-center mw-1280">정규과정 상세</div>
-</div>
-
-<div class="col-center mw-1280">
+<div class="bg_gray_slide_box">
+	<%--<div class="over-hidden sub_contents_header">
+		<div class="linemap_wrap"> <!-- fl class 삭제 -->
+			<ul class="col-12 linemap_con">
+				<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+				<li><a href="javascript:void(0);" tabindex="-1"><span>정규과정</span></a></li>
+				<li><a href="javascript:void(0);" tabindex="-1"><span>상세</span></a></li>
+			</ul>
+		</div>
+	</div>--%>
 	<!-- 차시제목 -->
-	<div class="col-12 mb30 alert big_box">
-			<p class="fl alert_title" style="margin-bottom:0;">${view.subjnm }</p>
+	<div class="sub_title s_tit02">
+		<div class="">
+			<div class="col-12 mb30 alert big_box">
+				<!-- 수업진도율 -->
+				<div class="lectProgressSet">
+					<div class="lecProgress"></div>
+					<div class="lectProBar mt5">
+						<div class="progress-bar progress-bar-success" style="width:<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%" title="<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />% 진도율">
+							<%--<span class="icon progressInfo"><fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" /><span class="sr-only">% 진도율</span></span>--%>
+						</div>
+						<%--<c:choose>
+							<c:when test="${p_subj eq 'CK20010'}">
+								<div class="progress-bar progressIng" style="width: 100%;" title="수료기준 진도100%">
+									<span class="sr-only">수료기준 진도100%</span>
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div class="progress-bar progressIng" style="width: 70%;" title="수료기준 진도70%">
+									<span class="sr-only">수료기준 진도70%</span>
+								</div>
+							</c:otherwise>
+						</c:choose>--%>
+
+					</div>
+					<p class="point" align="left"><strong>진도율 : <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%</strong></p>
+					<%--<c:choose>
+						<c:when test="${p_subj eq 'CK20010'}">
+							<div class="row">
+								<div class="col-md-6">수료기준 진도 100%</div>
+								<c:if test="${myProgress ge 100.0 }">
+									<div class="col-md-6 tar"><span class="icon icoSm lectCheck"></span> 수료함</div>
+								</c:if>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="row">
+								<div class="col-md-6">수료기준 진도 70%</div>
+								<c:if test="${myProgress ge 70.0 }">
+									<div class="col-md-6 tar"><span class="icon icoSm lectCheck"></span> 수료함</div>
+								</c:if>
+							</div>
+						</c:otherwise>
+					</c:choose>--%>
+				</div>
+				<!-- //수업진도율 -->
+				<%--<p class="alert_title" style="margin-bottom:0;">${view.subjnm }</p>--%>
 				<%-- <c:set var="arrayofedumans" value="${fn:split(view.edumans,'-')}"/>
 				<c:forEach var="i" begin="0" end="${fn:length(arrayofedumans)-1 }" varStatus="status">
 					- ${arrayofedumans[i] } <c:if test="${not status.last }"> <br /></c:if>
 				</c:forEach> --%>
-			<!-- step 영역 s -->
-			<jsp:include page="/WEB-INF/jsp/edu/onlineEdu/realm/eduStep.jsp" flush="true" />
-			<!-- step 영역 e -->
+				<a href="javascript:void(0);" onclick="fnCmdSubjList('${paramVO.menuNo }', '${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }'); return false;" class="return_list_box gnb_close">
+					<img src="/edu/img/gnb_close.png" alt="GNB 메뉴 닫기" style="padding: 0px; display: inline-block;">
+					<%--<input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding: 0px; display: inline-block;">--%>
+				</a>
+			</div>
+		</div>
 	</div>
 
+	<div class="col-center mw-1280">
 
-	<!-- 차시목록 -->
-	<div class="col-12 lectListSet" style="min-height:auto;">
-		<div class="lectMenu">
-			<a href="javascript:void(0);" class="icon lectToggle eduR_lt45" onclick="return false;"></a>
-		</div>
+		<!-- step 영역 s -->
+		<jsp:include page="/WEB-INF/jsp/edu/onlineEdu/realm/eduStep.jsp" flush="true" />
+		<!-- step 영역 e -->
 
-		<!-- Movie Player -->
-		<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative">
-			<!-- 차시내용 -->
-			<div id="lectListTemp" style="display:none">
-				<jsp:include page="lectList.jsp"></jsp:include>
+		<!-- 차시목록 -->
+		<div class="col-12 lectListSet" style="min-height:auto;">
+			<%--<div class="lectMenu">
+				<a href="javascript:void(0);" class="icon lectToggle eduR_lt45" onclick="return false;"></a>
+			</div>--%>
+
+			<!-- Movie Player -->
+			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex;">
+				<!-- 차시내용 -->
+				<div id="lectListTemp" style="display:none">
+					<jsp:include page="lectList.jsp"></jsp:include>
+				</div>
+
+
+				<%-- <div style="width: ${view.prewidth }px; height:${view.preheight }px; margin: 0 auto; overflow:hidden; z-index:-10; " > --%>
+				<div style="position:relative; padding-bottom:60%; height:0; max-width:870px; overflow:hidden; z-index:999; display: inline-block;" class="video_box">
+					<iframe name="openstudy"
+						id="openstudy"
+						<%--src="${p_url }"--%>
+						<%--src="http://172.30.1.1:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="--%>
+						src="http://edu_kocca.ecn.cdn.infralab.net/kocca/mp4/onlineclass/CK22007/01_01.mp4"
+						width="${view.prewidth }"
+						height="${view.preheight }"
+						frameborder="0"
+						title="본 프레임은 동영상 강의 정보를 제공합니다."
+						scrolling="no"
+						allowfullscreen="true"
+						>
+					</iframe>
+				</div>
+
+				<!-- //차시내용 -->
+				<div class="lectListBox eduR_lt45" style="position:relative; width:373px; height:auto; z-index:1000; display: inline-block;" class="v_list_box">
+					<iframe id="lectFrame" style="width:100%;height:100%;" scrolling="yes" title="본 프레임은 강의 목차 정보를 제공합니다."></iframe>
+				</div>
 			</div>
-			<!-- //차시내용 -->
-			<div class="lectListBox eduR_lt45" style="position:absolute;top:0px;left:0px;background:#000;width:373px;height:100%;z-index:1000;">
-				<iframe id="lectFrame" style="background:#000;width:100%;height:100%;" scrolling="yes" title="본 프레임은 강의 목차 정보를 제공합니다."></iframe>
-			</div>
-
-			<%-- <div style="width: ${view.prewidth }px; height:${view.preheight }px; margin: 0 auto; overflow:hidden; z-index:-10; " > --%>
-			<div style="position:relative; padding-bottom:60%; height:0; margin: 0 auto; overflow:hidden; z-index:999; " >
-				<iframe name="openstudy"
-					id="openstudy"
-					<%--src="${p_url }"--%>
-					src="http://172.30.1.1:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="
-					width="${view.prewidth }"
-					height="${view.preheight }"
-					frameborder="0"
-					title="본 프레임은 동영상 강의 정보를 제공합니다."
-					scrolling="no"
-					allowfullscreen="true"
-					style="position:absolute; top:0; left:0; width:100%; height:100%;">
-				</iframe>
-			</div>
-		</div>
-		<!-- Movie Player -->
-		<script type="text/javascript">
-			document.getElementById("lectFrame").contentWindow.document.write("<div class='col-12 sub_section'>"+$('#lectListTemp').html()+"</div>");//rsg20171010
-			//lectFrame.document.write($('#lectListTemp').html());
-			//$('#lectFrame').write($('#lectListTemp').html());
-		</script>
-
-		<!-- movDescTxt -->
-		<div class="mt15 board_util_btn_con" style="max-width:1000px; margin-left:auto; margin-right:auto;">
-			<a href="javascript:void(0);" class="btn_style_0 green openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
-				자막닫기
-			</a>
-			<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 green openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
-				자막보기
-			</a>
-		</div>
-		<!-- movDescTxt -->
-		<div class="movDescTxt" tabindex="0" style="display: none; max-width:1000px; margin-left:auto; margin-right:auto; box-sizing:border-box;
-		font-size: 14.5px; font-size: 1.45rem; line-height: 26px; line-height: 2.6rem; color: #313131; letter-spacing: -0.025em;
-		padding-top:20px; padding-left:25px; padding-right:25px; padding-bottom:20px; border:2px solid #5ac9b7; text-align: left; max-height:300px; overflow-y: auto;
-		-ms-user-select:none; -moz-user-select:-moz-none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;">
-			<% pageContext.setAttribute("crlf", "\n"); %>
-			${fn:replace(lessonView.subtitle, crlf, "<br />")}
-		</div>
-
-	</div>
-</div>
-<%--
-	<!-- liveRe Solution -->
-	<div class="lectLiveReSet">
-		<!-- 라이브리 설치 코드 -->
-		<div id="lv-container" data-id="kocca">
+			<!-- Movie Player -->
 			<script type="text/javascript">
-				(function(d, s) {
-					var j, e = d.getElementsByTagName(s)[0];
-					if (typeof LivereTower === 'function') {
-						return;
-					}
-					j = d.createElement(s);
-					j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-					j.async = true;
-					e.parentNode.insertBefore(j, e);
-				})
-				(document, 'script');
+				document.getElementById("lectFrame").contentWindow.document.write("<div class='col-12 sub_section'>"+$('#lectListTemp').html()+"</div>");//rsg20171010
+				//lectFrame.document.write($('#lectListTemp').html());
+				//$('#lectFrame').write($('#lectListTemp').html());
 			</script>
-			<noscript>라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요.</noscript>
+
+			<!-- movDescTxt -->
+			<div class="mt15 board_util_btn_con" style="max-width:1000px; margin-left:auto; margin-right:auto;">
+				<a href="javascript:void(0);" class="btn_style_0 green openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
+					자막닫기
+				</a>
+				<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 green openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
+					자막보기
+				</a>
+			</div>
+			<!-- movDescTxt -->
+			<div class="movDescTxt" tabindex="0" style="display: none; max-width:1000px; margin-left:auto; margin-right:auto; box-sizing:border-box;
+			font-size: 14.5px; font-size: 1.45rem; line-height: 26px; line-height: 2.6rem; color: #313131; letter-spacing: -0.025em;
+			padding-top:20px; padding-left:25px; padding-right:25px; padding-bottom:20px; border:2px solid #5ac9b7; text-align: left; max-height:300px; overflow-y: auto;
+			-ms-user-select:none; -moz-user-select:-moz-none; -khtml-user-select:none; -webkit-user-select:none; user-select:none;">
+				<% pageContext.setAttribute("crlf", "\n"); %>
+				${fn:replace(lessonView.subtitle, crlf, "<br />")}
+			</div>
+
+			<!-- 과정명 box -->
+			<div class="edu_info_box">
+				<!-- 과정 썸네일 -->
+				<div class="edu_tnail_box">
+					<img src="/edu/images/renew2022/fwo_snail01.png" alt="썸네일">
+				</div>
+				<div class="edu_txt_box">
+					<p class="edu_tit">과정명 : [수어자막]유니티로 애니메이션 제작하기</p>
+					<p class="edu_add_txt">교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.</p>
+
+					<p class="jindo_box">
+						<span class="jd_span01_box"><span>진도율</span> 60%</span>
+						<span class="jd_span02_box"><span>수료기준</span> 60%</span>
+					</p>
+				</div>
+
+				<!--  과정 정보 -->
+			</div>
+
 		</div>
-		<!-- 설치 코드 끝 -->
-<!-- 		<img src="/edu/images/edupro/_030205_info.jpg" width="1080" height="851"  alt=""/> -->
 	</div>
-	<!-- //liveReSolution -->
---%>
+	<%--
+		<!-- liveRe Solution -->
+		<div class="lectLiveReSet">
+			<!-- 라이브리 설치 코드 -->
+			<div id="lv-container" data-id="kocca">
+				<script type="text/javascript">
+					(function(d, s) {
+						var j, e = d.getElementsByTagName(s)[0];
+						if (typeof LivereTower === 'function') {
+							return;
+						}
+						j = d.createElement(s);
+						j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+						j.async = true;
+						e.parentNode.insertBefore(j, e);
+					})
+					(document, 'script');
+				</script>
+				<noscript>라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요.</noscript>
+			</div>
+			<!-- 설치 코드 끝 -->
+	<!-- 		<img src="/edu/images/edupro/_030205_info.jpg" width="1080" height="851"  alt=""/> -->
+		</div>
+		<!-- //liveReSolution -->
+	--%>
 
 
 <!-- consumer_seq = 1077 /  -->
 <!-- 아카데미이야기 24725 : MTA3Ny8yNDcyNS8xNTA5  livere_seq = 24892  / 강좌 24892 : MTA3Ny8yNDg5Mi8xNTA5   livere_seq = 1509 -->
-<!-- 
+<!--
 <div class="mb20 pt40" style="clear:left;">
 	<input type="radio" name="livere_ImgCheckBtn" id="livere_choiceBtn_1" value="[알려주세요]"  class="livere_choiceImg">
 	<label for="livere_choiceBtn_1">과정질문</label>
 	<input type="hidden" id="livere_description_1" value=""/>
-	
+
 	<input type="radio" name="livere_ImgCheckBtn" id="livere_choiceBtn_2" value="[좋아요]"  class="livere_choiceImg">
 	<label for="livere_choiceBtn_2">[칭찬]</label>
 	<input type="hidden" id="livere_description_2" value=""/>
-	
+
 	<input type="radio" name="livere_ImgCheckBtn" id="livere_choiceBtn_3" value="[이건 어때요?]"  class="livere_choiceImg">
 	<label for="livere_choiceBtn_3">[의견]</label>
 	<input type="hidden" id="livere_description_3" value=""/>
-	
+
 	<input type="radio" name="livere_ImgCheckBtn" id="livere_choiceBtn_4" value="[불편해요]"  class="livere_choiceImg">
 	<label for="livere_choiceBtn_4">[오류]</label>
 	<input type="hidden" id="livere_description_4" value=""/>
-	
+
 	<input type="radio" name="livere_ImgCheckBtn" id="livere_choiceBtn_5" value="[기타]"  class="livere_choiceImg">
 	<label for="livere_choiceBtn_5">[기타]</label>
 	<input type="hidden" id="livere_description_5" value=""/>
@@ -218,13 +289,13 @@
  -->
 
 
-
+</div>
 <!-- //차시목록 -->
 
 <script type="text/javascript">
 //<![CDATA[
 
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 		$('.lnb_wrap').addClass('dn');
 
 		$(".lectListBox").show();
@@ -273,7 +344,7 @@
 			$(".eye_off").show();
 			$(".eye_off").focus();
 		});
-	});
+	});*/
 
 	//과정 조회
 	function fnCmdSearchList(gubun1, gubun2, gubun3, ordersnm, orders){
@@ -310,7 +381,7 @@
 					});
 		$("#frm").submit();
 	}
-	
+
 	//다음 차시 넘어가는 기능 추가 rsg20171011
 	function receiveMessage(event){
 		if (event.origin.indexOf("edulms.kocca.kr") == -1 )//LMS 도메인 확인

@@ -12,16 +12,15 @@
 <c:set value="${not empty param.p_subjnm_step?p_subjnm_step:param.p_subjnm }" var="stepsubjnm" />
 <c:set value="${not empty param.p_subjseq_step?p_subjseq_step:param.p_subjseq }" var="stepsubjseq" />
 
-<div class="tab_style_1_con mg_b40">
-	<ul class="tab_style_1 three_tab size_24">
-		<%--<li <c:if test="${param.p_tabselect eq 'view' or param.p_tabselect eq '' }">class="active"</c:if>><a href="javascript:void(0);" onclick="fnCmdViewPage('${stepsubj }', '${stepsubjnm }', '${param.p_isonoff }', '${param.p_scupperclass }', '${param.p_scupperclass }', '${param.p_year }', '${stepsubjseq }'); return false;onclick="fnCmdViewPage('${stepsubj }', '${stepsubjnm }', '${param.p_isonoff }', '${param.p_scupperclass }', '${param.p_scupperclass }', '${param.p_year }', '${stepsubjseq }'); return false;"><span>과정정보</span></a></li>--%>
-		<li class="active"><a href="#"><span>학습하기</span></a></li>
+<div class="online_edu_alert_link_item">
+	<ul>
+		<li <c:if test="${param.p_tabselect eq 'view' or param.p_tabselect eq '' }">class="on"</c:if>><a href="javascript:void(0);" onclick="fnCmdViewPage('${stepsubj }', '${stepsubjnm }', '${param.p_isonoff }', '${param.p_scupperclass }', '${param.p_scupperclass }', '${param.p_year }', '${stepsubjseq }'); return false;">과정정보</a></li>
 
 		<c:if test="${not empty idCeck  }">
 
 			<c:if test="${param.pGubun1 ne 'Y0' }">
 				<li <c:if test="${param.p_tabselect eq 'qestnr' }">class="on"</c:if>>
-					<a href="javascript:void(0);" onclick="fnCmdQestnrList('${stepsubj }', '${stepsubjnm }', '${param.p_isonoff }', '${param.p_scupperclass }', '${param.p_scupperclass }', '${param.p_year }', '${stepsubjseq }'); return false;"><span>설문</span></a>
+					<a href="javascript:void(0);" onclick="fnCmdQestnrList('${stepsubj }', '${stepsubjnm }', '${param.p_isonoff }', '${param.p_scupperclass }', '${param.p_scupperclass }', '${param.p_year }', '${stepsubjseq }'); return false;">설문</a>
 				</li>
 			</c:if>
 
@@ -37,13 +36,13 @@
 			</li> --%>
 
 			<c:if test="${param.pGubun1 ne 'Y0' }">
-				<li <c:if test="${param.p_tabselect eq 'listData' }">class="on"</c:if>><a href="javascript:void(0);" onclick="fnCmdDataList(); return false;"><span>자료실</span></a></li>
+				<li <c:if test="${param.p_tabselect eq 'listData' }">class="on"</c:if>><a href="javascript:void(0);" onclick="fnCmdDataList(); return false;">자료실</a></li>
 			</c:if>
 
 		</c:if>
 
 
-		<%--<li class="mr0"><a href="javascript:void(0);" onclick="fnCmdSubjList('${paramVO.menuNo }', '${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }'); return false;"><span>목록가기</span></a></li>--%>
+		<li class="mr0"><a href="javascript:void(0);" onclick="fnCmdSubjList('${paramVO.menuNo }', '${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }'); return false;">목록가기</a></li>
 	</ul>
 </div>
 
@@ -62,12 +61,12 @@
 </c:if>
 
 <script type="text/javascript">
-//<![CDATA[
-    if('<c:out value="${removeTitle}" />' == 'Y'){
-	    $('title').html( $('title').html().replace('(목록)', '') );
-	    $('title').html( $('title').html().replace(' |', '<') );
-    }
-    $('title').html( '<c:out value="${subTitle}"/>' + $('title').html() );
+	//<![CDATA[
+	if('<c:out value="${removeTitle}" />' == 'Y'){
+		$('title').html( $('title').html().replace('(목록)', '') );
+		$('title').html( $('title').html().replace(' |', '<') );
+	}
+	$('title').html( '<c:out value="${subTitle}"/>' + $('title').html() );
 
 	//과정 상세화면
 	function fnCmdViewPage(subj, subjnm, isonoff, scupperclass, uclassnm, year, subjseq){
@@ -83,10 +82,10 @@
 		$("#p_tabselect").val("view");
 
 		$("#frm").attr({
-					action:"/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+$("#pGubun1").val()+"&option1="+$("#pGubun2").val()+"&option5="+$("#pGubun3").val()+"&pageIndex=<c:out value='${param.pageIndex}' />",
-					method:"post",
-					target:"_self"
-					});
+			action:"/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+$("#pGubun1").val()+"&option1="+$("#pGubun2").val()+"&option5="+$("#pGubun3").val()+"&pageIndex=<c:out value='${param.pageIndex}' />",
+			method:"post",
+			target:"_self"
+		});
 		$("#frm").submit();
 	}
 
@@ -104,10 +103,10 @@
 		$("#pGubun2").val(gubun2);
 		$("#pGubun3").val(gubun3);
 		$("#frm").attr({
-					action:"/edu/onlineEdu/"+menu+"/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+gubun1+"&option1="+gubun2+"&option5="+gubun3+"&pageIndex=<c:out value='${param.pageIndex}' />",
-					method:"post",
-					target:"_self"
-					});
+			action:"/edu/onlineEdu/"+menu+"/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+gubun1+"&option1="+gubun2+"&option5="+gubun3+"&pageIndex=<c:out value='${param.pageIndex}' />",
+			method:"post",
+			target:"_self"
+		});
 		$("#frm").submit();
 	}
 
@@ -126,10 +125,10 @@
 		$("#p_tabselect").val("qestnr");
 
 		$("#frm").attr({
-					action:"/edu/onlineEdu/mylctrum/listQestnr.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+$("#pGubun1").val()+"&option1="+$("#pGubun2").val()+"&option5="+$("#pGubun3").val()+"&pageIndex=<c:out value='${param.pageIndex}' />",
-					method:"post",
-					target:"_self"
-					});
+			action:"/edu/onlineEdu/mylctrum/listQestnr.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+$("#pGubun1").val()+"&option1="+$("#pGubun2").val()+"&option5="+$("#pGubun3").val()+"&pageIndex=<c:out value='${param.pageIndex}' />",
+			method:"post",
+			target:"_self"
+		});
 		$("#frm").submit();
 	}
 
@@ -143,7 +142,7 @@
 				"p_classtype":classtype,
 				"p_subj":subj,
 				"p_jobtype":jobtype
-				},
+			},
 			cache:false,
 			async:false,
 			dataType:"JSON",
@@ -180,15 +179,15 @@
 
 		$("#p_tabselect").val("listData");
 		$("#frm").attr({
-					action:"/edu/onlineEdu/realm/listData.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+$("#pGubun1").val()+"&option1="+$("#pGubun2").val()+"&option5="+$("#pGubun3").val()+"&pageIndex=<c:out value='${param.pageIndex}' />",
-					method:"post",
-					target:"_self"
-					});
+			action:"/edu/onlineEdu/realm/listData.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+$("#pGubun1").val()+"&option1="+$("#pGubun2").val()+"&option5="+$("#pGubun3").val()+"&pageIndex=<c:out value='${param.pageIndex}' />",
+			method:"post",
+			target:"_self"
+		});
 		$("#frm").submit();
 
 	}
 
 
 
-//]]>
+	//]]>
 </script>

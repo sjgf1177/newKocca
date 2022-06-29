@@ -377,11 +377,11 @@ table.board_type_1 .upload_file_delete_btn{width:17px; height:17px; box-sizing: 
 .board_util_btn_con .btn_style_0.down{background-image:url('/edu/images/bm/app_down_link_w.png'); background-repeat:no-repeat; background-position: left 14px center; padding-right:14px; padding-left:34px;}
 .board_util_btn_con .btn_style_0.empty{}
 .contents_view_page .board_util_btn_con .btn_style_0.empty.list{background-image:url('/edu/images/bm/btn_style_0_list_w.png')}
-.board_util_btn_con .btn_style_0.small{padding-top:4px !important; padding-bottom:4px !important; padding-left:10px !important; padding-right:10px !important; background-color:#0480A9 !important; color:#fff !important; border-radius:3px !important;
-	font-size:13px !important; line-height:19px !important; margin:0 !important; border-color:#0480A9 !important; width:auto !important; }
+.board_util_btn_con .btn_style_0.small{padding-top:4px !important; padding-bottom:4px !important; padding-left:10px !important; padding-right:10px !important; background-color:#3B85FF !important; color:#fff !important; border-radius:3px !important;
+	font-size:13px !important; line-height:19px !important; margin:0 !important;  width:auto !important; }
 .board_util_btn_con .btn_style_0.small.gray{padding-top:3px; padding-bottom:3px; padding-right:10px; padding-left:10px; background-color:#828282; border-color:#828282;}
 .board_util_btn_con .btn_style_0.small.blue{padding-top:3px; padding-bottom:3px;}
-.board_util_btn_con .btn_style_0.small.empty{color:#2b9eca; background-color:#fff; border:1px solid #2b9eca; margin:5px;}
+.board_util_btn_con .btn_style_0.small.empty{color:#2b9eca; background-color:#999999 !important;  margin:5px;}
 .board_util_btn_con .btn_style_0.edu_prev_view{background-image:url('/edu/images/bm/edu_prev_view_icon.png'); background-position:left 20px center; padding-left:46px; padding-right:19px;}
 .board_util_btn_con .btn_style_0.online_edu{border-radius:3px; padding-top:9px; padding-bottom:7px;}
 .board_util_btn_con .btn_style_0.online_edu.gray{text-align:center; color:#313131; border:solid 1px #dfdad4; background:#dfdad4; padding-left:20px; padding-right:20px;}

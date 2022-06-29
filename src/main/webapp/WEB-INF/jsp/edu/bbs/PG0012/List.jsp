@@ -50,7 +50,7 @@
 			</form>
 		</div>
 	</div>
-	</div>
+</div>
 	
 	<div class="col-12 col-center mw-1280 table-responsive">
 		<table class="table table-styling pc_table table-hover txt_ct">

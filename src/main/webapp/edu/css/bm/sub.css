@@ -520,7 +520,7 @@ width:100px;height: 9px;border:none;display: block}
 /* 차시 목록 */
 .lectListSet{position: relative;z-index:10;min-height: 1100px}
 .lectMenu{display: block;width: 100%;height: 40px}
-.lectListSet h3{height: 52px;margin: 0;border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea; line-height: 50px;font-size:16px}
+.lectListSet h3{margin: 0;border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea; line-height: 50px;font-size:16px}
 .lectListSet .icon{display: inline-block;background: url(/edu/images/edupro/icoLect.png) no-repeat 0 0;width: 40px;height: 40px;vertical-align: middle}
 .lectListSet .icoSm{width: 20px;height: 20px}
 .lectListSet .lectToggle{ background-position: -160px 0; width: 60px}
@@ -533,13 +533,13 @@ width:100px;height: 9px;border:none;display: block}
 .icoDanger{display:inline-block;background:url(/edu/images/common/icoRev.png) -210px -10px;width: 24px;height: 24px; vertical-align: middle}
 
 
-.lectProgressSet{ border-bottom: 2px solid #3e3a39;height: 117px;padding: 10px; background: #f8f8f8}
+.lectProgressSet{ border-bottom: 2px solid #3e3a39;height: 117px;padding: 10px; background: #f8f8f8; /*max-width: 30%;*/ max-width: 20%;}
 .lectProgress{width: 300px;height:7px; position: relative;float: left}
 .lectProBar{position: relative;height:7px; margin:40px 0 10px;background-color: #eaeaea;border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px}
 .progress-bar{position: absolute;height:7px}
 .progressIng{height:30px;margin-top:-15px; background: none;border-right: 1px dashed #f00;box-shadow:none}
 span.icon.progressInfo{position: absolute;right:-19px;top:-40px; width: 40px;height: 40px;line-height:36px;font-weight: 500}
-.lectListSet .progress-bar-success{background-color: #784fa0; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px}
+.lectListSet .progress-bar-success{background-color: #3B85FF; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px}
 
 
 .photoLine1 .lectProgressSet{position:absolute;left: 310px;top: 59px;width: 70%;height: 65px;border: none;background: none}
@@ -547,17 +547,18 @@ span.icon.progressInfo{position: absolute;right:-19px;top:-40px; width: 40px;hei
 .photoLine1 .lectProgressSet .progressInfo{background: url(/edu/images/edupro/icoLect.png) no-repeat 0 0;color:#fff;}
 .photoLine1 .lecProgressInfo{position: absolute;right: 0; top:70px}
 
-.lectListBox{position: absolute;left:0;top: 40px;height: 100%;float: left;display: none;z-index: 1000;}
-.lectListInner{width:350px;height: 100%;background-color: #fff;border-right: 2px solid #784fa0}
+.lectListBox{position: absolute; height: 100%; z-index: 1000; border:1px solid #DDDDDD;}
+.lectListInner{width:100%;height: 100%;background-color: #fff;}
 .lectListBox .linkers{position: absolute;right: 10px;top:11px}
 
-.lectProgressSet{ border-bottom: 2px solid #3e3a39;height: 117px;padding: 10px; background: #f8f8f8}
+.lectProgressSet{ border-bottom: none;height: auto;padding: 0px; background: transparent;}
+.lectProgressSet .point strong{color:#fff;}
 .lectProgress{width: 300px;height:7px; position: relative;float: left}
 .lectProBar{position: relative;height:7px; margin:60px 0 10px;background-color: #eaeaea;border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px}
 .progress-bar{position: absolute;height:7px}
 .progressIng{height:30px;margin-top:-15px; background: none;border-right: 1px dashed #f00;box-shadow:none}
 span.icon.progressInfo{position: absolute;right:-19px;top:-40px; width: 40px;height: 40px;line-height:36px;font-weight: 500; color:white;}
-.lectProgressSet .progress-bar-success{background-color: #784fa0; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px}
+.lectProgressSet .progress-bar-success{background-color: #3B85FF; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px}
 
 
 .categoryBox{border:2px solid #ddd; padding: 20px 45px 6px 45px; -o-border-radius: 10px;-moz-border-radius: 10px;-webkit-border-radius: 10px;
@@ -586,11 +587,14 @@ h3.bull{background: url(/edu/images/common/bull5.gif) no-repeat 0 15px;padding-l
 .icoFile,.boardList a.icoFile{background-position:0 -322px !important}
 .icoBullLg{background: url(/edu/images/common/icoBullLg.gif) no-repeat;display: inline-block;width:25px;height:16px;vertical-align: middle}
 
-.lectList li{box-sizing: border-box;display: block;width:100%;position: relative;padding:15px 5px; border-bottom: 1px solid #eaeaea}
-.lectList li.on{ background: #784fa0;color:#fff}
-.lectList li.on a{ background: #784fa0;color:#fff; font-weight: 500}
-.lectList li.on a span{color:white;}
-.lectList .date, .lectList a{display: block}
+.lectList li{box-sizing: border-box;display: block;width:100%;position: relative;padding:15px 5px; border-bottom: 1px solid #eaeaea; text-align: left;}
+.lectList li.on{ background: #DDDDDD;color:#222222;}
+.lectList li.on a{ background: #DDDDDD; color:#222222; font-weight: 500;}
+.lectList li.on a span{color:#222222;}
+.lectList .date, .lectList a{display: block;}
+.lectList a{padding-left: 15px; padding-right: 15px;}
+.lectList .descs{font-size: 18px; margin-bottom: 20px;}
+.lectList .date, .lectList li.on a span.date{color: #999999;}
 /* 시설예약 */
 .reservSysSet{position:absolute;z-index:1000;top:0;left:0;background:rgba(0, 0, 0, 0.9);width: 100%;height: 100%; text-align: center}
 .reservSys{position: relative;top:100px;width: 1180px;height: 705px;border-top:2px solid #3e3a39;border-bottom:2px solid #3e3a39; background: #ddd;margin: 0 auto}
@@ -1050,7 +1054,7 @@ margin-left: -1px;margin-top: -1px; box-sizing:border-box;}
 	z-index: 1;
 }
 
-.lectMovSet{position: relative;text-align: center;z-index:1}
+.lectMovSet{position: relative;text-align: center;z-index:1; justify-content: space-between;}
 .lectMovSet .maskPlay{position: absolute;z-index:2;top: 50%;left: 50%;width: 105px;height: 105px;margin-left: -52px;margin-top: -52px;background: url(/edu/images/common/btn_play.png) 0 0 no-repeat;}
 
 /* 정규과정 뷰 상단 */
