@@ -308,7 +308,7 @@
 		</nav>
 	</div>
 </header>--%>
-
+<c:out value=""/>
 <header>
 	<div class="container h-100">
 

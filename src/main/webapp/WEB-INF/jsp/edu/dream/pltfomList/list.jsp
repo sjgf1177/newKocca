@@ -52,7 +52,8 @@
 				<div class="platform_card">
 					<div class="img_box">
 						<c:if test="${not empty file }">
-							<img src="/cmm/fms/getImage.do?atchFileId=${file.atchFileId}&amp;fileSn=${file.fileSn}" alt="<c:out value="${result.insttNm }"/>" style="border:none;float:none;" />
+							<%--<img src="/cmm/fms/getImage.do?atchFileId=${file.atchFileId}&amp;fileSn=${file.fileSn}" alt="<c:out value="${result.insttNm }"/>" style="border:none;float:none;" />--%>
+							<img src="${fn:replace(file.fileStreCours, 'data2', 'edu/images')}/${file.streFileNm}" alt="<c:out value="${result.insttNm }"/>" style="border:none;float:none;" />
 						</c:if>
 					</div>
 					<div class="text_box">

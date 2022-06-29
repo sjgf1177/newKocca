@@ -127,12 +127,21 @@
 					<div class="col-12 online_edu_card_list">
 						<a class="show-block" href="/edu/archiveUser/contentsDeptList.do?menuNo=${param.menuNo}&taskSeq=${item3.archiveTaskSeq}">
 							<div class="img_box">
+								<c:set var="files" value="${fileMap[item3.atchFileId] }"/>
+								<c:if test="${fn:length(files) gt 0}">
+									<c:forEach var="x" begin="0" end="${fn:length(files)-1}">
+										<c:if test="${files[x].fileFieldName eq 'logImage'}">
+											<c:set var="file" value="${files[x]}" />
+										</c:if>
+									</c:forEach>
+								</c:if>
 								 <c:choose>
 									<c:when test="${item3.atchFileId == null or item3.atchFileId == '' }">
 										<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.atchFileId } 임시 이미지"/>
 									</c:when>
 									<c:otherwise>
-										<img alt="${item3.atchFileId } - 메인 이미지" src='/cmm/fms/getImage.do?atchFileId=<c:out value="${item3.atchFileId}&fileSn=1 "/>'  />
+										<%--<img alt="${item3.atchFileId } - 메인 이미지" src='/cmm/fms/getImage.do?atchFileId=<c:out value="${item3.atchFileId}&fileSn=1 "/>'  />--%>
+										<img alt="${item3.atchFileId } - 메인 이미지" src="${fn:replace(file.fileStreCours, 'data2', 'edu/images')}/${file.streFileNm}"  />
 									</c:otherwise>
 								</c:choose> 
 							</div>
