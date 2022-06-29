@@ -8,7 +8,22 @@
 <%@ page import="kr.co.unp.mpm.vo.*" %>
 <%@ page import="kr.co.unp.member.vo.*" %>
 
-<div class="tab_style_1_con"> 
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>학습로드맵</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">학습로드맵</div>
+</div>
+
+
+<%--<div class="tab_style_1_con">
 	<ul class="tab_style_1 three_tab">
 		<li class="active">
 			<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500204" title="현재탭">
@@ -26,86 +41,89 @@
 			</a>
 		</li>
 	</ul>
-</div>
+</div>--%>
 
 <!--content-->
-<div class="col-12 mb37 alert big_box">
-	<p class="alert_title" style="margin-bottom:0;">
-	${result.title }
-	<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
-		<img alt="${result.title }" src="${result.posterImg}" />
-	</c:if>
-	</p>
-</div>
-<div class="col-12 mb17">
-    <ul class="list_style_10 font_light">
-        <li>현재 <span class="point0">${fn:length(themeSubjList) }</span>개의 과정이 운영되고 있습니다. 희망하는 과정을 체크 후 신청버튼을 클릭하세요.</li>
-        <li>수료증은 <span class="point0">“나의 강의실”</span>에서 확인 및 출력이 가능합니다.(정규과정만 수료증 제공)
-  			<div class="small_text_box">※ 열린강좌인 경우 수료증이 제공되지 않습니다.</div></li>
-    </ul>
-</div>
-
-<div class="col-12 board_util_btn_con mb40">
-	<div class="tc">
-		<a href="javascript:void(0)" class="btn_style_0 img_left edit online_edu blue" id="studySubj">
-			학습하기
-		</a>
-		<a href="/edu/onlineEdu/themeLecture/list.do?${pageQueryString }&amp;pLectureCls=${param.pLectureCls }" class="btn_style_0 gray online_edu">
-			목록가기	
-		</a>
+<div class="col-center mw-1280">
+	<div class="col-12 mb37 alert big_box">
+		<p class="alert_title" style="margin-bottom:0;">
+		${result.title }
+		<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
+			<%--<img alt="${result.title }" src="${result.posterImg}" />--%>
+			<img alt="${result.title }" src="https://edu.kocca.kr/upload/themeupload/88_800_300.jpg" />
+		</c:if>
+		</p>
 	</div>
-</div>
-
-<div class="col-12 sub_board_body">
-	<div class="col-12 theme_process_list_wrap">
-		<!-- 반복 -->
-		<c:forEach items="${themeSubjList }" var="list" varStatus="status" >
-	    <div class="col-12 theme_process_list_con">
-	        <div class="check_style_0_con">
-	            <input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" checked="true">
-	            <label for="checkid_${list.courseSeq }"><span class="hidden">${list.courseName}_체크박스</span></label>
-	        </div>
-	        <div class="theme_process_list">
-	            <div class="img_box">
-	                <img src="${list.imgfile}" alt="${list.courseName }">
-	            </div>
-	            <div class="text_box">
-		            <div class="online_edu_card_icon_con">
-						<span class="online_edu_card_icon">
-							<img src="/edu/images/bm/online_pc_icon.png" alt="pc에서 재생가능" title="pc에서 재생가능">
-						</span>
-						<c:if test="${list.mobileUseYn eq 'Y' }">
-						<span class="online_edu_card_icon">
-							<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일에서 재생가능" title="모바일에서 재생가능">
-						</span>
-						</c:if>
-						<h5>${list.courseName }</h5>
-					</div>
-	                <p class="theme_process_list_desc">
-	                	${list.intro }
-	                </p>
-	                <div class="theme_process_list_more_btn_con">
-						<a href="javascript:void(0)"  onclick="javascript:fnCmdViewPage('${list.type }', '${list.courseId }', '${list.courseName }', '${list.isonoff }', '${list.scupperclass }', '${list.uclassnm }', '${list.year }', '${list.subjseq }'); return false;" class="btn_style_0">
-							상세보기
-						</a>
-					</div>
-	            </div>
-	        </div>
-	    </div>
-	    </c:forEach>
-		<!-- //반복 -->
+	<div class="col-12 mb17">
+		<ul class="list_style_10 font_light">
+			<li>현재 <span class="point0">${fn:length(themeSubjList) }</span>개의 과정이 운영되고 있습니다. 희망하는 과정을 체크 후 신청버튼을 클릭하세요.</li>
+			<li>수료증은 <span class="point0">“나의 강의실”</span>에서 확인 및 출력이 가능합니다.(정규과정만 수료증 제공)
+				<div class="small_text_box">※ 열린강좌인 경우 수료증이 제공되지 않습니다.</div></li>
+		</ul>
 	</div>
+
+	<div class="col-12 board_util_btn_con mb40">
+		<div class="tc">
+			<a href="javascript:void(0)" class="btn_style_0 img_left edit online_edu blue" id="studySubj">
+				학습하기
+			</a>
+			<a href="/edu/onlineEdu/themeLecture/list.do?${pageQueryString }&amp;pLectureCls=${param.pLectureCls }" class="btn_style_0 gray online_edu">
+				목록가기
+			</a>
+		</div>
+	</div>
+
+	<div class="col-12 sub_board_body">
+		<div class="col-12 theme_process_list_wrap">
+			<!-- 반복 -->
+			<c:forEach items="${themeSubjList }" var="list" varStatus="status" >
+			<div class="col-12 theme_process_list_con">
+				<div class="check_style_0_con">
+					<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" checked="true">
+					<label for="checkid_${list.courseSeq }"><span class="hidden">${list.courseName}_체크박스</span></label>
+				</div>
+				<div class="theme_process_list">
+					<div class="img_box">
+						<img src="${list.imgfile}" alt="${list.courseName }">
+					</div>
+					<div class="text_box">
+						<div class="online_edu_card_icon_con">
+							<span class="online_edu_card_icon">
+								<img src="/edu/images/bm/online_pc_icon.png" alt="pc에서 재생가능" title="pc에서 재생가능">
+							</span>
+							<c:if test="${list.mobileUseYn eq 'Y' }">
+							<span class="online_edu_card_icon">
+								<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일에서 재생가능" title="모바일에서 재생가능">
+							</span>
+							</c:if>
+							<h5>${list.courseName }</h5>
+						</div>
+						<p class="theme_process_list_desc">
+							${list.intro }
+						</p>
+						<div class="theme_process_list_more_btn_con">
+							<a href="javascript:void(0)"  onclick="javascript:fnCmdViewPage('${list.type }', '${list.courseId }', '${list.courseName }', '${list.isonoff }', '${list.scupperclass }', '${list.uclassnm }', '${list.year }', '${list.subjseq }'); return false;" class="btn_style_0">
+								상세보기
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			</c:forEach>
+			<!-- //반복 -->
+		</div>
+	</div>
+	<!--//content-->
+	<form id="frm" name="frm" method="post" class="form-inline">
+		<input type="hidden" name="p_subj" id="p_subj" />
+		<input type="hidden" name="p_subjnm" id="p_subjnm" />
+		<input type="hidden" name="p_subjseq" id="p_subjseq" />
+		<input type="hidden" name="p_year" id="p_year" value="" />
+		<input type="hidden" name="s_subj" id="s_subj" value="" />
+		<input type="hidden" name="s_year" id="s_year" value="" />
+		<input type="hidden" name="s_subjseq" id="s_subjseq" value="" />
+	</form>
 </div>
-<!--//content-->
-<form id="frm" name="frm" method="post" class="form-inline">
-	<input type="hidden" name="p_subj" id="p_subj" />
-	<input type="hidden" name="p_subjnm" id="p_subjnm" />
-	<input type="hidden" name="p_subjseq" id="p_subjseq" />
-	<input type="hidden" name="p_year" id="p_year" value="" />
-	<input type="hidden" name="s_subj" id="s_subj" value="" />
-	<input type="hidden" name="s_year" id="s_year" value="" />
-	<input type="hidden" name="s_subjseq" id="s_subjseq" value="" />
-</form>
 <script type="text/javascript">
 //과정 상세화면
 function fnCmdViewPage(type, subj, subjnm, isonoff, scupperclass, uclassnm, year, subjseq){

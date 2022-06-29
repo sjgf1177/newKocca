@@ -136,7 +136,7 @@
 			</div>--%>
 
 			<!-- Movie Player -->
-			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex;">
+			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 600px !important;">
 				<!-- 차시내용 -->
 				<div id="lectListTemp" style="display:none">
 					<jsp:include page="lectList.jsp"></jsp:include>
@@ -148,10 +148,12 @@
 					<iframe name="openstudy"
 						id="openstudy"
 						<%--src="${p_url }"--%>
-						<%--src="http://172.30.1.1:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="--%>
-						src="http://edu_kocca.ecn.cdn.infralab.net/kocca/mp4/onlineclass/CK22007/01_01.mp4"
-						width="${view.prewidth }"
-						height="${view.preheight }"
+						src="http://172.30.1.1:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="
+						<%--src="http://edu_kocca.ecn.cdn.infralab.net/kocca/mp4/onlineclass/CK22007/01_01.mp4"--%>
+						<%--width="${view.prewidth }"
+						height="${view.preheight }"--%>
+						width="870"
+						height="768"
 						frameborder="0"
 						title="본 프레임은 동영상 강의 정보를 제공합니다."
 						scrolling="no"

@@ -897,6 +897,9 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .edu_info_box .edu_txt_box .jindo_box .jd_span01_box span{color: #3B85FF;}
 .edu_info_box .edu_txt_box .jindo_box .jd_span02_box span{color: #E60020;}
 
+/* 학습로드맵 */
+.roadmap_box .control_board_header .board_sorting_con fieldset{display: flex; justify-content: flex-end; padding-right: 10px;}
+
 @media all and (max-width:1199px) {
     .lectMovSet{flex-direction: column;}
     .video_box{margin-bottom: 20px;}

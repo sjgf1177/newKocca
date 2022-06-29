@@ -1613,8 +1613,6 @@ if( StringUtils.hasText(menuNo) ) {
                      var newWindowWidth = $(window).width();
                      if(newWindowWidth > 765) {*/
 
-
-
 			</script>
 		</div>
 		<!-- //footer -->
@@ -2065,12 +2063,12 @@ if( StringUtils.hasText(menuNo) ) {
 				</div>
 			</div>
 
-		</div>--%>
+		</div>
 		<!-- footer -->
 		<div id="menu5" class="menu5">
 			<jsp:include page="/WEB-INF/jsp/edu/inc/eduFooter.jsp" flush="true" />
-		</div>
+		</div>--%>
 		<!-- //footer -->
-	</div>--%>
+	</div>
 </body>
 </html>

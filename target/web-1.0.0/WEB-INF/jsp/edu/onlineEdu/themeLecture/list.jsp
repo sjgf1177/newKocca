@@ -31,7 +31,7 @@
 	<div class="col-center mw-1280">학습로드맵</div>
 </div>
 
-<div class="col-center mw-1280">
+<div class="col-center mw-1280 roadmap_box">
 	<div class="sub_theme_process">
 		<div class="col-12 show-table sub_board_header control_board_header">
 			<div class="col-5 show-tablecell fn vm board_title">
@@ -48,7 +48,7 @@
 						<legend></legend>
 						<span class="tl input_search_con" style="padding-right:0;">
 							<input type="text" class="board_search" name="searchWrd" id="searchWrd" title="검색어 입력" value="<c:out value="${param.searchWrd}" />">
-							<a href="javascript:void(0);" onclick="fnCmdSearchList(); return false;" class="search_summit">검색</a>
+							<a href="javascript:void(0);" onclick="fnCmdSearchList(); return false;" class="search_summit nav_search_btn">검색</a>
 	<!-- 						<input type="submit" class="search_summit" id="" name="" value=""> -->
 						</span>
 					</fieldset>
@@ -91,7 +91,7 @@
 					</div>
 				</a>
 			</div> -->
-			<div class="col-12"style="padding-left:20px;">
+			<div class="col-12">
 				<div class="mb37 alert big_box type_1"
 					style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;">
 					<iframe title="테마과정 유튜브 홍보영상"
@@ -164,7 +164,7 @@
 							<%--<img src="${result.img }" alt="${result.title }">--%>
 							<img src="https://edu.kocca.kr/upload/themeupload/88_368_230.jpg" alt="${result.title }">
 						</div>
-						<div class="col-7 text_box">
+						<div class="col-12 text_box">
 							<h5>${result.title }</h5>
 							<p class="h_desc5">${result.description }</p>
 						</div>
