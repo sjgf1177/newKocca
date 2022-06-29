@@ -51,7 +51,7 @@ header nav #main_nav .navbar-nav > li > a{color:white; font-size:1.8rem;}
 header nav #main_nav .navbar-nav > li.active > a
 	, header nav #main_nav .navbar-nav > li:hover > a{font-weight:700}
 header nav:not(.gnbActive) #main_nav .navbar-nav > li > ul{position:absolute; display:none; padding-top:25px; width:100%;}
-header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(2) > ul{ right:0;}
+header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(2) > ul{ right:0; width: 165px;}
 header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(5) > ul{width:auto; right:0;}
 header nav:not(.gnbActive) #main_nav:not(.show) .navbar-nav > li:hover > ul
 	, header nav #main_nav:not(.show) .navbar-nav > li.active > ul{display:block;}
