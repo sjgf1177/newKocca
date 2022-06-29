@@ -17,150 +17,167 @@
 .sub_contents_wrap .sub_contents{padding-left:0;}
 </style> -->
 
-<div class="sub_theme_process">
-	<div class="col-12 show-table sub_board_header control_board_header">
-		<div class="col-5 show-tablecell fn vm board_title">
-			<h4 class="theme_process_title">
-				총 <span class="board_count">${resultCnt}</span>개의 과정이 운영되고 있습니다.
-			</h4>
-		</div>
-		<div class="col-7 show-tablecell fn vm tr board_sorting_con">
-			<form id="frm" name="frm" action="/edu/onlineEdu/themeLecture/list.do" method="post" class="form-inline col-12 show-tablecell fr tr">
-				<input type="hidden" name="pageQueryString" value='<c:out value="${pageQueryString }" escapeXml="false"/>' >
-				<input type="hidden" name="menuNo" value='<c:out value="${param.menuNo }" escapeXml="false"/>' >
-				<input type="hidden" name="pageIndex" id="pageIndex" value='<c:out value="${param.pageIndex }" escapeXml="false"/>' >
-				<fieldset>
-					<legend></legend>
-					<span class="tl input_search_con" style="padding-right:0;">
-						<input type="text" class="board_search" name="searchWrd" id="searchWrd" title="검색어 입력" value="<c:out value="${param.searchWrd}" />">
-						<a href="javascript:void(0);" onclick="fnCmdSearchList(); return false;" class="search_summit">검색</a>
-<!-- 						<input type="submit" class="search_summit" id="" name="" value=""> -->
-					</span>
-				</fieldset>
-			</form>
-		</div>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>학습로드맵</span></a></li>
+		</ul>
 	</div>
-	
-	<!-- <div class="col-12">
-		<div class="mb37 alert big_box type_1">
-		    <p class="alert_desc is_margin_desc">
-		        온라인 과정의 <span class="apply_no_text">교육체계도 및 추천 Track</span>을 확인하실 수 있습니다.
-		    </p>
-		    <p class="alert_desc">
-		        원하는 Track을 클릭하셔서 <span class="apply_no_text">세부 내용을 확인</span>하세요.
-		    </p>
-		    <a class="btn_go_edusystem" href="/edu/onlineEdu/edcsystm/list.do?menuNo=500030">교육체계도 바로가기</a>
-		</div>
-	</div>
-	
-    <div class="col-12 calc_wrap20">
-        <div class="col-12 col-sm-6 sub_theme_process_list m_dn">
-            <a class="border_box" href='#' style="height: auto;" id="themeCoursePreview">
-                <div class="col-5 img_box">
-                	<img src="/edu/new_image/eduCurr2.jpg" alt="테마과정" style="max-height: 93px; height: 93px;">
-                </div>
-                <div class="col-7 text_box">
-                    <h5 style="height: auto;">테마과정</h5>
-                    <p class="h_desc5">나에게 딱 맞는 테마과정으로 Pick!</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-12 col-sm-6 sub_theme_process_list">
-            <a class="border_box" href='/edu/onlineEdu/edcsystm/list.do?menuNo=500030' style="height: auto;">
-                <div class="col-5 img_box">
-                    <img src="/edu/new_image/eduCurr.png" alt="교육체계도" style="max-height: 93px; height: 93px;">
-                </div>
-                <div class="col-7 text_box">
-                    <h5 style="height: auto;">교육체계도</h5>
-                    <p class="h_desc5">온라인 과정의 교육체계도 및 추천 Track을 확인하실 수 있습니다.</p>
-                </div>
-            </a>
-        </div> -->
-        <div class="col-12"style="padding-left:20px;">
-			<div class="mb37 alert big_box type_1" 
-				style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;">
-			    <iframe title="테마과정 유튜브 홍보영상"
-			    	style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"
-			    	src="https://www.youtube.com/embed/t9KSZzs2gGw" 
-			    	frameborder="0" 
-			    	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-			    </iframe>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">학습로드맵</div>
+</div>
+
+<div class="col-center mw-1280">
+	<div class="sub_theme_process">
+		<div class="col-12 show-table sub_board_header control_board_header">
+			<div class="col-5 show-tablecell fn vm board_title">
+				<h4 class="theme_process_title">
+					총 <span class="board_count">${resultCnt}</span>개의 과정이 운영되고 있습니다.
+				</h4>
 			</div>
-			<div class="edu_youtube_subtitle_view_btn_con">
-				<button class="edu_youtube_subtitle_view_btn caption_btn" onclick="showCaption();"><span class="edu_view_default" style="color:white">자막보기</span><span class="edu_view_active">자막닫기</span></button>
-				<div class="edu_youtube_subtitle_view_text" tabindex="0">
-					매월 다양한 주제로 진행되는<br>
-					콘텐츠 장르별 테마과정!<br>
-					나에게 딱 맞는 테마과정으로<br>
-					PICK!<br>
-					PICK!<br>
-					PICK!<br>
-					PICK!<br>
-					<br>
-					방송영상<br>
-					1인 콘텐츠 제작 꿀팁 공개!<br>
-					삼대장 X 양띵 X 허팝<br>
-					채널 개설에서 콘텐츠 관리까지!<br>
-					MCN에 대해 이해하고<br>
-					1인 콘텐츠 실제 제작 방법을 알아봅시다!<br>
-					<br>
-					게임<br>
-					인디게임 제작, 시작은 이렇게!<br>
-					1인 게임 제작을 하고 싶지만<br>
-					어떻게 시작해야 할지 몰라 망설이셨나요?<br>
-					게임기획 방법부터 인디게임 실제 제작 과정까지 알아봅니다!<br>
-					<br>
-					만화/애니/캐릭터<br>
-					웹툰 제작 프로그램 모음<br>
-					클립스튜디오 X 스케치업<br>
-					만화 제작에 대중적으로 쓰이는 '클립스튜디오'와<br>
-					웹툰 배경 제작에 많이 이용하는 '스케치업' 툴 사용방법을<br>
-					익히고 웹툰 제작에 활용해 봅니다!<br>
-					<br>
-					음악/공연<br>
-					집이 곧 스튜디오! 도전, 홈레코더<br>
-					프로툴즈 X 큐베이스<br>
-					악기 녹음과 보컬 녹음을 홈레코딩으로!<br>
-					홈레코딩에 필요한 장비와 소프트웨어<br>
-					그리고 녹음하기까지의 과정을 안내합니다.<br>
-					<br>
-					테마과정으로<br>
-					내가 듣고 싶은 과정을 쉽게!<br>
-					<br>
-					한국콘텐츠아카데미<br>
-					홈페이지에서 확인해보세요!<br>
-					<br>
-					한국콘텐츠아카데미에서는<br>
-					콘텐츠 분야의 꿈을 펼치실 여러분의<br>
-					다양한 꿈과 희망을 응원합니다.<br>
-					<br>
-					한국콘텐츠아카데미
+			<div class="col-7 show-tablecell fn vm tr board_sorting_con">
+				<form id="frm" name="frm" action="/edu/onlineEdu/themeLecture/list.do" method="post" class="form-inline col-12 show-tablecell fr tr">
+					<input type="hidden" name="pageQueryString" value='<c:out value="${pageQueryString }" escapeXml="false"/>' >
+					<input type="hidden" name="menuNo" value='<c:out value="${param.menuNo }" escapeXml="false"/>' >
+					<input type="hidden" name="pageIndex" id="pageIndex" value='<c:out value="${param.pageIndex }" escapeXml="false"/>' >
+					<fieldset>
+						<legend></legend>
+						<span class="tl input_search_con" style="padding-right:0;">
+							<input type="text" class="board_search" name="searchWrd" id="searchWrd" title="검색어 입력" value="<c:out value="${param.searchWrd}" />">
+							<a href="javascript:void(0);" onclick="fnCmdSearchList(); return false;" class="search_summit">검색</a>
+	<!-- 						<input type="submit" class="search_summit" id="" name="" value=""> -->
+						</span>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+		<!-- <div class="col-12">
+			<div class="mb37 alert big_box type_1">
+				<p class="alert_desc is_margin_desc">
+					온라인 과정의 <span class="apply_no_text">교육체계도 및 추천 Track</span>을 확인하실 수 있습니다.
+				</p>
+				<p class="alert_desc">
+					원하는 Track을 클릭하셔서 <span class="apply_no_text">세부 내용을 확인</span>하세요.
+				</p>
+				<a class="btn_go_edusystem" href="/edu/onlineEdu/edcsystm/list.do?menuNo=500030">교육체계도 바로가기</a>
+			</div>
+		</div>
+
+		<div class="col-12 calc_wrap20">
+			<div class="col-12 col-sm-6 sub_theme_process_list m_dn">
+				<a class="border_box" href='#' style="height: auto;" id="themeCoursePreview">
+					<div class="col-5 img_box">
+						<img src="/edu/new_image/eduCurr2.jpg" alt="테마과정" style="max-height: 93px; height: 93px;">
+					</div>
+					<div class="col-7 text_box">
+						<h5 style="height: auto;">테마과정</h5>
+						<p class="h_desc5">나에게 딱 맞는 테마과정으로 Pick!</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-12 col-sm-6 sub_theme_process_list">
+				<a class="border_box" href='/edu/onlineEdu/edcsystm/list.do?menuNo=500030' style="height: auto;">
+					<div class="col-5 img_box">
+						<img src="/edu/new_image/eduCurr.png" alt="교육체계도" style="max-height: 93px; height: 93px;">
+					</div>
+					<div class="col-7 text_box">
+						<h5 style="height: auto;">교육체계도</h5>
+						<p class="h_desc5">온라인 과정의 교육체계도 및 추천 Track을 확인하실 수 있습니다.</p>
+					</div>
+				</a>
+			</div> -->
+			<div class="col-12"style="padding-left:20px;">
+				<div class="mb37 alert big_box type_1"
+					style="position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;">
+					<iframe title="테마과정 유튜브 홍보영상"
+						style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"
+						src="https://www.youtube.com/embed/t9KSZzs2gGw"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+					</iframe>
+				</div>
+				<div class="edu_youtube_subtitle_view_btn_con">
+					<button class="edu_youtube_subtitle_view_btn caption_btn" onclick="showCaption();"><span class="edu_view_default" style="color:white">자막보기</span><span class="edu_view_active">자막닫기</span></button>
+					<div class="edu_youtube_subtitle_view_text" tabindex="0">
+						매월 다양한 주제로 진행되는<br>
+						콘텐츠 장르별 테마과정!<br>
+						나에게 딱 맞는 테마과정으로<br>
+						PICK!<br>
+						PICK!<br>
+						PICK!<br>
+						PICK!<br>
+						<br>
+						방송영상<br>
+						1인 콘텐츠 제작 꿀팁 공개!<br>
+						삼대장 X 양띵 X 허팝<br>
+						채널 개설에서 콘텐츠 관리까지!<br>
+						MCN에 대해 이해하고<br>
+						1인 콘텐츠 실제 제작 방법을 알아봅시다!<br>
+						<br>
+						게임<br>
+						인디게임 제작, 시작은 이렇게!<br>
+						1인 게임 제작을 하고 싶지만<br>
+						어떻게 시작해야 할지 몰라 망설이셨나요?<br>
+						게임기획 방법부터 인디게임 실제 제작 과정까지 알아봅니다!<br>
+						<br>
+						만화/애니/캐릭터<br>
+						웹툰 제작 프로그램 모음<br>
+						클립스튜디오 X 스케치업<br>
+						만화 제작에 대중적으로 쓰이는 '클립스튜디오'와<br>
+						웹툰 배경 제작에 많이 이용하는 '스케치업' 툴 사용방법을<br>
+						익히고 웹툰 제작에 활용해 봅니다!<br>
+						<br>
+						음악/공연<br>
+						집이 곧 스튜디오! 도전, 홈레코더<br>
+						프로툴즈 X 큐베이스<br>
+						악기 녹음과 보컬 녹음을 홈레코딩으로!<br>
+						홈레코딩에 필요한 장비와 소프트웨어<br>
+						그리고 녹음하기까지의 과정을 안내합니다.<br>
+						<br>
+						테마과정으로<br>
+						내가 듣고 싶은 과정을 쉽게!<br>
+						<br>
+						한국콘텐츠아카데미<br>
+						홈페이지에서 확인해보세요!<br>
+						<br>
+						한국콘텐츠아카데미에서는<br>
+						콘텐츠 분야의 꿈을 펼치실 여러분의<br>
+						다양한 꿈과 희망을 응원합니다.<br>
+						<br>
+						한국콘텐츠아카데미
+					</div>
 				</div>
 			</div>
+			<c:forEach items="${resultList }" var="result" varStatus="status" >
+				<c:url var="url" value="/edu/onlineEdu/themeLecture/view.do">
+					<c:param name="pId" value="${result.id }"/>
+				</c:url>
+
+				<div class="col-12 col-sm-6 sub_theme_process_list">
+					<a class="border_box" href='<c:out value="${url }" />&amp;${pageQueryString }'>
+						<div class="col-5 img_box">
+							<%--<img src="${result.img }" alt="${result.title }">--%>
+							<img src="https://edu.kocca.kr/upload/themeupload/88_368_230.jpg" alt="${result.title }">
+						</div>
+						<div class="col-7 text_box">
+							<h5>${result.title }</h5>
+							<p class="h_desc5">${result.description }</p>
+						</div>
+					</a>
+				</div>
+			</c:forEach>
 		</div>
-    	<c:forEach items="${resultList }" var="result" varStatus="status" >
-			<c:url var="url" value="/edu/onlineEdu/themeLecture/view.do">
-				<c:param name="pId" value="${result.id }"/>
-			</c:url>
 
-	        <div class="col-12 col-sm-6 sub_theme_process_list">
-	            <a class="border_box" href='<c:out value="${url }" />&amp;${pageQueryString }'>
-	                <div class="col-5 img_box">
-	                    <img src="${result.img }" alt="${result.title }" style="max-height: 93px; height: 93px;">
-	                </div>
-	                <div class="col-7 text_box">
-	                    <h5>${result.title }</h5>
-	                    <p class="h_desc5">${result.description }</p>
-	                </div>
-	            </a>
-	        </div>
-        </c:forEach>
-    </div>
-
-<!-- paging -->
-<div class="paging">${pageNav}</div>
-<!-- //paging -->
-<!--//content-->
+	<!-- paging -->
+	<div class="paging">${pageNav}</div>
+	<!-- //paging -->
+	<!--//content-->
+</div>
 
 <script type="text/javascript">
 	$(document).ready(function(){

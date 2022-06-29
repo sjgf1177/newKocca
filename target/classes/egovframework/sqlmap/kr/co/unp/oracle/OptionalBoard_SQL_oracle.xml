@@ -140,6 +140,14 @@
             LEFT OUTER JOIN $tableNm$ b ON a.NTT_ID = b.PARNTS AND b.DELETE_CODE = 0
 			WHERE  a.BBS_ID = #bbsId# AND a.PARNTS = 0
 		]]>
+
+		<isEqual property="bbsId" compareValue="B0000048">
+			<isNotEqual property="op3" compareValue="0">
+				<isNotNull prepend="AND" property="op3">
+				<![CDATA[	a.OPTION3 = #op3#	]]>
+				</isNotNull>
+			</isNotEqual>
+		</isEqual>
 		<include refid="optionalBoardDAO.selectBoardArticleList-where" />
 	</select>
 
@@ -500,6 +508,14 @@
 		<isEqual property="bbsId" compareValue="B0000072" prepend="AND">
 			<isNotEqual property="siteName" compareValue="bos">
 			<![CDATA[	a.OPTION1 = 'N'	]]>
+			</isNotEqual>
+		</isEqual>
+
+		<isEqual property="bbsId" compareValue="B0000048">
+			<isNotEqual property="op3" compareValue="0">
+				<isNotNull prepend="AND" property="op3">
+					<![CDATA[	a.OPTION3 = #op3#	]]>
+				</isNotNull>
 			</isNotEqual>
 		</isEqual>
 		

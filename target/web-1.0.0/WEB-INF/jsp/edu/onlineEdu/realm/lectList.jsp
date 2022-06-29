@@ -11,7 +11,7 @@
 		<div class="lectListSet" style="min-height:auto;text-align:center;">
 			<div class="lectListInner">
 				<div class="lectTitle mb20">
-					<h3 class="pt20">차시목록</h3>
+					<h3 class="pt20 pb20">차시목록</h3>
 					<span class="linkers">
 	
 						<c:if test="${viewdata.isnew eq 'Y' }">
@@ -30,7 +30,7 @@
 	
 	
 				<!-- 수업진도율 -->
-				<div class="lectProgressSet">
+				<%--<div class="lectProgressSet">
 					<div class="lecProgress"></div>
 					<div class="lectProBar mt5">
 						<div class="progress-bar progress-bar-success" style="width:<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%" title="<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />% 진도율">
@@ -69,7 +69,7 @@
 							</div>
 						</c:otherwise>
 					</c:choose>
-				</div>
+				</div>--%>
 				<!-- //수업진도율 -->
 	
 	
@@ -94,7 +94,7 @@
 	
 										<c:if test="${item.ldate ne null and item.ldate ne ''}">
 											<span class="date point">
-												<span class="icon icoSm icoBook"></span>
+												<%--<span class="icon icoSm icoBook"></span>--%>
 												<fmt:parseDate var="dateString" value="${item.ldate}" pattern="yyyyMMddHHmmss" />
 											 	학습일 : <fmt:formatDate value="${dateString}" pattern="yyyy.MM.dd HH:mm" />
 											 </span>

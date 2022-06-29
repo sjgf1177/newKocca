@@ -113,7 +113,9 @@ h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'Pretendard', sans-serif !
 .tit_row2{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-all;}
 .tit_row3{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: break-all;}
 .not_search_list{font-size: 30px; text-align: center;}
-
+.vt_mid{vertical-align: middle !important;}
+.mg_b40{margin-bottom: 40px !important;}
+#pDataSearch{text-align: center;}
 
 @media (max-width:640px) {
     #footer .container{display: block;}
@@ -312,7 +314,7 @@ header nav.gnbActive{background: #222222;}
 .sns_login_con .sns_type_select_con .text_box{position: absolute; top:25px; right: 25px; font-size: 17px; font-weight: 400;}
 
 /*******************************************************  회원가입  *******************************************************/
-
+#joinStep2 ul.list_style_4.color_gray > li{color: #444444;}
 /* 약관동의 */
 .sub_section .sub_contents_body .signup_agree_con, .sub_section .sub_contents_body .signup_write_con{border-top:2px solid #999999; border-bottom: none; margin-bottom: 0;}
 .sub_section .sub_contents_body #joinStep2 div:nth-child(3) .signup_agree_con{border-top: none;}
@@ -880,6 +882,39 @@ table.board_type_0.notice thead th{font-size: 15px;}
 /* 정규과정 상세 */
 .content{width:75%; !important;}
 .contentFrame{text-align: left; !important;}
+.alert.big_box{position:relative; /*padding: 25px 40px;*/ background-color: #222222; border-color: #222222; padding: 10px 40px;}
+.alert.big_box .return_list_box{position: absolute; right: 20px; top: 50%; transform: translateY(-50%);}
+.alert_title{font-size:2.4rem; color: #FFFFFF;}
+.sub_section .lectListSet h3{margin-top: 0;}
+.edu_info_box{background-color: #fff; padding: 40px 20px; border: 1px solid #dddddd; display: flex;}
+.edu_info_box .edu_tnail_box, .edu_tit{display: inline-block;}
+.edu_info_box .edu_tnail_box{max-width: calc(100% - 80%); margin-right: 30px;}
+.edu_info_box .edu_txt_box{position: relative; padding-bottom: 30px;}
+.edu_info_box .edu_txt_box .edu_tit{font-size: 3rem; line-height: 4rem; margin-bottom: 15px;}
+.edu_info_box .edu_txt_box .edu_add_txt{color: #999999; font-size: 1.7rem; line-height: 2.4rem;}
+.edu_info_box .edu_txt_box .jindo_box{position: absolute; bottom: 0; left: 0; font-size: 1.8rem;}
+.edu_info_box .edu_txt_box .jindo_box .jd_span01_box{margin-right: 15px;}
+.edu_info_box .edu_txt_box .jindo_box .jd_span01_box span{color: #3B85FF;}
+.edu_info_box .edu_txt_box .jindo_box .jd_span02_box span{color: #E60020;}
+
+@media all and (max-width:1199px) {
+    .lectMovSet{flex-direction: column;}
+    .video_box{margin-bottom: 20px;}
+    .lectListBox{width:100% !important; height: calc(100vh - 50vh) !important;}
+    .edu_info_box .edu_txt_box .edu_tit{font-size: 2rem;}
+    .edu_info_box .edu_txt_box .edu_add_txt, .edu_info_box .edu_txt_box .jindo_box{font-size: 1.4rem;}
+
+}
+@media all and (max-width:640px) {
+    .lectProgressSet{max-width: 44%;}
+    .ectTitle.pb20{padding-bottom: 15px !important;}
+    .ectTitle.pb20{padding-top: 15px !important;}
+    .lectList .descs{font-size: 1.6rem;}
+    .edu_info_box{padding: 20px;}
+    .edu_info_box .edu_tnail_box{display: none;}
+
+}
+
 
 /* 콘텐츠인사이트 */
 .sub_section .sub_contents_body .contents_insight_header{float:left;}
