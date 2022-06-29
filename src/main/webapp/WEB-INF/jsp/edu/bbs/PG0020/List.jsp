@@ -25,41 +25,52 @@
 <div class="sub_title s_tit02">
 	<div class="col-center mw-1280">이벤트</div>
 </div>
+<form id="frm" name="frm" method="post">
+	<input type="hidden" id="op3" name="op3" value="">
+</form>
+
+<script>
+	function goEvent(type){
+		document.frm.op3.value = type;
+		document.frm.action = "/edu/bbs/B0000048/list.do?menuNo=500205";
+		document.frm.submit();
+	}
+</script>
 
 <div class="tab_style_1_con event-tab">
 	<ul class="tab_style_1 two_tab">
-		<li class="active">
-			<button type="button"  title="현재탭">
+		<li <c:if test="${paramVO.op3 eq null || paramVO.op3 eq '0'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('0')">
 				<span>이벤트</span>
-			</button>
+			</a>
 		</li>
-		<li>
-			<button type="button">
+		<li <c:if test="${paramVO.op3 eq '1'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('1')">
 				<span>추천콘텐츠</span>
-			</button>
+			</a>
 		</li>
-		<li>
-			<button type="button">
+		<li <c:if test="${paramVO.op3 eq '2'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('2')">
 				<span>창의인재동반</span>
-			</button>
+			</a>
 		</li>
-		<li>
-			<button type="button">
+		<li <c:if test="${paramVO.op3 eq '3'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('3')">
 				<span>AI콘텐츠창작</span>
-			</button>
+			</a>
 		</li>
-		<li>
-			<button type="button">
+		<li <c:if test="${paramVO.op3 eq '4'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('4')">
 				<span>콘텐츠임팩트</span>
-			</button>
+			</a>
 		</li>
-		<li>
-			<button type="button">
+		<li <c:if test="${paramVO.op3 eq '5'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('5')">
 				<span>콘텐츠인사이트</span>
-			</button>
+			</a>
 		</li>
-		<li>
-			<a href="">
+		<li <c:if test="${paramVO.op3 eq '6'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('6')">
 				<span>콘텐츠스텝업</span>
 			</a>
 		</li>
@@ -68,6 +79,7 @@
 <!--content-->
 <div class="col-12 event_card_wrap">
 	<div class="col-center mw-1280">
+		<c:if test="${resultCnt > 0}">
 		<div class="col-12 calc_wrap19 swiper">
 			<div class="swiper-wrapper">
 				<c:forEach var="result" items="${resultList}" varStatus="status">
@@ -133,11 +145,11 @@
 				<div class="swiper-button-next"></div>
 			</div>
 		</div>
-
+		</c:if>
+		<c:if test="${resultCnt < 1}">
 		<p class="not_search_list">검색 된 이벤트가 없습니다.</p>
+		</c:if>
 	</div>
-
-
 </div>
 
 <!-- paging -->
