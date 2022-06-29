@@ -156,7 +156,7 @@
 				rows: 2,
 			}
 			,spaceBetween: 20
-
+			/*,centeredSlides: true*/
 			//신버전 swiper 방향표
 			,navigation: {
 				nextEl: ".event_card_wrap .swiper-button-next",
@@ -164,11 +164,14 @@
 			}
 
 			,breakpoints: {
-				1080: {
-					slidesPerView: 3,
+				100: {
+					slidesPerView: 1,
 				},
 				640: {
-					slidesPerView: 1,
+					slidesPerView: 2,
+				},
+				1180: {
+					slidesPerView: 3,
 				},
 			}
 			/*
