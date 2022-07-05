@@ -286,6 +286,7 @@ if( StringUtils.hasText(menuNo) ) {
 			categoryId: '146368',
 			divisionId: '146369',
 		});
+
 		<!-- 챗봇 Js end -->
         
         //]]>
