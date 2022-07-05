@@ -334,18 +334,8 @@
 				<!-- 로그인 후-->
 				<sec:authorize ifAnyGranted="ROLE_USER">
 					<div class="nav_my_box mo">
-						<a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061">
-							<img src="/edu/images/renew2022/my.png" alt="마이페이지">
-						</a>
-						<ul>
-							<li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
-							<li id="myPageMenu"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="마이페이지">마이페이지</a></li>
-							<li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
-							<li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
-							<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>
-							<li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
-							<li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
-						</ul>
+						<input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
+						<a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃" style="font-size: 18px; color: #fff; margin-left: 15px;">로그아웃</a>
 					</div>
 					<%--<input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">--%>
 				</sec:authorize>
@@ -573,6 +563,23 @@
 							<!-- nav 학습지원 two-daps end -->
 						</li>
 						<!-- 학습지원 모바일 one-daps end -->
+
+						<!-- 마이페이지 모바일 one-daps start -->
+						<li class="nav_support_box mo">
+							<a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061">
+								마이페이지
+							</a>
+							<!-- 마이페이지 모바일 two-daps start -->
+							<ul>
+								<li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
+								<li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
+									<%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
+								<li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
+								<li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
+							</ul>
+							<!-- 마이페이지 모바일 two-daps end -->
+						</li>
+						<!-- 마이페이지 모바일 one-daps end -->
 					</sec:authorize>
 				</ul>
 			</div>
@@ -596,13 +603,13 @@
 							<img src="/edu/images/renew2022/my.png" alt="마이페이지">
 						</a>
 						<ul>
-							<li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
 							<li id="myPageMenu"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="마이페이지">마이페이지</a></li>
 							<li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
 							<li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
-							<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>
+							<%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
 							<li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
 							<li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
+							<li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
 						</ul>
 					</div>
 					<input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
@@ -627,7 +634,7 @@
 			<div class="collapse navbar-collapse" id="main_nav_full">
 
 				<div class="cy_navbar-nav">
-					<a href="/" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+					<a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
 						<img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
 					</a>
 					<input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
@@ -636,40 +643,40 @@
 						<div class="cy_list_box">
 							<h3>방송영상</h3>
 							<ul>
-								<li><a href="">방송영상 기획 Track</a></li>
-								<li><a href="">방송영상 제작(촬영/편집) Track</a></li>
-								<li><a href="">방송영상 비즈니스 Track</a></li>
-								<li><a href="">방송영상 교양 Track</a></li>
+								<li><button type="button">방송영상 기획 Track</button></li>
+								<li><button type="button">방송영상 제작(촬영/편집) Track</button></li>
+								<li><button type="button">방송영상 비즈니스 Track</button></li>
+								<li><button type="button">방송영상 교양 Track</button></li>
 							</ul>
 						</div>
 
 						<div class="cy_list_box">
 							<h3>게임</h3>
 							<ul>
-								<li><a href="">게임 기획 Track</a></li>
-								<li><a href="">게임 제작(그래픽/프로그래밍) Track</a></li>
-								<li><a href="">게임 비즈니스 Track</a></li>
-								<li><a href="">게임 교양 Track</a></li>
+								<li><button type="button">게임 기획 Track</button></li>
+								<li><button type="button">게임 제작(그래픽/프로그래밍) Track</button></li>
+								<li><button type="button">게임 비즈니스 Track</button></li>
+								<li><button type="button">게임 교양 Track</button></li>
 							</ul>
 						</div>
 
 						<div class="cy_list_box">
 							<h3>만화/애니/캐릭터</h3>
 							<ul>
-								<li><a href="">만화/애니/캐릭터 기획 Track</a></li>
-								<li><a href="">만화/애니/캐릭터 제작 Track</a></li>
-								<li><a href="">만화/애니/캐릭터 비즈니스 Track</a></li>
-								<li><a href="">만화/애니/캐릭터 교양 Track</a></li>
+								<li><button type="button">만화/애니/캐릭터 기획 Track</button></li>
+								<li><button type="button">만화/애니/캐릭터 제작 Track</button></li>
+								<li><button type="button">만화/애니/캐릭터 비즈니스 Track</button></li>
+								<li><button type="button">만화/애니/캐릭터 교양 Track</button></li>
 							</ul>
 						</div>
 
 						<div class="cy_list_box">
 							<h3>음악공연/문화일반</h3>
 							<ul>
-								<li><a href="">음악공연/문화일반 기획 Track</a></li>
-								<li><a href="">음악공연/문화일반 제작 Track</a></li>
-								<li><a href="">음악공연/문화일반 비즈니스 Track</a></li>
-								<li><a href="">음악공연/문화일반 교양 Track</a></li>
+								<li><button type="button">음악공연/문화일반 기획 Track</button></li>
+								<li><button type="button">음악공연/문화일반 제작 Track</button></li>
+								<li><button type="button">음악공연/문화일반 비즈니스 Track</button></li>
+								<li><button type="button">음악공연/문화일반 교양 Track</button></li>
 							</ul>
 						</div>
 					</div>

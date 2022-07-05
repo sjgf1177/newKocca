@@ -168,5 +168,13 @@
 			}
 	    }
 	//]]>
+	<!-- 챗봇 Js start -->
+	var ht = new Happytalk({
+		siteId: '5000100237',
+		siteName: '한국콘텐츠진흥원',
+		categoryId: '146368',
+		divisionId: '146369',
+	});
+	<!-- 챗봇 Js end -->
 	</script>
 	</sec:authorize>
