@@ -1,39 +1,39 @@
 $(function(){
 	function checkMobileSize() {
-	    var x = $(window).width() + getScrollbarWidth();
-	    if (x >= 1200) {
-	        return false;
-	    } else {
-	        return true;
-	    }
+		var x = $(window).width() + getScrollbarWidth();
+		if (x >= 1200) {
+			return false;
+		} else {
+			return true;
+		}
 	}
-	
+
 	function getScrollbarWidth() {
-	    var outer = document.createElement("div");
-	    outer.style.visibility = "hidden";
-	    outer.style.width = "100px";
-	    outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+		var outer = document.createElement("div");
+		outer.style.visibility = "hidden";
+		outer.style.width = "100px";
+		outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
 
-	    document.body.appendChild(outer);
+		document.body.appendChild(outer);
 
-	    var widthNoScroll = outer.offsetWidth;
-	    // force scrollbars
-	    outer.style.overflow = "scroll";
+		var widthNoScroll = outer.offsetWidth;
+		// force scrollbars
+		outer.style.overflow = "scroll";
 
-	    // add innerdiv
-	    var inner = document.createElement("div");
-	    inner.style.width = "100%";
-	    outer.appendChild(inner);
+		// add innerdiv
+		var inner = document.createElement("div");
+		inner.style.width = "100%";
+		outer.appendChild(inner);
 
-	    var widthWithScroll = inner.offsetWidth;
+		var widthWithScroll = inner.offsetWidth;
 
-	    // remove divs
-	    outer.parentNode.removeChild(outer);
+		// remove divs
+		outer.parentNode.removeChild(outer);
 
-	    return widthNoScroll - widthWithScroll;
+		return widthNoScroll - widthWithScroll;
 	}
 
-	
+
 	$(window).resize(function(){
 		isMobileSize = checkMobileSize();
 		if(!isMobileSize){
@@ -50,7 +50,7 @@ $(function(){
 			$(".gnb_close").css({"display":"none"});
 		}
 	});
-	
+
 	/* gnb 메뉴 */
 	/*$(".navbar-nav > li").on('mouseenter', function(){
 		if(!$("nav.navbar").hasClass("gnbActive") && !checkMobileSize()){
@@ -62,7 +62,7 @@ $(function(){
 			$('header').stop().animate({"height":"145px"}, 200);
 		}
     });*/
-	
+
 	/* gnb 메뉴 focus 이동시 메뉴 영역 확장 */
 	/*$(".navbar-nav").on('focusin', function(){
 		$('header').stop().animate({"height":"170px"}, 200);
@@ -73,7 +73,7 @@ $(function(){
 	$(".navbar-nav > li > a").on('focus', function(){
 		$(this).parent().addClass("active").siblings().removeClass("active");
 	});
-	
+
 	$(".gnb_menu").on("click", function(){
 		$("#main_nav_full").addClass("gnbActive");
 		$("header").css({"background":""});
@@ -83,7 +83,7 @@ $(function(){
 		$('.op_bg_box').addClass("active");
 		$('body').css({"overflow":"hidden"});
 	});
-	
+
 	$("#all_search_label").on("click", function(){
 		$(this).addClass("active");
 		$(".navbar-nav").css({"display":"none"});
@@ -91,7 +91,7 @@ $(function(){
 		$(".gnb_close").css({"display":"inline-block"});
 		$('.gnb_close').attr({"alt":"통합검색 닫기"});
 	});
-	
+
 	$(".gnb_close").on("click", function(){
 		if($("#all_search_label").hasClass("active")){
 			$("#all_search_label").removeClass("active");
@@ -110,13 +110,13 @@ $(function(){
 			$('body').css({"overflow":"auto"});
 		}
 	});
-	
+
 	$("#main_nav > ul > li").on("click", function(){
 		if($("#main_nav").hasClass("show")){
 			$(this).children("ul").toggle('fast');
 		}
 	});
-	
+
 	$("header .navbar-toggler").on("click", function(){
 
 		if($("header").hasClass("active")){
