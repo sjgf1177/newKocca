@@ -55,6 +55,29 @@
 //]]>
 </script>
 
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>회원정보 수정</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>회원탈퇴</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">회원탈퇴</div>
+</div>
+
+<div class="col-center mw-1280">
+
+	<div class="tab_style_1_con" style="margin-bottom: 40px;">
+		<ul class="tab_style_1 three_tab" style="display: flex; justify-content: center;">
+			<li><a href="/edu/userMember/forUpdate.do"><span>회원정보 수정</span></a></li>
+			<li><a href="/edu/userMember/pwdChange.do?menuNo=500057"><span>비밀번호 변경</span></a></li>
+			<li class="active"><a href="/edu/userMember/secsn.do?menuNo=500082" title="현재탭"><span>회원탈퇴</span></a></li>
+		</ul>
+	</div>
 
 	<h3 class="mt30">회원 탈퇴를 하시기 전에 다음의 내용을 꼭 확인해주시기 바랍니다.</h3>
 	<div class="alert mt30 mb20">
@@ -77,7 +100,7 @@
 						</strong><details><summary>설명</summary> <p>아이디, (필수입력) 기존 비밀번호 정보를 포함하는 표</p></details></caption>
 						<colgroup>
 						<col style="width:20%">
-						<col>
+						<col style="width:auto">
 						</colgroup> 
 						<tbody>
 							<tr>
@@ -101,3 +124,4 @@
 				<a href="javascript:secsnRequest();" class="btn_style_0 full check">탈퇴</a>
 			</div>
 	</fieldset>
+</div>

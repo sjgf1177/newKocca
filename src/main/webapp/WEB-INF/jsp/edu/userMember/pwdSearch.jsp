@@ -68,7 +68,21 @@ $(function(){
 //]]>
 </script>
 
-	
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>로그인</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>비밀번호찾기</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">비밀번호찾기</div>
+</div>
+
+<div class="col-center mw-1280">
 	<p class="sub_contents_body_title">
         가입 시 입력하신 기본정보를 입력해 주시기 바랍니다.
     </p>
@@ -76,7 +90,7 @@ $(function(){
         비밀번호는 암호화 되어 있어 조회가 불가능하오니, 임시 비밀번호를 회원가입 시<br/>
         인증받은 휴대폰 또는 메일주소로 발송해 드립니다.
     </p>
-    <div class="sub_board_body">
+    <div class="sub_board_body" style="padding-left: 20px;">
         <p class="board_caption">
             <span>
                 표시는 필수입력 항목입니다.
@@ -206,6 +220,7 @@ $(function(){
             </form>
         </div>
     </div>
+</div>
 	
 	
 	<!-- 

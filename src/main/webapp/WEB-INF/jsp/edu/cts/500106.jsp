@@ -1,4 +1,5 @@
-﻿<div class="tab_style_1_con">
+﻿<!-- 콘텐츠인재캠퍼스 소개 -->
+<div class="tab_style_1_con">
 	<ul class="tab_style_1 two_tab">
 		<li class="active"><a href="/testbed/main/contents.do?menuNo=700134" title="현재탭"><span>콘텐츠인재캠퍼스 소개</span></a></li>
 		<li><a href="/testbed/main/contents.do?menuNo=700135"><span>시설물 안내</span></a></li>

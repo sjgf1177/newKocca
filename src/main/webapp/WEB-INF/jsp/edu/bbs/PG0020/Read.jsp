@@ -36,7 +36,7 @@
 	</div>
 </div>
 <div class="contents_view_area">
-	<div class="col-center mw-1280">
+	<div class="col-center mw-1280 txt_ct">
 	<c:choose>
 		<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
 		<c:otherwise>

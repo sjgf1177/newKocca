@@ -11,7 +11,7 @@
 		<c:forEach var="x" begin="1" end="5">
 			<div class="file_set">
 				<div class="form-inline board_util_btn_con">
-					<input name="file_${x}" type="file" id="file_${x}" class="input_file form-control" title="첨부파일 ${x}" style="width:100%; max-width:500px; height:calc(2.25rem + 7px);"/>
+					<input name="file_${x}" type="file" id="file_${x}" class="input_file form-control" title="첨부파일 ${x}" style="width:100%; max-width:500px; /*height:calc(2.25rem + 7px);*/"/>
 					<a href="#contents" id="btn_file_del_${x}" class="btn_style_0 full small btn_file_del" style="margin-top:2px !important; margin-bottom:5px;">첨부파일 삭제</a>
 				</div>
 				<%-- 이미지설명 : <input type="text" id="file_${x}_cn" name="file_${x}_cn" title="첨부파일 ${x} 설명" class="Input_file_infor"/> --%>

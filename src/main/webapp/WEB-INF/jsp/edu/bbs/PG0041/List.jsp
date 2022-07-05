@@ -5,89 +5,141 @@
 <script type="text/javascript" src="/crosseditor/js/namo_scripteditor.js"></script>
 <script type="text/javascript" src="/js/miya_validator.js"></script>
 
-<p class="vocIntro_title">함께 : 톡톡은 </p>
-<p class="alert_title short_bottom" style="margin-bottom:0;">
-	에듀코카 서비스를 이용하시면서 불편하거나 개선이 필요한 부분, 그리고 콘텐츠인재양성 프로그램에 제안하고 싶은 사항에 대한 <span class="apply_no_text">의견을 기재하는 공간</span>입니다.
-</p>
-
-<div class="vocIntro_box">
-	<ul>
-		<li>
-			<span>불편사항 접수</span>
-			<img src="/edu/new_image/icon/voc_icon1.png" alt="불편사항 접수 아이콘">
-			<span>교육 내용 문의, 홈페이지 및 학습 오류 등 이용에 대한 불편 사항 접수</span>
-		</li>
-		<li>
-			<span>참여하기</span>
-			<img src="/edu/new_image/icon/voc_icon2.png" alt="참여하기 아이콘">
-			<span>콘텐츠 인재 양성 사업 관련 아이디어 및 의견 접수</span>
-		</li>
-		<li>
-			<span>건의하기</span>
-			<img src="/edu/new_image/icon/voc_icon3.png" alt="건의하기 아이콘">
-			<span>홈페이지 개선 및 교육 프로그램 성장을 위한 의견 접수</span>
-		</li>
-	</ul>
-</div>
-
-<div class="btnSet tac">
-	<a href="/edu/bbs/B0000076/forInsert.do?menuNo=500221" class="btn btn-primary" style="font-size:1.4rem;">글쓰기</a>
-</div>
-
-<div class="col-12 sub_board_body">
-	<table class="board_type_0">
-		<caption>${masterVO.bbsNm} 목록</caption>
-		<colgroup>
-			<col width="8%"/>
-			<col width="12%"/>
-			<col />
-			<col width="15%"/>
-			<col width="8%"/>
-		</colgroup>
-		<thead>
-			<tr>
-				<th>번호</th>
-				<th>분류</th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>작성자</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="result" items="${resultList}" varStatus="status">
-				<tr>
-					<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}${pageQueryString}" />
-					<td>${(resultCnt) - (paginationInfo.pageSize * (paramVO.pageIndex-1)) - (status.index)}</td>
-					<td style="text-align: center;">
-						<c:choose>
-							<c:when test="${result.option2 eq '01' }">건의하기</c:when>
-							<c:when test="${result.option2 eq '02' }">참여하기</c:when>
-							<c:when test="${result.option2 eq '03' }">불편사항 접수</c:when>
-						</c:choose>
-					</td>
-					<td style="text-align: left; padding-left: 20px;">
-						<a href="javascript:lock();">${fn:trim(result.nttSj) eq '' or empty result.nttSj ? '제목 없음' : result.nttSj}</a>
-					</td>
-					<td>
-						<c:out value="${result.frstRegisterPnttm}"/>
-					</td>
-					<td>
-						<c:set var = "length" value = "${fn:length(result.ntcrNm)}"/>
-						<c:out value="${fn:substring(result.ntcrNm, 0, 1)}"/>
-						*
-						<c:out value="${fn:substring(result.ntcrNm, length-1, length)}"/>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	<c:if test="${fn:length(resultList) > 0}">
-	<div class="paging">
-		${pageNav}
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>함께:톡톡</span></a></li>
+		</ul>
 	</div>
-</c:if>
 </div>
 
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">함께:톡톡</div>
+</div>
+
+<div class="col-center mw-1280">
+
+	<%--<p class="vocIntro_title">함께 : 톡톡은 </p>--%>
+	<p class="short_bottom" style="margin-bottom:0;">
+		에듀코카 서비스를 이용하시면서 불편하거나 개선이 필요한 부분, 그리고 콘텐츠인재양성 프로그램에 제안하고 싶은 사항에 대한 <span class="apply_no_text">의견을 기재하는 공간</span>입니다.
+	</p>
+
+	<div class="vocIntro_box">
+		<ul>
+			<li>
+				<span>불편사항 접수</span>
+				<img src="/edu/new_image/icon/voc_icon1.png" alt="불편사항 접수 아이콘">
+				<span>교육 내용 문의, 홈페이지 및 학습 오류 등 이용에 대한 불편 사항 접수</span>
+			</li>
+			<li>
+				<span>참여하기</span>
+				<img src="/edu/new_image/icon/voc_icon2.png" alt="참여하기 아이콘">
+				<span>콘텐츠 인재 양성 사업 관련 아이디어 및 의견 접수</span>
+			</li>
+			<li>
+				<span>건의하기</span>
+				<img src="/edu/new_image/icon/voc_icon3.png" alt="건의하기 아이콘">
+				<span>홈페이지 개선 및 교육 프로그램 성장을 위한 의견 접수</span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="btnSet tac">
+		<a href="/edu/bbs/B0000076/forInsert.do?menuNo=500221" class="btn btn-primary" style="font-size:1.4rem;">글쓰기</a>
+	</div>
+
+	<div class="col-12 mw-1280 table-responsive">
+		<table class="table table-styling pc_table table-hover txt_ct">
+			<caption>${masterVO.bbsNm} 목록</caption>
+			<colgroup>
+				<col width="8%"/>
+				<col width="12%"/>
+				<col />
+				<col width="15%"/>
+				<col width="8%"/>
+			</colgroup>
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>분류</th>
+					<th>제목</th>
+					<th>작성일</th>
+					<th>작성자</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="result" items="${resultList}" varStatus="status">
+					<tr>
+						<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}${pageQueryString}" />
+						<td>${(resultCnt) - (paginationInfo.pageSize * (paramVO.pageIndex-1)) - (status.index)}</td>
+						<td style="text-align: center;">
+							<c:choose>
+								<c:when test="${result.option2 eq '01' }">건의하기</c:when>
+								<c:when test="${result.option2 eq '02' }">참여하기</c:when>
+								<c:when test="${result.option2 eq '03' }">불편사항 접수</c:when>
+							</c:choose>
+						</td>
+						<td style="text-align: left; padding-left: 20px;">
+							<a href="javascript:lock();">${fn:trim(result.nttSj) eq '' or empty result.nttSj ? '제목 없음' : result.nttSj}</a>
+						</td>
+						<td>
+							<c:out value="${result.frstRegisterPnttm}"/>
+						</td>
+						<td>
+							<c:set var = "length" value = "${fn:length(result.ntcrNm)}"/>
+							<c:out value="${fn:substring(result.ntcrNm, 0, 1)}"/>
+							*
+							<c:out value="${fn:substring(result.ntcrNm, length-1, length)}"/>
+						</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
+		<!-- mobile table -->
+		<ul class="board_type_0 mo_table">
+			<c:forEach var="result" items="${resultList}" varStatus="status">
+				<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}${pageQueryString}" />
+				<li class="table_list _notice">
+					<a href="javascript:lock();" class="table_info_box">
+						<div class="left_box">
+								${(resultCnt) - (paginationInfo.pageSize * (paramVO.pageIndex-1)) - (status.index)}
+						</div>
+						<div class="right_box">
+							<c:url var="url" value="/${paramVO.siteName }/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}${pageQueryString}" />
+							<p class="mb20" style="color: #3B85FF;">
+								<c:choose>
+									<c:when test="${result.option2 eq '01' }">건의하기</c:when>
+									<c:when test="${result.option2 eq '02' }">참여하기</c:when>
+									<c:when test="${result.option2 eq '03' }">불편사항 접수</c:when>
+								</c:choose>
+							</p>
+							<p class="title">
+								${fn:trim(result.nttSj) eq '' or empty result.nttSj ? '제목 없음' : result.nttSj}
+							</p>
+							<p class="date_view">
+								<span><c:out value="${result.frstRegisterPnttm}"/></span>
+								<span>작성자 : <c:set var = "length" value = "${fn:length(result.ntcrNm)}"/>
+											<c:out value="${fn:substring(result.ntcrNm, 0, 1)}"/>
+											*
+											<c:out value="${fn:substring(result.ntcrNm, length-1, length)}"/>
+								</span>
+							</p>
+						</div>
+					</a>
+				</li>
+			</c:forEach>
+			<c:if test="${fn:length(resultList) == 0}"><tr><td colspan="4">데이터가 없습니다.</td></tr></c:if>
+		</ul>
+
+		<c:if test="${fn:length(resultList) > 0}">
+		<div class="paging">
+			${pageNav}
+		</div>
+	</c:if>
+	</div>
+</div>
 <script>
 	function lock(){
 		alert("비공개글입니다.");	

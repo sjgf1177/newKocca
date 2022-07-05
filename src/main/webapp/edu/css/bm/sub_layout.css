@@ -219,7 +219,7 @@ wrapper.sub_layout_page 는 1depth의 하위 서브페이지들(2, 3depth)
 .sub_board_body{}
 .sub_board_body .board_caption{text-align: right; margin-bottom:10px;}
 .sub_board_body .red_star_text{font-size:13px; font-size:1.3rem; line-height:19px; line-height:1.9rem; font-weight:400; letter-spacing: -0.025em; color:#313131; background: url(/edu/images/bm/board_red_star_icon.png) no-repeat left 6px; padding-left: 12px; margin-bottom:7px;}
-.sub_board_body .board_caption > span{font-size:12px; font-size:1.2rem; line-height:18px; line-height:1.8rem; font-weight:200; color:#313131; letter-spacing: -0.025em; display:inline-block; padding-left:12px; background: url('/edu/images/bm/board_red_star_icon.png') no-repeat left 6px;}
+.sub_board_body .board_caption > span{font-size:1.4rem; line-height:18px; line-height:1.8rem; font-weight:200; color:#313131; letter-spacing: -0.025em; display:inline-block; padding-left:12px; background: url('/edu/images/bm/board_red_star_icon.png') no-repeat left 6px;}
 
 /* board_type_0 */
 table.board_type_0{width:100%; table-layout:fixed; margin-bottom:30px;}
@@ -352,15 +352,15 @@ table.board_type_1 .upload_file_delete_btn{width:17px; height:17px; box-sizing: 
 .board_util_btn_con .btn_style_0.img_left{background-position:left 20px center; padding-left:46px; padding-right:20px;}
 .board_util_btn_con .btn_style_0:first-child{margin-left:0;}
 .board_util_btn_con .btn_style_0:last-child{margin-right:0;}
-.board_util_btn_con .btn_style_0.close{background-image:url('/edu/images/bm/btn_style_0_close.png')}
+/*.board_util_btn_con .btn_style_0.close{background-image:url('/edu/images/bm/btn_style_0_close.png')}*/
 .contents_view_page .board_util_btn_con .btn_style_0.close.white_color_btn{background-image:url('/edu/images/bm/btn_style_0_close_w.png')}
 .board_util_btn_con .btn_style_0.close_w{background-image:url('/edu/images/bm/btn_style_0_close_w.png')}
-.board_util_btn_con .btn_style_0.check{background-image:url('/edu/images/bm/btn_style_0_check_w.png')}
+/*.board_util_btn_con .btn_style_0.check{background-image:url('/edu/images/bm/btn_style_0_check_w.png')}*/
 .board_util_btn_con .btn_style_0.edit{background-image:url('/edu/images/bm/btn_style_0_edit_w.png')}
 .board_util_btn_con .btn_style_0.add{background-image:url('/edu/images/bm/btn_style_0_add_w.png')}
 .board_util_btn_con .btn_style_0.list{background-image:url('/edu/images/bm/btn_style_0_list.png')}
-.board_util_btn_con .btn_style_0.right{background-image:url('/edu/images/bm/btn_style_0_right_w.png'); padding-right: 60px; background-position: right 16px center;}
-.board_util_btn_con .btn_style_0.left{background-image:url('/edu/images/bm/btn_style_0_left_w.png'); padding-left: 34px; padding-right: 14px; background-position: left 16px center;}
+/*.board_util_btn_con .btn_style_0.right{background-image:url('/edu/images/bm/btn_style_0_right_w.png'); padding-right: 60px; background-position: right 16px center;}*/
+/*.board_util_btn_con .btn_style_0.left{background-image:url('/edu/images/bm/btn_style_0_left_w.png'); padding-left: 34px; padding-right: 14px; background-position: left 16px center;}*/
 .board_util_btn_con .btn_style_0.center{padding-left: 26px; padding-right: 26px;}
 .board_util_btn_con .btn_style_0.center.short{padding-left:17px; padding-right:17px;}
 .board_util_btn_con .btn_style_0.radius{border-radius: 3px; padding-left: 26px; padding-right: 26px;}
@@ -400,7 +400,7 @@ table.board_type_1 .upload_file_delete_btn{width:17px; height:17px; box-sizing: 
 	font-size:13px; line-height:19px; border-radius:4px; font-weight:400;}
 .board_util_btn_con .btn_style_0.remote_btn{font-size:13px; line-height:19px; padding-top:5px; padding-bottom:4px; padding-left:0px; padding-right:0px; color:#fff; border:none; border-radius:3px; background-color:#828282;}
 .board_util_btn_con .btn_style_0.kocca_guide_down_icon{background-image:url('/edu/images/bm/kocca_guide_down_icon.png');}
-.board_util_btn_con .btn_style_0.kocca_edu_insert_btn{padding-top:9px; padding-bottom:8px; color:#fff; background-color:#0480A9; border:none; border-radius:3px; padding-left:18px; padding-right:18px;}
+.board_util_btn_con .btn_style_0.kocca_edu_insert_btn{padding-top:9px; padding-bottom:8px; color:#fff; background-color:#3B85FF; border:none; border-radius:3px; padding-left:18px; padding-right:18px;}
 .board_util_btn_con .btn_style_0.gray_btn{background-color:#828282; border-color:#828282; color:#fff;}
 .mentorlineup_body .board_util_btn_con .btn_style_0.green.radius.listBook{padding:6px 20px 5px 39px; font-size:14px; font-size:1.4rem;} 
 
@@ -543,7 +543,7 @@ body label.back_label { visibility: visible; opacity:1; display: block; width: a
 @media all and (min-width: 576px){	
 	.board_sorting_con .input_search_con{width:auto;}
 	.board_sorting_con .input_search_con input[type=text].board_search{width:180px;}
-	.control_board_header .board_title{position:absolute; bottom:0}
+	/*.control_board_header .board_title{position:absolute; bottom:0}*/
 	.board_util_btn_con .btn_style_0.remote_btn{padding-left:18px !important; padding-right:18px !important;}
 	.m_dn{display:none !important}
 }

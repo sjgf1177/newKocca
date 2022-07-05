@@ -263,62 +263,87 @@
 	</div>
 </c:if>
 
-<fieldset>
-	<legend>비밀번호 변경 입력</legend>
-	<form name="pwdForm" id="pwdForm" action="#" method="post">
-		<div>
-			<div class="tbrinfo text-danger clear hide_star_con no_margin"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 표시 항목은 필수 입력 항목입니다.</div>
-			<div class="bdView sub_board_body">
-				<table class="table table-bordered contents_insight_view">
-					<caption>로그인 정보 입력</caption>
-					<colgroup>
-					<col style="width:20%">
-					<col>
-					</colgroup>
-					<tbody>
-						<tr>
-							<th scope="row"><label for="password0" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 기존 비밀번호</label></th>
-							<td>
-								<span class="input_style_1_con">
-									<input type="password" name="password0" id="password0" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd0(this.value)">
-									<span class="text-success" id="pwd0-success"></span>
-									<span class="text-danger" id="pwd0-danger"></span>
-								</span>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><label for="password" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 비밀번호</label></th>
-							<td>
-								<span class="input_style_1_con">
-									<input type="password" name="password" id="password" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd(this.value)">
-									<span class="text-success" id="pwd-success"></span>
-									<span class="text-danger" id="pwd-danger"></span>
-									</span>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>회원정보 수정</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>비밀번호 변경</span></a></li>
+		</ul>
+	</div>
+</div>
 
-								<p class="text-default">※ 8~16자까지 영문자(대/소문자), 숫자 및 특수문자 조합을 사용하여 주십시오<br>
-									3자리 연속 또는 같은 문자, 아이디, 생년월일은 사용하실 수 없습니다.<br>
-									ID와 동일한 비밀번호 및 동일문자는 설정하실 수 없습니다.</p>
-							</td>
-						</tr>
-						<tr>
-							<th scope="row"><label for="password2" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 비밀번호 확인</label></th>
-							<td>
-								<span class="input_style_1_con">
-									<input type="password" name="password2" id="password2" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd2(this.value)">
-									<span class="text-success" id="pwd2-success"></span>
-									<span class="text-danger" id="pwd2-danger"></span>
-								</span>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">비밀번호 변경</div>
+</div>
+
+<div class="col-center mw-1280">
+
+	<div class="tab_style_1_con" style="margin-bottom: 40px;">
+		<ul class="tab_style_1 three_tab" style="display: flex; justify-content: center;">
+			<li><a href="/edu/userMember/forUpdate.do"><span>회원정보 수정</span></a></li>
+			<li class="active"><a href="/edu/userMember/pwdChange.do?menuNo=500057"  title="현재탭"><span>비밀번호 변경</span></a></li>
+			<li><a href="/edu/userMember/secsn.do?menuNo=500082"><span>회원탈퇴</span></a></li>
+		</ul>
+	</div>
+
+	<fieldset>
+		<legend>비밀번호 변경 입력</legend>
+		<form name="pwdForm" id="pwdForm" action="#" method="post">
+			<div>
+				<div class="tbrinfo text-danger clear hide_star_con no_margin"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 표시 항목은 필수 입력 항목입니다.</div>
+				<div class="bdView sub_board_body">
+					<table class="table contents_insight_view">
+						<caption>로그인 정보 입력</caption>
+						<colgroup>
+						<col style="width:28%">
+						<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" style="border-top: none;"><label for="password0" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 기존 비밀번호</label></th>
+								<td>
+									<span class="input_style_1_con">
+										<input type="password" name="password0" id="password0" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd0(this.value)">
+										<span class="text-success" id="pwd0-success"></span>
+										<span class="text-danger" id="pwd0-danger"></span>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" style="border-top: none;"><label for="password" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 비밀번호</label></th>
+								<td style="white-space: normal;">
+									<span class="input_style_1_con">
+										<input type="password" name="password" id="password" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd(this.value)">
+										<span class="text-success" id="pwd-success"></span>
+										<span class="text-danger" id="pwd-danger"></span>
+										</span>
+
+									<p class="text-default" style="font-size: 1.5rem;">※ 8~16자까지 영문자(대/소문자), 숫자 및 특수문자 조합을 사용하여 주십시오
+										3자리 연속 또는 같은 문자, 아이디, 생년월일은 사용하실 수 없습니다.
+										ID와 동일한 비밀번호 및 동일문자는 설정하실 수 없습니다.</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" style="border-top: none;"><label for="password2" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 비밀번호 확인</label></th>
+								<td>
+									<span class="input_style_1_con">
+										<input type="password" name="password2" id="password2" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd2(this.value)">
+										<span class="text-success" id="pwd2-success"></span>
+										<span class="text-danger" id="pwd2-danger"></span>
+									</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
-		</div>
-		<div class="board_util_btn_con">
-			<a href="javascript:pwdChangeRequest();" class="btn_style_0 green edit">변경</a>
-		<c:if test="${param.mode eq 'i'}">
-			<a href="javascript:pwdNextChange();" class="btn_style_0 full list">다음에 변경</a>
-		</c:if>
-		</div>
-	</form>
-</fieldset>
+			<div class="board_util_btn_con">
+				<a href="javascript:pwdChangeRequest();" class="btn_style_0 blue">변경</a>
+			<c:if test="${param.mode eq 'i'}">
+				<a href="javascript:pwdNextChange();" class="btn_style_0 full list">다음에 변경</a>
+			</c:if>
+			</div>
+		</form>
+	</fieldset>
+</div>

@@ -7,31 +7,46 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc"%>
 
-
-<div class="tab_style_1_con"> 
-	<ul class="tab_style_1 four_tab">
-		<li>
-			<a href="/edu/main/contents.do?menuNo=500086">
-				<span>학습가이드</span>
-			</a>
-		</li>
-		<li>
-			<a href="/edu/main/contents.do?menuNo=500087">
-				<span>학습환경 설정</span>
-			</a>
-		</li>
-		<li>
-			<a href="/edu/main/contents.do?menuNo=500090">
-				<span>원격지원서비스</span>
-			</a>
-		</li>
-		<li class="active">
-			<a href="/edu/onlineEdu/edcsystm/list.do?menuNo=500030" title="현재탭">
-				<span>교육체계도</span>
-			</a>
-		</li>
-	</ul>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>지원서비스</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>교육체계도</span></a></li>
+		</ul>
+	</div>
 </div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">교육체계도</div>
+</div>
+
+<div class="col-center mw-1280">
+	<div class="tab_style_1_con" style="margin-bottom: 40px;">
+
+		<ul class="tab_style_1 four_tab">
+			<li>
+				<a href="/edu/main/contents.do?menuNo=500086">
+					<span>학습가이드</span>
+				</a>
+			</li>
+			<li>
+				<a href="/edu/main/contents.do?menuNo=500087">
+					<span>학습환경 설정</span>
+				</a>
+			</li>
+			<li>
+				<a href="/edu/main/contents.do?menuNo=500090">
+					<span>원격지원서비스</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="/edu/onlineEdu/edcsystm/list.do?menuNo=500030" title="현재탭">
+					<span>교육체계도</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 
 <!--content-->
 
@@ -114,18 +129,18 @@
 					        	<div class="col-12 popup_contents_wrap">
 					        		<div class="eduframe_pop_contents_con">
 					        			<h7>개요</h7>
-				                		<p class="desc" style="white-space:pre;"><c:out value='${result2.summary}'/></p>
+				                		<p class="desc" style="white-space:normal;"><c:out value='${result2.summary}'/></p>
 					        		</div>
 					        		<c:if test="${not empty result2.jobarea}">
 						        		<div class="eduframe_pop_contents_con">
 						        			<h7>직업군</h7>
-					                		<p class="desc" style="white-space:pre;"><c:out value='${result2.jobarea}'/></p>
+					                		<p class="desc" style="white-space:normal;"><c:out value='${result2.jobarea}'/></p>
 						        		</div>
 					        		</c:if>
 					        		<c:if test="${not empty result2.capacity}">
 						        		<div class="eduframe_pop_contents_con">
 						        			<h7>필요역량</h7>
-					                		<p class="desc" style="white-space:pre;"><c:out value='${result2.capacity}'/></p>
+					                		<p class="desc" style="white-space:normal;"><c:out value='${result2.capacity}'/></p>
 						        		</div>
 					        		</c:if>
 					        		<div class="eduframe_pop_contents_con">
@@ -166,18 +181,18 @@
 			        	<div class="col-12 popup_contents_wrap">
 			        		<div class="eduframe_pop_contents_con">
 			        			<h7>개요</h7>
-		                		<p class="desc" style="white-space:pre;"><c:out value='${result1.summary}'/></p>
+		                		<p class="desc" style="white-space:normal;"><c:out value='${result1.summary}'/></p>
 			        		</div>
 			        		<c:if test="${not empty result2.jobarea}">
 						   		<div class="eduframe_pop_contents_con">
 						   			<h7>직업군</h7>
-					            		<p class="desc" style="white-space:pre;"><c:out value='${result2.jobarea}'/></p>
+					            		<p class="desc" style="white-space:normal;"><c:out value='${result2.jobarea}'/></p>
 						   		</div>
 					        </c:if>
 					        <c:if test="${not empty result2.capacity}">
 						    	<div class="eduframe_pop_contents_con">
 						    		<h7>필요역량</h7>
-					             		<p class="desc" style="white-space:pre;"><c:out value='${result2.capacity}'/></p>
+					             		<p class="desc" style="white-space:normal;"><c:out value='${result2.capacity}'/></p>
 						    	</div>
 					        </c:if>
 			        		
@@ -3141,7 +3156,7 @@
 </div> --%>
 <!-- //popup 교육체계도 - 음악공연 교양 Track-->
 
-
+</div>
 
 <script type="text/javascript">
 //<![CDATA[

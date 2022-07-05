@@ -161,41 +161,46 @@
 
 <script>
 	$(function(){
-		//이벤트
-		var swiper3 = new Swiper('.calc_wrap19.swiper', {
-			slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
-			,grid: {
-				rows: 2,
-			}
-			,spaceBetween: 20
-			/*,centeredSlides: true*/
-			//신버전 swiper 방향표
-			,navigation: {
-				nextEl: ".event_card_wrap .swiper-button-next",
-				prevEl: ".event_card_wrap .swiper-button-prev",
-			}
 
-			,breakpoints: {
-				100: {
-					slidesPerView: 1,
-				},
-				640: {
-					slidesPerView: 2,
-				},
-				1180: {
-					slidesPerView: 3,
-				},
-			}
-			/*
-			,pagination: { //페이지 수
-				el: ".event_card_wrap .swiper-pagination",
-				clickable: true,
-        	}
-			,pagination: {
-				el: ".event_card_wrap .swiper-pagination",
-				clickable: true,
-			}*/
+		var windowWidth = $( window ).width();
+		if(windowWidth > 640) {
 
-		});
+			//이벤트
+			var swiper3 = new Swiper('.calc_wrap19.swiper', {
+				slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+				, grid: {
+					rows: 2,
+				}
+				, spaceBetween: 20
+				/*,centeredSlides: true*/
+				//신버전 swiper 방향표
+				, navigation: {
+					nextEl: ".event_card_wrap .swiper-button-next",
+					prevEl: ".event_card_wrap .swiper-button-prev",
+				}
+
+				, breakpoints: {
+					100: {
+						slidesPerView: 1,
+					},
+					640: {
+						slidesPerView: 2,
+					},
+					1180: {
+						slidesPerView: 3,
+					},
+				}
+				/*
+				,pagination: { //페이지 수
+					el: ".event_card_wrap .swiper-pagination",
+					clickable: true,
+				}
+				,pagination: {
+					el: ".event_card_wrap .swiper-pagination",
+					clickable: true,
+				}*/
+
+			});
+		}
 	});
 </script>

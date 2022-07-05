@@ -45,14 +45,18 @@
 
 <!--content-->
 <div class="col-center mw-1280">
-	<div class="col-12 mb37 alert big_box">
-		<p class="alert_title" style="margin-bottom:0;">
-		${result.title }
+	<div class="lecture_info_box style_2">
+		<div class="col-12 mb37 alert big_box type_1" style="padding-left: 20px; padding-right: 20px;">
+			<p class="alert_title" style="margin-bottom:0;">
+			${result.title }
+			</p>
+		</div>
+	</div>
+	<div class="txt_ct mb40">
 		<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
-			<%--<img alt="${result.title }" src="${result.posterImg}" />--%>
-			<img alt="${result.title }" src="https://edu.kocca.kr/upload/themeupload/88_800_300.jpg" />
+		<%--<img alt="${result.title }" src="${result.posterImg}" />--%>
+		<img alt="${result.title }" src="https://edu.kocca.kr/upload/themeupload/88_800_300.jpg" />
 		</c:if>
-		</p>
 	</div>
 	<div class="col-12 mb17">
 		<ul class="list_style_10 font_light">
@@ -73,7 +77,7 @@
 		</div>
 	</div>
 
-	<div class="col-12 sub_board_body">
+	<div class="col-12 sub_board_body" style="padding-left: 20px;">
 		<div class="col-12 theme_process_list_wrap">
 			<!-- 반복 -->
 			<c:forEach items="${themeSubjList }" var="list" varStatus="status" >
@@ -88,14 +92,14 @@
 					</div>
 					<div class="text_box">
 						<div class="online_edu_card_icon_con">
-							<span class="online_edu_card_icon">
+							<%--<span class="online_edu_card_icon">
 								<img src="/edu/images/bm/online_pc_icon.png" alt="pc에서 재생가능" title="pc에서 재생가능">
 							</span>
 							<c:if test="${list.mobileUseYn eq 'Y' }">
 							<span class="online_edu_card_icon">
 								<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일에서 재생가능" title="모바일에서 재생가능">
 							</span>
-							</c:if>
+							</c:if>--%>
 							<h5>${list.courseName }</h5>
 						</div>
 						<p class="theme_process_list_desc">

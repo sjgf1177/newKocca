@@ -138,7 +138,7 @@ public boolean isQuotation(String html) throws Exception {
 	</form>
 
 
-	<div class="col-12 col-center mw-1280 table-responsive">
+	<div class="col-12 col-center mw-1280 table-responsive" style="overflow: auto;">
 		<table class="table table-styling pc_table table-hover txt_ct">
 			<caption>
 				<strong>

@@ -34,6 +34,17 @@
 	<div class="col-center mw-1280">성과아카이브</div>
 </div>
 <div class="col-center mw-1280 dream_list">
+
+	<div class="tab_style_1_con">
+		<ul class="tab_style_1 four_tab size_24">
+			<li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040" ><span>사업소개</span></a></li>
+			<li><a href="/edu/dream/pltfomList/list.do?menuNo=500117"><span>플랫폼기관</span></a></li>
+			<!-- <li><a href="/edu/dream/mentorManage/list.do?menuNo=500119"><span>멘토라인업</span></a></li> -->
+			<li><a href="/edu/bbs/B0000041/list.do?menuNo=500211"><span>창의현장</span></a></li>
+			<li class="active"><a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1" title="현재탭"><span>성과아카이브</span></a></li>
+		</ul>
+	</div>
+
      <div class="sub_contents_body archive">
      <!-- archive 클래스 추가. kmy -->
         <!--content-->
@@ -171,8 +182,7 @@
 	</c:if>
 
 
-
+</div>
 <script type="text/javascript">
 
 </script>
-</div>
