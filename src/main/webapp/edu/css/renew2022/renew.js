@@ -155,10 +155,4 @@ $(document).ready(function() {
     });
 
 
-    //콘텐츠커리큘럼 toggle
-    $('#main_nav_full li button').click(function () {
-        $(this).toggleClass('active');
-    });
-
-
 });

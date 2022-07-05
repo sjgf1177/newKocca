@@ -119,7 +119,7 @@ if( StringUtils.hasText(menuNo) ) {
 
 				<c:if test="${not empty file }">
                     <div class="main_visual swiper-slide testbed_visual" style="background-image: url('/cmm/fms/getImage.do?atchFileId=${file.atchFileId}&amp;fileSn=${file.fileSn}');">
-                    <div class="col-12 col-center mw-1280">
+                    <div class="col-12 col-center mw-1200">
                         <div class="col-12 pr15 pl15">
                             <div class="col-12 tc visual_wrap">
                                 <div class="col-12 visual_text_wrap">
@@ -167,7 +167,7 @@ if( StringUtils.hasText(menuNo) ) {
                 </div> --%>
 
 				<div class="main_visual swiper-slide testbed_visual" style="background-image: url('/edu/images/bm/testbed_visual_img_008.jpg');" tabindex="0">
-                    <div class="col-12 col-center mw-1280">
+                    <div class="col-12 col-center mw-1200">
                         <div class="col-12 pr15 pl15">
                             <div class="col-12 tc visual_wrap">
                                 <div class="col-12 visual_text_wrap">

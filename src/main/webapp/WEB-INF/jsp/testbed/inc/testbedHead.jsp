@@ -43,10 +43,8 @@
 	<c:if test="${param.menuNo  eq '500079'}">
 	<link rel="stylesheet" href="/js/jquery-ui/ui-1.10.3/themes-smoothness-jquery-ui.css" />
 	</c:if>
-
+	
 	<!-- 리뉴얼 추가 -->
-	<link rel="stylesheet" type="text/css" href="/edu/css/new/header.css"/>
-	<link rel="stylesheet" type="text/css" href="/edu/css/new/css.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/new/footer.css"/>
 	<!-- 리뉴얼 추가 끝 -->
 
@@ -110,10 +108,6 @@
 	<script type="text/javascript"> $('html').attr('id','ie');</script>
 <![endif]-->
 
-	<!-- 현재 메인 스크립트 -->
-	<script type="text/javascript" src="/edu/js/new/mainHeader.js"></script>
-	<script type="text/javascript" src="/edu/js/new/js.js"></script>
-
 	<!-- renew2022 CSS start -->
 	<link rel="stylesheet" href="/edu/css/renew2022/assets/plugins/animation/css/animate.min.css">
 	<link rel="stylesheet" href="/edu/css/renew2022/assets/css/style.css">
@@ -121,7 +115,6 @@
 	<!-- renew2022 CSS end -->
 
 	<!-- renew2022 JavaScript start -->
-	<script src="/edu/css/renew2022/renew.js"></script>
 
 	<!-- Required Js -->
 	<script src="assets/js/vendor-all.min.js"></script>
