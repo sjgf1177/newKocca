@@ -297,9 +297,10 @@ select{background-image: url(../image/relation_site_arrow.png); background-repea
     color: #767676;
     border-radius: 5px;
     padding:5px 20px 5px 15px;
-    border: 1px solid #F1F1F1;
+    /*border: 1px solid #F1F1F1;*/
+	border:none;
     margin-right: 5px;
-    background-position: 93% 13px;
+    background-position: 93% 17px;
     background-size:auto;
 }
  .sortBox{
@@ -523,4 +524,9 @@ fieldset.float{
 
 /* tab_style */
 .tab_style_1_con .three_tab li a, .tab_style_1_con .tab_style_1 li a{width:100%;}
+
+
+
+
+
 
