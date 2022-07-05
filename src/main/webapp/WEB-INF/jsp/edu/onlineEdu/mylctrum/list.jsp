@@ -70,8 +70,8 @@
 
 	<div class="mb10 alert big_box">
 		<ul class="list_style_4 no_decimal color_gray dot">
-			<li style="color:#444;">진도율 <span style="color:#3B85FF;">70% 이상</span> 되어야 수료증 출력 및 만족도 설문 가능</li>
-			<li style="color:#444;">열린강좌는 <span style="color:#3B85FF;">테마과정에 등록된 내역</span>만 확인가능합니다.</li>
+			<li>진도율 <span class="point0">70% 이상</span> 되어야 수료증 출력 및 만족도 설문 가능</li>
+			<li>열린강좌는 <span class="point0">테마과정에 등록된 내역</span>만 확인가능합니다.</li>
 		</ul>
 	</div>
 	<!-- <div style="width:100%;text-align:right;margin-bottom:10px;">진도율 60% 이상 되어야 수료증 출력 및 만족도 설문 가능</div> -->

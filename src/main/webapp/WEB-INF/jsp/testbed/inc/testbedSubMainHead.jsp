@@ -30,12 +30,6 @@
 	<link rel="stylesheet" type="text/css" href="/js/jquery-ui/jquery-ui.css" />
 	<link rel="stylesheet" type="text/css" href="/edu/css/submain.css" />
 
-	<!-- 리뉴얼 추가 -->
-	<link rel="stylesheet" type="text/css" href="/edu/css/new/header.css"/>
-	<link rel="stylesheet" type="text/css" href="/edu/css/new/css.css"/>
-	<link rel="stylesheet" type="text/css" href="/edu/css/new/footer.css"/>
-	<!-- 리뉴얼 추가 끝 -->
-
 	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="/js/nwmatcher.js"></script>
 	<script type="text/javascript" src="/js/selectivizr-min.js"></script>
@@ -66,30 +60,6 @@
 	<script type="text/javascript" src="/js/respond.min.js"></script>
 	<script type="text/javascript"> $('html').attr('id','ie');</script>
 <![endif]-->
-
-<!-- 현재 메인 스크립트 -->
-<script type="text/javascript" src="/edu/js/new/mainHeader.js"></script>
-<script type="text/javascript" src="/edu/js/new/js.js"></script>
-
-<!-- renew2022 CSS start -->
-<link rel="stylesheet" href="/edu/css/renew2022/assets/plugins/animation/css/animate.min.css">
-<link rel="stylesheet" href="/edu/css/renew2022/assets/css/style.css">
-<link rel="stylesheet" href="/edu/css/renew2022/renew.css">
-<!-- renew2022 CSS end -->
-
-<!-- renew2022 JavaScript start -->
-<script src="/edu/css/renew2022/renew.js"></script>
-
-<!-- Required Js -->
-<script src="assets/js/vendor-all.min.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/pcoded.min.js"></script>
-
-<!-- sweet alert Js -->
-<script src="assets/plugins/sweetalert/js/sweetalert.min.js"></script>
-<script src="assets/js/pages/ac-alert.js"></script>
-
-<!-- renew2022 JavaScript end -->
 
 
 
