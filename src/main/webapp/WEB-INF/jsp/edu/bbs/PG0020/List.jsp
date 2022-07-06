@@ -37,6 +37,7 @@
 	}
 </script>
 
+<%-- 7개 tabs일때
 <div class="tab_style_1_con event-tab">
 	<ul class="tab_style_1 two_tab">
 		<li <c:if test="${paramVO.op3 eq null || paramVO.op3 eq '0'}">class='active'</c:if>>
@@ -76,6 +77,38 @@
 		</li>
 	</ul>
 </div>
+--%>
+
+<div class="tab_style_1_con event-tab">
+	<ul class="tab_style_1 five_tab">
+		<li <c:if test="${paramVO.op3 eq null || paramVO.op3 eq '0'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('0')">
+				<span>전체보기</span>
+			</a>
+		</li>
+		<li <c:if test="${paramVO.op3 eq '1'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('1')">
+				<span>에듀코카 이벤트</span>
+			</a>
+		</li>
+		<li <c:if test="${paramVO.op3 eq '2'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('2')">
+				<span>교육신청</span>
+			</a>
+		</li>
+		<li <c:if test="${paramVO.op3 eq '3'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('3')">
+				<span>공모참여</span>
+			</a>
+		</li>
+		<li <c:if test="${paramVO.op3 eq '4'}">class='active'</c:if>>
+			<a href="javascript:void(0);" onclick="goEvent('4')">
+				<span>종료 이벤트</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
 <!--content-->
 <div class="col-12 event_card_wrap">
 	<div class="col-center mw-1280">

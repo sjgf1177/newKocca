@@ -170,49 +170,39 @@
 							<ul class="navbar-nav">
 								<!-- nav 이벤트 one-daps start -->
 								<li>
-									<a href="/edu/bbs/B0000048/list.do?menuNo=500203"   >
+									<a href="javascript:void(0);">
 										이벤트
 									</a>
 									<!-- nav 이벤트 two-daps start -->
-									<%--<ul>
-                                        <li>
-                                            <a href="/edu/bbs/B0000048/list.do?menuNo=500203">
-                                                참여 이벤트
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                추천 강좌
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
-                                                콘텐츠인사이트
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="/edu/progrm/master/list.do?prgSe=01&prgCl=12&menuNo=500216">
-                                                콘텐츠스텝업
-                                            </a>
-                                        </li>
-                                    <li>
-                                            <a href="">
-                                                게임인재원
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                게임이해하기
-                                            </a>
-                                        </li>-
-                                    </ul>--%>
+									<ul>
+										<li>
+											<a href="/edu/bbs/B0000048/list.do?menuNo=500203">
+												에듀코카 이벤트
+											</a>
+										</li>
+										<li>
+											<a href="">
+												교육신청하기
+											</a>
+										</li>
+										<li>
+											<a href="">
+												공모참여하기
+											</a>
+										</li>
+										<li>
+											<a href="">
+												종료이벤트
+											</a>
+										</li>
+									</ul>
 									<!-- nav 이벤트 two-daps end -->
 								</li>
 								<!-- nav 이벤트 one-daps end -->
 
 								<!-- nav 카테고리 one-daps start -->
 								<li>
-									<a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">
+									<a href="javascript:void(0);"<%-- onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;"--%>>
 										카테고리
 									</a>
 									<!-- nav 카테고리 two-daps start -->
@@ -223,55 +213,55 @@
 											</a>
 										</li>
 										<li>
-											<a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">
+											<a href="javascript:void(0);" onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;">
 												방송영상
 											</a>
 										</li>
 										<li>
-											<a href="javascript:void(0);" onclick="fnCmdSearchList('G0', '', '', '', ''); return false;">
+											<a href="javascript:void(0);" onclick="fnCmdSearchCateList('G0', '', '', '', ''); return false;">
 												게임
 											</a>
 										</li>
 										<li>
-											<a href="javascript:void(0);" onclick="fnCmdSearchList('K0', '', '', '', ''); return false;">
+											<a href="javascript:void(0);" onclick="fnCmdSearchCateList('K0', '', '', '', ''); return false;">
 												만화/애니/캐릭터
 											</a>
 										</li>
 										<li>
-											<a href="javascript:void(0);" onclick="fnCmdSearchList('M0', '', '', '', ''); return false;">
+											<a href="javascript:void(0);" onclick="fnCmdSearchCateList('M0', '', '', '', ''); return false;">
 												문화일반(음악공연)
 											</a>
 										</li>
 										<li>
-											<a href="javascript:void(0);" onclick="fnCmdSearchList('S0', '', '', '', ''); return false;">
+											<a href="javascript:void(0);" onclick="fnCmdSearchCateList('S0', '', '', '', ''); return false;">
 												인문/경영/교양/일반
 											</a>
 										</li>
-										<%--<!-- 분류별 목록 s -->
+										<%--							<!-- 분류별 목록 s -->
 
-											<c:forEach items="${categoryMenuMap }" var="item" varStatus="status">
-												<c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
-													<li ${selectedGubun } >
-														<a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>
-																${item.codenm }
-														</a>
-													</li>
-												</c:if>
-											</c:forEach>
-											<c:forEach items="${realmTabList }" var="item" varStatus="status">
-												<c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
-													<li ${selectedGubun } >
-														<a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>
-																${item.codenm }
-														</a>
-													</li>
-												</c:if>
-											</c:forEach>
-											<c:if test="${userVO.userId eq 'kkj9699' or userVO.userId eq 'jmh8263' or userVO.userId eq 'lee1'}">
-												<li <c:if test="${param.pGubun1 eq 'T0' or param.gubun eq 'T0' }">class="active"</c:if>>
-													<a href="javascript:void(0);" onclick="fnCmdSearchList('T0', '', '', '', ''); return false;">콘텐츠검수</a>
-												</li>
-											</c:if>--%>
+                                                                    <c:forEach items="${categoryMenuMap }" var="item" varStatus="status">
+                                                                        <c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
+                                                                            <li ${selectedGubun } >
+                                                                                <a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>
+                                                                                        ${item.codenm }
+                                                                                </a>
+                                                                            </li>
+                                                                        </c:if>
+                                                                    </c:forEach>
+                                                                    <c:forEach items="${realmTabList }" var="item" varStatus="status">
+                                                                        <c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
+                                                                            <li ${selectedGubun } >
+                                                                                <a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>
+                                                                                        ${item.codenm }
+                                                                                </a>
+                                                                            </li>
+                                                                        </c:if>
+                                                                    </c:forEach>
+                                                                    <c:if test="${userVO.userId eq 'kkj9699' or userVO.userId eq 'jmh8263' or userVO.userId eq 'lee1'}">
+                                                                        <li <c:if test="${param.pGubun1 eq 'T0' or param.gubun eq 'T0' }">class="active"</c:if>>
+                                                                            <a href="javascript:void(0);" onclick="fnCmdSearchList('T0', '', '', '', ''); return false;">콘텐츠검수</a>
+                                                                        </li>
+                                                                    </c:if>--%>
 									</ul>
 									<!-- nav 카테고리 two-daps end -->
 								</li>
@@ -279,11 +269,26 @@
 
 								<!-- nav 사업안내 one-daps start -->
 								<li>
-									<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
+									<a href="javascript:void(0);">
 										사업안내
 									</a>
 									<!-- nav 이벤트 two-daps start -->
 									<ul>
+										<li>
+											<a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">
+												콘텐츠스텝업
+											</a>
+										</li>
+										<li>
+											<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
+												콘텐츠인사이트
+											</a>
+										</li>
+										<li>
+											<a href="/edu/main/contents.do?menuNo=500213">
+												콘텐츠임팩트
+											</a>
+										</li>
 										<li>
 											<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
 												창의인재동반
@@ -304,32 +309,17 @@
 												콘텐츠원캠퍼스
 											</a>
 										</li>
-										<li>
-											<a href="/edu/main/contents.do?menuNo=500213">
-												콘텐츠임팩트
-											</a>
-										</li>
-										<li>
-											<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
-												콘텐츠인사이트
-											</a>
-										</li>
-										<li>
-											<a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">
-												콘텐츠스텝업
-											</a>
-										</li>
-										<li>
-											<!-- 현url 에듀코카이야기에서 에듀코카페이지로 변경해야함-->
-											<a href="/edu/bbs/B0000023/list.do?menuNo=500206">
-												에듀코카
-											</a>
-										</li>
-										<li>
-											<a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1">
-												주요성과
-											</a>
-										</li>
+										<%--<li>
+                                            <!-- 현url 에듀코카이야기에서 에듀코카페이지로 변경해야함-->
+                                            <a href="/edu/bbs/B0000023/list.do?menuNo=500206">
+                                                에듀코카
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1">
+                                                주요성과
+                                            </a>
+                                        </li>--%>
 									</ul>
 									<!-- nav 사업안내 two-daps end -->
 								</li>
@@ -337,7 +327,7 @@
 
 								<!-- nav 시설안내 one-daps start -->
 								<li>
-									<a href="/testbed/main/main.do?menuNo=500108"   >
+									<a href="javascript:void(0);">
 										시설안내
 									</a>
 									<!-- nav 시설안내 two-daps start -->
@@ -376,19 +366,9 @@
 									<!-- 학습지원 모바일 one-daps end -->
 
 									<!-- 마이페이지 모바일 one-daps start -->
-									<c:if test="${paramVO.siteName eq 'edu' }">
-										<c:set var="mypageNm" value="마이페이지" />
-										<c:set var="mypageUrl"
-											   value="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" />
-									</c:if>
-									<c:if test="${paramVO.siteName eq 'testbed' }">
-										<c:set var="mypageNm" value="마이페이지" />
-										<c:set var="mypageUrl"
-											   value="/testbed/userMember/forUpdate.do?menuNo=700118" />
-									</c:if>
 									<li class="nav_support_box mo">
-										<a href="${mypageUrl}" title="${mypageNm}">
-												${mypageNm}
+										<a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061">
+											마이페이지
 										</a>
 										<!-- 마이페이지 모바일 two-daps start -->
 										<ul>

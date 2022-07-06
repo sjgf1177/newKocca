@@ -347,49 +347,39 @@
 				<ul class="navbar-nav">
 					<!-- nav 이벤트 one-daps start -->
 					<li>
-						<a href="/edu/bbs/B0000048/list.do?menuNo=500203"   >
+						<a href="javascript:void(0);">
 							이벤트
 						</a>
 						<!-- nav 이벤트 two-daps start -->
-						<%--<ul>
+						<ul>
 							<li>
 								<a href="/edu/bbs/B0000048/list.do?menuNo=500203">
-									참여 이벤트
+									에듀코카 이벤트
 								</a>
 							</li>
 							<li>
 								<a href="">
-									추천 강좌
-								</a>
-							</li>
-							<li>
-								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
-									콘텐츠인사이트
-								</a>
-							</li>
-							<li>
-								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=12&menuNo=500216">
-									콘텐츠스텝업
-								</a>
-							</li>
-						<li>
-								<a href="">
-									게임인재원
+									교육신청하기
 								</a>
 							</li>
 							<li>
 								<a href="">
-									게임이해하기
+									공모참여하기
 								</a>
-							</li>-
-						</ul>--%>
+							</li>
+							<li>
+								<a href="">
+									종료이벤트
+								</a>
+							</li>
+						</ul>
 						<!-- nav 이벤트 two-daps end -->
 					</li>
 					<!-- nav 이벤트 one-daps end -->
 
 					<!-- nav 카테고리 one-daps start -->
 					<li>
-						<a href="javascript:void(0);" onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;">
+						<a href="javascript:void(0);"<%-- onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;"--%>>
 							카테고리
 						</a>
 						<!-- nav 카테고리 two-daps start -->
@@ -456,11 +446,26 @@
 
 					<!-- nav 사업안내 one-daps start -->
 					<li>
-						<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
+						<a href="javascript:void(0);">
 							사업안내
 						</a>
 						<!-- nav 이벤트 two-daps start -->
 						<ul>
+							<li>
+								<a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">
+									콘텐츠스텝업
+								</a>
+							</li>
+							<li>
+								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
+									콘텐츠인사이트
+								</a>
+							</li>
+							<li>
+								<a href="/edu/main/contents.do?menuNo=500213">
+									콘텐츠임팩트
+								</a>
+							</li>
 							<li>
 								<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
 									창의인재동반
@@ -481,22 +486,7 @@
 									콘텐츠원캠퍼스
 								</a>
 							</li>
-							<li>
-								<a href="/edu/main/contents.do?menuNo=500213">
-									콘텐츠임팩트
-								</a>
-							</li>
-							<li>
-								<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
-									콘텐츠인사이트
-								</a>
-							</li>
-							<li>
-								<a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">
-									콘텐츠스텝업
-								</a>
-							</li>
-							<li>
+							<%--<li>
 								<!-- 현url 에듀코카이야기에서 에듀코카페이지로 변경해야함-->
 								<a href="/edu/bbs/B0000023/list.do?menuNo=500206">
 									에듀코카
@@ -506,7 +496,7 @@
 								<a href="/edu/archiveUser/list.do?menuNo=500226&amp;workField=1">
 									주요성과
 								</a>
-							</li>
+							</li>--%>
 						</ul>
 						<!-- nav 사업안내 two-daps end -->
 					</li>
@@ -514,7 +504,7 @@
 
 					<!-- nav 시설안내 one-daps start -->
 					<li>
-						<a href="/testbed/main/main.do?menuNo=500108"   >
+						<a href="javascript:void(0);">
 							시설안내
 						</a>
 						<!-- nav 시설안내 two-daps start -->

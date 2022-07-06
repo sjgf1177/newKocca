@@ -195,7 +195,7 @@ header nav:not(.gnbActive) #main_nav .navbar-nav > li > ul{top:45px; left:0; pad
 header nav #main_nav .navbar-nav > li > ul > li{display:block; border-bottom: 1px solid #707070; position: relative;}
 /*header nav #main_nav .navbar-nav > li > a:after{content: ""; display:block; position:absolute; right:-5px; top:50%; transform:translateY(-50%); width: 24px; height: 24px; background-image: url("/edu/images/renew2022/ico_down_white.png"); background-repeat: no-repeat;}*/
 header nav #main_nav .navbar-nav > li:after{content: ""; display:block; position:absolute; right:-5px; top:25px; transform:translateY(-50%); width: 24px; height: 24px; background-image: url("/edu/images/renew2022/ico_down_white.png"); background-repeat: no-repeat;}
-header nav #main_nav .navbar-nav > li:first-child:after{display: none;}
+/*header nav #main_nav .navbar-nav > li:first-child:after{display: none;}*/
 /*header nav #main_nav .navbar-nav > li:hover a:after{transform: translateY(-50%) rotate(180deg);}*/
 header nav #main_nav .navbar-nav > li > ul > li a{padding: 10px 13px; color:#222; font-weight: 500;}
 header nav #main_nav .navbar-nav > li > ul > li:hover a{color:#3B85FF;}
@@ -233,7 +233,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 .gnb_close{width: 25px; height: 25px; position: absolute; top:50px; right:50px;}
 #main_nav_full h2{font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
 .cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 100px; justify-content: space-between;}
-#main_nav_full h3{width: 140px; margin-right: 80px;}
+#main_nav_full h3{width: 140px; margin-right: 80px; color:#fff;}
 .cy_list_box{width: 40%; display: flex; font-size: 18px;}
 .cy_list_box li{margin-bottom: 25px;}
 
@@ -296,7 +296,7 @@ header nav.gnbActive{background: #222222;}
     header nav #main_nav .navbar-nav > li > a{margin-bottom: 10px; font-weight: 600; padding-left: 20px;}
     header nav #main_nav .navbar-nav > li > a:after{top:25px;}
     header nav:not(.gnbActive) #main_nav .navbar-nav > li > ul{top:0;}
-    header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(2) > ul, header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(3) > ul{width: 100%;}
+    header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(1) > ul, header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(2) > ul, header nav:not(.gnbActive) #main_nav .navbar-nav > li:nth-child(3) > ul{width: 100%;}
 
 
     .nav_my_box li a, .nav_support_box li a{line-height: 3rem;}
