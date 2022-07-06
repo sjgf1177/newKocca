@@ -100,10 +100,12 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			model.addAttribute("realmSubjList", realmSubjList);
 			
 			// 온라인교육 목록
+			log.debug("// 온라인교육 목록");
 			List<ZValue> onlineEduSubjList = lmsSqlDao.listDAO("realmListDAO.realmSubjList", param);
 			model.addAttribute("onlineEduSubjList", onlineEduSubjList);
 
 			//분류별 탭 1depth 목록
+			log.debug("// 분류별 탭 1depth 목록");
 			List<ZValue> realmTabList = lmsSqlDao.listDAO("realmListDAO.realmTabList", param);
 			model.addAttribute("realmTabList",realmTabList);
 
@@ -126,6 +128,16 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			log.debug("// 교육지원사업 목록 - 창의현장, 원캠퍼스 지원현황, 콘텐츠임팩트 교육과정");
 			List<ZValue> eduSuportList = sqlDao.listDAO("optionalBoardDAO.selectEduSuportList", param);
 			model.addAttribute("eduSuportList", eduSuportList);
+
+			// 정규과정 신규 목록(20개)
+			log.debug("// 정규과정 신규 목록");
+			List<ZValue> eduSubjNewList = lmsSqlDao.listDAO("realmListDAO.eduSubjNewList", param);
+			model.addAttribute("eduSubjNewList", eduSubjNewList);
+
+			// 인기 열린강좌 목록(20개)
+			log.debug("// 인기 열린강좌 목록");
+			List<ZValue> popularityList = lmsSqlDao.listDAO("openLecture.selectPopularityList", param);
+			model.addAttribute("popularityList", popularityList);
 			
 			param.put("siteId", SiteMngService.EDU_SITE_ID); // 팝업존 siteId
 		}

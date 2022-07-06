@@ -287,7 +287,38 @@ if( StringUtils.hasText(menuNo) ) {
 			divisionId: '146369',
 		});
 		<!-- 챗봇 Js end -->
-        
+
+		//과정 상세화면
+		function fnSubjViewPage(subj, subjnm, isonoff, scupperclass, uclassnm, year, subjseq){
+			$("#p_subj").val(subj);
+			$("#p_subjnm").val(subjnm);
+			$("#p_isonoff").val(isonoff);
+			$("#p_scupperclass").val(scupperclass);
+			$("#p_uclassnm").val(uclassnm);
+			$("#p_year").val(year);
+			$("#p_subjseq").val(subjseq);
+
+			$("#s_subj").val(subj);
+			$("#s_year").val(year);
+			$("#s_subjseq").val(subjseq);
+
+			$("#frm").attr({
+				action:"/edu/onlineEdu/realm/view.do?menuNo=500027",
+				method:"post",
+				target:"_self"
+			});
+			$("#frm").submit();
+		}
+
+		<!-- 챗봇 Js start -->
+		var ht = new Happytalk({
+			siteId: '5000100237',
+			siteName: '한국콘텐츠진흥원',
+			categoryId: '146368',
+			divisionId: '146369',
+		});
+		<!-- 챗봇 Js end -->
+
         //]]>
 	</script>
 	<!-- <div class="mainLayerPopup" style="position:absolute; top:5%; left:5%; z-index:9999; background:white; max-width:90%; text-align:right;">
@@ -310,14 +341,26 @@ if( StringUtils.hasText(menuNo) ) {
 	</div> -->
 
 	<!-- html 작업본-->
-	<form id="frm" name="frm" action="/edu/onlineEdu/realm/list.do?menuNo=50027" method="post" class="main_online_category">
+	<form id="frm" name="frm" action="/edu/onlineEdu/realm/list.do?menuNo=500027" method="post" class="main_online_category">
 		<input type="hidden" name="pGubun1" id="pGubun1" value="">
 		<input type="hidden" name="pGubun2" id="pGubun2" value="">
 		<input type="hidden" name="pGubun3" id="pGubun3" value="">
 		<input type="hidden" name="p_ordersnm" id="p_ordersnm" value="ldate">
 		<input type="hidden" name="p_orders" id="p_orders" value="desc">
 		<input type="hidden" name="pageIndex" id="pageIndex" value="">
+
+		<input type="hidden" name="p_subj" id="p_subj" value="" />
+		<input type="hidden" name="p_subjnm" id="p_subjnm" value="" />
+		<input type="hidden" name="p_isonoff" id="p_isonoff" value="" />
+		<input type="hidden" name="p_scupperclass" id="p_scupperclass" value="" />
+		<input type="hidden" name="p_uclassnm" id="p_uclassnm" value="" />
+		<input type="hidden" name="p_year" id="p_year" value="" />
+		<input type="hidden" name="p_subjseq" id="p_subjseq" value="" />
+		<input type="hidden" name="s_subj" id="s_subj" value="" />
+		<input type="hidden" name="s_year" id="s_year" value="" />
+		<input type="hidden" name="s_subjseq" id="s_subjseq" value="" />
 	</form>
+
 	<div id="wrap" class="over-hidden">
 		<!-- header start -->
 		<header>
@@ -480,18 +523,8 @@ if( StringUtils.hasText(menuNo) ) {
 										</a>
 									</li>
 									<li>
-										<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
-											콘텐츠인사이트
-										</a>
-									</li>
-									<li>
-										<a href="/edu/main/contents.do?menuNo=500213">
-											콘텐츠임팩트
-										</a>
-									</li>
-									<li>
-										<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
-											창의인재동반
+										<a href="/edu/main/contents.do?menuNo=500263">
+											AI콘텐츠창작
 										</a>
 									</li>
 									<li>
@@ -500,8 +533,18 @@ if( StringUtils.hasText(menuNo) ) {
 										</a>
 									</li>
 									<li>
-										<a href="/edu/main/contents.do?menuNo=500263">
-											AI콘텐츠창작
+										<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">
+											창의인재동반
+										</a>
+									</li>
+									<li>
+										<a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">
+											콘텐츠인사이트
+										</a>
+									</li>
+									<li>
+										<a href="/edu/main/contents.do?menuNo=500213">
+											콘텐츠임팩트
 										</a>
 									</li>
 									<li>
@@ -990,235 +1033,92 @@ if( StringUtils.hasText(menuNo) ) {
 				<div class="container">
 					<!-- 창작자를 위한 추천과정 start -->
 					<div class="fwo_card_list_box fwo_card01">
-						<span class="main_title">창작자를 위한 추천 과정!</span>
+						<span class="main_title">추천 클래스</span>
 						<div class="fwo_card swiper-container">
 							<ul class="swiper-wrapper">
+							<c:forEach  items="${eduSubjNewList }" var="result" >
+<%--								<c:choose>
+									<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+										<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+									</c:when>
+									<c:otherwise>
+										<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
+									</c:otherwise>
+								</c:choose>--%>
 								<li class="swiper-slide">
 									<!-- 썸네일 start -->
 									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
+										<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+											<img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+										</a>
 										<!-- 설명란 start-->
 										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
+											<h3 class="fwo_tit_box">
+												<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+													${result.subjnm }
+												</a>
+											</h3>
+											<p>${result.g2nm }ㆍ${result.g3nm }</p>
+											<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;" class="go_page_a"></a>
 											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
 										</div>
 										<!-- 설명란 start-->
-
 									</div>
 									<!-- 썸네일 end -->
-
 								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
+							</c:forEach>
 							</ul>
-
 						</div>
 						<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
 						<div class="swiper_btn_box">
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
 						</div>
-
 					</div>
 					<!-- 창작자를 위한 추천과정 end -->
 
 					<!-- 나만 빼고 다 수강한 과정 start -->
 					<div class="fwo_card_list_box fwo_card02">
-						<span class="main_title">나만 빼고 다 수강한 과정!</span>
+						<span class="main_title">인기 클래스</span>
 						<div class="fwo_card swiper-container">
 							<ul class="swiper-wrapper">
+							<c:forEach  items="${popularityList }" var="result" >
+								<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
+									<c:param name="pSeq" value="${result.seq }"/>
+									<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
+									<c:param name="pLectureCls" value="${param.pLectureCls }"/>
+									<c:param name="menuNo" value="500085"/>
+								</c:url>
 								<li class="swiper-slide">
 									<!-- 썸네일 start -->
 									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+										<a href='<c:out value="${url }" />'>
+<%--												<c:choose>
+												<c:when test="${result.vodimg == null or result.vodimg == '' }">
+													<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%">
+												</c:when>
+												<c:otherwise>
+													<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value='${result.vodimg }'/>"/>
+												</c:otherwise>
+											</c:choose>	--%>
+											<img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+										</a>
 
 										<!-- 설명란 start-->
 										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
+											<h3 class="fwo_tit_box">
+												<a href='<c:out value="${url }" />'><c:out value='${result.lecnm }' escapeXml="false" /></a>
+											</h3>
+											<p>${result.g2nm}ㆍ${result.g3nm}</p>
+											<a href='<c:out value="${url }" />' class="go_page_a"></a>
 											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
 										</div>
 										<!-- 설명란 start-->
-
 									</div>
 									<!-- 썸네일 end -->
-
 								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
-
-								<li class="swiper-slide">
-									<!-- 썸네일 start -->
-									<div class="fwo_snail_box">
-										<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-										<!-- 설명란 start-->
-										<div class="fwo_info_box">
-											<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-											<p>온라인교육ㆍ유통</p>
-											<a href="" class="go_page_a"></a>
-											<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-										</div>
-										<!-- 설명란 start-->
-
-									</div>
-									<!-- 썸네일 end -->
-
-								</li>
+							</c:forEach>
 							</ul>
-
 						</div>
 						<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
 						<div class="swiper_btn_box">
@@ -1264,7 +1164,7 @@ if( StringUtils.hasText(menuNo) ) {
 			<div class="main_offline_contents">
 				<div class="container">
 					<div class="fwo_card_list_box fwo_card03">
-						<span class="main_title main_title_bold">곧 만나 볼 수 있어요</span>
+						<span class="main_title main_title_bold">진행 중인 이벤트</span>
 						<div class="fwo_card swiper-container">
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide">
@@ -1361,7 +1261,7 @@ if( StringUtils.hasText(menuNo) ) {
 			<!-- KOCCA에서 만날 수 있는 특별한 교육 사업 start -->
 			<div class="main_study_contents">
 				<div class="container">
-					<span class="main_title main_title_bold">KOCCA에서 만날 수 있는 특별한 교육 사업</span>
+					<span class="main_title main_title_bold">KOCCA 교육 사업</span>
 					<!--<p class="go_add_btn_box"><a href="">전체보기</a></p>-->
 					<div class="three_card01 swiper-container">
 						<ul class="three_card_list_box swiper-wrapper">
@@ -1372,7 +1272,7 @@ if( StringUtils.hasText(menuNo) ) {
 									<p>대한민국 콘텐츠 산업의 미래를 이끌어갈 우수한 콘텐츠 창작자 육성</p>
 								</div>
 								<div class="three_card_bottom_box">
-									<a href="" alt="창의인재동반 바로가기">바로가기</a>
+									<a href="/edu/dream/mainRsltManage/list.do?menuNo=500040" alt="창의인재동반 바로가기">바로가기</a>
 								</div>
 							</li>
 
@@ -1383,7 +1283,7 @@ if( StringUtils.hasText(menuNo) ) {
 									<p>문화 콘텐츠 융복합 AI 프로젝트 혁신인재 양성</p>
 								</div>
 								<div class="three_card_bottom_box">
-									<a href="" alt="AI콘텐츠 창작 바로가기">바로가기</a>
+									<a href="/edu/main/contents.do?menuNo=500263" alt="AI콘텐츠 창작 바로가기">바로가기</a>
 								</div>
 							</li>
 
@@ -1394,7 +1294,7 @@ if( StringUtils.hasText(menuNo) ) {
 									<p>산업계 실수요 맞춤형 실감 콘텐츠 창의인재 양성</p>
 								</div>
 								<div class="three_card_bottom_box">
-									<a href="" alt="실감 콘텐츠 창작 바로가기">바로가기</a>
+									<a href="/edu/main/contents.do?menuNo=500110" alt="실감 콘텐츠 창작 바로가기">바로가기</a>
 								</div>
 							</li>
 
@@ -1457,7 +1357,7 @@ if( StringUtils.hasText(menuNo) ) {
 			<!-- kocca는 창작자 여러분에게 열려 있습니다 start -->
 			<div class="main_place_contents">
 				<div class="container">
-					<span class="main_title main_title_bold">KOCCA는 창작자 여러분에게 열려 있습니다.</span>
+					<span class="main_title main_title_bold">KOCCA 교육 시설</span>
 					<div class="swiper-container one_card01">
 						<ul class="swiper-wrapper">
 
@@ -1470,20 +1370,19 @@ if( StringUtils.hasText(menuNo) ) {
 										블랙박스 구조의 스테이지66과 스튜디오1, 2, 연습실 등을 갖추고
 										콘텐츠 산업의 미래를 여는 역할을 하고 있습니다.
 									</p>
-									<p class="go_add_btn_box"><a href="">전체보기</a></p>
+									<p class="go_add_btn_box"><a href="/testbed/main/main.do?menuNo=500108">전체보기</a></p>
 								</div>
 							</li>
 
 							<li class="swiper-slide">
 								<span class="place_snail_box"><img src="/edu/images/renew2022/open_benner02.png" alt=""></span>
 								<div class="place_txt_box">
-									<h3>콘텐츠 문화 광장</h3>
+									<h3>콘텐츠 인재 캠퍼스</h3>
 									<p class="place_info_box">
-										콘텐츠문화광장은 융복합 콘텐츠의 테스트베드(TEST BED)로서
-										블랙박스 구조의 스테이지66과 스튜디오1, 2, 연습실 등을 갖추고
-										콘텐츠 산업의 미래를 여는 역할을 하고 있습니다.
+										콘텐츠인재캠퍼스는 생애주기별교육, 온라인교육, 등 한국콘텐츠진흥원에서 진행하는 교육 프로그램을 망라한 교육 플랫폼으로
+										4차 산업혁명 시대를 이끌어 갈 융합형인재를 육성하기 위한 터전이자 출발점입니다.
 									</p>
-									<p class="go_add_btn_box"><a href="">전체보기</a></p>
+									<p class="go_add_btn_box"><a href="/testbed/main/contents.do?menuNo=700133">전체보기</a></p>
 								</div>
 							</li>
 

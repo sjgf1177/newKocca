@@ -1725,6 +1725,130 @@
 		   				      AND B.LEVELS = '1')
 		 ORDER BY A.CODE ASC
 		]]>
-	</select>		
+	</select>
+
+	<!-- 과정 신규 목록 -->
+	<select id="realmListDAO.eduSubjNewList" parameterClass="zvl" resultClass="zvl">
+		<![CDATA[ /* realmListDAO.eduSubjNewList */
+		SELECT 	*
+		FROM 	(SELECT ROWNUM RNUM,
+						ALL_LIST.*
+				 FROM 	(
+				 			SELECT 	*
+				 			FROM 	(
+										SELECT 	DISTINCT A.SUBJ
+											, 	A.SUBJNM
+											, 	A.ISONOFF
+											, 	A.SCUPPERCLASS
+											, 	(
+													SELECT 	CLASSNAME
+													FROM 	TZ_SUBJATT X
+													WHERE 	X.UPPERCLASS  = A.SCUPPERCLASS
+													AND 	X.MIDDLECLASS = '000'
+													AND 	X.LOWERCLASS  = '000'
+												) AS UCLASSNM
+											, 	A.SCYEAR
+											, 	A.SUBJSEQ
+											, 	A.INTRODUCEFILENAMENEW
+											, 	A.MOBILE_USE_YN
+											, 	SUBSTRING(A.SPECIALS,1,1) AS ISNEW
+											, 	SUBSTRING(A.SPECIALS,2,1) AS ISHIT
+											, 	SUBSTRING(A.SPECIALS,3,1) AS ISRECOM
+											, 	A.LDATE
+											, 	(
+													SELECT 	SUBJSUMMARY
+													FROM 	TZ_SUBJ
+													WHERE 	SUBJ    = A.SUBJ
+													AND 	YEAR    = A.SCYEAR
+													AND 	SUBJSEQ = A.SUBJSEQ
+												) AS SUBJSUMMARY
+											, 	(
+													SELECT 	X.LVCODE
+													FROM 	TZ_SUBJHOMEGUBUN_LEVEL X
+													WHERE 	X.SUBJ = A.SUBJ
+												) AS LVCD
+											, 	(
+													SELECT 	Z.CODENM
+													FROM 	TZ_CODE Z
+													WHERE 	Z.GUBUN  = '0121'
+													AND 	Z.LEVELS = 2
+													AND 	Z.CODE   = (
+																			SELECT 	X.LVCODE
+																			FROM 	TZ_SUBJHOMEGUBUN_LEVEL X
+																			WHERE 	X.SUBJ = A.SUBJ
+																		)
+												) AS LVNM
+											, 	(
+													SELECT 	X.GUBUN_1
+													FROM 	TZ_SUBJHOMEGUBUN X
+													WHERE 	X.GUBUN = 'GS'
+													AND 	X.SUBJ  = A.SUBJ
+												) AS G1CD
+											, 	(
+													SELECT 	X.GUBUN_2
+													FROM 	TZ_SUBJHOMEGUBUN X
+													WHERE 	X.GUBUN = 'GS'
+													AND 	X.SUBJ  = A.SUBJ
+												) AS G2CD
+											, 	(
+													SELECT 	Z.CODENM
+													FROM 	TZ_CODE Z
+													WHERE 	Z.GUBUN  = '0110'
+													AND 	Z.LEVELS = 2
+													AND 	Z.CODE   = (
+																			SELECT 	X.GUBUN_2
+																			FROM 	TZ_SUBJHOMEGUBUN X
+																			WHERE 	X.GUBUN = 'GS'
+																			AND 	X.SUBJ  = A.SUBJ
+																		)
+												) AS G2NM
+											, 	(
+													SELECT 	X.GUBUN_3
+													FROM 	TZ_SUBJHOMEGUBUN X
+													WHERE 	X.GUBUN = 'GS'
+													AND 	X.SUBJ  = A.SUBJ
+												) AS G3CD
+											, 	(
+													SELECT 	Z.CODENM
+													FROM 	TZ_CODE Z
+													WHERE 	Z.GUBUN  = '0110'
+													AND 	Z.LEVELS = 3
+													AND 	Z.CODE   = (
+																			SELECT 	X.GUBUN_3
+																			FROM 	TZ_SUBJHOMEGUBUN X
+																			WHERE 	X.GUBUN = 'GS'
+																			AND 	X.SUBJ  = A.SUBJ
+																		)
+												) AS G3NM
+										FROM 	(
+													SELECT 	S1.*
+														, 	(
+																SELECT 	NVL(COUNT(USERID),0)
+																FROM 	TZ_STUDENT
+																WHERE 	SUBJ 	= S1.SUBJ
+																AND 	YEAR 	= S1.SCYEAR
+																AND 	SUBJSEQ = S1.SUBJSEQ
+															) AS FAVORSUBJCNT
+													FROM 	VZ_SCSUBJSEQIMGMOBILE S1
+													WHERE 	S1.PROPSTART NOT IN (' ')
+													AND 	TO_CHAR(ADD_MONTHS(SYSDATE, -24), 'yyyymmdd') || '000000' <= S1.LDATE
+												) A
+										WHERE 	A.GRCODE IN (#grcode#)
+										AND 	A.ISUSE = 'Y'
+										AND 	A.SUBJ NOT IN (
+																SELECT 	SUBJ
+																FROM 	TZ_SUBJ
+																WHERE 	SUBJ BETWEEN 'CK14014' AND 'CK14048' OR ( A.SUBJ BETWEEN 'CK15003' AND 'CK15030' )
+															)
+									) AA
+							INNER JOIN (SELECT DISTINCT SUBJ FROM TZ_SUBJHOMEGUBUN WHERE GUBUN='GS') BB ON AA.SUBJ = BB.SUBJ
+							ORDER BY AA.LDATE DESC
+						) ALL_LIST
+				)
+		WHERE  	RNUM  > '0'
+		AND  	RNUM <= '0' + '20'
+		]]>
+	</select>
+
 </sqlMap>
 

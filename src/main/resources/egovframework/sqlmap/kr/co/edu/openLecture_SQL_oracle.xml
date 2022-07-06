@@ -1060,7 +1060,53 @@ SELECT  *
 		   				      AND B.LEVELS = '1')
 		 ORDER BY A.CODE ASC
 		]]>
-	</select>	
+	</select>
+
+	<!-- 인기 열린강좌 리스트 -->
+	<select id="openLecture.selectPopularityList" parameterClass="zvl" resultClass="zvl">
+		<![CDATA[
+		/* openLecture.selectPopularityList (인기 열린강좌 목록) */
+		SELECT M.*
+		  FROM (
+					SELECT A.SEQ
+						 , A.VODIMG
+						 , A.LECNM
+						 , A.NEW_YN
+						 , C.GUBUN_1 G1CD
+            			 , C.GUBUN_2 G2CD
+            			 , (SELECT Z.CODENM
+               				  FROM TZ_CODE Z
+               				 WHERE Z.GUBUN  = '0110'
+                 			   AND Z.LEVELS = 2
+                 			   AND Z.CODE   = C.GUBUN_2) AS G2NM
+            			 , C.GUBUN_3 G3CD
+            			 , (SELECT Z.CODENM
+               				  FROM TZ_CODE Z
+               				 WHERE Z.GUBUN  = '0110'
+                 			   AND Z.LEVELS = 3
+                 			   AND Z.CODE   = C.GUBUN_3) AS G3NM
+            			 , (SELECT X.LVCODE
+                              FROM TZ_GOLDHOMEGUBUN_LEVEL X
+                             WHERE X.SEQ = A.SEQ) AS LVCD
+            			 , (SELECT Z.CODENM
+               				  FROM TZ_CODE Z
+               				 WHERE Z.GUBUN  = '0121'
+                 			   AND Z.LEVELS = 2
+                 			   AND Z.CODE   = (SELECT X.LVCODE
+                     							 FROM TZ_GOLDHOMEGUBUN_LEVEL X
+                    							WHERE X.SEQ = A.SEQ)) AS LVNM
+                        , ROW_NUMBER() OVER (ORDER BY A.VIEWCNT DESC) RN
+                     FROM TZ_GOLDCLASS A
+                        , TZ_GOLDCLASS_GRMNG B
+            			, TZ_GOLDHOMEGUBUN C
+					WHERE TO_CHAR(ADD_MONTHS(SYSDATE,-36), 'YYYYMMDD') || '000000' <= A.LDATE
+    				  AND A.USEYN    = 'Y'
+                      AND B.GRCODE   = 'N000001'
+                      AND A.SEQ 	 = B.SEQ(+)
+					  AND A.SEQ 	 = C.SEQ(+)
+                      AND C.GUBUN(+) = 'GC') M WHERE M.RN < 21
+			]]>
+	</select>
 
 </sqlMap>
 
