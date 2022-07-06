@@ -176,7 +176,7 @@
 <div class="bg_gray_slide_box">
     <!-- 창작자를 위한 추천과정 start -->
     <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
-        <span class="main_title">창작자를 위한 추천 과정!</span>
+        <span class="main_title">추천 클래스</span>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">
                 <li class="swiper-slide">
@@ -312,7 +312,7 @@
 
     <!-- 나만 빼고 다 수강한 과정 start -->
     <div class="fwo_card_list_box fwo_card02 col-center mw-1280">
-        <span class="main_title">나만 빼고 다 수강한 과정!</span>
+        <span class="main_title">인기 클래스</span>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">
                 <li class="swiper-slide">
@@ -501,36 +501,18 @@
                    onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
                     <% pageContext.setAttribute("crlf", "\\"); %>
                     <div class="fwo_snail_box">
-                        <a class="show-block" href="javascript:void(0);"
-                           onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
-                            <c:choose>
-                                <c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-                                    <img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%"
-                                         alt="${item3.subjnm } 임시 이미지"/>
-                                </c:when>
-                                <c:otherwise>
-                                    <img alt="${item3.subjnm } - 메인 이미지"
-                                         src="<c:out value="${item3.introducefilenamenew}" />"/>
-                                </c:otherwise>
-                            </c:choose>
-                        </a>
+                        <c:choose>
+                            <c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+                                <img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+                            </c:when>
+                            <c:otherwise>
+                                <img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"/>
+                            </c:otherwise>
+                        </c:choose>
                         <!-- 설명란 start-->
                         <div class="fwo_info_box">
                             <h3 class="fwo_tit_box">
-                                <a href="">
-                                    <c:if test="${item3.isnew eq 'Y' }">
-                                        <c:if test="${ item3.ishit eq 'N'}">
-                                            <c:if test="${ item3.isrecom eq 'Y'}">
-                                                <span style="color: #3B85FF;">[New]</span>
-                                                <!--
-                                                <img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-                                                -->
-                                            </c:if>
-                                        </c:if>
-                                    </c:if>
-                                        ${item3.subjnm }
-                                </a>
-
+                                ${item3.subjnm }
                             </h3>
 
                             <c:if test="${not empty item3.lvnm}">
@@ -546,7 +528,6 @@
                                     </c:when>
                                 </c:choose>
                             </c:if>
-
                             <p>
                                 온라인교육ㆍ
                                 <c:if test="${not empty item3.g3nm}">
@@ -777,7 +758,7 @@
         $("#s_subj").val(subj);
         $("#s_year").val(year);
         $("#s_subjseq").val(subjseq);
-alert("subj : " + subj);
+
         $("#frm").attr({
             action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
             method: "post",

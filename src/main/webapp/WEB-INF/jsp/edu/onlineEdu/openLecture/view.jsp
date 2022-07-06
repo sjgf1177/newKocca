@@ -366,7 +366,7 @@
 <div class="mt20 lectMovSet" id="vodArea">
 	<div class="col-center mw-1280">
 		<a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />');" > <!-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" -->
-		<img src="<c:out value="${result.vodimg }"/>" style="width: 1080px;height: 664;"   alt="강좌보기"/>
+		<img src="/edu<c:out value="${result.vodimg }"/>" style="width: 1080px;height: 664;"   alt="강좌보기"/>
 		<span class="maskPlay"></span>
 		</a>
 	</div>

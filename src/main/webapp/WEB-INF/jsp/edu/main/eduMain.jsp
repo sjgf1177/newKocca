@@ -279,15 +279,6 @@ if( StringUtils.hasText(menuNo) ) {
 			}
 		}
 
-		<!-- 챗봇 Js start -->
-		var ht = new Happytalk({
-			siteId: '5000100237',
-			siteName: '한국콘텐츠진흥원',
-			categoryId: '146368',
-			divisionId: '146369',
-		});
-		<!-- 챗봇 Js end -->
-
 		//과정 상세화면
 		function fnSubjViewPage(subj, subjnm, isonoff, scupperclass, uclassnm, year, subjseq){
 			$("#p_subj").val(subj);
@@ -456,27 +447,27 @@ if( StringUtils.hasText(menuNo) ) {
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);" onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;">
+										<a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">
 											방송영상
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);" onclick="fnCmdSearchCateList('G0', '', '', '', ''); return false;">
+										<a href="javascript:void(0);" onclick="fnCmdSearchList('G0', '', '', '', ''); return false;">
 											게임
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);" onclick="fnCmdSearchCateList('K0', '', '', '', ''); return false;">
+										<a href="javascript:void(0);" onclick="fnCmdSearchList('K0', '', '', '', ''); return false;">
 											만화/애니/캐릭터
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);" onclick="fnCmdSearchCateList('M0', '', '', '', ''); return false;">
+										<a href="javascript:void(0);" onclick="fnCmdSearchList('M0', '', '', '', ''); return false;">
 											문화일반(음악공연)
 										</a>
 									</li>
 									<li>
-										<a href="javascript:void(0);" onclick="fnCmdSearchCateList('S0', '', '', '', ''); return false;">
+										<a href="javascript:void(0);" onclick="fnCmdSearchList('S0', '', '', '', ''); return false;">
 											인문/경영/교양/일반
 										</a>
 									</li>
@@ -1037,19 +1028,18 @@ if( StringUtils.hasText(menuNo) ) {
 						<div class="fwo_card swiper-container">
 							<ul class="swiper-wrapper">
 							<c:forEach  items="${eduSubjNewList }" var="result" >
-<%--								<c:choose>
-									<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-										<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-									</c:when>
-									<c:otherwise>
-										<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
-									</c:otherwise>
-								</c:choose>--%>
 								<li class="swiper-slide">
 									<!-- 썸네일 start -->
 									<div class="fwo_snail_box">
 										<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
-											<img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+										<c:choose>
+											<c:when test="${result.introducefilenamenew == null or result.introducefilenamenew == '' }">
+												<img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+											</c:when>
+											<c:otherwise>
+												<img alt="${result.subjnm } - 메인 이미지" src="/edu<c:out value="${result.introducefilenamenew}" />"  />
+											</c:otherwise>
+										</c:choose>
 										</a>
 										<!-- 설명란 start-->
 										<div class="fwo_info_box">
@@ -1093,15 +1083,14 @@ if( StringUtils.hasText(menuNo) ) {
 									<!-- 썸네일 start -->
 									<div class="fwo_snail_box">
 										<a href='<c:out value="${url }" />'>
-<%--												<c:choose>
+											<c:choose>
 												<c:when test="${result.vodimg == null or result.vodimg == '' }">
-													<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%">
+													<img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
 												</c:when>
 												<c:otherwise>
-													<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value='${result.vodimg }'/>"/>
+													<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="/edu<c:out value='${result.vodimg }'/>"/>
 												</c:otherwise>
-											</c:choose>	--%>
-											<img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+											</c:choose>
 										</a>
 
 										<!-- 설명란 start-->

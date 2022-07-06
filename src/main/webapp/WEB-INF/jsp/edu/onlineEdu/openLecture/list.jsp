@@ -166,25 +166,19 @@
 							<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
 								<% pageContext.setAttribute("crlf", "\\"); %>
 								<div class="fwo_snail_box">
-									<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
-										<c:choose>
-											<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-												<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-											</c:when>
-											<c:otherwise>
-												<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
-											</c:otherwise>
-										</c:choose>
-									</a>
+									<c:choose>
+										<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+											<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+										</c:when>
+										<c:otherwise>
+											<img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"  />
+										</c:otherwise>
+									</c:choose>
+
 									<!-- 설명란 start-->
 									<div class="fwo_info_box">
 										<h3 class="fwo_tit_box">
-											<a href="">
-												<c:if test="${result.newyn eq 'Y' }">
-													<span style="color:#3B85FF;">[New]</span>
-												</c:if>
-												<c:out value='${result.lecnm }' escapeXml="false" />
-											</a>
+											<c:out value='${result.lecnm }' escapeXml="false" />
 										</h3>
 
 										<c:if test="${not empty result.lvnm}">
@@ -238,62 +232,54 @@
 	<div class="fwo_card swiper-container">
 		<div class="swiper-wrapper">
 			<c:if test="${fn:length(resultList) > 0}">
-				<c:forEach items="${resultList }" var="item3" varStatus="status3">
+				<c:forEach  items="${resultList }"  var="result" >
+					<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
+						<c:param name="pSeq" value="${result.seq }"/>
+						<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
+						<c:param name="pLectureCls" value="${param.pLectureCls }"/>
+					</c:url>
 					<div class="swiper-slide">
 						<div class="">
-							<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
+							<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
 								<% pageContext.setAttribute("crlf", "\\"); %>
 								<div class="fwo_snail_box">
-									<a href="">
-										<c:choose>
-											<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-												<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-											</c:when>
-											<c:otherwise>
-												<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
-											</c:otherwise>
-										</c:choose>
-									</a>
+									<c:choose>
+										<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+											<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+										</c:when>
+										<c:otherwise>
+											<img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"  />
+										</c:otherwise>
+									</c:choose>
+
 									<!-- 설명란 start-->
 									<div class="fwo_info_box">
 										<h3 class="fwo_tit_box">
-											<a href="">
-												<c:if test="${item3.isnew eq 'Y' }">
-													<c:if test="${ item3.ishit eq 'N'}">
-														<c:if test="${ item3.isrecom eq 'Y'}">
-															<span style="color: #3B85FF;">[New]</span>
-															<!--
-															<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-															-->
-														</c:if>
-													</c:if>
-												</c:if>
-													${item3.subjnm }
-											</a>
+											<c:out value='${result.lecnm }' escapeXml="false" />
 										</h3>
 
-										<c:if test="${not empty item3.lvnm}">
+										<c:if test="${not empty result.lvnm}">
 											<c:choose>
-												<c:when test="${item3.lvcd eq 'L0101' or item3.lvcd eq 'L0201'}">
-													<span class="tag L1">${item3.lvnm}</span>
+												<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
+													<span class="tag L1">${result.lvnm}</span>
 												</c:when>
-												<c:when test="${item3.lvcd eq 'L0102' or item3.lvcd eq 'L0202'}">
-													<span class="tag L2">${item3.lvnm}</span>
+												<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
+													<span class="tag L2">${result.lvnm}</span>
 												</c:when>
-												<c:when test="${item3.lvcd eq 'L0103' or item3.lvcd eq 'L0203'}">
-													<span class="tag L3">${item3.lvnm}</span>
+												<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
+													<span class="tag L3">${result.lvnm}</span>
 												</c:when>
 											</c:choose>
 										</c:if>
 
 										<p>
 											온라인교육ㆍ
-											<c:if test="${not empty item3.g3nm}">
-												${item3.g3nm}
+											<c:if test="${not empty result.g3nm}">
+												${result.g3nm}
 											</c:if>
 
-											<c:if test="${empty item3.g3nm}">
-												${item3.g2nm}
+											<c:if test="${empty result.g3nm}">
+												${result.g2nm}
 											</c:if>
 										</p>
 
@@ -301,18 +287,6 @@
 									</div>
 									<!-- 설명란 start-->
 								</div>
-
-								<c:if test="${item3.isnew eq 'Y' }">
-									<c:if test="${ item3.ishit eq 'N'}">
-										<c:if test="${ item3.isrecom eq 'Y'}">
-											<span style="color: #3B85FF;">[New]</span>
-											<!--
-											<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-											-->
-										</c:if>
-									</c:if>
-								</c:if>
-									${item3.subjnm }
 							</a>
 						</div>
 					</div>
@@ -337,62 +311,54 @@
 	<div class="fwo_card swiper-container">
 		<div class="swiper-wrapper">
 			<c:if test="${fn:length(resultList) > 0}">
-				<c:forEach items="${resultList }" var="item3" varStatus="status3">
+				<c:forEach  items="${resultList }"  var="result" >
+					<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
+						<c:param name="pSeq" value="${result.seq }"/>
+						<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
+						<c:param name="pLectureCls" value="${param.pLectureCls }"/>
+					</c:url>
 					<div class="swiper-slide">
 						<div class="">
-							<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
+							<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
 								<% pageContext.setAttribute("crlf", "\\"); %>
 								<div class="fwo_snail_box">
-									<a href="">
-										<c:choose>
-											<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-												<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-											</c:when>
-											<c:otherwise>
-												<img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"  />
-											</c:otherwise>
-										</c:choose>
-									</a>
+									<c:choose>
+										<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
+											<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+										</c:when>
+										<c:otherwise>
+											<img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"  />
+										</c:otherwise>
+									</c:choose>
+
 									<!-- 설명란 start-->
 									<div class="fwo_info_box">
 										<h3 class="fwo_tit_box">
-											<a href="">
-												<c:if test="${item3.isnew eq 'Y' }">
-													<c:if test="${ item3.ishit eq 'N'}">
-														<c:if test="${ item3.isrecom eq 'Y'}">
-															<span style="color: #3B85FF;">[New]</span>
-															<!--
-															<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-															-->
-														</c:if>
-													</c:if>
-												</c:if>
-													${item3.subjnm }
-											</a>
+											<c:out value='${result.lecnm }' escapeXml="false" />
 										</h3>
 
-										<c:if test="${not empty item3.lvnm}">
+										<c:if test="${not empty result.lvnm}">
 											<c:choose>
-												<c:when test="${item3.lvcd eq 'L0101' or item3.lvcd eq 'L0201'}">
-													<span class="tag L1">${item3.lvnm}</span>
+												<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
+													<span class="tag L1">${result.lvnm}</span>
 												</c:when>
-												<c:when test="${item3.lvcd eq 'L0102' or item3.lvcd eq 'L0202'}">
-													<span class="tag L2">${item3.lvnm}</span>
+												<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
+													<span class="tag L2">${result.lvnm}</span>
 												</c:when>
-												<c:when test="${item3.lvcd eq 'L0103' or item3.lvcd eq 'L0203'}">
-													<span class="tag L3">${item3.lvnm}</span>
+												<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
+													<span class="tag L3">${result.lvnm}</span>
 												</c:when>
 											</c:choose>
 										</c:if>
 
 										<p>
 											온라인교육ㆍ
-											<c:if test="${not empty item3.g3nm}">
-												${item3.g3nm}
+											<c:if test="${not empty result.g3nm}">
+												${result.g3nm}
 											</c:if>
 
-											<c:if test="${empty item3.g3nm}">
-												${item3.g2nm}
+											<c:if test="${empty result.g3nm}">
+												${result.g2nm}
 											</c:if>
 										</p>
 
@@ -400,18 +366,6 @@
 									</div>
 									<!-- 설명란 start-->
 								</div>
-
-								<c:if test="${item3.isnew eq 'Y' }">
-									<c:if test="${ item3.ishit eq 'N'}">
-										<c:if test="${ item3.isrecom eq 'Y'}">
-											<span style="color: #3B85FF;">[New]</span>
-											<!--
-											<img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-											-->
-										</c:if>
-									</c:if>
-								</c:if>
-									${item3.subjnm }
 							</a>
 						</div>
 					</div>

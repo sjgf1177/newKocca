@@ -1835,6 +1835,7 @@
 												) A
 										WHERE 	A.GRCODE IN (#grcode#)
 										AND 	A.ISUSE = 'Y'
+										AND 	(TO_CHAR (SYSDATE, 'YYYYMMDDHH24') BETWEEN A.PROPSTART AND A.PROPEND)
 										AND 	A.SUBJ NOT IN (
 																SELECT 	SUBJ
 																FROM 	TZ_SUBJ

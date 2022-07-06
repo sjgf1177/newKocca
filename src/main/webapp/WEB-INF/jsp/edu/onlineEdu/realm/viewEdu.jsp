@@ -67,7 +67,7 @@
 	<!-- 차시제목 -->
 	<div class="sub_title s_tit02">
 		<div class="">
-			<div class="col-12 mb30 alert big_box">
+			<div class="col-12 mb30 alert big_box" style="background-color: #222;">
 				<!-- 수업진도율 -->
 				<div class="lectProgressSet">
 					<div class="lecProgress"></div>
@@ -136,7 +136,7 @@
 			</div>--%>
 
 			<!-- Movie Player -->
-			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 600px !important;">
+			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 486px !important;">
 				<!-- 차시내용 -->
 				<div id="lectListTemp" style="display:none">
 					<jsp:include page="lectList.jsp"></jsp:include>
@@ -176,11 +176,11 @@
 			</script>
 
 			<!-- movDescTxt -->
-			<div class="mt15 board_util_btn_con" style="max-width:1000px; margin-left:auto; margin-right:auto;">
-				<a href="javascript:void(0);" class="btn_style_0 green openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
+			<div class="mt15 board_util_btn_con" style="max-width:100%; margin-left:auto; margin-right:auto; margin-bottom: 10px;">
+				<a href="javascript:void(0);" class="btn_style_0 blue openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
 					자막닫기
 				</a>
-				<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 green openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
+				<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 blue openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
 					자막보기
 				</a>
 			</div>
@@ -200,12 +200,12 @@
 					<img src="/edu/images/renew2022/fwo_snail01.png" alt="썸네일">
 				</div>
 				<div class="edu_txt_box">
-					<p class="edu_tit">과정명 : [수어자막]유니티로 애니메이션 제작하기</p>
-					<p class="edu_add_txt">교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.교육내용을 불러옵니다.</p>
+					<p class="edu_tit">과정명 : ${param.p_subjnm }</p>
+					<p class="edu_add_txt">Adobe Premiere Pro CC 2020의 기능 활용 및 Adobe Premiere Pro CC 2020의 사용방법 숙지</p>
 
 					<p class="jindo_box">
-						<span class="jd_span01_box"><span>진도율</span> 60%</span>
-						<span class="jd_span02_box"><span>수료기준</span> 60%</span>
+						<span class="jd_span01_box"><span>진도율</span> ${myProgress }%</span>
+						<span class="jd_span02_box"><span>수료기준</span> 70%</span>
 					</p>
 				</div>
 
@@ -335,19 +335,27 @@
 		  }
 		});
 
-		$(".eye_off").click(function (e) {
-			$(this).hide();
-			$(".movDescTxt").hide();
-			$(".eye_on").show();
-			$(".eye_on").focus();
-		});
-		$(".eye_on").click(function (e) {
-			$(this).hide();
-			$(".movDescTxt").show();
-			$(".eye_off").show();
-			$(".eye_off").focus();
-		});
+
 	});*/
+
+	$(".eye_off").click(function (e) {
+		$(this).hide();
+		$(".movDescTxt").hide();
+		$(".eye_on").show();
+		$(".eye_on").focus();
+	});
+	$(".eye_on").click(function (e) {
+		$(this).hide();
+		$(".movDescTxt").show();
+		$(".eye_off").show();
+		$(".eye_off").focus();
+	});
+
+	$('header').remove();
+
+	$('.wrapper, .bg_gray_slide_box, .sub_title.s_tit02').css('padding-top','0');
+
+
 
 	//과정 조회
 	function fnCmdSearchList(gubun1, gubun2, gubun3, ordersnm, orders){
