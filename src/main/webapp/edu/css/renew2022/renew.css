@@ -226,8 +226,9 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 /*******************************************************  NAV 콘텐츠 커리큘럼 *******************************************************/
 #main_nav_full{display: none !important;}
 #main_nav_full.gnbActive{display: block !important; position: fixed; width: 100%; height:1080px; top: 0; left: 0;background-color: #222;}
-#main_nav_full h3, #main_nav_full h2, #main_nav_full a{color:#707070; font-weight: 500;}
-#main_nav_full a:hover{color:#fff;}
+#main_nav_full h3, #main_nav_full h2, #main_nav_full li button{color:#707070; font-weight: 500;}
+#main_nav_full li button{font-size: 18px; background-color: transparent;}
+#main_nav_full li button.active{color:#fff;}
 .navbar-expand-xl #main_nav_full.gnbActive .cy_navbar-nav{max-width: 1273px; margin: 0 auto; padding: 70px 0px;}
 .gnb_close{width: 25px; height: 25px; position: absolute; top:50px; right:50px;}
 #main_nav_full h2{font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
@@ -241,6 +242,10 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 
 /* SUN NAV */
 .sub_layout_page header, #subContainer header{position:fixed; background: #222;}
+
+@media all and (min-width:1200px){
+    #main_nav_full li button:hover{color:#fff;}
+}
 
 @media all and (max-width:1600px) {
     header nav, header .navbar{padding: 10px 0px;}
@@ -295,6 +300,16 @@ header nav.gnbActive{background: #222222;}
 
 
     .nav_my_box li a, .nav_support_box li a{line-height: 3rem;}
+}
+
+@media all and (max-width:640px) {
+    .navbar-expand-xl #main_nav_full.gnbActive .cy_navbar-nav{padding: 10px 20px;}
+    #main_nav_full .gnb_close{top:22px; right: 25px;}
+    .cy_contents_box{display:block; overflow-y: scroll; height: 500px; width: 100%; padding-top: 10px; padding-bottom: 50px; }
+    .cy_list_box:nth-child(1){border-bottom: 1px solid #707070;}
+    .cy_list_box, .cy_list_box:nth-child(3), .cy_list_box:nth-child(4){width: 100%; flex-direction: column; padding: 10px 0 30px 0;}
+    #main_nav_full h3{width:100%; margin-bottom: 30px; font-size: 21px;}
+
 }
 
 
@@ -418,7 +433,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box .swiper-slide{height: 50px;}
     .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{background-size: 25px;}
     .pc_table.table td, .pc_table.table th{white-space: normal; vertical-align: middle;}
-/* fwo_card_slide 공통 (추천과정/수강한과정) */
+    /* fwo_card_slide 공통 (추천과정/수강한과정) */
 }
 
 .main_title{margin-top:0; margin-bottom:20px; line-height:40px; text-align: left; font-size: 26px; font-weight: 700; color: #303030;width: 100%; position: relative;}
@@ -470,13 +485,13 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 }
 
 @media screen and (min-width:641px) and (max-width:1280px) {
-     .fwo_card_list_box .fwo_card{height: 319px;}
+    .fwo_card_list_box .fwo_card{height: 319px;}
 }
 
 @media all and (max-width:640px) {
     .contents_section .container .main_title{font-size: 2.4rem;}
-     .fwo_card_list_box .fwo_card{height: 330px;}
-     .fwo_card_list_box .fwo_card .swiper-slide{width: 290px !important;}
+    .fwo_card_list_box .fwo_card{height: 330px;}
+    .fwo_card_list_box .fwo_card .swiper-slide{width: 290px !important;}
     .fwo_card_list_box .swiper_btn_box{width: calc(100% - 82%); top:5px; right: 20px;}
     .fwo_card_list_box .swiper-button-prev, .fwo_card_list_box .swiper-button-next{width:30px; height:30px; background-size: 30px; background-position: center;}
 
@@ -810,9 +825,9 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 }
 
 /* 열린강좌 */
-    .control_board_style2.control_board_header .board_sorting_con{display: flex; width: calc(100% - 50px);}
-    .control_board_style2.control_board_header .mo-ta_lt .relation_site{width: 45%; text-align: left;}
-    .control_board_style2.control_board_header .board_sorting_con .input_search_con{width: 100%;}
+.control_board_style2.control_board_header .board_sorting_con{display: flex; width: calc(100% - 50px);}
+.control_board_style2.control_board_header .mo-ta_lt .relation_site{width: 45%; text-align: left;}
+.control_board_style2.control_board_header .board_sorting_con .input_search_con{width: 100%;}
 
 @media all and (max-width:1280px) {
     .control_board_style2.control_board_header .board_sorting_con{width: calc(100% - 1.6%);}
@@ -1008,6 +1023,10 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
 }
 /*******************************************************  콘텐츠문화광장 *********************************************************/
+
+/* 메인 */
+.performance_hall_card_section .performance_hall_card_list_wrap .performance_hall_card_list{float:left;}
+.facilities_information_section .facilities_information_list_wrap .facilities_information_list{float:left;}
 
 /* 소개 */
 .bd_rd_rb_tit{text-align: center;}
