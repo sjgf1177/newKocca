@@ -99,7 +99,7 @@
             </select>
 
             <div class="show-tablecell fn vm tr board_sorting_con">
-                <form id="frm1" name="frm1"
+                <form id="frm" name="frm"
                       action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>"
                       method="post">
 
@@ -739,12 +739,12 @@
         $("#pageIndex").val("1");
         $("#p_searchtext").val($.trim($("#p_searchtext").val()));
 
-        $("#frm1").attr({
+        $("#frm").attr({
             action: "/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>",
             method: "post",
             target: "_self"
         });
-        $("#frm1").submit();
+        $("#frm").submit();
     }
 
     function fnComChangeGubun() {
@@ -777,7 +777,7 @@
         $("#s_subj").val(subj);
         $("#s_year").val(year);
         $("#s_subjseq").val(subjseq);
-
+alert("subj : " + subj);
         $("#frm").attr({
             action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
             method: "post",

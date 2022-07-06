@@ -95,7 +95,6 @@
 	//]]>
 </script>
 
-
 <div class="col-12 header_wrap">
 
 	<!-- 하위스크롤 경우 // headerTopOn -->

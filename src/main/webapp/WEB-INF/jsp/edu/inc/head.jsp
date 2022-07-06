@@ -88,29 +88,17 @@
 	});
 
 	//과정 조회
-	function fnCmdSearchList(gubun1, gubun2, gubun3, ordersnm, orders){
+	function fnCmdSearchCateList(gubun1, gubun2, gubun3, ordersnm, orders){
 		$("#pGubun1").val(gubun1);
-		$("#pGubun2").val(gubun2);
-		$("#pGubun3").val(gubun3);
-		$("#option1").val(gubun2);
-		$("#option5").val(gubun3);
-		$("#p_ordersnm").val(ordersnm);
-		$("#p_orders").val(orders);
-
 		$("#pageIndex").val("1");
-		$("#p_searchtext").val("");
-		$("#p_type").val("");
-		$("#p_gcd1").val("");
-		$("#p_gcd2").val("");
-		$("#p_level").val("");
 		$("#p_sort").val("N");
 
-		$("#frm").attr({
+		$("#frmCate").attr({
 			action:"/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>",
 			method:"post",
 			target:"_self"
 		});
-		$("#frm").submit();
+		$("#frmCate").submit();
 	}
 	//]]>
 </script>
@@ -411,7 +399,7 @@
 
 					<!-- nav 카테고리 one-daps start -->
 					<li>
-						<a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">
+						<a href="javascript:void(0);" onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;">
 							카테고리
 						</a>
 						<!-- nav 카테고리 two-daps start -->
@@ -422,27 +410,27 @@
 								</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">
+								<a href="javascript:void(0);" onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;">
 									방송영상
 								</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('G0', '', '', '', ''); return false;">
+								<a href="javascript:void(0);" onclick="fnCmdSearchCateList('G0', '', '', '', ''); return false;">
 									게임
 								</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('K0', '', '', '', ''); return false;">
+								<a href="javascript:void(0);" onclick="fnCmdSearchCateList('K0', '', '', '', ''); return false;">
 									만화/애니/캐릭터
 								</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('M0', '', '', '', ''); return false;">
+								<a href="javascript:void(0);" onclick="fnCmdSearchCateList('M0', '', '', '', ''); return false;">
 									문화일반(음악공연)
 								</a>
 							</li>
 							<li>
-								<a href="javascript:void(0);" onclick="fnCmdSearchList('S0', '', '', '', ''); return false;">
+								<a href="javascript:void(0);" onclick="fnCmdSearchCateList('S0', '', '', '', ''); return false;">
 									인문/경영/교양/일반
 								</a>
 							</li>
@@ -896,37 +884,14 @@
                 </ul>-->
 			</div>
 			<!-- pc 햄버거 버튼 눌렀을때 end -->
-
 		</nav>
 	</div>
 </header>
-<form id="frm" name="frm"
+<form id="frmCate" name="frmCate"
 	  action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>"
 	  method="post">
 
 	<input type="hidden" name="pGubun1" id="pGubun1" value=""/>
-	<input type="hidden" name="pGubun2" id="pGubun2" value=""/>
-	<input type="hidden" name="pGubun3" id="pGubun3" value=""/>
-
-	<input type="hidden" name="p_ordersnm" id="p_ordersnm" value=""/>
-	<input type="hidden" name="p_orders" id="p_orders" value=""/>
-
-	<input type="hidden" name="p_subj" id="p_subj" value=""/>
-	<input type="hidden" name="p_subjnm" id="p_subjnm" value=""/>
-	<input type="hidden" name="p_isonoff" id="p_isonoff" value=""/>
-	<input type="hidden" name="p_scupperclass" id="p_scupperclass" value=""/>
-	<input type="hidden" name="p_uclassnm" id="p_uclassnm" value=""/>
-	<input type="hidden" name="p_year" id="p_year" value=""/>
-	<input type="hidden" name="p_subjseq" id="p_subjseq" value=""/>
-
-	<input type="hidden" name="s_subj" id="s_subj" value=""/>
-	<input type="hidden" name="s_year" id="s_year" value=""/>
-	<input type="hidden" name="s_subjseq" id="s_subjseq" value=""/>
-
-	<input type="hidden" name="p_type" id="p_type" value=""/>
-	<input type="hidden" name="p_gcd1" id="p_gcd1" value=""/>
-	<input type="hidden" name="p_gcd2" id="p_gcd2" value=""/>
-	<input type="hidden" name="p_level" id="p_level" value=""/>
 	<input type="hidden" name="p_sort" id="p_sort" value=""/>
 
 </form>

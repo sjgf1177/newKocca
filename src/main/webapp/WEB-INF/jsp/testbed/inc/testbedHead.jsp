@@ -98,7 +98,6 @@
 			}
 	    }
 	//]]>
-
 	</script>
 	</sec:authorize>
 
