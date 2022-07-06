@@ -191,7 +191,7 @@ wrapper.sub_layout_page 는 1depth의 하위 서브페이지들(2, 3depth)
     background: url('/edu/images/bm/board_title_icon.png') no-repeat left 2px;}
 .sub_section .board_title h4.theme_process_title{background:none; padding-left:0;}
 .sub_section .board_title h4.theme_process_title .board_count{color:#1b96c5;}
-.contents_view_page .sub_section .board_title h4{background-image: url("/edu/images/bm/board_title_icon_pink.png");}
+/*.contents_view_page .sub_section .board_title h4{background-image: url("/edu/images/bm/board_title_icon_pink.png");}*/
 .sub_section .board_title.online_edu_board_title h4{font-size:15px; font-size:1.5rem; line-height:21px; line-height:2.1rem; background:none; padding-left:0; font-weight:400;  letter-spacing:-0.025em;}
 .sub_section .board_title.online_edu_board_title h4 .board_count{color:#1b96c5; }
 .contents_view_page .sub_section .board_title h4 .board_count{color:#dc2979;}

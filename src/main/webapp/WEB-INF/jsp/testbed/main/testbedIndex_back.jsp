@@ -218,13 +218,172 @@ System.out.println("============================= menuNo : " + menuNo);
 
 		<!--container-->
 		<div class="col-12 sub_contents_wrap">
-            <div class="col-12 col-center over-visible">
+            <div class="col-12 col-center mw-1200 over-visible">
                 <div class="col-12 pr15 pl15">
+                    <div class="lnb_wrap <c:if test='${fn:indexOf(pathData[0], "온라인교육") > -1 }'>online</c:if>">
+                        <div class="lnb_header">
+                        <h3 class="show-tablecell vm tc">${pathData[0]}</h3>
+                        </div>
+                        <c:if test="${fn:length(curD02Categories)>0}">
+                        <c:choose>
+                        	<c:when test='${fn:indexOf(pathData[0], "온라인교육") > -1 }'>
+                        		<ul class="lnb_con">
+		                        <c:set var="curD02" value="${curD02Categories[depth02]}" />
+		                        <c:set var="curD" value="${curD02Categories[depth02]}" />
+		                        <c:forEach var="x" begin="0" end="${fn:length(curD02Categories)-1}">
+		                            <c:set var="clss" value="${x eq depth02 ? 'on' : ''}" />
+		                            <c:set var="lnbClss" value="1" />
+		                            <li class="${clss}">
+			                            <a href="${curD02Categories[x].fullMenuLink}" ${curD02Categories[x].menuPopupYn eq 'Y'?'target="_blank" title="새창열림"':''}>
+			                                <p class="lnb_title">${curD02Categories[x].menuNm}</p>
+			                                <div class="lnb_desc img_${curD02Categories[x].menuNo}">
+			                                    <span>
+			                                    	<c:choose>
+			                                        <%-- 정규과정 --%>
+			                                        <c:when test="${curD02Categories[x].menuNo eq '500027'}">방송영상,게임,만화<br/>캐릭터,음악공연등의 과목</c:when>
+			                                        <%-- 열린강좌 --%>
+	                                                <c:when test="${curD02Categories[x].menuNo eq '500085'}">공공이 모두 이용할<br/>수 있는 학습 콘텐츠</c:when>
+	                                                <%-- 테마과정 --%>
+	                                                <c:when test="${curD02Categories[x].menuNo eq '511111'}">다양한 콘텐츠를<br/>테마별로 이용할 수<br/>있는 과정</c:when>
+	                                                <%-- 맞춤교육 --%>
+	                                                <c:when test="${curD02Categories[x].menuNo eq '500005'}">방송영상,게임,만화<br/>캐릭터,음악공연등의<br/>과목</c:when>
+	                                                <%-- 교육체계도 --%>
+	                                                <c:when test="${curD02Categories[x].menuNo eq '500030'}">온라인 과정의<br/>교육체계도 및<br/>Track 확인</c:when>
+	                                                <%-- 아카데미 이야기 --%>
+	                                                <c:when test="${curD02Categories[x].menuNo eq '522222'}">방송영상,게임,만화<br/>캐릭터,음악공연등의<br/>과목</c:when>
+	                                                <%-- 학습지원 --%>
+	                                                <c:when test="${curD02Categories[x].menuNo eq '500033'}">방송영상,게임,만화<br/>캐릭터,음악공연등의<br/>과목</c:when>
+                                                	</c:choose>
+			                                    </span>
+			                                </div>
+			                            </a>
+		                            </li>
+		                        </c:forEach>
+		                        </ul>
+                        		</c:when>
+                        		<c:when test="${siteName eq 'testbed'}">
+									<c:set var="topCategoriesTestbed" value="${menuAll7['menu_0']}" />
+									<c:set var="d01Category" value="${topCategoriesTestbed[depth01]}" />
+									<c:set var="d01menuKey" value="menu_${d01Category.menuNo}" />
+									<c:set var="curD02Categories" value="${menuAll7[d01menuKey]}" />
+									<c:set var="d02MenuKey" value="menu_700000" />
+									<c:set var="d02Categories" value="${menuAll7[d02MenuKey]}" />
+									<c:set var="curD02" value="${curD02Categories[depth02]}" />
+									<c:set var="curD" value="${curD02Categories[depth02]}" />
+	                        		<ul class="lnb_con">
+			                        <c:forEach var="x" begin="0" end="${fn:length(curD02Categories)-1}">
+			                        	<c:set var="clss" value="${x eq depth02 ? 'on' : ''}" />
+			                            <c:set var="lnbClss" value="1" />
+			                            <c:set var="d03menuKey" value="menu_${curD02Categories[x].menuNo}" />
+			                            <c:set var="d03Categories" value="${menuAll7[d03menuKey]}" />
+			                            <c:if test="${fn:length(d03Categories)>0}">
+			                                <c:set var="lnbClss" value="2" />
+			                            </c:if>
+			                            <li class="lnb_${lnbClss} ${clss}">
+			                            	<a href="${curD02Categories[x].fullMenuLink}" ${curD02Categories[x].menuPopupYn eq 'Y'?'target="_blank" title="새창열림"':''}><span>${curD02Categories[x].menuNm}</span></a>
+			                            	<c:if test="${fn:length(d03Categories)>0}">
+				                                <ul>
+				                                <c:forEach var="y" begin="0"	end="${fn:length(d03Categories)-1}">
+				                                    <c:set var="clss2" value="${x eq depth02 && y eq depth03 ? 'active' : ''}" />
+				                                    <c:if test="${x eq depth02 && y eq depth03}">
+				                                        <c:set var="curD" value="${d03Categories[y]}" />
+				                                        <c:set var="curD03" value="${d03Categories[y]}" />
+				                                    </c:if>
+				                                    <c:if test="${d03Categories[y].menuNo ne '500124' && d03Categories[y].menuNo ne '500125' && d03Categories[y].menuNo ne '500126' && d03Categories[y].menuNo ne '500128'}">
+
+				                                    <li class="${clss2}">
+				                                    <a	href="${d03Categories[y].fullMenuLink}" ${d03Categories[y].menuPopupYn eq 'Y' ? 'target="_blank" title="새창열림"':''}><span>${d03Categories[y].menuNm}</span></a>
+				                                    </li>
+				                                    </c:if>
+				                                </c:forEach>
+				                                </ul>
+				                            </c:if>
+			                            </li>
+			                        </c:forEach>
+		                        	</ul>
+                        		</c:when>
+                        	<c:otherwise>
+	                        	<ul class="lnb_con">
+		                        <c:set var="curD02" value="${curD02Categories[depth02]}" />
+		                        <c:set var="curD" value="${curD02Categories[depth02]}" />
+		                        <c:forEach var="x" begin="0" end="${fn:length(curD02Categories)-1}">
+		                            <c:set var="clss" value="${x eq depth02 ? 'on' : ''}" />
+		                            <c:set var="lnbClss" value="1" />
+		                            <c:set var="d03menuKey" value="menu_${curD02Categories[x].menuNo}" />
+		                            <c:set var="d03Categories" value="${menuAll5[d03menuKey]}" />
+		                            <c:set var="d02Url" value="${fn:replace(curD02Categories[x].fullMenuLink, '/edu/', '/testbed/')}" />
+		                            <c:if test="${fn:length(d03Categories)>0}">
+		                                <c:set var="lnbClss" value="2" />
+		                            </c:if>
+		                            <li class="lnb_${lnbClss} ${clss}">
+		                            	<a href="${d02Url}" ${curD02Categories[x].menuPopupYn eq 'Y'?'target="_blank" title="새창열림"':''}><span>${curD02Categories[x].menuNm}</span></a>
+		                            <c:if test="${fn:length(d03Categories)>0}">
+		                                <ul>
+		                                <c:forEach var="y" begin="0"	end="${fn:length(d03Categories)-1}">
+		                                    <c:set var="clss2" value="${x eq depth02 && y eq depth03 ? 'active' : ''}" />
+		                                    <c:if test="${x eq depth02 && y eq depth03}">
+		                                        <c:set var="curD" value="${d03Categories[y]}" />
+		                                        <c:set var="curD03" value="${d03Categories[y]}" />
+		                                    </c:if>
+		                                    <c:if test="${d03Categories[y].menuNo ne '500124' && d03Categories[y].menuNo ne '500125' && d03Categories[y].menuNo ne '500126' && d03Categories[y].menuNo ne '500128'}">
+
+		                                    <li class="${clss2}">
+		                                    <c:set var="d03Url" value="${fn:replace(d03Categories[y].fullMenuLink, '/edu/', '/testbed/')}" />
+		                                    <a	href="${d03Url}" ${d03Categories[y].menuPopupYn eq 'Y' ? 'target="_blank" title="새창열림"':''}><span>${d03Categories[y].menuNm}</span></a>
+		                                    </li>
+		                                    </c:if>
+		                                </c:forEach>
+		                                </ul>
+		                            </c:if>
+		                            </li>
+		                        </c:forEach>
+		                        </ul>
+                        	</c:otherwise>
+                        </c:choose>
+                        </c:if>
+
+                        <!-- snsSet 백업 참조 -->
+                        <!-- //snsSet -->
+
+                    </div>
 
                     <!-- sub 컨텐츠 -->
                     <div id="subContainer" class="col-12 col-md-0 fn-md over-hidden sub_contents printPage">
                         <div class="col-12 sub_section">
+                            <div class="over-hidden sub_contents_header">
+	                            <c:choose>
+	                                <c:when  test="${curD.menuNo eq '700135'}">
+	                                		<h4 class="fl">${curD.menuNm}<spen style="font-size:14px;margin-left:12px;color:#dc2979;">문의 : 02-6310-0758</spen></h4>
+	                                </c:when>
+	                                <c:when  test="${curD.menuNo eq '700103'}">
+	                                		<h4 class="fl">${curD.menuNm}<spen style="font-size:14px;margin-left:12px;color:#dc2979;">문의 : 02-6310-0776</spen></h4>
+	                                </c:when>	                                
+	                                <c:otherwise>
+                                		<h4 class="fl">${curD.menuNm}</h4>
+                                	</c:otherwise>
+								</c:choose>
 
+                                <div class="fr linemap_wrap">
+                                    <ul class="col-12 linemap_con">
+                                        <li><a href="/testbed/main/main.do?menuNo=500108"><span style="display:none;">HOME</span></a></li>
+                                        <c:set var="size" value="${fn:length(pathData)}" />
+                                        <c:if test="${size > 0}">
+                                            <c:choose>
+                                                <c:when test="${param.menuNo eq '500007'}"><li><a href="javascript:void(0);"><span>새소식</span></a></li></c:when>
+                                                <c:when test="${param.menuNo eq '500019'}"><li><a href="javascript:void(0);"><span>현장교육</span></a></li></c:when>
+                                                <c:when test="${param.menuNo eq '500026'}"><li><a href="javascript:void(0);"><span>온라인교육</span></a></li></c:when>
+                                                <c:when test="${param.menuNo eq '500034'}"><li><a href="javascript:void(0);"><span>창의인재동반</span></a></li></c:when>
+                                                <c:when test="${param.menuNo eq '500046'}"><li><a href="javascript:void(0);"><span>취업정보</span></a></li></c:when>
+                                                <c:otherwise>
+                                                    <c:forEach var="x" begin="0" end="${size-1}" varStatus="status">
+                                                        <li><a href="javascript:void(0);" tabindex="-1"><span><c:out value="${pathData[x]}"/></span></a></li>
+                                                    </c:forEach>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:if>
+                                    </ul>
+                                </div>
+                            </div>
                             <!-- 서브 컨텐츠 바디 -->
                             <div class="sub_contents_body">
                                 <!--content-->

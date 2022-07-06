@@ -649,7 +649,9 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .tab_style_1_con .tab_style_1 > li button span{padding-bottom: 20px; font-size: 1.6rem;}
 }
 @media all and (max-width:640px) {
+    .tab_style_1_con .tab_style_1{padding-left: 0; padding-right: 0;}
     .tab_style_1_con .tab_style_1 > li{min-width: 110px;}
+
 }
 
 /* 이벤트 콘텐츠 */
@@ -1028,7 +1030,17 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .performance_hall_card_section .performance_hall_card_list_wrap .performance_hall_card_list{float:left;}
 .facilities_information_section .facilities_information_list_wrap .facilities_information_list{float:left;}
 
+/* three daps */
+.tab_style_1_con .tab_style_1.seven_tab > li{width: 14%;}
+.contents_view_page .tab_style_1_con .tab_style_1 > li.active span{color: #222222; border-top: none; border-right: none; border-left: none; border-bottom: 4px solid #222222;  background-color: transparent;}
+
+@media screen and (max-width: 640px){
+    .facility_list .img_box.right{margin-top:30px; margin-bottom: 30px;}
+
+}
+
 /* 소개 */
+
 .bd_rd_rb_tit{text-align: center;}
 .bd_rd_rb_tit span{width: 215px; height: 44px; background-color: #3B85FF; color:#fff; line-height: 44px; border-bottom-right-radius: 25px; font-weight: 600;}
 .tab_contents{display: block;}

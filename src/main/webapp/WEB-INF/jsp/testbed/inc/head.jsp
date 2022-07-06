@@ -95,7 +95,7 @@
 	//]]>
 </script>
 
-<div class="col-12 header_wrap">
+<div class="col-12 header_wrap" style="padding-top: 0; padding-bottom: 0;">
 
 	<!-- 하위스크롤 경우 // headerTopOn -->
 	<div class="col-12 col-center mw-1280 over-visible header_inner">
