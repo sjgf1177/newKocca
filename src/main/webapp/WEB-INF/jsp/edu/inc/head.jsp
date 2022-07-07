@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="org.springframework.util.StringUtils"%>
 <%@ page import="java.util.*"%>
 <%@ page import="kr.co.unp.member.vo.*"%>
@@ -7,6 +6,7 @@
 <%@ page import="kr.co.unp.mpm.vo.MenuManageVO"%>
 <%@ page import="kr.co.unp.mpm.service.MasterMenuManager"%>
 <%@ page import="kr.co.unp.main.service.MainService"%>
+<%@ page import="org.springframework.ui.ModelMap"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
@@ -20,12 +20,19 @@
 	pageContext.setAttribute("userVO", user);
 	String menuNo = request.getParameter("menuNo");
 
+	// 콘텐츠커리큘럼 목록
 	if (StringUtils.hasText(menuNo)) {
 
 		org.springframework.context.ApplicationContext context = org.springframework.web.context.support.WebApplicationContextUtils
 				.getWebApplicationContext(getServletContext());
 		MasterMenuManager masterMenuManagerService = (MasterMenuManager) context
 				.getBean("masterMenuManagerService");
+
+		MainService mainService = (MainService)context.getBean("mainService");
+		ZValue zParam = new ZValue();
+		List<ZValue> curriculumList = mainService.getCurriculumList(zParam);
+
+		pageContext.setAttribute("curriculumList", curriculumList);
 
 		/* testbed20170830 */
 		String siteName = (String) pageContext.getAttribute("siteName") != null
@@ -618,45 +625,22 @@
 					<input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
 					<h2>콘텐츠커리큘럼</h2>
 					<div class="cy_contents_box">
-						<div class="cy_list_box">
-							<h3>방송영상</h3>
-							<ul>
-								<li><button type="button">방송영상 기획 Track</button></li>
-								<li><button type="button">방송영상 제작(촬영/편집) Track</button></li>
-								<li><button type="button">방송영상 비즈니스 Track</button></li>
-								<li><button type="button">방송영상 교양 Track</button></li>
-							</ul>
-						</div>
-
-						<div class="cy_list_box">
-							<h3>게임</h3>
-							<ul>
-								<li><button type="button">게임 기획 Track</button></li>
-								<li><button type="button">게임 제작(그래픽/프로그래밍) Track</button></li>
-								<li><button type="button">게임 비즈니스 Track</button></li>
-								<li><button type="button">게임 교양 Track</button></li>
-							</ul>
-						</div>
-
-						<div class="cy_list_box">
-							<h3>만화/애니/캐릭터</h3>
-							<ul>
-								<li><button type="button">만화/애니/캐릭터 기획 Track</button></li>
-								<li><button type="button">만화/애니/캐릭터 제작 Track</button></li>
-								<li><button type="button">만화/애니/캐릭터 비즈니스 Track</button></li>
-								<li><button type="button">만화/애니/캐릭터 교양 Track</button></li>
-							</ul>
-						</div>
-
-						<div class="cy_list_box">
-							<h3>음악공연/문화일반</h3>
-							<ul>
-								<li><button type="button">음악공연/문화일반 기획 Track</button></li>
-								<li><button type="button">음악공연/문화일반 제작 Track</button></li>
-								<li><button type="button">음악공연/문화일반 비즈니스 Track</button></li>
-								<li><button type="button">음악공연/문화일반 교양 Track</button></li>
-							</ul>
-						</div>
+						<c:set var="contentType" value=""/>
+						<c:forEach items="${curriculumList }" var="result" varStatus="status">
+							<c:if test="${status.first eq false}">
+								<c:if test="${contentType ne result.cd1}">
+										</ul>
+									</div>
+								</c:if>
+							</c:if>
+							<c:if test="${contentType ne result.cd1}">
+								<div class="cy_list_box">
+									<h3>${result.cdnm1}</h3>
+									<ul>
+								<c:set var="contentType" value="${result.cd1}"/>
+							</c:if>
+								<li><button type="button">${result.cdnm2}</button></li>
+						</c:forEach>
 					</div>
 				</div>
 

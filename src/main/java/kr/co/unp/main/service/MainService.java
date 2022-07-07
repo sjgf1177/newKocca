@@ -138,6 +138,11 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			log.debug("// 인기 열린강좌 목록");
 			List<ZValue> popularityList = lmsSqlDao.listDAO("openLecture.selectPopularityList", param);
 			model.addAttribute("popularityList", popularityList);
+
+			// 콘텐츠커리큘럼 목록
+			log.debug("// 콘텐츠커리큘럼 목록");
+			List<ZValue> contentCurriculumList = lmsSqlDao.listDAO("realmListDAO.contentCurriculumList", param);
+			model.addAttribute("contentCurriculumList", contentCurriculumList);
 			
 			param.put("siteId", SiteMngService.EDU_SITE_ID); // 팝업존 siteId
 		}
@@ -353,6 +358,12 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		Map<String, List<FileVO>> fileMap = listHandler.getFileMap(param, recentEventList);
 		UnpCollectionUtils.setFirstFile(recentEventList, fileMap, "atchFileId");
 		return recentEventList;
+	}
+
+	public List<ZValue> getCurriculumList(ZValue param) throws Exception {
+		List<ZValue> resultList = lmsSqlDao.listDAO("realmListDAO.contentCurriculumList", param);
+
+		return resultList;
 	}
 
 	private ServletContext servletContext;

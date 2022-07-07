@@ -6,12 +6,12 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc"%>
 <style>
-.visual_wrap h2{margin-bottom:80px !important;}
-@media all and(min-width:992px){
-	.visual_wrap h2{margin-bottom:100px !important;}
-}
-.lnb_wrap {display: none !important;}
-.sub_contents_wrap .sub_contents {padding-left:0 !important;}
+	.visual_wrap h2{margin-bottom:80px !important;}
+	@media all and(min-width:992px){
+		.visual_wrap h2{margin-bottom:100px !important;}
+	}
+	.lnb_wrap {display: none !important;}
+	.sub_contents_wrap .sub_contents {padding-left:0 !important;}
 </style>
 
 <div class="over-hidden sub_contents_header">
@@ -37,40 +37,7 @@
 	<li class="active"><a href="javascript:void(0);">열린강좌</a></li>
 </ul>
 
-	<!--content-->
-	<%--<div>
-		&lt;%&ndash; 카테고리 URL &ndash;%&gt;
-		<c:set var="cateSelect" value="${not empty param.pLectureCls ? param.pLectureCls : param.gubun }"/>
-		<c:url var="cateUrl" value="&amp;menuNo=${param.menuNo }&amp;searchCnd=${param.searchCnd }&amp;searchWrd=${param.searchWrd }&amp;sortOrder=${param.sortOrder }&amp;pageIndex=1"/>
-		<ul class="photoTab photoTab-size5 online_edu_tab_style mg_b50">
-			<!-- 분류별 탭 목록 s -->
-			<c:forEach items="${realmTabList }" var="item" varStatus="status">
-					<c:set var="selectedGubun" value=""/>
-					<c:set var="selectedGubunAtag" value=""/>
-					<c:if test="${(empty cateSelect and item.code eq 'A') or cateSelect eq item.code}">
-						<c:set var="selectedGubun" value="class=\"active\""/>
-						<c:set var="selectedGubunAtag" value="title=\"현재탭\""/>
-					</c:if>
-					<c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0')}">
-					<li ${selectedGubun } <c:if test="${(item.code eq 'T0' && param.pGubun1 ne 'T0') }">style="display:none"</c:if> >
-						<c:if test="${item.code eq 'A'}">
-							<a href="javascript:fnCmdSearchList('ALL')" ${selectedGubunAtag}>
-								${item.codenm }
-							</a>
-						</c:if>
-						<c:if test="${item.code ne 'A'}">
-							<a href="javascript:fnCmdSearchList('${item.code}')" ${selectedGubunAtag}>
-								${item.codenm }
-							</a>
-						</c:if>						
-					</li>
-					</c:if>
-			</c:forEach>
-			<c:if test="${userVO.userId eq 'kkj9699' or userVO.userId eq 'jmh8263' or userVO.userId eq 'lee1'}">
-				<li <c:if test="${cateSelect eq 'GC99' }">class="on"</c:if>><a href="/edu/onlineEdu/openLecture/list.do?pLectureCls=GC99&amp;gubun=GC99&amp;<c:out value="${cateUrl }"  escapeXml="false"/>">콘텐츠검수(<c:out value="${empty openClassCnt.gc99Cnt ? '0' : openClassCnt.gc99Cnt }"/>)</a></li>
-			</c:if>
-		</ul>
-	</div>--%>
+
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20 control_board_style2">
 	<div class="col-center mw-1280">
 		<div>
@@ -97,7 +64,6 @@
 
 			<div class="show-tablecell fn vm tr board_sorting_con">
 				<form id="frm" name="frm" action="/edu/onlineEdu/openLecture/list.do" method="post" class="form-inline col-12 show-tablecell fr tr">
-
 					<input type="hidden" name="pageQueryString" value='<c:out value="${pageQueryString }" escapeXml="false"/>' >
 					<input type="hidden" name="menuNo" value='<c:out value="${param.menuNo }" escapeXml="false"/>' >
 					<input type="hidden" name="sortOrder" value='<c:out value="${param.sortOrder }" escapeXml="false"/>' >
@@ -112,20 +78,12 @@
 					<fieldset class="mo-ta_lt">
 						<legend>검색 입력폼</legend>
 						<div class="board_sorting_con">
+							<select class="relation_site" name="searchCnd" id="searchCnd" title="구분을 선택해 주세요." class="select_style_0">
+								<option value="1" <c:if test="${param.searchCnd eq '1' }">selected="selected"</c:if>>제목</option>
+								<option value="2" <c:if test="${param.searchCnd eq '2' }">selected="selected"</c:if>>강좌상세</option>
+								<option value="3" <c:if test="${param.searchCnd eq '3' }">selected="selected"</c:if>>강사명</option>
+							</select>
 
-								<select class="relation_site" name="searchCnd" id="searchCnd" title="구분을 선택해 주세요." class="select_style_0">
-									<option value="1" <c:if test="${param.searchCnd eq '1' }">selected="selected"</c:if>>제목</option>
-									<option value="2" <c:if test="${param.searchCnd eq '2' }">selected="selected"</c:if>>강좌상세</option>
-									<option value="3" <c:if test="${param.searchCnd eq '3' }">selected="selected"</c:if>>강사명</option>
-								</select>
-
-							<%--<span class="tl select_box">
-								<select name="searchCnd" id="searchCnd" title="구분을 선택해 주세요." class="select_style_0">
-									<option value="1" <c:if test="${param.searchCnd eq '1' }">selected="selected"</c:if>>제목</option>
-									<option value="2" <c:if test="${param.searchCnd eq '2' }">selected="selected"</c:if>>강좌상세</option>
-									<option value="3" <c:if test="${param.searchCnd eq '3' }">selected="selected"</c:if>>강사명</option>
-								</select>
-							</span>--%>
 							<span class="tl input_search_con">
 								<c:url var="eduOrder" value="&sortOrder=${param.sortOrder }"/>
 								<input type="text" name="searchWrd" id="searchWrd" title="검색어를 입력해 주세요." value="<c:out value="${param.searchWrd}" />" maxlength="30" class="board_search"/>
@@ -182,13 +140,13 @@
 							</c:otherwise>
 						</c:choose>
 
-						<!-- 설명란 start-->
+						<!-- 설명란 start -->
 						<div class="fwo_info_box">
 							<h3 class="fwo_tit_box">
 								<c:out value='${result.lecnm }' escapeXml="false" />
 							</h3>
 
-							<c:if test="${not empty item3.lvnm}">
+							<c:if test="${not empty result.lvnm}">
 								<c:choose>
 									<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
 										<span class="tag L1">${result.lvnm}</span>
@@ -211,8 +169,6 @@
 									${item3.g2nm}
 								</c:if>
 							</p>
-
-							<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
 						</div>
 						<!-- 설명란 start-->
 					</div>
@@ -221,12 +177,6 @@
 		</div>
 	</c:forEach>
 </c:if>
-
-	<!-- paging111 -->
-	<%--<div class="paging">${pageNav}</div>--%>
-	<!-- //paging -->
-
-	<!--//content-->
 				
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -345,7 +295,6 @@
 	         			}
 		        	});
 				}
-				
 			},
 			error:function(){
 				alert("서버와 통신 실패");
