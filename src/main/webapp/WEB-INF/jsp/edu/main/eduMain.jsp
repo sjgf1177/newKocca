@@ -1022,7 +1022,7 @@ if( StringUtils.hasText(menuNo) ) {
 			<!-- 추천과정/ 수강한 과정 start -->
 			<div class="main_online_contents">
 				<div class="container">
-					<!-- 창작자를 위한 추천과정 start -->
+					<!-- 추천 클래스 start -->
 					<div class="fwo_card_list_box fwo_card01">
 						<span class="main_title">추천 클래스</span>
 						<div class="fwo_card swiper-container">
@@ -1065,9 +1065,9 @@ if( StringUtils.hasText(menuNo) ) {
 							<div class="swiper-button-next"></div>
 						</div>
 					</div>
-					<!-- 창작자를 위한 추천과정 end -->
+					<!-- 추천 클래스 end -->
 
-					<!-- 나만 빼고 다 수강한 과정 start -->
+					<!-- 인기 클래스 start -->
 					<div class="fwo_card_list_box fwo_card02">
 						<span class="main_title">인기 클래스</span>
 						<div class="fwo_card swiper-container">
@@ -1116,7 +1116,7 @@ if( StringUtils.hasText(menuNo) ) {
 						</div>
 
 					</div>
-					<!-- 나만 빼고 다 수강한 과정 end -->
+					<!-- 인기 클래스 end -->
 				</div>
 			</div>
 			<!-- 추천과정/ 수강한 과정 end -->

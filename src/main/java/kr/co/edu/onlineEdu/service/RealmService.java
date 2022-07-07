@@ -104,6 +104,14 @@ public class RealmService extends DefaultCmmProgramService {
         }        
 
 		initCmmnParam(param);
+
+		// 정규과정 신규 목록(20개)
+		List<ZValue> eduSubjNewList = lmsSqlDao.listDAO("realmListDAO.eduSubjNewList", param);
+		model.addAttribute("eduSubjNewList", eduSubjNewList);
+
+		// 정규과정 인기 목록(20개)
+		List<ZValue> eduSubjPopularList = lmsSqlDao.listDAO("realmListDAO.eduSubjPopularList", param);
+		model.addAttribute("eduSubjPopularList", eduSubjPopularList);
 				
 		//분류별 탭 1depth 목록
 		List<ZValue> realmTabList = lmsSqlDao.listDAO("realmListDAO.realmTabList", param);
