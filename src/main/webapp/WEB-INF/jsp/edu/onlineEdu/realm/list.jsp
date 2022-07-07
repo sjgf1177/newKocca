@@ -129,6 +129,7 @@
                     <input type="hidden" name="p_gcd2" id="p_gcd2" value="${param.p_gcd2}"/>
                     <input type="hidden" name="p_level" id="p_level" value="${param.p_level}"/>
                     <input type="hidden" name="p_sort" id="p_sort" value="${param.p_sort}"/>
+                    <input type="hidden" name="menuNo" id="menuNo" value=""/>
 
                     <!-- paging s -->
                     <input type="hidden" name="gubun" id="gubun" value="<c:out value='${param.gubun }' />"/>
@@ -168,7 +169,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div class="bg_gray_slide_box">
@@ -228,7 +228,6 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
-
     </div>
     <!-- 추천 클래스 end -->
 
@@ -309,21 +308,21 @@
     <c:forEach items="${resultList }" var="item3" varStatus="status3">
         <c:if test="${status3.first eq false}">
             <c:if test="${mainTitle ne item3.g2nm}">
-                </div>
+                    </div>
                 </div>
                 <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-                <div class="swiper_btn_box">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                    <div class="swiper_btn_box">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                 </div>
             </c:if>
         </c:if>
         <c:if test="${mainTitle ne item3.g2nm}">
             <div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
-            <span class="main_title">${item3.g2nm}</span>
-            <div class="fwo_card swiper-container">
-            <div class="swiper-wrapper">
+                <span class="main_title">${item3.g2nm}</span>
+                <div class="fwo_card swiper-container">
+                    <div class="swiper-wrapper">
             <c:set var="mainTitle" value="${item3.g2nm}"/>
         </c:if>
         <div class="swiper-slide">
@@ -385,7 +384,7 @@
                         </c:if>
                     </c:if>
                 </c:if>
-                        ${item3.subjnm }
+                ${item3.subjnm }
                 </a>
             </div>
         </div>
@@ -395,7 +394,6 @@
 <%--<c:if test="${fn:length(resultList) > 0}">
     <div class="paging">${pageNav}</div>
 </c:if>--%>
-
 
 <script type="text/javascript">
     //<![CDATA[
@@ -594,6 +592,28 @@
             action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
             method: "post",
             target: "_self"
+        });
+        $("#frm").submit();
+    }
+
+    function fnCmdGoldSearchList(gubun){
+        if(gubun){
+            $("#gubun").val(gubun == "ALL" ? "" : gubun);
+        }
+
+        $("#pageIndex").val("1");
+        $("#searchWrd").val("");
+        $("#p_type").val("");
+        $("#p_gcd1").val("");
+        $("#p_gcd2").val("");
+        $("#p_level").val("");
+        $("#p_sort").val("N");
+        $("#menuNo").val("500085");
+
+        $("#frm").attr({
+            action:"/edu/onlineEdu/openLecture/list.do",
+            method:"post",
+            target:"_self"
         });
         $("#frm").submit();
     }
