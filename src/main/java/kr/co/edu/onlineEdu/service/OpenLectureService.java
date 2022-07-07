@@ -79,7 +79,7 @@ public class OpenLectureService extends DefaultCmmProgramService {
 		ZValue openClassCnt = lmsSqlDao.selectDAO("openLecture.selecOpenClassCntInfo", param);
 		model.addAttribute("openClassCnt", openClassCnt);
 		super.setCountQueryId("openLecture.selectMainGoldClassListCnt");
-		super.setListQueryId("openLecture.selectMainGoldClassList");
+		super.setListQueryId("openLecture.selectMainGoldClassList2");
 
 		paramCtx.setParam(param);
 		//super.setPageInfo(openLecturePageInfo);

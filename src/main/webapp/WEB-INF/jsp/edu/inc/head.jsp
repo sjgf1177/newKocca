@@ -94,7 +94,7 @@
 		$("#p_sort").val("N");
 
 		$("#frmCate").attr({
-			action:"/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>",
+			action:"/edu/onlineEdu/realm/list.do?menuNo=500027",
 			method:"post",
 			target:"_self"
 		});
@@ -884,11 +884,7 @@
 		</nav>
 	</div>
 </header>
-<form id="frmCate" name="frmCate"
-	  action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>"
-	  method="post">
-
+<form id="frmCate" name="frmCate" action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=500027" method="post">
 	<input type="hidden" name="pGubun1" id="pGubun1" value=""/>
 	<input type="hidden" name="p_sort" id="p_sort" value=""/>
-
 </form>

@@ -23,13 +23,18 @@
 		</ul>
 	</div>
 </div>
+
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">열린강좌</div>
+	<c:forEach items="${realmTabList}" var="item" varStatus="status">
+		<c:if test="${item.code eq param.pGubun1}">
+			<div class="col-center mw-1280">열린강좌 - ${item.codenm}</div>
+		</c:if>
+	</c:forEach>
 </div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
-	<li class="after_line"><a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027">정규과정</a></li>
-	<li class="active"><a href="/edu/onlineEdu/openLecture/list.do?sortOrder=newOrdr&amp;menuNo=500085">열린강좌</a></li>
+	<li class="after_line"><a href="javascript:void(0);" onclick="fnCmdSearchCateList('${param.pGubun1}', '', '', '', ''); return false;">정규과정</a></li>
+	<li class="active"><a href="javascript:void(0);">열린강좌</a></li>
 </ul>
 
 	<!--content-->
@@ -68,20 +73,7 @@
 	</div>--%>
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20 control_board_style2">
 	<div class="col-center mw-1280">
-
 		<div>
-			<c:if test="${empty cateSelect}">
-				<select  class="relation_site SL01 gubunBox" ordr="2">
-					<option value="">장르</option>
-
-					<c:forEach items="${realmTabList }" var="item" varStatus="status">
-						<c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'T0' && item.code ne 'A')}">
-							<option value="${item.code}" <c:if test="${param.p_type eq item.code}">selected="selected"</c:if>>${item.codenm}</option>
-						</c:if>
-					</c:forEach>
-				</select>
-			</c:if>
-
 			<select class="relation_site SL02 gubunBox" ordr="3">
 				<option value="">대분류</option>
 				<c:if test="${param.pGubun1 ne 'A' or not empty param.pGubun1}">
@@ -147,243 +139,88 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 
-<!-- 리스트 -->
-<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
-	<span class="main_title">리스트</span>
-	<div class="fwo_card swiper-container">
-		<div class="swiper-wrapper">
-			<c:forEach  items="${resultList }"  var="result" >
-				<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
-					<c:param name="pSeq" value="${result.seq }"/>
-					<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
-					<c:param name="pLectureCls" value="${param.pLectureCls }"/>
-				</c:url>
-					<div class="swiper-slide">
-						<div class="">
-							<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
-								<% pageContext.setAttribute("crlf", "\\"); %>
-								<div class="fwo_snail_box">
-									<c:choose>
-										<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-											<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-										</c:when>
-										<c:otherwise>
-											<img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"  />
-										</c:otherwise>
-									</c:choose>
-
-									<!-- 설명란 start-->
-									<div class="fwo_info_box">
-										<h3 class="fwo_tit_box">
-											<c:out value='${result.lecnm }' escapeXml="false" />
-										</h3>
-
-										<c:if test="${not empty result.lvnm}">
-											<c:choose>
-												<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
-													<span class="tag L1">${result.lvnm}</span>
-												</c:when>
-												<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
-													<span class="tag L2">${result.lvnm}</span>
-												</c:when>
-												<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
-													<span class="tag L3">${result.lvnm}</span>
-												</c:when>
-											</c:choose>
-										</c:if>
-
-										<p>
-											온라인교육ㆍ
-											<c:if test="${not empty result.g3nm}">
-												${result.g3nm}
-											</c:if>
-
-											<c:if test="${empty result.g3nm}">
-												${result.g2nm}
-											</c:if>
-										</p>
-
-										<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-									</div>
-									<!-- 설명란 start-->
-								</div>
-							</a>
-						</div>
+<c:if test="${fn:length(resultList) > 0}">
+	<c:set var="mainTitle" value=""/>
+	<c:forEach items="${resultList }" var="result" varStatus="status">
+		<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
+			<c:param name="pSeq" value="${result.seq }"/>
+			<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
+			<c:param name="pLectureCls" value="${param.pLectureCls }"/>
+		</c:url>
+		<c:if test="${status.first eq false}">
+			<c:if test="${mainTitle ne result.g2nm}">
 					</div>
-				</c:forEach>
-
-			<c:if test="${fn:length(resultList) == 0}"><li style="text-align: center; vertical-align: middle">검색된 데이터가 없습니다.</li></c:if>
-		</div>
-
-	</div>
-	<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-	<div class="swiper_btn_box">
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-	</div>
-</div>
-
-<!-- 제작 -->
-<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
-	<span class="main_title">제작</span>
-	<div class="fwo_card swiper-container">
-		<div class="swiper-wrapper">
-			<c:if test="${fn:length(resultList) > 0}">
-				<c:forEach  items="${resultList }"  var="result" >
-					<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
-						<c:param name="pSeq" value="${result.seq }"/>
-						<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
-						<c:param name="pLectureCls" value="${param.pLectureCls }"/>
-					</c:url>
-					<div class="swiper-slide">
-						<div class="">
-							<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
-								<% pageContext.setAttribute("crlf", "\\"); %>
-								<div class="fwo_snail_box">
-									<c:choose>
-										<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-											<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-										</c:when>
-										<c:otherwise>
-											<img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"  />
-										</c:otherwise>
-									</c:choose>
-
-									<!-- 설명란 start-->
-									<div class="fwo_info_box">
-										<h3 class="fwo_tit_box">
-											<c:out value='${result.lecnm }' escapeXml="false" />
-										</h3>
-
-										<c:if test="${not empty result.lvnm}">
-											<c:choose>
-												<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
-													<span class="tag L1">${result.lvnm}</span>
-												</c:when>
-												<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
-													<span class="tag L2">${result.lvnm}</span>
-												</c:when>
-												<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
-													<span class="tag L3">${result.lvnm}</span>
-												</c:when>
-											</c:choose>
-										</c:if>
-
-										<p>
-											온라인교육ㆍ
-											<c:if test="${not empty result.g3nm}">
-												${result.g3nm}
-											</c:if>
-
-											<c:if test="${empty result.g3nm}">
-												${result.g2nm}
-											</c:if>
-										</p>
-
-										<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-									</div>
-									<!-- 설명란 start-->
-								</div>
-							</a>
-						</div>
+				</div>
+				<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+					<div class="swiper_btn_box">
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
 					</div>
-				</c:forEach>
+				</div>
 			</c:if>
-			<c:if test="${fn:length(resultList) < 1}">
-				<div style="text-align: center; vertical-align: middle">검색된 데이터가 없습니다.</div>
-			</c:if>
-		</div>
+		</c:if>
+		<c:if test="${mainTitle ne result.g2nm}">
+			<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
+				<span class="main_title">${result.g2nm}</span>
+				<div class="fwo_card swiper-container">
+					<div class="swiper-wrapper">
+			<c:set var="mainTitle" value="${result.g2nm}"/>
+		</c:if>
+		<div class="swiper-slide">
+			<div class="">
+				<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
+					<% pageContext.setAttribute("crlf", "\\"); %>
+					<div class="fwo_snail_box">
+						<c:choose>
+							<c:when test="${result.vodimg == null or result.vodimg == '' }">
+								<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${result.lecnm } 임시 이미지"/>
+							</c:when>
+							<c:otherwise>
+								<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="/edu<c:out value="${result.vodimg}" />"/>
+							</c:otherwise>
+						</c:choose>
 
-	</div>
-	<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-	<div class="swiper_btn_box">
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-	</div>
-</div>
+						<!-- 설명란 start-->
+						<div class="fwo_info_box">
+							<h3 class="fwo_tit_box">
+								<c:out value='${result.lecnm }' escapeXml="false" />
+							</h3>
 
-<!-- 비즈니스 -->
-<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
-	<span class="main_title">비즈니스</span>
-	<div class="fwo_card swiper-container">
-		<div class="swiper-wrapper">
-			<c:if test="${fn:length(resultList) > 0}">
-				<c:forEach  items="${resultList }"  var="result" >
-					<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
-						<c:param name="pSeq" value="${result.seq }"/>
-						<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
-						<c:param name="pLectureCls" value="${param.pLectureCls }"/>
-					</c:url>
-					<div class="swiper-slide">
-						<div class="">
-							<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
-								<% pageContext.setAttribute("crlf", "\\"); %>
-								<div class="fwo_snail_box">
-									<c:choose>
-										<c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-											<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
-										</c:when>
-										<c:otherwise>
-											<img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"  />
-										</c:otherwise>
-									</c:choose>
+							<c:if test="${not empty item3.lvnm}">
+								<c:choose>
+									<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
+										<span class="tag L1">${result.lvnm}</span>
+									</c:when>
+									<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
+										<span class="tag L2">${result.lvnm}</span>
+									</c:when>
+									<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
+										<span class="tag L3">${result.lvnm}</span>
+									</c:when>
+								</c:choose>
+							</c:if>
+							<p>
+								온라인교육ㆍ
+								<c:if test="${not empty item3.g3nm}">
+									${item3.g3nm}
+								</c:if>
 
-									<!-- 설명란 start-->
-									<div class="fwo_info_box">
-										<h3 class="fwo_tit_box">
-											<c:out value='${result.lecnm }' escapeXml="false" />
-										</h3>
+								<c:if test="${empty item3.g3nm}">
+									${item3.g2nm}
+								</c:if>
+							</p>
 
-										<c:if test="${not empty result.lvnm}">
-											<c:choose>
-												<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
-													<span class="tag L1">${result.lvnm}</span>
-												</c:when>
-												<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
-													<span class="tag L2">${result.lvnm}</span>
-												</c:when>
-												<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
-													<span class="tag L3">${result.lvnm}</span>
-												</c:when>
-											</c:choose>
-										</c:if>
-
-										<p>
-											온라인교육ㆍ
-											<c:if test="${not empty result.g3nm}">
-												${result.g3nm}
-											</c:if>
-
-											<c:if test="${empty result.g3nm}">
-												${result.g2nm}
-											</c:if>
-										</p>
-
-										<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-									</div>
-									<!-- 설명란 start-->
-								</div>
-							</a>
+							<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
 						</div>
+						<!-- 설명란 start-->
 					</div>
-				</c:forEach>
-			</c:if>
-			<c:if test="${fn:length(resultList) < 1}">
-				<div style="text-align: center; vertical-align: middle">검색된 데이터가 없습니다.</div>
-			</c:if>
+				</a>
+			</div>
 		</div>
-
-	</div>
-	<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-	<div class="swiper_btn_box">
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-	</div>
-</div>
-
+	</c:forEach>
+</c:if>
 
 	<!-- paging111 -->
 	<%--<div class="paging">${pageNav}</div>--%>
