@@ -195,6 +195,118 @@
 			]]>
 	</select>
 
+	<!-- 골드 클래스 리스트 페이징 없음 -->
+	<select id="openLecture.selectMainGoldClassList2" parameterClass="zvl" resultClass="zvl">
+		<![CDATA[
+		/* openLecture.selectMainGoldClassList2 (열린강좌 목록 구하기) */
+		SELECT ROWNUM RNUM
+ 			 , ALL_LIST.*
+        FROM   (SELECT A.SEQ
+         			 , A.LECNM
+                     , REPLACE(A.VODIMG,'\','/') AS VODIMG
+				     , A.TUTORNM
+                   	 , A.TUTORCAREER
+                   	 , A.TUTORAUTHOR
+                   	 , A.LECTIME
+                   	 , A.CREATOR
+                   	 , A.INTRO
+                   	 , A.BANNERIMG
+                   	 , A.CONTENTS
+                   	 , A.WIDTH_S
+                   	 , A.HEIGHT_S
+                     , A.VIEWCNT
+                   	 , A.VODURL
+					 , A.GENRE
+					 , A.TUTORIMG
+					 , A.LECTURE_TYPE
+					 , A.LECTURE_CLS
+					 , A.VOD_PATH
+					 , NVL(A.NEW_YN, 'N') AS NEWYN
+					 , NVL(A.HIT_YN, 'N') AS HIT_YN
+					 , NVL(A.RECOM_YN, 'N') AS RECOM_YN
+					 , COUNT(A.SEQ) OVER( PARTITION BY B.GRCODE ) AS TOT_CNT
+					 , C.GUBUN_1 G1CD
+					 , C.GUBUN_2 G2CD
+					 , (SELECT Z.CODENM
+					    FROM   TZ_CODE Z
+					    WHERE  Z.GUBUN  = '0110'
+					    AND    Z.LEVELS = 2
+					    AND    Z.CODE   = C.GUBUN_2) AS G2NM
+					 , C.GUBUN_3 G3CD
+					 , (SELECT Z.CODENM
+						FROM   TZ_CODE Z
+						WHERE  Z.GUBUN  = '0110'
+						AND    Z.LEVELS = 3
+						AND    Z.CODE   = C.GUBUN_3) AS G3NM
+					 , (SELECT X.LVCODE
+						FROM   TZ_GOLDHOMEGUBUN_LEVEL X
+						WHERE  X.SEQ = A.SEQ) AS LVCD
+					 , (SELECT Z.CODENM
+					    FROM   TZ_CODE Z
+					    WHERE  Z.GUBUN  = '0121'
+					    AND    Z.LEVELS = 2
+						AND    Z.CODE   = (SELECT X.LVCODE
+							       	       FROM   TZ_GOLDHOMEGUBUN_LEVEL X
+							       		   WHERE  X.SEQ = A.SEQ)) AS LVNM
+                FROM   TZ_GOLDCLASS A
+                    ,  TZ_GOLDCLASS_GRMNG B
+                	,  TZ_GOLDHOMEGUBUN C
+				WHERE  A.USEYN    = 'Y'
+			    AND    B.GRCODE   = #temGrcode# /* getSession = tem_grcode */
+			    AND    A.SEQ 	  = B.SEQ(+)
+			    AND    A.SEQ 	  = C.SEQ(+)
+			    AND    C.GUBUN(+) = 'GC'
+			]]>
+
+			<isNotEmpty prepend="AND" property="pLectureCls">
+				C.GUBUN_1 = #pLectureCls#
+			</isNotEmpty>
+
+			<isEmpty prepend="AND" property="pLectureCls">
+				A.LECTURE_CLS != 'GC99'
+			</isEmpty>
+
+			<isNotEmpty prepend="AND" property="p_type">
+				C.GUBUN_1 = #p_type#
+			</isNotEmpty>
+
+			<isNotEmpty prepend="AND" property="p_gcd1">
+				C.GUBUN_2 = #p_gcd1#
+			</isNotEmpty>
+
+			<isNotEmpty prepend="AND" property="p_gcd2">
+				C.GUBUN_3 = #p_gcd2#
+			</isNotEmpty>
+
+			<isNotEmpty prepend="AND" property="p_level">
+				A.SEQ IN (SELECT DISTINCT SEQ FROM TZ_GOLDHOMEGUBUN_LEVEL WHERE LVCODE = #p_level#)
+			</isNotEmpty>
+
+			<include refid="openLecture.selectMainGoldClassList-where" />
+
+			<isEmpty property="p_sort">
+				ORDER BY G2CD, DECODE(NEWYN, 'Y', 1, 2) ASC, A.SEQ DESC, A.LDATE DESC, A.LECNM
+			    ) ALL_LIST
+			</isEmpty>
+
+			<isNotEmpty property="p_sort">
+				<isEqual property="p_sort" compareValue="N">
+					ORDER BY G2CD, DECODE(NEWYN, 'Y', 1, 2) ASC, A.SEQ DESC, A.LDATE DESC, A.LECNM
+					) ALL_LIST
+				</isEqual>
+
+				<isEqual property="p_sort" compareValue="O">
+					ORDER BY G2CD, A.SEQ, DECODE(NEWYN, 'Y', 1, 2) ASC, A.LDATE DESC, A.LECNM
+					) ALL_LIST
+				</isEqual>
+
+				<isEqual property="p_sort" compareValue="V">
+					ORDER BY G2CD, A.VIEWCNT DESC, DECODE(NEWYN, 'Y', 1, 2) ASC, A.SEQ DESC, A.LDATE DESC, A.LECNM
+					) ALL_LIST
+				</isEqual>
+			</isNotEmpty>
+	</select>
+
 	<select id="openLecture.selectMainGoldClassListCnt" parameterClass="zvl" resultClass="int">
 		<![CDATA[
 		SELECT COUNT(*)

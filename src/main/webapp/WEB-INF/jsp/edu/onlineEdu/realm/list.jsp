@@ -47,15 +47,14 @@
 <div class="sub_title s_tit02">
     <c:forEach items="${realmTabList}" var="item" varStatus="status">
         <c:if test="${item.code eq param.pGubun1}">
-            <div class="col-center mw-1280">카테고리 - ${item.codenm}</div>
+            <div class="col-center mw-1280">정규과정 - ${item.codenm}</div>
         </c:if>
     </c:forEach>
 </div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
-    <li class="after_line active"><a
-            href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027">정규과정</a></li>
-    <li><a href="/edu/onlineEdu/openLecture/list.do?sortOrder=newOrdr&amp;menuNo=500085">열린강좌</a></li>
+    <li class="after_line active"><a href="javascript:void(0);">정규과정</a></li>
+    <li><a href="javascript:void(0);" onclick="fnCmdGoldSearchList('${param.pGubun1}')">열린강좌</a></li>
 </ul>
 
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20">
@@ -130,6 +129,7 @@
                     <input type="hidden" name="p_gcd2" id="p_gcd2" value="${param.p_gcd2}"/>
                     <input type="hidden" name="p_level" id="p_level" value="${param.p_level}"/>
                     <input type="hidden" name="p_sort" id="p_sort" value="${param.p_sort}"/>
+                    <input type="hidden" name="menuNo" id="menuNo" value=""/>
 
                     <!-- paging s -->
                     <input type="hidden" name="gubun" id="gubun" value="<c:out value='${param.gubun }' />"/>
@@ -169,7 +169,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <div class="bg_gray_slide_box">
@@ -229,7 +228,6 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
-
     </div>
     <!-- 추천 클래스 end -->
 
@@ -310,21 +308,21 @@
     <c:forEach items="${resultList }" var="item3" varStatus="status3">
         <c:if test="${status3.first eq false}">
             <c:if test="${mainTitle ne item3.g2nm}">
-                </div>
+                    </div>
                 </div>
                 <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-                <div class="swiper_btn_box">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                    <div class="swiper_btn_box">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
                 </div>
             </c:if>
         </c:if>
         <c:if test="${mainTitle ne item3.g2nm}">
             <div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
-            <span class="main_title">${item3.g2nm}</span>
-            <div class="fwo_card swiper-container">
-            <div class="swiper-wrapper">
+                <span class="main_title">${item3.g2nm}</span>
+                <div class="fwo_card swiper-container">
+                    <div class="swiper-wrapper">
             <c:set var="mainTitle" value="${item3.g2nm}"/>
         </c:if>
         <div class="swiper-slide">
@@ -386,7 +384,7 @@
                         </c:if>
                     </c:if>
                 </c:if>
-                        ${item3.subjnm }
+                ${item3.subjnm }
                 </a>
             </div>
         </div>
@@ -396,7 +394,6 @@
 <%--<c:if test="${fn:length(resultList) > 0}">
     <div class="paging">${pageNav}</div>
 </c:if>--%>
-
 
 <script type="text/javascript">
     //<![CDATA[
@@ -595,6 +592,28 @@
             action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
             method: "post",
             target: "_self"
+        });
+        $("#frm").submit();
+    }
+
+    function fnCmdGoldSearchList(gubun){
+        if(gubun){
+            $("#gubun").val(gubun == "ALL" ? "" : gubun);
+        }
+
+        $("#pageIndex").val("1");
+        $("#searchWrd").val("");
+        $("#p_type").val("");
+        $("#p_gcd1").val("");
+        $("#p_gcd2").val("");
+        $("#p_level").val("");
+        $("#p_sort").val("N");
+        $("#menuNo").val("500085");
+
+        $("#frm").attr({
+            action:"/edu/onlineEdu/openLecture/list.do",
+            method:"post",
+            target:"_self"
         });
         $("#frm").submit();
     }
