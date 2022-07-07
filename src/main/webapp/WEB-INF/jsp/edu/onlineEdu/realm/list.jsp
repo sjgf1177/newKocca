@@ -53,8 +53,7 @@
 </div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
-    <li class="after_line active"><a
-            href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027">정규과정</a></li>
+    <li class="after_line active"><a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027">정규과정</a></li>
     <li><a href="/edu/onlineEdu/openLecture/list.do?sortOrder=newOrdr&amp;menuNo=500085">열린강좌</a></li>
 </ul>
 
