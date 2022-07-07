@@ -92,12 +92,12 @@ $(function(){
 		$('.gnb_close').attr({"alt":"통합검색 닫기"});
 	});
 
-	$(".gnb_close").on("click", function(){
+	$(".navbar .gnb_close").on("click", function(){
 		if($("#all_search_label").hasClass("active")){
 			$("#all_search_label").removeClass("active");
 			$(".navbar-nav").css({"display":"flex"});
 			$(".gnb_menu").css({"display":"inline-block"});
-			$(".gnb_close").css({"display":"none"});
+			$(".navbar .gnb_close").css({"display":"none"});
 			$('.gnb_close').attr({"alt":"GNB 메뉴 닫기"});
 			$('.op_bg_box').removeClass("active");
 			$('body').css({"overflow":"auto"});
@@ -105,7 +105,7 @@ $(function(){
 			$("#main_nav_full").removeClass("gnbActive");
 			$("header").css({"background":""});
 			$(".gnb_menu").css({"display":"inline-block"});
-			$(".gnb_close").css({"display":"none"});
+			$(".navbar .gnb_close").css({"display":"none"});
 			$('.op_bg_box').removeClass("active");
 			$('body').css({"overflow":"auto"});
 		}

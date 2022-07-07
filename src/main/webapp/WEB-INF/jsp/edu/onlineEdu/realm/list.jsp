@@ -53,8 +53,7 @@
 </div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
-    <li class="after_line active"><a
-            href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027">정규과정</a></li>
+    <li class="after_line active"><a href="/edu/onlineEdu/realm/list.do?p_ordersnm=ldate&amp;p_orders=desc&amp;menuNo=500027">정규과정</a></li>
     <li><a href="/edu/onlineEdu/openLecture/list.do?sortOrder=newOrdr&amp;menuNo=500085">열린강좌</a></li>
 </ul>
 
@@ -174,7 +173,7 @@
 </div>
 
 <div class="bg_gray_slide_box">
-    <!-- 창작자를 위한 추천과정 start -->
+    <!-- 추천 클래스 start -->
     <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
         <span class="main_title">추천 클래스</span>
         <div class="fwo_card swiper-container">
@@ -308,9 +307,9 @@
         </div>
 
     </div>
-    <!-- 창작자를 위한 추천과정 end -->
+    <!-- 추천 클래스 end -->
 
-    <!-- 나만 빼고 다 수강한 과정 start -->
+    <!-- 인기 클래스 start -->
     <div class="fwo_card_list_box fwo_card02 col-center mw-1280">
         <span class="main_title">인기 클래스</span>
         <div class="fwo_card swiper-container">
@@ -458,7 +457,7 @@
         </div>
 
     </div>
-    <!-- 나만 빼고 다 수강한 과정 end -->
+    <!-- 인기 클래스 end -->
 </div>
 
 <div class="mo-ta_lt mo-mb_20 show-tablecell fn vm board_title online_edu_board_title col-center mw-1280">
