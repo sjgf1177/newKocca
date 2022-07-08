@@ -452,130 +452,54 @@
 	</ul>
 </div>
 
-<!-- 연계과정 html -->
+<!-- 연계과정 html 현재 클릭시 페이지 이동이 안됨 -->
+<c:if test="${nextProposeSubjList ne null and nextProposeSubjList.size() > 0 }">
 <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
 	<span class="main_title">연계과정</span>
-	<div class="fwo_card swiper-container swiper-container-horizontal">
+	<div class="fwo_card swiper-container">
 		<ul class="swiper-wrapper">
-			<li class="swiper-slide swiper-slide-active" style="width: 305px; margin-right: 20px;">
-				<!-- 썸네일 start -->
-				<div class="fwo_snail_box">
-					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
+			<c:forEach items="${nextProposeSubjList }" var="item2" varStatus="status2">
+			<li class="swiper-slide">
 
-					<!-- 설명란 start-->
-					<div class="fwo_info_box">
-						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-						<span class="tag L1">초급</span>
-						<p>온라인교육ㆍ유통</p>
-						<a href="" class="go_page_a"></a>
-						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+					<!-- 썸네일 start -->
+					<div class="fwo_snail_box">
+						<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item2.type }', '${item2.courseId }', '${item2.courseName }', '${item2.isonoff }', '${item2.scupperclass }', '${item2.uclassnm }', '${item2.year }', '${item2.subjseq }'); return false;">
+							<img alt="<c:out value="${not empty item2.courseName ? item2.courseName : '다음강좌' }" />" src='<c:out value="${item2.imgfile }" />'  />
+						</a>
+						<!-- 설명란 start-->
+						<div class="fwo_info_box">
+							<h3 class="fwo_tit_box">
+								<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item2.type }', '${item2.courseId }', '${item2.courseName }', '${item2.isonoff }', '${item2.scupperclass }', '${item2.uclassnm }', '${item2.year }', '${item2.subjseq }'); return false;">${item2.courseName }</a>
+							</h3>
+							<c:if test="${not empty item2.lvnm}">
+								<c:choose>
+									<c:when test="${item2.lvcd eq 'L0101' or item2.lvcd eq 'L0201'}">
+										<span class="tag L1">${item2.lvnm}</span>
+									</c:when>
+									<c:when test="${item2.lvcd eq 'L0102' or item2.lvcd eq 'L0202'}">
+										<span class="tag L2">${item2.lvnm}</span>
+									</c:when>
+									<c:when test="${item2.lvcd eq 'L0103' or item2.lvcd eq 'L0203'}">
+										<span class="tag L3">${item2.lvnm}</span>
+									</c:when>
+								</c:choose>
+							</c:if>
+
+							<c:if test="${not empty item2.g3nm}">
+								<p>${item2.g3nm}</p>
+							</c:if>
+
+							<c:if test="${empty item2.g3nm}">
+								<p>${item2.g2nm}</p>
+							</c:if>
+						</div>
+						<!-- 설명란 start-->
+
 					</div>
-					<!-- 설명란 start-->
-
-				</div>
-				<!-- 썸네일 end -->
+					<!-- 썸네일 end -->
 
 			</li>
-
-			<li class="swiper-slide swiper-slide-next" style="width: 305px; margin-right: 20px;">
-				<!-- 썸네일 start -->
-				<div class="fwo_snail_box">
-					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-					<!-- 설명란 start-->
-					<div class="fwo_info_box">
-						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-						<span class="tag L1">초급</span>
-						<p>온라인교육ㆍ유통</p>
-						<a href="" class="go_page_a"></a>
-						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-					</div>
-					<!-- 설명란 start-->
-
-				</div>
-				<!-- 썸네일 end -->
-
-			</li>
-
-			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
-				<!-- 썸네일 start -->
-				<div class="fwo_snail_box">
-					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-					<!-- 설명란 start-->
-					<div class="fwo_info_box">
-						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-						<span class="tag L1">초급</span>
-						<p>온라인교육ㆍ유통</p>
-						<a href="" class="go_page_a"></a>
-						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-					</div>
-					<!-- 설명란 start-->
-
-				</div>
-				<!-- 썸네일 end -->
-
-			</li>
-
-			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
-				<!-- 썸네일 start -->
-				<div class="fwo_snail_box">
-					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-					<!-- 설명란 start-->
-					<div class="fwo_info_box">
-						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-						<span class="tag L1">초급</span>
-						<p>온라인교육ㆍ유통</p>
-						<a href="" class="go_page_a"></a>
-						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-					</div>
-					<!-- 설명란 start-->
-
-				</div>
-				<!-- 썸네일 end -->
-
-			</li>
-
-			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
-				<!-- 썸네일 start -->
-				<div class="fwo_snail_box">
-					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-					<!-- 설명란 start-->
-					<div class="fwo_info_box">
-						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-						<span class="tag L1">초급</span>
-						<p>온라인교육ㆍ유통</p>
-						<a href="" class="go_page_a"></a>
-						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-					</div>
-					<!-- 설명란 start-->
-
-				</div>
-				<!-- 썸네일 end -->
-
-			</li>
-
-			<li class="swiper-slide" style="width: 305px; margin-right: 20px;">
-				<!-- 썸네일 start -->
-				<div class="fwo_snail_box">
-					<a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳"></a>
-
-					<!-- 설명란 start-->
-					<div class="fwo_info_box">
-						<h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-						<span class="tag L1">초급</span>
-						<p>온라인교육ㆍ유통</p>
-						<a href="" class="go_page_a"></a>
-						<!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
-					</div>
-					<!-- 설명란 start-->
-
-				</div>
-				<!-- 썸네일 end -->
-
-			</li>
+			</c:forEach>
 		</ul>
 
 	</div>
@@ -586,9 +510,11 @@
 	</div>
 
 </div>
+</c:if>
+
 
 <!-- 이 부분이 viewEdu.jsp 제일 하단 부분에 들어가야 함 -->
-<c:if test="${nextProposeSubjList ne null and nextProposeSubjList.size() > 0 }">
+<%--<c:if test="${nextProposeSubjList ne null and nextProposeSubjList.size() > 0 }">
 	<!-- <h2>같은 분야 과정</h2>-->
 	<p class="col-12 online_edu_card_view_title">연계 과정</p>
 	<div class="photoGallery2 photoLine1" style="border-top:none; border-bottom:none; padding-top:0; padding-bottom:0;">
@@ -612,7 +538,7 @@
 									<span class="online_edu_card_icon">
 										<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일에서 재생가능" title="모바일에서 재생가능">
 									</span>
-									
+
 									<c:if test="${not empty item2.lvnm}">
 										<c:choose>
 											<c:when test="${item2.lvcd eq 'L0101' or item2.lvcd eq 'L0201'}">
@@ -623,19 +549,19 @@
 											</c:when>
 											<c:when test="${item2.lvcd eq 'L0103' or item2.lvcd eq 'L0203'}">
 												<span class="tag L3">${item2.lvnm}</span>
-											</c:when>								
+											</c:when>
 										</c:choose>
 									</c:if>
-							
+
 									<c:if test="${not empty item2.g3nm}">
 										<span class="gray_txt">${item2.g3nm}</span>
-									</c:if>		
-									
+									</c:if>
+
 									<c:if test="${empty item2.g3nm}">
 										<span class="gray_txt">${item2.g2nm}</span>
-									</c:if>																		
+									</c:if>
 								</div>
-								
+
 								<!-- pc. 모바일 체크 개발 필요 -->
 								<div class="online_edu_card_title">
 									<h4>${item2.courseName }</h4>
@@ -661,7 +587,7 @@
 			</div>
 		</button>
 	</div>
-	<%-- <div class="col-12 sub_board_body">
+	<div class="col-12 sub_board_body">
 		<table class="contents_insight_view">
 		<caption>같은 분야 과정 목록 번호,과정명,교육내용,비고로 구분되는 표</caption>
 			<colgroup>
@@ -693,13 +619,13 @@
 							<a href="javascript:void(0);" onclick="fnCmdViewPage('${item2.type }', '${item2.courseId }', '${item2.courseName }', '${item2.isonoff }', '${item2.scupperclass }', '${item2.uclassnm }', '${item2.scyear }', '${item2.subjseq }'); return false;"  class="btn btn-xs"><span class="ico icoParts"></span>과정보기</a>
 						</td>
 					</tr>
-				
+
 				</c:forEach>
 				<!-- 연관과정 목록 e -->
 			</tbody>
 		</table>
-	</div> --%>
-</c:if>
+	</div>
+</c:if>--%>
 
 
 <script type="text/javascript">

@@ -20,12 +20,12 @@
 	<div class="col-center mw-1280">나의 문의내역</div>
 </div>
 
-<div class="col-center mw-1280 roadmap_box">
+<div class="col-center mw-1280 roadmap_box Listmy">
 	<div class="col-12 show-table sub_board_header control_board_header">
-		<div class="col-4 show-tablecell fn vm board_title">
+		<div class="show-tablecell fn vm board_title">
 			<h4>총 <span class="board_count"><c:out value="${resultCnt }" /></span>건의 검색 결과가 있습니다.</h4>
 		</div>
-		<div class="col-8 show-tablecell fn vm tr board_sorting_con">
+		<div class="how-tablecell fn vm tr board_sorting_con">
 			<form id="frm" name="frm" action ="/edu/bbs/${paramVO.bbsId}/listMy.do?menuNo=${paramVO.menuNo}" method="post" class="form-inline">
 				<fieldset>
 					<legend></legend>
@@ -52,7 +52,7 @@
 			</form>
 		</div>
 	</div>
-	<div class="col-12 col-center mw-1280 table-responsive">
+	<div class="col-12 table-responsive">
 		<table class="table table-styling pc_table table-hover txt_ct">
 			<caption>나의문의내역 목록</caption>
 			<colgroup>
@@ -94,6 +94,38 @@
 				<c:if test="${fn:length(resultList) == 0}"><tr><td colspan="5">데이터가 없습니다.</td></tr></c:if>
 			</tbody>
 		</table>
+
+		<!-- mobile table -->
+		<ul class="board_type_0 mo_table">
+			<c:forEach var="result" items="${resultList}" varStatus="status">
+			<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}&amp;myAt=Y&${pageQueryString}" />
+				<li class="table_list _notice">
+					<a href="<c:out value='${url}' escapeXml='false'/>" class="table_info_box">
+						<div class="left_box">
+							${(resultCnt) - (paramVO.pageSize * (paramVO.pageIndex-1))}
+						</div>
+						<div class="right_box">
+							<p class="mb20" style="color: #38b5ff;">
+								<c:choose>
+									<c:when test="${result.option2 eq '03'}">불편사항 접수</c:when>
+									<c:when test="${result.option2 eq '02'}">참여하기</c:when>
+									<c:when test="${result.option2 eq '01'}">건의하기</c:when>
+								</c:choose>
+							</p>
+							<p class="title">
+								<c:out value="${result.nttSj}"/>
+							</p>
+							<p class="date_view">
+								<span><c:out value="${result.frstRegisterPnttm}"/></span>
+								<span>진행상태 : <c:out value="${result.replyAt eq 'Y' ? '답변완료' : '대기'}"/></span>
+							</p>
+						</div>
+					</a>
+				</li>
+				<c:set var="resultCnt" value="${resultCnt-1}" />
+			</c:forEach>
+			<c:if test="${fn:length(resultList) == 0}"><tr><td colspan="4">데이터가 없습니다.</td></tr></c:if>
+		</ul>
 	</div>
 
 

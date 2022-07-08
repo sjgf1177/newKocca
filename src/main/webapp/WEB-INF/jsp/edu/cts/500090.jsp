@@ -61,7 +61,7 @@
             </div>
             <div class="step_style_1_text_box">
 
-                <div class="step_style_1_header">
+                <div class="step_style_1_header h130_pc">
                     상담전화
                 </div>
                 <div class="step_style_1_access_line"></div>
@@ -138,3 +138,13 @@
     </div>
 
 </div>
+
+<style>
+    .step_style_1_con .step_style_1_header.h130_pc{height: 130px;}
+    @media screen and (max-width: 1199px){
+        .step_style_1_con .step_style_1_header.h130_pc{height: 50px;}
+    }
+    @media screen and (max-width: 640px){
+        .step_style_1_con .step_style_1_header.h130_pc{height: 84px;}
+    }
+</style>
