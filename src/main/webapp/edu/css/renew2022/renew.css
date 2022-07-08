@@ -225,7 +225,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 .nav_my_box li:last-child, .nav_support_box li:last-child{border-bottom: none;}
 /*******************************************************  NAV 콘텐츠 커리큘럼 *******************************************************/
 #main_nav_full{display: none !important;}
-#main_nav_full.gnbActive{display: block !important; position: fixed; width: 100%; height:1080px; top: 0; left: 0;background-color: #222;}
+#main_nav_full.gnbActive{display: block !important; position: fixed; width: 100%; height:1080px; top: 0; left: 0;background-color: #222; overflow-y: auto;}
 #main_nav_full h3, #main_nav_full h2, #main_nav_full li button{color:#707070; font-weight: 500;}
 #main_nav_full li button{font-size: 18px; background-color: transparent;}
 #main_nav_full li button.active{color:#fff;}
@@ -238,7 +238,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 .cy_list_box li{margin-bottom: 15px;}
 
 .cy_list_box:nth-child(1), .cy_list_box:nth-child(2){padding-bottom: 35px;}
-.cy_list_box:nth-child(4), .cy_list_box:nth-child(5){padding:70px 0 35px; border-top: 1px solid #707070; border-bottom: 1px solid #707070;}
+.cy_list_box:nth-child(n+4){padding:70px 0 35px; border-top: 1px solid #707070; border-bottom: 1px solid #707070;}
 
 /* SUN NAV */
 .sub_layout_page header, #subContainer header{position:fixed; background: #222;}
@@ -249,14 +249,14 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 
 @media all and (max-width:1600px) {
     header nav, header .navbar{padding: 10px 0px;}
-    #main_nav_full.gnbActive{height: 100%; overflow-y: auto;}
+    #main_nav_full.gnbActive{height: 100%;}
     #main_nav_full h2{font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
     .cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 40px; justify-content: space-around;}
     #main_nav_full h3{width: 145px; margin-right: 80px;}
     .cy_list_box{width: 33%; display: flex; font-size: 18px;}
     .cy_list_box li{margin-bottom: 10px;}
     .cy_list_box:nth-child(1),.cy_list_box:nth-child(2){padding-bottom: 30px;}
-    .cy_list_box:nth-child(4),.cy_list_box:nth-child(5){padding:60px 0 30px; border-top: 1px solid #707070; border-bottom: 1px solid #707070;}
+    .cy_list_box:nth-child(n+4){padding:60px 0 30px; border-top: 1px solid #707070; border-bottom: 1px solid #707070;}
 }
 @media all and (max-width:1300px) {
     header nav, header .navbar{padding: 10px 20px;}
@@ -307,7 +307,7 @@ header nav.gnbActive{background: #222222;}
     #main_nav_full .gnb_close{top:22px; right: 25px;}
     .cy_contents_box{display:block; overflow-y: scroll; height: 500px; width: 100%; padding-top: 10px; padding-bottom: 50px; }
     .cy_list_box:nth-child(1), .cy_list_box:nth-child(2){border-bottom: 1px solid #707070;}
-    .cy_list_box, .cy_list_box:nth-child(4), .cy_list_box:nth-child(5){width: 100%; flex-direction: column; padding: 10px 0 30px 0;}
+    .cy_list_box, .cy_list_box:nth-child(n+4){width: 100%; flex-direction: column; padding: 10px 0 30px 0;}
     #main_nav_full h3{width:100%; margin-bottom: 30px; font-size: 21px;}
 
 }
@@ -786,6 +786,7 @@ table.board_type_0 tbody td{font-size: 1.8rem;}
 table.board_type_0.online_edu td{padding:15px 0;color:#222; border: none !important;}
 table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: none !important;}
 .board_util_btn_con .btn_style_0.end_online_edu_edu{font-size: 1.6rem; border: none; background-color: #3B85FF; color: #fff; padding: 7px 18px; border-radius: 32px;}
+.board_util_btn_con .btn_style_0.end_online_edu_edu.end_btn{border-color:#828282; background-color: #eeeeee;}
 .teach_table_box li{padding: 30px 50px; background-color: #f8f8f8; border:1px solid #dddddd; margin-bottom: 20px;}
 .teach_table_box li:last-child{margin-bottom: 0;}
 .teach_table_box table th div{width: 85px; height: 85px; background-color: antiquewhite; border-radius: 50%;}
@@ -941,6 +942,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .lecture_info_box .alert.big_box.type_1 .alert_title{font-size: 33px; color:#fff; line-height: 40px;}
 .roadmap_box .control_board_header .board_sorting_con fieldset{display: flex; justify-content: flex-end; padding-right: 10px;}
 
+
 @media all and (max-width:1199px) {
     .lectMovSet{flex-direction: column;}
     .video_box{margin-bottom: 20px;}
@@ -963,6 +965,9 @@ table.board_type_0.notice thead th{font-size: 15px;}
     .sub_theme_process .control_board_header{flex-direction: column;}
     .sub_theme_process .col-5, .sub_theme_process .col-7{max-width: 100%;}
     .sub_theme_process .board_sorting_con .input_search_con{width: 100%;}
+
+    .Listmy.roadmap_box .control_board_header .board_sorting_con fieldset{justify-content: flex-start; flex-wrap: wrap;}
+    .Listmy .board_sorting_con .input_search_con{width: 100%;}
 }
 
 
@@ -990,6 +995,9 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .step_style_1_con .step_style_1_header{color: #444444; font-size: 38px; line-height: 50px; padding-bottom: 50px; height: 162px;}
 .step_style_1_con .step_style_1_body{font-size: 20px; line-height: 2.8rem; padding: 0; border: none;}
 .step_style_1_con .step_style_1_box_con{margin-bottom: 25px;}
+
+
+
 
 @media all and (max-width:1199px) {
     .first_title{font-size:34px; margin-bottom: 70px;}
@@ -1037,6 +1045,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
 @media screen and (max-width: 640px){
     .facility_list .img_box.right{margin-top:30px; margin-bottom: 30px;}
+
 
 }
 

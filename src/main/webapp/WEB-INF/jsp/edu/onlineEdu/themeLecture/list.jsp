@@ -33,12 +33,12 @@
 
 <div class="col-center mw-1280 roadmap_box">
 	<div class="sub_theme_process">
-		<div class="col-12 show-table sub_board_header control_board_header">
-			<div class="col-5 show-tablecell fn vm board_title">
+		<div class="col-12 show-table sub_board_header control_board_header" style="justify-content: flex-end;">
+			<%--<div class="col-5 show-tablecell fn vm board_title">
 				<h4 class="theme_process_title">
 					총 <span class="board_count">${resultCnt}</span>개의 과정이 운영되고 있습니다.
 				</h4>
-			</div>
+			</div>--%>
 			<div class="col-7 show-tablecell fn vm tr board_sorting_con">
 				<form id="frm" name="frm" action="/edu/onlineEdu/themeLecture/list.do" method="post" class="form-inline col-12 show-tablecell fr tr">
 					<input type="hidden" name="pageQueryString" value='<c:out value="${pageQueryString }" escapeXml="false"/>' >
