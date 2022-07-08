@@ -12,6 +12,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib uri="http://www.unp.co.kr/util" prefix="util" %>
+<%@ page import="kr.co.unp.main.service.MainService" %>
+<%@ page import="kr.co.unp.util.ZValue" %>
 
 <c:set var='siteName' value='${paramVO.siteName}'/>
 <%
@@ -20,6 +22,30 @@
 
     String menuNo = request.getParameter("menuNo");
     String debug = request.getParameter("debug");
+
+    org.springframework.context.ApplicationContext context2 = org.springframework.web.context.support.WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+    MainService mainService = (MainService) context2.getBean("mainService");
+    ZValue zParam = new ZValue();
+System.out.println("======================111 eduMain");
+    if(user.getUserIdx() > 0) {
+        zParam.put("userid", user.getUserId());
+        zParam.put("grcode", "N000001");
+        zParam.put("type", "random");
+        List<ZValue> curriculumList = mainService.getCurriculumList(zParam);
+
+        // 랜덤 추천 정규과정 목록(20개)
+        List<ZValue> eduSubjList = mainService.getEduSubjList(zParam);
+
+        pageContext.setAttribute("curriculumList", curriculumList);
+        pageContext.setAttribute("eduSubjList", eduSubjList);
+    }else{
+        zParam.put("grcode", "N000001");
+        zParam.put("type", "new");
+
+        // 정규과정 신규 목록(20개)
+        List<ZValue> eduSubjList = mainService.getEduSubjList(zParam);
+        pageContext.setAttribute("eduSubjList", eduSubjList);
+    }
 
 //if( "1".equals(debug) ){
 
@@ -285,6 +311,27 @@
         $("#frm").submit();
     }
 
+    // 콘텐츠커리큘럼 저장
+    function fnSaveCurriculum(cd1, cd2, chk) {
+        $.ajax({
+            type : "post",
+            url:"/edu/onlineEdu/realm/regContentCurriculum.json",
+            data : {
+                cd1 : cd1,
+                cd2 : cd2,
+                chk : chk,
+                userId : '${userVO.userId}'
+            },
+            success:function(data){
+                if(data.result < 1){
+                    alert(data.system_msg);
+                }
+            },error:function(xhr,status,error){
+                alert('에러' + xhr.status);
+            }
+        });
+    }
+
     <!-- 챗봇 Js start -->
     var ht = new Happytalk({
         siteId: '5000100237',
@@ -517,6 +564,7 @@
                     </sec:authorize>
                 </div>
 
+                <c:if test="${fn:length(curriculumList) > 0}">
                 <!-- pc 햄버거 버튼 눌렀을때 start-->
                 <div class="collapse navbar-collapse" id="main_nav_full">
                     <div class="cy_navbar-nav">
@@ -527,7 +575,7 @@
                         <h2>콘텐츠커리큘럼</h2>
                         <div class="cy_contents_box">
                             <c:set var="contentType" value=""/>
-                            <c:forEach items="${contentCurriculumList }" var="result" varStatus="status">
+                            <c:forEach items="${curriculumList }" var="result" varStatus="status">
                                 <c:if test="${status.first eq false}">
                                     <c:if test="${contentType ne result.cd1}">
                                             </ul>
@@ -540,12 +588,15 @@
                                             <ul>
                                     <c:set var="contentType" value="${result.cd1}"/>
                                 </c:if>
-                                <li><button type="button">${result.cdnm2}</button></li>
+                                <li>
+                                    <button type="button" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
+                                </li>
                             </c:forEach>
                         </div>
                     </div>
                 </div>
                 <!-- pc 햄버거 버튼 눌렀을때 end -->
+                </c:if>
             </nav>
         </div>
     </header>
@@ -638,7 +689,7 @@
                     <span class="main_title">추천 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
-                            <c:forEach items="${eduSubjNewList }" var="result">
+                            <c:forEach items="${eduSubjList }" var="result">
                                 <li class="swiper-slide">
                                     <!-- 썸네일 start -->
                                     <div class="fwo_snail_box">

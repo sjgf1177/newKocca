@@ -27,7 +27,6 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.ui.ModelMap;
 
-
 public class RealmService extends DefaultCmmProgramService {
 	Logger log = Logger.getLogger(this.getClass());
 
@@ -36,7 +35,6 @@ public class RealmService extends DefaultCmmProgramService {
 
 	public RealmService() {
 		super();
-
 	}
 	
 	public static int STEP = 1;
@@ -46,7 +44,6 @@ public class RealmService extends DefaultCmmProgramService {
 	public static int ETC = 16;
 	public static int ALL = 32;
 	public static int EXC = 77;
-	
 
 	/**
 	 * 분야별 목록
@@ -105,9 +102,15 @@ public class RealmService extends DefaultCmmProgramService {
 
 		initCmmnParam(param);
 
-		// 정규과정 신규 목록(20개)
-		List<ZValue> eduSubjNewList = lmsSqlDao.listDAO("realmListDAO.eduSubjNewList", param);
-		model.addAttribute("eduSubjNewList", eduSubjNewList);
+		List<ZValue> eduSubjList = null;
+		if(user.getUserIdx() > 0) {
+			// 추천 정규과정 랜덤 조회(20개)
+			eduSubjList = lmsSqlDao.listDAO("realmListDAO.eduSubjRandomList", param);
+		}else{
+			// 정규과정 신규 목록(20개)
+			eduSubjList = lmsSqlDao.listDAO("realmListDAO.eduSubjNewList", param);
+		}
+		model.addAttribute("eduSubjList", eduSubjList);
 
 		// 정규과정 인기 목록(20개)
 		List<ZValue> eduSubjPopularList = lmsSqlDao.listDAO("realmListDAO.eduSubjPopularList", param);
@@ -154,9 +157,7 @@ public class RealmService extends DefaultCmmProgramService {
 		paramCtx.setSqlDAO(lmsSqlDao);
 		paramCtx.setPageQuery(new RealmPageInfo());
 		super.list(paramCtx);
-		
 	}
-	
 	
 	/**
 	 * 분류별 탭 목록(통합검색시 사용)
@@ -170,8 +171,6 @@ public class RealmService extends DefaultCmmProgramService {
 		List<ZValue> realmTabList = lmsSqlDao.listDAO("realmListDAO.realmTabList", param);
 		model.addAttribute("tabList", realmTabList);
 	}
-	
-	
 	
 	/**
 	 * 과정 상세 화면
@@ -190,8 +189,7 @@ public class RealmService extends DefaultCmmProgramService {
 		String v_year = "";
 		String v_subjseq = "";
 		String v_event = "N";
-		
-		
+
 		v_year = param.getString("p_year");
 		v_subjseq = param.getString("p_subjseq");
 		v_event = param.getString("event");
@@ -226,8 +224,7 @@ public class RealmService extends DefaultCmmProgramService {
 		//차시 목록
 		List<ZValue> lessonList = lmsSqlDao.listDAO("realmListDAO.lessonList", param);
 		model.addAttribute("lessonList",lessonList);
-		
-		
+
 		ZValue tutorInfo = null;
 		String subjMuserid = "";
 		subjMuserid = view.getString("tutorid");
@@ -273,11 +270,8 @@ public class RealmService extends DefaultCmmProgramService {
 		//교육체계도 연결 과정 목록
 		List<ZValue> eduSystmList = lmsSqlDao.listDAO("edcSystmDAO.eduSystmList", param);
 		model.addAttribute("eduSystmList",eduSystmList);
-		
-		
 	}
-	
-	
+
 	//연관과정 중복 문자열 제거
 	public String removeDuplicateStringToken(String str, String token) throws Exception {
 		String v_str = "";
@@ -303,8 +297,7 @@ public class RealmService extends DefaultCmmProgramService {
 		
 		return v_str;
 	}
-	
-	
+
 	/**
 	 * 학습 진행화면
 	 * @param paramCtx
@@ -406,8 +399,7 @@ public class RealmService extends DefaultCmmProgramService {
 					isOk = 1;
 					log.info("수강신청 완료!!!!");
 				}
-				
-				
+
 				log.info("isOk ==> "+isOk);
 				if(isOk > 0){
 					
@@ -455,15 +447,12 @@ public class RealmService extends DefaultCmmProgramService {
 							
 						}*/	//sms_result db insert
 					}else{
-						
 						log.info("["+loginUserId+"] 회원정보를 알 수 없어 SMS 발송이 실패했습니다!");
-						
 					}
 					
 				}	//isOk 수강신청 
 				
 			}	//subjdupl 학습중인지 체크 e
-			
 			
 			log.info("학습창 파라미터 넘기기 시작!!!!!!!!!!!!!!!!!!!!");
 			//암호화
@@ -559,7 +548,6 @@ public class RealmService extends DefaultCmmProgramService {
 			
 			model.addAttribute("eduLessonList",eduLessonList);
 			
-			
 			//나의 진도 정보
 			ZValue myProgress = null;
 			float percent = (float) 0.0;
@@ -578,16 +566,11 @@ public class RealmService extends DefaultCmmProgramService {
 			model.addAttribute("p_subj", param.getString("s_subj"));
 		//member 테이블에 존재하는 아이디가 아닌 경우
 		}else{
-			
 			resultMsg = "유효하지 않는 계정이므로 학습할 수 없습니다!";
 			WebFactory.printHtml(response, resultMsg, "javascript:history.back();");
-			
 		}
-		
 	}
-	
-	
-		
+
 	/**
 	 * 개인정보 저장(공통)
 	 * @param paramCtx
@@ -622,10 +605,8 @@ public class RealmService extends DefaultCmmProgramService {
 		p_militarymemo = param.getString("p_militarymemo");
 		p_militarystart = param.getString("p_militarystart");
 		p_militaryend = param.getString("p_militaryend");
-		
-		
+
 		try {
-			
 			log.info("학습 시작 전 개인정보 저장(공통) s");
 			
 			param.put("p_comptext", p_comptext);
@@ -637,7 +618,6 @@ public class RealmService extends DefaultCmmProgramService {
 			//1.회사명 갱신
 			lmsSqlDao.updateDAO("myLctrumDAO.memberInfoUpdate", param);
 			log.info("1.회사명 갱신 완료!");
-
 			
 			param.put("p_militarystatus", p_militarystatus);
 			param.put("p_militarymemo", p_militarymemo);
@@ -652,7 +632,6 @@ public class RealmService extends DefaultCmmProgramService {
 			//2.2병역정보 신규 등록
 			lmsSqlDao.insertDAO("myLctrumDAO.militaryInsert", param);
 			log.info("2.2병역정보 신규 등록 완료!");
-			
 
 			log.info("3.과정 신청 추가 정보 삭제 s: [subj: "+v_subj.length()+"]");
 			//3.과정 신청 추가 정보 삭제
@@ -670,9 +649,7 @@ public class RealmService extends DefaultCmmProgramService {
 				}
 			}
 			log.info("3.과정 신청 추가 정보 삭제 e");
-			
-			
-			
+
 			//4.과정 신청 추가 정보 등록
 			if(onOff == 1){
 				
@@ -684,7 +661,6 @@ public class RealmService extends DefaultCmmProgramService {
 				//4.1오프라인과정 신청 추가 정보 입력
 				lmsSqlDao.insertDAO("myLctrumDAO.offProposeInfoInsert", param);
 				log.info("4.2오프라인과정 신청 추가 정보 입력 완료");
-				
 			}
 			
 			result = 1;
@@ -692,11 +668,9 @@ public class RealmService extends DefaultCmmProgramService {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		
+
 		return result;
 	}
-	
 	
 	/**
 	 * 개인정보 저장(공통)
@@ -709,24 +683,20 @@ public class RealmService extends DefaultCmmProgramService {
 		int result = 0;
 		
 		String p_militaryend = param.getString("p_militaryend");
-		
-		
+
 		try {
-			
 			log.info("현재 학습 중인지 체크");
 			
 			//1.회사명 갱신
 			lmsSqlDao.updateDAO("myLctrumDAO.memberInfoUpdate", param);
 			param.put("p_militaryend", p_militaryend);
-			
-			
+
 			result = 1;
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		
+
 		return result;
 	}
 	
@@ -741,24 +711,20 @@ public class RealmService extends DefaultCmmProgramService {
 		int result = 0;
 		
 		String p_militaryend = param.getString("p_militaryend");
-		
-		
+
 		try {
-			
 			log.info("학습 시작 전 개인정보 저장(공통) s");
 			
 			//1.회사명 갱신
 			lmsSqlDao.updateDAO("myLctrumDAO.memberInfoUpdate", param);
 			param.put("p_militaryend", p_militaryend);
-			
-			
+
 			result = 1;
 			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		
+
 		return result;
 	}
 	
@@ -791,9 +757,6 @@ public class RealmService extends DefaultCmmProgramService {
 		
 		return result;
 	}
-	
-	
-	
 	
 	/**
 	 * 과정별 자료실 목록
@@ -847,8 +810,7 @@ public class RealmService extends DefaultCmmProgramService {
 					sdTabseq = 0;
 				}
 			}
-			
-			
+
 			if(sdTabseq == 0){
 				system_msg = "잘못된 자료실입니다!";
 				log.info(system_msg);
@@ -856,8 +818,7 @@ public class RealmService extends DefaultCmmProgramService {
 				param.put("pTabseq", String.valueOf(sdTabseq));
 				log.info("tabseq를 정상적으로 가져왔습니다! ==> "+sdTabseq);
 			}
-			
-			
+
 			param.put("pSearchtext", param.getString("pSearchtext").trim());
 			
 			super.setCountQueryId("realmListDAO.listDataCnt");
@@ -866,12 +827,9 @@ public class RealmService extends DefaultCmmProgramService {
 			paramCtx.setSqlDAO(lmsSqlDao);
 			paramCtx.setPageQuery(new RealmPageInfo());
 			super.list(paramCtx);
-			
 		}
-		
 	}
-	
-	
+
 	/**
 	 * 과정별 자료실 상세화면
 	 * @param paramCtx
@@ -891,21 +849,14 @@ public class RealmService extends DefaultCmmProgramService {
 		ZValue viewData = lmsSqlDao.selectDAO("realmListDAO.viewData", param);
 		model.addAttribute("viewData", viewData);
 		
-		
 		//과정자료실 파일 목록
 		List<ZValue> listFileData = lmsSqlDao.listDAO("realmListDAO.listFileData", param);
 		model.addAttribute("listFileData",listFileData);
 		
-		
 		//조회수 증가
 		lmsSqlDao.updateDAO("realmListDAO.dataBoardUpdate", param);
-		
-		
 	}
-	
-	
-	
-	
+
 	/**
 	 * 자료실 진입 로그 작성
 	 * @param paramCtx
@@ -942,7 +893,6 @@ public class RealmService extends DefaultCmmProgramService {
 					//과정자료실 로그가 등록 되지 않았을 경우 로그 기록 등록
 					lmsSqlDao.insertDAO("realmListDAO.dataMenuInsert", param);
 					log.info("과정자료실 로그가 등록 되지 않았을 경우 로그 기록 등록");
-					
 				}
 				
 			}
@@ -955,40 +905,11 @@ public class RealmService extends DefaultCmmProgramService {
 		return result;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/**
 	 * 점수 계산
 	 * @param paramCtx
-	 * @param p_gubun
-	 * @param p_subj
-	 * @param p_year
-	 * @param p_subjseq
-	 * @param p_userid
+	 * @param paramCtx
+	 * @param s_gubun
 	 * @return
 	 * @throws Exception
 	 */
@@ -998,7 +919,6 @@ public class RealmService extends DefaultCmmProgramService {
 		int result = 0;
 		String v_contenttype = "";
 		String v_calcContenttype = "";
-		
 		
 		ZValue subjseqData = null;
 		ZValue getContenttype = null;
@@ -1019,9 +939,7 @@ public class RealmService extends DefaultCmmProgramService {
 		v_year = param.getString("s_year");
 		v_subjseq = param.getString("s_subjseq");
 		v_userid = param.getString("s_userid");
-		
-		
-		
+
 		int v_datecnt = 0;
 		int v_edudatecnt = 0;
 		
@@ -1030,8 +948,7 @@ public class RealmService extends DefaultCmmProgramService {
 		double avtstep = 0;
 		
 		wstep = param.getDouble("wstep");
-		
-		
+
 		try {
 			
 			//세션변수에서 사용자 아이디를 가져옴
@@ -1039,8 +956,7 @@ public class RealmService extends DefaultCmmProgramService {
 			
 			//수료처리 완료여부, 학습중 검토
 			subjseqData = lmsSqlDao.selectDAO("myLctrumDAO.subjseqData", param);
-			
-			
+
 			if("2000".equals(v_year)){
 				log.info("v_year: ["+v_year+"]");
 				return 3;
@@ -1054,8 +970,7 @@ public class RealmService extends DefaultCmmProgramService {
 			//컨텐츠 유형 가져오기
 			getContenttype = lmsSqlDao.selectDAO("myLctrumDAO.getContenttype", param);
 			v_contenttype = getContenttype.getString("contenttype");
-			
-			
+
 			getTargetGrcode = lmsSqlDao.selectDAO("myLctrumDAO.getTargetGrcode", param);
 			param.put("s_grcode", getTargetGrcode.getString("grcode"));
 			
@@ -1064,8 +979,7 @@ public class RealmService extends DefaultCmmProgramService {
 			
 			if(getFinishTargetStudent != null && getFinishTargetStudent.size() > 0){
 				for(ZValue data :getFinishTargetStudent) {
-					
-					
+
 					param.put("wstep", subjseqData.getDouble("wstep"));
 					param.put("wmtest", subjseqData.getDouble("wmtest"));
 					param.put("whtest", subjseqData.getDouble("whtest"));
@@ -1082,8 +996,7 @@ public class RealmService extends DefaultCmmProgramService {
 					param.put("gradreport", subjseqData.getInt("gradreport"));
 					param.put("gradftest", subjseqData.getInt("gradftest"));
 					param.put("gradhtest", subjseqData.getInt("gradhtest"));
-					
-					
+
 					if(STEP == s_gubun){
 						if("S".equals(v_contenttype) || "O".equals(v_contenttype) || "N".equals(v_contenttype) || "M".equals(v_contenttype)){
 							
@@ -1094,8 +1007,7 @@ public class RealmService extends DefaultCmmProgramService {
 							param.put("calcContenttype", v_calcContenttype);
 							getCalcStepDcnt = lmsSqlDao.selectDAO("myLctrumDAO.getCalcStepDcnt", param);
 							getCalcStepEduDcnt = lmsSqlDao.selectDAO("myLctrumDAO.getCalcStepEduDcnt", param);
-								
-							
+
 							v_datecnt = getCalcStepDcnt.getInt("datecnt");
 							v_edudatecnt = getCalcStepEduDcnt.getInt("edudatecnt");
 							
@@ -1119,33 +1031,18 @@ public class RealmService extends DefaultCmmProgramService {
 							if(avtstep > wstep){
 								avtstep = wstep;
 							}
-							
-							
+
 							param.put("wstep", wstep);
 							param.put("avtstep", avtstep);
 							param.put("tstep", tstep);
-							
-							
 						}
-						
 					}
 				}
 			}
-			
-			
-			
-			
-			
-			
-			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
-		
-		
-		
-		
+
 		return result;
 	}
 	
@@ -1167,31 +1064,51 @@ public class RealmService extends DefaultCmmProgramService {
 				model.addAttribute("levelList", levelList);
 			}
 		}
-		
-	}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}
+
+	/**
+	 * 콘텐츠커리큘럼 저장/삭제
+	 */
+	public void regContentCurriculum(ParameterContext<ZValue> paramCtx) throws Exception {
+		ZValue param = paramCtx.getParam();
+		ModelMap model = paramCtx.getModel();
+		initCmmnParam(param);
+
+		int result = 0;
+		String system_msg = "";
+
+		String userId = param.getString("userId");
+		String cd1 = param.getString("cd1");
+		String cd2 = param.getString("cd2");
+		String chk = param.getString("chk");
+
+		param.put("userid", userId);
+		param.put("cd1", cd1);
+		param.put("cd2", cd2);
+		param.put("chk", chk);
+
+		if("".equals(userId)){
+			system_msg = "사용자 정보를 확인할 수 없습니다.\\n다시 로그인 하신 후 시도해주세요!";
+			result = -1;
+
+			return;
+		}else{
+			// 콘텐츠커리큘럼 선택 취소
+			if("Y".equals(chk)){
+				lmsSqlDao.deleteDAO("realmListDAO.contentCurriculumDelete", param);
+				system_msg = "콘텐츠커리큘럼 선택 취소";
+				result = 1;
+
+			// 콘텐츠커리큘럼 체크
+			}else if("N".equals(chk)){
+				lmsSqlDao.insertDAO("realmListDAO.contentCurriculumInsert", param);
+				system_msg = "콘텐츠커리큘럼 선택 등록";
+				result = 1;
+			}
+		}
+
+		model.addAttribute("system_msg", system_msg);
+		model.addAttribute("result", result);
+	}
 
 }

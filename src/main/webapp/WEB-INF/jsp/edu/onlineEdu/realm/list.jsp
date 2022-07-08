@@ -177,7 +177,7 @@
         <span class="main_title">추천 클래스</span>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">
-                <c:forEach  items="${eduSubjNewList }" var="result" >
+                <c:forEach  items="${eduSubjList }" var="result" >
                     <li class="swiper-slide">
                         <!-- 썸네일 start -->
                         <div class="fwo_snail_box">

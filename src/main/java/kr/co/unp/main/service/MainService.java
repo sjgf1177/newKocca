@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
+import kr.co.unp.cmm.sec.ram.service.impl.UnpUserDetailsHelper;
 import org.apache.log4j.Logger;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.Assert;
@@ -58,10 +59,8 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 				int num = 5; // 게시물 갯수
 				List<ZValue> boardList = getBbs(bbsId, num);
 				model.addAttribute(bbsId + "List", boardList);
-				
 			}
-		}else{	
-			
+		}else{
 			for (String bbsId : MAIN_BBS_ID) { // 공통게시판
 				int num = 9; // 게시물 갯수
 				if ("B0000011".equals(bbsId) ){ //rsg20171212
@@ -75,7 +74,6 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 				
 				List<ZValue> boardList = getBbs(bbsId, num);
 				model.addAttribute(bbsId + "List", boardList);
-				
 			}
 		}
 
@@ -83,7 +81,6 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			param.put("siteId", SiteMngService.CKL_SITE_ID); // 팝업존 siteId
 		}
 		else if (SiteMngService.EDU_SITE_NAME.equals(param.getString("siteName"))) {
-
 			// 창의동반 플랫폼 기관 목록
 			log.debug("// 창의동반 플랫폼 기관 목록");
 			List<ZValue> psitnCodeList = sqlDao.listDAO("mentorManageDAO.psitnCodeList", param);
@@ -129,21 +126,11 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			List<ZValue> eduSuportList = sqlDao.listDAO("optionalBoardDAO.selectEduSuportList", param);
 			model.addAttribute("eduSuportList", eduSuportList);
 
-			// 정규과정 신규 목록(20개)
-			log.debug("// 정규과정 신규 목록");
-			List<ZValue> eduSubjNewList = lmsSqlDao.listDAO("realmListDAO.eduSubjNewList", param);
-			model.addAttribute("eduSubjNewList", eduSubjNewList);
-
 			// 인기 열린강좌 목록(20개)
 			log.debug("// 인기 열린강좌 목록");
 			List<ZValue> popularityList = lmsSqlDao.listDAO("openLecture.selectPopularityList", param);
 			model.addAttribute("popularityList", popularityList);
 
-			// 콘텐츠커리큘럼 목록
-			log.debug("// 콘텐츠커리큘럼 목록");
-			List<ZValue> contentCurriculumList = lmsSqlDao.listDAO("realmListDAO.contentCurriculumList", param);
-			model.addAttribute("contentCurriculumList", contentCurriculumList);
-			
 			param.put("siteId", SiteMngService.EDU_SITE_ID); // 팝업존 siteId
 		}
 		else if (SiteMngService.EDUMOBILE_SITE_NAME.equals(param.getString("siteName"))) {
@@ -267,7 +254,6 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		MVUtils.goUrl("javascript:history.back();", "성공적으로 캐시 삭제되었습니다.", paramCtx.getModel());
 	}
 
-
 	public void cklRight(ParameterContext<ZValue> paramCtx) throws Exception {
 		ZValue param = paramCtx.getParam();
 		ModelMap model = paramCtx.getModel();
@@ -304,8 +290,6 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 
 		return boardList;
 	}
-	
-	
 
 	private List<ZValue> getList(ZValue param) throws Exception {
 		String id = param.getString("id");
@@ -322,9 +306,7 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		UnpCollectionUtils.setFirstFile(list, fileMap, "atchFileId");
 		return list;
 	}
-	
-	
-	
+
 	private List<ZValue> getCareerList(ZValue param) throws Exception {
 		List<ZValue> list = new ArrayList<ZValue>();
 		list = sqlDao.listDAO(param.getString("queryId"), param);
@@ -333,15 +315,12 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		UnpCollectionUtils.setFirstFile(list, fileMap, "atchFileId");
 		return list;
 	}
-	
-	
+
 	private List<ZValue> getRecentNoticeList() throws Exception {
 		ZValue param = new ZValue();
 		List<ZValue> recentNoticeList = sqlDao.listDAO("optionalBoardDAO.selectRecentNoticeList", param);
 
-
 		cacheUtil.save(PORTAL_MAIN_CACHE_NAME, "recentNoticeList", recentNoticeList);
-
 
 		Map<String, List<FileVO>> fileMap = listHandler.getFileMap(param, recentNoticeList);
 		UnpCollectionUtils.setFirstFile(recentNoticeList, fileMap, "atchFileId");
@@ -350,11 +329,9 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 	private List<ZValue> getRecentEventList() throws Exception {
 		ZValue param = new ZValue();
 		List<ZValue> recentEventList = sqlDao.listDAO("optionalBoardDAO.selectRecentEventList", param);
-		
-		
+
 		cacheUtil.save(PORTAL_MAIN_CACHE_NAME, "recentEventList", recentEventList);
-		
-		
+
 		Map<String, List<FileVO>> fileMap = listHandler.getFileMap(param, recentEventList);
 		UnpCollectionUtils.setFirstFile(recentEventList, fileMap, "atchFileId");
 		return recentEventList;
@@ -362,6 +339,17 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 
 	public List<ZValue> getCurriculumList(ZValue param) throws Exception {
 		List<ZValue> resultList = lmsSqlDao.listDAO("realmListDAO.contentCurriculumList", param);
+
+		return resultList;
+	}
+
+	public List<ZValue> getEduSubjList(ZValue param) throws Exception {
+		List<ZValue> resultList = null;
+		if("random".equals(param.getString("type"))) {
+			resultList = lmsSqlDao.listDAO("realmListDAO.eduSubjRandomList", param);
+		}else{
+			resultList = lmsSqlDao.listDAO("realmListDAO.eduSubjNewList", param);
+		}
 
 		return resultList;
 	}
