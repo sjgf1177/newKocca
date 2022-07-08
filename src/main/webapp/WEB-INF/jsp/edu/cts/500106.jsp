@@ -24,7 +24,7 @@
 
 <!-- 콘텐츠인재캠퍼스 소개 -->
 
-    <div class="Introduce_header" style="text-align: center;">
+    <div class="Introduce_header" style="text-align: center; flex-direction: column;">
         <div class="col-12 text_box" style="position: relative; top: auto; right: auto;">
             <p class="sub_title">
                 콘텐츠인재캠퍼스는

@@ -2979,7 +2979,7 @@ input[type=text].input_style_3{font-size:14.5px; font-size:1.45rem; line-height:
 
 
 
-	.contents_view_page .sub_section .sub_contents_body .Introduce_header {display: flex; flex-direction: column;}
+	.contents_view_page .sub_section .sub_contents_body .Introduce_header {display: flex;}
     .contents_view_page .sub_section .sub_contents_body .Introduce_header > .text_box{ display: block; float: none; position: relative;}
     .contents_view_page .sub_section .sub_contents_body .Introduce_header > .text_box > .sub_desc{ width: 80%;}
     .contents_view_page .sub_section .sub_contents_body .Introduce_header > .img_box{display: table-cell; float: none;  vertical-align: bottom; }
