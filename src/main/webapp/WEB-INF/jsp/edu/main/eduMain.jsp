@@ -319,7 +319,7 @@
 <div id="wrap" class="over-hidden">
     <!-- header start -->
     <header>
-        <div class="container h-100">\
+        <div class="container h-100">
             <nav class="navbar navbar-expand-xl">
                 <a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
                     <img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
