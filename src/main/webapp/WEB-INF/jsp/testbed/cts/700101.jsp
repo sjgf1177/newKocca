@@ -46,9 +46,10 @@
 		<div class="tab_contents">
 			<div class="Introduce_header">
 				<div class="col-12 col-sm-6 text_box">
-					<div class="facilities_title2 en">
+					<div class="facilities_title en">
 						VISION
-						<span class="point0"> / MISSION</span>
+						<br>
+						<span class="point0">MISSION</span>
 					</div>
 					<p class="sub_title">
 						한국콘텐츠진흥원 콘텐츠문화광장은<br/>
@@ -227,7 +228,11 @@
 			</div>
 		</div>
 		<!-- //주요사업 -->
-		 <!-- //list obj -->
+		<!-- //list obj -->
 	</div>
 
 </div>
+
+<style>
+	.Introduce_body > .col-12{display: flex;}
+</style>
