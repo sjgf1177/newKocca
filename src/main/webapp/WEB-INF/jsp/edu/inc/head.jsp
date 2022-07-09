@@ -29,6 +29,7 @@
         if(user.getUserIdx() > 0) {
             MainService mainService = (MainService) context.getBean("mainService");
             ZValue zParam = new ZValue();
+            zParam.put("userid", user.getUserId());
             List<ZValue> curriculumList = mainService.getCurriculumList(zParam);
 
             pageContext.setAttribute("curriculumList", curriculumList);
