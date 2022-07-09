@@ -354,6 +354,12 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		return resultList;
 	}
 
+	public int getCurriculumChkCnt(ZValue param) throws Exception {
+		int resultCnt = lmsSqlDao.selectCount("realmListDAO.curriculumChkCnt", param);
+
+		return resultCnt;
+	}
+
 	private ServletContext servletContext;
 	@Override
 	public void setServletContext(ServletContext servletContext) {

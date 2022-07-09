@@ -105,6 +105,8 @@ public class RealmService extends DefaultCmmProgramService {
 		List<ZValue> eduSubjList = null;
 		if(user.getUserIdx() > 0) {
 			// 추천 정규과정 랜덤 조회(20개)
+			int currCnt = lmsSqlDao.selectCount("realmListDAO.curriculumChkCnt", param);
+			param.put("currCnt", currCnt);
 			eduSubjList = lmsSqlDao.listDAO("realmListDAO.eduSubjRandomList", param);
 		}else{
 			// 정규과정 신규 목록(20개)

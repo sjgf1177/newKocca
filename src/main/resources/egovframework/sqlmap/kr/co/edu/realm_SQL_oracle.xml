@@ -2023,15 +2023,30 @@
 							   			   WHERE  GUBUN = 'GS'
 							   			  ) BB ON AA.SUBJ = BB.SUBJ
 					   ) ALL_LIST
-					   WHERE   G2CD IN (SELECT X.CATE_CODE2
-					   					FROM   TZ_CONTCURRICULUM_USER X
-					   					WHERE  X.USERID = #userid#)
-					   AND 	   SUBJ||SCYEAR||SUBJSEQ NOT IN (SELECT X.SUBJ||X.YEAR||X.SUBJSEQ
+					   WHERE   SUBJ||SCYEAR||SUBJSEQ NOT IN (SELECT X.SUBJ||X.YEAR||X.SUBJSEQ
 					   										 FROM   TZ_PROPOSE X
 					   										 WHERE  X.USERID = #userid#)
+		]]>
+		  			   <isGreaterThan prepend="AND" property="currCnt" compareValue="0">
+						       G2CD IN (SELECT X.CATE_CODE2
+						   				FROM   TZ_CONTCURRICULUM_USER X
+						   				WHERE  X.USERID = #userid#)
+					   </isGreaterThan>
+
+		<![CDATA[
 			   )
 		WHERE  RNUM  > '0'
 		AND    RNUM <= '0' + '20'
+		]]>
+	</select>
+
+	<!-- 콘텐츠커리큘럼 선택 갯수 -->
+	<select id="realmListDAO.curriculumChkCnt" parameterClass="zvl" resultClass="int">
+		<![CDATA[
+		/* realmListDAO.curriculumChkCnt 콘텐츠커리큘럼 선택 갯수 */
+		SELECT ISNULL(COUNT(*), 0)
+		FROM   TZ_CONTCURRICULUM_USER
+		WHERE  USERID = #userid#
 		]]>
 	</select>
 

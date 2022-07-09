@@ -26,7 +26,7 @@
     org.springframework.context.ApplicationContext context2 = org.springframework.web.context.support.WebApplicationContextUtils.getWebApplicationContext(getServletContext());
     MainService mainService = (MainService) context2.getBean("mainService");
     ZValue zParam = new ZValue();
-System.out.println("======================111 eduMain");
+
     if(user.getUserIdx() > 0) {
         zParam.put("userid", user.getUserId());
         zParam.put("grcode", "N000001");
@@ -34,6 +34,9 @@ System.out.println("======================111 eduMain");
         List<ZValue> curriculumList = mainService.getCurriculumList(zParam);
 
         // 랜덤 추천 정규과정 목록(20개)
+        int currCnt = mainService.getCurriculumChkCnt(zParam);
+        zParam.put("currCnt", currCnt);
+
         List<ZValue> eduSubjList = mainService.getEduSubjList(zParam);
 
         pageContext.setAttribute("curriculumList", curriculumList);
