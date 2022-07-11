@@ -14,6 +14,13 @@
 <style type="text/css">
 	.lnb_con{display: none;}
 	.sub_contents_wrap .sub_contents {padding-left: 0;}
+	/*video{height: 630px;}*/
+	.mw-1080.col-center{padding-left: 0; padding-right: 0;}
+
+	@media screen and (max-width:1200px) {
+		video{height: auto;}
+		.lectMovSet.mw-1080.col-center{padding-right: 20px; padding-left: 20px;}
+	}
 </style>
 <script type="text/javascript">
 	document.title = "<c:out value="${result.lecnm }" escapeXml="false" /> < " +document.title;
@@ -363,10 +370,10 @@
 </div>
 
 <!-- Movie Player  width: 1080px;height: 630;기본 사이즈 -->
-<div class="mt20 lectMovSet" id="vodArea">
-	<div class="col-center mw-1280">
+<div class="mt20 lectMovSet mw-1080 col-center" id="vodArea">
+	<div class="">
 		<a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />');" > <!-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" -->
-		<img src="/edu<c:out value="${result.vodimg }"/>" style="width: 1080px;height: 664;"   alt="강좌보기"/>
+		<img src="/edu<c:out value="${result.vodimg }"/>" style="width: 100%;height: auto;"   alt="강좌보기"/>
 		<span class="maskPlay"></span>
 		</a>
 	</div>
