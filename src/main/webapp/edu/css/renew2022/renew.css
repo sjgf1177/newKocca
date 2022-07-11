@@ -232,7 +232,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 .navbar-expand-xl #main_nav_full.gnbActive .cy_navbar-nav{max-width: 1273px; margin: 0 auto; padding: 70px 0px;}
 .gnb_close{width: 25px; height: 25px; position: absolute; top:50px; right:50px;}
 #main_nav_full h2{font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
-.cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 70px; justify-content: space-around;}
+.cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 70px;}
 #main_nav_full h3{width: 145px; margin-right: 80px; color:#fff;}
 .cy_list_box{width: 26%; display: flex; font-size: 18px;}
 .cy_list_box li{margin-bottom: 15px;}
@@ -251,7 +251,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
     header nav, header .navbar{padding: 10px 0px;}
     #main_nav_full.gnbActive{height: 100%;}
     #main_nav_full h2{font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
-    .cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 40px; justify-content: space-around;}
+    .cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 40px;}
     #main_nav_full h3{width: 145px; margin-right: 80px;}
     .cy_list_box{width: 33%; display: flex; font-size: 18px;}
     .cy_list_box li{margin-bottom: 10px;}

@@ -138,7 +138,8 @@ public boolean isQuotation(String html) throws Exception {
 	</form>
 
 
-	<div class="col-12 col-center mw-1280 table-responsive" style="overflow: auto;">
+	<div class=" table-responsive" style="overflow: auto;">
+		<!-- pc table -->
 		<table class="table table-styling pc_table table-hover txt_ct">
 			<caption>
 				<strong>
@@ -274,6 +275,47 @@ public boolean isQuotation(String html) throws Exception {
 				</c:if>
 			</tbody>
 		</table>
+
+		<!-- mobile table -->
+		<ul class="board_type_0 mo_table" style="margin-top: 40px;">
+			<p style="text-align: right; margin: 10px 0; color:#EE5757;">수료증은 PC에서만 출력 가능합니다.</p>
+			<c:forEach var="result" items="${resultList}" varStatus="status">
+				<c:out value="${result.confmSttusNm}"/>
+				<li class="table_list _notice">
+					<a href="/edu/progrm/applcnt/view.do?prgSn=<c:out value="${result.prgSn}"/>&amp;reqstSn=<c:out value="${result.reqstSn}"/>&amp;menuNo=${param.menuNo}" class="table_info_box">
+						<div class="right_box" style="width: 100%;">
+							<p class="mb20" style="color: #3B85FF;"><c:out value="${result.prgClNm}"/></p>
+							<p class="title">
+								<c:out value="${result.prgNm}" />
+							</p>
+							<p class="date_view">
+								<span><c:out value="${result.rDt}"/></span>
+								<span>진행상태 :
+									<span style="color:#3B85FF;">
+										<c:choose>
+											<c:when test="${result.prgClNm eq '콘텐츠 플러스'}">
+												<c:choose>
+													<c:when test="${result.confmSttus eq '01' }">승인대기</c:when>
+													<c:when test="${result.confmSttus eq '02' }">1차승인</c:when>
+													<c:when test="${result.confmSttus eq '03' }">2차승인</c:when>
+													<c:when test="${result.confmSttus eq '04' }">승인완료</c:when>
+													<c:when test="${result.confmSttus eq '05' }">미승인</c:when>
+												</c:choose>
+											</c:when>
+											<c:otherwise>
+												<c:out value="${result.rceptSttusNm}"/>
+											</c:otherwise>
+										</c:choose>
+									</span>
+								</span>
+							</p>
+						</div>
+					</a>
+				</li>
+				<c:set var="resultCnt" value="${resultCnt-1}" />
+			</c:forEach>
+			<c:if test="${fn:length(resultList) == 0}"><tr><td colspan="4">검색 결과가 없습니다.</td></tr></c:if>
+		</ul>
 	</div>
 
 	<!-- paging -->
