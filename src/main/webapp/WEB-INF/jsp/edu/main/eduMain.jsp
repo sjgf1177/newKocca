@@ -493,9 +493,9 @@
                                 <ul>
                                     <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
                                     <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
-                                    <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
-                                    <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500005" title="기업맞춤교육지원">기업맞춤교육지원</a></li>--%>
+                                        <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
+                                        <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
+                                        <li><a href="/edu/main/contents.do?menuNo=500005" title="기업맞춤교육지원">기업맞춤교육지원</a></li>--%>
                                 </ul>
                                 <!-- nav 학습지원 two-daps end -->
                             </li>
@@ -508,7 +508,7 @@
                                 <ul>
                                     <li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
                                     <li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
-                                    <%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
+                                        <%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
                                     <li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
                                     <li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
                                 </ul>
@@ -528,9 +528,9 @@
                             <ul>
                                 <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
                                 <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
-                                <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
-                                <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
-                                <li><a href="/edu/main/contents.do?menuNo=500005" title="기업맞춤교육지원">기업맞춤교육지원</a></li>--%>
+                                    <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
+                                    <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
+                                    <li><a href="/edu/main/contents.do?menuNo=500005" title="기업맞춤교육지원">기업맞춤교육지원</a></li>--%>
                             </ul>
                         </div>
                         <div class="nav_my_box pc">
@@ -541,7 +541,7 @@
                                 <li id="myPageMenu"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="마이페이지">마이페이지</a></li>
                                 <li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
                                 <li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
-                                <%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
+                                    <%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
                                 <li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
                                 <li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
                                 <li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
@@ -568,37 +568,37 @@
                 </div>
 
                 <c:if test="${fn:length(curriculumList) > 0}">
-                <!-- pc 햄버거 버튼 눌렀을때 start-->
-                <div class="collapse navbar-collapse" id="main_nav_full">
-                    <div class="cy_navbar-nav">
-                        <a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
-                            <img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
-                        </a>
-                        <input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
-                        <h2>콘텐츠커리큘럼</h2>
-                        <div class="cy_contents_box">
-                            <c:set var="contentType" value=""/>
-                            <c:forEach items="${curriculumList }" var="result" varStatus="status">
+                    <!-- pc 햄버거 버튼 눌렀을때 start-->
+                    <div class="collapse navbar-collapse" id="main_nav_full">
+                        <div class="cy_navbar-nav">
+                            <a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+                                <img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
+                            </a>
+                            <input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
+                            <h2>콘텐츠커리큘럼</h2>
+                            <div class="cy_contents_box">
+                                <c:set var="contentType" value=""/>
+                                <c:forEach items="${curriculumList }" var="result" varStatus="status">
                                 <c:if test="${status.first eq false}">
-                                    <c:if test="${contentType ne result.cd1}">
-                                            </ul>
-                                        </div>
-                                    </c:if>
-                                </c:if>
                                 <c:if test="${contentType ne result.cd1}">
-                                    <div class="cy_list_box">
-                                        <h3>${result.cdnm1}</h3>
-                                            <ul>
-                                    <c:set var="contentType" value="${result.cd1}"/>
-                                </c:if>
-                                <li>
-                                    <button type="button" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
-                                </li>
-                            </c:forEach>
+                                </ul>
+                            </div>
+                            </c:if>
+                            </c:if>
+                            <c:if test="${contentType ne result.cd1}">
+                            <div class="cy_list_box">
+                                <h3>${result.cdnm1}</h3>
+                                <ul>
+                                        <c:set var="contentType" value="${result.cd1}"/>
+                                    </c:if>
+                                    <li>
+                                        <button type="button" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
+                                    </li>
+                                    </c:forEach>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- pc 햄버거 버튼 눌렀을때 end -->
+                    <!-- pc 햄버거 버튼 눌렀을때 end -->
                 </c:if>
             </nav>
         </div>
@@ -711,7 +711,7 @@
                                         <div class="fwo_info_box">
                                             <h3 class="fwo_tit_box">
                                                 <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
-                                                    ${result.subjnm }
+                                                        ${result.subjnm }
                                                 </a>
                                             </h3>
                                             <p>${result.g2nm }ㆍ${result.g3nm }</p>
@@ -813,80 +813,55 @@
         <div class="main_offline_contents">
             <div class="container">
                 <div class="fwo_card_list_box fwo_card03">
-                    <span class="main_title main_title_bold">진행 중인 이벤트</span>
+                    <span class="main_title main_title_bold">진행 중인 이벤트 </span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
-                            <li class="swiper-slide">
-                                <!-- 썸네일 start -->
-                                <div class="fwo_snail_box">
-                                    <a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
-                                        <!-- <span class="tag_on">예약알림</span> -->
-                                    </a>
-                                </div>
-                                <!-- 썸네일 end -->
+                            <c:forEach items="${openEventList }" var="result" varStatus="status">
+                                <c:set value="${fileMap[result.atchFileId] }" var="fileList"/>
+                                <c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}&delCode=0&menuNo=500203&pageIndex=1"/>
+                                <fmt:parseDate value="${result.ntceBgnde}" var="sdt" pattern="yyyy-MM-dd"/>
+                                <fmt:parseNumber value="${sdt.time / (1000*60*60*24)}" integerOnly="true" var="strDate"></fmt:parseNumber>
+                                <c:set var="now" value="<%=new java.util.Date()%>"/>
+                                <c:set var="nowDt"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/></c:set>
+                                <fmt:parseDate value="${nowDt}" var="ndt" pattern="yyyy-MM-dd"/>
+                                <fmt:parseNumber value="${ndt.time / (1000*60*60*24)}" integerOnly="true" var="nowDate"></fmt:parseNumber>
 
-                                <!-- 설명란 start-->
-                                <div class="fwo_info_box">
-                                    <h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-                                    <p>[이벤트]</p>
-                                    <a href="" class="go_page_a"></a>
-                                </div>
-                                <!-- 설명란 start-->
-                            </li>
+                                <li class="swiper-slide">
+                                    <!-- 썸네일 start -->
+                                    <div class="fwo_snail_box">
+                                        <a href="<c:out value="${url }" escapeXml="false" />">
+                                            <c:choose>
+                                                <c:when test='${ fileList.size() > 0 }'>
+                                                    <c:forEach var="file" items="${fileList }">
+                                                        <c:choose>
+                                                            <c:when test="${file.fileFieldName eq 'main_image' }">
+                                                                <%--<img alt="에듀코카 이벤트 이미지" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" style="width: 336px;height: 216px" />--%>
+                                                                <img alt="에듀코카 이벤트 이미지" src="${fn:replace(file.fileStreCours, 'data2', 'edu/images')}/${file.streFileNm}"/>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:forEach>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                                </c:otherwise>
+                                            </c:choose>
+                                            <!-- <span class="tag_on">예약알림</span> -->
+                                        </a>
+                                    </div>
+                                    <!-- 썸네일 end -->
 
-                            <li class="swiper-slide">
-                                <!-- 썸네일 start -->
-                                <div class="fwo_snail_box">
-                                    <a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
-                                        <!-- <span class="tag_off">예약알림</span> -->
-                                    </a>
-                                </div>
-                                <!-- 썸네일  end -->
-
-                                <!-- 설명란 start-->
-                                <div class="fwo_info_box">
-                                    <h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-                                    <p>[이벤트]</p>
-                                    <a href="" class="go_page_a"></a>
-                                </div>
-                                <!-- 설명란 start-->
-                            </li>
-
-                            <li class="swiper-slide">
-                                <!-- 썸네일 start -->
-                                <div class="fwo_snail_box">
-                                    <a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
-                                        <!-- <span class="tag_on">예약알림</span> -->
-                                    </a>
-                                </div>
-                                <!-- 썸네일 end -->
-
-                                <!-- 설명란 start-->
-                                <div class="fwo_info_box">
-                                    <h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-                                    <p>[이벤트]</p>
-                                    <a href="" class="go_page_a"></a>
-                                </div>
-                                <!-- 설명란 start-->
-                            </li>
-
-                            <li class="swiper-slide">
-                                <!-- 썸네일 start -->
-                                <div class="fwo_snail_box">
-                                    <a href=""><img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
-                                        <!-- <span class="tag_off">예약알림</span> -->
-                                    </a>
-                                </div>
-                                <!-- 썸네일 end -->
-
-                                <!-- 설명란 start-->
-                                <div class="fwo_info_box">
-                                    <h3 class="fwo_tit_box"><a href="">누구나 따라하면 문제가 생기는 문제라고 선택의 방법</a></h3>
-                                    <p>[이벤트]</p>
-                                    <a href="" class="go_page_a"></a>
-                                </div>
-                                <!-- 설명란 start-->
-                            </li>
+                                    <!-- 설명란 start-->
+                                    <div class="fwo_info_box">
+                                        <h3 class="fwo_tit_box"><a href=""><c:out value="${result.nttSj }"/></a></h3>
+                                        <p>[이벤트]</p>
+                                        <a href="<c:out value="${url }" escapeXml="false" />" class="go_page_a"></a>
+                                    </div>
+                                    <!-- 설명란 start-->
+                                </li>
+                            </c:forEach>
                         </ul>
                     </div>
 
@@ -1161,18 +1136,18 @@
 
         <script type="text/javascript">
             <!--UX분석뷰저블 -->
-            (function (w, d, a) {
-                w.__beusablerumclient__ = {
-                    load: function (src) {
-                        var b = d.createElement("script");
-                        b.src = src;
-                        b.async = true;
-                        b.type = "text/javascript";
-                        d.getElementsByTagName("head")[0].appendChild(b);
-                    }
-                };
-                w.__beusablerumclient__.load(a);
-            })(window, document, '//rum.beusable.net/script/b170309e165707u559/204ae352d6');
+                (function (w, d, a) {
+                    w.__beusablerumclient__ = {
+                        load: function (src) {
+                            var b = d.createElement("script");
+                            b.src = src;
+                            b.async = true;
+                            b.type = "text/javascript";
+                            d.getElementsByTagName("head")[0].appendChild(b);
+                        }
+                    };
+                    w.__beusablerumclient__.load(a);
+                })(window, document, '//rum.beusable.net/script/b170309e165707u559/204ae352d6');
             <!-- UX분석 뷰저블 -->
 
             // 공지사항 세로 슬라이드

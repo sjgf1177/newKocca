@@ -131,6 +131,18 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			List<ZValue> popularityList = lmsSqlDao.listDAO("openLecture.selectPopularityList", param);
 			model.addAttribute("popularityList", popularityList);
 
+			// 이벤트 목록
+			log.debug("// 이벤트 목록");
+			param.put("tableNm", "TB_BBS_ESTN");
+			param.put("bbsId", "B0000048");
+			param.put("delcode", "0");
+			param.put("bbsTyCode", "BBST03");
+			List<ZValue> openEventList = sqlDao.listDAO("optionalBoardDAO.selectBoardArticleList", param);
+			model.addAttribute("openEventList", openEventList);
+
+			Map<String, List<FileVO>> fileMap = listHandler.getFileMap(param, openEventList);
+			model.addAttribute("fileMap", fileMap);
+
 			param.put("siteId", SiteMngService.EDU_SITE_ID); // 팝업존 siteId
 		}
 		else if (SiteMngService.EDUMOBILE_SITE_NAME.equals(param.getString("siteName"))) {
