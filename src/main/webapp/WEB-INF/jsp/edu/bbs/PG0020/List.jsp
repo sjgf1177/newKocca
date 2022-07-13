@@ -184,10 +184,10 @@
                 </div>
             </div>
         </c:if>
-        <c:if test="${resultCnt < 1}">
-            <p class="not_search_list">검색 된 이벤트가 없습니다.</p>
-        </c:if>
     </div>
+    <c:if test="${resultCnt < 1}">
+        <p class="not_search_list">검색 된 이벤트가 없습니다.</p>
+    </c:if>
 </div>
 
 <script>
