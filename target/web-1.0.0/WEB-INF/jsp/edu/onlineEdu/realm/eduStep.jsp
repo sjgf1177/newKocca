@@ -15,7 +15,7 @@
 <div class="tab_style_1_con mg_b40">
 	<ul class="tab_style_1 three_tab size_24">
 		<%--<li <c:if test="${param.p_tabselect eq 'view' or param.p_tabselect eq '' }">class="active"</c:if>><a href="javascript:void(0);" onclick="fnCmdViewPage('${stepsubj }', '${stepsubjnm }', '${param.p_isonoff }', '${param.p_scupperclass }', '${param.p_scupperclass }', '${param.p_year }', '${stepsubjseq }'); return false;onclick="fnCmdViewPage('${stepsubj }', '${stepsubjnm }', '${param.p_isonoff }', '${param.p_scupperclass }', '${param.p_scupperclass }', '${param.p_year }', '${stepsubjseq }'); return false;"><span>과정정보</span></a></li>--%>
-		<li class="active"><a href="#"><span>학습하기</span></a></li>
+		<li class=""><a href=""><span>학습하기</span></a></li>
 
 		<c:if test="${not empty idCeck  }">
 

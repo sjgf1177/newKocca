@@ -43,14 +43,34 @@ $(function(){
     //메인 배너 정지버튼
     $('.swiper-button-pause').click(function() {
         swiper0.stopAutoplay();
+        swiper00.stopAutoplay();
         $('.swiper-button-play').show();
         $('.swiper-button-pause').hide();
     });
     //메인 배너 재성버튼
     $('.swiper-button-play').click(function() {
         swiper0.startAutoplay();
+        swiper00.startAutoplay();
         $('.swiper-button-play').hide();
         $('.swiper-button-pause').show();
+    });
+
+    var swiper00 = new Swiper('#mo_main_visual_slide', {
+        autoplay: 6000
+        ,loot: true
+        ,speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 0 // 슬라이드 사이의 간격 px 단위
+        ,autoplayDisableOnInteraction: false,
+        //pagination: '.swiper_page_all_box .swiper-pagination',
+        paginationClickable: true,
+        //페이징
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction'
+        //구버전 swiper 방향표
+        ,nextButton: '.swiper-button-next'
+        ,prevButton: '.swiper-button-prev',
     });
 
 

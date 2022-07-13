@@ -70,283 +70,312 @@ $(function(){
 
 </script>
 
-<div class="fontsize0 sub_contents_body sub_board_wrap">
-
-
-
-	<!-- 상단 검색 필터 시작 -->
-	
-	<div class="movie_plan_calendar_wrap active"> 
-        <div class="movie_plan_calendar_con">
-            <div class="movie_plan_view_type_select_con">
-                <div class="movie_plan_view_type_select" data-concertlist-type="1" tabindex="0">
-                    일별
-                </div>
-                <div class="movie_plan_view_type_select type_2" data-concertlist-type="2" tabindex="0">
-                    연/월별
-                </div>
-            </div>
-            <div class="calendar_icon_con">
-                <div class="movie_calendar_icon">
-                    <img src="/edu/images/bm/movie_calendar_icon.png" alt="CALENDAR">
-                </div>
-                <div class="movie_calendar_icon_text">
-                    CALENDAR
-                </div>
-            </div>
-            <hr class="calendar_seperate_line">
-            <div class="movie_calendar_year">
-            </div>
-            <div class="movie_calendar_date">
-                <span class="movie_calendar_date_color">
-                </span>
-                <span class="movie_calendar_date_text">
-                </span>
-            </div>
-        </div>
-        
-        <!-- 일별 -->
-        <div class="movie_plan_calendar_view_con">
-            <div class="mb14 movie_plan_view_select_con mobile_control_short_con">
-                <div class="mr-md-10 select_style_2_con testbed_style mobile_control mobile_control_short">
-                    <select name="" id="filterDatelyYearSelect" class="select_style_2">
- 		                <c:set var="cYear" value="<%= cur_year %>"/>
-		               	<c:forEach var="i" begin="2017" end="${cYear }" step="1">
-		               		<option value="${2017 + (cYear - i)}">${2017 + (cYear - i)}년</option>
-		               	</c:forEach>
-                    </select>
-                    <label for="filterDatelyYearSelect" class="back_label" aria-hidden="false">일자별 연도 선택</label>
-                </div>
-                <div class="select_style_2_con testbed_style mobile_control mobile_control_short">
-                    <select name="" id="filterDatelyMonthSelect" class="select_style_2">
-                        <option value="12">12월</option>
-                        <option value="11">11월</option>
-                        <option value="10">10월</option>
-                        <option value="09">9월</option>
-                        <option value="08">8월</option>
-                        <option value="07">7월</option>
-                        <option value="06">6월</option>
-                        <option value="05">5월</option>
-                        <option value="04">4월</option>
-                        <option value="03">3월</option>
-                        <option value="02">2월</option>
-                        <option value="01">1월</option>
-                    </select>
-                    <label for="filterDatelyMonthSelect" class="back_label" aria-hidden="false">일자별 월별 선택</label>
-                </div>
-            </div>
-            <div class="view_by_date_calendar_con movie_plan_calendar_datepicker mobile_control_short">
-                <a href="javascript:void(0)" class="view_by_date_calendar_icon">
-                    <img src="/edu/images/bm/view_by_date_calendar_icon.png" alt="시작일 선택">
-                </a>
-                <input id="view_by_date_calendar_text" type="text" class="view_by_date_calendar_text" value="31">
-                <label for="view_by_date_calendar_text">시작일 선택</label>
-            </div>
-            <div class="calendar_style_1_wrap">
-                <table class="calendar_style_1 list_style">
-                    <caption>공연일정 선택 달력</caption>
-                    <colgroup>
-                        <col width="14.28%">
-                        <col width="14.28%">
-                        <col width="14.28%">
-                        <col width="14.28%">
-                        <col width="14.28%">
-                        <col width="14.28%">
-                        <col width="14.28%">
-                    </colgroup>
-                    <thead>
-                    <tr>
-                    	<th>Su</th>
-                        <th>Mo</th>
-                        <th>Tu</th>
-                        <th>We</th>
-                        <th>Th</th>
-                        <th>Fr</th>
-                        <th>Sa</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="cal_row">
-                        <td>
-                            <a href="javascript:void(0)" class="calendar_date"></a>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0)" class="calendar_date"></a>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0)" class="calendar_date"></a>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0)" class="calendar_date"></a>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0)" class="calendar_date"></a>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0)" class="calendar_date"></a>
-                        </td>
-                        <td>
-                            <a href="javascript:void(0)" class="calendar_date"></a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- //일별 -->
-        
-        <!-- 연/월별 -->
-        <div class="movie_plan_calendar_view_con type_2">
-	        <div class="mb-md-47 movie_plan_view_select_con">
-	            <div class="mr-md-10 select_style_2_con testbed_style mobile_control">
-	                <select name="" id="filterMonthlyYearSelect" class="select_style_2">
- 		                <c:set var="cYear" value="<%= cur_year %>"/>
-		               	<c:forEach var="i" begin="2017" end="${cYear }" step="1">
-		               		<option value="${2017 + (cYear - i)}">${2017 + (cYear - i)}년</option>
-		               	</c:forEach>
-	                </select>
-	                <label for="filterMonthlyYearSelect">연도 선택</label>
-	            </div>
-	            <div class="select_style_2_con testbed_style mobile_contents mobile_control">
-	                <select name="" id="filterMonthlyYearSelect_month" class="select_style_2">
-	                    <option value="all">전체</option>
-	                    <option value="12">12월</option>
-	                    <option value="11">11월</option>
-	                    <option value="10">10월</option>
-	                    <option value="09">9월</option>
-	                    <option value="08">8월</option>
-	                    <option value="07">7월</option>
-	                    <option value="06">6월</option>
-	                    <option value="05">5월</option>
-	                    <option value="04">4월</option>
-	                    <option value="03">3월</option>
-	                    <option value="02">2월</option>
-	                    <option value="01">1월</option>
-	                </select>
-	                <label for="filterMonthlyYearSelect_month">월 선택</label>
-	            </div>
-	        </div>
-	        <div class="movie_plan_view_select_type_2_con">
-	            <div class="movie_plan_view_select_title" data-concertlist-month="0" tabindex="0">
-	                전체
-	            </div>
-	            <div class="movie_plan_view_month_list_con">
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="1" tabindex="0">
-	                        1월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="2" tabindex="0">
-	                        2월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="3" tabindex="0">
-	                        3월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="4" tabindex="0">
-	                        4월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="5" tabindex="0">
-	                        5월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="6" tabindex="0">
-	                        6월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="7" tabindex="0">
-	                        7월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="8" tabindex="0">
-	                        8월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="9" tabindex="0">
-	                        9월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="10" tabindex="0">
-	                        10월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="11" tabindex="0">
-	                        11월
-	                    </div>
-	                </div>
-	                <div class="movie_plan_view_month_list">
-	                    <div class="movie_plan_view_month" data-concertlist-month="12" tabindex="0">
-	                        12월
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-		<!-- //연/월별 -->    
-    </div>
-    
-	<div class="col-12 show-table sub_board_header control_board_header">
-		<div class="col-5 show-tablecell fn vm board_title">
-			<h4>총 <span class="board_count"><c:out value="${resultCnt }" />개</span>의 예약정보</h4>
-		</div>
-	</div>    
-	
-    <!-- 상단 검색 필터 끝 -->
-	<div class="col-12 sub_board_body">
-		<table class="board_type_0">
-			<caption>${masterVO.bbsNm} 목록</caption>
-			<colgroup>
-				<col width="10%">
-				<col width="30%">
-				<col width="">
-				<col width="20%">
-				<col width="10%">
-			</colgroup>
-			<thead>
-				<tr>
-					<th scope="col">번호</th>
-					<th scope="col">시설명</th>
-					<th scope="col">예약(사용)기간</th>
-					<th scope="col">단체명</th>
-					<th scope="col">상태</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="result" items="${resultList}" varStatus="status">
-					<tr<c:if test="${result.nttType=='1'}"> class="notice_title"</c:if>>
-						<td>
-							<c:out value="${result.nttType=='1' ? ' ' : (resultCnt) - (paginationInfo.pageSize * (paramVO.pageIndex-1))}" />
-						</td>
-						<td>${result.fcltySeNm}</td>
-						<td>${result.resveDt}</td>
-						<td>${result.resveNm}</td>
-						<td>${result.rsts}</td>
-					</tr>
-					<c:set var="resultCnt" value="${resultCnt-1}" />
-				</c:forEach>
-				<c:if test="${fn:length(resultList) == 0}"><tr><td colspan="4">데이터가 없습니다.</td></tr></c:if>
-			</tbody>
-
-		</table>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠문화광장</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>대관 현황</span></a></li>
+		</ul>
 	</div>
-
-	<!-- paging -->
-	<c:if test="${fn:length(resultList) > 0}">
-		<div class="paging">${pageNav}</div>
-		<!-- paging end //-->
-	</c:if>
-	<!-- //paging -->
 </div>
 
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">대관 현황</div>
+</div>
+
+<div class="col-center mw-1280 dream_list">
+
+	<div class="tab_style_1_con">
+		<ul class="tab_style_1 seven_tab size_24">
+			<li id="tab1"><a href="/testbed/bbs/B0000061/list.do?menuNo=700112"><span>공지사항</span></a></li>
+			<li id="tab2"><a href="/testbed/main/contents.do?menuNo=700101"><span>콘텐츠문화광장 소개</span></a></li>
+			<li id="tab3"><a href="/testbed/main/contents.do?menuNo=700103"><span>시설 안내</span></a></li>
+			<li id="tab4"><a href="/testbed/main/contents.do?menuNo=700108"><span>대관 안내</span></a></li>
+			<li id="tab5" class="active"><a href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2"  title="현재탭"><span>대관 현황</span></a></li>
+			<li id="tab6"><a href="/testbed/main/contents.do?menuNo=700104"><span>찾아오시는 길</span></a></li>
+			<li id="tab7"><a href="/testbed/bbs/B0000066/list.do?menuNo=700126"><span>자료실</span></a></li>
+		</ul>
+	</div>
+
+	<div class="fontsize0 sub_contents_body sub_board_wrap">
+
+
+
+		<!-- 상단 검색 필터 시작 -->
+
+		<div class="movie_plan_calendar_wrap active">
+			<div class="movie_plan_calendar_con">
+				<div class="movie_plan_view_type_select_con">
+					<div class="movie_plan_view_type_select" data-concertlist-type="1" tabindex="0">
+						일별
+					</div>
+					<div class="movie_plan_view_type_select type_2" data-concertlist-type="2" tabindex="0">
+						연/월별
+					</div>
+				</div>
+				<div class="calendar_icon_con">
+					<div class="movie_calendar_icon">
+						<img src="/edu/images/bm/movie_calendar_icon.png" alt="CALENDAR">
+					</div>
+					<div class="movie_calendar_icon_text">
+						CALENDAR
+					</div>
+				</div>
+				<hr class="calendar_seperate_line">
+				<div class="movie_calendar_year">
+				</div>
+				<div class="movie_calendar_date">
+					<span class="movie_calendar_date_color">
+					</span>
+					<span class="movie_calendar_date_text">
+					</span>
+				</div>
+			</div>
+
+			<!-- 일별 -->
+			<div class="movie_plan_calendar_view_con">
+				<div class="mb14 movie_plan_view_select_con mobile_control_short_con">
+					<div class="mr-md-10 select_style_2_con testbed_style mobile_control mobile_control_short">
+						<select name="" id="filterDatelyYearSelect" class="select_style_2">
+							<c:set var="cYear" value="<%= cur_year %>"/>
+							<c:forEach var="i" begin="2017" end="${cYear }" step="1">
+								<option value="${2017 + (cYear - i)}">${2017 + (cYear - i)}년</option>
+							</c:forEach>
+						</select>
+						<label for="filterDatelyYearSelect" class="back_label" aria-hidden="false">일자별 연도 선택</label>
+					</div>
+					<div class="select_style_2_con testbed_style mobile_control mobile_control_short">
+						<select name="" id="filterDatelyMonthSelect" class="select_style_2">
+							<option value="12">12월</option>
+							<option value="11">11월</option>
+							<option value="10">10월</option>
+							<option value="09">9월</option>
+							<option value="08">8월</option>
+							<option value="07">7월</option>
+							<option value="06">6월</option>
+							<option value="05">5월</option>
+							<option value="04">4월</option>
+							<option value="03">3월</option>
+							<option value="02">2월</option>
+							<option value="01">1월</option>
+						</select>
+						<label for="filterDatelyMonthSelect" class="back_label" aria-hidden="false">일자별 월별 선택</label>
+					</div>
+				</div>
+				<div class="view_by_date_calendar_con movie_plan_calendar_datepicker mobile_control_short">
+					<a href="javascript:void(0)" class="view_by_date_calendar_icon">
+						<img src="/edu/images/bm/view_by_date_calendar_icon.png" alt="시작일 선택">
+					</a>
+					<input id="view_by_date_calendar_text" type="text" class="view_by_date_calendar_text" value="31">
+					<label for="view_by_date_calendar_text">시작일 선택</label>
+				</div>
+				<div class="calendar_style_1_wrap">
+					<table class="calendar_style_1 list_style">
+						<caption>공연일정 선택 달력</caption>
+						<colgroup>
+							<col width="14.28%">
+							<col width="14.28%">
+							<col width="14.28%">
+							<col width="14.28%">
+							<col width="14.28%">
+							<col width="14.28%">
+							<col width="14.28%">
+						</colgroup>
+						<thead>
+						<tr>
+							<th>Su</th>
+							<th>Mo</th>
+							<th>Tu</th>
+							<th>We</th>
+							<th>Th</th>
+							<th>Fr</th>
+							<th>Sa</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr class="cal_row">
+							<td>
+								<a href="javascript:void(0)" class="calendar_date"></a>
+							</td>
+							<td>
+								<a href="javascript:void(0)" class="calendar_date"></a>
+							</td>
+							<td>
+								<a href="javascript:void(0)" class="calendar_date"></a>
+							</td>
+							<td>
+								<a href="javascript:void(0)" class="calendar_date"></a>
+							</td>
+							<td>
+								<a href="javascript:void(0)" class="calendar_date"></a>
+							</td>
+							<td>
+								<a href="javascript:void(0)" class="calendar_date"></a>
+							</td>
+							<td>
+								<a href="javascript:void(0)" class="calendar_date"></a>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //일별 -->
+
+			<!-- 연/월별 -->
+			<div class="movie_plan_calendar_view_con type_2">
+				<div class="mb-md-47 movie_plan_view_select_con">
+					<div class="mr-md-10 select_style_2_con testbed_style mobile_control">
+						<select name="" id="filterMonthlyYearSelect" class="select_style_2">
+							<c:set var="cYear" value="<%= cur_year %>"/>
+							<c:forEach var="i" begin="2017" end="${cYear }" step="1">
+								<option value="${2017 + (cYear - i)}">${2017 + (cYear - i)}년</option>
+							</c:forEach>
+						</select>
+						<label for="filterMonthlyYearSelect">연도 선택</label>
+					</div>
+					<div class="select_style_2_con testbed_style mobile_contents mobile_control">
+						<select name="" id="filterMonthlyYearSelect_month" class="select_style_2">
+							<option value="all">전체</option>
+							<option value="12">12월</option>
+							<option value="11">11월</option>
+							<option value="10">10월</option>
+							<option value="09">9월</option>
+							<option value="08">8월</option>
+							<option value="07">7월</option>
+							<option value="06">6월</option>
+							<option value="05">5월</option>
+							<option value="04">4월</option>
+							<option value="03">3월</option>
+							<option value="02">2월</option>
+							<option value="01">1월</option>
+						</select>
+						<label for="filterMonthlyYearSelect_month">월 선택</label>
+					</div>
+				</div>
+				<div class="movie_plan_view_select_type_2_con">
+					<div class="movie_plan_view_select_title" data-concertlist-month="0" tabindex="0">
+						전체
+					</div>
+					<div class="movie_plan_view_month_list_con">
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="1" tabindex="0">
+								1월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="2" tabindex="0">
+								2월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="3" tabindex="0">
+								3월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="4" tabindex="0">
+								4월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="5" tabindex="0">
+								5월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="6" tabindex="0">
+								6월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="7" tabindex="0">
+								7월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="8" tabindex="0">
+								8월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="9" tabindex="0">
+								9월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="10" tabindex="0">
+								10월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="11" tabindex="0">
+								11월
+							</div>
+						</div>
+						<div class="movie_plan_view_month_list">
+							<div class="movie_plan_view_month" data-concertlist-month="12" tabindex="0">
+								12월
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //연/월별 -->
+		</div>
+
+		<div class="col-12 show-table sub_board_header control_board_header">
+			<div class="col-5 show-tablecell fn vm board_title">
+				<h4>총 <span class="board_count"><c:out value="${resultCnt }" />개</span>의 예약정보</h4>
+			</div>
+		</div>
+
+		<!-- 상단 검색 필터 끝 -->
+		<div class="col-12 sub_board_body">
+			<table class="board_type_0">
+				<caption>${masterVO.bbsNm} 목록</caption>
+				<colgroup>
+					<col width="10%">
+					<col width="30%">
+					<col width="">
+					<col width="20%">
+					<col width="10%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">시설명</th>
+						<th scope="col">예약(사용)기간</th>
+						<th scope="col">단체명</th>
+						<th scope="col">상태</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="result" items="${resultList}" varStatus="status">
+						<tr<c:if test="${result.nttType=='1'}"> class="notice_title"</c:if>>
+							<td>
+								<c:out value="${result.nttType=='1' ? ' ' : (resultCnt) - (paginationInfo.pageSize * (paramVO.pageIndex-1))}" />
+							</td>
+							<td>${result.fcltySeNm}</td>
+							<td>${result.resveDt}</td>
+							<td>${result.resveNm}</td>
+							<td>${result.rsts}</td>
+						</tr>
+						<c:set var="resultCnt" value="${resultCnt-1}" />
+					</c:forEach>
+					<c:if test="${fn:length(resultList) == 0}"><tr><td colspan="4">데이터가 없습니다.</td></tr></c:if>
+				</tbody>
+
+			</table>
+		</div>
+
+		<!-- paging -->
+		<c:if test="${fn:length(resultList) > 0}">
+			<div class="paging">${pageNav}</div>
+			<!-- paging end //-->
+		</c:if>
+		<!-- //paging -->
+	</div>
+
+</div>

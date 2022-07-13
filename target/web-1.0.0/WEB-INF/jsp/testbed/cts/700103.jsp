@@ -2,7 +2,36 @@
 <style type="text/css">
 .sub_section .sub_contents_header{margin-bottom:0 !important;}
 </style>
-<div class="fontsize0 sub_contents_body is_on_top">
+
+<div class="over-hidden sub_contents_header">
+    <div class="linemap_wrap"> <!-- fl class 삭제 -->
+        <ul class="col-12 linemap_con">
+            <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+            <li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠문화광장</span></a></li>
+            <li><a href="javascript:void(0);" tabindex="-1"><span>시설 안내</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="sub_title s_tit02">
+    <div class="col-center mw-1280">시설 안내</div>
+</div>
+
+<div class="col-center mw-1280 dream_list">
+
+    <div class="tab_style_1_con">
+        <ul class="tab_style_1 seven_tab size_24">
+            <li id="tab1"><a href="/testbed/bbs/B0000061/list.do?menuNo=700112"><span>공지사항</span></a></li>
+            <li id="tab2"><a href="/testbed/main/contents.do?menuNo=700101"><span>콘텐츠문화광장 소개</span></a></li>
+            <li id="tab3" class="active"><a href="/testbed/main/contents.do?menuNo=700103" title="현재탭"><span>시설 안내</span></a></li>
+            <li id="tab4"><a href="/testbed/main/contents.do?menuNo=700108"><span>대관 안내</span></a></li>
+            <li id="tab5"><a href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2"><span>대관 현황</span></a></li>
+            <li id="tab6"><a href="/testbed/main/contents.do?menuNo=700104"><span>찾아오시는 길</span></a></li>
+            <li id="tab7"><a href="/testbed/bbs/B0000066/list.do?menuNo=700126"><span>자료실</span></a></li>
+        </ul>
+    </div>
+
+    <div class="fontsize0 sub_contents_body is_on_top">
     <div class="facilities_header_con">
         <div class="facilities_title en">
             FACILITY<br/>
@@ -197,4 +226,6 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>

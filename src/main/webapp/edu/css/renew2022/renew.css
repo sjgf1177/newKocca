@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'Pretendard', sans-serif !
 .tit_row1{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 1; -webkit-box-orient: vertical; word-break: break-all;}
 .tit_row2{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break: break-all;}
 .tit_row3{display: -webkit-box; width: 100%; overflow: hidden; text-overflow: ellipsis; -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-break: break-all;}
-.not_search_list{font-size: 30px; text-align: center;}
+.not_search_list{position: absolute; right: 50%; top: 50%; transform: translate(50%, -50%); font-size: 30px; text-align: center;}
 .vt_mid{vertical-align: middle !important;}
 .mg_b40{margin-bottom: 40px !important;}
 #pDataSearch{text-align: center;}
@@ -231,14 +231,15 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 #main_nav_full li button.active{color:#fff;}
 .navbar-expand-xl #main_nav_full.gnbActive .cy_navbar-nav{max-width: 1273px; margin: 0 auto; padding: 70px 0px;}
 .gnb_close{width: 25px; height: 25px; position: absolute; top:50px; right:50px;}
-#main_nav_full h2{font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
+#main_nav_full h2{position:relative; font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
+.cy_list_txt.pc{position: absolute; right: 0; bottom: 0; font-size: 15px; color: #fff;}
+.cy_list_txt.mo{display: none;}
 .cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 70px;}
-#main_nav_full h3{width: 145px; margin-right: 80px; color:#fff;}
-.cy_list_box{width: 26%; display: flex; font-size: 18px;}
+#main_nav_full h3{width: 145px; margin-right: 80px; color:#fff; text-align: center;}
+.cy_list_box{width: 33.33%; display: flex; font-size: 18px; border-bottom: 1px solid #707070;}
 .cy_list_box li{margin-bottom: 15px;}
-
 .cy_list_box:nth-child(1), .cy_list_box:nth-child(2){padding-bottom: 35px;}
-.cy_list_box:nth-child(n+4){padding:70px 0 35px; border-top: 1px solid #707070; border-bottom: 1px solid #707070;}
+.cy_list_box:nth-child(n+5){padding:70px 0 35px;}
 
 /* SUN NAV */
 .sub_layout_page header, #subContainer header{position:fixed; background: #222;}
@@ -260,6 +261,10 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 }
 @media all and (max-width:1300px) {
     header nav, header .navbar{padding: 10px 20px;}
+}
+@media all and (max-width:640px) {
+    .cy_list_txt.pc {display: none;}
+    .cy_list_txt.mo {display: block; font-size: 15px; color: #fff; margin-bottom: 20px;}
 }
 
 /* 햄버거 */
@@ -308,7 +313,7 @@ header nav.gnbActive{background: #222222;}
     .cy_contents_box{display:block; overflow-y: scroll; height: 500px; width: 100%; padding-top: 10px; padding-bottom: 50px; }
     .cy_list_box:nth-child(1), .cy_list_box:nth-child(2){border-bottom: 1px solid #707070;}
     .cy_list_box, .cy_list_box:nth-child(n+4){width: 100%; flex-direction: column; padding: 10px 0 30px 0;}
-    #main_nav_full h3{width:100%; margin-bottom: 30px; font-size: 21px;}
+    #main_nav_full h3{width:100%; margin-bottom: 30px; font-size: 21px; text-align: left;}
 
 }
 
@@ -378,7 +383,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 }
 
 /*******************************************************  메인 *******************************************************/
-
+.main_visual_contents.mo{display: none;}
 .main_online_contents{background-color: #f8f8f8; padding: 80px 0 90px 0;}
 .main_visual_contents{height: 482px; background-color: #222222; padding: 40px 0;}
 .main_visual_contents #main_visual_slide{position: relative; width: 1280px; height: 360px;}
@@ -395,6 +400,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 @media all and (max-width:1280px) {
     /*.main_visual_contents{padding: 0 20px; height: 285px;}*/
     .main_visual_contents{padding: 0 20px; height: auto;}
+    .main_visual_contents.mo{padding: 0;}
     .main_visual_contents #main_visual_slide{width: 100%;}
     .main_visual_contents #main_visual_slide .swiper-slide{background-size: contain !important; background-repeat: no-repeat;}
     .main_visual_contents .swiper_page_all_box{bottom: 20px; left:20px;}
@@ -403,7 +409,10 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 }
 
 @media all and (max-width:640px) {
+    .main_visual_contents.mo{display: block !important;}
+    .main_visual_contents.pc{display: none !important;}
     .main_visual_contents #main_visual_slide{height: 285px;}
+
 }
 
 
@@ -656,7 +665,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 }
 
 /* 이벤트 콘텐츠 */
-.sub_section .sub_contents_body .event_card_wrap{padding: 90px 0 180px 0; background-color: #F8F8F8;}
+.sub_section .sub_contents_body .event_card_wrap{position:relative; padding: 90px 0 180px 0; background-color: #F8F8F8;}
 .sub_section .sub_contents_body .event_card_wrap .calc_wrap19.swiper{height: 1300px; margin-left: 0;}
 .sub_section .sub_contents_body .event_card_wrap .calc_wrap19.swiper .swiper-wrapper{padding-top: 20px; width: 100% !important;}
 
@@ -716,7 +725,6 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .sub_section .sub_contents_body .event_card_wrap .calc_wrap19.swiper .swiper-wrapper{flex-direction: column;}
     .sub_section .sub_contents_body .event_card_wrap .event_card_list{width: 100%; max-width: 100%;}
     .e_end_back_box{height: 95%;}
-    .not_search_list{margin-top: 70px;}
 }
 
 /* 카테고리 */
