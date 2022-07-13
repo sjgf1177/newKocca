@@ -395,8 +395,10 @@
                 <!-- 모바일 햄버거 end -->
 
                 <div class="nav_search_box">
-                    <input type="text" placeholder="검색어를 입력해주세요.">
-                    <button class="nav_search_btn"></button>
+                    <form name="frmSearch2" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
+                        <input type="text" class="q2" name="q" id="q2" placeholder="검색어를 입력해주세요.111" title="검색어를 입력해주세요.111">
+                        <button class="nav_search_btn"></button>
+                    </form>
                 </div>
 
                 <!-- nav start -->

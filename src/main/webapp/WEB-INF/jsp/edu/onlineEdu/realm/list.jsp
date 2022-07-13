@@ -396,7 +396,6 @@
 </c:if>--%>
 
 <script type="text/javascript">
-    //<![CDATA[
     $(document).ready(function () {
 
         var tabNavControl = $('#tabNavCtrl>li>a').not(':first');
@@ -549,7 +548,7 @@
         $("#p_searchtext").val($.trim($("#p_searchtext").val()));
 
         $("#frm").attr({
-            action: "/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>",
+            action: "/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${param.menuNo }'/>",
             method: "post",
             target: "_self"
         });
@@ -588,7 +587,7 @@
         $("#s_subjseq").val(subjseq);
 
         $("#frm").attr({
-            action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
+            action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${param.menuNo }'/>&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
             method: "post",
             target: "_self"
         });
@@ -616,6 +615,4 @@
         });
         $("#frm").submit();
     }
-
-    //]]>
 </script>
