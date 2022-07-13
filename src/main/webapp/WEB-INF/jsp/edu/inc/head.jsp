@@ -164,6 +164,12 @@
             }
         });
     }
+
+    function fnEvent(type) {
+        document.frmEvent.op3.value = type;
+        document.frmEvent.action = "/edu/bbs/B0000048/list.do?menuNo=500203";
+        document.frmEvent.submit();
+    }
 </script>
 
 <header>
@@ -217,10 +223,10 @@
                     <li><a href="javascript:void(0);">이벤트</a>
                         <!-- nav 이벤트 two-daps start -->
                         <ul>
-                            <li><a href="/edu/bbs/B0000048/list.do?menuNo=500203">에듀코카 이벤트</a></li>
-                            <li><a href="">교육신청하기</a></li>
-                            <li><a href="">공모참여하기</a></li>
-                            <li><a href="">종료이벤트</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnEvent('1')">에듀코카 이벤트</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnEvent('2')">교육신청하기</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnEvent('3')">공모참여하기</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnEvent('4')">종료이벤트</a></li>
                         </ul>
                         <!-- nav 이벤트 two-daps end -->
                     </li>
@@ -399,4 +405,8 @@
     <input type="hidden" name="pGubun1" id="pGubun1" value=""/>
     <input type="hidden" name="p_sort" id="p_sort" value=""/>
     <input type="hidden" name="p_type" id="p_type" value=""/>
+</form>
+
+<form id="frmEvent" name="frmEvent" method="post">
+    <input type="hidden" id="op3" name="op3" value="">
 </form>

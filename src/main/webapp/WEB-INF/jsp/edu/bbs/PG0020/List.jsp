@@ -15,7 +15,8 @@
 <div class="over-hidden sub_contents_header">
     <div class="linemap_wrap"> <!-- fl class 삭제 -->
         <ul class="col-12 linemap_con">
-            <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+            <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a>
+            </li>
             <li><a href="javascript:void(0);" tabindex="-1"><span>이벤트</span></a></li>
         </ul>
     </div>
@@ -132,7 +133,6 @@
                                             <c:forEach var="file" items="${fileList }">
                                                 <c:choose>
                                                     <c:when test="${file.fileFieldName eq 'main_image' }">
-                                                        <%--<img alt="에듀코카 이벤트 이미지" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" style="width: 336px;height: 216px" />--%>
                                                         <img alt="에듀코카 이벤트 이미지" src="${fn:replace(file.fileStreCours, 'data2', 'edu/images')}/${file.streFileNm}"/>
                                                     </c:when>
                                                     <c:otherwise>
@@ -147,7 +147,6 @@
                                     </c:choose>
                                 </div>
                                 <div class="col-12 text_box">
-                                        <%--<p class="event_num">${(resultCnt) - (paramVO.pageSize * (paramVO.pageIndex-1))}</p>--%>
                                     <h5><c:out value="${result.nttSj }"/></h5>
                                     <c:choose>
                                         <c:when test='${ (nowDate-strDate) > 0 }'>
@@ -161,19 +160,19 @@
                                         </c:otherwise>
                                     </c:choose>
                                     <p class="event_date">
-										기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
-												<span class="show"><c:out value="${result.ntceEndde }"/></span>
-									</p>
+                                        기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
+                                        <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                    </p>
                                 </div>
                             </a>
 
                             <c:if test='${(nowDate-strDate) > 0}'>
                                 <div class="e_end_back_box">
-									<a href="<c:out value="${url }" escapeXml="false" />" style="display: inline-block; width: 100%; height: 100%;"></a>
+                                    <a href="<c:out value="${url }" escapeXml="false" />"
+                                       style="display: inline-block; width: 100%; height: 100%;"></a>
                                 </div>
                             </c:if>
                         </div>
-                        <c:set var="resultCnt" value="${resultCnt-1}"/>
                     </c:forEach>
                 </div>
 

@@ -137,11 +137,17 @@
 
 		<isEqual property="bbsId" compareValue="B0000048">
 			<isNotEqual property="op3" compareValue="0">
-				<isNotNull prepend="AND" property="op3">
-				<![CDATA[	a.OPTION3 = #op3#	]]>
+				<isNotNull property="op3">
+					<isEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.NTCE_ENDDE < to_char(sysdate, 'YYYY-MM-DD')	]]>
+					</isEqual>
+					<isNotEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.OPTION3 = #op3#	]]>
+					</isNotEqual>
 				</isNotNull>
 			</isNotEqual>
 		</isEqual>
+
 		<include refid="optionalBoardDAO.selectBoardArticleList-where" />
 	</select>
 
@@ -503,8 +509,13 @@
 
 		<isEqual property="bbsId" compareValue="B0000048">
 			<isNotEqual property="op3" compareValue="0">
-				<isNotNull prepend="AND" property="op3">
-					<![CDATA[	a.OPTION3 = #op3#	]]>
+				<isNotNull property="op3">
+					<isEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.NTCE_ENDDE < to_char(sysdate, 'YYYY-MM-DD')	]]>
+					</isEqual>
+					<isNotEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.OPTION3 = #op3#	]]>
+					</isNotEqual>
 				</isNotNull>
 			</isNotEqual>
 		</isEqual>
