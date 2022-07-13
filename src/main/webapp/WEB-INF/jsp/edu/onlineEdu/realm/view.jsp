@@ -667,7 +667,7 @@
                 $("#s_lesson").val(lesson);
                 $("#p_subjnm").val(subjnm);
                 $("#frm").attr({
-                    action: "/edu/onlineEdu/realm/viewEdu.do?menuNo=<c:out value='${paramVO.menuNo }'/>",
+                    action: "/edu/onlineEdu/realm/viewEdu.do?menuNo=<c:out value='${param.menuNo }'/>",
                     method: "post",
                     target: "_self"
                 });
