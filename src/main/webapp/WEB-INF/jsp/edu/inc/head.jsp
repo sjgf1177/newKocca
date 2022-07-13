@@ -22,8 +22,7 @@
 
     // 콘텐츠커리큘럼 목록
     if (StringUtils.hasText(menuNo)) {
-        org.springframework.context.ApplicationContext context = org.springframework.web.context.support.WebApplicationContextUtils
-                .getWebApplicationContext(getServletContext());
+        org.springframework.context.ApplicationContext context = org.springframework.web.context.support.WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         MasterMenuManager masterMenuManagerService = (MasterMenuManager) context.getBean("masterMenuManagerService");
 
         if(user.getUserIdx() > 0) {

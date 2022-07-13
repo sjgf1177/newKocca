@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!-- 리뉴얼 추가 -->
 <!-- 리뉴얼 추가 끝 -->
@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/flaticon.css"/>
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/ie.css"/>
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/layout.css"/>
-<!-- <link rel="stylesheet" type="text/css" href="/edu/css/bm/main_prev.css"/> -->
+
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/member.css"/>
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/portfolio.css"/>
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/search.css"/>
@@ -27,8 +27,8 @@
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_layout.css"/>
 <link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_page.css"/>
 
-<link rel="stylesheet" type="text/css" href="/js/jquery-ui/jquery-ui.css" />
-<link rel="stylesheet" type="text/css" href="/edu/css/submain.css" />
+<link rel="stylesheet" type="text/css" href="/js/jquery-ui/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="/edu/css/submain.css"/>
 
 <!-- 리뉴얼 추가 -->
 <link rel="stylesheet" type="text/css" href="/edu/css/new/header.css"/>
@@ -58,7 +58,6 @@
 <link rel="stylesheet" href="/edu/js/bm/swiper/swiper.min.css"/>
 <script type="text/javascript" src="/edu/js/bm/swiper/swiper.min.js"></script>
 <script type="text/javascript" src="/edu/js/bm/sub.js"></script>
-
 
 <!--[if lt IE 9]>
 <link rel="stylesheet" href="/ckl/css/ie.css" type="text/css" />
