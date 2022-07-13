@@ -297,6 +297,7 @@
 <c:set var="lowSystm" value=""/>
 
 <!-- 참여 강사 정보-->
+<!-- 오픈 이후 개발 예정
 <div class="col-center mw-1280">
     <p class="col-12 online_edu_card_view_title">참여 강사 정보</p>
     <ul class="col-12 mb70 teach_table_box">
@@ -346,11 +347,12 @@
         </li>
     </ul>
 </div>
+-->
 
 <!-- 연계과정 html 현재 클릭시 페이지 이동이 안됨 -->
 <c:if test="${nextProposeSubjList ne null and nextProposeSubjList.size() > 0 }">
     <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
-        <span class="main_title">연계과정</span>
+        <span class="main_title">연계과정 / ${fn:length(nextProposeSubjList)}</span>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">
                 <c:forEach items="${nextProposeSubjList }" var="item2" varStatus="status2">
@@ -360,7 +362,7 @@
                             <a class="show-block" href="javascript:void(0);"
                                onclick="fnCmdViewPage('${item2.type }', '${item2.courseId }', '${item2.courseName }', '${item2.isonoff }', '${item2.scupperclass }', '${item2.uclassnm }', '${item2.year }', '${item2.subjseq }'); return false;">
                                 <img alt="<c:out value="${not empty item2.courseName ? item2.courseName : '다음강좌' }" />"
-                                     src='<c:out value="${item2.imgfile }" />'/>
+                                     src='<c:out value="/edu${item2.imgfile }" />'/>
                             </a>
                             <!-- 설명란 start-->
                             <div class="fwo_info_box">

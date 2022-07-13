@@ -27,14 +27,14 @@
 <div class="sub_title s_tit02">
 	<c:forEach items="${realmTabList}" var="item" varStatus="status">
 		<c:if test="${item.code eq param.pGubun1}">
-			<div class="col-center mw-1280">열린강좌 - ${item.codenm}</div>
+			<div class="col-center mw-1280">${item.codenm}</div>
 		</c:if>
 	</c:forEach>
 </div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
-	<li class="after_line"><a href="javascript:void(0);" onclick="fnCmdSearchCateList('${param.pGubun1}', '', '', '', ''); return false;">정규과정</a></li>
 	<li class="active"><a href="javascript:void(0);">열린강좌</a></li>
+	<li class="after_line"><a href="javascript:void(0);" onclick="fnCmdSearchCateList('${param.pGubun1}', '', '', '', ''); return false;">정규과정</a></li>
 </ul>
 
 

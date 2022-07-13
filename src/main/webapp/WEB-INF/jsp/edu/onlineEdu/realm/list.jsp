@@ -47,14 +47,14 @@
 <div class="sub_title s_tit02">
     <c:forEach items="${realmTabList}" var="item" varStatus="status">
         <c:if test="${item.code eq param.pGubun1}">
-            <div class="col-center mw-1280">정규과정 - ${item.codenm}</div>
+            <div class="col-center mw-1280">${item.codenm}</div>
         </c:if>
     </c:forEach>
 </div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
-    <li class="after_line active"><a href="javascript:void(0);">정규과정</a></li>
     <li><a href="javascript:void(0);" onclick="fnCmdGoldSearchList('${param.pGubun1}')">열린강좌</a></li>
+    <li class="after_line active"><a href="javascript:void(0);">정규과정</a></li>
 </ul>
 
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20">
@@ -496,7 +496,6 @@
                         }
                     });
                 }
-
             },
             error: function () {
                 alert("서버와 통신 실패");

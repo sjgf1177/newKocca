@@ -269,19 +269,20 @@
         });
     });
 
-    function fnCmdSearchList(gubun1, gubun2, gubun3, ordersnm, orders) {
-        $.post();
-        $("#pGubun1").val(gubun1);
-        $("#pGubun2").val(gubun2);
-        $("#pGubun3").val(gubun3);
-        $("#p_ordersnm").val(ordersnm);
-        $("#p_orders").val(orders);
+    function fnCmdGoldSearchList(gubun){
+        if(gubun){
+            $("#gubun").val(gubun == "ALL" ? "" : gubun);
+        }
+
         $("#pageIndex").val("1");
+        $("#pGubun1").val(gubun);
+        $("#p_type").val(gubun);
+        $("#p_sort").val("N");
 
         $("#frm").attr({
-            action: "/edu/onlineEdu/realm/list.do?menuNo=500027",
-            method: "post",
-            target: "_self"
+            action:"/edu/onlineEdu/openLecture/list.do?menuNo=500085",
+            method:"post",
+            target:"_self"
         });
         $("#frm").submit();
     }
@@ -364,6 +365,8 @@
     <input type="hidden" name="s_subj" id="s_subj" value=""/>
     <input type="hidden" name="s_year" id="s_year" value=""/>
     <input type="hidden" name="s_subjseq" id="s_subjseq" value=""/>
+    <input type="hidden" name="p_type" id="p_type" value="">
+    <input type="hidden" name="p_sort" id="p_sort" value="">
 </form>
 
 <div id="wrap" class="over-hidden">
@@ -435,11 +438,11 @@
                             <!-- nav 카테고리 two-daps start -->
                             <ul>
                                 <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">학습로드맵</a></li>
-                                <li><a href="javascript:void(0);" onclick="fnCmdSearchList('B0', '', '', '', ''); return false;">방송영상</a></li>
-                                <li><a href="javascript:void(0);" onclick="fnCmdSearchList('G0', '', '', '', ''); return false;">게임</a></li>
-                                <li><a href="javascript:void(0);" onclick="fnCmdSearchList('K0', '', '', '', ''); return false;">만화/애니/캐릭터</a></li>
-                                <li><a href="javascript:void(0);" onclick="fnCmdSearchList('M0', '', '', '', ''); return false;">문화일반(음악공연)</a></li>
-                                <li><a href="javascript:void(0);" onclick="fnCmdSearchList('S0', '', '', '', ''); return false;">인문/경영/교양/일반</a></li>
+                                <li><a href="javascript:void(0);" onclick="fnCmdGoldSearchList('B0'); return false;">방송영상</a></li>
+                                <li><a href="javascript:void(0);" onclick="fnCmdGoldSearchList('G0'); return false;">게임</a></li>
+                                <li><a href="javascript:void(0);" onclick="fnCmdGoldSearchList('K0'); return false;">만화/애니/캐릭터</a></li>
+                                <li><a href="javascript:void(0);" onclick="fnCmdGoldSearchList('M0'); return false;">문화일반(음악공연)</a></li>
+                                <li><a href="javascript:void(0);" onclick="fnCmdGoldSearchList('S0'); return false;">인문/경영/교양/일반</a></li>
                             </ul>
                             <!-- nav 카테고리 two-daps end -->
                         </li>

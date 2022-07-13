@@ -93,7 +93,7 @@
         });
     });
 
-    //과정 조회
+    //과정 조회(정규)
     function fnCmdSearchCateList(gubun1, gubun2, gubun3, ordersnm, orders) {
         $("#pGubun1").val(gubun1);
         $("#pageIndex").val("1");
@@ -105,6 +105,43 @@
             target: "_self"
         });
         $("#frmCate").submit();
+    }
+
+    //과정 조회(열린)
+    function fnCmdSearchGoldList(gubun) {
+        $("#pGubun1").val(gubun);
+        $("#p_type").val(gubun);
+        $("#pageIndex").val("1");
+        $("#p_sort").val("N");
+
+        $("#frmCate").attr({
+            action:"/edu/onlineEdu/openLecture/list.do?menuNo=500085",
+            method: "post",
+            target: "_self"
+        });
+        $("#frmCate").submit();
+    }
+
+    //과정 상세화면
+    function fnSubjViewPage(subj, subjnm, isonoff, scupperclass, uclassnm, year, subjseq) {
+        $("#p_subj").val(subj);
+        $("#p_subjnm").val(subjnm);
+        $("#p_isonoff").val(isonoff);
+        $("#p_scupperclass").val(scupperclass);
+        $("#p_uclassnm").val(uclassnm);
+        $("#p_year").val(year);
+        $("#p_subjseq").val(subjseq);
+
+        $("#s_subj").val(subj);
+        $("#s_year").val(year);
+        $("#s_subjseq").val(subjseq);
+
+        $("#frm").attr({
+            action: "/edu/onlineEdu/realm/view.do?menuNo=500027",
+            method: "post",
+            target: "_self"
+        });
+        $("#frm").submit();
     }
 
     // 콘텐츠커리큘럼 저장
@@ -194,11 +231,11 @@
                         <!-- nav 카테고리 two-daps start -->
                         <ul>
                             <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">학습로드맵</a></li>
-                            <li><a href="javascript:void(0);" onclick="fnCmdSearchCateList('B0', '', '', '', ''); return false;">방송영상</a></li>
-                            <li><a href="javascript:void(0);" onclick="fnCmdSearchCateList('G0', '', '', '', ''); return false;">게임</a></li>
-                            <li><a href="javascript:void(0);" onclick="fnCmdSearchCateList('K0', '', '', '', ''); return false;">만화/애니/캐릭터</a></li>
-                            <li><a href="javascript:void(0);" onclick="fnCmdSearchCateList('M0', '', '', '', ''); return false;">문화일반(음악공연)</a></li>
-                            <li><a href="javascript:void(0);" onclick="fnCmdSearchCateList('S0', '', '', '', ''); return false;">인문/경영/교양/일반</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('B0'); return false;">방송영상</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('G0'); return false;">게임</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('K0'); return false;">만화/애니/캐릭터</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('M0'); return false;">문화일반(음악공연)</a></li>
+                            <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('S0'); return false;">인문/경영/교양/일반</a></li>
                         </ul>
                         <!-- nav 카테고리 two-daps end -->
                     </li>
@@ -361,4 +398,5 @@
 <form id="frmCate" name="frmCate" action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=500027" method="post">
     <input type="hidden" name="pGubun1" id="pGubun1" value=""/>
     <input type="hidden" name="p_sort" id="p_sort" value=""/>
+    <input type="hidden" name="p_type" id="p_type" value=""/>
 </form>
