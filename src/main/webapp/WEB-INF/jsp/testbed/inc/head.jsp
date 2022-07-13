@@ -360,8 +360,9 @@
                                     <img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
                                 </a>
                                 <input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
-                                <h2>콘텐츠커리큘럼</h2>
+                                <h2>콘텐츠커리큘럼<span class="pc cy_list_txt">아래 관심분야를 선택하시면 메인페이지에서 맞춤과정을 추천해 드립니다.(다수선택가능)</span></h2>
                                 <div class="cy_contents_box">
+                                    <p class="mo cy_list_txt">아래 관심분야를 선택하시면 메인페이지에서 맞춤과정을 추천해 드립니다.(다수선택가능)</p>
                                     <c:set var="contentType" value=""/>
                                     <c:forEach items="${curriculumList }" var="result" varStatus="status">
                                         <c:if test="${status.first eq false}">
