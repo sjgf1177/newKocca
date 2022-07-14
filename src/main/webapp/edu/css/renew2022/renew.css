@@ -543,8 +543,8 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .main_offline_contents .fwo_card_list_box .swiper-slide:hover .swiper-slide a img{top:-2px; box-shadow: 5px 5px 5px rgba(0,0,0,0.1);}
 .main_offline_contents .fwo_card_list_box .swiper-slide:hover .fwo_snail_box{top:-2px; box-shadow: 5px 5px 5px rgba(0,0,0,0.1);}
 .main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box img{border-radius: 25px;}
-.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_on{position: absolute; bottom: 0px; right: 0px; background-color: #3B85FF; font-size: 16px; width: 88px; height: 40px; text-align: center; line-height: 40px; border:1px solid #fff; border-radius: 20px 0 0 0; color: #fff;}
-.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_off{position: absolute; bottom: 0px; right: 0px; background-color: #222222; font-size: 16px; width: 88px; height: 40px; text-align: center; line-height: 40px; border:1px solid #fff; border-radius: 20px 0 0 0; color: #fff;}
+.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_on{position: absolute; bottom: 0px; right: 0px; background-color: #3B85FF; font-size: 16px; width: 88px; height: 40px; text-align: center; border:1px solid #fff; border-radius: 20px 0 0 0; color: #fff;}
+.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_off{position: absolute; bottom: 0px; right: 0px; background-color: #222222; font-size: 16px; width: 88px; height: 40px; text-align: center; border:1px solid #fff; border-radius: 20px 0 0 0; color: #fff;}
 .main_offline_contents .fwo_card_list_box .fwo_info_box{position: relative; top: 0; border: none; padding: 10px 36px 23px 20px;}
 .main_offline_contents .fwo_card_list_box .fwo_info_box .fwo_tit_box{height:60px; font-size: 18px; font-weight: 600;}
 .main_offline_contents .fwo_card_list_box .fwo_info_box p{margin-top: 27px;}
@@ -555,7 +555,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .contents_section .main_offline_contents .container  .fwo_card_list_box .main_title{font-size: 3rem; line-height: 5rem;}
     .main_offline_contents .fwo_card_list_box .fwo_card li{width: 290px!important;}
     .main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box{margin-bottom: 0;}
-    .main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_on, .main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_off{width: 80px; height: 27px; font-size: 1.4rem; line-height: 2.8rem;}
+    .main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_on, .main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box .tag_off{width: 80px; height: 40px; font-size: 1.4rem; line-height: 2.8rem;}
     .main_offline_contents .fwo_card_list_box .fwo_card .fwo_info_box{padding: 10px 10px 10px 17px; border-radius: 32px;}
     .main_offline_contents .fwo_card_list_box .fwo_info_box .fwo_tit_box{height: 40px; font-size: 1.4rem; line-height: 2rem;}
     .main_offline_contents .fwo_card_list_box .swiper_btn_box{top:75px;}
