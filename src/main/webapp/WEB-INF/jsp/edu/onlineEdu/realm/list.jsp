@@ -305,6 +305,7 @@
 <!-- 대분류 -->
 <c:if test="${fn:length(resultList) > 0}">
     <c:set var="mainTitle" value=""/>
+    <c:set var="cardNo" value="3"/>
     <c:forEach items="${resultList }" var="item3" varStatus="status3">
         <c:if test="${status3.first eq false}">
             <c:if test="${mainTitle ne item3.g2nm}">
@@ -319,11 +320,12 @@
             </c:if>
         </c:if>
         <c:if test="${mainTitle ne item3.g2nm}">
-            <div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
+            <div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card0${cardNo} col-center mw-1280">
                 <span class="main_title">${item3.g2nm}</span>
                 <div class="fwo_card swiper-container">
                     <div class="swiper-wrapper">
             <c:set var="mainTitle" value="${item3.g2nm}"/>
+            <c:set var="cardNo" value="${cardNo + 1}"/>
         </c:if>
         <div class="swiper-slide">
             <div class="">

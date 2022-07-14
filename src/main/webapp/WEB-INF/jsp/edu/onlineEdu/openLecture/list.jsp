@@ -101,6 +101,7 @@
 
 <c:if test="${fn:length(resultList) > 0}">
 	<c:set var="mainTitle" value=""/>
+	<c:set var="cardNo" value="1"/>
 	<c:forEach items="${resultList }" var="result" varStatus="status">
 		<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
 			<c:param name="pSeq" value="${result.seq }"/>
@@ -120,11 +121,12 @@
 			</c:if>
 		</c:if>
 		<c:if test="${mainTitle ne result.g2nm}">
-			<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card01 col-center mw-1280">
+			<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card0${cardNo} col-center mw-1280">
 				<span class="main_title">${result.g2nm}</span>
 				<div class="fwo_card swiper-container">
 					<div class="swiper-wrapper">
 			<c:set var="mainTitle" value="${result.g2nm}"/>
+			<c:set var="cardNo" value="${cardNo + 1}"/>
 		</c:if>
 		<div class="swiper-slide">
 			<div class="">

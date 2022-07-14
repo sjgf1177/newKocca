@@ -90,7 +90,7 @@
 <fmt:formatDate value="${todayNow}" var="today" pattern="yyyy-MM-dd"/>
 
 <c:set var="userVO" value="${userVO }" scope="request"/>
-
+<%--<c:if test="${param.mode eq 'renewal'}">--%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -191,6 +191,7 @@
 
 <body>
 <script type="text/javascript">
+
     function search2(form) {
         if (!form.q.value) {
             alert("검색어를 입력하세요.");
@@ -1212,3 +1213,19 @@
 </div>
 </body>
 </html>
+<%--
+</c:if>
+<c:if test="${param.mode ne 'renewal'}">
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <title>에듀코카 korea creative content agency</title>
+    </head>
+
+    <body>
+    <div style="text-align : center; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <img src="/edu/images/poup_open.png">
+    </div>
+    </body>
+    </html>
+</c:if>--%>

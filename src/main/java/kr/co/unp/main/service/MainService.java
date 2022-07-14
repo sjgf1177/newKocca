@@ -144,6 +144,7 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			model.addAttribute("fileMap", fileMap);
 
 			param.put("siteId", SiteMngService.EDU_SITE_ID); // 팝업존 siteId
+			param.put("mode", param.getString("mode"));
 		}
 		else if (SiteMngService.EDUMOBILE_SITE_NAME.equals(param.getString("siteName"))) {
 			param.put("siteId", SiteMngService.EDUMOBILE_SITE_ID);
