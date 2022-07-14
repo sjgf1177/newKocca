@@ -890,7 +890,7 @@
                                                     <img alt="No Image" src="/edu/images/bm/noimage.png"/>
                                                 </c:otherwise>
                                             </c:choose>
-                                            <!-- <span class="tag_on">예약알림</span> -->
+                                            <span class="tag_off" style="margin-bottom: 0;">마감</span>
                                         </a>
                                     </div>
                                     <!-- 썸네일 end -->
