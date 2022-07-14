@@ -626,11 +626,12 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/edukocca_no1.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/edukocca_no2.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/edukocca_no3.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/edukocca_no4.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/edukocca_no5.jpg" alt="설명 들어오는 곳"></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75203&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no1.jpg" alt="포스트코로나 시대의 콘텐츠 기획과 제작"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75202&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no2.jpg" alt="콘텐츠 로컬라이제이션” 교육생 모집"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75196&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no3.jpg" alt="컨텐츠랩 비보의 성장과정"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75172&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no4.jpg" alt="소설, 웹툰 원작의 뮤지컬화"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75144&searchCnd=1&searchWrd=%EA%B2%8C%EC%9E%84%EC%9D%B8%EC%9E%AC%EC%9B%90&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no5.jpg" alt="게임인재원4기 교육생 모집"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/JWLQGG2xRv7kVaLK6"><img src="/edu/images/renew2022/edukocca_no6.png" alt="[KNOCK STATION X 서울] 참가기업 모집"></a></div>
 
                     <!-- //반복 -->
                 </div>
@@ -651,11 +652,12 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/m_edukocca_no1.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/m_edukocca_no2.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/m_edukocca_no3.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/m_edukocca_no4.jpg" alt="설명 들어오는 곳"></div>
-                    <div class="swiper-slide"><img src="/edu/images/renew2022/m_edukocca_no5.jpg" alt="설명 들어오는 곳"></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75203&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no1.jpg" alt="포스트코로나 시대의 콘텐츠 기획과 제작" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75202&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no2.jpg" alt="콘텐츠 로컬라이제이션” 교육생 모집" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75196&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no3.jpg" alt="컨텐츠랩 비보의 성장과정" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75172&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no4.jpg" alt="소설, 웹툰 원작의 뮤지컬화" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75144&searchCnd=1&searchWrd=%EA%B2%8C%EC%9E%84%EC%9D%B8%EC%9E%AC%EC%9B%90&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no5.jpg" alt="게임인재원4기 교육생 모집" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/JWLQGG2xRv7kVaLK6"><img src="/edu/images/renew2022/m_edukocca_no6.jpg" alt="[KNOCK STATION X 서울] 참가기업 모집" style="width:100%;"></a></div>
                     <!-- //반복 -->
                 </div>
 
