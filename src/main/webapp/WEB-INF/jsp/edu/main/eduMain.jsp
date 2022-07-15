@@ -90,7 +90,7 @@
 <fmt:formatDate value="${todayNow}" var="today" pattern="yyyy-MM-dd"/>
 
 <c:set var="userVO" value="${userVO }" scope="request"/>
-<c:if test="${param.mode eq 'renewal'}">
+<%--<c:if test="${param.mode eq 'renewal'}">--%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1214,6 +1214,7 @@
 </body>
 </html>
 
+<%--
 </c:if>
 <c:if test="${param.mode ne 'renewal'}">
     <!DOCTYPE html>
@@ -1240,4 +1241,4 @@
 
     </body>
     </html>
-</c:if>
+</c:if>--%>
