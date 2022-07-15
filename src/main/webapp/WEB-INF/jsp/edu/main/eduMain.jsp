@@ -713,7 +713,7 @@
                                 <c:forEach var="result" items="${B0000011List}" end="3" varStatus="status">
                                     <li class="swiper-slide">
                                         <a href="/edu/bbs/<c:out value="${result.bbsId}"/>/view.do?nttId=<c:out value="${result.nttId}"/>&amp;menuNo=500008">
-                                            <span class="abbreviation<c:if test="${status.first}">2</c:if>"><c:out value="${result.nttSj}"/></span>
+                                            <span class="abbreviation<c:if test="${status.first}"></c:if>"><c:out value="${result.nttSj}"/></span>
                                             <span>
 	                                        	<fmt:parseDate var="dateFmt" pattern="yyyy-MM-dd" value="${fn:substring(result.regDate,0,10)}"/>
 	                                        	<fmt:formatDate var="dateTempParse" pattern="yyyy.MM.dd" value="${dateFmt}"/>
