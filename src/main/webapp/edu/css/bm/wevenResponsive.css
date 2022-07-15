@@ -422,6 +422,7 @@ html *, body * {transition: color, background-color, border-color .3s;}
 .mw-n {max-width: none;}
 .mw-270 {max-width: 270px;}
 .mw-290 {max-width: 290px;}
+.mw-400 {max-width: 400px;}
 .mw-768 {max-width: 768px;}
 .mw-850 {max-width:850px;}
 .mw-1024 {max-width: 1024px;}
