@@ -724,7 +724,7 @@
                                 </c:forEach>
                             </ul>
                         </div>
-                        <a href="/edu/bbs/B0000011/list.do?menuNo=500008">더보기</a>
+                        <a href="/edu/bbs/B0000011/list.do?menuNo=500008" class="">더보기</a>
                     </div>
                 </div>
             </div>
