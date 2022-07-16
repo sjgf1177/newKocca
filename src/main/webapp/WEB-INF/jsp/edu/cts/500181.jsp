@@ -17,6 +17,7 @@
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>사업안내</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠임팩트</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>사업소개</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -29,9 +30,6 @@
 	<div class="tab_style_1_con" style="margin-bottom: 40px;">
 		<ul class="tab_style_1 two_tab" style="display: flex; justify-content: center;">
 			<li class="active"><a href="/edu/main/contents.do?menuNo=500213" title="현재탭"><span>사업소개</span></a></li>
-			<!-- <li><a href="/edu/main/contents.do?menuNo=500180"><span>마스터클래스</span></a></li>
-			<li><a href="/edu/main/contents.do?menuNo=500181"><span>쇼케이스</span></a></li>
-			<li><a href="/edu/main/contents.do?menuNo=500182"><span>융복합컨퍼런스</span></a></li> -->
 			<li><a href="/edu/archiveUser/contentsList.do?menuNo=500261&amp;workField=4"><span>성과아카이브</span></a></li>
 		</ul>
 	</div>

@@ -15,7 +15,9 @@
 	<div class="linemap_wrap"> <!-- fl class 삭제 -->
 		<ul class="col-12 linemap_con">
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>사업안내</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>창의인재동반</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>창의현장</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -28,7 +30,6 @@
 		<ul class="tab_style_1 four_tab size_24">
 			<li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"><span>사업소개</span></a></li>
 			<li><a href="/edu/dream/pltfomList/list.do?menuNo=500117"><span>플랫폼기관</span></a></li>
-			<!-- <li><a href="/edu/dream/mentorManage/list.do?menuNo=500119"><span>멘토라인업</span></a></li> -->
 			<li class="active"><a href="/edu/bbs/B0000041/list.do?menuNo=500211" title="현재탭"><span>창의현장</span></a></li>
 			<li><a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1"><span>성과아카이브</span></a></li>
 		</ul>
@@ -172,6 +173,3 @@
 
 
 </div>
-<style>
-	.linemap_wrap .linemap_con li:nth-child(4) { display:none }
-</style>

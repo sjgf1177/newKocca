@@ -14,6 +14,7 @@
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>사업안내</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠원캠퍼스</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>지원현황</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -26,9 +27,6 @@
 	<div class="tab_style_1_con" style="margin-bottom: 40px;">
 		<ul class="tab_style_1 three_tab" style="display: flex; justify-content: center;">
 			<li><a href="/edu/main/contents.do?menuNo=500179"><span>사업소개</span></a></li>
-			<!-- <li><a href="/edu/main/contents.do?menuNo=500180"><span>마스터클래스</span></a></li>
-			<li><a href="/edu/main/contents.do?menuNo=500181"><span>쇼케이스</span></a></li>
-			<li><a href="/edu/main/contents.do?menuNo=500182"><span>융복합컨퍼런스</span></a></li> -->
 			<li class="active"><a href="/edu/bbs/B0000072/list.do?menuNo=500212" title="현재탭"><span>지원현황</span></a></li>
 			<li><a href="/edu/archiveUser/contentsList.do?menuNo=500260&amp;workField=3"><span>성과아카이브</span></a></li>
 		</ul>
