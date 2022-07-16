@@ -9,71 +9,11 @@
 //<![CDATA[
   $(document).ready(function(){
  	$('#ssoLoginForm').attr({
-		//action : '<c:out value="${ssoDomain }" />/sso/member/forLoginSSO.do',
-		//action : 'http://edusso.kocca.kr/sso/member/forLoginSSO.do',
-		//action : 'http://edu.kocca.kr:8088/sso/member/forLoginSSO.do',
-		action : 'sso/member/forLoginSSO.do',
+		action : '<c:out value="${ssoDomain }" />/sso/member/forLoginSSO.do',
 		target : 'ssoLoginFrame'
 	}).submit();
   });
 //]]>
-
-
-	function actionLogin() {
-		$.ajaxSetup({
-			async : true
-		});
-
-		var form = document.loginForm;
-		var v = new MiyaValidator(form);
-		v.add("username", {
-			required : true
-		});
-		v.add("password", {
-			required : true
-		});
-		var result = v.validate();
-		if (!result) {
-			alert(v.getErrorMessage());
-			v.getErrorElement().focus();
-			return;
-		} else {
-			$("#authSe").empty();
-			fnLoginSSO();
-
-		}
-	}
-	
-	function fnLoginSSO() {
-		$(".loadingBox").show();
-		var url = "/sso/member/toLoginSSO.json";
-		//alert(url);
-
-		//$("#username").val(Base64.encode($("#username").val()));
-		//$("#password").val(Base64.encode($("#password").val()));
-
-		var params = $("#loginForm").serialize();
-		$
-				.post(
-						url,
-						params,
-						function(data) {
-							//alert("post result");
-							//alert(data.ssoAuthToken);
-							var returl = "/edu/member/toLogin.do?ssoAuthToken="
-									+ data.ssoAuthToken
-									+ "&saltkey="
-									+ data.saltkey
-									+ "&menuNo=500077"
-									+ "&redirectUrl=<c:url value="${param.redirectUrl}" />";
-							//console.log(url);
-							//alert(returl);
-							//$("#loginFormSSO").attr("action",returl);
-							//$("#loginFormSSO").submit();
-							window.parent.location.href = returl;
-							return false;
-						}, "json");
-	}	
 </script>
 
 	<c:if test="${not empty param.email}">
@@ -100,17 +40,3 @@
 		<input type="hidden" name="menuNo" value="<c:out value="${paramVO.menuNo }" />"/>
 		<input type="hidden" name="redirectUrl" value="<c:out value="${param.redirectUrl}" />"/>
 	</form>
-<input type="submit" onclick="actionLogin();return false;" class="input_style_1" name="usersubmit" id="usersubmit">
-<label for="usersubmit">로그인</label>
-
-	    <form class="login_form" name="loginForm" id="loginForm" action="#" method="post">
-			<input type="hidden" name="loginFlag" value="${paramVO.loginFlag}" />
-			<input type="hidden" name="menuNo" value="${paramVO.menuNo}" /> 
-			<input type="hidden" name="_targetUrl" value="${_targetUrl}" /> 
-			<input type="hidden" name="redirectUrl" value="${param.redirectUrl}" />
-			<input type="hidden" name="authSe" id="authSe" value="" /> 
-			<input type="hidden" name="authKey" id="authKey" value="" /> 
-			<input type="hidden" name="service" id="service" value="${paramVO.service}" />
-			<input type="hidden" name="username" id="username" value="1234" />
-			<input type="hidden" name="password" id="password" value="1234" />
-	        </form>

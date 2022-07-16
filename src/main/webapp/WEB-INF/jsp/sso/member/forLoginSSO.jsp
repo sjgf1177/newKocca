@@ -25,7 +25,7 @@
 <c:set var="siteNm" value="${paramVO.service}"/>
 <%
 	String domain = request.getServerName();
-/* 	session.setAttribute("ssoDomain2", domain);
+ 	session.setAttribute("ssoDomain2", domain);
 	
 	String requestUri = request.getRequestURL().toString();
 	String host = request.getRemoteHost();
@@ -40,7 +40,7 @@
 	HashMap<String, List<MenuManageVO>> menuMap = (HashMap<String, List<MenuManageVO>>)application.getAttribute(contextScopeMenuAllName);
 	MasterMenuManager masterMenuManagerService = (MasterMenuManager)context.getBean("masterMenuManagerService");
 	MenuManageVO currentVo = masterMenuManagerService.getCurrentMenu(menuMap, Integer.parseInt(menuNo));
-	pageContext.setAttribute("currMenu", currentVo); */
+	pageContext.setAttribute("currMenu", currentVo);
 %>
 <c:set var="pathData" value="${fn:split(currMenu.path, '|')}" />
 <c:set var="pathData0" value="${pathData[0]}" />

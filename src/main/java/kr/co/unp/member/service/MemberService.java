@@ -287,13 +287,11 @@ public class MemberService extends DefaultCmmProgramService {
 	 * @throws Exception
 	 */
 	public void toLogin(ParameterContext<ZValue> paramCtx) throws Exception {
-		System.out.println("========================toLogin");
 		ZValue param = paramCtx.getParam();
         ModelMap model = paramCtx.getModel();
 		HttpServletRequest request = paramCtx.getRequest();
 		HttpSession session = request.getSession();
 
-		System.out.println("================ REFERER =============================> " + request.getHeader("REFERER"));
 		String cklDomain = EgovProperties.getProperty("Globals.ckl.domain");
 		String protocol = "http";
 		String realMode = EgovProperties.getProperty("Globals.realMode");
@@ -307,9 +305,6 @@ public class MemberService extends DefaultCmmProgramService {
 		String username = "";
         String password = "";
         String sttus = "";
-        
-        param.put("username", "sjsjgg");
-	    param.put("password", "6699439411d65d9e0aa492afec1d4b8fbafd613a512bbc7196b6a5be595d2c");
 	    
 	    /*param.put("username", "kok547");
 	    param.put("password", "f46f0abab9477c96662b4c3e7e76c845272879df2e7223784d26473da7014df");*/
@@ -554,7 +549,7 @@ public class MemberService extends DefaultCmmProgramService {
 		String meduDomain = EgovProperties.getProperty("Globals.edumobile.domain");
 		String testbedDomain = EgovProperties.getProperty("Globals.testbed.domain");
 		String domain = cklDomain;
-		System.out.println("++++++++++++++++++forLoginSSO"+param.getString("service")+"+++++++++++++++++++++++");
+		//System.out.println("++++++++++++++++++forLoginSSO"+param.getString("service")+"+++++++++++++++++++++++");
 		if ("edu".equals(param.getString("service"))) domain = eduDomain;
 		else if ("testbed".equals(param.getString("service"))) domain = testbedDomain; 
 		else if ("edumobile".equals(param.getString("service"))) domain = meduDomain; 
@@ -574,7 +569,7 @@ public class MemberService extends DefaultCmmProgramService {
 	 * @throws Exception
 	 */
 	public void incForLoginSSO(ParameterContext<ZValue> paramCtx) throws Exception {
-		System.out.println("========================incForLoginSSO");
+		//System.out.println("========================incForLoginSSO");
 		ModelMap model = paramCtx.getModel();
 		ZValue param = paramCtx.getParam();
 		HttpServletRequest request = paramCtx.getRequest();
@@ -610,7 +605,7 @@ public class MemberService extends DefaultCmmProgramService {
 	}
 
 	public void checkSSO(ParameterContext<ZValue> paramCtx) throws Exception {
-		System.out.println("============================checkSSO");
+		//System.out.println("============================checkSSO");
 		ZValue param = paramCtx.getParam();
 		HttpServletRequest request = paramCtx.getRequest();
 		HttpSession session = request.getSession();
@@ -896,7 +891,7 @@ public class MemberService extends DefaultCmmProgramService {
 	    	SecurityContext securityContext = SecurityContextHolder.getContext();
 	    	UnpUserDetails userDetail = new UnpUserDetails(String.valueOf(vo.getUserIdx()), vo.getPassword(), true, vo);
 	    	securityContext.setAuthentication(new UsernamePasswordAuthenticationToken(userDetail,String.valueOf(vo.getUserIdx()), authorities));
-	    	System.out.println(securityContext);
+	    	//System.out.println(securityContext);
 	    	session.setAttribute("SPRING_SECURITY_CONTEXT", securityContext);
 		}
 
@@ -908,7 +903,7 @@ public class MemberService extends DefaultCmmProgramService {
 	 * @throws Exception
 	 */
 	public void logout(ParameterContext<ZValue> paramCtx) throws Exception{
-		System.out.println("=========== logout ==========");
+		//System.out.println("=========== logout ==========");
 		String ssoDomain = EgovProperties.getProperty("Globals.sso.domain");
 		ZValue param = paramCtx.getParam();
 
