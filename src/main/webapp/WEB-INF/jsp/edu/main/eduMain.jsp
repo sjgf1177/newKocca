@@ -749,7 +749,7 @@
                                                     <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <img alt="${result.subjnm } - 메인 이미지" src="/edu<c:out value="${result.introducefilenamenew}" />"/>
+                                                    <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />"/>
                                                 </c:otherwise>
                                             </c:choose>
                                         </a>
@@ -801,7 +801,7 @@
                                                     <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="/edu<c:out value='${result.vodimg }'/>"/>
+                                                    <img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value='${result.vodimg }'/>"/>
                                                 </c:otherwise>
                                             </c:choose>
                                         </a>
