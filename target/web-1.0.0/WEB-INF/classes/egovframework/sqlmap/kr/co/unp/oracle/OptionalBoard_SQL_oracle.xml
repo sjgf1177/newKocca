@@ -42,12 +42,6 @@
 			 )
 	</insert>
 
-
-
-
-
-
-
 	<sql id="optionalBoardDAO.selectBoardArticleList-where">
 		<isNotEmpty prepend="AND" property="sdate">
 			<![CDATA[	TO_CHAR(a.FRST_REGIST_PNTTM, 'YYYYMMDD') >= REPLACE(#sdate#,'-','') 		]]>
@@ -143,11 +137,17 @@
 
 		<isEqual property="bbsId" compareValue="B0000048">
 			<isNotEqual property="op3" compareValue="0">
-				<isNotNull prepend="AND" property="op3">
-				<![CDATA[	a.OPTION3 = #op3#	]]>
+				<isNotNull property="op3">
+					<isEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.NTCE_ENDDE < to_char(sysdate, 'YYYY-MM-DD')	]]>
+					</isEqual>
+					<isNotEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.OPTION3 = #op3#	]]>
+					</isNotEqual>
 				</isNotNull>
 			</isNotEqual>
 		</isEqual>
+
 		<include refid="optionalBoardDAO.selectBoardArticleList-where" />
 	</select>
 
@@ -443,13 +443,14 @@
 			<result property="replyNtcrNm" column="REPLY_NTCR_NM"/>
 	</resultMap>
 
-
-
 	<select id="optionalBoardDAO.selectBoardArticleList" parameterClass="zvl" resultMap="optionalBoardDAO.selectBoardArticleListMap">
 		/* optionalBoardDAO.selectBoardArticleList */
-		<![CDATA[
+
+		<isNotEqual property="bbsId" compareValue="B0000048">
 			SELECT  *
 			  FROM  (
+		</isNotEqual>
+		<![CDATA[
 			SELECT ROWNUM RNUM, ALL_LIST.*
 			  FROM  (
 
@@ -507,18 +508,23 @@
 		]]>
 		<isEqual property="bbsId" compareValue="B0000072" prepend="AND">
 			<isNotEqual property="siteName" compareValue="bos">
-			<![CDATA[	a.OPTION1 = 'N'	]]>
+				<![CDATA[	a.OPTION1 = 'N'	]]>
 			</isNotEqual>
 		</isEqual>
 
 		<isEqual property="bbsId" compareValue="B0000048">
 			<isNotEqual property="op3" compareValue="0">
-				<isNotNull prepend="AND" property="op3">
-					<![CDATA[	a.OPTION3 = #op3#	]]>
+				<isNotNull property="op3">
+					<isEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.NTCE_ENDDE < to_char(sysdate, 'YYYY-MM-DD')	]]>
+					</isEqual>
+					<isNotEqual prepend="AND" property="op3" compareValue="4">
+						<![CDATA[	a.OPTION3 = #op3#	]]>
+					</isNotEqual>
 				</isNotNull>
 			</isNotEqual>
 		</isEqual>
-		
+
 		<include refid="optionalBoardDAO.selectBoardArticleList-where" />
 
 		<!-- 일반게시판 -->
@@ -535,13 +541,18 @@
 		</isEqual>
 		<![CDATA[
 				    ) ALL_LIST
+		]]>
+		<isNotEqual property="bbsId" compareValue="B0000048">
+		<![CDATA[
 				    )
 			 WHERE  RNUM  > #firstIndex#
 			   AND  RNUM <= #firstIndex# + #recordCountPerPage#
 		]]>
+		</isNotEqual>
+
 		<isEqual property="bbsId" compareValue="B0000072">
 			<isNotEqual property="siteName" compareValue="bos">
-			<![CDATA[
+				<![CDATA[
 				UNION ALL
 				SELECT 0, ALL_LIST.*
 				  FROM  (
@@ -597,13 +608,13 @@
 	            LEFT OUTER JOIN TB_BBS_ESTN b ON a.NTT_ID = b.PARNTS AND b.DELETE_CODE = 0
 				WHERE  a.BBS_ID = 'B0000072' AND a.PARNTS = 0
 			AND
-					a.OPTION1 = 'Y'	
-			
+					a.OPTION1 = 'Y'
+
 			AND
-					a.DELETE_CODE = '0' 		
-	
-			
-					ORDER BY a.FRST_REGIST_PNTTM DESC	
+					a.DELETE_CODE = '0'
+
+
+					ORDER BY a.FRST_REGIST_PNTTM DESC
 					    ) ALL_LIST
 			]]>
 			</isNotEqual>
@@ -665,11 +676,6 @@
 		</isEqual>
 	</select>
 
-
-
-
-
-
 	<select id="optionalBoardDAO.selectCmmntBoardArticleList" parameterClass="zvl" resultClass="zvl">
 		/* optionalBoardDAO.selectCmmntBoardArticleList */
 		<![CDATA[
@@ -677,7 +683,6 @@
 			  FROM  (
 			SELECT ROWNUM RNUM, ALL_LIST.*
 			  FROM  (
-
 			SELECT
 				a.NTT_ID
 				, a.NTT_SJ

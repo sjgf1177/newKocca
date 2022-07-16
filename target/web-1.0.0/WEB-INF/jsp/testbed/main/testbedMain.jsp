@@ -119,7 +119,7 @@ if( StringUtils.hasText(menuNo) ) {
 
 				<c:if test="${not empty file }">
                     <div class="main_visual swiper-slide testbed_visual" style="background-image: url('/cmm/fms/getImage.do?atchFileId=${file.atchFileId}&amp;fileSn=${file.fileSn}');">
-                    <div class="col-12 col-center mw-1200">
+                    <div class="col-12 col-center mw-1280">
                         <div class="col-12 pr15 pl15">
                             <div class="col-12 tc visual_wrap">
                                 <div class="col-12 visual_text_wrap">
@@ -507,14 +507,14 @@ if( StringUtils.hasText(menuNo) ) {
                        		새로운 미디어와 테크놀로지, 문화예술의 만남은<br/>새로운 미래 콘텐츠의 성장판이 될 것입니다.
                         </p>
                         <p class="h_data4">
-                            <span class="list">전화 : 02.6310.0776</span><span class="list">E-MAIL : <a href="mailto:kocca.testbed@gmail.com">kocca.testbed@gmail.com</a></span><span class="list">대관문의 : 월 ~ 금 (09:00-18:00)</span>
+                            <span class="list" style="color: #fff;">전화 : 02.6310.0776</span><span class="list" style="color: #fff;">E-MAIL : <a href="mailto:kocca.testbed@gmail.com">kocca.testbed@gmail.com</a></span><span class="list" style="color: #fff;">대관문의 : 월 ~ 금 (09:00-18:00)</span>
                         </p>
                         <div class="download_wrap">
                             <a class="download_btn" href="/upload/testbedupload/testbedapply_2022.hwp">
-                                <span>제출서식 다운로드</span>
+                                <span style="color: #fff;">제출서식 다운로드</span>
                             </a>
                             <a class="download_btn" href="/upload/testbedupload/testbedguide-2022_2.hwp">
-                                <span>대관안내 다운로드</span>
+                                <span style="color: #fff;">대관안내 다운로드</span>
                             </a>
                         </div>
                     </div>

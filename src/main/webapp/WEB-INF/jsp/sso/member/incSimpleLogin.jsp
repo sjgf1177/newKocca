@@ -146,13 +146,28 @@ function fnTerminationSns(authSe) {
 </head>
 <body style="background:#fff">
 
-<h3 class="mt30">SNS 로그인을 이용하여 간편하게 사이트를 로그인하실 수 있습니다. </h3>
-<div class="alert mt30">
-	<p class="fs2 pl10">아래의 SNS 중 로그인에 이용하실 SNS를 클릭하시고, 연결해두시면 로그인 시 해당 SNS 을 이용하여 로그인 하실 수 있습니다.</p>
-	<ul class="bull">
-		<li>단 해당 서비스는 단순 로그인 기능을 SNS로 대체하는 것으로 “연동 해지”를 하셔도 회원정보는 삭제되지 않습니다.</li>
-		<li>SNS을 통해서 인증(네이버 또는 페이스북)하신 경우에는 연결 해지 하실 수 없습니다. 연결 해지하시려면 정보수정 페이지에서 SNS 인증 삭제하시면 됩니다. </li>
-	</ul>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>간편로그인 설정</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">간편로그인 설정</div>
+</div>
+
+<div class="col-center mw-1280">
+	<h3 class="mt30">SNS 로그인을 이용하여 간편하게 사이트를 로그인하실 수 있습니다. </h3>
+	<div class="alert mt30">
+		<p class="fs2 pl10">아래의 SNS 중 로그인에 이용하실 SNS를 클릭하시고, 연결해두시면 로그인 시 해당 SNS 을 이용하여 로그인 하실 수 있습니다.</p>
+		<ul class="bull">
+			<li>단 해당 서비스는 단순 로그인 기능을 SNS로 대체하는 것으로 “연동 해지”를 하셔도 회원정보는 삭제되지 않습니다.</li>
+			<li>SNS을 통해서 인증(네이버 또는 페이스북)하신 경우에는 연결 해지 하실 수 없습니다. 연결 해지하시려면 정보수정 페이지에서 SNS 인증 삭제하시면 됩니다. </li>
+		</ul>
+	</div>
 </div>
 
 
@@ -234,5 +249,18 @@ function fnTerminationSns(authSe) {
 
 	<div id="naver_id_login" style="display:none;"></div>
 </div>
+<style>
+	.mw-1280{max-width: 1280px;}
+	.col-center{margin:0 auto;}
+	.sub_contents_header{padding: 16px 0 42px 0; margin-bottom: 0px; padding-left: 0; border-bottom: 1px solid #eee;}
+	.linemap_wrap{width:1255px; margin:0 auto;}
+	.linemap_con{width:100%;}
+	.sub_title{padding: 20px 0 12px 0; border-bottom: 1px solid #eeeeee; font-size: 3.3rem; line-height: 5rem; margin-bottom: 25px;}
+	table.board_type_0 thead th{border-top:2px solid #707070;}
+
+	@media screen and (max-width: 1280px){
+		.col-center.mw-1280{padding-left: 20px; padding-right: 20px;}
+	}
+</style>
 </body>
 </html>

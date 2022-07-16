@@ -65,7 +65,7 @@
 
 <div class="sub_title s_tit02">
 	<div class="">
-		<div class="col-12 mb30 alert big_box">
+		<div class="col-12 mb30 alert big_box" style="background-color: #222;">
 			<!-- 수업진도율 -->
 			<div class="lectProgressSet">
 				<div class="lecProgress"></div>
@@ -311,8 +311,9 @@
            
            
 	$(document).ready(function(){
-					
-		
+		$('header').remove();
+
+		$('.wrapper, .bg_gray_slide_box, .sub_title.s_tit02').css('padding-top','0');
 	});
 	
 	

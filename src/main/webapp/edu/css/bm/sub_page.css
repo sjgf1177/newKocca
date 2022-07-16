@@ -108,15 +108,19 @@ form.login_form{width:100%; padding-bottom:30px; border-bottom:1px solid #eeeeee
 .login_util_list > li:first-child{padding-left:0; margin-left:0; border-left:none;}
 
 .sns_login_con{text-align: center;}
-.sns_login_con .sns_login_caption{background:url('/edu/images/bm/board_red_star_icon.png') no-repeat left 6px; font-size:13px; font-size:1.3rem; line-height:19px; line-height:1.9rem; letter-spacing: -0.025em; color:#313131; padding-left:11px; display:inline-block; margin-bottom:15px;}
+.sns_login_con .sns_login_caption{/*background:url('/edu/images/bm/board_red_star_icon.png') no-repeat left 6px;*/ font-size:13px; font-size:1.3rem; line-height:19px; line-height:1.9rem; letter-spacing: -0.025em; color:#313131; padding-left:11px; display:inline-block; margin-bottom:15px;}
 .sns_login_con .sns_type_select_con{font-size:0; line-height:0;}
 .sns_login_con .sns_type_select_con .sns_login_type{display:inline-block; margin-right:15px;}
 .sns_login_con .sns_type_select_con .sns_login_type:last-child{margin-right:0;}
 .sns_login_con .sns_type_select_con .sns_login_type .icon_box{width:58px; height:58px; border-radius:50%; border:1px solid #efefef; background-position:center center; background-repeat:no-repeat; display:inline-block; margin-bottom:10px;}
-.sns_login_con .sns_type_select_con .sns_login_type.naver .icon_box{background-image:url('/edu/images/bm/sns_login_naver.png');}
+/*.sns_login_con .sns_type_select_con .sns_login_type.naver .icon_box{background-image:url('/edu/images/bm/sns_login_naver.png');}
 .sns_login_con .sns_type_select_con .sns_login_type.facebook .icon_box{background-image:url('/edu/images/bm/sns_login_facebook.png');}
 .sns_login_con .sns_type_select_con .sns_login_type.kakaotalk .icon_box{background-image:url('/edu/images/bm/sns_login_kakaotalk.png');}
-.sns_login_con .sns_type_select_con .sns_login_type.google .icon_box{background-image:url('/edu/images/bm/sns_login_google.png');}
+.sns_login_con .sns_type_select_con .sns_login_type.google .icon_box{background-image:url('/edu/images/bm/sns_login_google.png');}*/
+.sns_login_con .sns_type_select_con .sns_login_type.naver .icon_box{background-image:url('/edu/images/renew2022/naver.jpg');}
+.sns_login_con .sns_type_select_con .sns_login_type.facebook .icon_box{background-image:url('/edu/images/renew2022/facebook.jpg');}
+.sns_login_con .sns_type_select_con .sns_login_type.kakaotalk .icon_box{background-image:url('/edu/images/renew2022/kakao.jpg');}
+.sns_login_con .sns_type_select_con .sns_login_type.google .icon_box{background-image:url('/edu/images/renew2022/google.jpg');}
 .sns_login_con .sns_type_select_con .text_box{font-size:13px; font-size:1.3rem; line-height:19px; line-height:1.9rem; color:#313131; letter-spacing: -0.025em; font-weight:200;}
 
 /* 비밀번호 찾기 */

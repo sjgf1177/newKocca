@@ -288,12 +288,89 @@
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_layout.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_page.css"/>
 
-	<div class="col-center mw-400" style="margin-top: 30px;">
-		<div class="cb_inner new_join_box">
-			<h1 class="fs36 tit_txt txt_ct" style="text-align: center;">로그인</h1>
+	<div class="login_wrap">
+	    <form class="login_form" name="loginForm" id="loginForm" action="#" method="post">
+			<input type="hidden" name="loginFlag" value="${paramVO.loginFlag}" />
+			<input type="hidden" name="menuNo" value="${paramVO.menuNo}" />
+			<input type="hidden" name="_targetUrl" value="${_targetUrl}" />
+			<input type="hidden" name="redirectUrl" value="${param.redirectUrl}" />
+			<input type="hidden" name="authSe" id="authSe" value="" />
+			<input type="hidden" name="authKey" id="authKey" value="" />
+			<input type="hidden" name="service" id="service" value="${paramVO.service}" />
+	        <div class="login_box">
+	            <div class="input_style_1_con">
+	                <input type="text" class="input_style_1" name="username" id="username" placeholder="아이디입력" title="아이디 입력">
+	                <label for="username" class="back_label">아이디 입력</label>
+	            </div>
+	            <div class="input_style_1_con">
+	                <input type="password" class="input_style_1" name="password" id="password" autocomplete="off" placeholder="비밀번호입력" title="비밀번호 입력">
+	                <label for="password" class="back_label">비밀번호 입력</label>
+	            </div>
+	            <div class="input_style_1_con submit">
+	                <input type="submit" onclick="actionLogin();return false;" class="input_style_1" name="usersubmit" id="usersubmit">
+	                <label for="usersubmit">로그인</label>
+	            </div>
+	        </div>
+	        <ul class="login_util_list" data-service='${paramVO.service}'>
+	        	<c:choose>
+					<c:when test="${paramVO.service eq 'edu'}">
+					<li><a href="${domain }/edu/member/join01.do?menuNo=500076" class="ssoFrmBtn">회원가입</a></li>
+		            <li><a href="${domain }/edu/userMember/idSearch.do?menuNo=500083" class="ssoFrmBtn">아이디 찾기</a></li>
+		            <li><a href="${domain }/edu/userMember/pwdSearch.do?menuNo=500084" class="ssoFrmBtn">비밀번호 찾기</a></li>
+					</c:when>
+					<c:when test="${paramVO.service eq 'edumobile'}">
+		            <li><a href="${domain }/edumobile/userMember/idSearch.do?menuNo=${idMenuNo}" class="ssoFrmBtn">아이디 찾기</a></li>
+		            <li><a href="${domain }/edumobile/userMember/pwdSearch.do?menuNo=${pwMenuNo}" class="ssoFrmBtn">비밀번호 찾기</a></li>
+					</c:when>
+					<c:when test="${paramVO.service eq 'testbed'}">
+					<li><a href="${domain }/testbed/member/join01.do?menuNo=700121" class="ssoFrmBtn">회원가입</a></li>
+		            <li><a href="${domain }/testbed/userMember/idSearch.do?menuNo=700123" class="ssoFrmBtn">아이디 찾기</a></li>
+		            <li><a href="${domain }/testbed/userMember/pwdSearch.do?menuNo=700124" class="ssoFrmBtn">비밀번호 찾기</a></li>
+					</c:when>
+					<c:otherwise>
+					<li><a href="${domain }/ckl/member/join01.do?menuNo=200054" class="ssoFrmBtn">회원가입</a></li>
+		            <li><a href="${domain }/ckl/userMember/idSearch.do?menuNo=200056" class="ssoFrmBtn">아이디 찾기</a></li>
+		            <li><a href="${domain }/ckl/userMember/pwdSearch.do?menuNo=200058" class="ssoFrmBtn">비밀번호 찾기</a></li>
+					</c:otherwise>
+				</c:choose>
+	        </ul>
+	    </form>
+	    <div class="sns_login_con">
+	        <p class="sns_login_caption">
+	            아래의 SNS 계정으로 로그인이 가능합니다.
+	        </p>
+	        <div class="sns_type_select_con">
+	            <div class="sns_login_type naver">
+	                <a href="#self" title="네이버 로그인 새창열림" class="icon_box" id="naverLoginBtn"></a>
+	                <p class="text_box">네이버</p>
+	            </div>
+	            <div class="sns_login_type facebook">
+	                <a href="#self" title="페이스북 로그인 새창열림" class="icon_box" id="fbLoginBtn"></a>
+	                <p class="text_box">페이스북</p>
+	            </div>
+	            <div class="sns_login_type kakaotalk">
+	                <a href="#self" title="카카오톡 로그인 새창열림" class="icon_box" id="kakaoLoginBtn"></a>
+	                <p class="text_box">카카오톡</p>
+	            </div>
+	            <div class="sns_login_type google">
+	                <a href="#self" title="구글 로그인 새창열림" class="icon_box" id="googleBtn"></a>
+	                <p class="text_box">구글</p>
+	            </div>
+	        </div>
+	        <div id="naver_id_login" style="display: none;"></div>
+	    </div>
+	</div>
 
-			<div class="login_wrap">
-				<form class="login_form" name="loginForm" id="loginForm" action="#" method="post">
+	<%
+	}else{
+	%>
+
+
+	<div class="member mb50 clear" style="width: 1000px; margin: 0 auto">
+		<div class="row memberLogin">
+			<div class="col-md-6 idLogin">
+				<h2 class="pt10">회원정보로 로그인</h2>
+				<form name="loginForm" id="loginForm" action="#" method="post">
 					<input type="hidden" name="loginFlag" value="${paramVO.loginFlag}" />
 					<input type="hidden" name="menuNo" value="${paramVO.menuNo}" />
 					<input type="hidden" name="_targetUrl" value="${_targetUrl}" />
@@ -301,159 +378,66 @@
 					<input type="hidden" name="authSe" id="authSe" value="" />
 					<input type="hidden" name="authKey" id="authKey" value="" />
 					<input type="hidden" name="service" id="service" value="${paramVO.service}" />
-					<div class="login_box">
-						<div class="input_style_1_con" style="margin-bottom: 1rem;">
-							<input type="text" class="input_style_1" name="username" id="username" placeholder="아이디입력" title="아이디 입력">
-							<label for="username" class="back_label">아이디 입력</label>
-						</div>
-						<div class="input_style_1_con" style="margin-bottom: 55px;">
-							<input type="password" class="input_style_1" name="password" id="password" autocomplete="off" placeholder="비밀번호입력" title="비밀번호 입력">
-							<label for="password" class="back_label">비밀번호 입력</label>
-						</div>
-						<div class="input_style_1_con submit">
-							<input type="submit" onclick="actionLogin();return false;" class="input_style_1" name="usersubmit" id="usersubmit">
-							<label for="usersubmit">로그인</label>
-						</div>
-					</div>
-					<ul class="login_util_list" data-service='${paramVO.service}'>
+					<fieldset>
+						<legend>회원정보 로그인 입력</legend>
+						<label for="username">아이디</label>
+						<input type="text" name="username" id="username" value="" />
+						<label for="password">비밀번호</label>
+						<input type="password" name="password" id="password" value="" autocomplete="off" />
+						<%--
+						<script type="text/javascript">
+						//<![CDATA[
+							$("#password").attr("type", "text");
+							$("#password").bind("click focus",function(e){
+								$("#password").prop("type", "password");
+							})
+						//]]>
+						</script>
+						--%>
+						<button type="submit" onclick="actionLogin();return false;" class="btn btn-primary">로그인</button>
+
+					</fieldset>
+				</form>
+
+				<div class="tac mb30">
+					<div class="loginLinks">
 						<c:choose>
 							<c:when test="${paramVO.service eq 'edu'}">
-							<li><a href="${domain }/edu/member/join01.do?menuNo=500076" class="ssoFrmBtn">회원가입</a></li>
-							<li><a href="${domain }/edu/userMember/idSearch.do?menuNo=500083" class="ssoFrmBtn">아이디 찾기</a></li>
-							<li><a href="${domain }/edu/userMember/pwdSearch.do?menuNo=500084" class="ssoFrmBtn">비밀번호 찾기</a></li>
-							</c:when>
-							<c:when test="${paramVO.service eq 'edumobile'}">
-							<li><a href="${domain }/edumobile/userMember/idSearch.do?menuNo=${idMenuNo}" class="ssoFrmBtn">아이디 찾기</a></li>
-							<li><a href="${domain }/edumobile/userMember/pwdSearch.do?menuNo=${pwMenuNo}" class="ssoFrmBtn">비밀번호 찾기</a></li>
-							</c:when>
-							<c:when test="${paramVO.service eq 'testbed'}">
-							<li><a href="${domain }/testbed/member/join01.do?menuNo=700121" class="ssoFrmBtn">회원가입</a></li>
-							<li><a href="${domain }/testbed/userMember/idSearch.do?menuNo=700123" class="ssoFrmBtn">아이디 찾기</a></li>
-							<li><a href="${domain }/testbed/userMember/pwdSearch.do?menuNo=700124" class="ssoFrmBtn">비밀번호 찾기</a></li>
+								<a href="${domain }/edu/member/join01.do?menuNo=500076" class="ssoFrmBtn">회원가입</a> |
+								<a href="${domain }/edu/userMember/idSearch.do?menuNo=500083" class="ssoFrmBtn">아이디 찾기</a> |
+								<a href="${domain }/edu/userMember/pwdSearch.do?menuNo=500084" class="ssoFrmBtn">비밀번호 찾기</a>
 							</c:when>
 							<c:otherwise>
-							<li><a href="${domain }/ckl/member/join01.do?menuNo=200054" class="ssoFrmBtn">회원가입</a></li>
-							<li><a href="${domain }/ckl/userMember/idSearch.do?menuNo=200056" class="ssoFrmBtn">아이디 찾기</a></li>
-							<li><a href="${domain }/ckl/userMember/pwdSearch.do?menuNo=200058" class="ssoFrmBtn">비밀번호 찾기</a></li>
+								<a href="${domain }/ckl/member/join01.do?menuNo=200054" class="ssoFrmBtn">회원가입</a> |
+								<a href="${domain }/ckl/userMember/idSearch.do?menuNo=200056" class="ssoFrmBtn">아이디 찾기</a> |
+								<a href="${domain }/ckl/userMember/pwdSearch.do?menuNo=200058" class="ssoFrmBtn">비밀번호 찾기</a>
 							</c:otherwise>
 						</c:choose>
-					</ul>
-				</form>
-				<div class="sns_login_con">
-					<p class="sns_login_caption">
-						아래의 SNS 계정으로 로그인이 가능합니다.
-					</p>
-					<div class="sns_type_select_con">
-						<div class="sns_login_type naver">
-							<a href="#self" title="네이버 로그인 새창열림" class="icon_box" id="naverLoginBtn"></a>
-							<%--<p class="text_box">네이버</p>--%>
-						</div>
-						<div class="sns_login_type facebook">
-							<a href="#self" title="페이스북 로그인 새창열림" class="icon_box" id="fbLoginBtn"></a>
-							<%--<p class="text_box">페이스북</p>--%>
-						</div>
-						<div class="sns_login_type kakaotalk">
-							<a href="#self" title="카카오톡 로그인 새창열림" class="icon_box" id="kakaoLoginBtn"></a>
-							<%--<p class="text_box">카카오톡</p>--%>
-						</div>
-						<div class="sns_login_type google">
-							<a href="#self" title="구글 로그인 새창열림" class="icon_box" id="googleBtn"></a>
-							<%--<p class="text_box">구글</p>--%>
-						</div>
 					</div>
-					<div id="naver_id_login" style="display: none;"></div>
 				</div>
 			</div>
+
+			<div class="col-md-6">
+				<div class="idLogin">
+					<h2 class="pt10">SNS 계정으로 로그인</h2>
+
+					<div class="snsIcos tac">
+						<a href="#self" title="새창열림" class="snsIcoL snsico01" id="naverLoginBtn"><span class="sr-only">네이버로 로그인</span></a>
+						<a href="#self" title="새창열림" class="snsIcoL snsico02" id="kakaoLoginBtn"><span class="sr-only">카카오톡으로 로그인</span></a>
+						<a href="#self" title="새창열림" class="snsIcoL snsico03" id="fbLoginBtn"><span class="sr-only">페이스북으로 로그인</span></a>
+						<a href="#self" title="새창열림" class="snsIcoL snsico04" id="googleBtn"><span class="sr-only">구글로 로그인</span></a>
+						<!--
+						<a href="#self" title="새창열림" class="snsIcoL snsico05"><span class="sr-only">트위터로 로그인</span></a>
+						-->
+					</div>
+					<div class="loginLinks">
+						<p class="tac">※ 간편로그인 설정 또는 SNS로 인증한 계정으로 로그인해주시기 바랍니다.</p>
+					</div>
+				</div>
+			</div>
+			<div id="naver_id_login" style="display: none;"></div>
 		</div>
 	</div>
-			<%
-			}else{
-			%>
-
-
-			<div class="member mb50 clear" style="width: 1000px; margin: 0 auto">
-				<div class="row memberLogin">
-					<div class="col-md-6 idLogin">
-						<h2 class="pt10">회원정보로 로그인</h2>
-						<form name="loginForm" id="loginForm" action="#" method="post">
-							<input type="hidden" name="loginFlag" value="${paramVO.loginFlag}" />
-							<input type="hidden" name="menuNo" value="${paramVO.menuNo}" />
-							<input type="hidden" name="_targetUrl" value="${_targetUrl}" />
-							<input type="hidden" name="redirectUrl" value="${param.redirectUrl}" />
-							<input type="hidden" name="authSe" id="authSe" value="" />
-							<input type="hidden" name="authKey" id="authKey" value="" />
-							<input type="hidden" name="service" id="service" value="${paramVO.service}" />
-							<fieldset>
-								<legend>회원정보 로그인 입력</legend>
-								<label for="username">아이디</label>
-								<input type="text" name="username" id="username" value="" />
-								<label for="password">비밀번호</label>
-								<input type="password" name="password" id="password" value="" autocomplete="off" />
-								<%--
-								<script type="text/javascript">
-								//<![CDATA[
-									$("#password").attr("type", "text");
-									$("#password").bind("click focus",function(e){
-										$("#password").prop("type", "password");
-									})
-								//]]>
-								</script>
-								--%>
-								<button type="submit" onclick="actionLogin();return false;" class="btn btn-primary">로그인</button>
-
-							</fieldset>
-						</form>
-
-						<div class="tac mb30">
-							<div class="loginLinks">
-								<c:choose>
-									<c:when test="${paramVO.service eq 'edu'}">
-										<a href="${domain }/edu/member/join01.do?menuNo=500076" class="ssoFrmBtn">회원가입</a> |
-										<a href="${domain }/edu/userMember/idSearch.do?menuNo=500083" class="ssoFrmBtn">아이디 찾기</a> |
-										<a href="${domain }/edu/userMember/pwdSearch.do?menuNo=500084" class="ssoFrmBtn">비밀번호 찾기</a>
-									</c:when>
-									<c:otherwise>
-										<a href="${domain }/ckl/member/join01.do?menuNo=200054" class="ssoFrmBtn">회원가입</a> |
-										<a href="${domain }/ckl/userMember/idSearch.do?menuNo=200056" class="ssoFrmBtn">아이디 찾기</a> |
-										<a href="${domain }/ckl/userMember/pwdSearch.do?menuNo=200058" class="ssoFrmBtn">비밀번호 찾기</a>
-									</c:otherwise>
-								</c:choose>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="idLogin">
-							<h2 class="pt10">SNS 계정으로 로그인</h2>
-
-							<div class="snsIcos tac">
-								<a href="#self" title="새창열림" class="snsIcoL snsico01" id="naverLoginBtn"><span class="sr-only">네이버로 로그인</span></a>
-								<a href="#self" title="새창열림" class="snsIcoL snsico02" id="kakaoLoginBtn"><span class="sr-only">카카오톡으로 로그인</span></a>
-								<a href="#self" title="새창열림" class="snsIcoL snsico03" id="fbLoginBtn"><span class="sr-only">페이스북으로 로그인</span></a>
-								<a href="#self" title="새창열림" class="snsIcoL snsico04" id="googleBtn"><span class="sr-only">구글로 로그인</span></a>
-								<!--
-								<a href="#self" title="새창열림" class="snsIcoL snsico05"><span class="sr-only">트위터로 로그인</span></a>
-								-->
-							</div>
-							<div class="loginLinks">
-								<p class="tac">※ 간편로그인 설정 또는 SNS로 인증한 계정으로 로그인해주시기 바랍니다.</p>
-							</div>
-						</div>
-					</div>
-					<div id="naver_id_login" style="display: none;"></div>
-				</div>
-			</div>
-			<%} %>
-	<style>
-		input[type="text"], input[type="password"]
-		{border-color:transparent; border-bottom-color: #707070 !important; height: 45px !important; background-color: transparent; padding-left: 0 !important;}
-
-		.input_style_1_con.submit .input_style_1 + label{background-color: #222;}
-		.input_style_1_con:last-child{margin-top: 10px; margin-bottom: 30px;}
-		.sns_type_select_con{display: flex; flex-wrap: wrap; justify-content: space-between;}
-		.sns_login_con .sns_type_select_con .sns_login_type .icon_box{width:200px; height: 50px; border:none; border-radius: 0;}
-		.sns_login_con .sns_type_select_con .sns_login_type{margin-right: 0;}
-	</style>
-
+	<%} %>
 </body>
 </html>
