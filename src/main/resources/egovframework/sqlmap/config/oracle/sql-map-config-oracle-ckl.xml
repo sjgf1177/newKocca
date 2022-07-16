@@ -10,5 +10,6 @@
 	<sqlMap resource="egovframework/sqlmap/kr/co/ckl/progrmApplcnt_SQL_oracle.xml"/>
 	<sqlMap resource="egovframework/sqlmap/kr/co/ckl/progrmInstrctr_SQL_oracle.xml"/>
 	<sqlMap resource="egovframework/sqlmap/kr/co/ckl/popularSrchwrd_SQL_oracle.xml"/>
+	<sqlMap resource="egovframework/sqlmap/kr/co/ckl/search_SQL_oracle.xml"/>
 
 </sqlMapConfig>

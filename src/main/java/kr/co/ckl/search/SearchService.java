@@ -78,7 +78,12 @@ public class SearchService extends DefaultCmmProgramService {
 		List<ZValue> webpageResultList = null;
 		List<ZValue> onlineEduResultList = null;
 		boolean rangeAll = !StringUtils.hasText(range) || "all".equals(range);
+		int firstPage = 0;
+		int recordCountPage = 10;
+		int programListCnt = 0;
+
 		if( rangeAll ){
+			/*
 			bbsResultList = getResultList(SOLR_CORE.BBS, bbsFieldList, param);
 			model.addAttribute("bbsResultList", bbsResultList);
 
@@ -96,6 +101,25 @@ public class SearchService extends DefaultCmmProgramService {
 
 			onlineEduResultList = getResultList(SOLR_CORE.ONLINE_EDU, onlineEduFieldList, param);
 			model.addAttribute("onlineEduResultList", onlineEduResultList);
+			*/
+/*			String q = param.getString("q");
+			param.put("keyWord", q);
+			progrmResultList = sqlDao.listDAO("progrmMasterDAO.programSearchList", param);
+			model.addAttribute("progrmResultList", progrmResultList);*/
+
+			if(param.getInt("pageIndex") > 0){
+				param.put("firstPage", param.getInt("pageIndex") - 1);
+			}else{
+				param.put("firstPage", param.getInt("pageIndex"));
+			}
+
+			param.put("recordCountPage", recordCountPage);
+
+			programListCnt = sqlDao.selectCount("searchDAO.programSearchListCnt", param);
+			progrmResultList = sqlDao.listDAO("searchDAO.programSearchList", param);
+
+			model.addAttribute("programListCnt", programListCnt);
+			model.addAttribute("progrmResultList", progrmResultList);
 		}
 		else{
 			if( "bbs".equals(range) ){
@@ -135,7 +159,8 @@ public class SearchService extends DefaultCmmProgramService {
 			bbsCnt = bbsResultList.get(0).getLong("numFound");
 		}
 		if( CollectionUtils.isNotEmpty(progrmResultList) ){
-			progrmCnt = progrmResultList.get(0).getLong("numFound");
+			//progrmCnt = progrmResultList.get(0).getLong("numFound");
+			progrmCnt = programListCnt;
 		}
 		if( CollectionUtils.isNotEmpty(filesResultList) ){
 			filesCnt = filesResultList.get(0).getLong("numFound");
@@ -173,15 +198,15 @@ public class SearchService extends DefaultCmmProgramService {
 			else if( "onlineEdu".equals(rangeView) ){
 				total = (int)onlineEduCnt;
 			}
+
 			StringBuilder link = new StringBuilder();
 			link.append("/"+param.getString("siteName")+"/search/list.do");
 			link.append("?").append(pageQuery.getPageLinkQueryString(param));
 			String pageNav = pageInfo.getPageNavStringToFunc(param.getInt("pageSize", 10), total, param.getInt("pageIndex",1), "paging");
 			model.addAttribute("pageNav", pageNav);
-			
 		}
 		
-		System.out.println(model);
+		//System.out.println(model);
 
 		//검색어 등록
 		String q = param.getString("q");

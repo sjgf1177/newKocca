@@ -144,7 +144,6 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			model.addAttribute("fileMap", fileMap);
 
 			param.put("siteId", SiteMngService.EDU_SITE_ID); // 팝업존 siteId
-			param.put("mode", param.getString("mode"));
 		}
 		else if (SiteMngService.EDUMOBILE_SITE_NAME.equals(param.getString("siteName"))) {
 			param.put("siteId", SiteMngService.EDUMOBILE_SITE_ID);
@@ -208,6 +207,8 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		paramEmp.put("useAt", "Y");
 		List<ZValue> empmnLogoCareerList = getCareerList(paramEmp);
 		model.addAttribute("empmnLogoCareerList", empmnLogoCareerList);  */
+
+		param.put("mode", param.getString("mode"));
 	}
 
 	public void preview(ParameterContext<ZValue> paramCtx) throws Exception {

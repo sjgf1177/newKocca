@@ -120,6 +120,8 @@
                         <c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}${pageQueryString}"/>
                         <fmt:parseDate value="${result.ntceBgnde}" var="sdt" pattern="yyyy-MM-dd"/>
                         <fmt:parseNumber value="${sdt.time / (1000*60*60*24)}" integerOnly="true" var="strDate"></fmt:parseNumber>
+                        <fmt:parseDate value="${result.ntceEndde}" var="edt" pattern="yyyy-MM-dd"/>
+                        <fmt:parseNumber value="${edt.time / (1000*60*60*24)}" integerOnly="true" var="endDate"></fmt:parseNumber>
                         <c:set var="now" value="<%=new java.util.Date()%>"/>
                         <c:set var="nowDt"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/></c:set>
                         <fmt:parseDate value="${nowDt}" var="ndt" pattern="yyyy-MM-dd"/>
@@ -149,14 +151,14 @@
                                 <div class="col-12 text_box">
                                     <h5><c:out value="${result.nttSj }"/></h5>
                                     <c:choose>
-                                        <c:when test='${ (nowDate-strDate) > 0 }'>
+                                        <c:when test='${ (nowDate-endDate) > 0 }'>
                                             <p class="date_tag_off">종료</p>
                                         </c:when>
                                         <c:when test='${ (nowDate-strDate) < 0 }'>
                                             <p class="date_tag_on">D${strDate-nowDate}</p>
                                         </c:when>
                                         <c:otherwise>
-                                            <p class="date_tag_on">D-Day</p>
+                                            <p class="date_tag_on">진행</p>
                                         </c:otherwise>
                                     </c:choose>
                                     <p class="event_date">
@@ -166,7 +168,7 @@
                                 </div>
                             </a>
 
-                            <c:if test='${(nowDate-strDate) > 0}'>
+                            <c:if test='${(nowDate-endDate) > 0}'>
                                 <div class="e_end_back_box">
                                     <a href="<c:out value="${url }" escapeXml="false" />"
                                        style="display: inline-block; width: 100%; height: 100%;"></a>

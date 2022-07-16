@@ -195,7 +195,7 @@ $(document).ready(function(){
 
 	<ul class="photoTab photoTab-size5 online_edu_tab_style">
 		<li <c:if test="${empty paramVO.rangeView}">class="active"</c:if>><a href="javascript:detailView('');" <c:if test="${empty paramVO.rangeView}">title="현재탭"</c:if>>통합검색(${totalCount})</a><c:if test="${empty paramVO.rangeView}"></c:if></li>
-		<li <c:if test="${paramVO.rangeView eq 'progrm'}">class="active"</c:if>><a href="javascript:detailView('progrm');" <c:if test="${paramVO.rangeView eq 'progrm'}">title="현재탭"</c:if>>프로그램(${empty progrmResultList[0] ? 0 : progrmResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'progrm'}"></c:if></li>
+		<li <c:if test="${paramVO.rangeView eq 'progrm'}">class="active"</c:if>><a href="javascript:detailView('progrm');" <c:if test="${paramVO.rangeView eq 'progrm'}">title="현재탭"</c:if>>프로그램(${programListCnt})</a><c:if test="${paramVO.rangeView eq 'progrm'}"></c:if></li>
 		<li <c:if test="${paramVO.rangeView eq 'onlineEdu'}">class="active"</c:if>><a href="javascript:detailView('onlineEdu');" <c:if test="${paramVO.rangeView eq 'onlineEdu'}">title="현재탭"</c:if>>교육/강좌(${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'onlineEdu'}"></c:if></li>
 		<li <c:if test="${paramVO.rangeView eq 'webpage'}">class="active"</c:if>><a href="javascript:detailView('webpage');" <c:if test="${paramVO.rangeView eq 'webpage'}">title="현재탭"</c:if>>웹페이지(${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'webpage'}"></c:if></li>
 		<li <c:if test="${paramVO.rangeView eq 'bbs'}">class="active"</c:if>><a href="javascript:detailView('bbs');" <c:if test="${paramVO.rangeView eq 'bbs'}">title="현재탭"</c:if>>게시물(${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'bbs'}"></c:if></li>
@@ -204,7 +204,7 @@ $(document).ready(function(){
 	</ul>
 
 	<c:choose>
-		<c:when test="${paramVO.rangeView eq 'progrm'}"><c:set var="rangeNm" value="프로그램"/><c:set var="cnt" value="${empty progrmResultList[0] ? 0 : progrmResultList[0].numFound}"/></c:when>
+		<c:when test="${paramVO.rangeView eq 'progrm'}"><c:set var="rangeNm" value="프로그램"/><c:set var="cnt" value="${programListCnt}"/></c:when>
 		<c:when test="${paramVO.rangeView eq 'onlineEdu'}"><c:set var="rangeNm" value="교육/강좌"/><c:set var="cnt" value="${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound}"/></c:when>
 		<c:when test="${paramVO.rangeView eq 'webpage'}"><c:set var="rangeNm" value="웹페이지"/><c:set var="cnt" value="${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound}"/></c:when>
 		<c:when test="${paramVO.rangeView eq 'bbs'}"><c:set var="rangeNm" value="게시물"/><c:set var="cnt" value="${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound}"/></c:when>
@@ -220,7 +220,7 @@ $(document).ready(function(){
 	<c:if test="${rangeAll or paramVO.rangeView eq 'progrm'}">
 
 		<div class="alert">
-			<p class="alert_design_text"> 프로그램 (검색결과 ${empty progrmResultList[0] ? 0 : progrmResultList[0].numFound}건)</p>
+			<p class="alert_design_text"> 프로그램 (검색결과 ${programListCnt}건)</p>
 			<c:if test="${fn:length(progrmResultList)>0}">
 				<div class="moreBtn">
 					<c:if test="${paramVO.rangeView eq 'progrm'}">
@@ -239,7 +239,8 @@ $(document).ready(function(){
 			<c:forEach var="result" items="${progrmResultList}" varStatus="status">
 				<c:if test="${status.count <= progrmCnt}">
 					<li class="statSet">
-						<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">
+						<%--<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">--%>
+						<a href="<c:out value="/edu/progrm/master/view.do?prgSn=${result.prgSn}&prgSe=${result.prgSe}&prgCl=${result.prgCl}&menuNo=500216"/>" target="_blank" title="새창열림">
 							<span class="tit">
 								<span class="status">
 									<c:choose>
@@ -251,7 +252,7 @@ $(document).ready(function(){
 								<span class="fcBlue">[${result.prgSeNm}-${result.prgClNm}]</span> ${result.prgNm}
 							</span>
 							<span class="txt">
-								(신청방식 : ${result.reqstMthdNm} / 정원 : ${empty result.psncpa ? '-' : result.psncpa} 명 / 신청접수 : ${result.beginDt}~${result.endDt})  
+								(신청방식 : ${result.reqstMthdNm} / 정원 : ${empty result.psncpa ? '-' : result.psncpa} 명 / 신청접수 : ${result.beginDt}~${result.endDt})
 								${result.hl}
 							</span>
 				  		</a>

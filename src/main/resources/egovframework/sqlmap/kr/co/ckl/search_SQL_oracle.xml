@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="search">
+
+	<typeAlias  alias="zvl" type="kr.co.unp.util.ZValue"/>
+	<typeAlias  alias="zValue" type="kr.co.unp.util.ZValue"/>
+
+	<!-- 프로그램 통합검색 리스트 조회 -->
+	<select id="searchDAO.programSearchList" parameterClass="zValue" resultClass="zValue" >
+		<![CDATA[
+			/* searchDAO.programSearchList */
+			SELECT *
+			  FROM (SELECT ROWNUM RNUM
+				 		 , ALL_LIST.*
+					  FROM (SELECT A.PRG_SN AS id
+								 , A.PRG_SN
+								 , A.PRG_SE
+								 , A.PRG_CL
+								 , A.PRG_SE_NM
+								 , A.PRG_CL_NM
+								 , A.PRG_NM
+								 , A.PRG_CN
+								 , A.BEGIN_DT
+								 , A.END_DT
+								 , CASE WHEN A.PROGRS_STTUS = 'P' AND A.REQST_MTHD = '01' AND A.WAIT_REQST_AT = 'Y' AND TOT_CNT01 < A.WAIT_REQST_NMPR THEN 'P'
+										WHEN A.PROGRS_STTUS = 'P' AND A.REQST_MTHD = '01' AND A.WAIT_REQST_AT = 'Y' AND TOT_CNT01 >= A.WAIT_REQST_NMPR THEN 'F'
+										WHEN A.PROGRS_STTUS = 'P' AND A.REQST_MTHD = '01' AND A.WAIT_REQST_AT != 'Y' AND TOT_CNT02 >= A.PSNCPA THEN 'F'
+										ELSE A.PROGRS_STTUS
+								   END AS PROGRS_STTUS
+								 , A.REQST_MTHD
+								 , A.REQST_MTHD_NM
+								 , A.PSNCPA
+								 , '/'|| A.SITE_SE ||'/progrm/master/view.do?prgSn='|| A.PRG_SN ||'&amp;prgSe='|| A.PRG_SE ||'&amp;prgCl='|| A.PRG_CL ||'&amp;menuNo=' || A.MENU_NO AS FULL_MENU_LINK
+								 , FRST_REGIST_PNTTM
+								 , A.SITE_SE
+							  FROM (SELECT T.PRG_SN
+										 , PRG_SE
+										 , PRG_CL
+										 , FN_CMMNCODE_NM('COM050', PRG_SE) AS PRG_SE_NM
+										 , FN_CMMNCODE_NM('COM050', PRG_CL) AS PRG_CL_NM
+										 , PRG_NM
+										 , DBMS_LOB.SUBSTR(PRG_CN, 2000, 1) AS PRG_CN
+										 , TO_CHAR(REQST_BEGIN_DT, 'yyyy-mm-dd') as BEGIN_DT
+										 , CASE WHEN RCRIT_COMPT_AT = 'Y' THEN '모집완료시'
+												ELSE TO_CHAR(REQST_END_DT, 'yyyy-mm-dd')
+										   END AS END_DT
+										 , CASE WHEN SYSTIMESTAMP < REQST_BEGIN_DT THEN 'W'
+												WHEN SYSTIMESTAMP > REQST_BEGIN_DT AND SYSTIMESTAMP < REQST_END_DT THEN 'P'
+												WHEN SYSTIMESTAMP > REQST_END_DT THEN 'F'
+										   END AS PROGRS_STTUS
+										 , RCRIT_COMPT_AT
+										 , REQST_MTHD
+										 , FN_CMMNCODE_NM('COM053', REQST_MTHD) AS REQST_MTHD_NM
+										 , FRST_REGIST_PNTTM
+										 , PSNCPA
+										 , TOT_CNT01
+										 , TOT_CNT02
+										 , WAIT_REQST_AT
+										 , WAIT_REQST_NMPR
+										 , CASE WHEN PRG_CL = '10' THEN '500022'
+												WHEN PRG_CL = '11' THEN '500023'
+												WHEN PRG_CL = '12' THEN '500024'
+												WHEN PRG_CL = '13' THEN '500025'
+												WHEN PRG_CL = '20' THEN '500048'
+												WHEN PRG_CL = '21' THEN '500049'
+												WHEN PRG_CL = '30' THEN '200025'
+												WHEN PRG_CL = '31' THEN '200026'
+												WHEN PRG_CL = '40' THEN '200029'
+												WHEN PRG_CL = '41' THEN '200030'
+												WHEN PRG_CL = '42' THEN '200031'
+										   END AS MENU_NO
+										 , SITE_SE
+									  FROM TN_PROGRAM T
+										   LEFT OUTER JOIN (  /*대기신청 인원*/
+															 SELECT COUNT(*) AS TOT_CNT01, PRG_SN
+															   FROM TN_REQUEST_INDVDLINFO
+															  WHERE DELETE_AT   = '0'
+																AND RCEPT_STTUS = '01'
+															  GROUP BY PRG_SN
+														   )T1 ON T.PRG_SN = T1.PRG_SN
+										   LEFT OUTER JOIN (  /*신청완료 인원*/
+															 SELECT COUNT(*) AS TOT_CNT02, PRG_SN
+															   FROM TN_REQUEST_INDVDLINFO
+															  WHERE DELETE_AT   = '0'
+																AND RCEPT_STTUS = '02'
+															  GROUP BY PRG_SN)T2 ON T.PRG_SN = T2.PRG_SN
+									 WHERE DELETE_AT = '0'
+									   AND USE_AT    = 'Y'
+								   ) A
+							 WHERE A.PRG_NM LIKE '%' || #q# || '%'
+							 ORDER BY A.FRST_REGIST_PNTTM DESC
+						   ) ALL_LIST
+				   )
+			   WHERE RNUM  > NVL(#firstPage#, 0) * 10
+			     AND RNUM <= (NVL(#firstPage#, 0) * 10) + #recordCountPage#
+		]]>
+	</select>
+
+	<!-- 프로그램 통합검색 리스트 카운트 조회 -->
+	<select id="searchDAO.programSearchListCnt" parameterClass="zvl" resultClass="java.lang.Integer">
+		<![CDATA[
+			/* searchDAO.programSearchListCnt */
+			SELECT COUNT(*)
+			  FROM (SELECT T.PRG_SN
+						 , PRG_SE
+						 , PRG_CL
+						 , FN_CMMNCODE_NM('COM050', PRG_SE) AS PRG_SE_NM
+						 , FN_CMMNCODE_NM('COM050', PRG_CL) AS PRG_CL_NM
+						 , PRG_NM
+						 , DBMS_LOB.SUBSTR(PRG_CN, 2000, 1) AS PRG_CN
+						 , TO_CHAR(REQST_BEGIN_DT, 'yyyy-mm-dd') as BEGIN_DT
+						 , CASE WHEN RCRIT_COMPT_AT = 'Y' THEN '모집완료시'
+								ELSE TO_CHAR(REQST_END_DT, 'yyyy-mm-dd')
+						   END AS END_DT
+						 , CASE WHEN SYSTIMESTAMP < REQST_BEGIN_DT THEN 'W'
+								WHEN SYSTIMESTAMP > REQST_BEGIN_DT AND SYSTIMESTAMP < REQST_END_DT THEN 'P'
+								WHEN SYSTIMESTAMP > REQST_END_DT THEN 'F'
+						   END AS PROGRS_STTUS
+						 , RCRIT_COMPT_AT
+						 , REQST_MTHD
+						 , FN_CMMNCODE_NM('COM053', REQST_MTHD) AS REQST_MTHD_NM
+						 , FRST_REGIST_PNTTM
+						 , PSNCPA
+						 , TOT_CNT01
+						 , TOT_CNT02
+						 , WAIT_REQST_AT
+						 , WAIT_REQST_NMPR
+						 , CASE WHEN PRG_CL = '10' THEN '500022'
+								WHEN PRG_CL = '11' THEN '500023'
+								WHEN PRG_CL = '12' THEN '500024'
+								WHEN PRG_CL = '13' THEN '500025'
+								WHEN PRG_CL = '20' THEN '500048'
+								WHEN PRG_CL = '21' THEN '500049'
+								WHEN PRG_CL = '30' THEN '200025'
+								WHEN PRG_CL = '31' THEN '200026'
+								WHEN PRG_CL = '40' THEN '200029'
+								WHEN PRG_CL = '41' THEN '200030'
+								WHEN PRG_CL = '42' THEN '200031'
+						   END AS MENU_NO
+						 , SITE_SE
+					  FROM TN_PROGRAM T
+						   LEFT OUTER JOIN (  /*대기신청 인원*/
+											 SELECT COUNT(*) AS TOT_CNT01, PRG_SN
+											   FROM TN_REQUEST_INDVDLINFO
+											  WHERE DELETE_AT   = '0'
+												AND RCEPT_STTUS = '01'
+											  GROUP BY PRG_SN
+										   )T1 ON T.PRG_SN = T1.PRG_SN
+						   LEFT OUTER JOIN (  /*신청완료 인원*/
+											 SELECT COUNT(*) AS TOT_CNT02, PRG_SN
+											   FROM TN_REQUEST_INDVDLINFO
+											  WHERE DELETE_AT   = '0'
+												AND RCEPT_STTUS = '02'
+											  GROUP BY PRG_SN)T2 ON T.PRG_SN = T2.PRG_SN
+					 WHERE DELETE_AT = '0'
+					   AND USE_AT    = 'Y'
+				   ) A
+			 WHERE A.PRG_NM LIKE '%' || #q# || '%'
+		]]>
+	</select>
+
+</sqlMap>
