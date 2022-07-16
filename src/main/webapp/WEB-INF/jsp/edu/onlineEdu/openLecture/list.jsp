@@ -33,8 +33,8 @@
 </div>
 
 <ul class="sub_two_tab_box col-center mw-1280">
-	<li class="active"><a href="javascript:void(0);">열린강좌</a></li>
-	<li class="after_line"><a href="javascript:void(0);" onclick="fnCmdSearchCateList('${param.pGubun1}', '', '', '', ''); return false;">정규과정</a></li>
+	<li class="active"><a href="javascript:void(0);">바로 수강</a></li>
+	<li class="after_line"><a href="javascript:void(0);" onclick="fnCmdSearchCateList('${param.pGubun1}', '', '', '', ''); return false;">로그인 후 수강</a></li>
 </ul>
 
 

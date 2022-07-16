@@ -99,7 +99,7 @@
 
 /************************************ 2022 renew ************************************/
 
-h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'Pretendard', sans-serif !important;}
+h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'SBAggroL', sans-serif !important;}
 .txt_ct{text-align: center !important;}
 /**** 공통 ****/
 /*#wrap{height: 100%;}*/
@@ -679,7 +679,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .tab_style_1_con .tab_style_1{max-width: 1280px; margin: 0 auto;}
 .tab_style_1_con .tab_style_1 > li{width: 170px; }
 .tab_style_1_con .tab_style_1 > li button{background-color: transparent;}
-.tab_style_1_con .tab_style_1 > li span{padding:0px 0 25px 0; font-size: 2.2rem; font-weight: 500; color: #CCCCCC; border: none; background-color: transparent;}
+.tab_style_1_con .tab_style_1 > li span{padding:5px 0 25px 0; font-size: 2.2rem; font-weight: 500; color: #CCCCCC; border: none; background-color: transparent;}
 .tab_style_1_con .tab_style_1 > li button span{padding: 0;}
 .tab_style_1_con .tab_style_1 > li a:hover span, .tab_style_1_con .tab_style_1 > li button:hover span{color:#222222; background-color: transparent;}
 .tab_style_1_con .tab_style_1 > li.active a span{color: #222222; border-top: none; border-right: none; border-left: none; border-bottom: 4px solid #222222;  background-color: transparent;}
@@ -762,7 +762,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 }
 
 /* 카테고리 */
-.sub_title.s_tit02{padding: 20px 0; border-bottom: 1px solid #eeeeee;}
+.sub_title.s_tit02{padding: 20px 0 12px 0; border-bottom: 1px solid #eeeeee;}
 .s_tit02.mg_b0{margin-bottom: 0;}
 .control_board_header{background-color: #efefef; padding: 10px 0 10px 10px;}
 .control_board_header [class*="mw-"]{overflow: inherit;}
@@ -941,7 +941,8 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .dream_list .tab_style_1_con{margin-bottom: 33px;}
 .sub_section .edu_together_view_inner .edu_youtube_subtitle_view_btn_con .edu_youtube_subtitle_view_btn{padding: 10px 25px; background-image: none; background-color: #3B85FF;}
 .sub_section .edu_together_three_card_con{display: flex; flex-wrap: wrap;}
-
+.call_txt_box{font-size: 16px; margin-left: 30px;}
+.call_txt_box2{font-size: 25px;}
 /* 창의현장 */
 .fieldstory_card_wrap{margin-top: 30px;}
 
@@ -957,6 +958,8 @@ table.board_type_0.notice thead th{font-size: 15px;}
     .tab_style_1_con .tab_style_1.five_tab > li{width: 50%;}
     .tab_style_1_con .tab_style_1.five_tab > li span{margin-bottom: 10px;}
     .board_sorting_con dd .input_search_con{padding: 3px;}
+    .call_txt_box{font-size: 14px; margin-left: 22px;}
+    .call_txt_box2{font-size: 14px;}
 }
 
 /* 정규과정 상세 */

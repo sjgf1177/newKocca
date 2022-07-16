@@ -865,7 +865,7 @@ border-radius: 5px}
 
 /* 통합검색 */
 .hotkeyword{background:#efefef; -o-border-radius: 5px;-moz-border-radius: 5px;-webkit-border-radius: 5px; border-radius: 5px;display: inline-block;padding-right: 10px}
-.hotkeyword h2{padding-left:20px;background: url(/edu/images/search/star.png) no-repeat 0 50%;line-height: 35px}
+.hotkeyword h2{padding-left:20px;/*background: url(/edu/images/search/star.png) no-repeat 0 50%;*/line-height: 35px}
 .hotkeyword li{display: inline-block;margin-right: 5px; line-height: 35px}
 .hotkeyword li .num{display: inline-block;text-align: center;font-size:11px;vertical-align: middle;width: 16px;height: 16px; line-height: 16px;background: #2b5a08;color:#fff;
 -o-border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;

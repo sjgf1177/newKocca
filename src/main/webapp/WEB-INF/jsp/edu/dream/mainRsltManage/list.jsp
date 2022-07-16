@@ -31,7 +31,7 @@
 	</div>
 </div>
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">창의인재동반</div>
+	<div class="col-center mw-1280">창의인재동반<span class="call_txt_box">문의 : 061-900-6383 / 6385</span></div>
 </div>
 <div class="col-center mw-1280 dream_list">
 	<div class="tab_style_1_con">
@@ -114,7 +114,7 @@
 		</div>
 	</div>
 
-	<div class="edu_together_three_card_con" style="border-bottom:1px solid #eeeeee;">
+	<div class="edu_together_three_card_con" style="border-bottom:1px solid #eeeeee; margin-bottom: 30px;">
 		<div class="col-12 col-md-4 edu_together_three_card_list">
 			<div class="col-12">
 				<div class="icon_box">
@@ -179,6 +179,7 @@
 			* 2012년 ~ 2020년 누적 기준
 		</div>
 	</div>
+	<p class="call_txt_box2">문의처 : 061-900-6383 / 6385</p>
 </div>
 <style>
 	.linemap_wrap .linemap_con li:nth-child(4) { display:none }

@@ -145,309 +145,178 @@ $(document).ready(function(){
 <style>
 .sub_contents_wrap .sub_contents {padding-left:0 !important;}
 </style>
-<!-- 통합검색 입력폼 -->
-<div class="over-hidden mb20">
-	<form name="frmSearch" class="col-12 board_sorting_con alert formLine1 searchSetTp" method="post" action="/edu/search/list.do?menuNo=${param.menuNo}" onsubmit="return checkForm(this);">
-		<input type="hidden" id="prevQ" name="prevQ" value="${paramVO.q}" />
-		<input type="hidden" id="pageIndex" name="pageIndex" value="${paramVO.pageIndex}" />
-		<div>
-			<fieldset>
-				<legend>통합검색 입력폼</legend>
-				<span class="tl select_box">
-					<label for="rangeView" class="hidden"><strong>통합검색</strong></label>
-					<select name="rangeView" id="rangeView" title="구분을 선택해 주세요."  class="select_style_0">
-						<option value="">통합검색</option>
-						<option value="progrm" <c:if test="${paramVO.rangeView eq 'progrm'}">selected="selected"</c:if>>프로그램</option>
-						<option value="onlineEdu" <c:if test="${paramVO.rangeView eq 'onlineEdu'}">selected="selected"</c:if>>교육/강좌</option>
-						<option value="webpage" <c:if test="${paramVO.rangeView eq 'webpage'}">selected="selected"</c:if>>웹페이지</option>
-						<option value="bbs" <c:if test="${paramVO.rangeView eq 'bbs'}">selected="selected"</c:if>>게시물</option>
-						<option value="menu" <c:if test="${paramVO.rangeView eq 'menu'}">selected="selected"</c:if>>메뉴</option>
-						<option value="files" <c:if test="${paramVO.rangeView eq 'files'}">selected="selected"</c:if>>첨부파일</option>
-					</select>
-				</span>
-				<span class="tl input_search_con">
-					<input type="text" class="board_search" name="q" id="q" title="검색어를 입력해 주세요." value="${param.q}" />
-					<!-- <a href="#self" class="btn btn-primary mr50">검색</a> -->
-					<input type="submit" value="" class="search_summit" title="검색">
-				</span>
-				<span class="check_style_0_con">
-					<input type="checkbox" name="re" class="check_style_0" id="re" value="Y" <c:if test="${paramVO.re eq 'Y'}">checked="checked"</c:if>/>
-					<label for="re">결과 내 검색</label>
-				</span>
-			</fieldset>
-		</div>
-	</form>
+
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>통합검색</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>검색결과</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">검색결과</div>
 </div>
 
 <!-- 인기검색어 -->
-<div class="mb20">
-	<div class="hotkeyword">
-		<h2 class="fl">인기검색어</h2>
-		<div class="over-hidden hotkeyword_list_con">
-			<ul>
-				<c:forEach var="result" items="${psList}" varStatus="status">
-					<li class="ico_${status.count}"><a href="javascript:search('${result.srchwrd}');"><span class="num">${status.count}</span><span class="txt">${result.srchwrd}</span></a></li>
-				</c:forEach>
-			</ul>
+<div class="col-center mw-1280">
+	<div class="mb20">
+		<div class="hotkeyword">
+			<h2 class="fl">인기검색어</h2>
+			<div class="over-hidden hotkeyword_list_con">
+				<ul>
+					<c:forEach var="result" items="${psList}" varStatus="status">
+						<li class="ico_${status.count}"><a href="javascript:search('${result.srchwrd}');"><span class="num">${status.count}.</span><span class="txt">${result.srchwrd}</span></a></li>
+					</c:forEach>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 
-	<ul class="photoTab photoTab-size5 online_edu_tab_style">
-		<li <c:if test="${empty paramVO.rangeView}">class="active"</c:if>><a href="javascript:detailView('');" <c:if test="${empty paramVO.rangeView}">title="현재탭"</c:if>>통합검색(${totalCount})</a><c:if test="${empty paramVO.rangeView}"></c:if></li>
-		<li <c:if test="${paramVO.rangeView eq 'progrm'}">class="active"</c:if>><a href="javascript:detailView('progrm');" <c:if test="${paramVO.rangeView eq 'progrm'}">title="현재탭"</c:if>>프로그램(${programListCnt})</a><c:if test="${paramVO.rangeView eq 'progrm'}"></c:if></li>
-		<li <c:if test="${paramVO.rangeView eq 'onlineEdu'}">class="active"</c:if>><a href="javascript:detailView('onlineEdu');" <c:if test="${paramVO.rangeView eq 'onlineEdu'}">title="현재탭"</c:if>>교육/강좌(${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'onlineEdu'}"></c:if></li>
-		<li <c:if test="${paramVO.rangeView eq 'webpage'}">class="active"</c:if>><a href="javascript:detailView('webpage');" <c:if test="${paramVO.rangeView eq 'webpage'}">title="현재탭"</c:if>>웹페이지(${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'webpage'}"></c:if></li>
-		<li <c:if test="${paramVO.rangeView eq 'bbs'}">class="active"</c:if>><a href="javascript:detailView('bbs');" <c:if test="${paramVO.rangeView eq 'bbs'}">title="현재탭"</c:if>>게시물(${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'bbs'}"></c:if></li>
-		<li <c:if test="${paramVO.rangeView eq 'menu'}">class="active"</c:if>><a href="javascript:detailView('menu');" <c:if test="${paramVO.rangeView eq 'menu'}">title="현재탭"</c:if>>메뉴(${empty menuResultList[0] ? 0 : menuResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'menu'}"></c:if></li>
-		<li <c:if test="${paramVO.rangeView eq 'files'}">class="active"</c:if>><a href="javascript:detailView('files');" <c:if test="${paramVO.rangeView eq 'files'}">title="현재탭"</c:if>>첨부파일(${empty filesResultList[0] ? 0 : filesResultList[0].numFound})</a><c:if test="${paramVO.rangeView eq 'files'}"></c:if></li>
-	</ul>
+	<div class="tab_style_1_con">
+		<ul class="tab_style_1 four_tab size_24">
+			<li <c:if test="${empty paramVO.rangeView}">class="active"</c:if>><a href="javascript:detailView('');" <c:if test="${empty paramVO.rangeView}">title="현재탭"</c:if>><span>통합검색(${totalCount})</span></a><c:if test="${empty paramVO.rangeView}"></c:if></li>
+			<li <c:if test="${paramVO.rangeView eq 'progrm'}"></c:if>><a href="javascript:detailView('progrm');" <c:if test="${paramVO.rangeView eq 'progrm'}">title="현재탭"</c:if>><span>오프라인교육(${programListCnt})</span></a><c:if test="${paramVO.rangeView eq 'progrm'}"></c:if></li>
+			<li <c:if test="${paramVO.rangeView eq 'onlineEdu'}"></c:if>><a href="javascript:detailView('onlineEdu');" <c:if test="${paramVO.rangeView eq 'onlineEdu'}">title="현재탭"</c:if>><span>온라인교육/강좌(${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound})</span></a><c:if test="${paramVO.rangeView eq 'onlineEdu'}"></c:if></li>
+		</ul>
+	</div>
 
-	<c:choose>
-		<c:when test="${paramVO.rangeView eq 'progrm'}"><c:set var="rangeNm" value="프로그램"/><c:set var="cnt" value="${programListCnt}"/></c:when>
-		<c:when test="${paramVO.rangeView eq 'onlineEdu'}"><c:set var="rangeNm" value="교육/강좌"/><c:set var="cnt" value="${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound}"/></c:when>
-		<c:when test="${paramVO.rangeView eq 'webpage'}"><c:set var="rangeNm" value="웹페이지"/><c:set var="cnt" value="${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound}"/></c:when>
-		<c:when test="${paramVO.rangeView eq 'bbs'}"><c:set var="rangeNm" value="게시물"/><c:set var="cnt" value="${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound}"/></c:when>
-		<c:when test="${paramVO.rangeView eq 'menu'}"><c:set var="rangeNm" value="메뉴"/><c:set var="cnt" value="${empty menuResultList[0] ? 0 : menuResultList[0].numFound}"/></c:when>
-		<c:when test="${paramVO.rangeView eq 'files'}"><c:set var="rangeNm" value="첨부파일"/><c:set var="cnt" value="${empty filesResultList[0] ? 0 : filesResultList[0].numFound}"/></c:when>
-		<c:otherwise><c:set var="rangeNm" value="전체"/><c:set var="cnt" value="${totalCount}"/></c:otherwise>
-	</c:choose>
-	<p class="mb10 alert_highlight_title">검색어 <span class="point0">"${paramVO.q}"</span>에 대한 ${rangeNm} <span class="point0" id="searchCnt">"${cnt}"</span>개의 검색 결과를 찾았습니다.</p>
+		<c:choose>
+			<c:when test="${paramVO.rangeView eq 'progrm'}"><c:set var="rangeNm" value="오프라인교육"/><c:set var="cnt" value="${programListCnt}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'onlineEdu'}"><c:set var="rangeNm" value="온라인교육/강좌"/><c:set var="cnt" value="${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'webpage'}"><c:set var="rangeNm" value="웹페이지"/><c:set var="cnt" value="${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'bbs'}"><c:set var="rangeNm" value="게시물"/><c:set var="cnt" value="${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'menu'}"><c:set var="rangeNm" value="메뉴"/><c:set var="cnt" value="${empty menuResultList[0] ? 0 : menuResultList[0].numFound}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'files'}"><c:set var="rangeNm" value="첨부파일"/><c:set var="cnt" value="${empty filesResultList[0] ? 0 : filesResultList[0].numFound}"/></c:when>
+			<c:otherwise><c:set var="rangeNm" value="전체"/><c:set var="cnt" value="${totalCount}"/></c:otherwise>
+		</c:choose>
+		<p class="mb10 alert_highlight_title">검색어 <span class="point0">"${paramVO.q}"</span>에 대한 ${rangeNm} <span class="point0" id="searchCnt">"${cnt}"</span>개의 검색 결과를 찾았습니다.</p>
 
-	<div class="searchSet">
+		<div class="searchSet">
 
-	<!-- 프로그램 -->
-	<c:if test="${rangeAll or paramVO.rangeView eq 'progrm'}">
+		<!-- 오프라인교육 -->
+		<c:if test="${rangeAll or paramVO.rangeView eq 'progrm'}">
 
-		<div class="alert">
-			<p class="alert_design_text"> 프로그램 (검색결과 ${programListCnt}건)</p>
-			<c:if test="${fn:length(progrmResultList)>0}">
-				<div class="moreBtn">
-					<c:if test="${paramVO.rangeView eq 'progrm'}">
-						<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
+			<div class="alert">
+				<p class="alert_design_text"> 오프라인교육 (검색결과 ${programListCnt}건)</p>
+				<c:if test="${fn:length(progrmResultList)>0}">
+					<div class="moreBtn">
+						<c:if test="${paramVO.rangeView eq 'progrm'}">
+							<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
+						</c:if>
+					</div>
+				</c:if>
+			</div>
+			<!-- 상세검색 -->
+			<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
+
+			<ul class="bull" id="ul_progrm">
+				<c:forEach var="result" items="${progrmResultList}" varStatus="status">
+					<c:if test="${status.count <= progrmCnt}">
+						<li class="statSet">
+							<%--<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">--%>
+							<a href="<c:out value="/edu/progrm/master/view.do?prgSn=${result.prgSn}&prgSe=${result.prgSe}&prgCl=${result.prgCl}&menuNo=500216"/>" target="_blank" title="새창열림">
+								<span class="tit">
+									<span class="status">
+										<c:choose>
+											<c:when test="${result.progrsSttus eq 'W'}">대기</c:when>
+											<c:when test="${result.progrsSttus eq 'P'}">진행중</c:when>
+											<c:when test="${result.progrsSttus eq 'F'}">마감</c:when>
+										</c:choose>
+									</span>
+								</span>
+								<div class="sc_tit_box"><span class="fcBlue">[${result.prgSeNm}-${result.prgClNm}]</span> <span>${result.prgNm}</span></div>
+								<span class="txt">
+									(신청방식 : ${result.reqstMthdNm} / 정원 : ${empty result.psncpa ? '-' : result.psncpa} 명 / 신청접수 : ${result.beginDt}~${result.endDt})
+									${result.hl}
+								</span>
+							</a>
+						</li>
 					</c:if>
-					<c:if test="${paramVO.rangeView ne 'progrm'}">
-						<a href="javascript:detailView('progrm');" class="more"> <span>더 보기 +</span></a>
-					</c:if>
-				</div>
-			</c:if>
-		</div>
-		<!-- 상세검색 -->
-		<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
+				</c:forEach>
+				<c:if test="${fn:length(progrmResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
+			</ul>
+		</c:if>
 
-		<ul class="bull" id="ul_progrm">
-			<c:forEach var="result" items="${progrmResultList}" varStatus="status">
-				<c:if test="${status.count <= progrmCnt}">
-					<li class="statSet">
-						<%--<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">--%>
-						<a href="<c:out value="/edu/progrm/master/view.do?prgSn=${result.prgSn}&prgSe=${result.prgSe}&prgCl=${result.prgCl}&menuNo=500216"/>" target="_blank" title="새창열림">
+		<!-- 온라인교육/강좌 -->
+		<c:if test="${rangeAll or paramVO.rangeView eq 'onlineEdu'}">
+			<div class="alert">
+				<p class="alert_design_text"> 온라인교육/강좌 (검색결과 ${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound}건)</p>
+				<c:if test="${fn:length(onlineEduResultList)>0}">
+					<div class="moreBtn">
+						<c:if test="${paramVO.rangeView eq 'onlineEdu'}">
+							<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
+						</c:if>
+						<c:if test="${paramVO.rangeView ne 'onlineEdu'}">
+							<a href="javascript:detailView('onlineEdu');" class="more"> <span>더 보기 +</span></a>
+						</c:if>
+					</div>
+				</c:if>
+			</div>
+			<!-- 상세검색 -->
+			<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
+
+			<ul class="bull" id="ul_onlineEdu">
+				<c:forEach var="result" items="${onlineEduResultList}" varStatus="status">
+					<c:if test="${status.count <= onlineEduCnt}">
+						<li class="statSet">
+							<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">
 							<span class="tit">
 								<span class="status">
 									<c:choose>
-										<c:when test="${result.progrsSttus eq 'W'}">대기</c:when>
-										<c:when test="${result.progrsSttus eq 'P'}">진행중</c:when>
-										<c:when test="${result.progrsSttus eq 'F'}">마감</c:when>
+										<c:when test="${result.gubunSe eq '01'}">정규과정</c:when>
+										<c:when test="${result.gubunSe eq '02'}">열린강좌</c:when>
+										<c:when test="${result.gubunSe eq '03'}">테마과정</c:when>
 									</c:choose>
 								</span>
-								<span class="fcBlue">[${result.prgSeNm}-${result.prgClNm}]</span> ${result.prgNm}
+								<span class="fcBlue">
+									<c:choose>
+										<c:when test="${result.gubunSe eq '01'}">
+											<c:choose>
+												<c:when test="${result.gubun eq 'realm'}">[분야별</c:when>
+												<c:when test="${result.gubun eq 'occp'}">[직업별</c:when>
+											</c:choose>
+											- ${result.categoryNm}]
+										</c:when>
+										<c:otherwise>[${result.categoryNm}]</c:otherwise>
+									</c:choose>
+								</span> ${result.title}
 							</span>
-							<span class="txt">
-								(신청방식 : ${result.reqstMthdNm} / 정원 : ${empty result.psncpa ? '-' : result.psncpa} 명 / 신청접수 : ${result.beginDt}~${result.endDt})
-								${result.hl}
-							</span>
-				  		</a>
-			  		</li>
-		  		</c:if>
-		  	</c:forEach>
-			<c:if test="${fn:length(progrmResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
-		</ul>
-	</c:if>
+							<span class="txt">${result.hl}</span>
+							</a>
+						</li>
+					</c:if>
+				</c:forEach>
+				<c:if test="${fn:length(onlineEduResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
+			</ul>
+		</c:if>
 
-	<!-- 교육/강좌 -->
-	<c:if test="${rangeAll or paramVO.rangeView eq 'onlineEdu'}">
-		<div class="alert">
-			<p class="alert_design_text"> 교육/강좌 (검색결과 ${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound}건)</p>
-			<c:if test="${fn:length(onlineEduResultList)>0}">
-				<div class="moreBtn">
-					<c:if test="${paramVO.rangeView eq 'onlineEdu'}">
-						<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
-					</c:if>
-					<c:if test="${paramVO.rangeView ne 'onlineEdu'}">
-						<a href="javascript:detailView('onlineEdu');" class="more"> <span>더 보기 +</span></a>
-					</c:if>
-				</div>
-			</c:if>
 		</div>
-		<!-- 상세검색 -->
-		<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
 
-		<ul class="bull" id="ul_onlineEdu">
-			<c:forEach var="result" items="${onlineEduResultList}" varStatus="status">
-				<c:if test="${status.count <= onlineEduCnt}">
-					<li class="statSet">
-						<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">
-						<span class="tit">
-							<span class="status">
-								<c:choose>
-									<c:when test="${result.gubunSe eq '01'}">정규과정</c:when>
-									<c:when test="${result.gubunSe eq '02'}">열린강좌</c:when>
-									<c:when test="${result.gubunSe eq '03'}">테마과정</c:when>
-								</c:choose>
-							</span>
-							<span class="fcBlue">
-								<c:choose>
-									<c:when test="${result.gubunSe eq '01'}">
-										<c:choose>
-											<c:when test="${result.gubun eq 'realm'}">[분야별</c:when>
-											<c:when test="${result.gubun eq 'occp'}">[직업별</c:when>
-										</c:choose>
-										- ${result.categoryNm}]
-									</c:when>
-									<c:otherwise>[${result.categoryNm}]</c:otherwise>
-								</c:choose>
-							</span> ${result.title}
-						</span>
-						<span class="txt">${result.hl}</span>
-				  		</a>
-			  		</li>
-			  	</c:if>
-			</c:forEach>
-			<c:if test="${fn:length(onlineEduResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
-		</ul>
-	</c:if>
+		<c:if test="${not empty paramVO.rangeView}">
+			<div class="paging">${pageNav}</div>
+		</c:if>
+</div>
 
-	<!-- 웹페이지 -->
-	<c:if test="${rangeAll or paramVO.rangeView eq 'webpage'}">
-		<div class="alert">
-			<p class="alert_design_text"> 웹페이지 (검색결과 ${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound}건)</p>
-			<c:if test="${fn:length(webpageResultList)>0}">
-				<div class="moreBtn">
-					<c:if test="${paramVO.rangeView ne 'webpage'}">
-						<a href="javascript:detailView('webpage');" class="more"> <span>더 보기 +</span></a>
-					</c:if>
-				</div>
-			</c:if>
-		</div>
-		<ul class="bull">
-			<c:forEach var="result" items="${webpageResultList}" varStatus="status">
-				<c:if test="${status.count <= webpageCnt}">
-					<li>
-						<a href="http://<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">
-						<span class="tit">
-							<span class="fcBlue uline">[${fn:replace(result.relateMenuNmList,'|', ' > ')}]</span>
-						</span>
-						<span class="txt">${result.hl}</span>
-				  		</a>
-			  		</li>
-		  		</c:if>
-		  	</c:forEach>
-			<c:if test="${fn:length(webpageResultList) == 0}"><li>검색 결과가 없습니다.</li></c:if>
-		</ul>
-	</c:if>
+<style>
+	.tab_style_1_con{margin: 40px 0 50px 0;}
+	.tab_style_1_con .tab_style_1{display: flex; justify-content: space-around;}
+	.alert{margin-top: 30px;}
+	.searchSet .statSet .txt{margin-left: 0; margin-top: 5px;}
+	.searchSet .tit{margin-bottom: 10px;}
+	.sc_tit_box span{font-size: 20px;}
+	.hotkeyword li .num{width:auto; height: auto; background: transparent; color: #222;}
 
-	<!-- 게시물 -->
-	<c:if test="${rangeAll or paramVO.rangeView eq 'bbs'}">
-		<div class="alert">
-			<p class="alert_design_text"> 게시물 (검색결과 ${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound}건)</p>
-			<c:if test="${fn:length(bbsResultList)>0}">
-				<div class="moreBtn">
-					<c:if test="${paramVO.rangeView eq 'bbs'}">
-						<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
-					</c:if>
-					<c:if test="${paramVO.rangeView ne 'bbs'}">
-						<a href="javascript:detailView('bbs');" class="more"> <span>더 보기 +</span></a>
-					</c:if>
-				</div>
-			</c:if>
-		</div>
-		<!-- 상세검색 -->
-		<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
-
-		<ul class="bull" id="ul_bbs">
-			<c:forEach var="result" items="${bbsResultList}" varStatus="status">
-				<c:if test="${status.count <= bbsCnt}">
-					<li>
-						<a href="/edu/bbs/${result.bbsId}/view.do?nttId=${result.nttId}&amp;menuNo=${result.menuNo}" target="_blank" title="새창열림">
-						<span class="tit">
-							<span class="fcBlue uline">[${fn:replace(result.relateMenuNmList,'|', ' > ')}]</span> <c:out value="${result.nttSj}"  /><span class="date"> <fmt:formatDate value="${result.frstRegistPnttm}" pattern="yyyy-MM-dd"/></span>
-						</span>
-						<span class="txt"><c:out value="${result.hl}" /></span>
-				  		</a>
-			  		</li>
-		  		</c:if>
-		  	</c:forEach>
-			<c:if test="${fn:length(bbsResultList) == 0}"><li>검색 결과가 없습니다.</li></c:if>
-		</ul>
-	</c:if>
-
-	<!-- 메뉴 -->
-	<c:if test="${rangeAll or paramVO.rangeView eq 'menu'}">
-		<div class="alert">
-			<p class="alert_design_text">메뉴 (검색결과 ${empty menuResultList[0] ? 0 : menuResultList[0].numFound}건)</p>
-			<c:if test="${fn:length(menuResultList)>0}">
-				<div class="moreBtn">
-					<c:if test="${paramVO.rangeView ne 'menu'}">
-						<a href="javascript:detailView('menu');" class="more"> <span>더 보기 +</span></a>
-					</c:if>
-				</div>
-			</c:if>
-		</div>
-		<ul class="bull">
-			<c:forEach var="result" items="${menuResultList}" varStatus="status">
-				<li>
-					<a href="${result.fullMenuLink}" target="_blank" title="새창열림" class="tit">
-						${fn:replace(empty result.hl ? result.relateMenuNmList : result.hl,'|',' > ')}
-					</a>
-				</li>
-			</c:forEach>
-			<c:if test="${fn:length(menuResultList) == 0}"><li>검색 결과가 없습니다.</li></c:if>
-		</ul>
-	</c:if>
-
-	<!-- 첨부파일 -->
-	<c:if test="${rangeAll or paramVO.rangeView eq 'files'}">
-		<div class="alert">
-			<p class="alert_design_text"> 첨부파일 (검색결과 ${empty filesResultList[0] ? 0 : filesResultList[0].numFound}건)</p>
-			<c:if test="${fn:length(filesResultList)>0}">
-				<div class="moreBtn">
-					<c:if test="${paramVO.rangeView eq 'files'}">
-						<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
-					</c:if>
-					<c:if test="${paramVO.rangeView ne 'files'}">
-						<a href="javascript:detailView('files');" class="more"> <span>더 보기 +</span></a>
-					</c:if>
-				</div>
-			</c:if>
-		</div>
-		<!-- 상세검색 -->
-		<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
-
-		<ul class="bull" id="ul_files">
-			<c:forEach var="result" items="${filesResultList}" varStatus="status">
-				<li>
-					<c:choose>
-						<c:when test="${result.fileExtsn eq 'doc' or result.fileExtsn eq 'docx'}"><c:set var="fileType" value="icoWord"/></c:when>
-						<c:when test="${result.fileExtsn eq 'ppt' or result.fileExtsn eq 'pptx'}"><c:set var="fileType" value="icoPpt"/></c:when>
-						<c:when test="${result.fileExtsn eq 'xls' or result.fileExtsn eq 'xlsx'}"><c:set var="fileType" value="icoXls"/></c:when>
-						<c:when test="${result.fileExtsn eq 'pdf'}"><c:set var="fileType" value="icoPdf"/></c:when>
-						<c:otherwise><c:set var="fileType" value="icoFile"/></c:otherwise>
-					</c:choose>
-					<a href="/edu/cmm/fms/FileDown.do?atchFileId=${result.atchFileId}&amp;fileSn=${result.fileSn}" class="${fileType}">
-						<span class="tit">${result.orignlFileNm} <span class="date"> <fmt:formatDate value="${result.frstRegistPnttm}" pattern="yyyy-MM-dd"/></span></span>
-						<span class="db">
-							<span class="fcBlue">[${fn:replace(result.relateMenuNmList,'|', ' > ')}]</span>${result.nttSj}<br/>${result.hl}
-						</span>
-					</a>
-				</li>
-			</c:forEach>
-			<c:if test="${fn:length(filesResultList) == 0}"><li>검색 결과가 없습니다.</li></c:if>
-		</ul>
-	</c:if>
-
-	</div>
-
-	<c:if test="${not empty paramVO.rangeView}">
-		<div class="paging">${pageNav}</div>
-	</c:if>
-
-
+	@media all and (max-width:640px) {
+		.tab_style_1_con .tab_style_1 > li span{font-size: 1.37rem;}
+		.tab_style_1_con .tab_style_1 > li.active a span{border-bottom: 3px solid #222222;}
+		.alert_highlight_title{font-size: 15px; text-align: center;}
+		.hotkeyword h2{padding-left: 0; width: 100%;}
+		.hotkeyword .hotkeyword_list_con{padding-top: 0; padding-left: 1px;}
+		.hotkeyword li{line-height: 2em; font-size: 14px;}
+		.sc_tit_box span{font-size: 15px;}
+		.searchSet .statSet .txt{font-size: 13px;}
+	}
+</style>
