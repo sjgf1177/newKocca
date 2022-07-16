@@ -127,6 +127,16 @@
 		<input type="hidden" name="s_subjseq" id="s_subjseq" value="" />
 	</form>
 </div>
+
+<style>
+	.board_util_btn_con .btn_style_0.img_left{padding-left: 20px;}
+	[class*="col-"] [class*="col-"] img{width: 305px;}
+	@media all and (max-width:640px) {
+		[class*="col-"] [class*="col-"] img{width:100%;}
+	}
+
+
+</style>
 <script type="text/javascript">
 //과정 상세화면
 function fnCmdViewPage(type, subj, subjnm, isonoff, scupperclass, uclassnm, year, subjseq){
