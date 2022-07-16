@@ -187,7 +187,7 @@
                                         <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
                                     </c:when>
                                     <c:otherwise>
-                                        <img alt="${result.subjnm } - 메인 이미지" src="/edu<c:out value="${result.introducefilenamenew}" />"  />
+                                        <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />"  />
                                     </c:otherwise>
                                 </c:choose>
                             </a>
@@ -246,7 +246,7 @@
                                         <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
                                     </c:when>
                                     <c:otherwise>
-                                        <img alt="${result.subjnm } - 메인 이미지" src="/edu<c:out value="${result.introducefilenamenew}" />"  />
+                                        <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />"  />
                                     </c:otherwise>
                                 </c:choose>
                             </a>
@@ -338,7 +338,7 @@
                                 <img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
                             </c:when>
                             <c:otherwise>
-                                <img alt="${item3.subjnm } - 메인 이미지" src="/edu<c:out value="${item3.introducefilenamenew}" />"/>
+                                <img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"/>
                             </c:otherwise>
                         </c:choose>
                         <!-- 설명란 start-->

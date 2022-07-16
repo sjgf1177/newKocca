@@ -138,7 +138,7 @@
 								<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${result.lecnm } 임시 이미지"/>
 							</c:when>
 							<c:otherwise>
-								<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="/edu<c:out value="${result.vodimg}" />"/>
+								<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value="${result.vodimg}" />"/>
 							</c:otherwise>
 						</c:choose>
 

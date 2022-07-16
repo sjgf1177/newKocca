@@ -360,7 +360,7 @@
     <div class="">
         <a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />');">
             <!-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" -->
-            <img src="/edu<c:out value="${result.vodimg }"/>" style="width: 100%;height: auto;" alt="강좌보기"/>
+            <img src="<c:out value="${result.vodimg }"/>" style="width: 100%;height: auto;" alt="강좌보기"/>
             <span class="maskPlay"></span>
         </a>
     </div>
@@ -440,7 +440,7 @@
 
 					<!-- 썸네일 start -->
 					<div class="fwo_snail_box">
-						<img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='/edu<c:out value="${nextResult.imgfile }" />'/>
+						<img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='<c:out value="${nextResult.imgfile }" />'/>
 						<!-- 설명란 start-->
 						<div class="fwo_info_box">
 							<h3 class="fwo_tit_box"><c:out value="${nextResult.courseName }" escapeXml="false"/></h3>

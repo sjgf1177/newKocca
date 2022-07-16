@@ -106,7 +106,7 @@
             <div class="img_box">
                 <c:choose>
                     <c:when test="${view.introducefilenamenew != null and view.introducefilenamenew != '' }">
-                        <img alt="${view.subjnm }" src="/edu<c:out value="${view.introducefilenamenew}" />" width="381px;" height="247px;"/>
+                        <img alt="${view.subjnm }" src="<c:out value="${view.introducefilenamenew}" />" width="381px;" height="247px;"/>
                     </c:when>
                     <c:otherwise>
                         <img alt="${view.subjnm }" src="/edu/images/edupro/stepsub-03.png" width="381px;" height="247px;"/>
@@ -347,7 +347,7 @@
                         <!-- 썸네일 start -->
                         <div class="fwo_snail_box">
                             <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${item2.type }', '${item2.courseId }', '${item2.courseName }', '${item2.isonoff }', '${item2.scupperclass }', '${item2.uclassnm }', '${item2.year }', '${item2.subjseq }'); return false;">
-                                <img alt="<c:out value="${not empty item2.courseName ? item2.courseName : '다음강좌' }" />" src='<c:out value="/edu${item2.imgfile }" />'/>
+                                <img alt="<c:out value="${not empty item2.courseName ? item2.courseName : '다음강좌' }" />" src='<c:out value="${item2.imgfile }" />'/>
                             </a>
                             <!-- 설명란 start-->
                             <div class="fwo_info_box">
