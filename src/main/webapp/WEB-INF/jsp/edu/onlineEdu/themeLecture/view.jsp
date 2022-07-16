@@ -54,8 +54,7 @@
 	</div>
 	<div class="txt_ct mb40">
 		<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
-		<%--<img alt="${result.title }" src="${result.posterImg}" />--%>
-		<img alt="${result.title }" src="https://edu.kocca.kr/upload/themeupload/88_800_300.jpg" />
+		<img alt="${result.title }" src="${result.posterImg}" />
 		</c:if>
 	</div>
 	<div class="col-12 mb17">
