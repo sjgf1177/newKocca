@@ -462,7 +462,7 @@
 
         $("#p_searchtext").val($.trim($("#p_searchtext").val()));
         $("#frm").attr({
-            action: "/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>",
+            action: "/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${param.menuNo }'/>",
             method: "post",
             target: "_self"
         });
