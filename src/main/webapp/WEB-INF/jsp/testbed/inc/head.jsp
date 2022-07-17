@@ -169,7 +169,8 @@
 												<input type="hidden" name="redirectUrl" value="/${paramVO.siteName}/main/main.do"/>
 											</form>
 											<span class="show vm fontsize14 header_util_item">
-												<a href="/testbed/member/join01.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>
+												<%--<a href="/testbed/member/join02.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>--%>
+                                                <a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 											</span>
 										</span>
                                     </c:when>
@@ -179,7 +180,7 @@
 												<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
 											</span>
 											<span class="show vm fontsize14 header_util_item">
-												<a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+												<a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 											</span>
 										</span>
                                     </c:otherwise>
@@ -336,7 +337,8 @@
 												<input type="hidden" name="redirectUrl" value="/${paramVO.siteName}/main/main.do"/>
 											</form>
 											<span class="show vm fontsize14 header_util_item">
-												<a href="/testbed/member/join01.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>
+												<%--<a href="/testbed/member/join02.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>--%>
+                                                <a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 											</span>
 										</span>
                                     </c:when>
@@ -346,7 +348,7 @@
 												<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
 											</span>
 											<span class="show vm fontsize14 header_util_item">
-												<a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+												<a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 											</span>
 										</span>
                                     </c:otherwise>
