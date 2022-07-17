@@ -125,8 +125,7 @@
 				<a href="/<c:out value='${paramVO.siteName }' />/bbs/<c:out value='${paramVO.bbsId}' />/view.do?nttId=<c:out value='${result.nttId}'/><c:out value='${pageQueryString}'  escapeXml='false'/> " class="col-12 show fn fieldstory_card">
 					<div class="img_box">
 						<c:if test="${not empty file}">
-							<%--<img src='/cmm/fms/getImage.do?atchFileId=${file.atchFileId}&amp;fileSn=${file.fileSn}'  alt="<c:out value="${result.nttSj }"/>"  />--%>
-							<img src="${fn:replace(file.fileStreCours, 'data2', 'edu/images')}/${file.streFileNm}" alt="<c:out value="${result.insttNm }"/>"  />
+							<img src='/cmm/fms/getImage.do?atchFileId=${file.atchFileId}&amp;fileSn=${file.fileSn}'  alt="<c:out value="${result.nttSj }"/>"  />
 						</c:if>
 					</div>
 					<div class="text_box">
