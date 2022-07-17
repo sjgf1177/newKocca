@@ -19,6 +19,7 @@ import kr.co.edu.util.HashCipher;
 import kr.co.unp.bbs.vo.FileVO;
 import kr.co.unp.cmm.crud.mvr.ModelAndViewResolver;
 import kr.co.unp.cmm.crud.mvr.UriModelAndViewResolver;
+
 import kr.co.unp.cmm.crud.service.ParameterContext;
 import kr.co.unp.cmm.crud.util.MVUtils;
 import kr.co.unp.cmm.sec.ram.service.impl.AuthorManageDAO;
@@ -302,15 +303,15 @@ public class UserMemberService extends MemberService {
 			param.put("lastUpdusrId", user.getUserIdx());
 		}
 
-		String email = param.getString("email1") + "@" + param.getString("email2");
+		String email = param.getString("email");
 		param.put("email", email);
 
-		String mbtlnum = param.getString("mbtlnum1") + "-" + param.getString("mbtlnum2") + "-" + param.getString("mbtlnum3");
+		String mbtlnum = param.getString("mbtlnum");
 		if (StringUtils.hasText(param.getString("mbtlnum"))) mbtlnum = param.getString("mbtlnum");
 		param.put("mbtlnum", mbtlnum);
 
 
-		String parntsMbtlnum = param.getString("parntsMbtlnum1") + "-" + param.getString("parntsMbtlnum2") + "-" + param.getString("parntsMbtlnum3");
+		String parntsMbtlnum = param.getString("parntsMbtlnum");
 		if (StringUtils.hasText(param.getString("parntsMbtlnum"))) parntsMbtlnum = param.getString("parntsMbtlnum");
 		param.put("parntsMbtlnum", parntsMbtlnum);
 
@@ -336,7 +337,6 @@ public class UserMemberService extends MemberService {
 
 		initParam(param);
 		param.put("all", "Y");
-
 
 		// 아이디 중복체크
 		String userId = session.getAttribute(MemberService.USER_ID_KEY) == null ? "" : (String)session.getAttribute(MemberService.USER_ID_KEY);
@@ -420,7 +420,8 @@ public class UserMemberService extends MemberService {
 	    			user.setAuthSe(authSe);
 	    			user.setUserId(param.getString("userId"));
 
-					MVUtils.goUrl("/"+param.getString("siteName")+"/member/joinCompt.do?menuNo="+param.getString("menuNo"), "정상적으로 등록되었습니다.", model);
+					//MVUtils.goUrl("/"+param.getString("siteName")+"/member/joinCompt.do?menuNo="+param.getString("menuNo"), "정상적으로 등록되었습니다.", model);
+					MVUtils.goUrl("/"+param.getString("siteName")+"/member/forLogin.do?menuNo=500077", "정상적으로 등록되었습니다.", model);
 				}
 			}
 		}
@@ -1356,7 +1357,7 @@ public class UserMemberService extends MemberService {
 	
 	/**
 	 * 엑셀파일 체크
-	 * @param param
+	 * @param paramCtx
 	 * @return
 	 * @throws Exception
 	 */
@@ -1614,7 +1615,7 @@ public class UserMemberService extends MemberService {
 	
 	/**
 	 * 엑셀파일 생년월일 날짜 유효성 체크
-	 * @param param
+	 * @param checkDate
 	 * @return
 	 * @throws Exception
 	 */

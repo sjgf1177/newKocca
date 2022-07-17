@@ -14,50 +14,21 @@
 
     var mberSe = "<c:out value='${user.mberSe}'/>";
     var codeIdVal = "<c:out value='${codeId0}'/>";
-    var sidoVal = "<c:out value='${param.sido}'/>";
-    var gugunVal = "<c:out value='${param.gugun}'/>";
 
     $(function(){
         var title = document.title;
         document.title = "이용약관동의 < " + title;
 
-        $("#brthdy").mask("9999-99-99");
-
-        if (sidoVal != "") getCodeList("gugun", codeIdVal, $("#sido").val(), 2, gugunVal);
-
-        $("select[name=sido]").change(function(){
-            var val = $(this).val();
-            getCodeList("gugun", codeIdVal, val, 2);
-        });
-
-        $("#resdncOvsea").hide();
-        $("input[name=resdncSe]").click(function(){
-            var val = $(this).val();
-            if (val == "02") {
-                $("#sido").hide();
-                $("#gugun").hide();
-                $("#sido").val("");
-                $("#gugun").val("");
-                $("#resdncOvsea").show();
-            }
-            else {
-                $("#sido").show();
-                $("#gugun").show();
-                $("#resdncOvsea").hide();
-                $("#resdncOvsea").val("");
-            }
-        });
-
         crtfcPopup = function(authSe) { // 이메일/휴대폰 인증 팝업창
             var val = "";
-            var email = $("#email1").val()+"@"+$("#email2").val();
-            var mbtlnum = $("#mbtlnum1").val()+"-"+$("#mbtlnum2").val()+"-"+$("#mbtlnum3").val();
+            var email = $("#email").val();
+            var mbtlnum = $("#mbtlnum").val();
             var height = "343";
             var mode = "";
 
             if (authSe == "01") {
                 if (!checkEmailFc()) {
-                    $("#email1").focus();
+                    $("#email").focus();
                     return;
                 }
                 $("#emailAuthAt").val("Y");
@@ -67,9 +38,10 @@
             }
             else {
                 if (!checkMbtlnumFc()) {
-                    $("#mbtlnum1").focus();
+                    $("#mbtlnum").focus();
                     return;
                 }
+
                 val = mbtlnum;
                 height = "463";
                 mode = "Y";
@@ -80,31 +52,28 @@
 
         $("#mbtlnumAuthCmt").hide();
         $("#mbtlnumAuthDel").hide();
+
         authDel = function() { // 휴대폰 인증 삭제
             $("#mbtlnumAuthAt").val("");
             $("#mbtlnumAuth").show();
             $("#mbtlnumAuthCmt").hide();
             $("#mbtlnumAuthDel").hide();
-            $("#mbtlnum1").attr('disabled', false);
-            $("#mbtlnum2").attr('disabled', false);
-            $("#mbtlnum3").attr('disabled', false);
+            $("#mbtlnum").attr('disabled', false);
             $("#mbtlnum").val("");
         };
 
-
-
         parntsCrtfcPopup = function() { // 이메일/휴대폰 인증 팝업창
             var val = "";
-            var parntsMbtlnum = $("#parntsMbtlnum1").val()+"-"+$("#parntsMbtlnum2").val()+"-"+$("#parntsMbtlnum3").val();
+            var parntsMbtlnum = $("#parntsMbtlnum").val();
             var mode = "";
 
             var form = $("#agreeForm")[0];
             var v = new MiyaValidator(form);
 
-            v.add("parntsMbtlnum1", {
+            v.add("parntsMbtlnum", {
                 required : true,
-                span : 3,
-                glue : "-",
+                span : 1,
+                glue : "",
                 option : "handphone"
             });
 
@@ -144,27 +113,21 @@
             }
             */
 
-
             val = parntsMbtlnum;
             height = "463";
             mode = "Y";
 
-
             window.open("/edu/userMember/parntsCrtfcPopup.do?viewType=BODY&authSe=02&val="+val+"&mode="+mode, "parntsCrtfcPopup", "top=300, left=600, width=568, height="+height+", status=yes, resizable=yes, scrollbars=no");
         };
-
 
         parntsAuthDel = function() { // 휴대폰 인증 삭제
             $("#parntsMbtlnumAuthAt").val("");
             $("#parntsMbtlnumAuth").show();
             $("#parntsMbtlnumAuthCmt").hide();
             $("#parntsMbtlnumAuthDel").hide();
-            $("#parntsMbtlnum1").attr('disabled', false);
-            $("#parntsMbtlnum2").attr('disabled', false);
-            $("#parntsMbtlnum3").attr('disabled', false);
+            $("#parntsMbtlnum").attr('disabled', false);
             $("#parntsMbtlnum").val("");
         };
-
 
         $("#brthdy").blur(function() {
             var birthday  = $(this).val();
@@ -187,53 +150,80 @@
             }
         });
 
-
         $("#parntsAuthSameBtn").click(function() {
+            var val = $("#parntsMbtlnum1").val();
+            $("#mbtlnum").val($("#parntsMbtlnum").val());
 
-            var val = $("#parntsMbtlnum1").val()+"-"+$("#parntsMbtlnum2").val()+"-"+$("#parntsMbtlnum3").val();
-            $("#mbtlnum1").val($("#parntsMbtlnum1").val());
-            $("#mbtlnum2").val($("#parntsMbtlnum2").val());
-            $("#mbtlnum3").val($("#parntsMbtlnum3").val());
             if (checkMbtlnumFc()) {
                 $("#mbtlnumAuthAt").val("Y");
                 $("#mbtlnumAuth").hide();
                 $("#mbtlnumAuthCmt").show();
                 $("#mbtlnumAuthDel").show();
-                $("#mbtlnum1").attr('disabled', true);
-                $("#mbtlnum2").attr('disabled', true);
-                $("#mbtlnum3").attr('disabled', true);
+                $("#mbtlnum").attr('disabled', true);
                 $("#mbtlnum").val(val);
                 $("#parntsAuthSameBtn").hide();
             }
         });
-    });
 
-
-
-
-    //공통 코드목록 화면처리
-    function getCodeList(elemntId, codeId, upperCode, depth, code) {
-        var $obj = $("#"+ elemntId);
-        var url = "/cmmn/cmmncode/codeListJson.do";
-        var params = {
-            codeId : codeId,
-            upperCode : upperCode
-        };
-        $.get(url, params, function(data) {
-            if (data) {
-                $obj.empty();
-                $("<option title=\"선택\">").text("선택").attr("value","").appendTo($obj);
-                $.each(data.list, function(key,item) {
-                    var $codeItem = $("<option>").attr("value", item.code).attr("title", item.codeNm).text(item.codeNm);
-                    if (code == item.code) $codeItem.attr("selected",true);
-                    $codeItem.appendTo($obj);
-                });
-                if ("gugun" == elemntId && "" == upperCode) {
-                    $("<option title=\"선택\">").text("선택").attr("value","").appendTo($("#gugun").empty());
-                }
+        $("#checkbox-p-5").click(function() {
+            if($("#checkbox-p-5").is(":checked")) {
+                $("#checkbox-p-6").prop("checked", true);
+                $("#checkbox-p-7").prop("checked", true);
+            } else {
+                $("#checkbox-p-6").prop("checked", false);
+                $("#checkbox-p-7").prop("checked", false);
             }
-        },"json");
-    }
+        });
+
+        $("#checkbox-p-6").click(function() {
+            if($("#checkbox-p-6").is(":checked") && $("#checkbox-p-7").is(":checked")) {
+                $("#checkbox-p-5").prop("checked", true);
+            } else {
+                $("#checkbox-p-5").prop("checked", false);
+            }
+        });
+
+        $("#checkbox-p-7").click(function() {
+            if($("#checkbox-p-6").is(":checked") && $("#checkbox-p-7").is(":checked")) {
+                $("#checkbox-p-5").prop("checked", true);
+            } else {
+                $("#checkbox-p-5").prop("checked", false);
+            }
+        });
+
+        $("#checkbox-p-1").click(function() {
+            if($("#checkbox-p-1").is(":checked")) {
+                $("#emailAt").val("Y");
+            } else {
+                $("#emailAt").val("N");
+            }
+        });
+
+        $("#checkbox-p-2").click(function() {
+            if($("#checkbox-p-2").is(":checked")) {
+                $("#smsAt").val("Y");
+            } else {
+                $("#smsAt").val("N");
+            }
+        });
+
+        $("#checkbox-p-3").click(function() {
+            if($("#checkbox-p-3").is(":checked")) {
+                $("#concertEmailAt").val("Y");
+            } else {
+                $("#concertEmailAt").val("N");
+            }
+        });
+
+        $("#checkbox-p-4").click(function() {
+            if($("#checkbox-p-4").is(":checked")) {
+                $("#concertSmsAt").val("Y");
+            } else {
+                $("#concertSmsAt").val("N");
+            }
+        });
+
+    });
 
     function checkId(value) {
         checkIdFc();
@@ -341,7 +331,6 @@
             $("#pwd-success").text("");
             return flag;
         }
-
     }
 
     function checkPwdVal() {
@@ -434,7 +423,6 @@
             $("#pwd2-success").text("");
             return flag;
         }
-
     }
 
     function checkPwd2Val(){
@@ -463,14 +451,13 @@
             });
             $.post(
                 "/edu/member/checkDupEmail.json",
-                {email : $("#email1").val()+"@"+$("#email2").val()},
+                {email : $("#email").val()},
                 function(data)
                 {
                     if (data.resultCode == "success") {
                         if (data.emailCnt > 0) {
                             alert("이미 가입한 이메일입니다.");
-                            $("#email1").val("");
-                            $("#email2").val("");
+                            $("#email").val("");
                             flag = false;
                         }
                     }
@@ -493,10 +480,10 @@
         var form = $("#agreeForm")[0];
         var v = new MiyaValidator(form);
 
-        v.add("email1", {
+        v.add("email", {
             required: true,
-            span: 2,
-            glue: "@",
+            span: 1,
+            glue: "",
             option: "email"
         });
 
@@ -513,6 +500,7 @@
         $.ajaxSetup({
             async: true
         });
+
         if (checkMbtlnum()) {
             var flag = true;
 
@@ -521,15 +509,13 @@
             });
             $.post(
                 "/edu/member/checkDupMbtlnum.json",
-                {mbtlnum : $("#mbtlnum1").val()+"-"+$("#mbtlnum2").val()+"-"+$("#mbtlnum3").val()},
+                {mbtlnum : $("#mbtlnum").val()},
                 function(data)
                 {
                     if (data.resultCode == "success") {
                         if (data.mbtlnumCnt > 0) {
                             alert("이미 가입한 핸드폰번호입니다.");
-                            $("#mbtlnum1").val("");
-                            $("#mbtlnum2").val("");
-                            $("#mbtlnum3").val("");
+                            $("#mbtlnum").val("");
                             flag = false;
                         }
                     }
@@ -552,10 +538,10 @@
         var form = $("#agreeForm")[0];
         var v = new MiyaValidator(form);
 
-        v.add("mbtlnum1", {
+        v.add("mbtlnum", {
             required : true,
-            span : 3,
-            glue : "-",
+            span : 1,
+            glue : "",
             option : "handphone"
         });
 
@@ -568,13 +554,11 @@
         return true;
     }
 
-
-
     function checkParntsMbtlnum() {
         var form = $("#agreeForm")[0];
         var v = new MiyaValidator(form);
 
-        v.add("parntsMbtlnum1", {
+        v.add("parntsMbtlnum", {
             required : true,
             span : 3,
             glue : "-",
@@ -594,103 +578,46 @@
         var form = $("#agreeForm")[0];
         var v = new MiyaValidator(form);
 
-        v.add("agreAt1", {
-            required: true
-        });
-        v.add("userNm", {
-            required: true
-        });
-        v.add("brthdy", {
-            required: true
-        });
-        v.add("sex", {
-            required: true
-        });
-
-
-        if ($("#parntsAgreAt").val() == "Y") {
-
-            v.add("parntsNm", {
-                required: true
-            });
-        }
-
-
-        v.add("emailAt1", {
-            required: true
-        });
-        v.add("smsAt1", {
-            required: true
-        });
-
-        //rsg20170922
-        v.add("concertEmailAt1", {
-            required: true
-        });
-        v.add("concertSmsAt1", {
-            required: true
-        });
-
-        //rsg20180208
-        v.add("job", {
-            required: true
-        });
-
-
-
         if (!checkIdFc()) {
             alert("사용 불가능한 아이디입니다.");
             $("#userId").focus();
             return;
         }
+
         if (!checkPwdFc()) {
             alert("사용 불가능한 비밀번호입니다.");
             $("#password").focus();
             return;
         }
+
         if (!checkPwd2Fc()) {
             alert("비밀번호가 일치하지 않습니다.");
             $("#password2").focus();
             return;
         }
 
-        if ($("#parntsAgreAt").val() == "Y") {
+        v.add("userNm", { required: true });
+        v.add("sex",    { required: true });
+        v.add("brthdy", { required: true });
+        v.add("email",  { required: true });
+        v.add("job",    { required: true });
 
-            if ($("#parntsMbtlnumAuthAt").val() == "") {
-                if (!checkParntsMbtlnum()) {
-                    $("#parntsMbtlnum1").focus();
-                    return;
-                }
-            }
-        }
+        /*
+        v.add("checkbox-p-1", { required: true });
+        v.add("checkbox-p-2", { required: true });
+        v.add("checkbox-p-3", { required: true });
+        v.add("checkbox-p-4", { required: true });
+        */
 
+        v.add("checkbox-p-6", { required: true });
+        v.add("checkbox-p-7", { required: true });
 
-        if (mberSe == "01") {
-            if (!checkEmailFc()) {
-                $("#email1").focus();
-                return;
-            }
-        }
+        var result = v.validate();
 
-        if ($("#mbtlnumAuthAt").val() == "") { // 휴대폰인증 안했을시 체크(인증할때 자동체크)
-            if (!checkMbtlnumFc()) {
-                $("#mbtlnum1").focus();
-                return;
-            }
-        }
-
-        v.add("emailAt1", {
-            required: true
-        });
-        v.add("smsAt1", {
-            required: true
-        });
-
-        if ($("#parntsAgreAt").val() == "Y") {
-            if ($("#parntsMbtlnumAuthAt").val() == "") {
-                alert("보호자 휴대폰번호를 인증해야 합니다.");
-                return;
-            }
+        if (!result) {
+            alert(v.getErrorMessage());
+            v.getErrorElement().focus();
+            return;
         }
 
         if (mberSe == "01") {
@@ -698,13 +625,36 @@
                 alert("이메일, 휴대폰 1개이상 인증해야 합니다.");
                 return;
             }
+
+            if (!checkEmailFc()) {
+                $("#email").focus();
+                return;
+            }
         }
 
-        var result = v.validate();
-        if (!result) {
-            alert(v.getErrorMessage());
-            v.getErrorElement().focus();
+        if ($("#mbtlnumAuthAt").val() == "") { // 휴대폰인증 안했을시 체크(인증할때 자동체크)
+            alert("휴대폰 인증을 진행해 주세요.");
+            $("#mbtlnum").focus();
             return;
+        }else{
+            if (!checkMbtlnumFc()) {
+                $("#mbtlnum").focus();
+                return;
+            }
+        }
+
+        if ($("#parntsAgreAt").val() == "Y") {
+            v.add("parntsNm", { required: true });
+
+            if ($("#parntsMbtlnumAuthAt").val() == "") {
+                if (!checkParntsMbtlnum()) {
+                    $("#parntsMbtlnum").focus();
+                    return;
+                }
+
+                alert("보호자 휴대폰번호를 인증해야 합니다.");
+                return;
+            }
         }
 
         if (!confirm("등록하시겠습니까?")) {
@@ -724,36 +674,113 @@
         }
     }
 
-    //20170904
     window.onload = function(){
-
-        $("#joinNextStep3").on("click", function(){
-            if( $("input[name='essentialAgreAt']:checked").val() == 'Y' ){
-                $("#joinStep2").hide();
-                $("#joinStep3").show();
-                var title = document.title;
-                var newtitle = title.replace("이용약관동의", "입력항목작성");
-                document.title = newtitle;
-            }else{
-                alert("(필수) 개인정보 수집 및 이용 내용에 동의해주세요.");
-                $("input[name='essentialAgreAt']").focus();
-            }
+        $('#mbtlnum').keyup(function (event) {
+            event = event || window.event;
+            var _val = this.value.trim();
+            this.value = autoHypenTel(_val);
         });
 
-        $("#joinPrevStep3").on("click", function(){//rsg20170904
-            if ( confirm("이전 페이지로 돌아가시겠습니까?") ) {
-                $("#joinStep3").hide();
-                $("#joinStep2").show();
-                var title = document.title;
-                var newtitle = title.replace("입력항목작성", "이용약관동의");
-                document.title = newtitle;
-            }
+        $('#parntsMbtlnum').keyup(function (event) {
+            event = event || window.event;
+            var _val = this.value.trim();
+            this.value = autoHypenTel(_val);
         });
+
+        $('#brthdy').keyup(function (event) {
+            event = event || window.event;
+            var _val = this.value.trim();
+            this.value = autoHypenBrthdy(_val);
+        });
+    };
+
+    function autoHypenTel(str) {
+        str = str.replace(/[^0-9]/g, '');
+        var tmp = '';
+
+        if (str.substring(0, 2) == "02") {
+            // 서울 전화번호일 경우 10자리까지만 나타나고 그 이상의 자리수는 자동삭제
+            if (str.length < 3) {
+                return str;
+            } else if (str.length < 6) {
+                tmp += str.substr(0, 2);
+                tmp += '-';
+                tmp += str.substr(2);
+                return tmp;
+            } else if (str.length < 10) {
+                tmp += str.substr(0, 2);
+                tmp += '-';
+                tmp += str.substr(2, 3);
+                tmp += '-';
+                tmp += str.substr(5);
+                return tmp;
+            } else {
+                tmp += str.substr(0, 2);
+                tmp += '-';
+                tmp += str.substr(2, 4);
+                tmp += '-';
+                tmp += str.substr(6, 4);
+                return tmp;
+            }
+        } else {
+            // 핸드폰 및 다른 지역 전화번호 일 경우
+            if (str.length < 4) {
+                return str;
+            } else if (str.length < 7) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3);
+                return tmp;
+            } else if (str.length < 11) {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 3);
+                tmp += '-';
+                tmp += str.substr(6);
+                return tmp;
+            } else {
+                tmp += str.substr(0, 3);
+                tmp += '-';
+                tmp += str.substr(3, 4);
+                tmp += '-';
+                tmp += str.substr(7);
+                return tmp;
+            }
+        }
+
+        return str;
     }
 
-    //]]>
-</script>
+    function autoHypenBrthdy(str) {
+        str = str.replace(/[^0-9]/g, '');
+        var tmp = '';
 
+        if (str.length < 5) {
+            return str;
+        } else if (str.length < 7) {
+            tmp += str.substr(0, 4);
+            tmp += '-';
+            tmp += str.substr(4);
+            return tmp;
+        } else if (str.length < 9) {
+            tmp += str.substr(0, 4);
+            tmp += '-';
+            tmp += str.substr(4, 2);
+            tmp += '-';
+            tmp += str.substr(6);
+            return tmp;
+        } else {
+            tmp += str.substr(0, 4);
+            tmp += '-';
+            tmp += str.substr(4, 2);
+            tmp += '-';
+            tmp += str.substr(6);
+            return tmp;
+        }
+
+        return str;
+    }
+</script>
 
 <div class="col-center mw-400" style="margin-top: 30px;">
     <div class="cb_inner new_join_box">
@@ -762,11 +789,10 @@
         <div class="">
 
             <div class="login_form">
-                <form id="loginFrm" name="loginFrm" method="post" novalidate="novalidate">
-                    <input type="hidden" id="certTelno" name="certTelno" value="">
-                    <input type="hidden" id="certToken" name="certToken" value="">
-                    <input type="hidden" id="passToken" name="passToken" value="">
-                    <input type="hidden" id="certChkYn" name="certChkYn" value="N">
+                <form id="agreeForm" name="agreeForm" action="/edu/userMember/joinMember.do" method="post" novalidate="novalidate">
+                    <input type="hidden" name="menuNo" value="${paramVO.menuNo}" />
+                    <input type="hidden" name="snsAuthSe" value='<c:out value="${user.authSe}"/>' />
+                    <input type="hidden" name="mberSe" id="mberSe" value='<c:out value="${user.mberSe}"/>' />
                     <div class="">
                         <div class="form-group">
                             <div class="col-sm-12">
@@ -780,7 +806,7 @@
                                 <input type="password" name="password" id="password" value="" class="form-control input_bline h45" placeholder="비밀번호"
                                        title="8~16자까지 영문 대/소문자, 숫자, 특수문자중 3개 이상의 조합.
                                             사용자 아이디와 동일한 비밀번호는 사용할 수 없습니다.
-                                            동일문자, 연속문자는 사용할 수 없습니다. (예 aaa, abc 등)">
+                                            동일문자, 연속문자는 사용할 수 없습니다. (예 aaa, abc 등)" onkeyup="this.value=checkPwd(this.value)">
                                 <span class="table_text on" id="pwd-success"></span>
                                 <span class="table_text off" id="pwd-danger"></span>
                             </div>
@@ -800,7 +826,7 @@
                         <div class="form-group">
                             <div>
                                 <span class="radio_box_con" style="padding-right: 10px;">
-                                    <input type="radio" class="radio_style_0"  name="sex" value="M" id="sex1" <c:if test="${user.sex eq 'M'}">checked="checked" </c:if> title="성별 라디오 선택 남자">
+                                    <input type="radio" class="radio_style_0" name="sex" value="M" id="sex1" <c:if test="${user.sex eq 'M'}">checked="checked" </c:if> title="성별 라디오 선택 남자">
                                     <label for="sex1">남자</label>
                                 </span>
                                 <span class="radio_box_con">
@@ -811,33 +837,32 @@
                         </div>
                         <div class="form-group h61">
                             <div class="col-sm-12">
-                                <input type="text" name="" id=""  value="" onkeyup="this.value=checkId(this.value)" class="form-control input_bline h45" placeholder="생년월일(8자리)" title="생년월일(8자리)">
+                                <input type="text" name="brthdy" id="brthdy" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" maxlength="10" value="" class="form-control input_bline h45" placeholder="생년월일(8자리)" title="생년월일(8자리)">
                             </div>
                         </div>
                         <div class="form-group h61">
                             <div class="col-sm-12">
-                                <input type="email" class="form-control input_bline h45" placeholder="Email">
+                                <input type="text" name="email" id="email" class="form-control input_bline h45" placeholder="Email" title="Email">
+                                <input type="hidden" name="authEmailAt" id="authEmailAt" value="N" />
+                                <input type="hidden" name="emailAuthAt" id="emailAuthAt"/>
                             </div>
                         </div>
                         <div class="form-group h61">
                             <div class="col-sm-12" style="display: flex; justify-content: space-between;">
-                                <input type="text" class="form-control mob_no input_bline h45 col-sm-8" data-mask="999-999-9999" placeholder="휴대폰번호">
-                                <input type="hidden" name="mbtlnum" id="mbtlnum" />
+                                <input type="text" class="form-control mob_no input_bline h45 col-sm-8" name="mbtlnum" id="mbtlnum" placeholder="휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
                                 <input type="hidden" name="mbtlnumAuthAt" id="mbtlnumAuthAt" />
                                 <a href="javascript:crtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="mbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
-                                <a href="#self" class="btn btn-success btn-black" id="mbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                <a href="#self" class="btn btn-success btn-black" id="mbtlnumAuthCmt" style="display:none background; margin-right: 0; margin-bottom: 0;">인증완료</a>
                                 <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" style="display:none; margin-right: 0; margin-bottom: 0;">보호자 휴대폰정보와 동일</a>
-                                <a href="javascript:authDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-danger btn-black" id="mbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;">인증삭제</a>
                             </div>
                         </div>
                         <div class="col-md-12 h61">
                             <div class="form-group">
-                                <select class="form-control select_arrow" name="validation-select" style="padding-left: 5px;">
+                                <select class="form-control select_arrow" name="job" id="job" title="직업" style="padding-left: 5px;">
                                     <option value="" style="color:#fff;">직업선택</option>
-                                    <option value="pitons">직장인</option>
-                                    <option value="cams">학생</option>
-                                    <option value="nuts">창작자</option>
-                                    <option value="bolts">기타</option>
+                                    <c:forEach var="code" items="${COM056CodeList}" varStatus="status">
+                                        <option value="${code.code}" title="<c:out value="${code.codeNm}"/>" ><c:out value="${code.codeNm}"/></option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -849,8 +874,9 @@
                             <div class="right_check_box">
                                 <div class="input_wrap mb10">
                                     <span class="checkbox checkbox-primary d-inline">
-                                        <input type="checkbox" name="checkbox-p-1" id="checkbox-p-1" checked="" title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
+                                        <input type="checkbox" name="checkbox-p-1" id="checkbox-p-1" title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
                                         <label for="checkbox-p-1" class="cr">E-mail로 수신하겠습니다.</label>
+                                        <input type="hidden" name="emailAt" id="emailAt" value="N" >
                                     </span>
                                     <%--<span class="radio_box_con">
                                         <input type="radio" class="radio_style_0" name="emailAt" value="N" id="emailAt2" title="인재캠퍼스 정보수신 여부 라디오- E-Mail로 수신하지 않겠습니다.">
@@ -859,8 +885,9 @@
                                 </div>
                                 <div class="input_wrap no_margin">
                                     <span class="checkbox checkbox-primary d-inline">
-                                        <input type="checkbox" name="checkbox-p-2" id="checkbox-p-2"  title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
-                                        <label for="checkbox-p-2" class="cr">E-mail로 수신하겠습니다.</label>
+                                        <input type="checkbox" name="checkbox-p-2" id="checkbox-p-2"  title="인재캠퍼스 정보수신 여부 체크- SMS로 수신하겠습니다.">
+                                        <label for="checkbox-p-2" class="cr">SMS로 수신하겠습니다.</label>
+                                        <input type="hidden" name="smsAt" id="smsAt" value="N" >
                                     </span>
                                     <%--<span class="radio_box_con">
                                         <input type="radio" class="radio_style_0" name="smsAt" value="N" id="smsAt2" title="인재캠퍼스 정보수신 여부 라디오- SMS로 수신하지 않겠습니다.">
@@ -876,8 +903,9 @@
                             <div class="right_check_box">
                                 <div class="input_wrap mb10">
                                     <span class="checkbox checkbox-primary d-inline">
-                                        <input type="checkbox" name="checkbox-p-3" id="checkbox-p-3" checked="" title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
+                                        <input type="checkbox" name="checkbox-p-3" id="checkbox-p-3" title="콘텐츠문화광장 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
                                         <label for="checkbox-p-3" class="cr">E-mail로 수신하겠습니다.</label>
+                                        <input type="hidden" name="concertEmailAt" id="concertEmailAt" value="N" >
                                     </span>
 
                                     <%--<span class="radio_box_con">
@@ -887,8 +915,9 @@
                                 </div>
                                 <div class="input_wrap no_margin">
                                     <span class="checkbox checkbox-primary d-inline">
-                                        <input type="checkbox" name="checkbox-p-4" id="checkbox-p-4"  title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
-                                        <label for="checkbox-p-4" class="cr">E-mail로 수신하겠습니다.</label>
+                                        <input type="checkbox" name="checkbox-p-4" id="checkbox-p-4"  title="콘텐츠문화광장 정보수신 여부 체크- SMS로 수신하겠습니다.">
+                                        <label for="checkbox-p-4" class="cr">SMS로 수신하겠습니다.</label>
+                                        <input type="hidden" name="concertSmsAt" id="concertSmsAt" value="N" >
                                     </span>
                                     <%--<span class="radio_box_con">
                                         <input type="radio" class="radio_style_0" name="concertSmsAt" value="N" id="concertSmsAt2" title="콘텐츠문화광장 정보수신 여부 라디오 - SMS로 수신하지 않겠습니다.">
@@ -899,7 +928,23 @@
                         </div>
 
                     </div>
-
+                    <div id="childDiv" style="display: none">
+                        <input type="hidden" name="parntsAgreAt" id="parntsAgreAt" value="" />
+                        <div class="form-group h61">
+                            <div class="col-sm-12">
+                                <input name="parntsNm" id="parntsNm" type="text" class="form-control input_bline h45" placeholder="보호자 이름">
+                            </div>
+                        </div>
+                        <div class="form-group h61">
+                            <div class="col-sm-12" style="display: flex; justify-content: space-between;">
+                                <input type="text" class="form-control mob_no input_bline h45 col-sm-8" name="parntsMbtlnum" id="parntsMbtlnum" placeholder="보호자 휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
+                                <input type="hidden" name="parntsMbtlnumAuthAt" id="parntsMbtlnumAuthAt" />
+                                <a href="javascript:parntsCrtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="parntsMbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
+                                <a href="#self" class="btn btn-success btn-black" id="parntsMbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                <p>보호자의 휴대폰번호로 발송되는 인증번호를 입력하시어 인증하시기 바랍니다.</p>
+                            </div>
+                        </div>
+                    </div>
                     <!-- 서비스 동의 -->
                     <div class="agree_new_box">
                         <h5>서비스 정책</h5>
@@ -907,21 +952,21 @@
                             <!-- 전체동의 -->
                             <div class="input_wrap pb10 pt10" style="border-bottom: 1px solid #fff;">
                                 <span class="checkbox checkbox-primary d-inline">
-                                    <input type="checkbox" name="checkbox-p-5" id="checkbox-p-5" checked="" title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
+                                    <input type="checkbox" name="checkbox-p-5" id="checkbox-p-5" title="전체 동의">
                                     <label for="checkbox-p-5" class="cr">전체 동의</label>
                                 </span>
                             </div>
 
                             <div class="input_wrap mb10">
                                 <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
-                                    <input type="checkbox" name="checkbox-p-6" id="checkbox-p-6" checked="" title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
+                                    <input type="checkbox" name="checkbox-p-6" id="checkbox-p-6" title="이용약관 동의(필수)">
                                     <label for="checkbox-p-6" class="cr">이용약관 동의(필수)</label>
                                 </span>
                                 <button type="button" onclick="$('.layer_agree_wrap01').css({'display':'block'})">내용보기</button>
                             </div>
                             <div class="input_wrap mb10">
                                 <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
-                                    <input type="checkbox" name="checkbox-p-7" id="checkbox-p-7" checked="" title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
+                                    <input type="checkbox" name="checkbox-p-7" id="checkbox-p-7" title="개인정보 수집 동의(필수)">
                                     <label for="checkbox-p-7" class="cr">개인정보 수집 동의(필수)</label>
                                 </span>
                                 <button type="button" onclick="$('.layer_agree_wrap02').css({'display':'block'})">내용보기</button>
@@ -929,7 +974,7 @@
                         </div>
 
                         <!-- 회원가입 btn-->
-                        <div class="join_btn_box"><a href="" class="btn btn-default btn-black w100p h61">회원가입</a></div>
+                        <div class="join_btn_box"><a href="javascript:checkForm();" class="btn btn-default btn-black w100p h61">회원가입</a></div>
 
                     </div>
                 </form>
@@ -2053,7 +2098,13 @@
     .right_check_box{padding: 20px 0;}
     .h61{height: 61px;}
 
+
     .select_arrow{position: relative;}
     .select_arrow{background: url("/edu/images/bm/select_style_2_arrow.png") no-repeat right 21px center !important;}
+
+    @media all and (max-width:640px) {
+        .sub_section .sub_contents_body .warning_text{text-align: left;}
+        .warning_text b{display: block;}
+    }
 
 </style>
