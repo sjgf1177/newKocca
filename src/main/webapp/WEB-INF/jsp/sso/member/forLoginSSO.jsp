@@ -318,7 +318,7 @@
 					<ul class="login_util_list" data-service='${paramVO.service}'>
 						<c:choose>
 							<c:when test="${paramVO.service eq 'edu'}">
-							<li><a href="${domain }/edu/member/join01.do?menuNo=500076" class="ssoFrmBtn">회원가입</a></li>
+							<li><a href="${domain }/edu/member/join02.do?menuNo=500076" class="ssoFrmBtn">회원가입</a></li>
 							<li><a href="${domain }/edu/userMember/idSearch.do?menuNo=500083" class="ssoFrmBtn">아이디 찾기</a></li>
 							<li><a href="${domain }/edu/userMember/pwdSearch.do?menuNo=500084" class="ssoFrmBtn">비밀번호 찾기</a></li>
 							</c:when>
@@ -327,12 +327,12 @@
 							<li><a href="${domain }/edumobile/userMember/pwdSearch.do?menuNo=${pwMenuNo}" class="ssoFrmBtn">비밀번호 찾기</a></li>
 							</c:when>
 							<c:when test="${paramVO.service eq 'testbed'}">
-							<li><a href="${domain }/testbed/member/join01.do?menuNo=700121" class="ssoFrmBtn">회원가입</a></li>
+							<li><a href="${domain }/testbed/member/join02.do?menuNo=700121" class="ssoFrmBtn">회원가입</a></li>
 							<li><a href="${domain }/testbed/userMember/idSearch.do?menuNo=700123" class="ssoFrmBtn">아이디 찾기</a></li>
 							<li><a href="${domain }/testbed/userMember/pwdSearch.do?menuNo=700124" class="ssoFrmBtn">비밀번호 찾기</a></li>
 							</c:when>
 							<c:otherwise>
-							<li><a href="${domain }/ckl/member/join01.do?menuNo=200054" class="ssoFrmBtn">회원가입</a></li>
+							<li><a href="${domain }/ckl/member/join02.do?menuNo=200054" class="ssoFrmBtn">회원가입</a></li>
 							<li><a href="${domain }/ckl/userMember/idSearch.do?menuNo=200056" class="ssoFrmBtn">아이디 찾기</a></li>
 							<li><a href="${domain }/ckl/userMember/pwdSearch.do?menuNo=200058" class="ssoFrmBtn">비밀번호 찾기</a></li>
 							</c:otherwise>
@@ -408,12 +408,12 @@
 							<div class="loginLinks">
 								<c:choose>
 									<c:when test="${paramVO.service eq 'edu'}">
-										<a href="${domain }/edu/member/join01.do?menuNo=500076" class="ssoFrmBtn">회원가입</a> |
+										<a href="${domain }/edu/member/join02.do?menuNo=500076" class="ssoFrmBtn">회원가입</a> |
 										<a href="${domain }/edu/userMember/idSearch.do?menuNo=500083" class="ssoFrmBtn">아이디 찾기</a> |
 										<a href="${domain }/edu/userMember/pwdSearch.do?menuNo=500084" class="ssoFrmBtn">비밀번호 찾기</a>
 									</c:when>
 									<c:otherwise>
-										<a href="${domain }/ckl/member/join01.do?menuNo=200054" class="ssoFrmBtn">회원가입</a> |
+										<a href="${domain }/ckl/member/join02.do?menuNo=200054" class="ssoFrmBtn">회원가입</a> |
 										<a href="${domain }/ckl/userMember/idSearch.do?menuNo=200056" class="ssoFrmBtn">아이디 찾기</a> |
 										<a href="${domain }/ckl/userMember/pwdSearch.do?menuNo=200058" class="ssoFrmBtn">비밀번호 찾기</a>
 									</c:otherwise>
@@ -453,6 +453,18 @@
 		.sns_type_select_con{display: flex; flex-wrap: wrap; justify-content: space-between;}
 		.sns_login_con .sns_type_select_con .sns_login_type .icon_box{width:200px; height: 50px; border:none; border-radius: 0;}
 		.sns_login_con .sns_type_select_con .sns_login_type{margin-right: 0;}
+
+		@media screen and (max-width: 640px) {
+			.sns_login_con .sns_type_select_con .sns_login_type .icon_box {
+				width: 180px;
+			}
+			.mw-400{
+				padding-left:20px; padding-right: 20px;
+			}
+			.sns_type_select_con{
+				flex-direction: column;
+			}
+		}
 	</style>
 
 </body>

@@ -171,84 +171,86 @@ function fnTerminationSns(authSe) {
 </div>
 
 
+<div class="col-center mw-1280">
+	<h3>간편 로그인 설정</h3>
+	<!-- bdList -->
+	<div>
+		<table class="board_type_0">
+			<caption>간편 로그인 설정 목록</caption>
 
-<h3>간편 로그인 설정</h3>
-<!-- bdList -->
-<div>
-	<table class="board_type_0">
-		<caption>간편 로그인 설정 목록</caption>
-
-		<colgroup>
-		<col style="width:15%;" />
-		<col  />
-		<col style="width:20%;" />
-		</colgroup>
-		<thead>
-			<tr>
-				<th scope="col">서비스</th>
-				<th scope="col">연결하기</th>
-				<th scope="col">연결 해지</th>
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach var="simpleVO" items="${simpleList }" varStatus="status">
-			<tr>
-				<td>
-				<c:choose>
-					<c:when test="${simpleVO.code eq '03' }">
-						<img src="/edu/images/sub/img_naver.gif" alt="네이버" />
-					</c:when>
-					<c:when test="${simpleVO.code eq '01' }">
-						<img src="/edu/images/sub/img_kakao.gif" alt="카카오톡" />
-					</c:when>
-					<c:when test="${simpleVO.code eq '04' }">
-						<img src="/edu/images/sub/img_facebook.gif" alt="페이스북" />
-					</c:when>
-					<c:when test="${simpleVO.code eq '02' }">
-						<img src="/edu/images/sub/img_google.gif" alt="구굴" />
-					</c:when>
-				</c:choose>
-				</td>
-				<td>
-					<c:if test="${not empty simpleVO.authKey }">
-						${simpleVO.authDt } 연결완료
-					</c:if>
-
-					<c:if test="${empty simpleVO.authKey }">
-						<c:choose>
+			<colgroup>
+			<col style="width:15%;" />
+			<col  />
+			<col style="width:20%;" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">서비스</th>
+					<th scope="col">연결하기</th>
+					<th scope="col">연결 해지</th>
+				</tr>
+			</thead>
+			<tbody>
+			<c:forEach var="simpleVO" items="${simpleList }" varStatus="status">
+				<tr>
+					<td>
+					<c:choose>
 						<c:when test="${simpleVO.code eq '03' }">
-							<c:set var="btnId" value="naverLoginBtn" />
+							<img src="/edu/images/sub/img_naver.gif" alt="네이버" />
 						</c:when>
 						<c:when test="${simpleVO.code eq '01' }">
-							<c:set var="btnId" value="kakaoLoginBtn" />
+							<img src="/edu/images/sub/img_kakao.gif" alt="카카오톡" />
 						</c:when>
 						<c:when test="${simpleVO.code eq '04' }">
-							<c:set var="btnId" value="fbLoginBtn" />
+							<img src="/edu/images/sub/img_facebook.gif" alt="페이스북" />
 						</c:when>
 						<c:when test="${simpleVO.code eq '02' }">
-							<c:set var="btnId" value="googleBtn" />
+							<img src="/edu/images/sub/img_google.gif" alt="구굴" />
 						</c:when>
-				</c:choose>
-						<div class="board_util_btn_con center">
-							<a href="javascript:void(0);" id="${btnId }" class="btn_style_0 full right" title="새창열림">연결하기</a>
-						</div>
-					</c:if>
+					</c:choose>
+					</td>
+					<td>
+						<c:if test="${not empty simpleVO.authKey }">
+							${simpleVO.authDt } 연결완료
+						</c:if>
 
-				</td>
-				<td>
-					<c:if test="${not empty simpleVO.authKey }">
-						<div class="board_util_btn_con center">
-							<a class="btn_style_0 full close_w trmnatBtn" data-userSn="${simpleVO.userSn }" data-authSe="${simpleVO.authSe }" href="#self"><span>해지</span></a>
-						</div>
-					</c:if>
-				</td>
-			</tr>
-		</c:forEach>
-		</tbody>
-	</table>
+						<c:if test="${empty simpleVO.authKey }">
+							<c:choose>
+							<c:when test="${simpleVO.code eq '03' }">
+								<c:set var="btnId" value="naverLoginBtn" />
+							</c:when>
+							<c:when test="${simpleVO.code eq '01' }">
+								<c:set var="btnId" value="kakaoLoginBtn" />
+							</c:when>
+							<c:when test="${simpleVO.code eq '04' }">
+								<c:set var="btnId" value="fbLoginBtn" />
+							</c:when>
+							<c:when test="${simpleVO.code eq '02' }">
+								<c:set var="btnId" value="googleBtn" />
+							</c:when>
+					</c:choose>
+							<div class="board_util_btn_con center">
+								<a href="javascript:void(0);" id="${btnId }" class="btn_style_0 full right" title="새창열림">연결하기</a>
+							</div>
+						</c:if>
 
-	<div id="naver_id_login" style="display:none;"></div>
+					</td>
+					<td>
+						<c:if test="${not empty simpleVO.authKey }">
+							<div class="board_util_btn_con center">
+								<a class="btn_style_0 full close_w trmnatBtn" data-userSn="${simpleVO.userSn }" data-authSe="${simpleVO.authSe }" href="#self"><span>해지</span></a>
+							</div>
+						</c:if>
+					</td>
+				</tr>
+			</c:forEach>
+			</tbody>
+		</table>
+
+		<div id="naver_id_login" style="display:none;"></div>
+	</div>
 </div>
+
 <style>
 	.mw-1280{max-width: 1280px;}
 	.col-center{margin:0 auto;}

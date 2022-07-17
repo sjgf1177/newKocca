@@ -34,7 +34,7 @@
 	</c:if>
 	
 <%-- 	<iframe name="ssoLoginFrame" id="ssoLoginFrame" style="width:1100px;height:363px;" src="<c:out value="${ssoDomain }" />/sso/member/forLoginSSO.do?service=edu&amp;menuNo=<c:out value="${paramVO.menuNo }" />&redirectUrl=<c:url value="${param.redirectUrl}"/>" title="로그인 입력 frame입니다." frameborder="0" scrolling="no" ></iframe> --%>
-	<iframe name="ssoLoginFrame" id="ssoLoginFrame" style="width:100%;height:500px;" src="" title="로그인 입력 frame입니다." frameborder="0" scrolling="no" ></iframe>
+	<iframe name="ssoLoginFrame" id="ssoLoginFrame" style="width:100%;height:700px;" src="" title="로그인 입력 frame입니다." frameborder="0" scrolling="no" ></iframe>
 	<form id="ssoLoginForm" name="ssoLoginForm">
 		<input type="hidden" name="service" value="${paramVO.siteName}"/>
 		<input type="hidden" name="menuNo" value="<c:out value="${paramVO.menuNo }" />"/>
