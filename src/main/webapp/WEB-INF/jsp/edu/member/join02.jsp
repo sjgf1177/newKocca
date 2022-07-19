@@ -207,21 +207,21 @@
             }
         });
 
-        $("#checkbox-p-3").click(function() {
+/*        $("#checkbox-p-3").click(function() {
             if($("#checkbox-p-3").is(":checked")) {
                 $("#concertEmailAt").val("Y");
             } else {
                 $("#concertEmailAt").val("N");
             }
-        });
+        });*/
 
-        $("#checkbox-p-4").click(function() {
+/*        $("#checkbox-p-4").click(function() {
             if($("#checkbox-p-4").is(":checked")) {
                 $("#concertSmsAt").val("Y");
             } else {
                 $("#concertSmsAt").val("N");
             }
-        });
+        });*/
 
     });
 
@@ -869,12 +869,12 @@
 
                         <div class="col-md-12 warning_box">
                             <div class="warning_text">
-                                <span><span class="ally-hidden">필수입력</span><b>인재캠퍼스</b> 정보수신 여부</span>
+                                <span><span class="ally-hidden">필수입력</span><b>에듀코카</b> 정보수신 여부</span>
                             </div>
                             <div class="right_check_box">
                                 <div class="input_wrap mb10">
                                     <span class="checkbox checkbox-primary d-inline">
-                                        <input type="checkbox" name="checkbox-p-1" id="checkbox-p-1" title="인재캠퍼스 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
+                                        <input type="checkbox" name="checkbox-p-1" id="checkbox-p-1" title="에듀코카 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
                                         <label for="checkbox-p-1" class="cr">E-mail로 수신하겠습니다.</label>
                                         <input type="hidden" name="emailAt" id="emailAt" value="N" >
                                     </span>
@@ -885,7 +885,7 @@
                                 </div>
                                 <div class="input_wrap no_margin">
                                     <span class="checkbox checkbox-primary d-inline">
-                                        <input type="checkbox" name="checkbox-p-2" id="checkbox-p-2"  title="인재캠퍼스 정보수신 여부 체크- SMS로 수신하겠습니다.">
+                                        <input type="checkbox" name="checkbox-p-2" id="checkbox-p-2"  title="에듀코카 정보수신 여부 체크- SMS로 수신하겠습니다.">
                                         <label for="checkbox-p-2" class="cr">SMS로 수신하겠습니다.</label>
                                         <input type="hidden" name="smsAt" id="smsAt" value="N" >
                                     </span>
@@ -896,7 +896,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 warning_box">
+<%--                        <div class="col-md-12 warning_box">
                             <div class="warning_text">
                                 <span><span class="ally-hidden">필수입력</span><b>콘텐츠문화광장</b> 정보수신 여부</span>
                             </div>
@@ -906,26 +906,26 @@
                                         <input type="checkbox" name="checkbox-p-3" id="checkbox-p-3" title="콘텐츠문화광장 정보수신 여부 체크- E-Mail로 수신하겠습니다.">
                                         <label for="checkbox-p-3" class="cr">E-mail로 수신하겠습니다.</label>
                                         <input type="hidden" name="concertEmailAt" id="concertEmailAt" value="N" >
-                                    </span>
+                                    </span>--%>
 
                                     <%--<span class="radio_box_con">
                                         <input type="radio" class="radio_style_0" name="concertEmailAt" value="N" id="concertEmailAt2" title="콘텐츠문화광장 정보수신 여부 라디오 - E-Mail로 수신하지 않겠습니다.">
                                         <label for="concertEmailAt2">E-mail로 수신하지 않겠습니다.</label>
                                     </span>--%>
-                                </div>
+<%--                                </div>
                                 <div class="input_wrap no_margin">
                                     <span class="checkbox checkbox-primary d-inline">
                                         <input type="checkbox" name="checkbox-p-4" id="checkbox-p-4"  title="콘텐츠문화광장 정보수신 여부 체크- SMS로 수신하겠습니다.">
                                         <label for="checkbox-p-4" class="cr">SMS로 수신하겠습니다.</label>
                                         <input type="hidden" name="concertSmsAt" id="concertSmsAt" value="N" >
-                                    </span>
+                                    </span>--%>
                                     <%--<span class="radio_box_con">
                                         <input type="radio" class="radio_style_0" name="concertSmsAt" value="N" id="concertSmsAt2" title="콘텐츠문화광장 정보수신 여부 라디오 - SMS로 수신하지 않겠습니다.">
                                         <label for="concertSmsAt2">SMS로 수신하지 않겠습니다.</label>
                                     </span>--%>
-                                </div>
+ <%--                               </div>
                             </div>
-                        </div>
+                        </div>--%>
 
                     </div>
                     <div id="childDiv" style="display: none">

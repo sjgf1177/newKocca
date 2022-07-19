@@ -209,9 +209,9 @@
 		
 		</tbody>
 	</table>
-	
-	
-	
+
+
+
 		
 	<div class="bdPoll" style="display: none;" id="qestnrArea">
 		<h2></h2>
@@ -224,11 +224,11 @@
 		<div class="btnSet tac">
 			<a href="javascript:void(0);" onclick="fnCmdQestnrInsert(); return false;" class="btn btn-whitegray"><span class="ico icoList"></span> 설문지 제출</a>
 		</div>
-	
+
 	</div>
 
-	
-	
+
+
 </div>
 
 	<!-- mobile table -->
@@ -354,7 +354,7 @@
 			async:false,
 			dataType:"JSON",
 			success:function(data){
-				
+
 				if(data != null){
 					$("#qestnrArea > h2").html("["+p_subjnm+"] "+p_sulpapernm+"");
 					$("#qestnrExamArea").html(data.qestnarList);
@@ -382,7 +382,7 @@
 		var textarr ="";
 		var answercnt=0;
 		var replycnt =0;
-		
+
 		for(i = 0; i < document.frm2.length; i++) {
 			c_name  = document.frm2.elements[i].name;
 			c_value = document.frm2.elements[i].value;

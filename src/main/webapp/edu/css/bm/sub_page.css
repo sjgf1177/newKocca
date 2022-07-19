@@ -2886,11 +2886,11 @@ input[type=text].input_style_3{font-size:14.5px; font-size:1.45rem; line-height:
 
     /* 콘텐츠 스텝업 */
     .sub_section .sub_contents_body .contents_stepup_header > .text_box {width: 353px; height: 330px;}
-    .sub_section .sub_contents_body .contents_stepup_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_stepup_img_000.jpg") no-repeat right top; background-size: cover;}
+    .sub_section .sub_contents_body .contents_stepup_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_stepup_img_000.png") no-repeat right top; background-size: cover;}
 
     /* 콘텐츠 인사이트 */
     .sub_section .sub_contents_body .contents_insight_header > .text_box {width: 353px; height: 330px;}
-    .sub_section .sub_contents_body .contents_insight_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_insite_img_001.jpg") no-repeat right top; background-size: cover;}
+    .sub_section .sub_contents_body .contents_insight_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_insite_img_001.png") no-repeat right top; background-size: cover;}
     /* 콘텐츠 플러스 */
     .sub_section .sub_contents_body .contents_plus_header > .text_box {width: 353px; height: 315px;}
     .sub_section .sub_contents_body .contents_plus_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 315px; background: url("/edu/images/bm/sub_contents_plus_img_001.jpg") no-repeat right top; background-size: cover;}

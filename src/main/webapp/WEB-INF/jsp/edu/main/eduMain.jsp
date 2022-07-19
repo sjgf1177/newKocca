@@ -288,6 +288,20 @@
         $("#frm").submit();
     }
 
+    //과정 조회(정규)
+    function fnCmdSubjSearchList(gubun1, gubun2, gubun3, ordersnm, orders) {
+        $("#pGubun1").val(gubun1);
+        $("#pageIndex").val("1");
+        $("#p_sort").val("N");
+
+        $("#frm").attr({
+            action: "/edu/onlineEdu/realm/list.do?menuNo=500027",
+            method: "post",
+            target: "_self"
+        });
+        $("#frm").submit();
+    }
+
     function fnManualDownLoad() {
         if (confirm("이용자 매뉴얼을 다운로드하시겠습니까?")) {
             window.open("https://edu.kocca.kr/upload/homepage/eduKocca_manual.pdf");
@@ -525,6 +539,7 @@
                                     <li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
                                     <li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
                                         <%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
+                                    <li><a href="/edu/onlineEdu/mylctrum/listLessonHistory.do?menuNo=500099" title="수료증 출력">수료증 출력</a></li>
                                     <li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
                                     <li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
                                 </ul>
@@ -558,6 +573,7 @@
                                 <li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
                                 <li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
                                     <%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
+                                <li><a href="/edu/onlineEdu/mylctrum/listLessonHistory.do?menuNo=500099" title="수료증 출력">수료증 출력</a></li>
                                 <li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
                                 <li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
                                 <li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
@@ -840,7 +856,7 @@
                         <c:forEach items="${realmTabList }" var="item" varStatus="status">
                             <c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
                                 <li class="swiper-slide">
-                                    <a href="javascript:void(0);" onclick="fnCmdSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>${item.codenm }</a>
+                                    <a href="javascript:void(0);" onclick="fnCmdSubjSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>${item.codenm }</a>
                                 </li>
                             </c:if>
                         </c:forEach>
@@ -860,7 +876,7 @@
         <div class="main_offline_contents">
             <div class="container">
                 <div class="fwo_card_list_box fwo_card03">
-                    <span class="main_title main_title_bold">진행 중인 이벤트 </span>
+                    <span class="main_title main_title_bold">진행 중 이벤트 </span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
                             <c:forEach items="${openEventList }" var="result" varStatus="status">
@@ -868,6 +884,8 @@
                                 <c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}&delCode=0&menuNo=500203&pageIndex=1"/>
                                 <fmt:parseDate value="${result.ntceBgnde}" var="sdt" pattern="yyyy-MM-dd"/>
                                 <fmt:parseNumber value="${sdt.time / (1000*60*60*24)}" integerOnly="true" var="strDate"></fmt:parseNumber>
+                                <fmt:parseDate value="${result.ntceEndde}" var="edt" pattern="yyyy-MM-dd"/>
+                                <fmt:parseNumber value="${edt.time / (1000*60*60*24)}" integerOnly="true" var="endDate"></fmt:parseNumber>
                                 <c:set var="now" value="<%=new java.util.Date()%>"/>
                                 <c:set var="nowDt"><fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/></c:set>
                                 <fmt:parseDate value="${nowDt}" var="ndt" pattern="yyyy-MM-dd"/>
@@ -894,13 +912,23 @@
                                                     <img alt="No Image" src="/edu/images/bm/noimage.png"/>
                                                 </c:otherwise>
                                             </c:choose>
-                                            <span class="tag_off" style="margin-bottom: 0;">마감</span>
+                                            <c:choose>
+                                                <c:when test='${ (nowDate-endDate) > 0 }'>
+                                                    <span class="tag_off" style="margin-bottom: 0;">종료</span>
+                                                </c:when>
+                                                <c:when test='${ (nowDate-strDate) < 0 }'>
+                                                    <span class="tag_off" style="margin-bottom: 0;">D${strDate-nowDate}</span>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <span class="tag_off" style="margin-bottom: 0;">진행</span>
+                                                </c:otherwise>
+                                            </c:choose>
                                         </a>
                                     </div>
                                     <!-- 썸네일 end -->
 
                                     <!-- 설명란 start-->
-                                    <div class="fwo_info_box">
+                                    <div class="fwo_info_box2">
                                         <h3 class="fwo_tit_box"><a href=""><c:out value="${result.nttSj }"/></a></h3>
                                         <p>[이벤트]</p>
                                         <a href="<c:out value="${url }" escapeXml="false" />" class="go_page_a"></a>

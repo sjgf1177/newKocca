@@ -147,8 +147,8 @@
 				<div style="position:relative; padding-bottom:60%; height:0; max-width:870px; overflow:hidden; z-index:999; display: inline-block;" class="video_box">
 					<iframe name="openstudy"
 						id="openstudy"
-						src="${p_url }"
-						<%--src="http://172.30.1.1:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="--%>
+						<%--src="${p_url }"--%>
+						src="http://localhost:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="
 						<%--src="http://edu_kocca.ecn.cdn.infralab.net/kocca/mp4/onlineclass/CK22007/01_01.mp4"--%>
 						<%--width="${view.prewidth }"
 						height="${view.preheight }"--%>
