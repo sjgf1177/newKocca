@@ -211,8 +211,8 @@
                                         <li><a href="javascript:void(0);" onclick="fnSearchGoldList('B0'); return false;">방송영상</a></li>
                                         <li><a href="javascript:void(0);" onclick="fnSearchGoldList('G0'); return false;">게임</a></li>
                                         <li><a href="javascript:void(0);" onclick="fnSearchGoldList('K0'); return false;">만화/애니/캐릭터</a></li>
-                                        <li><a href="javascript:void(0);" onclick="fnSearchGoldList('M0'); return false;">문화일반(음악공연)</a></li>
-                                        <li><a href="javascript:void(0);" onclick="fnSearchGoldList('S0'); return false;">인문/경영/교양/일반</a></li>
+                                        <li><a href="javascript:void(0);" onclick="fnSearchGoldList('M0'); return false;">음악/공연</a></li>
+                                        <li><a href="javascript:void(0);" onclick="fnSearchGoldList('S0'); return false;">인문교양</a></li>
                                     </ul>
                                     <!-- nav 카테고리 two-daps end -->
                                 </li>

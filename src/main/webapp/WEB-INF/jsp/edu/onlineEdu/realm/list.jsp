@@ -35,11 +35,7 @@
             <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a>
             </li>
             <li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
-            <c:forEach items="${realmTabList}" var="item" varStatus="status">
-                <c:if test="${item.code eq param.pGubun1}">
-                    <li><a href="javascript:void(0);" tabindex="-1"><span>${item.codenm}</span></a></li>
-                </c:if>
-            </c:forEach>
+            <li><a href="javascript:void(0);" tabindex="-1"><span>정규과정</span></a></li>
         </ul>
     </div>
 </div>
