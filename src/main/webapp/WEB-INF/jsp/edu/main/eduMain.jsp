@@ -643,10 +643,11 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/qUcmbuRWu6HTrx3K7"><img src="/edu/images/renew2022/edukocca_no10.png" alt="창의인재 동반사업 오픈 특강"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75217&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no11.png" alt="창작자 양성사업 오픈 특강"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75211&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no7.png" alt="창의인재 동반사업 오픈 특강"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75215&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no8.png" alt="콘텐츠 수출 전문인력 양성"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75202&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no2.jpg" alt="콘텐츠 로컬라이제이션” 교육생 모집"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75196&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no3.jpg" alt="컨텐츠랩 비보의 성장과정"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75172&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no4.jpg" alt="소설, 웹툰 원작의 뮤지컬화"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75144&searchCnd=1&searchWrd=%EA%B2%8C%EC%9E%84%EC%9D%B8%EC%9E%AC%EC%9B%90&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no5.jpg" alt="게임인재원4기 교육생 모집"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/JWLQGG2xRv7kVaLK6"><img src="/edu/images/renew2022/edukocca_no6.png" alt="[KNOCK STATION X 서울] 참가기업 모집"></a></div>
@@ -670,10 +671,11 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/m_edukocca_no9.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/qUcmbuRWu6HTrx3K7"><img src="/edu/images/renew2022/m_edukocca_no10.jpg" alt="창의인재 동반사업 오픈 특강" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75217&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no11.jpg" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75211&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no7.jpg" alt="창의인재 동반사업 오픈 특강" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75215&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no8.jpg" alt="콘텐츠 수출 전문인력 양성" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75202&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no2.jpg" alt="콘텐츠 로컬라이제이션” 교육생 모집" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75196&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no3.jpg" alt="컨텐츠랩 비보의 성장과정" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75172&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no4.jpg" alt="소설, 웹툰 원작의 뮤지컬화" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75144&searchCnd=1&searchWrd=%EA%B2%8C%EC%9E%84%EC%9D%B8%EC%9E%AC%EC%9B%90&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no5.jpg" alt="게임인재원4기 교육생 모집" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/JWLQGG2xRv7kVaLK6"><img src="/edu/images/renew2022/m_edukocca_no6.jpg" alt="[KNOCK STATION X 서울] 참가기업 모집" style="width:100%;"></a></div>
