@@ -424,11 +424,18 @@
 		<constructor-arg index="2" value="option1Nm" />
 	</bean>
 
-	<!-- 기관구분 -->
+
 	<bean id="COM161CmmCodeViewListener" class="kr.co.unp.cmm.crud.listener.CmmCodeViewListener">
 		<constructor-arg index="0" value="COM161" />
 		<constructor-arg index="1" value="option12" />
 		<constructor-arg index="2" value="option12Nm" />
+	</bean>
+
+	<!-- 이벤트 구분 -->
+	<bean id="COM179CmmCodeViewListener" class="kr.co.unp.cmm.crud.listener.CmmCodeViewListener">
+		<constructor-arg index="0" value="COM179" />
+		<constructor-arg index="1" value="option3" />
+		<constructor-arg index="2" value="option3Nm" />
 	</bean>
 
 	<!-- 데코레이트 패턴을 적용한 SiteMngService -->

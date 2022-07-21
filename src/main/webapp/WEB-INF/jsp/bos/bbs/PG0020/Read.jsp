@@ -48,7 +48,14 @@
 				<col width="85%"/>
 			</colgroup>
 			<tbody>
-
+				<tr>
+					<th scope="row">이벤트 구분</th>
+					<td>
+						<c:forEach var="code" items="${COM179CodeList}" varStatus="status" >
+							<c:if test="${code.code eq result.option3 }"><c:out value="${code.codeNm}"/></c:if>
+						</c:forEach>
+					</td>
+				</tr>
 				<tr>
 					<th scope="row">이벤트 기간</th>
 					<td>

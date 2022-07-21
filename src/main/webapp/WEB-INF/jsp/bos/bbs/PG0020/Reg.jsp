@@ -48,6 +48,10 @@ $(function() {
 	        required: true
 	    },"새창여부");
 
+		v.add("option3", {
+			required: true
+		});
+
 		var result = v.validate();
 		if (!result) {
 			alert(v.getErrorMessage());
@@ -115,6 +119,19 @@ $(function() {
 					<col />
 				</colgroup>
 				<tbody>
+					<tr>
+						<th scope="row">
+							<label for="option3">이벤트 구분</label>
+						</th>
+						<td>
+							<select id="option3" name="option3" class="input_select">
+								<option value="">선택</option>
+								<c:forEach var="code" items="${COM179CodeList}" varStatus="status" >
+									<option value="${code.code}" <c:if test="${code.code eq result.option3 }">selected="selected"</c:if>><c:out value="${code.codeNm}"/></option>
+								</c:forEach>
+							</select>
+						</td>
+					</tr>
 					<tr>
 						<th scope="row">
 							<label for="ntceBgnde">이벤트 기간</label>
