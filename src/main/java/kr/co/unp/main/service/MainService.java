@@ -368,6 +368,12 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 		return resultList;
 	}
 
+	public String getRandomKeyword(ZValue param) throws Exception {
+		String resultValue = sqlDao.selectString("searchDAO.randomKeyWord", param);
+
+		return resultValue;
+	}
+
 	public int getCurriculumChkCnt(ZValue param) throws Exception {
 		int resultCnt = lmsSqlDao.selectCount("realmListDAO.curriculumChkCnt", param);
 

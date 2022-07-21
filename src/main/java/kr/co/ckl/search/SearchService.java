@@ -81,6 +81,8 @@ public class SearchService extends DefaultCmmProgramService {
 		int firstPage = 0;
 		int recordCountPage = 10;
 		int programListCnt = 0;
+		int onlineEduListCnt = 0;
+		int fNum = 1;
 
 		if( rangeAll ){
 			/*
@@ -107,17 +109,31 @@ public class SearchService extends DefaultCmmProgramService {
 			progrmResultList = sqlDao.listDAO("progrmMasterDAO.programSearchList", param);
 			model.addAttribute("progrmResultList", progrmResultList);*/
 
-			if(param.getInt("pageIndex") > 0){
-				param.put("firstPage", param.getInt("pageIndex") - 1);
-			}else{
-				param.put("firstPage", param.getInt("pageIndex"));
+			param.put("firstPage", "0");
+			param.put("recordCountPage", recordCountPage);
+
+			if("onlineEdu".equals(param.getString("rangeView"))) {
+				if(param.getInt("pageIndex") > 0) {
+					param.put("firstPage", param.getInt("pageIndex") - 1);
+				}
 			}
 
-			param.put("recordCountPage", recordCountPage);
+			onlineEduListCnt = lmsSqlDao.selectCount("realmListDAO.onlineEduResultListCnt", param);
+			onlineEduResultList = lmsSqlDao.listDAO("realmListDAO.onlineEduResultList", param);
+
+			if("progrm".equals(param.getString("rangeView"))) {
+				if(param.getInt("pageIndex") > 0) {
+					param.put("firstPage", param.getInt("pageIndex") - 1);
+				}
+			} else {
+				param.put("firstPage", "0");
+			}
 
 			programListCnt = sqlDao.selectCount("searchDAO.programSearchListCnt", param);
 			progrmResultList = sqlDao.listDAO("searchDAO.programSearchList", param);
 
+			model.addAttribute("onlineEduListCnt", onlineEduListCnt);
+			model.addAttribute("onlineEduResultList", onlineEduResultList);
 			model.addAttribute("programListCnt", programListCnt);
 			model.addAttribute("progrmResultList", progrmResultList);
 		}
@@ -172,11 +188,11 @@ public class SearchService extends DefaultCmmProgramService {
 			webpageCnt = webpageResultList.get(0).getLong("numFound");
 		}
 		if( CollectionUtils.isNotEmpty(onlineEduResultList) ){
-			onlineEduCnt = onlineEduResultList.get(0).getLong("numFound");
+			//onlineEduCnt = onlineEduResultList.get(0).getLong("numFound");
+			onlineEduCnt = onlineEduListCnt;
 		}
 		totalCount = progrmCnt + bbsCnt + filesCnt + menuCnt + webpageCnt + onlineEduCnt;
 		model.addAttribute("totalCount", totalCount);
-
 
 		if( StringUtils.hasText(rangeView) && totalCount > 0 ){
 			int total = 0;

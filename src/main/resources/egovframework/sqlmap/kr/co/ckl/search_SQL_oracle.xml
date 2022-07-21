@@ -160,4 +160,17 @@
 		]]>
 	</select>
 
+	<!-- 랜덤 키워드 조회 -->
+	<select id="searchDAO.randomKeyWord" parameterClass="zvl" resultClass="java.lang.String">
+		<![CDATA[
+		/* searchDAO.randomKeyWord */
+		SELECT M.CODE_NM
+		  FROM (SELECT CODE_NM
+		  			 , ROW_NUMBER() OVER(ORDER BY ROUND(DBMS_RANDOM.VALUE(1, 1000),0)) AS RNUM
+				  FROM CKL_TREE.TC_CMMNCODE_DETAIL
+				 WHERE CODE_ID = 'COM180'
+		       ) M
+		 WHERE M.RNUM = 1
+		]]>
+	</select>
 </sqlMap>

@@ -115,9 +115,6 @@ $(document).ready(function(){
 	}
 
 	function detailView(v){
-		if( !checkForm(document.frmSearch) ){
-			return;
-		}
 		document.frmSearch.rangeView.value = v;
 		document.frmSearch.submit();
 	}
@@ -145,6 +142,13 @@ $(document).ready(function(){
 <style>
 .sub_contents_wrap .sub_contents {padding-left:0 !important;}
 </style>
+
+<form name="frmSearch" class="col-12 board_sorting_con alert formLine1 searchSetTp" method="post" action="/edu/search/list.do?menuNo=${param.menuNo}" onsubmit="return checkForm(this);">
+	<input type="hidden" id="prevQ" name="prevQ" value="${paramVO.q}" />
+	<input type="hidden" id="pageIndex" name="pageIndex" value="1" />
+	<input type="hidden" id="rangeView" name="rangeView" value="${paramVO.rangeView}" />
+	<input type="hidden" id="q" name="q" value="${paramVO.q}" />
+</form>
 
 <div class="over-hidden sub_contents_header">
 	<div class="linemap_wrap"> <!-- fl class 삭제 -->
@@ -177,15 +181,48 @@ $(document).ready(function(){
 
 	<div class="tab_style_1_con">
 		<ul class="tab_style_1 four_tab size_24">
-			<li <c:if test="${empty paramVO.rangeView}">class="active"</c:if>><a href="javascript:detailView('');" <c:if test="${empty paramVO.rangeView}">title="현재탭"</c:if>><span>통합검색(${totalCount})</span></a><c:if test="${empty paramVO.rangeView}"></c:if></li>
-			<li <c:if test="${paramVO.rangeView eq 'progrm'}"></c:if>><a href="javascript:detailView('progrm');" <c:if test="${paramVO.rangeView eq 'progrm'}">title="현재탭"</c:if>><span>오프라인교육(${programListCnt})</span></a><c:if test="${paramVO.rangeView eq 'progrm'}"></c:if></li>
-			<li <c:if test="${paramVO.rangeView eq 'onlineEdu'}"></c:if>><a href="javascript:detailView('onlineEdu');" <c:if test="${paramVO.rangeView eq 'onlineEdu'}">title="현재탭"</c:if>><span>온라인교육/강좌(${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound})</span></a><c:if test="${paramVO.rangeView eq 'onlineEdu'}"></c:if></li>
+			<li <c:if test="${empty paramVO.rangeView}">class="active"</c:if>>
+				<c:if test="${empty paramVO.rangeView}">
+					<a href="javascript:void(0);" title="현재탭">
+						<span>통합검색(${totalCount})</span>
+					</a>
+				</c:if>
+				<c:if test="${not empty paramVO.rangeView}">
+					<a href="javascript:detailView('');">
+						<span>통합검색(${totalCount})</span>
+					</a>
+				</c:if>
+			</li>
+			<li <c:if test="${paramVO.rangeView eq 'progrm'}">class="active"</c:if>>
+				<c:if test="${paramVO.rangeView eq 'progrm'}">
+					<a href="javascript:void(0);" title="현재탭">
+						<span>오프라인교육(${programListCnt})</span>
+					</a>
+				</c:if>
+				<c:if test="${paramVO.rangeView ne 'progrm'}">
+					<a href="javascript:detailView('progrm')">
+						<span>오프라인교육(${programListCnt})</span>
+					</a>
+				</c:if>
+			</li>
+			<li <c:if test="${paramVO.rangeView eq 'onlineEdu'}">class="active"</c:if>>
+				<c:if test="${paramVO.rangeView eq 'onlineEdu'}">
+					<a href="javascript:void(0);" title="현재탭">
+						<span>온라인교육/강좌(${onlineEduListCnt})</span>
+					</a>
+				</c:if>
+				<c:if test="${paramVO.rangeView ne 'onlineEdu'}">
+					<a href="javascript:detailView('onlineEdu');">
+						<span>온라인교육/강좌(${onlineEduListCnt})</span>
+					</a>
+				</c:if>
+			</li>
 		</ul>
 	</div>
 
 		<c:choose>
 			<c:when test="${paramVO.rangeView eq 'progrm'}"><c:set var="rangeNm" value="오프라인교육"/><c:set var="cnt" value="${programListCnt}"/></c:when>
-			<c:when test="${paramVO.rangeView eq 'onlineEdu'}"><c:set var="rangeNm" value="온라인교육/강좌"/><c:set var="cnt" value="${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'onlineEdu'}"><c:set var="rangeNm" value="온라인교육/강좌"/><c:set var="cnt" value="${onlineEduListCnt}"/></c:when>
 			<c:when test="${paramVO.rangeView eq 'webpage'}"><c:set var="rangeNm" value="웹페이지"/><c:set var="cnt" value="${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound}"/></c:when>
 			<c:when test="${paramVO.rangeView eq 'bbs'}"><c:set var="rangeNm" value="게시물"/><c:set var="cnt" value="${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound}"/></c:when>
 			<c:when test="${paramVO.rangeView eq 'menu'}"><c:set var="rangeNm" value="메뉴"/><c:set var="cnt" value="${empty menuResultList[0] ? 0 : menuResultList[0].numFound}"/></c:when>
@@ -198,13 +235,15 @@ $(document).ready(function(){
 
 		<!-- 오프라인교육 -->
 		<c:if test="${rangeAll or paramVO.rangeView eq 'progrm'}">
-
 			<div class="alert">
 				<p class="alert_design_text"> 오프라인교육 (검색결과 ${programListCnt}건)</p>
 				<c:if test="${fn:length(progrmResultList)>0}">
 					<div class="moreBtn">
-						<c:if test="${paramVO.rangeView eq 'progrm'}">
+<%--						<c:if test="${paramVO.rangeView eq 'progrm'}">
 							<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
+						</c:if>--%>
+						<c:if test="${paramVO.rangeView ne 'progrm'}">
+							<a href="javascript:detailView('progrm');" class="more"> <span>더 보기 +</span></a>
 						</c:if>
 					</div>
 				</c:if>
@@ -243,12 +282,12 @@ $(document).ready(function(){
 		<!-- 온라인교육/강좌 -->
 		<c:if test="${rangeAll or paramVO.rangeView eq 'onlineEdu'}">
 			<div class="alert">
-				<p class="alert_design_text"> 온라인교육/강좌 (검색결과 ${empty onlineEduResultList[0] ? 0 : onlineEduResultList[0].numFound}건)</p>
+				<p class="alert_design_text"> 온라인교육/강좌 (검색결과 ${onlineEduListCnt}건)</p>
 				<c:if test="${fn:length(onlineEduResultList)>0}">
 					<div class="moreBtn">
-						<c:if test="${paramVO.rangeView eq 'onlineEdu'}">
+<%--						<c:if test="${paramVO.rangeView eq 'onlineEdu'}">
 							<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
-						</c:if>
+						</c:if>--%>
 						<c:if test="${paramVO.rangeView ne 'onlineEdu'}">
 							<a href="javascript:detailView('onlineEdu');" class="more"> <span>더 보기 +</span></a>
 						</c:if>
@@ -263,28 +302,26 @@ $(document).ready(function(){
 					<c:if test="${status.count <= onlineEduCnt}">
 						<li class="statSet">
 							<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">
-							<span class="tit">
-								<span class="status">
-									<c:choose>
-										<c:when test="${result.gubunSe eq '01'}">정규과정</c:when>
-										<c:when test="${result.gubunSe eq '02'}">열린강좌</c:when>
-										<c:when test="${result.gubunSe eq '03'}">테마과정</c:when>
-									</c:choose>
+								<span class="tit">
+									<span class="status">
+										<c:choose>
+											<c:when test="${result.gubunSe eq '01'}">정규과정</c:when>
+											<c:when test="${result.gubunSe eq '02'}">열린강좌</c:when>
+											<c:when test="${result.gubunSe eq '03'}">학습로드맵</c:when>
+										</c:choose>
+									</span>
 								</span>
-								<span class="fcBlue">
-									<c:choose>
-										<c:when test="${result.gubunSe eq '01'}">
-											<c:choose>
-												<c:when test="${result.gubun eq 'realm'}">[분야별</c:when>
-												<c:when test="${result.gubun eq 'occp'}">[직업별</c:when>
-											</c:choose>
-											- ${result.categoryNm}]
-										</c:when>
-										<c:otherwise>[${result.categoryNm}]</c:otherwise>
-									</c:choose>
-								</span> ${result.title}
-							</span>
-							<span class="txt">${result.hl}</span>
+								<div class="sc_tit_box">
+									<span class="fcBlue">
+										<c:choose>
+											<c:when test="${result.gubunSe eq '01'}">[정규과정-${result.g1nm}]</c:when>
+											<c:when test="${result.gubunSe eq '02'}">[열린강좌-${result.g1nm}</c:when>
+											<c:when test="${result.gubunSe eq '03'}">[학습로드맵]</c:when>
+										</c:choose>
+									</span>
+									<span>${result.title}</span>
+								</div>
+								<span class="txt">${result.hl}</span>
 							</a>
 						</li>
 					</c:if>

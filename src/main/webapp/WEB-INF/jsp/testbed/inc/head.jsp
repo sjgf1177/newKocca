@@ -20,15 +20,19 @@
     if (StringUtils.hasText(menuNo)) {
         org.springframework.context.ApplicationContext context = org.springframework.web.context.support.WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         MasterMenuManager masterMenuManagerService = (MasterMenuManager) context.getBean("masterMenuManagerService");
+        MainService mainService = (MainService) context.getBean("mainService");
+        ZValue zParam = new ZValue();
 
         if(user.getUserIdx() > 0) {
-            MainService mainService = (MainService) context.getBean("mainService");
-            ZValue zParam = new ZValue();
             zParam.put("userid", user.getUserId());
             List<ZValue> curriculumList = mainService.getCurriculumList(zParam);
 
             pageContext.setAttribute("curriculumList", curriculumList);
         }
+
+        // 랜덤 키워드 조회
+        String randomKeyword = mainService.getRandomKeyword(zParam);
+        pageContext.setAttribute("randomKeyword", randomKeyword);
 
         /* testbed20170830 */
         String siteName = (String) pageContext.getAttribute("siteName") != null ? (String) pageContext.getAttribute("siteName") : "";
@@ -138,8 +142,10 @@
                         <!-- 모바일 햄버거 end -->
 
                         <div class="nav_search_box">
-                            <input type="text" placeholder="검색어를 입력해주세요.">
-                            <button class="nav_search_btn"></button>
+                            <form name="frmSearch4" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
+                                <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='"${randomKeyword}" 검색해 보세요.'>
+                                <button class="nav_search_btn"></button>
+                            </form>
                         </div>
 
                         <!-- nav start -->
