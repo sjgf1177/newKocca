@@ -6,16 +6,11 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc"%>
 
-<%-- <ccc:constantsMap className="kr.co.unp.bbs.vo.SearchVO" var="SearchVO" /> --%>
+<style>
+    .bg_gray_slide_box, .sub_title.s_tit02{padding-top: 0;}
+</style>
 
-	<style>
-		/* 	.lnb_con{display: none} */
-		/* 	.sub_contents_wrap .sub_contents {padding-left: 0;} */
-		.bg_gray_slide_box, .sub_title.s_tit02{padding-top: 0;}
-
-	</style>
 <form id="frm" name="frm" action="/edu/onlineEdu/${paramVO.programId}/viewEdu.do?menuNo=<c:out value='${paramVO.menuNo }'/>" method="post" class="form-inline">
-
 	<input type="hidden" name="pGubun1" id="pGubun1" value="${param.pGubun1 }" />
 	<input type="hidden" name="pGubun2" id="pGubun2" value="${param.pGubun2 }" />
 	<input type="hidden" name="pGubun3" id="pGubun3" value="${param.pGubun3 }" />
@@ -41,7 +36,6 @@
 	<input type="hidden" name="pageIndex" id="pageIndex" value="<c:out value='${param.pageIndex }' />" />
 	<!-- paging e -->
 
-
 	<!-- 학습하기 파라미터 s -->
 	<input type="hidden" name="s_year" id="s_year" value="${param.s_year }" />
 	<input type="hidden" name="s_cpsubj" id="s_cpsubj" value="${param.s_cpsubj }" />
@@ -52,18 +46,9 @@
 	<input type="hidden" name="s_subjseq" id="s_subjseq" value="${param.s_subjseq }" />
 	<input type="hidden" name="s_lesson" id="s_lesson" value="${param.s_lesson }" />
 	<!-- 학습하기 파라미터 e -->
-
 </form>
+
 <div class="bg_gray_slide_box">
-	<%--<div class="over-hidden sub_contents_header">
-		<div class="linemap_wrap"> <!-- fl class 삭제 -->
-			<ul class="col-12 linemap_con">
-				<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
-				<li><a href="javascript:void(0);" tabindex="-1"><span>정규과정</span></a></li>
-				<li><a href="javascript:void(0);" tabindex="-1"><span>상세</span></a></li>
-			</ul>
-		</div>
-	</div>--%>
 	<!-- 차시제목 -->
 	<div class="sub_title s_tit02">
 		<div class="">
@@ -73,68 +58,26 @@
 					<div class="lecProgress"></div>
 					<div class="lectProBar mt5">
 						<div class="progress-bar progress-bar-success" style="width:<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%" title="<fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />% 진도율">
-							<%--<span class="icon progressInfo"><fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" /><span class="sr-only">% 진도율</span></span>--%>
 						</div>
-						<%--<c:choose>
-							<c:when test="${p_subj eq 'CK20010'}">
-								<div class="progress-bar progressIng" style="width: 100%;" title="수료기준 진도100%">
-									<span class="sr-only">수료기준 진도100%</span>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<div class="progress-bar progressIng" style="width: 70%;" title="수료기준 진도70%">
-									<span class="sr-only">수료기준 진도70%</span>
-								</div>
-							</c:otherwise>
-						</c:choose>--%>
-
 					</div>
 					<p class="point" align="left"><strong>진도율 : <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%</strong></p>
-					<%--<c:choose>
-						<c:when test="${p_subj eq 'CK20010'}">
-							<div class="row">
-								<div class="col-md-6">수료기준 진도 100%</div>
-								<c:if test="${myProgress ge 100.0 }">
-									<div class="col-md-6 tar"><span class="icon icoSm lectCheck"></span> 수료함</div>
-								</c:if>
-							</div>
-						</c:when>
-						<c:otherwise>
-							<div class="row">
-								<div class="col-md-6">수료기준 진도 70%</div>
-								<c:if test="${myProgress ge 70.0 }">
-									<div class="col-md-6 tar"><span class="icon icoSm lectCheck"></span> 수료함</div>
-								</c:if>
-							</div>
-						</c:otherwise>
-					</c:choose>--%>
 				</div>
 				<!-- //수업진도율 -->
-				<%--<p class="alert_title" style="margin-bottom:0;">${view.subjnm }</p>--%>
-				<%-- <c:set var="arrayofedumans" value="${fn:split(view.edumans,'-')}"/>
-				<c:forEach var="i" begin="0" end="${fn:length(arrayofedumans)-1 }" varStatus="status">
-					- ${arrayofedumans[i] } <c:if test="${not status.last }"> <br /></c:if>
-				</c:forEach> --%>
+
 				<a href="javascript:void(0);" onclick="fnCmdSubjList('${paramVO.menuNo }', '${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }'); return false;" class="return_list_box gnb_close">
 					<img src="/edu/img/gnb_close.png" alt="GNB 메뉴 닫기" style="padding: 0px; display: inline-block;">
-					<%--<input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding: 0px; display: inline-block;">--%>
 				</a>
 			</div>
 		</div>
 	</div>
 
 	<div class="col-center mw-1280">
-
 		<!-- step 영역 s -->
 		<jsp:include page="/WEB-INF/jsp/edu/onlineEdu/realm/eduStep.jsp" flush="true" />
 		<!-- step 영역 e -->
 
 		<!-- 차시목록 -->
 		<div class="col-12 lectListSet" style="min-height:auto;">
-			<%--<div class="lectMenu">
-				<a href="javascript:void(0);" class="icon lectToggle eduR_lt45" onclick="return false;"></a>
-			</div>--%>
-
 			<!-- Movie Player -->
 			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 486px !important;">
 				<!-- 차시내용 -->
@@ -142,16 +85,11 @@
 					<jsp:include page="lectList.jsp"></jsp:include>
 				</div>
 
-
-				<%-- <div style="width: ${view.prewidth }px; height:${view.preheight }px; margin: 0 auto; overflow:hidden; z-index:-10; " > --%>
 				<div style="position:relative; padding-bottom:60%; height:0; max-width:870px; overflow:hidden; z-index:999; display: inline-block;" class="video_box">
 					<iframe name="openstudy"
 						id="openstudy"
-						<%--src="${p_url }"--%>
-						src="http://localhost:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="
-						<%--src="http://edu_kocca.ecn.cdn.infralab.net/kocca/mp4/onlineclass/CK22007/01_01.mp4"--%>
-						<%--width="${view.prewidth }"
-						height="${view.preheight }"--%>
+						src="${p_url }"
+						<%--src="http://localhost:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="--%>
 						width="870"
 						height="768"
 						frameborder="0"
@@ -167,20 +105,19 @@
 					<iframe id="lectFrame" style="width:100%;height:100%;" scrolling="yes" title="본 프레임은 강의 목차 정보를 제공합니다."></iframe>
 				</div>
 			</div>
+
 			<!-- Movie Player -->
 			<script type="text/javascript">
-				document.getElementById("lectFrame").contentWindow.document.write("<div class='col-12 sub_section'>"+$('#lectListTemp').html()+"</div>");//rsg20171010
-				//lectFrame.document.write($('#lectListTemp').html());
-				//$('#lectFrame').write($('#lectListTemp').html());
+				document.getElementById("lectFrame").contentWindow.document.write("<div class='col-12 sub_section'>"+$('#lectListTemp').html()+"</div>");
 			</script>
 
 			<!-- movDescTxt -->
 			<div class="mt15 board_util_btn_con" style="max-width:100%; margin-left:auto; margin-right:auto; margin-bottom: 10px;">
 				<a href="javascript:void(0);" class="btn_style_0 blue openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
-					자막닫기
-				</a>
+                    자막닫기
+                </a>
 				<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 blue openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
-					자막보기
+                    자막보기
 				</a>
 			</div>
 			<!-- movDescTxt -->
@@ -196,10 +133,12 @@
 			<div class="edu_info_box">
 				<!-- 과정 썸네일 -->
 				<div class="edu_tnail_box">
+                    <%-- 작업필요 --%>
 					<%--<img src="/edu/images/renew2022/fwo_snail01.png" alt="썸네일">--%>
 				</div>
 				<div class="edu_txt_box">
 					<p class="edu_tit">과정명 : ${param.p_subjnm }</p>
+                    <%-- 작업필요 --%>
 					<%--<p class="edu_add_txt">Adobe Premiere Pro CC 2020의 기능 활용 및 Adobe Premiere Pro CC 2020의 사용방법 숙지</p>--%>
 
 					<p class="jindo_box">
@@ -207,10 +146,8 @@
 						<span class="jd_span02_box"><span>수료기준</span> 70%</span>
 					</p>
 				</div>
-
 				<!--  과정 정보 -->
 			</div>
-
 		</div>
 	</div>
 	<%--
@@ -289,60 +226,17 @@
 </script>
 </div>
  -->
-
-
 </div>
 <!-- //차시목록 -->
 
 <script type="text/javascript">
-//<![CDATA[
-
-	/*$(document).ready(function(){
-		$('.lnb_wrap').addClass('dn');
-
-		$(".lectListBox").show();
-		setTimeout(function(){$(".lectListBox").animate({width: 'hide'});}, 3000);
-
-		$('.lectToggle').click(function() {
-			$(".lectListBox").slideToggleWidth();
-		});
-
-		jQuery.fn.extend({
-		  slideRight: function() {
-		    return this.each(function() {
-		      jQuery(this).animate({width: 'show', height:'100%'});
-		    });
-		  },
-		  slideLeft: function() {
-		    return this.each(function() {
-		      jQuery(this).animate({width: 'hide', height:'600'});
-		    });
-		  },
-		  slideToggleWidth: function() {
-		    return this.each(function() {
-		      var el = jQuery(this);
-		      if (el.css('display') == 'none') {
-		        el.slideRight();
-		        $('.lectToggle').attr({"title":"차시목록 열기"});
-				//console.log("open");
-		      } else {
-		        el.slideLeft();
-		        $('.lectToggle').attr({"title":"차시목록 닫기"});
-				//console.log("close");
-		      }
-		    });
-		  }
-		});
-
-
-	});*/
-
 	$(".eye_off").click(function (e) {
 		$(this).hide();
 		$(".movDescTxt").hide();
 		$(".eye_on").show();
 		$(".eye_on").focus();
 	});
+
 	$(".eye_on").click(function (e) {
 		$(this).hide();
 		$(".movDescTxt").show();
@@ -354,11 +248,8 @@
 
 	$('.wrapper, .bg_gray_slide_box, .sub_title.s_tit02').css('padding-top','0');
 
-
-
 	//과정 조회
 	function fnCmdSearchList(gubun1, gubun2, gubun3, ordersnm, orders){
-
 		$("#p_gubun1").val(gubun1);
 		$("#p_gubun2").val(gubun2);
 		$("#p_gubun3").val(gubun3);
@@ -379,10 +270,8 @@
 		$("#frm").submit();
 	}
 
-
 	//학습하기
 	function fnCmdLrnAction(lesson){
-
 		$("#s_lesson").val(lesson);
 		$("#frm").attr({
 					action:"/edu/onlineEdu/realm/viewEdu.do?menuNo=<c:out value='${paramVO.menuNo }'/>&gubun="+$("#pGubun1").val()+"&option1="+$("#pGubun2").val()+"&option5="+$("#pGubun3").val()+"&pageIndex=<c:out value='${param.pageIndex}' />",
@@ -400,11 +289,12 @@
 		var curLesson = $("#s_lesson").val();
 		fnCmdLrnAction( pad(parseInt(curLesson) + 1, curLesson.length) ); //다음 차시로 이동
 	}
+
 	function pad(n, width) {//정수 자릿수 변경
 		n = n + '';
 		return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
 	}
+
 	window.addEventListener("message", receiveMessage, false);
-//]]>
 </script>
 
