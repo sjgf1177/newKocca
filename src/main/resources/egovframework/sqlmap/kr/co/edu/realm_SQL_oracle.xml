@@ -2115,6 +2115,7 @@
                                                AND Z.CODE   = (SELECT X.LVCODE
                                                                  FROM TZ_SUBJHOMEGUBUN_LEVEL X
                                                                 WHERE X.SUBJ = A.SUBJ)) AS LVNM
+                                         , A.SEARCH_NM AS TAGS
                                          , '/edu/onlineEdu/realm/view.do?menuNo=500027&p_subj='||A.SUBJ||'&p_year='||A.SCYEAR||'&p_subjseq='||A.SUBJSEQ AS FULL_MENU_LINK
                            			  FROM (SELECT S1.*
                                  			  FROM VZ_SCSUBJSEQIMGMOBILE S1
@@ -2169,6 +2170,7 @@
 											  AND    Z.CODE   = (SELECT X.LVCODE
 																 FROM   TZ_GOLDHOMEGUBUN_LEVEL X
 																 WHERE  X.SEQ = A.SEQ)) AS LVNM
+										 , A.TAGS
 										 , '/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq='||A.SEQ||'&pLectureCls='||A.LECTURE_CLS AS FULL_MENU_LINK
                         			  FROM TZ_GOLDCLASS A
                            				 , TZ_GOLDCLASS_GRMNG B
@@ -2197,6 +2199,7 @@
 										 , TO_DATE(REG_DATE, 'YYYYMMDDHH24MISS') AS REG_DATE
 										 , '' AS LVCD
 										 , '' AS LVNM
+										 , '학습로드맵' AS TAGS
 										 , '/edu/onlineEdu/themeLecture/view.do?menuNo=500157&pId='||ID AS FULL_MENU_LINK
 									  FROM TZ_THEME
                        		  ) T3
@@ -2206,7 +2209,8 @@
                         	OR TT.G1NM LIKE '%' || #q# || '%'
                         	OR TT.G2NM LIKE '%' || #q# || '%'
                         	OR TT.G3NM LIKE '%' || #q# || '%'
-                			OR TT.LVNM LIKE '%' || #q# || '%')
+                			OR TT.LVNM LIKE '%' || #q# || '%'
+                			OR TT.TAGS LIKE '%' || #q# || '%')
 			  ) M
 		]]>
 	</select>
@@ -2278,6 +2282,7 @@
 													   AND Z.CODE   = (SELECT X.LVCODE
 																	     FROM TZ_SUBJHOMEGUBUN_LEVEL X
 																	    WHERE X.SUBJ = A.SUBJ)) AS LVNM
+												 , A.SEARCH_NM AS TAGS
 												 , '/edu/onlineEdu/realm/view.do?menuNo=500027&p_subj='||a.subj||'&p_year='||a.scyear||'&p_subjseq='||a.subjseq AS FULL_MENU_LINK
 								   			  FROM (SELECT S1.*
 										 			  FROM VZ_SCSUBJSEQIMGMOBILE S1
@@ -2332,6 +2337,7 @@
 													   AND Z.CODE   = (SELECT X.LVCODE
 																		 FROM TZ_GOLDHOMEGUBUN_LEVEL X
 																		WHERE X.SEQ = A.SEQ)) AS LVNM
+												 , A.TAGS
 												 , '/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq='||A.SEQ||'&pLectureCls='||A.LECTURE_CLS AS FULL_MENU_LINK
 											  FROM TZ_GOLDCLASS A
 											     , TZ_GOLDCLASS_GRMNG B
@@ -2359,6 +2365,7 @@
 												 , TO_DATE(REG_DATE, 'YYYYMMDDHH24MISS') AS REG_DATE
 												 , '' AS LVCD
 												 , '' AS LVNM
+												 , '학습로드맵' AS TAGS
 												 , '/edu/onlineEdu/themeLecture/view.do?menuNo=500157&pId='||ID AS FULL_MENU_LINK
 											  FROM TZ_THEME
 										   ) T3
@@ -2368,7 +2375,8 @@
 									OR TT.G1NM LIKE '%' || #q# || '%'
 									OR TT.G2NM LIKE '%' || #q# || '%'
 									OR TT.G3NM LIKE '%' || #q# || '%'
-									OR TT.LVNM LIKE '%' || #q# || '%')
+									OR TT.LVNM LIKE '%' || #q# || '%'
+									OR TT.TAGS LIKE '%' || #q# || '%')
             				 ORDER BY GUBUN_SE, REG_DATE DESC, G1CD, G2CD
 					  ) ALL_LIST
 			  )
