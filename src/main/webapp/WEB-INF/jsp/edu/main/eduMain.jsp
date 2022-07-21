@@ -731,7 +731,9 @@
 
                 <div class="notice_swiper_box">
                     <div class="news_notice_list">
-                        <span class="title">공지사항</span>
+                        <span class="title">
+                            <a href="/edu/bbs/B0000011/list.do?menuNo=500008">공지사항</a>
+                        </span>
                         <div class="list_box notice_list_box swiper-container">
                             <ul class="swiper-wrapper">
                                 <c:forEach var="result" items="${B0000011List}" end="3" varStatus="status">
