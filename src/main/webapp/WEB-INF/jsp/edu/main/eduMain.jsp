@@ -649,6 +649,8 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75223&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no12.png" alt="에듀코카 리뉴얼 오픈"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75222&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no13.png" alt="에듀코카 리뉴얼 오픈"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75235&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no14.png" alt="에듀코카 리뉴얼 오픈"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75236&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no15.png" alt="에듀코카 리뉴얼 오픈"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/qUcmbuRWu6HTrx3K7"><img src="/edu/images/renew2022/edukocca_no10.png" alt="창의인재 동반사업 오픈 특강"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75217&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no11.png" alt="창작자 양성사업 오픈 특강"></a></div>
@@ -678,6 +680,8 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75223&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no12.png" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75222&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no13.png" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75235&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no14.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75236&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no15.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/m_edukocca_no9.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/qUcmbuRWu6HTrx3K7"><img src="/edu/images/renew2022/m_edukocca_no10.jpg" alt="창의인재 동반사업 오픈 특강" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75217&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no11.jpg" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
