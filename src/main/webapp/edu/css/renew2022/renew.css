@@ -528,6 +528,8 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .photoGallery2.photoLine1.mg_t5{margin-top: 70px;}
 .sortBox.mg_t20{margin-top: 20px;}
 .fwo_snail_box .show-block{display: inline-block; width: 100%; height: 100%;}
+.footer_logo{float: left; margin-right: 20px; display: inline-block; margin-top: 4px;}
+.footer_logo img{height: 44px; width: 190px;}
 
 @media all and (max-width:1280px) {
     .contents_section .main_study_contents .container .main_title{font-size: 3rem;}
@@ -557,6 +559,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .fwo_card_list_box .fwo_card .swiper-slide{width: 290px !important;}
     .fwo_card_list_box .swiper_btn_box{width: calc(100% - 82%); top:5px; right: 20px;}
     .fwo_card_list_box .swiper-button-prev, .fwo_card_list_box .swiper-button-next{width:30px; height:30px; background-size: 30px; background-position: center;}
+    .footer_logo{float: initial;}
 
 }
 
@@ -722,8 +725,8 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .sub_section .sub_contents_body .event_card_wrap .calc_wrap19.swiper{height: 1300px; margin-left: 0;}
 .sub_section .sub_contents_body .event_card_wrap .calc_wrap19.swiper .swiper-wrapper{padding-top: 20px; width: 100% !important;}
 
-.sub_section .sub_contents_body .event_card_wrap .event_card_list{height: 483px !important; padding: 0; margin-top: 40px;}
-.event_card_wrap .col-sm-4{flex:0 0 37%;}
+.sub_section .sub_contents_body .event_card_wrap .event_card_list{height: 483px !important; padding: 0; margin-top: 55px; margin-right: 20px;}
+.event_card_wrap .col-sm-4{flex:0 0 32%;}
 .sub_section .sub_contents_body .event_card_wrap .event_card_list:nth-child(3n){margin-right: 0!important;}
 .sub_section .sub_contents_body .event_card_wrap .event_card_list:hover{position:relative; top: -2px; box-shadow: 3px 3px 5px rgba(0,0,0,0.1); border-radius: 30px;}
 .sub_section .sub_contents_body .event_card_wrap .event_card_list.e_end_box:hover{top: 0; box-shadow: none;}
@@ -769,13 +772,14 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .evt_top_box{padding: 20px;}
     .evt_top_box .evt_info_box h2{font-size: 20px; line-height: 30px;}
     .evt_top_box .evt_info_box .data{font-size: 14px;}
+    .sub_section .sub_contents_body .event_card_wrap .event_card_list:nth-child(3n){margin-right: 20px !important;}
 }
 
 @media all and (max-width:640px) {
     .sub_section .sub_contents_body .event_card_wrap{padding-top: 0;}
     .event_card_wrap .swiper_btn_box{display: none;}
     .sub_section .sub_contents_body .event_card_wrap .calc_wrap19.swiper{height: auto;}
-    .sub_section .sub_contents_body .event_card_wrap .calc_wrap19.swiper .swiper-wrapper{flex-direction: column;}
+    .sub_section .sub_contents_body .event_card_wrap .swiper-wrapper{flex-direction: column;}
     .sub_section .sub_contents_body .event_card_wrap .event_card_list{width: 100%; max-width: 100%;}
     .e_end_back_box{height: 95%;}
 }
@@ -1109,6 +1113,8 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
 @media screen and (max-width: 640px){
     .facility_list .img_box.right{margin-top:30px; margin-bottom: 30px;}
+    .footer_logo{width:100%; margin-bottom: 10px;}
+    .footer_logo img{display: block; margin: 0 auto;}
 
 
 }

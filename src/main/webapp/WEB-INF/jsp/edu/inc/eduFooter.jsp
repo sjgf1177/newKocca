@@ -29,12 +29,15 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 					<li><a href="/edu/main/contents.do?menuNo=500227" class="footer_link_item">찾아오시는길</a></li>
 				</ul>
 				<span>본 페이지에 게시된 이메일주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신법에 의해 처벌됨을 유념하시기 바랍니다.</span>
-				<ul>
-                    <li>홍릉분원 : [02456] 서울특별시 동대문구 회기로 66</li>
-                    <li>본원 : [58217] 전라남도 나주시 교육길 35 한국콘텐츠진흥원 | 사업자번호 : 105-82-17272</li>
-                    <li>온라인교육 02-6310-0770</li>
-                    <li>Copyright 2015. Korea Creative Content Agency all rights reserved.</li>
-                </ul>
+                <div>
+                    <span class="footer_logo"><img src="/edu/images/renew2022/fotter_logo.png" alt="한국콘텐츠진흥원 로고"></span>
+                    <ul>
+                        <li>홍릉분원 : [02456] 서울특별시 동대문구 회기로 66</li>
+                        <li>본원 : [58217] 전라남도 나주시 교육길 35 한국콘텐츠진흥원 | 사업자번호 : 105-82-17272</li>
+                        <li>온라인교육 02-6310-0770</li>
+                        <li style="margin-top: 10px;">Copyright 2015. Korea Creative Content Agency all rights reserved.</li>
+                    </ul>
+                </div>
                 <br/>
             </div>
             <div class="col-xl-4 col-lg-12 col-md-12 ml-auto">
