@@ -54,8 +54,8 @@
 						<div class="upload_file">
 							<c:forEach var="fileVO" items="${fileList}" varStatus="status">
 							<a href="/edu/cmm/fms/FileDown.do?atchFileId=${fileVO.atchFileId}&amp;fileSn=${fileVO.fileSn}&amp;bbsId=${param.bbsId}" class="${icn}">
-								첨부파일 : <c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte] <br />
-							</a>
+								첨부파일 : <c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte]
+							</a><br />
 							</c:forEach>
 							<c:if test="${fn:length(fileList) == 0}"><a href="javascript:void(0)">첨부파일 : 등록된 첨부파일이 없습니다.</a></c:if>
 						</div>

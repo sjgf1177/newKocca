@@ -193,20 +193,22 @@ $(function() {
 							<th>메인 이미지</th>
 							<td>
 								<c:forEach var="fileVO" items="${fileList }">
-								<div id="${fileVO.fileFieldName }">
-									<a href="/bos/cmm/fms/FileDown.do?atchFileId=${fileVO.atchFileId}&amp;fileSn=${fileVO.fileSn}&amp;bbsId=${masterVO.bbsId}"  class="${icn}">
-										<c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte]
-									</a>
-									<a href="#" onclick="javascript:delFile2('${fileVO.atchFileId}', '${fileVO.fileSn}', '${masterVO.bbsId}','main_image');">
-									<img src="<c:url value='/bos/images/btn_X.jpg'/>" alt="<c:out value="${fileVO.fileCn}"/> 삭제" />
-									</div>
+									<c:if test="${fileVO.fileFieldName eq 'main_image'}">
+										<div id="${fileVO.fileFieldName }">
+											<a href="/bos/cmm/fms/FileDown.do?atchFileId=${fileVO.atchFileId}&amp;fileSn=${fileVO.fileSn}&amp;bbsId=${masterVO.bbsId}"  class="${icn}">
+												<c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte]
+											</a>
+											<a href="#" onclick="javascript:delFile2('${fileVO.atchFileId}', '${fileVO.fileSn}', '${masterVO.bbsId}','main_image');">
+												<img src="<c:url value='/bos/images/btn_X.jpg'/>" alt="<c:out value="${fileVO.fileCn}"/> 삭제" />
+											</a>
+										</div>
+									</c:if>
 								</c:forEach>
 
-							<c:if test="${empty fileList }">
-								<input name="main_image" type="file" id="main_image" class="input_file form-control" title="이벤트 이미지" />
-								이미지 권장사이즈 : 335*245
-							</c:if>
-
+								<c:if test="${empty fileList }">
+									<input name="main_image" type="file" id="main_image" class="input_file form-control" title="이벤트 이미지" />
+									이미지 권장사이즈 : 335*245
+								</c:if>
 							</td>
 						</tr>
 					</c:if>
@@ -227,6 +229,18 @@ $(function() {
 						</tr>
 					</c:if>
 
+					<c:if test="${masterVO.fileAtchPosblAt eq 'Y'}">
+						<c:if test="${not empty fileList}">
+							<tr>
+								<th scope="row">첨부된 첨부파일</th>
+								<td><jsp:include page="/WEB-INF/jsp/bos/share/EgovFileListB4802.jsp" flush="true" /></td>
+							</tr>
+						</c:if>
+						<tr>
+							<th scope="row">첨부파일</th>
+							<td><jsp:include page="/WEB-INF/jsp/bos/share/FileSubmit.jsp" flush="true" /></td>
+						</tr>
+					</c:if>
 
 				</tbody>
 			</table>

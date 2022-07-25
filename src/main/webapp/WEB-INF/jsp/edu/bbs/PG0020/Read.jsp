@@ -7,6 +7,16 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc" %>
 <ccc:constantsMap className="kr.co.unp.bbs.vo.SearchVO" var="SearchVO"/>
+<style>
+	.table_info_header{text-align: right; font-size: 15px;}
+	.upload_file a{margin-bottom: 5px;}
+
+	@media screen and (max-width: 640px){
+		.table_info_header{margin-bottom: 10px;}
+	}
+</style>
+
+
 <div class="over-hidden sub_contents_header">
 	<div class="linemap_wrap"> <!-- fl class 삭제 -->
 		<ul class="col-12 linemap_con">
@@ -19,12 +29,12 @@
 	<div class="col-center mw-1280">이벤트</div>
 </div>
 
-	<!-- bdView -->
+<!-- bdView -->
 <div class="evt_top_box">
 	<div class="col-center mw-1280">
 		<div class="evt_info_box">
 			<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
-			<p class="date_tag_on">D-10</p>
+			<%--<p class="date_tag_on">D-10</p>--%>
 			<p class="data">이벤트기간 : <span><c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></p>
 		</div>
 		<div class="evt_btn_box">
@@ -37,6 +47,17 @@
 </div>
 <div class="contents_view_area">
 	<div class="col-center mw-1280 txt_ct">
+		<div class="table_info_header">
+			<div class="upload_file">
+				<c:forEach var="fileVO" items="${fileList}" varStatus="status">
+					<c:if test="${fileVO.fileFieldName ne 'main_image'}">
+						<a href="/edu/cmm/fms/FileDown.do?atchFileId=${fileVO.atchFileId}&amp;fileSn=${fileVO.fileSn}&amp;bbsId=${param.bbsId}">
+							첨부파일 : <c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte]
+						</a><br />
+					</c:if>
+				</c:forEach>
+			</div>
+		</div>
 	<c:choose>
 		<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
 		<c:otherwise>
@@ -77,3 +98,4 @@
 		</a>
 	</div>
 </div>
+

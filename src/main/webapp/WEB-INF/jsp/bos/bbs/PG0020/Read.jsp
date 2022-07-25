@@ -88,7 +88,7 @@
 				<tr>
 					<th scope="row">메인이미지</th>
 					<td>
-						<jsp:include page="/WEB-INF/jsp/bos/share/EgovFileList.jsp" flush="true" />
+						<jsp:include page="/WEB-INF/jsp/bos/share/EgovFileListB4801.jsp" flush="true" />
 					</td>
 				</tr>
 			</c:if>
@@ -107,6 +107,14 @@
 				</tr>
 			</c:if>
 
+			<c:if test="${not empty result.atchFileId}">
+				<tr>
+					<th scope="row">첨부파일</th>
+					<td>
+						<jsp:include page="/WEB-INF/jsp/bos/share/EgovFileListB4802.jsp" flush="true" />
+					</td>
+				</tr>
+			</c:if>
 
 			</tbody>
 		</table>
