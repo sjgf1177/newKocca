@@ -30,8 +30,10 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 </c:choose>
 	<div class="col-xl-8 col-lg-8 col-md-12">
         <ul>
-			<li><a href="javascript:winMarkPopup('https://www.kocca.kr/kocca/subPage.do?menuNo=204912','','status=yes,scrollbars=yes,width=1280,height=800')"
-			class="footer_link_item fontweight400" title="새창열림">개인정보처리방침</a></li>
+			<li>
+				<%--<a href="javascript:winMarkPopup('https://www.kocca.kr/kocca/subPage.do?menuNo=204912','','status=yes,scrollbars=yes,width=1280,height=800')" class="footer_link_item fontweight400" title="새창열림">개인정보처리방침</a>--%>
+				<a href="https://www.kocca.kr/kocca/subPage.do?menuNo=204912" target="_blank" class="footer_link_item fontweight400" title="새창열림">개인정보처리방침</a>
+			</li>
 			<li><a href="/edu/main/contents.do?menuNo=500072" class="footer_link_item">이용약관</a></li>
 			<li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" class="footer_link_item">공지사항</a></li>
 			<li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" class="footer_link_item">FAQ</a></li>
