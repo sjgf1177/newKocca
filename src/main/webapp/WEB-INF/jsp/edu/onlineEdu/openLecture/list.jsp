@@ -37,6 +37,10 @@
 	<li class="after_line"><a href="javascript:void(0);" onclick="fnCmdSearchCateList('${param.pGubun1}', '', '', '', ''); return false;">로그인 후 수강</a></li>
 </ul>
 
+<div class="col-center mw-1280 all_view_btn_box">
+	<button type="button" class="all_list_btn"><span>전체보기</span></button>
+	<button type="button" class="category_list_btn"><span>카테고리로 보기</span></button>
+</div>
 
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20 control_board_style2">
 	<div class="col-center mw-1280">
@@ -99,6 +103,34 @@
 	</div>
 </div>
 
+<!-- 전체보기 일때-->
+<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box col-center mw-1280 all-list-wrap off">
+	<div class="all-list-box">
+		<div class="fwo_card">
+			<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('CB22006', 'Final Cut Pro X 완전정복', 'ON', 'C02', '제작', '2022', '0003'); return false;">
+				<div class="fwo_snail_box">
+					<img alt="Final Cut Pro X 완전정복 - 메인 이미지" src="/upload/bulletin/2022/Subject_introducefile_202207181539181_lee1.png">
+					<!-- 설명란 start-->
+					<div class="fwo_info_box">
+						<h3 class="fwo_tit_box">
+							Final Cut Pro X 완전정복
+						</h3>
+						<span class="tag L2">중급</span>
+						<p>
+							온라인교육ㆍ편집
+						</p>
+					</div>
+					<!-- 설명란 start-->
+				</div>
+			</a>
+		</div>
+	</div>
+	<c:if test="${fn:length(resultList) > 0}">
+		<div class="paging">${pageNav}</div>
+	</c:if>
+</div>
+
+<div class="col-center mw-1280 dae-list-box">
 <c:if test="${fn:length(resultList) > 0}">
 	<c:set var="mainTitle" value=""/>
 	<c:set var="cardNo" value="1"/>
@@ -179,7 +211,7 @@
 		</div>
 	</c:forEach>
 </c:if>
-				
+</div>
 <script type="text/javascript">
 	$(document).ready(function(){
 		//과정 조회 enter key
