@@ -433,6 +433,15 @@ $(document).ready(function() {
         $(this).toggleClass('active');
     });
 
+    //로그인 후 수강, 로그인 전 수강 전체보기 버튼
+    $('.all_view_btn_box button').click(function () {
+        $(".all-list-wrap").toggleClass('on'); //전체 리스트 보기
+        $(".dae-list-box").toggleClass('off'); // 슬라이드 숨기기
+        $(".category_list_btn").toggleClass('on'); // 카테고리로 버튼 보기
+        $(".all_list_btn").toggleClass('off'); //전체보기 버튼 보기
+    });
+
+
 
 
 });

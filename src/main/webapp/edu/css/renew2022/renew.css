@@ -897,15 +897,30 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 .control_board_style2.control_board_header .board_sorting_con{display: flex; width: calc(100% - 50px);}
 .control_board_style2.control_board_header .mo-ta_lt .relation_site{width: 45%; text-align: left;}
 .control_board_style2.control_board_header .board_sorting_con .input_search_con{width: 100%;}
+.all_view_btn_box{text-align: right;}
+.all_view_btn_box button{background-color: #222222; margin-bottom: 10px;}
+.all_view_btn_box button span{padding: 8px 15px; color: #fff; font-size: 16px;}
+.photoGallery2 .all-list-box{display: flex; flex-wrap: wrap;}
+.photoGallery2 .all-list-box .fwo_card{margin-top: 80px; margin-right: 20px;}
+.all-list-wrap, .category_list_btn{display: none;}
+.all-list-wrap.on{display: block;}
+.dae-list-box.off, .all_list_btn.off{display: none;}
+.category_list_btn.on{display: inline-block;}
 
 @media all and (max-width:1280px) {
     .control_board_style2.control_board_header .board_sorting_con{width: calc(100% - 1.6%);}
     .control_board_style2.control_board_header .board_sorting_con .input_search_con{width: 100%; height: 100%;}
     .control_board_style2.control_board_header .close_block_btn{top: -130px; right: 0;}
     .control_board_style2.control_board_header .filter_btn{right: 0;}
+    .col-center.mw-1280.all_view_btn_box{padding-right: 75px;}
+    .photoGallery2 .all-list-box .fwo_card{width:30%;}
 }
 @media all and (max-width:780px) {}
-@media all and (max-width:640px) {}
+@media all and (max-width:640px) {
+
+    .photoGallery2 .all-list-box{display: flex; flex-wrap: wrap; flex-direction: column;}
+    .photoGallery2 .all-list-box .fwo_card{margin-top: 30px; margin-right: 0px; width:100%;}
+}
 
 /* 열린강좌 상세 */
 .lecture_info_box.style_2{background-color: #222222;}
