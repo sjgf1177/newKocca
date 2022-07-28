@@ -649,12 +649,12 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75223&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no12.png" alt="에듀코카 새단장 기념 이벤트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75222&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no13.png" alt="에듀코카 모니터링단 모집"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75240&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no18.png" alt="창작자 양성사업 오픈 특강"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75238&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no16.png" alt="오픈클래스 8월 교육 안내 1인 크리에이터"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75239&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no17.png" alt="오픈클래스 8월 교육 안내 음향"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75235&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no14.png" alt="오픈클래스 8월 교육 안내 미디어 파사드"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75236&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no15.png" alt="오픈클래스 8월 교육 안내 에프터 이펙트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75215&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no8.png" alt="콘텐츠 수출 전문인력 양성"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75144&searchCnd=1&searchWrd=%EA%B2%8C%EC%9E%84%EC%9D%B8%EC%9E%AC%EC%9B%90&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no5.jpg" alt="게임인재원4기 교육생 모집"></a></div>
 
                     <!-- //반복 -->
@@ -678,12 +678,12 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75223&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no12.png" alt="에듀코카 새단장 기념 이벤트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75222&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no13.png" alt="에듀코카 모니터링단 모집" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75240&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no18.png" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75238&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no16.jpg" alt="오픈클래스 8월 교육 안내 1인 크리에이터" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75239&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no17.jpg" alt="오픈클래스 8월 교육 안내 음향" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75235&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no14.jpg" alt="오픈클래스 8월 교육 안내 미디어 파사드" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75236&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no15.jpg" alt="오픈클래스 8월 교육 안내 에프터 이펙트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/m_edukocca_no9.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75215&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no8.jpg" alt="콘텐츠 수출 전문인력 양성" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75144&searchCnd=1&searchWrd=%EA%B2%8C%EC%9E%84%EC%9D%B8%EC%9E%AC%EC%9B%90&delCode=0&menuNo=500008&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no5.jpg" alt="게임인재원4기 교육생 모집" style="width:100%;"></a></div>
                     <!-- //반복 -->
                 </div>
