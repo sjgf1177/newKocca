@@ -173,10 +173,13 @@
     <link rel="stylesheet" href="/edu/css/renew2022/assets/plugins/animation/css/animate.min.css">
     <link rel="stylesheet" href="/edu/css/renew2022/assets/css/style.css">
     <link rel="stylesheet" href="/edu/css/renew2022/renew.css">
+    <link rel="stylesheet" href="/edu/css/renew2022/AOS/aos.css">
+
     <!-- renew2022 CSS end -->
 
     <!-- renew2022 JavaScript start -->
     <script src="/edu/css/renew2022/renew.js"></script>
+    <script src="/edu/css/renew2022/AOS/aos.js"></script>
 
     <!-- Required Js -->
     <script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
@@ -369,6 +372,9 @@
         divisionId: '146369',
     });
     <!-- 챗봇 Js end -->
+
+    //애니메이션 라이브러리 불러오기
+    AOS.init();
 </script>
 
 <!-- html 작업본-->
@@ -763,7 +769,10 @@
         <div class="main_online_contents">
             <div class="container">
                 <!-- 추천 클래스 start -->
-                <div class="fwo_card_list_box fwo_card01">
+                <div class="fwo_card_list_box fwo_card01"
+                     data-aos="fade-left"
+                     data-aos-offset="300"
+                     data-aos-easing="ease-in-sine">
                     <span class="main_title">추천 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -809,7 +818,10 @@
                 <!-- 추천 클래스 end -->
 
                 <!-- 인기 클래스 start -->
-                <div class="fwo_card_list_box fwo_card02">
+                <div class="fwo_card_list_box fwo_card02"
+                     data-aos="fade-right"
+                     data-aos-offset="300"
+                     data-aos-easing="ease-in-sine">
                     <span class="main_title">인기 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -887,7 +899,10 @@
         <!-- 곧 만나 볼 수 있어요 start -->
         <div class="main_offline_contents">
             <div class="container">
-                <div class="fwo_card_list_box fwo_card03">
+                <div class="fwo_card_list_box fwo_card03"
+                     data-aos="fade-left"
+                     data-aos-offset="300"
+                     data-aos-easing="ease-in-sine">
                     <span class="main_title main_title_bold">진행 중 이벤트 </span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -964,7 +979,11 @@
                 <span class="main_title main_title_bold">KOCCA 교육 사업</span>
                 <div class="three_card01 swiper-container">
                     <ul class="three_card_list_box swiper-wrapper">
-                        <li class="swiper-slide">
+                        <li class="swiper-slide"
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-bottom"
+                            data-aos-delay="0"
+                            data-aos-duration="300">
                             <div class="three_card_top_box">
                                 <span class="circle_snail_box"><img src="/edu/images/renew2022/biz_01.png" alt="창의인재동반"></span>
                                 <h3>창의인재동반</h3>
@@ -975,7 +994,11 @@
                             </div>
                         </li>
 
-                        <li class="swiper-slide">
+                        <li class="swiper-slide"
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-bottom"
+                            data-aos-delay="400"
+                            data-aos-duration="300">
                             <div class="three_card_top_box">
                                 <span class="circle_snail_box"><img src="/edu/images/renew2022/biz_02.png" alt="AI콘텐츠 창작"></span>
                                 <h3>AI콘텐츠 창작</h3>
@@ -986,7 +1009,11 @@
                             </div>
                         </li>
 
-                        <li class="swiper-slide">
+                        <li class="swiper-slide"
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-bottom"
+                            data-aos-delay="700"
+                            data-aos-duration="300">
                             <div class="three_card_top_box">
                                 <span class="circle_snail_box"><img src="/edu/images/renew2022/biz_03.png" alt="실감 콘텐츠 창작"></span>
                                 <h3>실감 콘텐츠 창작</h3>
@@ -1053,7 +1080,7 @@
         <!-- KOCCA에서 만날 수 있는 특별한 교육 사업 end -->
 
         <!-- kocca는 창작자 여러분에게 열려 있습니다 start -->
-        <div class="main_place_contents">
+        <div class="main_place_contents" data-aos="zoom-in">
             <div class="container">
                 <span class="main_title main_title_bold">KOCCA 교육 시설</span>
                 <div class="swiper-container one_card01">
@@ -1247,6 +1274,7 @@
                 , spaceBetween: 0 // 슬라이드 사이의 간격 px 단위
                 , autoplayDisableOnInteraction: false
             });
+
         </script>
     </div>
     <!-- //footer -->
