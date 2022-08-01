@@ -23,10 +23,14 @@ $(function(){
 
     //메인배너 슬라이드
     var swiper0 = new Swiper('#main_visual_slide', {
+        effect : 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+
         autoplay: 6000
         ,loot: true
-        ,speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,speed: 700
         ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 0 // 슬라이드 사이의 간격 px 단위
         ,autoplayDisableOnInteraction: false,
@@ -56,6 +60,7 @@ $(function(){
     });
 
     var swiper00 = new Swiper('#mo_main_visual_slide', {
+        effect : 'fade', // 페이드 효과 사용
         autoplay: 6000
         ,loot: true
         ,speed : 700

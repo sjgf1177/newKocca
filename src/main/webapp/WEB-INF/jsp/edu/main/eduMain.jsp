@@ -769,10 +769,7 @@
         <div class="main_online_contents">
             <div class="container">
                 <!-- 추천 클래스 start -->
-                <div class="fwo_card_list_box fwo_card01"
-                     data-aos="fade-left"
-                     data-aos-offset="300"
-                     data-aos-easing="ease-in-sine">
+                <div class="fwo_card_list_box fwo_card01">
                     <span class="main_title">추천 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -818,10 +815,7 @@
                 <!-- 추천 클래스 end -->
 
                 <!-- 인기 클래스 start -->
-                <div class="fwo_card_list_box fwo_card02"
-                     data-aos="fade-right"
-                     data-aos-offset="300"
-                     data-aos-easing="ease-in-sine">
+                <div class="fwo_card_list_box fwo_card02">
                     <span class="main_title">인기 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -899,10 +893,7 @@
         <!-- 곧 만나 볼 수 있어요 start -->
         <div class="main_offline_contents">
             <div class="container">
-                <div class="fwo_card_list_box fwo_card03"
-                     data-aos="fade-left"
-                     data-aos-offset="300"
-                     data-aos-easing="ease-in-sine">
+                <div class="fwo_card_list_box fwo_card03">
                     <span class="main_title main_title_bold">진행 중 이벤트 </span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">

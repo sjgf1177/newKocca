@@ -430,9 +430,12 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .swiper_page_all_box .swiper_control_box .swiper-button-prev{top:auto; bottom:9px;width: 12px; height: 12px; background-image: url("/edu/images/renew2022/ico_prev.png"); background-repeat: no-repeat;}
 .swiper_page_all_box .swiper_control_box .swiper-button-next{top:auto; bottom:9px;width: 12px; height: 12px; background-image: url("/edu/images/renew2022/ico_next.png"); background-repeat: no-repeat;}
 
-.main_visual_contents .swiper-slide{
+.main_visual_contents .swiper-slide:not(.swiper-slide-active){ /*fade 슬라이드시 겹침현상 방지*/
+    opacity: 0 !important;
+}
+/*.main_visual_contents .swiper-slide{
     animation: slide 3s !important;
-    /*infinite 반복애니메이션 */
+    !*infinite 반복애니메이션 *!
 
 
 }
@@ -446,7 +449,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
         opacity: 1;
     }
-}
+}*/
 @media all and (max-width:1280px) {
     /*.main_visual_contents{padding: 0 20px; height: 285px;}*/
     .main_visual_contents{padding: 0 20px; height: auto;}
