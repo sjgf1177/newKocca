@@ -905,6 +905,7 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 .all_view_btn_box button span{padding: 8px 15px; color: #fff; font-size: 16px;}
 .photoGallery2 .all-list-box{display: flex; flex-wrap: wrap;}
 .photoGallery2 .all-list-box .fwo_card{margin-top: 80px; margin-right: 20px;}
+.photoGallery2 .all-list-box .fwo_card:nth-child(4n+4){margin-right: 0px;}
 .all-list-wrap, .category_list_btn{display: none;}
 .all-list-wrap.on{display: block;}
 .dae-list-box.off, .all_list_btn.off{display: none;}
@@ -917,12 +918,14 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
     .control_board_style2.control_board_header .filter_btn{right: 0;}
     .col-center.mw-1280.all_view_btn_box{padding-right: 75px;}
     .photoGallery2 .all-list-box .fwo_card{width:30%;}
+    .photoGallery2 .all-list-box .fwo_card:nth-child(4n+4){margin-right: 20px;}
 }
 @media all and (max-width:780px) {}
 @media all and (max-width:640px) {
 
     .photoGallery2 .all-list-box{display: flex; flex-wrap: wrap; flex-direction: column;}
     .photoGallery2 .all-list-box .fwo_card{margin-top: 30px; margin-right: 0px; width:100%;}
+    .photoGallery2 .all-list-box .fwo_card:nth-child(4n+4){margin-right: 0px;}
 }
 
 /* 열린강좌 상세 */
