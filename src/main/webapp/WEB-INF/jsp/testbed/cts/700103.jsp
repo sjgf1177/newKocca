@@ -38,16 +38,14 @@
             <span class="point0">INFORMATION</span>
         </div>
         <div class="facilities_desc">
-            콘텐츠문화광장은 콘텐츠 시연무대 스테이지66, 프로젝트 시연공간 박스66,<br/>
-            <!-- 문화예술기업 입주공간, 인프라 공간 등 콘텐츠 산업의<br/>
-            미래를 여는 역할을 하고 있습니다. -->
-		           다목적 창제작 스튜디오와 연습실, 분장실 등을 갖추고<br/>
-			콘텐츠 산업의 미래를 여는 역할을 하고 있습니다.
+            콘텐츠문화광장은 융복합 콘텐츠의 테스트베드(TEST BED)로서<br>
+            블랙박스 구조의 스테이지66과 스튜디오1, 2, 연습실 등을 갖추고<br>
+            콘텐츠 산업의 미래를 여는 역할을 하고 있습니다.
         </div>
     </div>
     <div class="facilities_contents_testbed">
         <div class="img_box">
-            <img src="/edu/images/bm/facilities_contents_img_000.jpg" alt="콘텐츠 문화광장">
+            <img src="/edu/images/renew2022/open_benner01.jpg" alt="콘텐츠 문화광장">
         </div>
         <div class="facilities_text_box">
             <div class="mb30 facilities_text_box_header">
@@ -71,7 +69,7 @@
                     <ul class="list_style_11 big_style padding_on">
                         <!-- <li>시연무대 (200석, 350㎡(106py)), 문화예술기업 입주공간 외</li> -->
                         <!-- <li style="letter-spacing:-0.035em;">스테이지66 (193석, 350㎡(106py)), 문화예술기업 입주공간 외</li> -->
-                        <li style="letter-spacing:-0.035em;">스테이지66 (191석, 350㎡(106py)), 박스66, 스튜디오 외</li>
+                        <li style="letter-spacing:-0.035em;">스테이지66 (191석, 350㎡(106py)), 스튜디오 1, 2, 연습실 외</li>
                     </ul>
                 </div>
                 <div class="list_style_12_con">
@@ -80,7 +78,7 @@
                     </ul>
                     <ul class="list_style_11 big_style padding_on">
                         <!-- <li>02) 6310-0776 / 02) 6310-0622</li> -->
-                        <li>02) 6310-0776 / 02) 6310-0665</li>
+                        <li>02) 6310-0776</li>
                     </ul>
                 </div>
             </div>
@@ -120,27 +118,39 @@
         </div>
         <div class="facilities_body_list">
             <div class="img_box">
-                <img src="/edu/images/bm/facilities_contents_img_002.jpg" alt="박스66 프로젝트 시연공간">
+                <img src="/edu/images/renew2022/studio1.jpg" alt="스튜디오1">
             </div>
             <div class="facilities_text_box">
                 <div class="facilities_text_box_header">
-                    <h5 class="facilities">박스66</h5>
+                    <h5 class="facilities">스튜디오1</h5>
                     <p class="h_desc5 facilities">
-                        기술기반 융합형 프로젝트 시연, 기술실험, 첨단전시
+                        기술기반 융합형 프로젝트 시연, 기술 실험, 첨단 전시, 강연
                     </p>
                 </div>
                 <p class="list_style_11_title">
                     규모
                 </p>
                 <ul class="list_style_11 big_style">
-                    <li>가로 5m x 세로 12m x 높이 4m 유리 박스형 가변형 공간</li>
+                    <li>가로 11m x 세로 5.7m x 높이 3.8m</li>
                 </ul>
+            </div>
+        </div>
+        <div class="facilities_body_list">
+            <div class="img_box">
+                <img src="/edu/images/renew2022/studio2.png" alt="스튜디오2">
+            </div>
+            <div class="facilities_text_box">
+                <div class="facilities_text_box_header">
+                    <h5 class="facilities">스튜디오2</h5>
+                    <p class="h_desc5 facilities">
+                        기술기반 융합형 프로젝트 시연, 기술 실험, 첨단 전시, 강연
+                    </p>
+                </div>
                 <p class="list_style_11_title">
-                    프로젝트
+                    규모
                 </p>
                 <ul class="list_style_11 big_style">
-                    <li>프로젝트 시연, 기술실험, 전시공간</li>
-                    <li>데모데이, 워크숍, 교육 등 소규모 이벤트가 가능한 멀티공간</li>
+                    <li>가로 13.6m x 세로 11.3m x 높이 8m (최저부 3.3m)</li>
                 </ul>
             </div>
         </div>
@@ -187,27 +197,14 @@
         <div class="facilities_card_wrap">
             <div class="facilities_card_list">
                 <div class="facilities_card_img_box">
-                    <img src="/edu/images/bm/facilities_contents_img_004.jpg" alt="스튜디오1">
+                    <img src="/edu/images/renew2022/box66.jpg" alt="박스66">
                 </div>
                 <div class="facilities_card_text_box">
                     <p class="list_style_11_title">
-                        스튜디오1
+                        박스66
                     </p>
                     <div class="facilities_text_box_desc">
-                        가로 11m x 세로 5m x 높이 3.5m
-                    </div>
-                </div>
-            </div>
-            <div class="facilities_card_list">
-                <div class="facilities_card_img_box">
-                    <img src="/edu/images/bm/facilities_contents_img_005.jpg" alt="스튜디오 2">
-                </div>
-                <div class="facilities_card_text_box">
-                    <p class="list_style_11_title">
-                        스튜디오2
-                    </p>
-                    <div class="facilities_text_box_desc">
-                        가로 12m x 세로 12m x 높이 8m(최저부 3m)
+                        가로 5m x 세로 12m x 높이 4m 유리박스형 가변형 공간
                     </div>
                 </div>
             </div>

@@ -1078,7 +1078,7 @@
                 <div class="swiper-container one_card01">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
-                            <span class="place_snail_box"><img src="/edu/images/renew2022/open_benner01.png" alt=""></span>
+                            <span class="place_snail_box"><img src="/edu/images/renew2022/open_benner01.jpg" alt=""></span>
                             <div class="place_txt_box">
                                 <h3>콘텐츠 문화 광장</h3>
                                 <p class="place_info_box">
