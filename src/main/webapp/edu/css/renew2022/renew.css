@@ -99,7 +99,7 @@
 
 /************************************ 2022 renew ************************************/
 
-h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'SBAggroL', sans-serif !important;}
+h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'Pretendard', sans-serif !important;}
 .txt_ct{text-align: center !important;}
 /**** 공통 ****/
 /*#wrap{height: 100%;}*/
@@ -209,7 +209,7 @@ header nav .searchCon .gnb_menu{margin-left: 0;}
 header nav .searchCon .gnb_menu:before{content: none;}
 .nav_search_box{position: relative;}
 .nav_search_box input{height:40px; padding: 0 40px 0 15px; border-radius: 5px; font-size: 14px;}
-.nav_search_btn{position:absolute; top:50%; transform:translateY(-50%); right:10px; width: 26px; height: 26px; background-image: url("/edu/images/renew2022/ico_search.png"); background-repeat: no-repeat; background-color: #fff;}
+.nav_search_btn{position:absolute; top:50%; transform:translateY(-50%); right:10px; width: 26px; height: 26px; background-image: url("/edu/images/renew2022/ico_search.png"); background-repeat: no-repeat; background-color: transparent;}
 
 
 header nav .searchCon .header_util_item:first-child a{margin-right: 24px; position: relative;}
