@@ -903,11 +903,13 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 .all_view_btn_box{text-align: right;}
 .all_view_btn_box button{background-color: #222222; margin-bottom: 10px;}
 .all_view_btn_box button span{padding: 8px 15px; color: #fff; font-size: 16px;}
-.photoGallery2 .all-list-box{display: flex; flex-wrap: wrap;}
+.photoGallery2 .all-list-box{display: flex; flex-wrap: wrap; margin-bottom: 70px;}
 .photoGallery2 .all-list-box .fwo_card{margin-top: 80px; margin-right: 20px;}
+.photoGallery2 .all-list-box .fwo_card img{height: 225px;}
 .photoGallery2 .all-list-box .fwo_card:nth-child(4n+4){margin-right: 0px;}
 .all-list-wrap, .category_list_btn{display: none;}
 .all-list-wrap.on{display: block;}
+.photoGallery2.photoLine1.mg_t5.all-list-wrap.on{margin-top: 50px;}
 .dae-list-box.off, .all_list_btn.off{display: none;}
 .category_list_btn.on{display: inline-block;}
 

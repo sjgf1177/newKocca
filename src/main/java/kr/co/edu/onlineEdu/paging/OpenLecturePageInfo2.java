@@ -19,7 +19,9 @@ public class OpenLecturePageInfo2 implements PageQuery<ZValue> {
 		queryString.append("&amp;p_gcd2=").append(param.getString("p_gcd2"));
 		queryString.append("&amp;p_level=").append(param.getString("p_level"));
 		queryString.append("&amp;p_sort=").append(param.getString("p_sort"));
-		
+		queryString.append("&amp;pGubun1=").append(param.getString("pGubun1"));
+		queryString.append("&amp;p_list_type=C");
+
 		return queryString.toString();
 	}
 

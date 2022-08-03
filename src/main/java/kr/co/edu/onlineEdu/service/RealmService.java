@@ -159,6 +159,10 @@ public class RealmService extends DefaultCmmProgramService {
 		paramCtx.setSqlDAO(lmsSqlDao);
 		paramCtx.setPageQuery(new RealmPageInfo());
 		super.list(paramCtx);
+
+		//전체보기 목록
+		List<ZValue> subjList = lmsSqlDao.listDAO("realmListDAO.realmSubjList", param);
+		model.addAttribute("subjList", subjList);
 	}
 	
 	/**

@@ -305,7 +305,7 @@
 </script>
 
 <div class="over-hidden sub_contents_header">
-    <div class="linemap_wrap"> <!-- fl class 삭제 -->
+    <div class="linemap_wrap"> <%-- fl class 삭제 --%>
         <ul class="col-12 linemap_con">
             <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
             <li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
@@ -355,18 +355,18 @@
     </div>
 </div>
 
-<!-- Movie Player width: 1080px;height: 630;기본 사이즈 -->
+<%-- Movie Player width: 1080px;height: 630;기본 사이즈 --%>
 <div class="mt20 lectMovSet mw-1080 col-center" id="vodArea">
     <div class="">
         <a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />');">
-            <!-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" -->
+            <%-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" --%>
             <img src="<c:out value="${result.vodimg }"/>" style="width: 100%;height: auto;" alt="강좌보기"/>
             <span class="maskPlay"></span>
         </a>
     </div>
 </div>
 
-<!-- Movie Player -->
+<%-- Movie Player --%>
 <div id="vodAreaHtml" style="display:none;"></div>
 <div class="mt15 board_util_btn_con">
     <div class="col-center mw-1280">
@@ -415,12 +415,40 @@
             ${fn:replace(fn:replace(fn:escapeXml(result.tutorauthor), crlf, '<br/>') , ' ', '&nbsp;')}
         </div>
     </div>
+
+    <%-- consumer_seq = 1077 / --%>
+    <%-- 아카데미이야기 24725 : MTA3Ny8yNDcyNS8xNTA5 livere_seq = 24892 / 강좌 24892 : MTA3Ny8yNDg5Mi8xNTA5 livere_seq = 1509 --%>
+
+    <div id="lv-container" data-id="kocca" data-uid="MTA3Ny8yNDg5Mi8xNTA5">
+        <script type="text/javascript">
+            <%-- 제목을 과정명으로 변경 --%>
+            $(function(){
+                document.title = "<c:out value="${result.lecnm }" escapeXml="false" />";
+            });
+            <%-- 라이브리 프리미엄 설치코드 --%>
+            var viewUrl = window.location.hostname + window.location.pathname;
+
+            window.livereOptions = {
+                refer: viewUrl.replace("http://","") + "?" + "pSeq=<c:out value="${param.pSeq}" />&menuNo=<c:out value="${param.menuNo}" />"
+                , title : "<c:out value="${result.lecnm }" escapeXml="false" />"
+                , description : "<c:out value="${result.lecnm }" escapeXml="false" />"
+            };
+            (function(d,s) {
+                var j, e=d.getElementsByTagName(s)[0];
+
+                if (typeof LivereTower === 'function') {return;}
+
+                j=d.createElement(s);
+                j.src='https://cdn-city.livere.com/js/embed.dist.js';
+                j.async=true;
+
+                e.parentNode.insertBefore(j,e);
+            })(document,'script');
+        </script>
+    </div>
 </div>
 
-<!-- consumer_seq = 1077 / -->
-<!-- 아카데미이야기 24725 : MTA3Ny8yNDcyNS8xNTA5 livere_seq = 24892 / 강좌 24892 : MTA3Ny8yNDg5Mi8xNTA5 livere_seq = 1509 -->
-<!-- 연계과정 html -->
-
+<%-- 연계과정 html --%>
 <c:if test="${fn:length(nextList) > 0}">
 <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
     <span class="main_title">연계과정</span>
@@ -438,10 +466,10 @@
 						</c:otherwise>
 					</c:choose>
 
-					<!-- 썸네일 start -->
+					<%-- 썸네일 start --%>
 					<div class="fwo_snail_box">
-						<img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='<c:out value="${nextResult.imgfile }" />'/>
-						<!-- 설명란 start-->
+						<img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='<c:out value="${nextResult.imgfile }" />' onerror="this.src='/edu/images/renew2022/non_img.png'"/>
+						<%-- 설명란 start --%>
 						<div class="fwo_info_box">
 							<h3 class="fwo_tit_box"><c:out value="${nextResult.courseName }" escapeXml="false"/></h3>
 							<c:if test="${not empty nextResult.lvnm}">
@@ -467,16 +495,16 @@
 								</c:if>
 							</p>
 						</div>
-						<!-- 설명란 start-->
+						<%-- 설명란 end --%>
 					</div>
-					<!-- 썸네일 end -->
+					<%-- 썸네일 end --%>
 
 					</a>
                 </li>
             </c:forEach>
         </ul>
     </div>
-    <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+    <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
     <div class="swiper_btn_box">
         <div class="swiper-button-prev swiper-button-disabled"></div>
         <div class="swiper-button-next"></div>

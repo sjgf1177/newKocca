@@ -49,9 +49,9 @@ public class OpenLectureService extends DefaultCmmProgramService {
 		ModelMap model = paramCtx.getModel();
 
 		param.put("tem_grcode", "N000001");
-		param.put("pLectureCls", param.getString("gubun"));
-		param.put("pageUnit", "12");	
-		
+		param.put("pLectureCls", param.getString("pGubun1"));
+		param.put("pageUnit", "12");
+
 		if(!StringUtils.hasText(param.getString("sortOrder"))){
 	    	param.put("sortOrder", "newOrdr");
 		}
@@ -86,6 +86,10 @@ public class OpenLectureService extends DefaultCmmProgramService {
 		paramCtx.setSqlDAO(lmsSqlDao);
 		paramCtx.setPageQuery(new OpenLecturePageInfo2());
 		super.list(paramCtx);
+
+		//전체보기 목록
+		List<ZValue> goldClassList = lmsSqlDao.listDAO("openLecture.selectMainGoldClassList", param);
+		model.addAttribute("goldClassList", goldClassList);
 
 	}
 

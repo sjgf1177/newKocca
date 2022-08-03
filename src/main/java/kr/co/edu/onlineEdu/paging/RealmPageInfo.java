@@ -42,6 +42,7 @@ public class RealmPageInfo implements PageQuery<ZValue> {
 		queryString.append("&amp;p_sort=").append(param.getString("p_sort"));
 		
 		queryString.append("&amp;pageSize=").append(param.getString("pageUnit").isEmpty() ? param.getString("pagaSize") : param.getString("pageUnit"));
+		queryString.append("&amp;p_list_type=C");
 		return queryString.toString();
 	}
 

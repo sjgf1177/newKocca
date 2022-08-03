@@ -15,7 +15,7 @@
 </style>
 
 <div class="over-hidden sub_contents_header">
-	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+	<div class="linemap_wrap"> <%-- fl class 삭제 --%>
 		<ul class="col-12 linemap_con">
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
@@ -38,8 +38,8 @@
 </ul>
 
 <div class="col-center mw-1280 all_view_btn_box">
-	<button type="button" class="all_list_btn"><span>전체보기</span></button>
-	<button type="button" class="category_list_btn"><span>카테고리로 보기</span></button>
+	<button type="button" class="all_list_btn" onclick="fnaaa();"><span>전체보기</span></button>
+	<button type="button" class="category_list_btn" onclick="fnaaa();"><span>카테고리로 보기</span></button>
 </div>
 
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20 control_board_style2">
@@ -78,6 +78,7 @@
 					<input type="hidden" name="p_gcd2" id="p_gcd2" value="${param.p_gcd2}" />
 					<input type="hidden" name="p_level" id="p_level" value="${param.p_level}" />
 					<input type="hidden" name="p_sort" id="p_sort" value="${param.p_sort}" />
+					<input type="hidden" name="p_list_type" id="p_list_type" value="${param.p_list_type}" />
 
 					<fieldset class="mo-ta_lt">
 						<legend>검색 입력폼</legend>
@@ -103,29 +104,63 @@
 	</div>
 </div>
 
-<!-- 전체보기 일때-->
+<%-- 전체보기 일때 --%>
 <div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box col-center mw-1280 all-list-wrap off">
 	<div class="all-list-box">
-		<div class="fwo_card">
-			<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('CB22006', 'Final Cut Pro X 완전정복', 'ON', 'C02', '제작', '2022', '0003'); return false;">
-				<div class="fwo_snail_box">
-					<img alt="Final Cut Pro X 완전정복 - 메인 이미지" src="/upload/bulletin/2022/Subject_introducefile_202207181539181_lee1.png">
-					<!-- 설명란 start-->
-					<div class="fwo_info_box">
-						<h3 class="fwo_tit_box">
-							Final Cut Pro X 완전정복
-						</h3>
-						<span class="tag L2">중급</span>
-						<p>
-							온라인교육ㆍ편집
-						</p>
+		<c:forEach  items="${goldClassList }"  var="result" >
+			<c:url var="url" value="/edu/onlineEdu/openLecture/view.do">
+				<c:param name="pSeq" value="${result.seq }"/>
+				<c:param name="pageIndex2" value="${param.pageIndex2 }"/>
+				<c:param name="pLectureCls" value="${param.pLectureCls }"/>
+			</c:url>
+			<div class="fwo_card">
+				<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
+					<div class="fwo_snail_box">
+						<c:choose>
+							<c:when test="${result.vodimg == null or result.vodimg == '' }">
+								<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${result.lecnm } 임시 이미지"/>
+							</c:when>
+							<c:otherwise>
+								<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value="${result.vodimg}" />" onerror="this.src='/edu/images/renew2022/non_img.png'"/>
+							</c:otherwise>
+						</c:choose>
+
+							<%-- 설명란 start --%>
+						<div class="fwo_info_box">
+							<h3 class="fwo_tit_box">
+								<c:out value='${result.lecnm }' escapeXml="false" />
+							</h3>
+							<c:if test="${not empty result.lvnm}">
+								<c:choose>
+									<c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
+										<span class="tag L1">${result.lvnm}</span>
+									</c:when>
+									<c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
+										<span class="tag L2">${result.lvnm}</span>
+									</c:when>
+									<c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
+										<span class="tag L3">${result.lvnm}</span>
+									</c:when>
+								</c:choose>
+							</c:if>
+							<p>
+								온라인교육ㆍ
+								<c:if test="${not empty result.g3nm}">
+									${result.g3nm}
+								</c:if>
+
+								<c:if test="${empty result.g3nm}">
+									${result.g2nm}
+								</c:if>
+							</p>
+						</div>
+						<%-- 설명란 end --%>
 					</div>
-					<!-- 설명란 start-->
-				</div>
-			</a>
-		</div>
+				</a>
+			</div>
+		</c:forEach>
 	</div>
-	<c:if test="${fn:length(resultList) > 0}">
+	<c:if test="${fn:length(goldClassList) > 0}">
 		<div class="paging">${pageNav}</div>
 	</c:if>
 </div>
@@ -142,21 +177,21 @@
 		</c:url>
 		<c:if test="${status.first eq false}">
 			<c:if test="${mainTitle ne result.g2nm}">
-					</div>
 				</div>
-				<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-					<div class="swiper_btn_box">
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-button-next"></div>
-					</div>
+				</div>
+				<%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
+				<div class="swiper_btn_box">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
 				</div>
 			</c:if>
 		</c:if>
 		<c:if test="${mainTitle ne result.g2nm}">
 			<div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card0${cardNo} col-center mw-1280">
-				<span class="main_title">${result.g2nm}</span>
-				<div class="fwo_card swiper-container">
-					<div class="swiper-wrapper">
+			<span class="main_title">${result.g2nm}</span>
+			<div class="fwo_card swiper-container">
+			<div class="swiper-wrapper">
 			<c:set var="mainTitle" value="${result.g2nm}"/>
 			<c:set var="cardNo" value="${cardNo + 1}"/>
 		</c:if>
@@ -170,11 +205,11 @@
 								<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${result.lecnm } 임시 이미지"/>
 							</c:when>
 							<c:otherwise>
-								<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value="${result.vodimg}" />"/>
+								<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value="${result.vodimg}" />" onerror="this.src='/edu/images/renew2022/non_img.png'"/>
 							</c:otherwise>
 						</c:choose>
 
-						<!-- 설명란 start -->
+							<%-- 설명란 start --%>
 						<div class="fwo_info_box">
 							<h3 class="fwo_tit_box">
 								<c:out value='${result.lecnm }' escapeXml="false" />
@@ -195,20 +230,31 @@
 							</c:if>
 							<p>
 								온라인교육ㆍ
-								<c:if test="${not empty item3.g3nm}">
-									${item3.g3nm}
+								<c:if test="${not empty result.g3nm}">
+									${result.g3nm}
 								</c:if>
 
-								<c:if test="${empty item3.g3nm}">
-									${item3.g2nm}
+								<c:if test="${empty result.g3nm}">
+									${result.g2nm}
 								</c:if>
 							</p>
 						</div>
-						<!-- 설명란 start-->
+							<%-- 설명란 end --%>
 					</div>
 				</a>
 			</div>
 		</div>
+
+		<c:if test="${status.last eq true}">
+			</div>
+			</div>
+			<%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
+			<div class="swiper_btn_box">
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+			</div>
+			</div>
+		</c:if>
 	</c:forEach>
 </c:if>
 </div>
@@ -216,31 +262,38 @@
 	$(document).ready(function(){
 		//과정 조회 enter key
 		$("#searchWrd").keydown(function(e) {
-		    if (e.keyCode == 13) fnCmdSearchList2('${cateSelect}');
+			if (e.keyCode == 13) fnCmdSearchList2('${cateSelect}');
 		});
-		
+
 		$(".gubunBox").change(function (){
 			fnLvCodeList($(this));
 		});
-		
+
 		$(".sortBox").change(function (){
 			fnCmdSearchList2('${cateSelect}');
-		});		
-		
+		});
+
 		if($(".SL01").val() != ""){
 			fnLvCodeList($(".SL01"));
 		}
-		
- 		if($(".SL02").val() != ""){
+
+		if($(".SL02").val() != ""){
 			fnLvCodeList($(".SL02"));
-		}		
+		}
+
+		if('${param.p_list_type}' == 'C') {
+			$(".all-list-wrap").toggleClass('on'); //전체 리스트 보기
+			$(".dae-list-box").toggleClass('off'); // 슬라이드 숨기기
+			$(".category_list_btn").toggleClass('on'); // 카테고리로 버튼 보기
+			$(".all_list_btn").toggleClass('off'); //전체보기 버튼 보기
+		}
 	});
-	
+
 	function fnCmdSearchList(gubun){
 		if(gubun){
 			$('#gubun').val(gubun == "ALL" ? "" : gubun);
 		}
-		
+
 		$("#pageIndex").val("1");
 		$("#searchWrd").val("");
 		$("#p_type").val("");
@@ -248,49 +301,49 @@
 		$("#p_gcd2").val("");
 		$("#p_level").val("");
 		$("#p_sort").val("N");
-		
+
 		$("#frm").attr({
-					action:"/edu/onlineEdu/openLecture/list.do",
-					method:"post",
-					target:"_self"
-					});
+			action:"/edu/onlineEdu/openLecture/list.do",
+			method:"post",
+			target:"_self"
+		});
 		$("#frm").submit();
 	}
-	
+
 	function fnCmdSearchList2(gubun){
 		if(gubun){
 			$('#gubun').val(gubun == "ALL" ? "" : gubun);
 		}
-		
+
 		$("#p_type").val($(".SL01").val());
 		$("#p_gcd1").val($(".SL02").val());
 		$("#p_gcd2").val($(".SL03").val());
 		$("#p_level").val($(".SL04").val());
 		$("#p_sort").val($("#s_sort").val());
-		
+
 		$("#pageIndex").val("1");
 		$("#searchWrd").val($.trim($("#searchWrd").val()));
-		
+
 		$("#frm").attr({
-					action:"/edu/onlineEdu/openLecture/list.do",
-					method:"post",
-					target:"_self"
-					});
+			action:"/edu/onlineEdu/openLecture/list.do",
+			method:"post",
+			target:"_self"
+		});
 		$("#frm").submit();
-	}	
-	
+	}
+
 	//하위 분류코드 목록
 	function fnLvCodeList($this){
 		var ordr = $this.attr("ordr");
 		var code = $this.val();
-		
+
 		$.ajax({
 			type:"POST",
 			url:"/edu/onlineEdu/openLecture/gubunList.json",
 			data:{
 				"p_ordr":ordr,
 				"p_code":code
-				},
+			},
 			cache:false,
 			async:false,
 			dataType:"JSON",
@@ -298,41 +351,70 @@
 				if(ordr == 2){
 					$(".SL02").empty();
 					$(".SL02").append("<option value=''>대분류</option>");
-	         		$.each(data.gubunList, function(idx, item) {
-	         			if('${param.p_gcd1}' == item.code){
-		        			$(".SL02").append("<option value=\""+item.code+"\" selected='selected'>"+ item.codenm +"</option>");
-	         			}else{
-	         				$(".SL02").append("<option value=\""+item.code+"\">"+ item.codenm +"</option>");
-	         			}
-		        	});
-	         		
+					$.each(data.gubunList, function(idx, item) {
+						if('${param.p_gcd1}' == item.code){
+							$(".SL02").append("<option value=\""+item.code+"\" selected='selected'>"+ item.codenm +"</option>");
+						}else{
+							$(".SL02").append("<option value=\""+item.code+"\">"+ item.codenm +"</option>");
+						}
+					});
+
 					$(".SL03").empty();
 					$(".SL03").append("<option value=''>소분류</option>");
-					
+
 					$(".SL04").empty();
 					$(".SL04").append("<option value=''>난이도</option>");
-	         		$.each(data.levelList, function(idx, item) {
-	         			if('${param.p_level}' == item.code){
-		        			$(".SL04").append("<option value=\""+item.code+"\" selected='selected'>"+ item.codenm +"</option>");
-	         			}else{
-	         				$(".SL04").append("<option value=\""+item.code+"\">"+ item.codenm +"</option>");
-	         			}
-		        	});					
+					$.each(data.levelList, function(idx, item) {
+						if('${param.p_level}' == item.code){
+							$(".SL04").append("<option value=\""+item.code+"\" selected='selected'>"+ item.codenm +"</option>");
+						}else{
+							$(".SL04").append("<option value=\""+item.code+"\">"+ item.codenm +"</option>");
+						}
+					});
 				}else if(ordr == 3){
 					$(".SL03").empty();
 					$(".SL03").append("<option value=''>소분류</option>");
-	         		$.each(data.gubunList, function(idx, item) {
-	         			if('${param.p_gcd2}' == item.code){
-		        			$(".SL03").append("<option value=\""+item.code+"\" selected='selected'>"+ item.codenm +"</option>");
-	         			}else{
-	         				$(".SL03").append("<option value=\""+item.code+"\">"+ item.codenm +"</option>");
-	         			}
-		        	});
+					$.each(data.gubunList, function(idx, item) {
+						if('${param.p_gcd2}' == item.code){
+							$(".SL03").append("<option value=\""+item.code+"\" selected='selected'>"+ item.codenm +"</option>");
+						}else{
+							$(".SL03").append("<option value=\""+item.code+"\">"+ item.codenm +"</option>");
+						}
+					});
 				}
 			},
 			error:function(){
 				alert("서버와 통신 실패");
 			}
-		});		
-	}		
+		});
+	}
+
+	function fnaaa(){
+		/*var fwocard01 = new Swiper('.fwo_card01 .fwo_card', {
+			/!*loop: true,*!/
+			speed : 700
+			,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+			,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
+			,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+			//구버전 swiper 방향표
+			,nextButton: '.fwo_card01 .swiper-button-next'
+			,prevButton: '.fwo_card01 .swiper-button-prev'
+			,breakpoints: {
+				1280: {
+					slidesPerView: 4,
+					spaceBetween: 40
+				},
+				1279: {
+					slidesPerView: 3,
+					spaceBetween: 30
+				},
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 15
+				},
+			}
+
+		});*/
+	}
 </script>

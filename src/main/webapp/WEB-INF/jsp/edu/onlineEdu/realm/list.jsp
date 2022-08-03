@@ -26,14 +26,13 @@
 
 <!--content-->
 
-<!-- <div class="board_util_btn_con left">
+<%-- <div class="board_util_btn_con left">
 <a href="/upload/onlineEdu/kocca_subj.xlsx" class="btn_style_0 full down">한국 콘텐츠 아카데미 과정 리스트 다운로드</a>
-</div> -->
+</div> --%>
 <div class="over-hidden sub_contents_header">
-    <div class="linemap_wrap"> <!-- fl class 삭제 -->
+    <div class="linemap_wrap"> <%-- fl class 삭제 --%>
         <ul class="col-12 linemap_con">
-            <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a>
-            </li>
+            <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
             <li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
             <li><a href="javascript:void(0);" tabindex="-1"><span>정규과정</span></a></li>
         </ul>
@@ -66,8 +65,7 @@
                     <option value="">장르</option>
                     <c:forEach items="${realmTabList}" var="item" varStatus="status">
                         <c:if test="${fn:length(item.code) < 3 and item.code ne 'T0' and item.code ne 'A' and item.code ne 'O0'}">
-                            <option value="${item.code}"
-                                    <c:if test="${param.p_type eq item.code}">selected="selected"</c:if>>${item.codenm}</option>
+                            <option value="${item.code}" <c:if test="${param.p_type eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
                         </c:if>
                     </c:forEach>
                 </select>
@@ -78,8 +76,7 @@
 
                 <c:if test="${param.pGubun1 ne 'A' or not empty param.pGubun1}">
                     <c:forEach items="${gubunList}" var="item" varStatus="status">
-                        <option value="${item.code}"
-                                <c:if test="${param.p_gcd1 eq item.code}">selected="selected"</c:if>>${item.codenm}</option>
+                        <option value="${item.code}" <c:if test="${param.p_gcd1 eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
                     </c:forEach>
                 </c:if>
             </select>
@@ -91,28 +88,18 @@
 
                 <c:if test="${param.pGubun1 ne 'A' or not empty param.pGubun1}">
                     <c:forEach items="${levelList}" var="item" varStatus="status">
-                        <option value="${item.code}"
-                                <c:if test="${param.p_level eq item.code}">selected="selected"</c:if>>${item.codenm}</option>
+                        <option value="${item.code}" <c:if test="${param.p_level eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
                     </c:forEach>
                 </c:if>
             </select>
 
             <div class="show-tablecell fn vm tr board_sorting_con">
-                <form id="frm" name="frm"
-                      action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>"
-                      method="post">
-
-                    <input type="hidden" name="pGubun1" id="pGubun1"
-                           value='<c:out value="${not empty param.pGubun1?param.pGubun1:param.gubun }" />'/>
-                    <input type="hidden" name="pGubun2" id="pGubun2"
-                           value='<c:out value="${not empty param.pGubun2?param.pGubun2:param.option1 }" />'/>
-                    <input type="hidden" name="pGubun3" id="pGubun3"
-                           value='<c:out value="${not empty param.pGubun3?param.pGubun3:param.option5 }" />'/>
-
-                    <input type="hidden" name="p_ordersnm" id="p_ordersnm"
-                           value='<c:out value="${param.p_ordersnm }"/>'/>
+                <form id="frm" name="frm" action="/edu/onlineEdu/${paramVO.programId}/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>" method="post">
+                    <input type="hidden" name="pGubun1" id="pGubun1" value='<c:out value="${not empty param.pGubun1?param.pGubun1:param.gubun }" />'/>
+                    <input type="hidden" name="pGubun2" id="pGubun2" value='<c:out value="${not empty param.pGubun2?param.pGubun2:param.option1 }" />'/>
+                    <input type="hidden" name="pGubun3" id="pGubun3" value='<c:out value="${not empty param.pGubun3?param.pGubun3:param.option5 }" />'/>
+                    <input type="hidden" name="p_ordersnm" id="p_ordersnm" value='<c:out value="${param.p_ordersnm }"/>'/>
                     <input type="hidden" name="p_orders" id="p_orders" value='<c:out value="${param.p_orders }"/>'/>
-
                     <input type="hidden" name="p_subj" id="p_subj" value=""/>
                     <input type="hidden" name="p_subjnm" id="p_subjnm" value=""/>
                     <input type="hidden" name="p_isonoff" id="p_isonoff" value=""/>
@@ -120,11 +107,9 @@
                     <input type="hidden" name="p_uclassnm" id="p_uclassnm" value=""/>
                     <input type="hidden" name="p_year" id="p_year" value=""/>
                     <input type="hidden" name="p_subjseq" id="p_subjseq" value=""/>
-
                     <input type="hidden" name="s_subj" id="s_subj" value=""/>
                     <input type="hidden" name="s_year" id="s_year" value=""/>
                     <input type="hidden" name="s_subjseq" id="s_subjseq" value=""/>
-
                     <input type="hidden" name="p_type" id="p_type" value="${param.p_type }"/>
                     <input type="hidden" name="p_gcd1" id="p_gcd1" value="${param.p_gcd1}"/>
                     <input type="hidden" name="p_gcd2" id="p_gcd2" value="${param.p_gcd2}"/>
@@ -132,10 +117,10 @@
                     <input type="hidden" name="p_sort" id="p_sort" value="${param.p_sort}"/>
                     <input type="hidden" name="menuNo" id="menuNo" value=""/>
 
-                    <!-- paging s -->
+                    <%-- paging s --%>
                     <input type="hidden" name="gubun" id="gubun" value="<c:out value='${param.gubun }' />"/>
                     <input type="hidden" name="pageIndex" id="pageIndex" value="<c:out value='${param.pageIndex }' />"/>
-                    <!-- paging e -->
+                    <%-- paging e --%>
 
                     <fieldset class="mo-ta_lt">
                         <legend>검색 입력폼</legend>
@@ -173,14 +158,14 @@
 </div>
 
 <div class="bg_gray_slide_box">
-    <!-- 추천 클래스 start -->
+    <%-- 추천 클래스 start --%>
     <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
         <span class="main_title">추천 클래스</span>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">
                 <c:forEach  items="${eduSubjList }" var="result" >
                     <li class="swiper-slide">
-                        <!-- 썸네일 start -->
+                            <%-- 썸네일 start --%>
                         <div class="fwo_snail_box">
                             <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
                                 <c:choose>
@@ -192,11 +177,11 @@
                                     </c:otherwise>
                                 </c:choose>
                             </a>
-                            <!-- 설명란 start-->
+                                <%-- 설명란 start--%>
                             <div class="fwo_info_box">
                                 <h3 class="fwo_tit_box">
                                     <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
-                                        ${result.subjnm }
+                                            ${result.subjnm }
                                     </a>
                                 </h3>
                                 <c:if test="${not empty result.lvnm}">
@@ -214,32 +199,32 @@
                                 </c:if>
                                 <p>${result.g2nm }ㆍ${result.g3nm }</p>
                                 <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;" class="go_page_a"></a>
-                                <!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+                                    <%-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  --%>
                             </div>
-                            <!-- 설명란 start-->
+                                <%-- 설명란 start--%>
                         </div>
-                        <!-- 썸네일 end -->
+                            <%-- 썸네일 end --%>
                     </li>
                 </c:forEach>
             </ul>
 
         </div>
-        <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+        <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
         <div class="swiper_btn_box">
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
     </div>
-    <!-- 추천 클래스 end -->
+    <%-- 추천 클래스 end --%>
 
-    <!-- 인기 클래스 start -->
+    <%-- 인기 클래스 start --%>
     <div class="fwo_card_list_box fwo_card02 col-center mw-1280">
         <span class="main_title">인기 클래스</span>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">
                 <c:forEach  items="${eduSubjPopularList }" var="result" >
                     <li class="swiper-slide">
-                        <!-- 썸네일 start -->
+                            <%-- 썸네일 start --%>
                         <div class="fwo_snail_box">
                             <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
                                 <c:choose>
@@ -251,11 +236,11 @@
                                     </c:otherwise>
                                 </c:choose>
                             </a>
-                            <!-- 설명란 start-->
+                                <%-- 설명란 start--%>
                             <div class="fwo_info_box">
                                 <h3 class="fwo_tit_box">
                                     <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
-                                        ${result.subjnm }
+                                            ${result.subjnm }
                                     </a>
                                 </h3>
                                 <c:if test="${not empty result.lvnm}">
@@ -273,23 +258,23 @@
                                 </c:if>
                                 <p>${result.g2nm }ㆍ${result.g3nm }</p>
                                 <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;" class="go_page_a"></a>
-                                <!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+                                    <%-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  --%>
                             </div>
-                            <!-- 설명란 start-->
+                                <%-- 설명란 start --%>
                         </div>
-                        <!-- 썸네일 end -->
+                            <%-- 썸네일 end --%>
                     </li>
                 </c:forEach>
             </ul>
         </div>
-        <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+        <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
         <div class="swiper_btn_box">
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
 
     </div>
-    <!-- 인기 클래스 end -->
+    <%-- 인기 클래스 end --%>
 </div>
 
 <div class="mo-ta_lt mo-mb_20 show-tablecell fn vm board_title online_edu_board_title col-center mw-1280">
@@ -303,35 +288,63 @@
     </select>
 </div>
 
-<!-- 전체보기 일때-->
+<%-- 전체보기 일때--%>
 <div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box col-center mw-1280 all-list-wrap off">
     <div class="all-list-box">
-        <div class="fwo_card">
-            <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('CB22006', 'Final Cut Pro X 완전정복', 'ON', 'C02', '제작', '2022', '0003'); return false;">
-                <div class="fwo_snail_box">
-                    <img alt="Final Cut Pro X 완전정복 - 메인 이미지" src="/upload/bulletin/2022/Subject_introducefile_202207181539181_lee1.png">
-                    <!-- 설명란 start-->
-                    <div class="fwo_info_box">
-                        <h3 class="fwo_tit_box">
-                            Final Cut Pro X 완전정복
-                        </h3>
-                        <span class="tag L2">중급</span>
-                        <p>
-                            온라인교육ㆍ편집
-                        </p>
+        <c:forEach  items="${subjList }"  var="result" >
+            <div class="fwo_card">
+                <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+                    <% pageContext.setAttribute("crlf", "\\"); %>
+                    <div class="fwo_snail_box">
+                        <c:choose>
+                            <c:when test="${result.introducefilenamenew == null or result.introducefilenamenew == '' }">
+                                <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+                            </c:when>
+                            <c:otherwise>
+                                <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />" onerror="this.src='/edu/images/renew2022/non_img.png'"/>
+                            </c:otherwise>
+                        </c:choose>
+                            <%-- 설명란 start--%>
+                        <div class="fwo_info_box">
+                            <h3 class="fwo_tit_box">
+                                    ${result.subjnm }
+                            </h3>
+                            <c:if test="${not empty result.lvnm}">
+                                <c:choose>
+                                    <c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
+                                        <span class="tag L1">${result.lvnm}</span>
+                                    </c:when>
+                                    <c:when test="${result.lvcd eq 'L0102' or result.lvcd eq 'L0202'}">
+                                        <span class="tag L2">${result.lvnm}</span>
+                                    </c:when>
+                                    <c:when test="${result.lvcd eq 'L0103' or result.lvcd eq 'L0203'}">
+                                        <span class="tag L3">${result.lvnm}</span>
+                                    </c:when>
+                                </c:choose>
+                            </c:if>
+                            <p>
+                                온라인교육ㆍ
+                                <c:if test="${not empty result.g3nm}">
+                                    ${result.g3nm}
+                                </c:if>
+
+                                <c:if test="${empty result.g3nm}">
+                                    ${result.g2nm}
+                                </c:if>
+                            </p>
+                        </div>
+                            <%-- 설명란 end--%>
                     </div>
-                    <!-- 설명란 start-->
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        </c:forEach>
     </div>
-    <c:if test="${fn:length(resultList) > 0}">
+    <c:if test="${fn:length(subjList) > 0}">
         <div class="paging">${pageNav}</div>
     </c:if>
 </div>
 
-
-<!-- 대분류 -->
+<%-- 대분류 --%>
 <div class="col-center mw-1280 dae-list-box">
 <c:if test="${fn:length(resultList) > 0}">
     <c:set var="mainTitle" value=""/>
@@ -339,21 +352,21 @@
     <c:forEach items="${resultList }" var="item3" varStatus="status3">
         <c:if test="${status3.first eq false}">
             <c:if test="${mainTitle ne item3.g2nm}">
-                    </div>
                 </div>
-                <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-                    <div class="swiper_btn_box">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
+                </div>
+                <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
+                <div class="swiper_btn_box">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
                 </div>
             </c:if>
         </c:if>
         <c:if test="${mainTitle ne item3.g2nm}">
             <div class="photoGallery2 photoLine1 mg_t5 fwo_card_list_box fwo_card0${cardNo}">
-                <span class="main_title">${item3.g2nm}</span>
-                <div class="fwo_card swiper-container">
-                    <div class="swiper-wrapper">
+            <span class="main_title">${item3.g2nm}</span>
+            <div class="fwo_card swiper-container">
+            <div class="swiper-wrapper">
             <c:set var="mainTitle" value="${item3.g2nm}"/>
             <c:set var="cardNo" value="${cardNo + 1}"/>
         </c:if>
@@ -365,16 +378,16 @@
                     <div class="fwo_snail_box">
                         <c:choose>
                             <c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
-                                <img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.subjnm } 임시 이미지"/>
+                                <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
                             </c:when>
                             <c:otherwise>
-                                <img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />"/>
+                                <img alt="${item3.subjnm } - 메인 이미지" src="<c:out value="${item3.introducefilenamenew}" />" onerror="this.src='/edu/images/renew2022/non_img.png'"/>
                             </c:otherwise>
                         </c:choose>
-                        <!-- 설명란 start-->
+                            <%-- 설명란 start --%>
                         <div class="fwo_info_box">
                             <h3 class="fwo_tit_box">
-                                ${item3.subjnm }
+                                    ${item3.subjnm }
                             </h3>
 
                             <c:if test="${not empty item3.lvnm}">
@@ -401,29 +414,38 @@
                                 </c:if>
                             </p>
 
-                            <!-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  -->
+                            <%-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  --%>
                         </div>
-                        <!-- 설명란 start-->
+                        <%-- 설명란 start --%>
                     </div>
-
-                    <<c:if test="${item3.isnew eq 'Y' }">
-                    <c:if test="${ item3.ishit eq 'N'}">
-                        <c:if test="${ item3.isrecom eq 'Y'}">
-                            <span style="color: #3B85FF;">[New]</span>
-                            <!--
-                            <img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-                            -->
+                    <c:if test="${item3.isnew eq 'Y' }">
+                        <c:if test="${ item3.ishit eq 'N'}">
+                            <c:if test="${ item3.isrecom eq 'Y'}">
+                                <span style="color: #3B85FF;">[New]</span>
+                                <%--
+                                <img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+                                --%>
+                            </c:if>
                         </c:if>
                     </c:if>
-                </c:if>
-                ${item3.subjnm }
+                    ${item3.subjnm }
                 </a>
             </div>
         </div>
+
+        <c:if test="${status3.last eq true}">
+            </div>
+            </div>
+            <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
+            <div class="swiper_btn_box">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            </div>
+        </c:if>
     </c:forEach>
 </c:if>
 </div>
-
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -472,6 +494,13 @@
 
         if ($(".SL02").val() != "") {
             fnLvCodeList($(".SL02"));
+        }
+
+        if('${param.p_list_type}' == 'C') {
+            $(".all-list-wrap").toggleClass('on'); //전체 리스트 보기
+            $(".dae-list-box").toggleClass('off'); // 슬라이드 숨기기
+            $(".category_list_btn").toggleClass('on'); // 카테고리로 버튼 보기
+            $(".all_list_btn").toggleClass('off'); //전체보기 버튼 보기
         }
     });
 
