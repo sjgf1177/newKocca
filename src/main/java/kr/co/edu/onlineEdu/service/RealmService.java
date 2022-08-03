@@ -57,7 +57,7 @@ public class RealmService extends DefaultCmmProgramService {
 		param.put("userid", user.getUserId());
 		param.put("upperclscd", "1000");	//분류별 목록을 불러오기 위한 코드 값 등록
 		param.put("grcode", "N000001");		//교육그룹코드 임시 등록
-		param.put("pageUnit", "12"); // 목록 갯수
+		param.put("pageUnit", "16"); // 목록 갯수
 		
 		param.put("pGubun1", param.getString("pGubun1", param.getString("gubun", "A")));
 		param.put("pGubun2", param.getString("pGubun2", param.getString("option1", "")));

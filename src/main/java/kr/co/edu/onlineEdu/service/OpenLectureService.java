@@ -50,7 +50,7 @@ public class OpenLectureService extends DefaultCmmProgramService {
 
 		param.put("tem_grcode", "N000001");
 		param.put("pLectureCls", param.getString("pGubun1"));
-		param.put("pageUnit", "12");
+		param.put("pageUnit", "16");
 
 		if(!StringUtils.hasText(param.getString("sortOrder"))){
 	    	param.put("sortOrder", "newOrdr");
