@@ -118,7 +118,7 @@
         </div>
         <div class="facilities_body_list">
             <div class="img_box">
-                <img src="/edu/images/renew2022/studio1.jpg" alt="스튜디오1">
+                <img src="/edu/images/renew2022/studio1.png" alt="스튜디오1">
             </div>
             <div class="facilities_text_box">
                 <div class="facilities_text_box_header">
