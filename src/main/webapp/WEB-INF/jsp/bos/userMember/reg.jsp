@@ -124,6 +124,8 @@
 		}
 
 		if (confirm("${empty result ? '등록' : '수정'}하시겠습니까?")) {
+			$("#email").val($("#email1").val() + "@" + $("#email2").val());
+			$("#mbtlnum").val($("#mbtlnum1").val() + "-" + $("#mbtlnum2").val() + "-" + $("#mbtlnum3").val());
 			form.submit();
 		}
 
@@ -145,6 +147,8 @@
 	<input type="hidden" id="atchFileId0" name="atchFileId" value="${result.atchFileId}" />
 	<input type="hidden" name="userSn" value="${result.userSn}"/>
 	<input type=hidden name="pageQueryString" value='${pageQueryString}'/>
+	<input type=hidden id="email" name="email"/>
+	<input type=hidden id="mbtlnum" name="mbtlnum"/>
 	<h4>인적사항</h4>
 	<div class="tbrinfo text-danger clear"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 표시 항목은 필수 입력 항목입니다.</div>
 	<div class="bdView">

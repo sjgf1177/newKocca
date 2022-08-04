@@ -38,8 +38,8 @@
 </ul>
 
 <div class="col-center mw-1280 all_view_btn_box">
-	<button type="button" class="all_list_btn" onclick="fnaaa();"><span>전체보기</span></button>
-	<button type="button" class="category_list_btn" onclick="fnaaa();"><span>카테고리로 보기</span></button>
+	<button type="button" class="all_list_btn"><span>전체보기</span></button>
+	<button type="button" class="category_list_btn"><span>카테고리로 보기</span></button>
 </div>
 
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20 control_board_style2">
@@ -387,34 +387,5 @@
 				alert("서버와 통신 실패");
 			}
 		});
-	}
-
-	function fnaaa(){
-		/*var fwocard01 = new Swiper('.fwo_card01 .fwo_card', {
-			/!*loop: true,*!/
-			speed : 700
-			,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-			,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-			,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-			//구버전 swiper 방향표
-			,nextButton: '.fwo_card01 .swiper-button-next'
-			,prevButton: '.fwo_card01 .swiper-button-prev'
-			,breakpoints: {
-				1280: {
-					slidesPerView: 4,
-					spaceBetween: 40
-				},
-				1279: {
-					slidesPerView: 3,
-					spaceBetween: 30
-				},
-				640: {
-					slidesPerView: 1,
-					spaceBetween: 15
-				},
-			}
-
-		});*/
 	}
 </script>
