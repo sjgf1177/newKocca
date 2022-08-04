@@ -6,12 +6,8 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <c:set var="rangeAll" value="${empty paramVO.rangeView or paramVO.rangeView eq 'all'}" />
-<c:set var="progrmCnt" value="${rangeAll ? 5 : fn:length(progrmResultList)}" />
-<c:set var="menuCnt" value="${rangeAll ? 5 : fn:length(menuResultList)}" />
-<c:set var="bbsCnt" value="${rangeAll ? 5 : fn:length(bbsResultList)}" />
-<c:set var="webpageCnt" value="${rangeAll ? 5 : fn:length(webpageResultList)}" />
-<c:set var="filesCnt" value="${rangeAll ? 5 : fn:length(filesResultList)}" />
-<c:set var="onlineEduCnt" value="${rangeAll ? 5 : fn:length(onlineEduResultList)}" />
+<c:set var="eduGoldCnt" value="${rangeAll ? 5 : fn:length(eduGoldResultList)}" />
+<c:set var="eduSubjCnt" value="${rangeAll ? 5 : fn:length(eduSubjResultList)}" />
 
 <script type="text/javascript" src="/js/jquery-ui-1.9.2.custom.min.js"></script>
 <script type="text/javascript">
@@ -151,7 +147,7 @@ $(document).ready(function(){
 </form>
 
 <div class="over-hidden sub_contents_header">
-	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+	<div class="linemap_wrap"> <%-- fl class 삭제 --%>
 		<ul class="col-12 linemap_con">
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>통합검색</span></a></li>
@@ -164,7 +160,7 @@ $(document).ready(function(){
 	<div class="col-center mw-1280">검색결과</div>
 </div>
 
-<!-- 인기검색어 -->
+<%-- 인기검색어 --%>
 <div class="col-center mw-1280">
 	<div class="mb20">
 		<div class="hotkeyword">
@@ -184,36 +180,42 @@ $(document).ready(function(){
 			<li <c:if test="${empty paramVO.rangeView}">class="active"</c:if>>
 				<c:if test="${empty paramVO.rangeView}">
 					<a href="javascript:void(0);" title="현재탭">
-						<span>통합검색(${totalCount})</span>
+						<%--<span>통합검색(${totalCount})</span>--%>
+						<span>통합검색</span>
 					</a>
 				</c:if>
 				<c:if test="${not empty paramVO.rangeView}">
 					<a href="javascript:detailView('');">
-						<span>통합검색(${totalCount})</span>
+						<%--<span>통합검색(${totalCount})</span>--%>
+						<span>통합검색</span>
 					</a>
 				</c:if>
 			</li>
-			<li <c:if test="${paramVO.rangeView eq 'progrm'}">class="active"</c:if>>
-				<c:if test="${paramVO.rangeView eq 'progrm'}">
+			<li <c:if test="${paramVO.rangeView eq 'eduGold'}">class="active"</c:if>>
+				<c:if test="${paramVO.rangeView eq 'eduGold'}">
 					<a href="javascript:void(0);" title="현재탭">
-						<span>오프라인교육(${programListCnt})</span>
+						<%--<span>오프라인교육(${programListCnt})</span>--%>
+						<span>바로 수강</span>
 					</a>
 				</c:if>
-				<c:if test="${paramVO.rangeView ne 'progrm'}">
-					<a href="javascript:detailView('progrm')">
-						<span>오프라인교육(${programListCnt})</span>
+				<c:if test="${paramVO.rangeView ne 'eduGold'}">
+					<a href="javascript:detailView('eduGold')">
+						<%--<span>오프라인교육(${programListCnt})</span>--%>
+						<span>바로 수강</span>
 					</a>
 				</c:if>
 			</li>
-			<li <c:if test="${paramVO.rangeView eq 'onlineEdu'}">class="active"</c:if>>
-				<c:if test="${paramVO.rangeView eq 'onlineEdu'}">
+			<li <c:if test="${paramVO.rangeView eq 'eduSubj'}">class="active"</c:if>>
+				<c:if test="${paramVO.rangeView eq 'eduSubj'}">
 					<a href="javascript:void(0);" title="현재탭">
-						<span>온라인교육/강좌(${onlineEduListCnt})</span>
+						<%--<span>온라인교육/강좌(${onlineEduListCnt})</span>--%>
+						<span>로그인 후 수강</span>
 					</a>
 				</c:if>
-				<c:if test="${paramVO.rangeView ne 'onlineEdu'}">
-					<a href="javascript:detailView('onlineEdu');">
-						<span>온라인교육/강좌(${onlineEduListCnt})</span>
+				<c:if test="${paramVO.rangeView ne 'eduSubj'}">
+					<a href="javascript:detailView('eduSubj');">
+						<%--<span>온라인교육/강좌(${onlineEduListCnt})</span>--%>
+						<span>로그인 후 수강</span>
 					</a>
 				</c:if>
 			</li>
@@ -221,75 +223,23 @@ $(document).ready(function(){
 	</div>
 
 		<c:choose>
-			<c:when test="${paramVO.rangeView eq 'progrm'}"><c:set var="rangeNm" value="오프라인교육"/><c:set var="cnt" value="${programListCnt}"/></c:when>
-			<c:when test="${paramVO.rangeView eq 'onlineEdu'}"><c:set var="rangeNm" value="온라인교육/강좌"/><c:set var="cnt" value="${onlineEduListCnt}"/></c:when>
-			<c:when test="${paramVO.rangeView eq 'webpage'}"><c:set var="rangeNm" value="웹페이지"/><c:set var="cnt" value="${empty webpageResultList[0] ? 0 : webpageResultList[0].numFound}"/></c:when>
-			<c:when test="${paramVO.rangeView eq 'bbs'}"><c:set var="rangeNm" value="게시물"/><c:set var="cnt" value="${empty bbsResultList[0] ? 0 : bbsResultList[0].numFound}"/></c:when>
-			<c:when test="${paramVO.rangeView eq 'menu'}"><c:set var="rangeNm" value="메뉴"/><c:set var="cnt" value="${empty menuResultList[0] ? 0 : menuResultList[0].numFound}"/></c:when>
-			<c:when test="${paramVO.rangeView eq 'files'}"><c:set var="rangeNm" value="첨부파일"/><c:set var="cnt" value="${empty filesResultList[0] ? 0 : filesResultList[0].numFound}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'eduGold'}"><c:set var="rangeNm" value="바로수강"/><c:set var="cnt" value="${eduGoldListCnt}"/></c:when>
+			<c:when test="${paramVO.rangeView eq 'eduSubj'}"><c:set var="rangeNm" value="로그인후수강"/><c:set var="cnt" value="${eduSubjListCnt}"/></c:when>
 			<c:otherwise><c:set var="rangeNm" value="전체"/><c:set var="cnt" value="${totalCount}"/></c:otherwise>
 		</c:choose>
 		<p class="mb10 alert_highlight_title">검색어 <span class="point0">"${paramVO.q}"</span>에 대한 ${rangeNm} <span class="point0" id="searchCnt">"${cnt}"</span>개의 검색 결과를 찾았습니다.</p>
 
 		<div class="searchSet">
 
-		<!-- 오프라인교육 -->
-		<c:if test="${rangeAll or paramVO.rangeView eq 'progrm'}">
+		<%-- 바로 수강 --%>
+		<c:if test="${rangeAll or paramVO.rangeView eq 'eduGold'}">
 			<div class="alert">
-				<p class="alert_design_text"> 오프라인교육 (검색결과 ${programListCnt}건)</p>
-				<c:if test="${fn:length(progrmResultList)>0}">
+				<%--<p class="alert_design_text"> 온라인교육/강좌 (검색결과 ${onlineEduListCnt}건)</p>--%>
+				<p class="alert_design_text">바로 수강</p>
+				<c:if test="${fn:length(eduGoldResultList)>0}">
 					<div class="moreBtn">
-<%--						<c:if test="${paramVO.rangeView eq 'progrm'}">
-							<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
-						</c:if>--%>
-						<c:if test="${paramVO.rangeView ne 'progrm'}">
-							<a href="javascript:detailView('progrm');" class="more"> <span>더 보기 +</span></a>
-						</c:if>
-					</div>
-				</c:if>
-			</div>
-			<!-- 상세검색 -->
-			<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
-
-			<ul class="bull" id="ul_progrm">
-				<c:forEach var="result" items="${progrmResultList}" varStatus="status">
-					<c:if test="${status.count <= progrmCnt}">
-						<li class="statSet">
-							<%--<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">--%>
-							<a href="<c:out value="/edu/progrm/master/view.do?prgSn=${result.prgSn}&prgSe=${result.prgSe}&prgCl=${result.prgCl}&menuNo=500216"/>" target="_blank" title="새창열림">
-								<span class="tit">
-									<span class="status">
-										<c:choose>
-											<c:when test="${result.progrsSttus eq 'W'}">대기</c:when>
-											<c:when test="${result.progrsSttus eq 'P'}">진행중</c:when>
-											<c:when test="${result.progrsSttus eq 'F'}">마감</c:when>
-										</c:choose>
-									</span>
-								</span>
-								<div class="sc_tit_box"><span class="fcBlue">[${result.prgSeNm}-${result.prgClNm}]</span> <span>${result.prgNm}</span></div>
-								<span class="txt">
-									(신청방식 : ${result.reqstMthdNm} / 정원 : ${empty result.psncpa ? '-' : result.psncpa} 명 / 신청접수 : ${result.beginDt}~${result.endDt})
-									${result.hl}
-								</span>
-							</a>
-						</li>
-					</c:if>
-				</c:forEach>
-				<c:if test="${fn:length(progrmResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
-			</ul>
-		</c:if>
-
-		<!-- 온라인교육/강좌 -->
-		<c:if test="${rangeAll or paramVO.rangeView eq 'onlineEdu'}">
-			<div class="alert">
-				<p class="alert_design_text"> 온라인교육/강좌 (검색결과 ${onlineEduListCnt}건)</p>
-				<c:if test="${fn:length(onlineEduResultList)>0}">
-					<div class="moreBtn">
-<%--						<c:if test="${paramVO.rangeView eq 'onlineEdu'}">
-							<a href="#self" class="more" id="more_${paramVO.rangeView}"> <span><i class="fa fa-search-plus"></i> 상세검색</span></a>
-						</c:if>--%>
-						<c:if test="${paramVO.rangeView ne 'onlineEdu'}">
-							<a href="javascript:detailView('onlineEdu');" class="more"> <span>더 보기 +</span></a>
+						<c:if test="${paramVO.rangeView ne 'eduGold'}">
+							<a href="javascript:detailView('eduGold');" class="more"> <span>더 보기 +</span></a>
 						</c:if>
 					</div>
 				</c:if>
@@ -298,27 +248,11 @@ $(document).ready(function(){
 			<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
 
 			<ul class="bull" id="ul_onlineEdu">
-				<c:forEach var="result" items="${onlineEduResultList}" varStatus="status">
-					<c:if test="${status.count <= onlineEduCnt}">
+				<c:forEach var="result" items="${eduGoldResultList}" varStatus="status">
+					<c:if test="${status.count <= eduGoldCnt}">
 						<li class="statSet">
 							<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">
-								<span class="tit">
-									<span class="status">
-										<c:choose>
-											<c:when test="${result.gubunSe eq '01'}">정규과정</c:when>
-											<c:when test="${result.gubunSe eq '02'}">열린강좌</c:when>
-											<c:when test="${result.gubunSe eq '03'}">학습로드맵</c:when>
-										</c:choose>
-									</span>
-								</span>
 								<div class="sc_tit_box">
-									<span class="fcBlue">
-										<c:choose>
-											<c:when test="${result.gubunSe eq '01'}">[정규과정-${result.g1nm}]</c:when>
-											<c:when test="${result.gubunSe eq '02'}">[열린강좌-${result.g1nm}</c:when>
-											<c:when test="${result.gubunSe eq '03'}">[학습로드맵]</c:when>
-										</c:choose>
-									</span>
 									<span>${result.title}</span>
 								</div>
 								<span class="txt">${result.hl}</span>
@@ -326,7 +260,40 @@ $(document).ready(function(){
 						</li>
 					</c:if>
 				</c:forEach>
-				<c:if test="${fn:length(onlineEduResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
+				<c:if test="${fn:length(eduGoldResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
+			</ul>
+		</c:if>
+
+		<%-- 로그인 후 수강 --%>
+		<c:if test="${rangeAll or paramVO.rangeView eq 'eduSubj'}">
+			<div class="alert">
+				<%--<p class="alert_design_text"> 온라인교육/강좌 (검색결과 ${onlineEduListCnt}건)</p>--%>
+				<p class="alert_design_text">로그인 후 수강</p>
+				<c:if test="${fn:length(eduSubjResultList)>0}">
+					<div class="moreBtn">
+						<c:if test="${paramVO.rangeView ne 'eduSubj'}">
+							<a href="javascript:detailView('eduSubj');" class="more"> <span>더 보기 +</span></a>
+						</c:if>
+					</div>
+				</c:if>
+			</div>
+			<!-- 상세검색 -->
+			<jsp:include page="/WEB-INF/jsp/edu/search/detail.jsp" flush="true" />
+
+			<ul class="bull" id="ul_onlineEdu">
+				<c:forEach var="result" items="${eduSubjResultList}" varStatus="status">
+					<c:if test="${status.count <= eduSubjCnt}">
+						<li class="statSet">
+							<a href="<c:out value="${result.fullMenuLink}"/>" target="_blank" title="새창열림">
+								<div class="sc_tit_box">
+									<span>${result.title}</span>
+								</div>
+								<span class="txt">${result.hl}</span>
+							</a>
+						</li>
+					</c:if>
+				</c:forEach>
+				<c:if test="${fn:length(eduSubjResultList) == 0}"><li class="statSet">검색 결과가 없습니다.</li></c:if>
 			</ul>
 		</c:if>
 

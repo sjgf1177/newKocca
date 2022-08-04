@@ -218,84 +218,23 @@
 			<cps:listener target-methods="list" ref="COM050CmmCodeViewListener" />
 			<cps:listener target-methods="list" ref="COM052CmmCodeViewListener" />
 		</cps:listeners>
-		<property name="bbsFieldList">
-			<list>
-				<value>nttId</value>
-				<value>bbsId</value>
-				<value>nttSj</value>
-				<value>nttCn</value>
-				<value>relateMenuNmList</value>
-				<value>fullMenuLink</value>
-				<value>regDate</value>
-				<value>frstRegistPnttm</value>
-				<value>lastUpdtPnttm</value>
-				<value>menuNm</value>
-				<value>menuNo</value>
-			</list>
-		</property>
-		<property name="filesFieldList">
-			<list>
-				<value>fileSn</value>
-				<value>atchFileId</value>
-				<value>fileStreCours</value>
-				<value>orignlFileNm</value>
-				<value>fileExtsn</value>
-				<value>fileMg</value>
-				<value>relateMenuNmList</value>
-				<value>fullMenuLink</value>
-				<value>regDate</value>
-				<value>frstRegistPnttm</value>
-				<value>author</value>
-				<value>nttSj</value>
-				<value>text</value>
-			</list>
-		</property>
-		<property name="menuFieldList">
-			<list>
-				<value>menuNo</value>
-				<value>relateMenuNmList</value>
-				<value>fullMenuLink</value>
-				<value>lastUpdtPnttm</value>
-			</list>
-		</property>
-		<property name="webpageFieldList">
-			<list>
-				<value>menuNo</value>
-				<value>relateMenuNmList</value>
-				<value>fullMenuLink</value>
-				<value>lastUpdtPnttm</value>
-				<value>author</value>
-				<value>title</value>
-				<value>text</value>
-			</list>
-		</property>
-		<property name="progrmFieldList">
-			<list>
-				<value>taskSeq</value>
-				<value>prgSn</value>
-				<value>prgNm</value>
-				<value>text</value>
-				<value>prgSe</value>
-				<value>prgSeNm</value>
-				<value>prgCl</value>
-				<value>prgClNm</value>
-				<value>beginDt</value>
-				<value>endDt</value>
-				<value>progrsSttus</value>
-				<value>psncpa</value>
-				<value>reqstMthd</value>
-				<value>reqstMthdNm</value>
-				<value>fullMenuLink</value>
-				<value>siteNm</value>
-			</list>
-		</property>
-		<property name="onlineEduFieldList">
+		<property name="eduGoldFieldList">
 			<list>
 				<value>id</value>
 				<value>title</value>
 				<value>text</value>
-				<value>gubunSe</value>
-				<value>gubun</value>
+				<value>category</value>
+				<value>categoryNm</value>
+				<value>fullMenuLink</value>
+				<value>regDate</value>
+				<value>siteNm</value>
+			</list>
+		</property>
+		<property name="eduSubjFieldList">
+			<list>
+				<value>id</value>
+				<value>title</value>
+				<value>text</value>
 				<value>category</value>
 				<value>categoryNm</value>
 				<value>fullMenuLink</value>

@@ -2385,5 +2385,318 @@
 		]]>
 	</select>
 
+	<!-- 열린강좌 통합검색 리스트 카운트 조회 -->
+	<select id="realmListDAO.eduGoldResultListCnt" parameterClass="zvl" resultClass="int">
+		<![CDATA[
+			/* realmListDAO.eduGoldResultListCnt */
+			SELECT COUNT(*)
+			  FROM (SELECT TT.*
+            		  FROM (SELECT TO_CHAR(A.SEQ) AS ID
+								 , A.LECNM AS TITLE
+								 , C.GUBUN_1 G1CD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0110'
+									   AND Z.LEVELS = 1
+									   AND Z.CODE   = C.GUBUN_1) AS G1NM
+								 , C.GUBUN_2 G2CD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0110'
+									   AND Z.LEVELS = 2
+									   AND Z.CODE   = C.GUBUN_2) AS G2NM
+								 , C.GUBUN_3 G3CD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0110'
+									   AND Z.LEVELS = 3
+									   AND Z.CODE   = C.GUBUN_3) AS G3NM
+								 , A.INTRO AS CONTENTS
+								 , TO_DATE(A.INDATE,'YYYYMMDDHH24MISS') AS REG_DATE
+								 , (SELECT X.LVCODE
+									  FROM TZ_GOLDHOMEGUBUN_LEVEL X
+									 WHERE X.SEQ = A.SEQ) AS LVCD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0121'
+									   AND Z.LEVELS = 2
+									  AND    Z.CODE   = (SELECT X.LVCODE
+														 FROM   TZ_GOLDHOMEGUBUN_LEVEL X
+														 WHERE  X.SEQ = A.SEQ)) AS LVNM
+								 , A.TAGS
+								 , '/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq='||A.SEQ||'&pLectureCls='||A.LECTURE_CLS AS FULL_MENU_LINK
+							  FROM TZ_GOLDCLASS A
+								 , TZ_GOLDCLASS_GRMNG B
+								 , TZ_GOLDHOMEGUBUN C
+							 WHERE A.USEYN  	  = 'Y'
+							   AND B.GRCODE 	  = 'N000001'
+							   AND A.SEQ 		  = B.SEQ(+)
+							   AND A.SEQ 	  	  = C.SEQ(+)
+							   AND C.GUBUN(+) 	  = 'GC'
+							   AND A.LECTURE_CLS != 'GC99'
+                 	  ) TT
+            		 WHERE (TT.TITLE LIKE '%' || #q# || '%'
+                        	OR TT.CONTENTS LIKE '%' || #q# || '%'
+                        	OR TT.G1NM LIKE '%' || #q# || '%'
+                        	OR TT.G2NM LIKE '%' || #q# || '%'
+                        	OR TT.G3NM LIKE '%' || #q# || '%'
+                			OR TT.LVNM LIKE '%' || #q# || '%'
+                			OR TT.TAGS LIKE '%' || #q# || '%')
+			  ) M
+		]]>
+	</select>
+
+	<!-- 열린강좌 통합검색 리스트 조회 -->
+	<select id="realmListDAO.eduGoldResultList" parameterClass="zvl" resultClass="zvl">
+		<![CDATA[
+			/* realmListDAO.eduGoldResultList */
+			SELECT *
+			  FROM (SELECT ROWNUM RNUM
+				 		 , ALL_LIST.*
+			  		  FROM (SELECT TT.*
+            				  FROM (SELECT TO_CHAR(A.SEQ) AS ID
+										 , A.LECNM AS TITLE
+										 , C.GUBUN_1 G1CD
+										 , (SELECT Z.CODENM
+											  FROM TZ_CODE Z
+											 WHERE Z.GUBUN  = '0110'
+											   AND Z.LEVELS = 1
+											   AND Z.CODE   = C.GUBUN_1) AS G1NM
+										 , C.GUBUN_2 G2CD
+										 , (SELECT Z.CODENM
+											  FROM TZ_CODE Z
+											 WHERE Z.GUBUN  = '0110'
+											   AND Z.LEVELS = 2
+											   AND Z.CODE   = C.GUBUN_2) AS G2NM
+										 , C.GUBUN_3 G3CD
+										 , (SELECT Z.CODENM
+											FROM   TZ_CODE Z
+											WHERE  Z.GUBUN  = '0110'
+											  AND    Z.LEVELS = 3
+											  AND    Z.CODE   = C.GUBUN_3) AS G3NM
+										 , A.INTRO AS CONTENTS
+										 , TO_DATE(A.INDATE,'YYYYMMDDHH24MISS') AS REG_DATE
+										 , (SELECT X.LVCODE
+											  FROM TZ_GOLDHOMEGUBUN_LEVEL X
+											 WHERE X.SEQ = A.SEQ) AS LVCD
+										 , (SELECT Z.CODENM
+											  FROM TZ_CODE Z
+											 WHERE Z.GUBUN  = '0121'
+											   AND Z.LEVELS = 2
+											   AND Z.CODE   = (SELECT X.LVCODE
+																 FROM TZ_GOLDHOMEGUBUN_LEVEL X
+																WHERE X.SEQ = A.SEQ)) AS LVNM
+										 , A.TAGS
+										 , '/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq='||A.SEQ||'&pLectureCls='||A.LECTURE_CLS AS FULL_MENU_LINK
+									  FROM TZ_GOLDCLASS A
+										 , TZ_GOLDCLASS_GRMNG B
+										 , TZ_GOLDHOMEGUBUN C
+									 WHERE A.USEYN  	  = 'Y'
+									   AND B.GRCODE 	  = 'N000001' /* getSession = tem_grcode */
+									   AND A.SEQ 		  = B.SEQ(+)
+									   AND A.SEQ 	  	  = C.SEQ(+)
+									   AND C.GUBUN(+) 	  = 'GC'
+									   AND A.LECTURE_CLS != 'GC99'
+                 			  ) TT
+            				 WHERE (TT.TITLE LIKE '%' || #q# || '%'
+									OR TT.CONTENTS LIKE '%' || #q# || '%'
+									OR TT.G1NM LIKE '%' || #q# || '%'
+									OR TT.G2NM LIKE '%' || #q# || '%'
+									OR TT.G3NM LIKE '%' || #q# || '%'
+									OR TT.LVNM LIKE '%' || #q# || '%'
+									OR TT.TAGS LIKE '%' || #q# || '%')
+            				 ORDER BY REG_DATE DESC, G1CD, G2CD
+					  ) ALL_LIST
+			  )
+		  WHERE RNUM  > NVL(#firstPage#, 0) * 10
+			AND RNUM <= (NVL(#firstPage#, 0) * 10) + #recordCountPage#
+		]]>
+	</select>
+
+	<!-- 정규과정 리스트 카운트 조회 -->
+	<select id="realmListDAO.eduSubjResultListCnt" parameterClass="zvl" resultClass="int">
+		<![CDATA[
+			/* realmListDAO.eduSubjResultListCnt */
+			SELECT COUNT(*)
+			  FROM (SELECT TT.*
+            		  FROM (SELECT DISTINCT A.SUBJ AS ID
+								 , A.SUBJNM AS TITLE
+								 , (SELECT X.GUBUN_1
+									  FROM TZ_SUBJHOMEGUBUN X
+									 WHERE X.GUBUN = 'GS'
+									   AND X.SUBJ  = A.SUBJ) AS G1CD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0110'
+									   AND Z.LEVELS = 1
+									   AND Z.CODE   = (SELECT X.GUBUN_1
+														 FROM TZ_SUBJHOMEGUBUN X
+														WHERE X.GUBUN = 'GS'
+														  AND X.SUBJ  = A.SUBJ)) AS G1NM
+								 , (SELECT X.GUBUN_2
+									  FROM TZ_SUBJHOMEGUBUN X
+									 WHERE X.GUBUN = 'GS'
+									   AND X.SUBJ  = A.SUBJ) AS G2CD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0110'
+									   AND Z.LEVELS = 2
+									   AND Z.CODE   = (SELECT X.GUBUN_2
+														 FROM TZ_SUBJHOMEGUBUN X
+														WHERE X.GUBUN = 'GS'
+														  AND X.SUBJ  = A.SUBJ)) AS G2NM
+								 , (SELECT X.GUBUN_3
+									  FROM TZ_SUBJHOMEGUBUN X
+									 WHERE X.GUBUN = 'GS'
+									   AND X.SUBJ  = A.SUBJ) AS G3CD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0110'
+									   AND Z.LEVELS = 3
+									   AND Z.CODE   = (SELECT X.GUBUN_3
+														 FROM TZ_SUBJHOMEGUBUN X
+														WHERE X.GUBUN = 'GS'
+														  AND X.SUBJ  = A.SUBJ)) AS G3NM
+								 , (SELECT X.EXPLAIN
+									  FROM TZ_SUBJ X
+									 WHERE X.SUBJ = A.SUBJ) AS CONTENTS
+								 , TO_DATE((SELECT X.INDATE
+											  FROM TZ_SUBJ X
+											 WHERE X.SUBJ = A.SUBJ), 'YYYYMMDDHH24MISS') AS REG_DATE
+								 , (SELECT X.LVCODE
+									  FROM TZ_SUBJHOMEGUBUN_LEVEL X
+									 WHERE X.SUBJ = A.SUBJ) AS LVCD
+								 , (SELECT Z.CODENM
+									  FROM TZ_CODE Z
+									 WHERE Z.GUBUN  = '0121'
+									   AND Z.LEVELS = 2
+									   AND Z.CODE   = (SELECT X.LVCODE
+														 FROM TZ_SUBJHOMEGUBUN_LEVEL X
+														WHERE X.SUBJ = A.SUBJ)) AS LVNM
+								 , A.SEARCH_NM AS TAGS
+								 , '/edu/onlineEdu/realm/view.do?menuNo=500027&p_subj='||A.SUBJ||'&p_year='||A.SCYEAR||'&p_subjseq='||A.SUBJSEQ AS FULL_MENU_LINK
+							  FROM (SELECT S1.*
+									  FROM VZ_SCSUBJSEQIMGMOBILE S1
+									 WHERE S1.PROPSTART NOT IN (' ')
+									   AND TO_CHAR(SYSDATE,'YYYYMM') BETWEEN REPLACE(SUBSTR(S1.PROPSTART,1,6),'.','') AND REPLACE(SUBSTR(S1.PROPEND,1,6),'.','')
+							  ) A
+							 WHERE A.GRCODE IN ('N000001')
+							   AND A.ISUSE  = 'Y'
+							   AND TO_CHAR(SYSDATE,'YYYYMMDDHH24') BETWEEN A.PROPSTART AND A.PROPEND
+							   AND A.SUBJ NOT IN (SELECT X.SUBJ
+													FROM TZ_SUBJ X
+												   WHERE X.SUBJ BETWEEN 'CK14014' AND 'CK14048' OR ( A.SUBJ BETWEEN 'CK15003' AND 'CK15030' ))
+							   AND A.SUBJ NOT IN (SELECT DISTINCT X.SUBJ
+													FROM TZ_SUBJHOMEGUBUN X
+												   WHERE X.GUBUN   = 'GS'
+													 AND X.GUBUN_1 IN 'T0')
+                 	  ) TT
+            		 WHERE (TT.TITLE LIKE '%' || #q# || '%'
+                        	OR TT.CONTENTS LIKE '%' || #q# || '%'
+                        	OR TT.G1NM LIKE '%' || #q# || '%'
+                        	OR TT.G2NM LIKE '%' || #q# || '%'
+                        	OR TT.G3NM LIKE '%' || #q# || '%'
+                			OR TT.LVNM LIKE '%' || #q# || '%'
+                			OR TT.TAGS LIKE '%' || #q# || '%')
+			  ) M
+		]]>
+	</select>
+
+	<!-- 정규과정 통합검색 리스트 조회 -->
+	<select id="realmListDAO.eduSubjResultList" parameterClass="zvl" resultClass="zvl">
+		<![CDATA[
+			/* realmListDAO.eduSubjResultList */
+			SELECT *
+			  FROM (SELECT ROWNUM RNUM
+				 		 , ALL_LIST.*
+			  		  FROM (SELECT TT.*
+            				  FROM (SELECT DISTINCT A.SUBJ AS ID
+										 , A.SUBJNM AS TITLE
+										 , (SELECT X.GUBUN_1
+											  FROM TZ_SUBJHOMEGUBUN X
+											 WHERE X.GUBUN = 'GS'
+											   AND X.SUBJ  = A.SUBJ) AS G1CD
+										 , (SELECT Z.CODENM
+											  FROM TZ_CODE Z
+											 WHERE Z.GUBUN  = '0110'
+											   AND Z.LEVELS = 1
+											   AND Z.CODE   = (SELECT X.GUBUN_1
+																 FROM TZ_SUBJHOMEGUBUN X
+																WHERE X.GUBUN = 'GS'
+																  AND X.SUBJ  = A.SUBJ)) AS G1NM
+										 , (SELECT X.GUBUN_2
+											  FROM TZ_SUBJHOMEGUBUN X
+											 WHERE X.GUBUN = 'GS'
+											   AND X.SUBJ  = A.SUBJ) AS G2CD
+										 , (SELECT Z.CODENM
+											  FROM TZ_CODE Z
+											 WHERE Z.GUBUN  = '0110'
+											   AND Z.LEVELS = 2
+											   AND Z.CODE   = (SELECT X.GUBUN_2
+																 FROM TZ_SUBJHOMEGUBUN X
+																WHERE X.GUBUN = 'GS'
+																  AND X.SUBJ  = A.SUBJ)) AS G2NM
+										 , (SELECT X.GUBUN_3
+											  FROM TZ_SUBJHOMEGUBUN X
+											 WHERE X.GUBUN = 'GS'
+											   AND X.SUBJ  = A.SUBJ) AS G3CD
+										 , (SELECT Z.CODENM
+											  FROM TZ_CODE Z
+											 WHERE Z.GUBUN  = '0110'
+											   AND Z.LEVELS = 3
+											   AND Z.CODE   = (SELECT X.GUBUN_3
+																 FROM TZ_SUBJHOMEGUBUN X
+																WHERE X.GUBUN = 'GS'
+																  AND X.SUBJ  = A.SUBJ)) AS G3NM
+										 , (SELECT X.EXPLAIN
+											  FROM TZ_SUBJ X
+											 WHERE X.SUBJ = A.SUBJ) AS CONTENTS
+										 , TO_DATE((SELECT X.INDATE
+													  FROM TZ_SUBJ X
+													 WHERE X.SUBJ = A.SUBJ), 'YYYYMMDDHH24MISS') AS REG_DATE
+										 , (SELECT X.LVCODE
+											  FROM TZ_SUBJHOMEGUBUN_LEVEL X
+											 WHERE X.SUBJ = A.SUBJ) AS LVCD
+										 , (SELECT Z.CODENM
+											  FROM TZ_CODE Z
+											 WHERE Z.GUBUN  = '0121'
+											   AND Z.LEVELS = 2
+											   AND Z.CODE   = (SELECT X.LVCODE
+																 FROM TZ_SUBJHOMEGUBUN_LEVEL X
+																WHERE X.SUBJ = A.SUBJ)) AS LVNM
+										 , A.SEARCH_NM AS TAGS
+										 , '/edu/onlineEdu/realm/view.do?menuNo=500027&p_subj='||a.subj||'&p_year='||a.scyear||'&p_subjseq='||a.subjseq AS FULL_MENU_LINK
+									  FROM (SELECT S1.*
+											  FROM VZ_SCSUBJSEQIMGMOBILE S1
+											 WHERE S1.PROPSTART NOT IN (' ')
+											   AND TO_CHAR(SYSDATE,'YYYYMM') BETWEEN REPLACE(SUBSTR(S1.PROPSTART,1,6),'.','') AND REPLACE(SUBSTR(S1.PROPEND,1,6),'.','')
+									  ) A
+									 WHERE A.GRCODE IN ('N000001')
+									   AND A.ISUSE  = 'Y'
+									   AND TO_CHAR(SYSDATE,'YYYYMMDDHH24') BETWEEN A.PROPSTART AND A.PROPEND
+									   AND A.SUBJ NOT IN (SELECT SUBJ
+															FROM TZ_SUBJ
+														   WHERE SUBJ BETWEEN 'CK14014' AND 'CK14048' OR ( A.SUBJ BETWEEN 'CK15003' AND 'CK15030' ))
+									   AND A.SUBJ NOT IN (SELECT DISTINCT SUBJ
+															FROM TZ_SUBJHOMEGUBUN
+														   WHERE GUBUN   = 'GS'
+															 AND GUBUN_1 IN 'T0')
+
+                 			  ) TT
+            				 WHERE (TT.TITLE LIKE '%' || #q# || '%'
+									OR TT.CONTENTS LIKE '%' || #q# || '%'
+									OR TT.G1NM LIKE '%' || #q# || '%'
+									OR TT.G2NM LIKE '%' || #q# || '%'
+									OR TT.G3NM LIKE '%' || #q# || '%'
+									OR TT.LVNM LIKE '%' || #q# || '%'
+									OR TT.TAGS LIKE '%' || #q# || '%')
+            				 ORDER BY REG_DATE DESC, G1CD, G2CD
+					  ) ALL_LIST
+			  )
+		  WHERE RNUM  > NVL(#firstPage#, 0) * 10
+			AND RNUM <= (NVL(#firstPage#, 0) * 10) + #recordCountPage#
+		]]>
+	</select>
+
 </sqlMap>
 

@@ -33,12 +33,8 @@ import egovframework.com.utl.DateUtil;
 public class SearchService extends DefaultCmmProgramService {
 
 	private static String SERVER_URL = EgovProperties.getProperty("Globals.Solr.url");
-	private List<String> bbsFieldList;
-	private List<String> progrmFieldList;
-	private List<String> filesFieldList;
-	private List<String> menuFieldList;
-	private List<String> webpageFieldList;
-	private List<String> onlineEduFieldList;
+	private List<String> eduGoldFieldList;
+	private List<String> eduSubjFieldList;
 
 	@Resource(name="cacheUtil")
 	private CacheUtil cacheUtil;
@@ -47,12 +43,8 @@ public class SearchService extends DefaultCmmProgramService {
 	}
 
 	public static enum SOLR_CORE {
-		PROGRM("progrm"),
-		WEBPAGE("webpage"),
-		BBS("bbs"),
-		MENU("menu"),
-		FILES("files"),
-		ONLINE_EDU("onlineEdu");
+		EDU_GOLD("eduGold"),
+		EDU_SUBJ("eduSubj");
 
 		private String value;
 
@@ -71,148 +63,76 @@ public class SearchService extends DefaultCmmProgramService {
 		ModelMap model = paramCtx.getModel();
 		String range = param.getString("range");
 		String rangeView = param.getString("rangeView");
-		List<ZValue> bbsResultList = null;
-		List<ZValue> progrmResultList = null;
-		List<ZValue> filesResultList = null;
-		List<ZValue> menuResultList = null;
-		List<ZValue> webpageResultList = null;
-		List<ZValue> onlineEduResultList = null;
+		List<ZValue> eduGoldResultList = null;
+		List<ZValue> eduSubjResultList = null;
 		boolean rangeAll = !StringUtils.hasText(range) || "all".equals(range);
 		int firstPage = 0;
 		int recordCountPage = 10;
-		int programListCnt = 0;
-		int onlineEduListCnt = 0;
+		int eduGoldListCnt = 0;
+		int eduSubjListCnt = 0;
 		int fNum = 1;
 
 		if( rangeAll ){
-			/*
-			bbsResultList = getResultList(SOLR_CORE.BBS, bbsFieldList, param);
-			model.addAttribute("bbsResultList", bbsResultList);
-
-			progrmResultList = getResultList(SOLR_CORE.PROGRM, progrmFieldList, param);
-			model.addAttribute("progrmResultList", progrmResultList);
-
-			filesResultList = getResultList(SOLR_CORE.FILES, filesFieldList, param);
-			model.addAttribute("filesResultList", filesResultList);
-
-			menuResultList = getResultList(SOLR_CORE.MENU, menuFieldList, param);
-			model.addAttribute("menuResultList", menuResultList);
-
-			webpageResultList = getResultList(SOLR_CORE.WEBPAGE, webpageFieldList, param);
-			model.addAttribute("webpageResultList", webpageResultList);
-
-			onlineEduResultList = getResultList(SOLR_CORE.ONLINE_EDU, onlineEduFieldList, param);
-			model.addAttribute("onlineEduResultList", onlineEduResultList);
-			*/
-/*			String q = param.getString("q");
-			param.put("keyWord", q);
-			progrmResultList = sqlDao.listDAO("progrmMasterDAO.programSearchList", param);
-			model.addAttribute("progrmResultList", progrmResultList);*/
-
 			param.put("firstPage", "0");
 			param.put("recordCountPage", recordCountPage);
 
-			if("onlineEdu".equals(param.getString("rangeView"))) {
+			if("eduGold".equals(param.getString("rangeView"))) {
 				if(param.getInt("pageIndex") > 0) {
 					param.put("firstPage", param.getInt("pageIndex") - 1);
 				}
 			}
 
-			onlineEduListCnt = lmsSqlDao.selectCount("realmListDAO.onlineEduResultListCnt", param);
-			onlineEduResultList = lmsSqlDao.listDAO("realmListDAO.onlineEduResultList", param);
+			eduGoldListCnt = lmsSqlDao.selectCount("realmListDAO.eduGoldResultListCnt", param);
+			eduGoldResultList = lmsSqlDao.listDAO("realmListDAO.eduGoldResultList", param);
 
-			if("progrm".equals(param.getString("rangeView"))) {
+			if("eduSubj".equals(param.getString("rangeView"))) {
 				if(param.getInt("pageIndex") > 0) {
 					param.put("firstPage", param.getInt("pageIndex") - 1);
 				}
-			} else {
-				param.put("firstPage", "0");
 			}
 
-			programListCnt = sqlDao.selectCount("searchDAO.programSearchListCnt", param);
-			progrmResultList = sqlDao.listDAO("searchDAO.programSearchList", param);
+			eduSubjListCnt = lmsSqlDao.selectCount("realmListDAO.eduSubjResultListCnt", param);
+			eduSubjResultList = lmsSqlDao.listDAO("realmListDAO.eduSubjResultList", param);
 
-			model.addAttribute("onlineEduListCnt", onlineEduListCnt);
-			model.addAttribute("onlineEduResultList", onlineEduResultList);
-			model.addAttribute("programListCnt", programListCnt);
-			model.addAttribute("progrmResultList", progrmResultList);
+			model.addAttribute("eduGoldListCnt", eduGoldListCnt);
+			model.addAttribute("eduGoldResultList", eduGoldResultList);
+			model.addAttribute("eduSubjListCnt", eduSubjListCnt);
+			model.addAttribute("eduSubjResultList", eduSubjResultList);
 		}
 		else{
-			if( "bbs".equals(range) ){
-				bbsResultList = getResultList(SOLR_CORE.BBS, bbsFieldList, param);
-				model.addAttribute("resultList", bbsResultList);
+			if( "eduGold".equals(range) ){
+				eduGoldResultList = getResultList(SOLR_CORE.EDU_GOLD, eduGoldFieldList, param);
+				model.addAttribute("resultList", eduGoldResultList);
 			}
-			else if( "progrm".equals(range) ){
-				progrmResultList = getResultList(SOLR_CORE.PROGRM, progrmFieldList, param);
-				model.addAttribute("resultList", progrmResultList);
-			}
-			else if( "files".equals(range) ){
-				filesResultList = getResultList(SOLR_CORE.FILES, filesFieldList, param);
-				model.addAttribute("resultList", filesResultList);
-			}
-			else if( "menu".equals(range) ){
-				menuResultList = getResultList(SOLR_CORE.MENU, menuFieldList, param);
-				model.addAttribute("resultList", menuResultList);
-			}
-			else if( "webpage".equals(range) ){
-				webpageResultList = getResultList(SOLR_CORE.WEBPAGE, webpageFieldList, param);
-				model.addAttribute("resultList", webpageResultList);
-			}
-			else if( "onlineEdu".equals(range) ){
-				onlineEduResultList = getResultList(SOLR_CORE.ONLINE_EDU, onlineEduFieldList, param);
-				model.addAttribute("resultList", onlineEduResultList);
+			else if( "eduSubj".equals(range) ){
+				eduSubjResultList = getResultList(SOLR_CORE.EDU_SUBJ, eduSubjFieldList, param);
+				model.addAttribute("resultList", eduSubjResultList);
 			}
 		}
 
 		long totalCount = 0;
-		long bbsCnt = 0;
-		long progrmCnt = 0;
-		long filesCnt = 0;
-		long menuCnt = 0;
-		long webpageCnt = 0;
-		long onlineEduCnt = 0;
-		if( CollectionUtils.isNotEmpty(bbsResultList) ){
-			bbsCnt = bbsResultList.get(0).getLong("numFound");
+		long eduGoldCnt = 0;
+		long eduSubjCnt = 0;
+
+		if( CollectionUtils.isNotEmpty(eduGoldResultList) ){
+			eduGoldCnt = eduGoldListCnt;
 		}
-		if( CollectionUtils.isNotEmpty(progrmResultList) ){
-			//progrmCnt = progrmResultList.get(0).getLong("numFound");
-			progrmCnt = programListCnt;
+
+		if( CollectionUtils.isNotEmpty(eduSubjResultList) ){
+			eduSubjCnt = eduSubjListCnt;
 		}
-		if( CollectionUtils.isNotEmpty(filesResultList) ){
-			filesCnt = filesResultList.get(0).getLong("numFound");
-		}
-		if( CollectionUtils.isNotEmpty(menuResultList) ){
-			menuCnt = menuResultList.get(0).getLong("numFound");
-		}
-		if( CollectionUtils.isNotEmpty(webpageResultList) ){
-			webpageCnt = webpageResultList.get(0).getLong("numFound");
-		}
-		if( CollectionUtils.isNotEmpty(onlineEduResultList) ){
-			//onlineEduCnt = onlineEduResultList.get(0).getLong("numFound");
-			onlineEduCnt = onlineEduListCnt;
-		}
-		totalCount = progrmCnt + bbsCnt + filesCnt + menuCnt + webpageCnt + onlineEduCnt;
+
+		totalCount = eduGoldCnt + eduSubjCnt;
 		model.addAttribute("totalCount", totalCount);
 
 		if( StringUtils.hasText(rangeView) && totalCount > 0 ){
 			int total = 0;
-			if( "bbs".equals(rangeView) ){
-				total = (int)bbsCnt;
+
+			if( "eduGold".equals(rangeView) ){
+				total = (int)eduGoldCnt;
 			}
-			else if( "progrm".equals(rangeView) ){
-				total = (int)progrmCnt;
-			}
-			else if( "files".equals(rangeView) ){
-				total = (int)filesCnt;
-			}
-			else if( "menu".equals(rangeView) ){
-				total = (int)menuCnt;
-			}
-			else if( "webpage".equals(rangeView) ){
-				total = (int)webpageCnt;
-			}
-			else if( "onlineEdu".equals(rangeView) ){
-				total = (int)onlineEduCnt;
+			else if( "eduSubj".equals(rangeView) ){
+				total = (int)eduSubjCnt;
 			}
 
 			StringBuilder link = new StringBuilder();
@@ -390,52 +310,20 @@ public class SearchService extends DefaultCmmProgramService {
 		return resultList;
 	}
 
-	public List<String> getBbsFieldList() {
-		return bbsFieldList;
+	public List<String> getEduGoldFieldList() {
+		return eduGoldFieldList;
 	}
 
-	public void setBbsFieldList(List<String> bbsFieldList) {
-		this.bbsFieldList = bbsFieldList;
+	public void setEduGoldFieldList(List<String> eduGoldFieldList) {
+		this.eduGoldFieldList = eduGoldFieldList;
 	}
 
-	public List<String> getProgrmFieldList() {
-		return progrmFieldList;
+	public List<String> getEduSubjFieldList() {
+		return eduSubjFieldList;
 	}
 
-	public void setProgrmFieldList(List<String> progrmFieldList) {
-		this.progrmFieldList = progrmFieldList;
-	}
-
-	public List<String> getFilesFieldList() {
-		return filesFieldList;
-	}
-
-	public void setFilesFieldList(List<String> filesFieldList) {
-		this.filesFieldList = filesFieldList;
-	}
-
-	public List<String> getMenuFieldList() {
-		return menuFieldList;
-	}
-
-	public void setMenuFieldList(List<String> menuFieldList) {
-		this.menuFieldList = menuFieldList;
-	}
-
-	public List<String> getWebpageFieldList() {
-		return webpageFieldList;
-	}
-
-	public void setWebpageFieldList(List<String> webpageFieldList) {
-		this.webpageFieldList = webpageFieldList;
-	}
-
-	public List<String> getOnlineEduFieldList() {
-		return onlineEduFieldList;
-	}
-
-	public void setOnlineEduFieldList(List<String> onlineEduFieldList) {
-		this.onlineEduFieldList = onlineEduFieldList;
+	public void setEduSubjFieldList(List<String> eduSubjFieldList) {
+		this.eduSubjFieldList = eduSubjFieldList;
 	}
 
 }
