@@ -541,7 +541,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
     .fwo_card_list_box .fwo_card{height: 294px;}
     .fwo_card_list_box .fwo_card .fwo_snail_box{width: 100%; height: auto;}
-    .fwo_card_list_box .fwo_info_box{top:74%;}
+    .fwo_card_list_box .fwo_info_box{top:auto;}
     .fwo_card_list_box .fwo_info_box .fwo_tit_box{margin-bottom: 20px; font-size: 1.4rem; line-height: 2rem; margin-top: 0 !important;}
     .photoGallery2 h3 a span{font-size: 1.4rem;}
     .fwo_card_list_box .fwo_info_box{padding: 25px 10px 20px 20px;}
@@ -905,7 +905,7 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 .all_view_btn_box button span{padding: 8px 15px; color: #fff; font-size: 16px;}
 .photoGallery2 .all-list-box{display: flex; flex-wrap: wrap; margin-bottom: 70px;}
 .photoGallery2 .all-list-box .fwo_card{margin-top: 80px; margin-right: 20px;}
-.photoGallery2 .all-list-box .fwo_card img{height: 225px;}
+.photoGallery2 .all-list-box .fwo_card img{width:100%; height: 225px;}
 .photoGallery2 .all-list-box .fwo_card:nth-child(4n+4){margin-right: 0px;}
 .all-list-wrap, .category_list_btn{display: none;}
 .all-list-wrap.on{display: block;}
@@ -926,7 +926,7 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
 @media all and (max-width:640px) {
 
     .photoGallery2 .all-list-box{display: flex; flex-wrap: wrap; flex-direction: column;}
-    .photoGallery2 .all-list-box .fwo_card{margin-top: 30px; margin-right: 0px; width:100%;}
+    .photoGallery2 .all-list-box .fwo_card{margin-top: 70px; margin-right: 0px; width:100%;}
     .photoGallery2 .all-list-box .fwo_card:nth-child(4n+4){margin-right: 0px;}
 }
 
