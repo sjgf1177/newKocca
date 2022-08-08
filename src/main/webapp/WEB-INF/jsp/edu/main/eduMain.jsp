@@ -655,6 +655,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75223&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no12.png" alt="에듀코카 새단장 기념 이벤트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/c4v3mXKsKW5CKTZGA" target="_blank"><img src="/edu/images/renew2022/edukocca_no21.png" alt="콘텐츠스텝업 TECH 특강"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/QbVmz8H9eXWay5o69" target="_blank"><img src="/edu/images/renew2022/edukocca_no19.png" alt="융합예술콘텐츠 인터랙티브아트 창작자 양성사업 오픈특강"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/AFtRY5V9VPGgznb77" target="_blank"><img src="/edu/images/renew2022/edukocca_no20.png" alt="뮤지컬 작곡의 창작 과정에 대하여"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75240&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no18.png" alt="창작자 양성사업 오픈 특강"></a></div>
@@ -683,6 +684,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75223&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no12.png" alt="에듀코카 새단장 기념 이벤트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/m_edukocca_no9.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/c4v3mXKsKW5CKTZGA" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no21.jpg" alt="콘텐츠스텝업 TECH 특강" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/QbVmz8H9eXWay5o69" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no19.png" alt="융합예술콘텐츠 인터랙티브아트 창작자 양성사업 오픈특강" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/AFtRY5V9VPGgznb77" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no20.jpg" alt="뮤지컬 작곡의 창작 과정에 대하여" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75240&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no18.jpg" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
