@@ -126,7 +126,7 @@
     <link rel="stylesheet" type="text/css" href="/edu/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="/edu/css/layout.css"/>
     <link rel="stylesheet" href="/edu/js/bm/swiper/swiper.min.css"/>
-    <link rel="stylesheet" href="/edu/css/bm/animate.min.css"/>
+    <%--<link rel="stylesheet" href="/edu/css/bm/animate.min.css"/>--%>
     <link rel="stylesheet" href="/edu/css/bm/bootstrap.reset.css"/>
     <link rel="stylesheet" href="/edu/css/bm/common_prev.css"/>
     <link rel="stylesheet" href="/edu/css/bm/flaticon.css"/>
@@ -170,7 +170,7 @@
     <script type="text/javascript" src="/edu/js/new/js.js"></script>
 
     <!-- renew2022 CSS start -->
-    <link rel="stylesheet" href="/edu/css/renew2022/assets/plugins/animation/css/animate.min.css">
+    <%--<link rel="stylesheet" href="/edu/css/renew2022/assets/plugins/animation/css/animate.min.css">--%>
     <link rel="stylesheet" href="/edu/css/renew2022/assets/css/style.css">
     <link rel="stylesheet" href="/edu/css/renew2022/renew.css">
     <link rel="stylesheet" href="/edu/css/renew2022/AOS/aos.css">
@@ -769,7 +769,7 @@
             <div class="container">
                 <!-- 추천 클래스 start -->
                 <div class="fwo_card_list_box fwo_card01">
-                    <span class="main_title">추천 클래스</span>
+                    <span class="main_title animate__pulse01" style="width: auto;">추천 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
                             <c:forEach items="${eduSubjList }" var="result">
@@ -815,7 +815,7 @@
 
                 <!-- 인기 클래스 start -->
                 <div class="fwo_card_list_box fwo_card02">
-                    <span class="main_title">인기 클래스</span>
+                    <span class="main_title animate__pulse02" style="width: auto;">인기 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
                             <c:forEach items="${popularityList }" var="result">
