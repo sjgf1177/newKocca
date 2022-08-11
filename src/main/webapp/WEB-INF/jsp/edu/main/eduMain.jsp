@@ -653,6 +653,7 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75247&menuNo=500008"><img src="/edu/images/renew2022/edukocca_no23.png" alt="서버 점검 공지"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/pgHgGCgqE98k5PuA6" target="_blank"><img src="/edu/images/renew2022/edukocca_no22.png" alt="찾아가는 투자유치 상담회"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/c4v3mXKsKW5CKTZGA" target="_blank"><img src="/edu/images/renew2022/edukocca_no21.png" alt="콘텐츠스텝업 TECH 특강"></a></div>
@@ -678,6 +679,7 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75247&menuNo=500008"><img src="/edu/images/renew2022/m_edukocca_no23.jpg" alt="서버 점검 공지" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/m_edukocca_no9.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/pgHgGCgqE98k5PuA6" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no22.jpg" alt="찾아가는 투자유치 상담회" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/c4v3mXKsKW5CKTZGA" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no21.jpg" alt="콘텐츠스텝업 TECH 특강" style="width:100%;"></a></div>
