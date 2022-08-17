@@ -864,13 +864,11 @@
             <div class="container">
                 <div class="swiper-container">
                     <ul class="swiper-wrapper">
-                        <c:forEach items="${realmTabList }" var="item" varStatus="status">
-                            <c:if test="${(fn:length(item.code) < 3 && item.code ne 'O0' && item.code ne 'A' && item.code ne 'T0')}">
-                                <li class="swiper-slide">
-                                    <a href="javascript:void(0);" onclick="fnCmdSubjSearchList('${item.code }', '', '', '', ''); return false;" ${selectedGubunAtag}>${item.codenm }</a>
-                                </li>
-                            </c:if>
-                        </c:forEach>
+                        <li class="swiper-slide"><a href="javascript:void(0);" onclick="fnCmdSubjSearchList('B0', '', '', '', ''); return false;" ${selectedGubunAtag}>방송영상<br>Broadcast Video</a></li>
+                        <li class="swiper-slide"><a href="javascript:void(0);" onclick="fnCmdSubjSearchList('G0', '', '', '', ''); return false;" ${selectedGubunAtag}>게임<br>Games</a></li>
+                        <li class="swiper-slide"><a href="javascript:void(0);" onclick="fnCmdSubjSearchList('K0', '', '', '', ''); return false;" ${selectedGubunAtag}>만화·애니·캐릭터<br>Cartoon · Character</a></li>
+                        <li class="swiper-slide"><a href="javascript:void(0);" onclick="fnCmdSubjSearchList('M0', '', '', '', ''); return false;" ${selectedGubunAtag}>음악/공연<br>Music · Performance</a></li>
+                        <li class="swiper-slide"><a href="javascript:void(0);" onclick="fnCmdSubjSearchList('S0', '', '', '', ''); return false;" ${selectedGubunAtag}>인문교양<br>Liberal Arts</a></li>
                     </ul>
 
                     <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
