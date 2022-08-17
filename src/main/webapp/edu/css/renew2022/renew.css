@@ -421,7 +421,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .main_visual_contents{height: 482px; background-color: #222222; padding: 40px 0;}
 .main_visual_contents #main_visual_slide{position: relative; width: 1280px; height: 360px;}
 .main_visual_contents .swiper_page_all_box{position:absolute; bottom: 0px; z-index: 9;}
-.swiper_page_all_box{width: 142px; height: 30px; background-color: #3B85ff; border-radius: 30px;}
+.swiper_page_all_box{width: 142px; height: 30px; background-color: #3a3a3a; border-radius: 30px;}
 .swiper_page_all_box .swiper-pagination{width:calc(100% - 73px); height: 100%; line-height: 30px; font-size: 14px;}
 .swiper_page_all_box .swiper_control_box{line-height: 30px;}
 .swiper_page_all_box button{background-color: transparent;}
