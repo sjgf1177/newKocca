@@ -251,8 +251,12 @@
 
 //]]>
 </script>
-
-<div class="memberStep2">
+<style>
+	.sub_section .sub_contents_body .agreeScrBtm input[type="checkbox"] + label{padding-left: 27px;}
+	.board_util_btn_con .btn_style_0.close_w{background-image: none;}
+</style>
+<div class="col-center mw-1280" style="padding-top: 30px;">
+	<div class="memberStep2">
 	<div class="signup_step_bar recruit_step">
 	    <div class="step_wrap">
 	        <p class="step_box">
@@ -432,4 +436,5 @@
 		<a href="javascript:checkForm();" class="btn_style_0 full right">다음</a>
 		<a href="/edu/progrm/master/view.do?prgSn=<c:out value='${param.prgSn}'/>&amp;menuNo=<c:out value="${param.menuNo }"/>&amp;prgSe=<c:out value="${param.prgSe }"/>&amp;prgCl=<c:out value="${param.prgCl }"/>&amp;siteSe=<c:out value="${param.siteSe }"/>" onclick="return confirm('정말로 취소하시겠습니까?');" class="btn_style_0 full close_w">취소</a>
 	</div>
+</div>
 </div>

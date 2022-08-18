@@ -623,7 +623,7 @@ ul.list_style_4 > li .list_style_4_arrow{background:url('/edu/images/bm/list_sty
 .signup_step_bar .step_box{font-size: 13px; font-size: 1.3rem; line-height: 19px; line-height: 1.9rem; font-weight: 400; color: #313131; letter-spacing: -0.025em;}
 .signup_step_bar .step_box .step_title{display: block; margin-bottom: 2px;}
 .signup_step_bar .step_line_wrap{display: table-cell; vertical-align: middle; text-align: center; background: url("/edu/images/bm/sub_signup_stepbar_dot.png") repeat-x left center;}
-.signup_step_bar .step_line_wrap .step_right_arrow {width: 15px; height: 15px; display: inline-block; background: #ced8e7 url("/edu/images/bm/sub_signup_setpbar_right.png") no-repeat center center; border-radius: 50%;}
+/*.signup_step_bar .step_line_wrap .step_right_arrow {width: 15px; height: 15px; display: inline-block; background: #ced8e7 url("/edu/images/bm/sub_signup_setpbar_right.png") no-repeat center center; border-radius: 50%;}*/
 .signup_step_bar .step_line_wrap span.sr-only{display:none;}
 .signup_step_bar.recruit_step .step_wrap{padding:0 5px;}
 .signup_step_bar.recruit_step span.sr-only{display:none;}

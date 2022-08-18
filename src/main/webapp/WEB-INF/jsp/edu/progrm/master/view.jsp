@@ -34,13 +34,13 @@ $(function() {
 		<ul class="col-12 linemap_con">
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>사업안내</span></a></li>
-			<li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠인사이트</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span><c:out value="${param.menuNm}"/></span></a></li>
 		</ul>
 	</div>
 </div>
 
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">콘텐츠인사이트</div>
+	<div class="col-center mw-1280"><c:out value="${param.menuNm}"/></div>
 </div>
 
 <div class="col-center mw-1280">
