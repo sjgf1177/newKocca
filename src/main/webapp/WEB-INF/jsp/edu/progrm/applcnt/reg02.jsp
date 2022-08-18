@@ -254,6 +254,8 @@
 <style>
 	.sub_section .sub_contents_body .agreeScrBtm input[type="checkbox"] + label{padding-left: 27px;}
 	.board_util_btn_con .btn_style_0.close_w{background-image: none;}
+	.table td{white-space: normal!important;}
+	.dp_block td, .dp_block th{display: block!important;}
 </style>
 <div class="col-center mw-1280" style="padding-top: 30px;">
 	<div class="memberStep2">
@@ -345,7 +347,7 @@
 				<table class="table table-bordered contents_insight_view style_0">
 					<caption>기본정보입력</caption>
 					<colgroup>
-					<col style="width:20%;">
+					<col style="width:25%;">
 					<col>
 					</colgroup>
 					<tbody>
@@ -400,11 +402,11 @@
 				<h3>부가정보입력</h3>
 			</div>
 			<div class="tbrinfo text-danger clear hide_star_con"><span class="hide_star"><span class="ally-hidden">(필수입력)</span></span> 표시 항목은 필수 입력 항목입니다.</div>
-			<div class="bdView sub_board_body">
+			<div class="bdView sub_board_body dp_block">
 				<table class="table table-bordered contents_insight_view style_0 input_delete">
 					<caption>부가정보입력</caption>
 					<colgroup>
-					<col style="width:20%;" />
+					<col style="width:100%;" />
 					<col/>
 					</colgroup>
 					<tbody>
