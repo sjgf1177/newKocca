@@ -255,7 +255,8 @@
 	.sub_section .sub_contents_body .agreeScrBtm input[type="checkbox"] + label{padding-left: 27px;}
 	.board_util_btn_con .btn_style_0.close_w{background-image: none;}
 	.table td{white-space: normal!important;}
-	.dp_block td, .dp_block th{display: block!important;}
+	.dp_block td, .dp_block th{display: block!important; white-space: normal!important;}
+	.sub_section .sub_contents_body table.table-bordered.contents_insight_view th{width:100%;}
 </style>
 <div class="col-center mw-1280" style="padding-top: 30px;">
 	<div class="memberStep2">
