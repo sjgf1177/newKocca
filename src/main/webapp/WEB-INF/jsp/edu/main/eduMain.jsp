@@ -653,6 +653,7 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75255&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no24.png" alt="에듀코카 8월 이벤트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/pgHgGCgqE98k5PuA6" target="_blank"><img src="/edu/images/renew2022/edukocca_no22.png" alt="찾아가는 투자유치 상담회"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/c4v3mXKsKW5CKTZGA" target="_blank"><img src="/edu/images/renew2022/edukocca_no21.png" alt="콘텐츠스텝업 TECH 특강"></a></div>
