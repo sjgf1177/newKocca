@@ -100,7 +100,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>에듀코카 korea creative content agency</title>
+    <title>에듀코카 - 누구나 쉽게 배우는 K콘텐츠</title>
+    <meta name="description" content="한국콘텐츠진흥원이 운영하는 온라인 교육 사이트. 방송/영상, 게임, 음악/공연, 웹툰 등 콘텐츠산업 관련 교육콘텐츠 무료 제공.">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=1"/>
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
