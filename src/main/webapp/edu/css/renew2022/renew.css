@@ -395,7 +395,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .bg_agree_box button{background-color: transparent; text-decoration: underline;}
 
 /* 회원가입 layer*/
-.layer_agree_wrap01, .layer_agree_wrap02{display: none;}
+.layer_agree_wrap01, .layer_agree_wrap02, .layer_agree_wrap03{display: none;}
 .layer_agree_inner{width: 500px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 0 20px;}
 .layer_top button{position: absolute; top: 25px; right: 20px;}
 .sub_section .sub_contents_body .layer_agree_inner .signup_agree_con{padding-bottom: 0; border-bottom: none; border-top: none;}
