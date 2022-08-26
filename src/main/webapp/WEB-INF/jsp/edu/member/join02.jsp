@@ -1189,7 +1189,7 @@
                                 <li><span class="dot">2. 개인정보 수집 항목</span></li>
                                 <li><span class="dot">- 필수항목 : 아이디, 비밀번호, 이름, 성별, 생년월일, E-mail, 휴대폰번호, 직업</span></li>
                                 <li>
-                                    <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600;"">
+                                    <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600; font-size: 17px;">
                                         3. 개인정보 보유 및 이용기간 : 3년 혹은 회원 탈퇴 후 즉시 삭제
                                     </span>
                                 </li>
@@ -1225,7 +1225,7 @@
                                 <li><span class="dot">2. 개인정보 수집 항목</span></li>
                                 <li><span class="dot">- 선택항목 : 에듀코카 정보수신 여부</span></li>
                                 <li>
-                                    <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600;">
+                                    <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600; font-size: 17px;">
                                         3. 개인정보 보유 및 이용기간 : 3년 혹은 회원 탈퇴 후 즉시 삭제
                                     </span>
                                 </li>
