@@ -458,7 +458,7 @@
                     <ul class="navbar-nav">
                         <!-- nav 이벤트 one-daps start -->
                         <li>
-                            <a href="javascript:void(0);">이벤트</a>
+                            <a href="/edu/bbs/B0000048/list.do?menuNo=500205">이벤트</a>
                             <!-- nav 이벤트 two-daps start -->
                             <ul>
                                 <li><a href="javascript:void(0);" onclick="fnGoEvent('1')">에듀코카 이벤트</a></li>
@@ -472,7 +472,7 @@
 
                         <!-- nav 카테고리 one-daps start -->
                         <li>
-                            <a href="javascript:void(0);">카테고리</a>
+                            <a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">카테고리</a>
                             <!-- nav 카테고리 two-daps start -->
                             <ul>
                                 <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">학습로드맵</a></li>
@@ -488,7 +488,7 @@
 
                         <!-- nav 사업안내 one-daps start -->
                         <li>
-                            <a href="javascript:void(0);">사업안내</a>
+                            <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">사업안내</a>
                             <!-- nav 이벤트 two-daps start -->
                             <ul>
                                 <li><a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">콘텐츠스텝업</a></li>
@@ -516,7 +516,7 @@
 
                         <!-- nav 시설안내 one-daps start -->
                         <li>
-                            <a href="javascript:void(0);">시설안내</a>
+                            <a href="/testbed/main/contents.do?menuNo=700133">시설안내</a>
                             <!-- nav 시설안내 two-daps start -->
                             <ul>
                                 <li><a href="/testbed/main/main.do?menuNo=500108">콘텐츠문화광장</a></li>
