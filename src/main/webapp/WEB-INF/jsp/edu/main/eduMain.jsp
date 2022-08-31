@@ -890,7 +890,9 @@
         <div class="main_offline_contents">
             <div class="container">
                 <div class="fwo_card_list_box fwo_card03">
-                    <span class="main_title main_title_bold">진행 중 이벤트 </span>
+                    <span class="main_title main_title_bold">
+                        <a href="/edu/bbs/B0000048/list.do?menuNo=500205" alt="진행 중 이벤트 바로가기">진행 중 이벤트</a>
+                    </span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
                             <c:forEach items="${openEventList }" var="result" varStatus="status">
@@ -963,7 +965,9 @@
         <!-- KOCCA에서 만날 수 있는 특별한 교육 사업 start -->
         <div class="main_study_contents">
             <div class="container">
-                <span class="main_title main_title_bold">KOCCA 교육 사업</span>
+                <span class="main_title main_title_bold">
+                    <a href="/edu/dream/mainRsltManage/list.do?menuNo=500040" alt="KOCCA 교육 사업 바로가기">KOCCA 교육 사업</a>
+                </span>
                 <div class="three_card01 swiper-container">
                     <ul class="three_card_list_box swiper-wrapper">
                         <li class="swiper-slide"
@@ -1069,7 +1073,9 @@
         <!-- kocca는 창작자 여러분에게 열려 있습니다 start -->
         <div class="main_place_contents" data-aos="zoom-in">
             <div class="container">
-                <span class="main_title main_title_bold">KOCCA 교육 시설</span>
+                <span class="main_title main_title_bold">
+                    <a href="/testbed/main/contents.do?menuNo=700133" alt="KOCCA 교육 시설 바로가기">KOCCA 교육 시설</a>
+                </span>
                 <div class="swiper-container one_card01">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
