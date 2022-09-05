@@ -388,6 +388,20 @@ $(document).ready(function() {
 
     /*}).resize();*/
 
+    // new신규 클래스 슬라이드
+    var onecard02 = new Swiper('.main_new_contents .one_card01', {
+        /*loop: true,*/
+        autoplay : 3000
+        ,speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        //구버전 swiper 방향표
+        ,nextButton: '.main_new_contents .swiper-button-next'
+        ,prevButton: '.main_new_contents .swiper-button-prev'
+
+    });
+
 
     // KOCCA교육 시설 슬라이드
     var onecard01 = new Swiper('.main_place_contents .one_card01', {

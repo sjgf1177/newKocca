@@ -768,9 +768,71 @@
         </div>
         <!-- SNS / 공지사항 end -->
 
-        <!-- 추천과정/ 수강한 과정 start -->
+        <!--  신규클래스 /추천과정/ 수강한 과정 start -->
         <div class="main_online_contents">
             <div class="container">
+                <!-- 신규 클래스 start -->
+                <div class="main_new_contents pc"> <!-- pc 슬라이드 -->
+                    <div class="container">
+                        <span class="main_title main_title_bold">
+                            <a href="" alt="NEW 신규 클래스">NEW 신규 클래스</a>
+                        </span>
+                        <div class="swiper-container one_card01">
+                            <ul class="swiper-wrapper pc">
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner01.jpg" alt=""></span>
+                                    <div class="new_txt_box">
+                                        <h3>콘텐츠 문화 광장</h3>
+                                        <p class="new_info_box">
+                                            콘텐츠문화광장은 융복합 콘텐츠의 테스트베드(TEST BED)로서
+                                            블랙박스 구조의 스테이지66과 스튜디오1, 2, 연습실 등을 갖추고
+                                            콘텐츠 산업의 미래를 여는 역할을 하고 있습니다.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner02.jpg" alt=""></span>
+                                    <div class="new_txt_box">
+                                        <h3>2번 제목입니다</h3>
+                                        <p class="new_info_box">
+                                            2번입니다
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper_btn_box">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main_new_contents mo"> <!-- 모바일 슬라이드 -->
+                    <div class="container">
+                        <span class="main_title main_title_bold">
+                            <a href="#" alt="NEW 신규 클래스">NEW 신규 클래스</a>
+                        </span>
+                        <div class="swiper-container one_card01">
+                            <ul class="swiper-wrapper pc">
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner01.jpg" alt=""></span>
+                                </li>
+
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner02.jpg" alt=""></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper_btn_box">
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 신규 클래스 end -->
+
                 <!-- 추천 클래스 start -->
                 <div class="fwo_card_list_box fwo_card01">
                     <span class="main_title animate__pulse01" style="width: auto;">추천 클래스</span>

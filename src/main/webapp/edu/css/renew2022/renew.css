@@ -567,6 +567,45 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
 }
 
+/* NEW 신규 클래스 */
+.main_new_contents{padding: 0px 0 100px 0; position: relative;}
+.main_new_contents.mo{display: none;}
+.contents_section .main_new_contents .container .main_title{font-size: 26px; line-height: 40px; margin-bottom: 30px;}
+.main_new_contents li{display: flex; justify-content: space-between;}
+.main_new_contents .new_snail_box{width: 850px; height: 245px; overflow: hidden; border-radius: 30px;}
+.main_new_contents .new_snail_box img{width: 100%; height: 100%;}
+.main_new_contents .new_txt_box{position: relative; width: 400px; }
+.main_new_contents .new_txt_box h3{font-size: 30px; font-weight: 600; margin-bottom: 35px; line-height: 44px;}
+.main_new_contents .new_txt_box .new_info_box{font-size: 18px; color: #666666; line-height: 30px;}
+.main_new_contents .new_txt_box .go_add_btn_box{position: absolute; bottom: 0;}
+.main_new_contents .new_txt_box .go_add_btn_box a{padding-right: 40px;font-size: 16px; color: #3b85ff; font-weight: 600; background-image: url("/edu/images/renew2022/ico_add_blue.png"); background-repeat: no-repeat; background-position: right 8px center;}
+.main_new_contents .swiper_btn_box{position: absolute; top: 0; right: 0; display: flex; width: 108px; justify-content: space-between;}
+.main_new_contents .swiper-button-prev{position: static; margin-top: 0; width: 48px; height: 48px; background-image: url("/edu/images/renew2022/left_on.png"); background-repeat: no-repeat; background-size: contain;}
+.main_new_contents .swiper-button-next{position: static; margin-top: 0; width: 48px; height: 48px; background-image: url("/edu/images/renew2022/right_on.png"); background-repeat: no-repeat; background-size: contain;}
+
+@media all and (max-width:1280px) {
+    .main_new_contents{padding: 0px 0 100px 0;}
+    .contents_section .main_place_contents .container .main_title{font-size: 3rem; line-height: 5rem;}
+    .main_new_contents .new_snail_box{width:calc(100% - 40%);}
+    .main_new_contents .new_txt_box{width:calc(100% - 65%);}
+    .main_new_contents .new_txt_box h3{font-size: 2.2rem;}
+    .main_new_contents .new_txt_box .new_info_box{font-size: 1.4rem; line-height: 2.5rem;}
+    .main_new_contents .new_txt_box .go_add_btn_box a{font-size: 1.2rem; background-size: 16px; padding-right: 30px;}
+}
+@media all and (max-width:640px) {
+    .main_new_contents{padding-bottom: 50px;}
+    .contents_section .main_new_contents .container .main_title{margin-bottom: 50px;}
+    .main_new_contents li{flex-direction: column;}
+    .main_new_contents .new_snail_box, .main_new_contents .new_txt_box{width: 100%;}
+    .main_new_contents .new_txt_box{display: none;}
+    .main_new_contents .new_txt_box h3{margin-bottom: 20px;}
+    .main_new_contents .swiper_btn_box{width: calc(100% - 82%); top:5px; right: 0px;}
+    .main_new_contents .swiper-button-prev, .main_new_contents .swiper-button-next{width:30px; height:30px; background-size: 30px; background-position: center;}
+    .main_new_contents.pc{display: none;}
+    .main_new_contents.mo{display: block;}
+}
+
+
 /* 메인 아이콘카테고리(방송영상,게임,만애캐,문화일반,인경교일) */
 .main_news_contents{padding-bottom: 0}
 .main_news_contents .container > div{width: 100%; height: 306px; padding: 82px 0 103px 0; background: transparent; margin-bottom: 0; float:initial;}
