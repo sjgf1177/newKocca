@@ -55,7 +55,7 @@
 		<div class="edu_youtube_wrap">
 			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/lihO7WTTxak" frameborder="0" allowfullscreen title="2016 창의인재동반사업 소개"></iframe> -->
 			<video width="100%" height="auto"  poster="https://edu.kocca.kr/upload/dream/dream_introduce_2020_ep.jpg" oncontextmenu="return false;" controls="true" controlslist="nodownload">
-				<source src="https://edu.kocca.kr/upload/dream/dream_introduce_2020_ep.mp4" type="video/mp4">
+				<source src="https://edu.kocca.kr/upload/dream/dream_introduce_2022_ep.mp4" type="video/mp4">
 			</video>
 		</div>
 		<div class="edu_youtube_subtitle_view_btn_con">
@@ -130,7 +130,7 @@
 						창작실무와 노하우를 전수받고자 하는 열정 넘치는 예비창작자
 					</p>
 					<p style="margin-top:15px;">
-						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">2,368</spen> 명
+						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">2,808</spen> 명
 					</p>
 				</div>
 			</div>
@@ -150,7 +150,7 @@
 						선발, 도제식 교육을 통한 노하우 전수
 					</p>
 					<p style="margin-top:15px;">
-						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">1,118</spen> 명
+						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">1,339</spen> 명
 					</p>
 				</div>
 			</div>
@@ -171,13 +171,13 @@
 						창의숙성과정을 운영하는 기관
 					</p>
 					<p style="margin-top:15px; padding-left:20px;">
-						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">93</spen> 개
+						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">110</spen> 개
 					</p>
 				</div>
 			</div>
 		</div>
 		<div style="font-size:13px; color:#A4A4A4; text-align:right; margin-right:52px; margin-bottom:25px;">
-			* 2012년 ~ 2020년 누적 기준
+			* 2012년 ~ 2021년 누적 기준
 		</div>
 	</div>
 	<p class="call_txt_box2">문의처 : 061-900-6383 / 6385</p>
