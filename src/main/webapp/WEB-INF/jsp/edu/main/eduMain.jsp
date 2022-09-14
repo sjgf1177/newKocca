@@ -782,23 +782,18 @@
                         <div class="swiper-container one_card01">
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
-                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner01.jpg" alt=""></span>
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1">
+                                            <img src="/edu/images/renew2022/new_class.png" alt="">
+                                        </a>
+                                    </span>
                                     <div class="new_txt_box">
-                                        <h3>콘텐츠 문화 광장</h3>
+                                        <h3>콘텐츠 뒤의 사람들, OTT 이야기</h3>
                                         <p class="new_info_box">
-                                            콘텐츠문화광장은 융복합 콘텐츠의 테스트베드(TEST BED)로서
-                                            블랙박스 구조의 스테이지66과 스튜디오1, 2, 연습실 등을 갖추고
-                                            콘텐츠 산업의 미래를 여는 역할을 하고 있습니다.
-                                        </p>
-                                    </div>
-                                </li>
-
-                                <li class="swiper-slide">
-                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner02.jpg" alt=""></span>
-                                    <div class="new_txt_box">
-                                        <h3>2번 제목입니다</h3>
-                                        <p class="new_info_box">
-                                            2번입니다
+                                            빠르고, 크고, 다양하게 퍼져 나가는 OTT!
+                                            콘텐츠 기업에서 하는 일이 궁금한 사람들을 위해 준비했습니다.
+                                            OTT플랫폼 현직자들과 다양한 직무분야에 대한 이야기가 궁금하다면?
+                                            에듀코카에서 확인하세요!
                                         </p>
                                     </div>
                                 </li>
