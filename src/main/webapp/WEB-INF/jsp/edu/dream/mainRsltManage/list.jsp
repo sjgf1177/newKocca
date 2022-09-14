@@ -54,63 +54,81 @@
 		</p>
 		<div class="edu_youtube_wrap">
 			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/lihO7WTTxak" frameborder="0" allowfullscreen title="2016 창의인재동반사업 소개"></iframe> -->
-			<video width="100%" height="auto"  poster="https://edu.kocca.kr/upload/dream/dream_introduce_2020_ep.jpg" oncontextmenu="return false;" controls="true" controlslist="nodownload">
+			<video width="100%" height="auto"  poster="https://edu.kocca.kr/upload/dream/dream_introduce_2022_ep.jpg" oncontextmenu="return false;" controls="true" controlslist="nodownload">
 				<source src="https://edu.kocca.kr/upload/dream/dream_introduce_2022_ep.mp4" type="video/mp4">
 			</video>
 		</div>
 		<div class="edu_youtube_subtitle_view_btn_con">
 			<button class="edu_youtube_subtitle_view_btn caption_btn" onclick="showCaption();"><span class="edu_view_default" style="color:white">자막보기</span><span class="edu_view_active" style="color:white">자막닫기</span></button>
 			<div class="edu_youtube_subtitle_view_text" tabindex="0" >
-
-				유민호 │작곡가
-				<br/><동백꽃 필 무렵> OST 작·편곡
-				<br/><조선로코 녹두전> OST 작·편곡
-					<br/><검법남녀> OST 작·편곡
-						<br/>
-						<br/>(멘트)작업을 하다 보면 혼자 벽에 막혀 답답한 순간이 많은데 그럴 때마다 멘토님이 다양한 의견을 주신 덕분에 난관을 보다 쉽게 극복할 수 있었던 것 같아요.
-						<br/>
-						<br/>당신의 든든한 지원자
-						<br/>창의인재동반사업 멘토링 프로그램
-						<br/>
-						<br/>곽보연 │ 웹툰 작가
-						<br/>웹툰 <우리는 매일매일> 연재
-							<br/>구독자 40만명
-							<br/>총 조회수 1,520만 건
-							<br/>
-							<br/>(멘트)제 머릿속으로만 상상하던 캐릭터와 이야기를 실제로 연재하게 됐다는 게 신기해요
-							<br/>다양하게 멘토에게 도움을 받을 수 있다는 게 가장 큰 장점이죠
-							<br/>
-							<br/>다양한 멘토들의 서포트
-							<br/>창의인재동반사업 멘토링 프로그램
-							<br/>
-							<br/>이승환 │ 게임개발자
-							<br/>액션 RPG 게임 <그레이트 소드> 출시
-								<br/>구글 및 앱스토어
-								<br/>누적 다운로드 13만
-								<br/>
-								<br/>(멘트)게임이 좋아서 무작정 게임을 만드는 사람이 되어야겠다고 생각했죠
-								<br/>그런데 그게 쉽나요?
-								<br/>지금은 창의인재동반사업 덕분에 꿈을 이룬 것 같아 너무 기쁩니다.
-								<br/>
-								<br/>내 꿈을 향한 도전
-								<br/>창의인재동반사업 멘토링 프로그램
-								<br/>
-								<br/>꿈을 현실로 만들고 싶다면
-								<br/>
-								<br/>(멘트)꿈을 현실로 만들고 싶다면
-								<br/>
-								<br/>지금 도전하세요
-								<br/>창의인재동반사업이 도와줄 거에요
-								<br/>
-								<br/>(멘트)지금 도전하세요
-								<br/>창의인재동반사업이 당신을 돕겠습니다.
-								<br/>
-								<br/>(멘트)창의인재동반사업, 다음 성공의 주인공은 당신입니다.
-								<br/>
-								<br/>문화체육관광부(로고) 한국콘텐츠진흥원(로고)
-								<br/>
-								<br/>(멘트)한국콘텐진흥원
-								<br/>
+				<br/>누구나 하나씩은 마음속에 품고 있는 콘텐츠
+				<br/>(멘트) 누구나 하나씩은 마음속에 품고 있는 콘텐츠가 있죠
+				<br/>
+				<br/>음악
+				<br/>(멘트) 들을 때마다 설레는 음악
+				<br/>스토리
+				<br/>(멘트) 밤새는 줄 모르고 읽던 책
+				<br/>영화
+				<br/>(멘트) 몇 번씩 다시 봤던 영화
+				<br/>(멘트) 장르와 취향은 달라도 좋은 콘텐츠가 주는 감동은 언제나 가슴 벅찹니다.
+				<br/>
+				<br/>좋은 콘텐츠를 위한 터전을 만든 10년
+				<br/>(멘트) 우리가 지난 10년 동안 해온 일은 더 많은 사람들이 감동할 수 있는 더 좋은 콘텐츠를 창작할 수 있는 터전을 만든 것입니다.
+				<br/>
+				<br/>사람과 사람
+				<br/>(멘트) 사람과 사람을 연결하고
+				<br/>
+				<br/>기술과 창의력
+				<br/>(멘트) 기술과 창의력을 융합하고
+				<br/>
+				<br/>새로운 도전과 창조적 결합
+				<br/>(멘트) 새로운 도전과 창조적 결합을 통해
+				<br/>
+				<br/>Creative DNA 10년
+				<br/>(멘트) 우리만의 크리에이티브 DNA를 발전시켜온 10년
+				<br/>젊은 인재들의 꿈을 지원하는 한국콘텐츠진흥원의 인재양성 사업이야기를 한번 들어보실래요?
+				<br/>
+				<br/>콘텐츠 창의인재동반사업
+				<br/>
+				<br/>콘텐츠 창의인재동반사업
+				<br/>예비 창작자의 역량 개발에서 산업계 진출까지 원스톱 지원하는 대표 인재양성사업
+				<br/>(멘트) 창의인재동반사업은 예비 창작자의 창작 역량 개발에서 산업계 진출까지 원스톱으로 지원하는 한국콘텐츠진흥원의 대표 인재양성사업입니다.
+				<br/>
+				<br/>검은 사제들
+				<br/>멘티 : 장재현(작·감독)
+				<br/>멘토 : 황병국
+				<br/>(멘트) 영화 검은사제들
+				<br/>
+				<br/>동백꽃 필 무렵 OST
+				<br/>멘티 : 유민호, 박지환(작/편곡)
+				<br/>멘토 : 강동윤
+				<br/>(멘트) 드라마 동백꽃 필 무렵의 OST
+				<br/>
+				<br/>
+				<br/>여신님이 보고계셔
+				<br/>멘티 : 한정석(기획·극작)
+				<br/>멘토 : 조성원
+				<br/>(멘트) 뮤지컬 여신님이 보고계셔와 다수의 웹툰까지, 지난 10년동안 수많은 작품들이 창의인재동반사업을 통해 탄생했습니다.
+				<br/>
+				<br/>대중을 매료시킨 창작역량의 비결
+				<br/>(멘트) 대중을 매료시킨 창작역량의 비결
+				<br/>
+				<br/>창의인재동반사업만의 1:1 도제식 멘토링
+				<br/>(멘트) 그것은 콘텐츠 전문가와 예비 창작자들을 이어준 창의인재동반사업만의 1:1 도제식 멘토링이었습니다.
+				<br/>
+				<br/>창의DNA를 구축하고 키워 온 지난 10년
+				<br/>(멘트) 지난 10년동안 창의 DNA를 구축하고 키워온 인재양성지원사업
+				<br/>
+				<br/>새로운 콘텐츠의 창조DNA를 개척할 다음 10년
+				<br/>(멘트) 이제는 앞으로 10년을 이끌 새로운 콘텐츠의 창조DNA를 개척해야할 시간
+				<br/>
+				<br/>세상을 놀라게 할 더 좋은 콘텐츠
+				<br/>(멘트) 세대와 세대를 잇고 장르와 기술의 융합으로 세상을 놀라게 할 더 좋은 콘텐츠를 만들기 위해 한국콘텐츠진흥원 인재양성사업이 함께하겠습니다.
+				<br/>
+				<br/>창의 DNA 10+(로고)
+				<br/>
+				<br/>문화체육관광부(로고) 한국콘텐츠진흥원(로고)
+				<br/>
 			</div>
 		</div>
 	</div>
