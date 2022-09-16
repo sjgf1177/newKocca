@@ -655,6 +655,7 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75274&menuNo=500008"><img src="/edu/images/renew2022/edukocca_no38.png" alt="서버 점검 안내"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/edukocca_no37.png" alt="창의인재동반사업 오픈특강 인디게임"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/2rSyWzRgFqG5xdcVA" target="_blank"><img src="/edu/images/renew2022/edukocca_no36.png" alt="창의인재동반사업 오픈특강 젬블로"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획"></a></div>
@@ -681,6 +682,7 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75274&menuNo=500008"><img src="/edu/images/renew2022/m_edukocca_no38.png" alt="서버 점검 안내" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no37.jpg" alt="창의인재동반사업 오픈특강 인디게임" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/2rSyWzRgFqG5xdcVA" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no36.png" alt="창의인재동반사업 오픈특강 젬블로" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획" style="width:100%;"></a></div>
@@ -806,11 +808,11 @@
                         <div class="swiper-container one_card01">
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
-                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner01.jpg" alt=""></span>
-                                </li>
-
-                                <li class="swiper-slide">
-                                    <span class="new_snail_box"><img src="/edu/images/renew2022/open_benner02.jpg" alt=""></span>
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1">
+                                            <img src="/edu/images/renew2022/m_new_class.png" alt="">
+                                        </a>
+                                    </span>
                                 </li>
                             </ul>
                         </div>
