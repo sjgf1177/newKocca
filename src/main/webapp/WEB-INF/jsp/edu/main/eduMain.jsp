@@ -655,13 +655,9 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75274&menuNo=500008"><img src="/edu/images/renew2022/edukocca_no38.png" alt="서버 점검 안내"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/edukocca_no37.png" alt="창의인재동반사업 오픈특강 인디게임"></a></div>
-                    <div class="swiper-slide"><a href="https://forms.gle/2rSyWzRgFqG5xdcVA" target="_blank"><img src="/edu/images/renew2022/edukocca_no36.png" alt="창의인재동반사업 오픈특강 젬블로"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no33.png" alt="창작자 양성사업 오픈 특강"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/list.do?menuNo=500008"><img src="/edu/images/renew2022/edukocca_no34.png" alt="오픈클래스 9월 교육 3D 프린팅"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/list.do?menuNo=500008"><img src="/edu/images/renew2022/edukocca_no35.png" alt="오픈클래스 9월 교육 에프터이펙트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
                     <!-- //반복 -->
                 </div>
@@ -682,13 +678,9 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75274&menuNo=500008"><img src="/edu/images/renew2022/m_edukocca_no38.png" alt="서버 점검 안내" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no37.jpg" alt="창의인재동반사업 오픈특강 인디게임" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://forms.gle/2rSyWzRgFqG5xdcVA" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no36.png" alt="창의인재동반사업 오픈특강 젬블로" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no33.png" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/list.do?menuNo=500008"><img src="/edu/images/renew2022/m_edukocca_no34.png" alt="오픈클래스 9월 교육 3D 프린팅" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/list.do?menuNo=500008"><img src="/edu/images/renew2022/m_edukocca_no35.png" alt="오픈클래스 9월 교육 에프터이펙트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/m_edukocca_no9.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
                     <!-- //반복 -->
                 </div>
