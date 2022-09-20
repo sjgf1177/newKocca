@@ -101,8 +101,20 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>에듀코카 - 누구나 쉽게 배우는 K콘텐츠</title>
-    <meta name="keyword" content="edukocca, EDUKOCCA, 에듀코카, 한국콘텐츠진흥원, K콘텐츠" />
-    <meta name="description" content="한국콘텐츠진흥원이 운영하는 온라인 교육 사이트. 방송/영상, 게임, 음악/공연, 웹툰 등 콘텐츠산업 관련 교육콘텐츠 무료 제공.">
+    <meta name="robots" content="index,follow" />
+    <meta name="subject" content="에듀코카 - 누구나 쉽게 배우는 K콘텐츠" />
+    <meta name="title" content="에듀코카 - 누구나 쉽게 배우는 K콘텐츠" />
+    <meta name="author" content="에듀코카">
+    <meta name="description" content="한국콘텐츠진흥원이 운영하는 온라인 교육 사이트. 방송/영상, 게임, 음악/공연, 웹툰 등 콘텐츠산업 관련 교육콘텐츠 무료 제공." />
+    <meta name="keywords" content="에듀코카,한국콘텐츠진흥원,에듀KOCCA,EDU코카,콘텐츠진흥원,edukocca,EDUKOCCA,한콘,K콘텐츠,사이버콘텐츠아카데미,온라인교육,이러닝,교육콘텐츠,방송교육,게임교육,음악교육,공연교육,웹툰교육" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="에듀코카" />
+    <meta property="og:title" content="에듀코카" />
+    <meta property="og:description" content="한국콘텐츠진흥원이 운영하는 온라인 교육 사이트. 방송/영상, 게임, 음악/공연, 웹툰 등 콘텐츠산업 관련 교육콘텐츠 무료 제공." />
+    <meta property="og:image" content="https://edu.kocca.kr/edu/images/renew2022/og_edukocca.jpg" />
+    <meta property="og:url" content="https://edu.kocca.kr" />
+
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=1"/>
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
@@ -655,7 +667,7 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75275&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_39.png" alt="에듀코카 직업 찾기 테스트"></a></div>
+                    <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39v2.png" alt="에듀코카 직업 찾기 테스트"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/edukocca_no37.png" alt="창의인재동반사업 오픈특강 인디게임"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no33.png" alt="창작자 양성사업 오픈 특강"></a></div>
@@ -679,7 +691,7 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75275&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_39_mobile.png" alt="에듀코카 직업 찾기 테스트" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39_mobilev2.png" alt="에듀코카 직업 찾기 테스트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no37.jpg" alt="창의인재동반사업 오픈특강 인디게임" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no33.png" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
