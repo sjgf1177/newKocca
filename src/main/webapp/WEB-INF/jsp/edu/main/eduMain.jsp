@@ -787,6 +787,22 @@
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1092&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=K0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=K0&p_list_type=C&pageIndex=1">
+                                            <img src="/edu/images/renew2022/new_class02.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="new_txt_box">
+                                        <h3>웹툰 회사에서는 어떤 일을 할까?</h3>
+                                        <p class="new_info_box">
+                                            콘텐츠 IP로써 새로운 한류 문화로 자리매김한 웹툰!
+                                            웹툰 산업에서 선도적인 역할을 하고 있는 기업에서는
+                                            과연 어떤 일을 하고 있는지 궁금하다면?
+                                            지금 바로 에듀코카에서 확인하세요!
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1">
                                             <img src="/edu/images/renew2022/new_class.png" alt="">
                                         </a>
@@ -817,6 +833,13 @@
                         </span>
                         <div class="swiper-container one_card01">
                             <ul class="swiper-wrapper pc">
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1092&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=K0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=K0&p_list_type=C&pageIndex=1">
+                                            <img src="/edu/images/renew2022/m_new_class02.png" alt="">
+                                        </a>
+                                    </span>
+                                </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1">
