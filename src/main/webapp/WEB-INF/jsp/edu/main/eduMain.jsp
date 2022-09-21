@@ -668,6 +668,8 @@
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39v2.png" alt="에듀코카 직업 찾기 테스트"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75276&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_40.png" alt="기능 개선 이벤트"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75277&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_41.png" alt="모니터링단"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/edukocca_no37.png" alt="창의인재동반사업 오픈특강 인디게임"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no33.png" alt="창작자 양성사업 오픈 특강"></a></div>
@@ -692,6 +694,8 @@
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39_mobilev2.png" alt="에듀코카 직업 찾기 테스트" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75276&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_40.png" alt="기능 개선 이벤트" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75277&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_41.png" alt="모니터링단" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfQm6MRE7Kzzg-IMo1-CqBV8lTKRAMjccFiPU5PDIIpVmnCEg/viewform" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no37.jpg" alt="창의인재동반사업 오픈특강 인디게임" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no33.png" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
