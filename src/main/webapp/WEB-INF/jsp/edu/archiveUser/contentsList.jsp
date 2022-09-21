@@ -48,7 +48,19 @@
 	</div>
 </div>
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">${param.menuNm}</div>
+	<div class="col-center mw-1280">
+		${param.menuNm}
+		<span class="call_txt_box">
+			<c:choose>
+				<c:when test="${param.menuNo eq '500261'}">
+					문의 : 02-6310-0621
+				</c:when>
+				<c:when test="${param.menuNo eq '500260'}">
+					문의 : 061-900-6382
+				</c:when>
+			</c:choose>
+		</span>
+	</div>
 </div>
 <div class="col-center mw-1280 dream_list">
 
@@ -208,11 +220,19 @@
 			</c:forEach>
 		</div>
 	</div>
-	
+	<p class="call_txt_box2" style="margin-bottom: 30px;">
+		<c:choose>
+			<c:when test="${param.menuNo eq '500261'}">
+				문의처 : 02-6310-0621
+			</c:when>
+			<c:when test="${param.menuNo eq '500260'}">
+				문의처 : 061-900-6382
+			</c:when>
+		</c:choose>
+	</p>
 	<c:if test="${fn:length(resultList) > 0}">
 		<div class="paging">${pageNav}</div>
 	</c:if>
-
 
 </div>
 <script type="text/javascript">

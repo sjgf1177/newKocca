@@ -62,7 +62,7 @@
 </div>
 
 <div class="sub_title s_tit02">
-    <div class="col-center mw-1280">정규과정</div>
+    <div class="col-center mw-1280">로그인 후 수강</div>
 </div>
 
 <!-- 과정 상세정보 -->

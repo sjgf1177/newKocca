@@ -10,7 +10,7 @@
 </div>
 
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">콘텐츠원캠퍼스</div>
+	<div class="col-center mw-1280">콘텐츠원캠퍼스<span class="call_txt_box">문의 : 061-900-6382</span></div>
 </div>
 
 <div class="col-center mw-1280">
@@ -48,4 +48,5 @@
 		</div>
 
 	</div>
+	<p class="call_txt_box2" style="margin-bottom: 30px;">문의처 : 061-900-6382</p>
 </div>

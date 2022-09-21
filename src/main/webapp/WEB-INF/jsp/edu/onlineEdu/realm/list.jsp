@@ -34,7 +34,7 @@
         <ul class="col-12 linemap_con">
             <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
             <li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
-            <li><a href="javascript:void(0);" tabindex="-1"><span>정규과정</span></a></li>
+            <li><a href="javascript:void(0);" tabindex="-1"><span>로그인 후 수강</span></a></li>
         </ul>
     </div>
 </div>
