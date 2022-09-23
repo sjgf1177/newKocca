@@ -545,7 +545,7 @@
                                 <a href="/testbed/main/main.do?menuNo=500108">학습지원</a>
                                 <!-- 학습지원 two-daps start -->
                                 <ul>
-                                    <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
+                                    <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
                                     <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
                                         <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
                                         <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
@@ -581,7 +581,7 @@
                                 <img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
                             </a>
                             <ul>
-                                <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
+                                <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
                                 <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
                                     <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
                                     <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
@@ -1281,9 +1281,11 @@
                                     <img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" alt="개인정보보호인증 마크" title="개인정보보호인증 새창열림">
                                 </a>
                             </li>
+                            <%--
                             <li>
                                 <img alt="굿콘텐츠 서비스 인증 마크" src="/edu/images/bm/footer_util_link_003.png">
                             </li>
+                            --%>
                             <li>
                                 <a href="javascript:winMarkPopup('/contents/temp/04_elearning.html','','status=yes,scrollbars=no,width=430,height=560');" title="한국u러닝연합회 e러닝전문기관인증 새창열림">
                                     <img src="/edu/images/bm/footer_util_link_004.png" alt="한국u러닝연합회 e러닝전문기관인증 마크">

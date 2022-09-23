@@ -105,9 +105,11 @@ function winMarkPopup(theURL,winName,features) { //v2.0
                         <li><a href="javascript:winMarkPopup('https://www.goodcontent.kr/upload_public/CERTIDW/2018-11-0008_0qx41u74mh4728j20181119134932.png','','status=yes,scrollbars=no,width=430,height=560');" title="새창열림">
                             <img alt="굿콘텐츠 서비스 인증 마크" src="/edu/images/bm/footer_util_link_003.png">
                         </a></li> -->
+                        <%--
                         <li>
                             <img alt="굿콘텐츠 서비스 인증 마크" src="/edu/images/bm/footer_util_link_003.png">
                         </li>
+                        --%>
                         <li><a href="javascript:winMarkPopup('/contents/temp/04_elearning.html','','status=yes,scrollbars=no,width=430,height=560');" title="한국u러닝연합회 e러닝전문기관인증 새창열림" >
                         	<img src="/edu/images/bm/footer_util_link_004.png" alt="한국u러닝연합회 e러닝전문기관인증 마크">
                         </a></li>

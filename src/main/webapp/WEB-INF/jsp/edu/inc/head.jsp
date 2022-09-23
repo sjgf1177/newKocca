@@ -263,11 +263,11 @@
                         <!-- nav 이벤트 two-daps start -->
                         <ul>
                             <li><a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">콘텐츠스텝업</a></li>
+                            <li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
+                            <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>
+                            <li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">창의인재동반</a></li>
                             <li><a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">콘텐츠인사이트</a></li>
                             <li><a href="/edu/main/contents.do?menuNo=500213">콘텐츠임팩트</a></li>
-                            <li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">창의인재동반</a></li>
-                            <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>
-                            <li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
                             <li><a href="/edu/main/contents.do?menuNo=500179">콘텐츠원캠퍼스</a></li>
                             <%--<li>
                                 <!-- 현url 에듀코카이야기에서 에듀코카페이지로 변경해야함-->
@@ -304,7 +304,7 @@
                             <a href="/testbed/main/main.do?menuNo=500108">학습지원</a>
                             <!-- 학습지원 two-daps start -->
                             <ul>
-                                <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
+                                <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
                                 <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
                                 <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
                                 <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
@@ -340,7 +340,7 @@
                             <img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
                         </a>
                         <ul>
-                            <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
+                            <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
                             <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
                             <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
                             <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>

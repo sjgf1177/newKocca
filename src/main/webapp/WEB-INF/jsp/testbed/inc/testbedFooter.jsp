@@ -105,9 +105,11 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 	                  		<img src="https://www.eprivacy.or.kr/seal/mark_e.gif" alt="개인정보보호우수사이트(ePrivacy) 인증마크">
 	                  	</a>
 	                </li>
+					<%--
 					<li>
                     	<img alt="굿콘텐츠 서비스 인증 마크" src="/edu/images/bm/footer_util_link_003.png">
                  	</li>
+                 	--%>
                  	<li>
                  		<a href="javascript:winMarkPopup('/contents/temp/04_elearning.html','','status=yes,scrollbars=no,width=430,height=560');" title="새창열림" >
                  			<img src="/edu/images/bm/footer_util_link_004.png" alt="한국u러닝연합회 e러닝전문기관인증 마크">
