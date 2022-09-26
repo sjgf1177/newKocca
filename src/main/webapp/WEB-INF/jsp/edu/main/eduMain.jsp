@@ -670,9 +670,7 @@
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39v2.png" alt="에듀코카 직업 찾기 테스트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75276&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_40.png" alt="기능 개선 이벤트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75277&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_41.png" alt="모니터링단"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75278&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_42.png" alt="창의인재동반사업 오픈특강 토리컴즈 주식회사"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75273&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no37.png" alt="창의인재동반사업 오픈특강 인디게임"></a></div>
-                    <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/hPq1vUv8Y2KFYXhs6" target="_blank"><img src="/edu/images/renew2022/banner_43.png" alt="교육신청 콘텐츠"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/edukocca_no33.png" alt="창작자 양성사업 오픈 특강"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/edukocca_no9.png" alt="에듀코카 리뉴얼 오픈"></a></div>
                     <!-- //반복 -->
@@ -697,9 +695,7 @@
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39_mobilev2.png" alt="에듀코카 직업 찾기 테스트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75276&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_40_mobile.png" alt="기능 개선 이벤트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75277&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_41_mobile.png" alt="모니터링단" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75278&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_42_mobile.png" alt="창의인재동반사업 오픈특강 토리컴즈 주식회사" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75273&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no37.jpg" alt="창의인재동반사업 오픈특강 인디게임" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://forms.gle/sd3PCyd1X8XeeK5o9" target="_blank"><img src="/edu/images/renew2022/m_edukocca_no32.png" alt="창의인재동반사업 오픈특강 IP 기획" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://forms.gle/hPq1vUv8Y2KFYXhs6" target="_blank"><img src="/edu/images/renew2022/banner_43_mobile.jpg" alt="교육신청 콘텐츠" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75265&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/m_edukocca_no33.png" alt="창작자 양성사업 오픈 특강" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/list.do?menuNo=500085"><img src="/edu/images/renew2022/m_edukocca_no9.jpg" alt="에듀코카 리뉴얼 오픈" style="width:100%;"></a></div>
                     <!-- //반복 -->
