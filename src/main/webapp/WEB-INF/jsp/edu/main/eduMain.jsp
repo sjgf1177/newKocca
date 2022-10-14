@@ -668,8 +668,8 @@
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://event-us.kr/edukocca1/event/49327" target="_blank"><img src="/edu/images/renew2022/banner_49.png" alt="에듀코카 콘텐츠플러스 고수와의 대화"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75295&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/banner_50.png" alt="EDU-PICK 추천 과정 수강 이벤트"></a></div>
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39v2.png" alt="에듀코카 직업 찾기 테스트"></a></div>
-                    <div class="swiper-slide"><a href="https://bit.ly/3dMn0SX" target="_blank"><img src="/edu/images/renew2022/banner_48.png" alt="창의인재동반사업 오픈특강 스토리숲"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75281&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_44v3.png" alt="오픈클래스 미디어파사드"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75282&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_45.png" alt="오픈클래스 에프터이펙트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75283&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_46.png" alt="오픈클래스 음향"></a></div>
@@ -695,8 +695,8 @@
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><a href="https://event-us.kr/edukocca1/event/49327" target="_blank"><img src="/edu/images/renew2022/banner_49_mobile.png" alt="에듀코카 콘텐츠플러스 고수와의 대화" style="width:100%;"></a></div>
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75295&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/banner_50_mobile.png" alt="EDU-PICK 추천 과정 수강 이벤트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39_mobilev2.png" alt="에듀코카 직업 찾기 테스트" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://bit.ly/3dMn0SX" target="_blank"><img src="/edu/images/renew2022/banner_48_mobile.png" alt="창의인재동반사업 오픈특강 스토리숲" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75281&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_44v3_mobile.png" alt="오픈클래스 미디어파사드" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75282&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_45_mobile.png" alt="오픈클래스 에프터이펙트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75283&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_46_mobile.png" alt="오픈클래스 음향" style="width:100%;"></a></div>
