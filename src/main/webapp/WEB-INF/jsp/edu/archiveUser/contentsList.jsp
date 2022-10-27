@@ -53,7 +53,7 @@
 		<span class="call_txt_box">
 			<c:choose>
 				<c:when test="${param.menuNo eq '500261'}">
-					문의 : 02-6310-0621
+					문의 : 02-6310-0623
 				</c:when>
 				<c:when test="${param.menuNo eq '500260'}">
 					문의 : 061-900-6382
@@ -223,7 +223,7 @@
 	<p class="call_txt_box2" style="margin-bottom: 30px;">
 		<c:choose>
 			<c:when test="${param.menuNo eq '500261'}">
-				문의처 : 02-6310-0621
+				문의처 : 02-6310-0623
 			</c:when>
 			<c:when test="${param.menuNo eq '500260'}">
 				문의처 : 061-900-6382
