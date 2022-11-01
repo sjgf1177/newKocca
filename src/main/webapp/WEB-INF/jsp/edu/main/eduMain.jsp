@@ -667,9 +667,6 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75295&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/banner_50.png" alt="EDU-PICK 추천 과정 수강 이벤트"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75300&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_pc_53.png" alt="모니터링단"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75299&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_pc_54.png" alt="기능 개선 이벤트"></a></div>
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39v2.png" alt="에듀코카 직업 찾기 테스트"></a></div>
                     <div class="swiper-slide"><a href="https://url.kr/dsg6le"><img src="/edu/images/renew2022/edukocca_pc_55.png" alt="콘텐츠스텝업 PLATFORM실습워크숍2"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75281&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_44v4.png" alt="오픈클래스 미디어파사드"></a></div>
@@ -694,9 +691,6 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75295&delCode=0&menuNo=500205&pageIndex=1"><img src="/edu/images/renew2022/banner_50_mobile.png" alt="EDU-PICK 추천 과정 수강 이벤트" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75300&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_mobile_53.png" alt="모니터링단" style="width:100%;"></a></div>
-                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75299&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_mobile_54.png" alt="기능 개선 이벤트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://simte.xyz/edukocca" target="_blank"><img src="/edu/images/renew2022/banner_39_mobilev2.png" alt="에듀코카 직업 찾기 테스트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://url.kr/dsg6le"><img src="/edu/images/renew2022/edukocca_mobile_55.jpg" alt="콘텐츠스텝업 PLATFORM실습워크숍2" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75281&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_44v4_mobile.png" alt="오픈클래스 미디어파사드" style="width:100%;"></a></div>
