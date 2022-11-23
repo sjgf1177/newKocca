@@ -111,12 +111,18 @@
         $("#vodArea").html(tagObj);
     }
 
-    function fnDirectLoadMP4(file, width, height) {
+    function fnDirectLoadMP4(file, width, height, vttPath) {
         var tagObj = "";
 
         tagObj = '<video width="100%" height="auto" max-width="' + width + '" oncontextmenu="return false;" controls="true" controlslist="nodownload">\n';
         tagObj += '<source src="' + file + '" type="video/mp4">\n';
+
+        if(vttPath) {
+            tagObj += '<track kind="subtitles" srclang="ko" label="켜짐" src="' + vttPath + '" default/>\n';
+        }
+
         tagObj += '</video>';
+
 
         $("#vodArea").html(tagObj);
     }
@@ -164,7 +170,7 @@
      * @param height 열린강좌 동영상 높이
      * @param lectureType 강좌 유형 (P: 팝업(값이 없으면 popup), E: 임베드)
      */
-    function fnViewOpenClass(seq, vodPath, width, height, lectureType, vodUrl) {
+    function fnViewOpenClass(seq, vodPath, width, height, lectureType, vodUrl, vttPath) {
         lectureType = (lectureType == "") ? "P" : lectureType;
 
         viewCount(seq);
@@ -177,7 +183,7 @@
                 fnLoadMP4(vodPath, 1080, 630);
             } else if (vodPath.indexOf("mp4") > 0) {
                 $("#vodAreaHtml").html("<div bgcolor=\"#ffffff\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\" marginheight=\"0\"><div id=\"vodArea\"></div></div>");
-                fnDirectLoadMP4(vodPath, width, height);
+                fnDirectLoadMP4(vodPath, width, height, vttPath);
             } else {
                 $.get(vodUrl, function (data) {
                 }, 'html').done(function (data) {
@@ -358,7 +364,7 @@
 <%-- Movie Player width: 1080px;height: 630;기본 사이즈 --%>
 <div class="mt20 lectMovSet mw-1080 col-center" id="vodArea">
     <div class="">
-        <a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />');">
+        <a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />','<c:out value="${result.vttPath }" />');">
             <%-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" --%>
             <img src="<c:out value="${result.vodimg }"/>" style="width: 100%;height: auto;" alt="강좌보기"/>
             <span class="maskPlay"></span>

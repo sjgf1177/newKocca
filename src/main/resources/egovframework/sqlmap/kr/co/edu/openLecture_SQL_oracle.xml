@@ -41,6 +41,7 @@
 		<result property="g3nm" column="G3NM"/> 
 		<result property="lvcd" column="LVCODE"/> 
 		<result property="lvnm" column="LVNM"/> 
+		<result property="vttPath" column="VTT_PATH"/>
 	</resultMap>
 
 	<sql id="openLecture.selectMainGoldClassList-where">
@@ -491,6 +492,7 @@
 			 , NVL(NEW_YN,   'N') AS NEW_YN
 			 , DECODE(NVL(B.SUBJ, ''), '', 'N', 'Y') AS FAVOR_YN
 			 , C.GUBUN_1
+			 , A.VTT_PATH
 			 , (SELECT X.CODENM 
 			      FROM TZ_CODE X 
 			     WHERE X.GUBUN  = '0110' 
