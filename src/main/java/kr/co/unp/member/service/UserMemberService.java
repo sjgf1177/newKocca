@@ -25,6 +25,7 @@ import kr.co.unp.cmm.crud.util.MVUtils;
 import kr.co.unp.cmm.sec.ram.service.impl.AuthorManageDAO;
 import kr.co.unp.cmm.sec.ram.service.impl.UnpUserDetailsHelper;
 import kr.co.unp.cmm.view.vo.ExcelGenerateVO;
+import kr.co.unp.cmmncode.dao.CmmnCodeDetailDAO;
 import kr.co.unp.ems.service.EmsService;
 import kr.co.unp.member.vo.UsersVO;
 import kr.co.unp.siteMng.service.SiteMngService;
@@ -62,6 +63,9 @@ public class UserMemberService extends MemberService {
 
 	@Resource(name = "emsService")
 	protected EmsService emsService;
+
+	@Resource(name="CmmnCodeDetailDAO")
+	private CmmnCodeDetailDAO cmmnCodeDetailDAO;
 
 	protected Log log = LogFactory.getLog(this.getClass());
 
@@ -1245,10 +1249,15 @@ public class UserMemberService extends MemberService {
 	 * @throws Exception
 	 */
 	public void secsn(ParameterContext<ZValue> paramCtx) throws Exception {
+		ZValue param = paramCtx.getParam();
 		ModelMap model = paramCtx.getModel();
 		UsersVO user = UnpUserDetailsHelper.getAuthenticatedUser();
 
 		model.addAttribute("user", user);
+
+		param.put("codeId", "COM181");
+		List<ZValue> COM181CodeList = cmmnCodeDetailDAO.getDetailCodeLists(param);
+		model.put("COM181CodeList", COM181CodeList);
 	}
 
 	/**

@@ -56,7 +56,7 @@ $(function(){
 						<th scope="row" style="border: none;"><label for="chkPwd" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 비밀번호</label></th>
 						<td>
 							<span class="input_style_1_con">
-								<input type="password" name="chkPwd" id="chkPwd" class="input_style_1" style="width:150px" value="">
+								<input type="password" name="chkPwd" id="chkPwd" class="input_style_1" style="width:150px;background-color: #FFF;" value="">
 							</span>
 						</td>
 					</tr>

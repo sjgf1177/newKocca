@@ -119,6 +119,11 @@
 			);
 		});
 
+		$("#mbtlnum1").css("backgroundColor", '#FFF');
+		$("#mbtlnum2").css("backgroundColor", '#FFF');
+		$("#mbtlnum3").css("backgroundColor", '#FFF');
+		$("#mbtlnum1").css("border", '1px solid #CCCCCC');
+
 		if (authSeVal == "02" || authSeVal == "03") {
 			if (authSeVal == "03") {
 				if (authEmailAt == "N") {
@@ -132,6 +137,10 @@
 				$("#mbtlnum2").attr('disabled', true);
 				$("#mbtlnum3").attr('disabled', true);
 				$("#mbtlnum").val("<c:out value='${result.mbtlnum}'/>");
+
+				$("#mbtlnum1").css("backgroundColor", '#F8F8F8');
+				$("#mbtlnum2").css("backgroundColor", '#F8F8F8');
+				$("#mbtlnum3").css("backgroundColor", '#F8F8F8');
 			}
 		}
 		else {
@@ -444,7 +453,7 @@
 										<li>14세 이상이 되신 경우에는 “14세이상 회원으로 전환” 버튼을 클릭하시면 14세 이상 회원으로 변경되고, 보호자 정보는 삭제합니다.</li>
 										<li>전환 하시게 되면 개인정보처리방침에 대한 재동의를 오늘 날짜 기준으로 재설정됩니다</li>
 									</ul>
-									<a href="javascript:void(0);" id="chgMemTpBtn" class="btn btn-sm btn-default">14세 이상회원으로 전환</a>
+									<a href="javascript:void(0);" id="chgMemTpBtn" class="btn btn-sm btn-default" style="color:blue;">14세 이상회원으로 전환</a>
 								</td>
 							</tr>
 						</tbody>
@@ -497,7 +506,7 @@
 								<td>
 									<c:set var="data" value="${fn:split(result.email,'@')}" />
 										<span class="input_style_1_con">
-											<input name="email1" id="email1" type="text" title="이메일 아이디" value="${data[0]}" class="input_style_1"/>
+											<input name="email1" id="email1" type="text" title="이메일 아이디" value="${data[0]}" class="input_style_1" style="background-color: #FFF;"/>
 										</span>
 										@
 										<span class="input_style_1_con">
@@ -520,9 +529,11 @@
 										jQuery(function(){
 											$('select.select_email_js').change(function() {
 												if ($(this).val()=='emaildomain_false') {
+													$('.emaildomain_form').css("backgroundColor", "#FFF");
 													$('.emaildomain_form:text[name=email2]').val('');
 													$('.emaildomain_form').attr('readonly',false).focus();
 												}else{
+													$('.emaildomain_form').css("backgroundColor", "#F8F8F8");
 													$('.emaildomain_form:text[name=email2]').val('');
 													$('.emaildomain_form:text[name=email2]').val($(this).val());
 													$('.emaildomain_form').attr('readonly',true);
