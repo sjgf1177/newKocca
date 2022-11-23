@@ -281,7 +281,7 @@
 
 	<div class="tab_style_1_con" style="margin-bottom: 40px;">
 		<ul class="tab_style_1 three_tab" style="display: flex; justify-content: center;">
-			<li><a href="/edu/userMember/forUpdate.do"><span>회원정보 수정</span></a></li>
+			<li><a href="/edu/userMember/forUpdateConfirm.do?menuNo=500080"><span>회원정보 수정</span></a></li>
 			<li class="active"><a href="/edu/userMember/pwdChange.do?menuNo=500057"  title="현재탭"><span>비밀번호 변경</span></a></li>
 			<li><a href="/edu/userMember/secsn.do?menuNo=500082"><span>회원탈퇴</span></a></li>
 		</ul>
@@ -304,7 +304,7 @@
 								<th scope="row" style="border-top: none;"><label for="password0" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 기존 비밀번호</label></th>
 								<td>
 									<span class="input_style_1_con">
-										<input type="password" name="password0" id="password0" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd0(this.value)">
+										<input type="password" name="password0" id="password0" class="input_style_1" value="" style="width:150px;background-color: #FFF;" onkeyup="this.value=checkPwd0(this.value)">
 										<span class="text-success" id="pwd0-success"></span>
 										<span class="text-danger" id="pwd0-danger"></span>
 									</span>
@@ -314,7 +314,7 @@
 								<th scope="row" style="border-top: none;"><label for="password" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 비밀번호</label></th>
 								<td style="white-space: normal;">
 									<span class="input_style_1_con">
-										<input type="password" name="password" id="password" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd(this.value)">
+										<input type="password" name="password" id="password" class="input_style_1" value="" style="width:150px;background-color: #FFF;" onkeyup="this.value=checkPwd(this.value)">
 										<span class="text-success" id="pwd-success"></span>
 										<span class="text-danger" id="pwd-danger"></span>
 										</span>
@@ -328,7 +328,7 @@
 								<th scope="row" style="border-top: none;"><label for="password2" class="red_star_text"><span class="hide_star"><span class="sr-only">(필수입력)</span></span> 비밀번호 확인</label></th>
 								<td>
 									<span class="input_style_1_con">
-										<input type="password" name="password2" id="password2" class="input_style_1" value="" style="width:150px" onkeyup="this.value=checkPwd2(this.value)">
+										<input type="password" name="password2" id="password2" class="input_style_1" value="" style="width:150px;background-color: #FFF;" onkeyup="this.value=checkPwd2(this.value)">
 										<span class="text-success" id="pwd2-success"></span>
 										<span class="text-danger" id="pwd2-danger"></span>
 									</span>
