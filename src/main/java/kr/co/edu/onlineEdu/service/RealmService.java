@@ -230,6 +230,7 @@ public class RealmService extends DefaultCmmProgramService {
 		//차시 목록
 		List<ZValue> lessonList = lmsSqlDao.listDAO("realmListDAO.lessonList", param);
 		model.addAttribute("lessonList",lessonList);
+		model.addAttribute("lessonListCnt",lessonList.size());
 
 		ZValue tutorInfo = null;
 		String subjMuserid = "";

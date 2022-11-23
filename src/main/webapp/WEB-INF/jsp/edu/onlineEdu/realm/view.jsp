@@ -124,20 +124,20 @@
                         </colgroup>
                         <tbody>
                         <tr>
-                            <th>신청기간</th>
-                            <td class="color_gray">상시</td>
+                            <th>제작연도</th>
+                            <td class="color_gray">${view.crdate}</td>
                         </tr>
                         <tr>
-                            <th>학습기간</th>
-                            <td class="color_gray">신청일로 부터 30 일</td>
+                            <th class="lett_s">차 시 수</th>
+                            <td class="color_gray">${lessonListCnt}</td>
                         </tr>
                         <tr>
-                            <th>복습기간</th>
-                            <td class="color_gray">1개월</td>
+                            <th>러닝타임</th>
+                            <td class="color_gray">${view.runningTime}</td>
                         </tr>
                         <tr>
-                            <th>교육비</th>
-                            <td class="color_gray">무료</td>
+                            <th class="lett_s">강 사 명</th>
+                            <td class="color_gray">${view.tutor2}</td>
                         </tr>
                         </tbody>
                     </table>
