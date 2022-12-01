@@ -783,6 +783,22 @@
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
+                                        <a href="https://url.kr/o8z1ua">
+                                            <img src="/edu/images/renew2022/new_class04.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="new_txt_box">
+                                        <h3>모두를 위한 즐거움 : 배리어프리</h3>
+                                        <p class="new_info_box">
+                                            물리적, 심리적 장벽을 없애기 위한 첫 걸음.<br>
+                                            배리어 프리(Barrier – free), 얼마나 알고 계신가요?<br>
+                                            콘텐츠산업 내 배리어프리가 궁금하다면?<br>
+                                            지금 에듀코카에서 확인해보세요!
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1103&pLectureCls=GC02">
                                             <img src="/edu/images/renew2022/new_class03.png" alt="">
                                         </a>
@@ -846,6 +862,13 @@
                         </span>
                         <div class="swiper-container one_card01">
                             <ul class="swiper-wrapper pc">
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://url.kr/o8z1ua">
+                                            <img src="/edu/images/renew2022/m_new_class04.png" alt="">
+                                        </a>
+                                    </span>
+                                </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1103&pLectureCls=GC02">
