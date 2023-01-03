@@ -95,15 +95,16 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 				<input type="button" value="이동" onclick="window.open(document.getElementById('relation_site').value,'_blank')" title="관련사이트 새창열림" class="relation_site_button">
 	            <label for="relation_site"><span style="display:block; font-size:0; height:0; line-height:0; margin:0; overflow:hidden; padding:0; width:0">관련사이트 바로가기</span></label>
 	            <ul class="footer_util_link">
-                	<li>
+<%--                	<li>
                 		<a href="#none" onclick="markPopupI('2019-R044');" title="새창열림">
                  			<img src="https://www.eprivacy.or.kr/seal/mark_i.gif" alt="인터넷 사이트 안전마크(i-Safe, 개인정보보호, 시스템보안, 소비자 보호)">
                  		</a>
-                 	</li>
+                 	</li>--%>
 	                <li>
-	                 	<a href="#none" onclick="markPopupE('2019-R105');" title="새창열림">
+<%--	                 	<a href="#none" onclick="markPopupE('2019-R105');" title="새창열림">
 	                  		<img src="https://www.eprivacy.or.kr/seal/mark_e.gif" alt="개인정보보호우수사이트(ePrivacy) 인증마크">
-	                  	</a>
+	                  	</a>--%>
+						<img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" alt="개인정보보호인증 마크" title="개인정보보호인증" style="cursor:pointer;" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2022-EP-R039','seal','width=527,height=720,location=no,status=no,scrollbars=no')" />
 	                </li>
 					<%--
 					<li>
