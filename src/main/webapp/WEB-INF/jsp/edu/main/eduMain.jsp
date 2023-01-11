@@ -667,6 +667,7 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75336&menuNo=500008"><img src="/edu/images/renew2022/Banner_69(PC).png" alt="서버 점검 공지"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75331&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_66.png" alt="오픈클래스 미디어파사드"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75330&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_68.png" alt="오픈클래스 에프터이펙트"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75332&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_67.png" alt="오픈클래스 음향"></a></div>
@@ -689,6 +690,7 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75336&menuNo=500008"><img src="/edu/images/renew2022/Banner_69(Mobile).png" alt="서버 점검 공지" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75331&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_(mobile)66.png" alt="오픈클래스 미디어파사드" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75330&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_(mobile)67.png" alt="오픈클래스 에프터이펙트" style="width:100%;"></a></div>
                     <div class="swiper-slide"><a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75332&delCode=0&menuNo=500203&pageIndex=1"><img src="/edu/images/renew2022/banner_(mobile)68.png" alt="오픈클래스 음향" style="width:100%;"></a></div>
