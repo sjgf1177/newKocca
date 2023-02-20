@@ -87,6 +87,7 @@
             </tr>
             </thead>
             <tbody>
+            <c:set var="resultCnt2" value="${resultCnt}"/>
             <c:forEach var="result" items="${resultList}" varStatus="status">
                 <tr<c:if test="${result.nttType=='1'}"> class="notice_title"</c:if>>
                     <td>
@@ -124,12 +125,12 @@
             <c:forEach var="result" items="${resultList}" varStatus="status">
                 <%--<li<c:if test="${result.nttType=='1'}"> class="table_list _notice"</c:if>> c:if 개발소스 원본유지--%>
                 <li class="table_list _notice">
+                    <c:url var="url" value="/${paramVO.siteName }/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}&amp;${pageQueryString}"/>
                     <a href="<c:out value='${url}' escapeXml='false'/>" class="table_info_box">
                         <div class="left_box">
-                            <c:out value="${result.nttType=='1' ? ' ' : (resultCnt) - (paginationInfo.pageSize * (paramVO.pageIndex-1))}"/>
+                            <c:out value="${result.nttType=='1' ? ' ' : (resultCnt2) - (paginationInfo.pageSize * (paramVO.pageIndex-1))}"/>
                         </div>
                         <div class="right_box">
-                            <c:url var="url" value="/${paramVO.siteName }/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}&amp;${pageQueryString}"/>
                             <p class="title">
                                 <c:if test="${result.nttType=='1'}"><span>[공지]</span></c:if>
                                 <c:choose>
@@ -145,7 +146,7 @@
                         </div>
                     </a>
                 </li>
-                <c:set var="resultCnt" value="${resultCnt-1}"/>
+                <c:set var="resultCnt2" value="${resultCnt2-1}"/>
             </c:forEach>
             <c:if test="${fn:length(resultList) == 0}">
                 <tr>
