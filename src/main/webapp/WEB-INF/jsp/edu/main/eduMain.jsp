@@ -668,6 +668,15 @@
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
+                        <a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75344&delCode=0&menuNo=500008&pageIndex=1">
+                            <img src="/edu/images/renew2022/PC_banner(74).png" alt="2023 콘텐츠 인재양성 지원사업설명회
+                                일시: 2023년 2월 23일(목) 10:30~15:30(사업별 일정 상이)
+                                장소: 광화문 ckl기업지원센터 11층 컨퍼런스룸
+                                내용: 2023년 콘텐츠원캠퍼스 구축운영 사업, 콘텐츠 창의인재동반사업 공고 신청 및 세부내용 안내
+                                *상세 내용은 각 사업별 공고문 참조">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
                         <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75337&delCode=0&menuNo=500203&pageIndex=1">
                             <img src="/edu/images/renew2022/70_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
                                 1인 크리에이터 과정
@@ -839,6 +848,15 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="https://edu.kocca.kr/edu/bbs/B0000011/view.do?nttId=75344&delCode=0&menuNo=500008&pageIndex=1">
+                            <img src="/edu/images/renew2022/mobile_banner(74).jpg" alt="2023 콘텐츠 인재양성 지원사업설명회
+                                일시: 2023년 2월 23일(목) 10:30~15:30(사업별 일정 상이)
+                                장소: 광화문 ckl기업지원센터 11층 컨퍼런스룸
+                                내용: 2023년 콘텐츠원캠퍼스 구축운영 사업, 콘텐츠 창의인재동반사업 공고 신청 및 세부내용 안내
+                                *상세 내용은 각 사업별 공고문 참조" style="width:100%;">
+                        </a>
+                    </div>
                     <div class="swiper-slide">
                         <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75337&delCode=0&menuNo=500203&pageIndex=1">
                             <img src="/edu/images/renew2022/70(mobile).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
