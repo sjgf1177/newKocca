@@ -550,7 +550,7 @@ background-image:url(/edu/images/bm/search_icon.png); background-repeat: no-repe
 /* mobile 마무리 */
 .contents_right_box{display:none;}
 .contents_view_page .contents_right_box{display:block;}
-.sr-only{display:none;}
+.sr-only{text-indent: -99999px;}
 
 
 

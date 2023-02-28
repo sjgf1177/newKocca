@@ -594,7 +594,7 @@ h3.bull{background: url(/edu/images/common/bull5.gif) no-repeat 0 15px;padding-l
 .lectList .date, .lectList a{display: block;}
 .lectList a{padding-left: 15px; padding-right: 15px;}
 .lectList .descs{font-size: 18px; margin-bottom: 20px;}
-.lectList .date, .lectList li.on a span.date{color: #999999;}
+.lectList .date, .lectList li.on a span.date{color: #737373;}
 /* 시설예약 */
 .reservSysSet{position:absolute;z-index:1000;top:0;left:0;background:rgba(0, 0, 0, 0.9);width: 100%;height: 100%; text-align: center}
 .reservSys{position: relative;top:100px;width: 1180px;height: 705px;border-top:2px solid #3e3a39;border-bottom:2px solid #3e3a39; background: #ddd;margin: 0 auto}

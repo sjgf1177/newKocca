@@ -61,34 +61,34 @@
     <div class="col-center mw-1280">
         <div>
             <c:if test="${param.pGubun1 eq 'A' or empty param.pGubun1}">
-                <select class="relation_site SL01 gubunBox" ordr="2">
-                    <option value="">장르</option>
+                <select class="relation_site SL01 gubunBox" ordr="2" title="장르를 선택해주세요">
+                    <option value="" title="장르">장르</option>
                     <c:forEach items="${realmTabList}" var="item" varStatus="status">
                         <c:if test="${fn:length(item.code) < 3 and item.code ne 'T0' and item.code ne 'A' and item.code ne 'O0'}">
-                            <option value="${item.code}" <c:if test="${param.p_type eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
+                            <option value="${item.code}" title="${item.codenm}" <c:if test="${param.p_type eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
                         </c:if>
                     </c:forEach>
                 </select>
             </c:if>
 
-            <select class="relation_site SL02 gubunBox" ordr="3">
-                <option value="">대분류</option>
+            <select class="relation_site SL02 gubunBox" ordr="3" title="대분류를 선택해주세요">
+                <option value="" title="대분류">대분류</option>
 
                 <c:if test="${param.pGubun1 ne 'A' or not empty param.pGubun1}">
                     <c:forEach items="${gubunList}" var="item" varStatus="status">
-                        <option value="${item.code}" <c:if test="${param.p_gcd1 eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
+                        <option value="${item.code}" title="${item.codenm}" <c:if test="${param.p_gcd1 eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
                     </c:forEach>
                 </c:if>
             </select>
-            <select class="relation_site SL03">
-                <option value="">소분류</option>
+            <select class="relation_site SL03" title="소분류를 선택해주세요">
+                <option value="" title="소분류">소분류</option>
             </select>
-            <select class="relation_site SL04">
-                <option value="">난이도</option>
+            <select class="relation_site SL04" title="난이도를 선택해주세요">
+                <option value="" title="난이도">난이도</option>
 
                 <c:if test="${param.pGubun1 ne 'A' or not empty param.pGubun1}">
                     <c:forEach items="${levelList}" var="item" varStatus="status">
-                        <option value="${item.code}" <c:if test="${param.p_level eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
+                        <option value="${item.code}" title="${item.codenm}" <c:if test="${param.p_level eq item.code}">selected="selected"</c:if> >${item.codenm}</option>
                     </c:forEach>
                 </c:if>
             </select>
@@ -211,8 +211,8 @@
         </div>
         <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
         <div class="swiper_btn_box">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div><button type="button" class="swiper-button-prev" title="이전 클래스보기"></button></div>
+            <div><button type="button" class="swiper-button-next" title="다음 클래스보기"></button></div>
         </div>
     </div>
     <%-- 추천 클래스 end --%>
@@ -269,8 +269,8 @@
         </div>
         <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
         <div class="swiper_btn_box">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div><button type="button" class="swiper-button-prev" title="이전 클래스보기"></button></div>
+            <div><button type="button" class="swiper-button-next" title="다음 클래스보기"></button></div>
         </div>
 
     </div>
@@ -356,8 +356,8 @@
                 </div>
                 <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
                 <div class="swiper_btn_box">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div><button type="button" class="swiper-button-prev" title="이전 클래스보기"></button></div>
+                    <div><button type="button" class="swiper-button-next" title="다음 클래스보기"></button></div>
                 </div>
                 </div>
             </c:if>
@@ -438,8 +438,8 @@
             </div>
             <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
             <div class="swiper_btn_box">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div><button type="button" class="swiper-button-prev" title="이전 클래스보기"></button></div>
+                <div><button type="button" class="swiper-button-next" title="다음 클래스보기"></button></div>
             </div>
             </div>
         </c:if>

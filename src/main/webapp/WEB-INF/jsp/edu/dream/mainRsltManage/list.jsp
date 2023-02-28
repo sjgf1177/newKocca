@@ -148,7 +148,7 @@
 						창작실무와 노하우를 전수받고자 하는 열정 넘치는 예비창작자
 					</p>
 					<p style="margin-top:15px;">
-						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">2,808</spen> 명
+						<spen style="font-size:25px; font-weight:bold; color:#019ccb;">2,808</spen> 명
 					</p>
 				</div>
 			</div>
@@ -168,7 +168,7 @@
 						선발, 도제식 교육을 통한 노하우 전수
 					</p>
 					<p style="margin-top:15px;">
-						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">1,339</spen> 명
+						<spen style="font-size:25px; font-weight:bold; color:#019ccb;">1,339</spen> 명
 					</p>
 				</div>
 			</div>
@@ -189,12 +189,12 @@
 						창의숙성과정을 운영하는 기관
 					</p>
 					<p style="margin-top:15px; padding-left:20px;">
-						<spen style="font-size:25px; font-weight:bold; color:#01A9DB;">110</spen> 개
+						<spen style="font-size:25px; font-weight:bold; color:#019ccb;">110</spen> 개
 					</p>
 				</div>
 			</div>
 		</div>
-		<div style="font-size:13px; color:#A4A4A4; text-align:right; margin-right:52px; margin-bottom:25px;">
+		<div style="font-size:13px; color:#808080; text-align:right; margin-right:52px; margin-bottom:25px;">
 			* 2012년 ~ 2021년 누적 기준
 		</div>
 	</div>

@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6{font-weight: 400; font-family: 'Pretendard', sans-serif !
 .vt_mid{vertical-align: middle !important;}
 .mg_b40{margin-bottom: 40px !important;}
 #pDataSearch{text-align: center;}
-
+.tindent{text-indent: -99999px;}
 .lett_s{letter-spacing: 2px;}
 
 
@@ -168,6 +168,10 @@ table.board_type_0 thead th{border-color:#3B85FF !important;}
 
 
 /* btn */
+
+button:focus:not(:focus-visible) { /* 접근성 css focus-visible: 키보드로만 접근했을때 */
+    outline: none !important;
+}
 .board_util_btn_con .btn_style_0{padding: 10px 25px;}
 .board_util_btn_con .btn_style_0.gray{color:#fff; background-color: #707070; border-color: #707070; }
 .btn-primary{border-color:transparent;}
@@ -488,7 +492,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a{display: flex; height: 100%; align-items: center;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a span:last-child{margin-left: 24px;}
 /*.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: center;}/*.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: center;}*/
-.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: right 14px; background-size: 28px; transform: rotate(90deg);}
+.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: right 17px; background-size: 28px; transform: rotate(90deg);}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a:before{content: ""; position: absolute; left: -24px; top:2px; width: 2px; height: 24px; background-image: url("/edu/images/renew2022/ico_line_gray.png"); background-repeat: no-repeat;}
 
 @media all and (max-width:1280px) {
@@ -514,7 +518,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 /*.fwo_card_list_box .swiper-slide:hover{top: -2px; box-shadow: 3px 3px 5px rgba(0,0,0,0.1); border-radius: 30px;}*/
 .fwo_card_list_box .swiper-slide:hover{top: -2px;}
 .fwo_card_list_box .swiper-slide:hover .swiper-slide a img, .fwo_card_list_box .swiper-slide:hover .fwo_info_box{box-shadow: 3px 3px 5px rgba(0,0,0,0.1); border-radius: 30px;}
-.fwo_card_list_box .swiper-slide a{display: inline-block; width:100%; height: 225px;}
+.fwo_card_list_box .swiper-slide a{display: inline-block; width:100%; height: 100%;}
 .fwo_card_list_box .swiper-slide a img{width: 100%; height:225px; border-top-left-radius: 30px; border-top-right-radius: 30px;}
 .fwo_info_box{position: absolute;  width: 100%; padding: 25px 36px 23px 20px; border: 1px solid #EEEEEE;background-color: #fff; border-radius: 32px; margin-top: -10%;}
 .fwo_info_box button.fwo_like_box{position: absolute; top: -23px; right: 20px; background-color: transparent;}
@@ -721,6 +725,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .main_place_contents .place_txt_box .place_info_box{font-size: 18px; color: #666666; line-height: 30px;}
 .main_place_contents .place_txt_box .go_add_btn_box{position: absolute; bottom: 0;}
 .main_place_contents .place_txt_box .go_add_btn_box a{padding-right: 40px;font-size: 16px; color: #3b85ff; font-weight: 600; background-image: url("/edu/images/renew2022/ico_add_blue.png"); background-repeat: no-repeat; background-position: right 8px center;}
+.main_place_contents .swiper_btn_box{position: absolute; top: 100px; right: 0; display: flex; justify-content: space-between;}
 
 
 @media all and (max-width:1280px) {
@@ -747,7 +752,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .tab_style_1_con .tab_style_1{max-width: 1280px; margin: 0 auto;}
 .tab_style_1_con .tab_style_1 > li{width: 170px; }
 .tab_style_1_con .tab_style_1 > li button{background-color: transparent;}
-.tab_style_1_con .tab_style_1 > li span{padding:5px 0 25px 0; font-size: 2.2rem; font-weight: 500; color: #CCCCCC; border: none; background-color: transparent;}
+.tab_style_1_con .tab_style_1 > li span{padding:5px 0 25px 0; font-size: 2.2rem; font-weight: 500; color: #737373; border: none; background-color: transparent;}
 .tab_style_1_con .tab_style_1 > li button span{padding: 0;}
 .tab_style_1_con .tab_style_1 > li a:hover span, .tab_style_1_con .tab_style_1 > li button:hover span{color:#222222; background-color: transparent;}
 .tab_style_1_con .tab_style_1 > li.active a span{color: #222222; border-top: none; border-right: none; border-left: none; border-bottom: 4px solid #222222;  background-color: transparent;}
@@ -1007,7 +1012,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 @media all and (max-width:1280px) {
     .table_search_box01 .control_board_header{display: flex;}
     .table_search_box01 .control_board_header .board_title{position: relative;}
-    .sub_section .table_search_box01 .board_title h4{line-height: 3.3rem; background: url("/edu/images/bm/board_title_icon.png") no-repeat left 9px;}
+    .sub_section .table_search_box01 .board_title h4{line-height: 3.3rem; background: url("/edu/images/bm/board_title_icon_back.png") no-repeat left 9px;}
     .table_search_box01 .control_board_header .relation_site{width: 15%; margin-bottom: 0;}
 }
 @media all and (max-width:780px) {}

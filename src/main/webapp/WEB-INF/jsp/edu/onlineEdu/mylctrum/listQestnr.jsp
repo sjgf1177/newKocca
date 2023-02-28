@@ -73,7 +73,7 @@
 				<p class="point" align="left"><strong>진도율 : <fmt:parseNumber integerOnly="true" value="${myProgress }" type="number" />%</strong></p>
 			</div>
 			<a href="javascript:void(0);" onclick="fnCmdSubjList('${paramVO.menuNo }', '${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }'); return false;" class="return_list_box gnb_close">
-				<img src="/edu/img/gnb_close.png" alt="GNB 메뉴 닫기" style="padding: 0px; display: inline-block;">
+				<img src="/edu/img/gnb_close.png" alt="학습 종료하기" style="padding: 0px; display: inline-block;">
 			</a>
 		</div>
 	</div>

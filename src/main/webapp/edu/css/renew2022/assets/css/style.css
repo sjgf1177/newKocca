@@ -56,9 +56,7 @@ File: style.css
       Custom css start
 ==========================  **/
 
-*:focus {
-  outline: none;
-}
+
 
 .img-radius {
   border-radius: 50%;

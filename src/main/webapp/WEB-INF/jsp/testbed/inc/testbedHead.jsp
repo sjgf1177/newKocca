@@ -121,7 +121,7 @@
 <!-- renew2022 CSS end -->
 
 <!-- renew2022 JavaScript start -->
-<script src="/edu/css/renew2022/renew.js"></script>
+<script type="text/javascript" src="/edu/css/renew2022/renew.js"></script>
 
 <!-- Required Js -->
 <script src="assets/js/vendor-all.min.js"></script>

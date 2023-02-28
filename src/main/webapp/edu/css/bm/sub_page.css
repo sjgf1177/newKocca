@@ -223,7 +223,7 @@ form.login_form{width:100%; padding-bottom:30px; border-bottom:1px solid #eeeeee
 .sub_section .left_text_box{margin-bottom:20px;}
 .sub_section .sub_img_box > img{margin:5px;}
 .sub_section .board_title h5{font-size: 16px; font-size: 1.6rem; line-height: 22px; line-height: 2.2rem; color: #313131; letter-spacing: 0; margin-bottom: 0; padding-left:28px;
-    background: url('/edu/images/bm/board_title_icon.png') no-repeat left 2px;}
+    background: url('/edu/images/bm/board_title_icon_back.png') no-repeat left 2px;}
 .sub_section .board_title h5 .board_count{color:#dd7b09;}
 
 
@@ -1021,7 +1021,7 @@ ul.list_style_2.program > li > .sub_text:last-child{margin-bottom: 0;}
 ul.list_style_2.program > li > .sub_text > .sub_text_title{color: #313131;}
 .sub_section .sub_contents_body .program_board {margin-bottom: 74px;}
 .sub_section .sub_contents_body .sub_board_header.program .board_title h6{font-size: 16px; font-size: 1.6rem; line-height: 22px; line-height: 2.2rem; color: #313131; letter-spacing: 0; margin-bottom: 0; padding-left:28px;
-    background: url('/edu/images/bm/board_title_icon.png') no-repeat left 2px;}
+    background: url('/edu/images/bm/board_title_icon_back.png') no-repeat left 2px;}
 .sub_section .sub_contents_body .sub_board_header.program .board_title h6 .board_count{color:#dd7b09;}
 
 
@@ -1059,7 +1059,7 @@ ul.list_style_2.program > li > .sub_text > .sub_text_title{color: #313131;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad.top{ background-position-y: 5px;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list:last-child .motto_crad:last-child{margin-bottom: 0;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h5{text-align: center; font-size: 28px; font-size: 2.8rem; line-height: 34px; line-height: 3.4rem; color: #fff; font-weight: 400; letter-spacing: -0.025em; margin-bottom: 0;}
-.sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h5 > span{display: block; font-size: 18px; font-size: 1.8rem; line-height: 24px; line-height: 2.4rem; font-weight: normal; }
+.sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h5 > span{display: block; font-size: 18px; font-size: 1.8rem; line-height: 24px; line-height: 2.4rem; font-weight: normal; color:#333333;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h6{font-size: 16px; font-size: 1.6rem; line-height: 22px; line-height: 2.2rem; color: #313131; font-weight: 400; margin-bottom: 24px; }
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad .h_desc6{font-size: 15px; font-size: 1.5rem; line-height: 21px; line-height: 2.1rem; color: #313131; letter-spacing: -0.025em;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .text_box_wrap{float: left; overflow: hidden; width:100%;}
@@ -2176,7 +2176,7 @@ table.eduframe_tb td{ text-align: left; font-size: 14.5px; font-size: 1.45rem; l
 .my_progress_bar_wrap .my_progress_bar_value{position:absolute; background-image:url('/edu/images/bm/my_progress_bar_style_0.png'); background-repeat:repeat-x; height:3px; top:0; left:0;}
 .my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value{background-image:url('/edu/images/bm/my_progress_bar_style_1.png');}
 .my_progress_bar_wrap .my_progress_bar_value_text{display:inline-block; text-align:right; width:50px; font-size:14.5px; line-height:1em; color:#1da28d; font-weight:bold; vertical-align:top;}
-.my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value_text{color:#619cff;}
+.my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value_text{color:#4d8eff;}
 
 
 
