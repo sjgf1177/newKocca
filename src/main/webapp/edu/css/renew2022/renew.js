@@ -20,13 +20,6 @@ $(document).ready(function() {
     $('.fwo_snail_box > a, .fwo_tit_box > a').attr('tabindex', '-1');
 
 
-
-
-
-
-
-
-
     // 추천 클래스 슬라이드
     var fwocard01 = new Swiper('.fwo_card01 .fwo_card', {
         /*loop: true,*/

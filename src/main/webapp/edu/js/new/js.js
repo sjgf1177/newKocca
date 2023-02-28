@@ -42,11 +42,7 @@ $(function(){
         //구버전 swiper 방향표
         ,nextButton: '.swiper-button-next'
         ,prevButton: '.swiper-button-prev',
-        on: {
-            slideChange: function () {
-                alert('슬라이드 변경');
-            }
-        },
+
     });
 
     //메인 배너 정지버튼

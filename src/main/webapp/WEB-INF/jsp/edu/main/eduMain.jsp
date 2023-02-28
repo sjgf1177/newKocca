@@ -888,8 +888,8 @@
                                 </c:forEach>
                             </ul>
                         </div>
-                        <button class="swiper-button-play" title="슬라이드 재생하기" style="display: none;">재생</button>
-                        <button class="swiper-button-pause" title="슬라이드 정지하기">정지</button>
+                        <button class="swiper-button-play" title="슬라이드 재생하기" style="display: none; font-size: 16px;">재생</button>
+                        <button class="swiper-button-pause" title="슬라이드 정지하기" style="font-size: 16px;">정지</button>
                         <a href="/edu/bbs/B0000011/list.do?menuNo=500008" class="">더보기</a>
                     </div>
                 </div>

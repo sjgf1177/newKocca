@@ -11,6 +11,7 @@
 <jsp:useBean id="todayNow" class="java.util.Date"/>
 <fmt:formatDate value="${todayNow}" var="today" pattern="yyyy-MM-dd"/>
 <c:url value="/${paramVO.siteName }/bbs/${paramVO.bbsId}/list.do?menuNo=${param.menuNo }" var="searchUrl"/>
+<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
 <!-- bdList -->
 <div class="over-hidden sub_contents_header">
     <div class="linemap_wrap"> <!-- fl class 삭제 -->
@@ -35,6 +36,16 @@
         document.eventFrm.action = "/edu/bbs/B0000048/list.do?menuNo=500205";
         document.eventFrm.submit();
     }
+
+
+    $(document).ready(function() {
+        if ($('.event_card_list .e_end_back_box').length) {
+            $('.event_card_list .event_card').attr('tab-index','-1');
+        }
+        else {
+            $('.event_card_list .event_card').attr('tab-index','0');
+        }
+    });
 </script>
 
 <%-- 7개 tabs일때
@@ -203,6 +214,8 @@
                     <fmt:parseDate value="${nowDt}" var="ndt" pattern="yyyy-MM-dd"/>
                     <fmt:parseNumber value="${ndt.time / (1000*60*60*24)}" integerOnly="true" var="nowDate"></fmt:parseNumber>
                     <div class="col-6 col-sm-4 tc event_card_list list go<c:if test='${(nowDate-strDate) > 0}'>e_end_box</c:if>">
+                        <%--진행중인 이벤트 목록 --%>
+                        <c:if test='${(nowDate-endDate) < 0}'>
                             <a href="<c:out value="${url }" escapeXml="false" />" class="col-12 show fn event_card">
                                 <div class="col-12 img_box">
                                     <c:choose>
@@ -242,8 +255,49 @@
                                     </p>
                                 </div>
                             </a>
+                        </c:if>
 
-                            <c:if test='${(nowDate-endDate) > 0}'>
+                        <%-- 종료된 이벤트 목록 --%>
+                        <c:if test='${(nowDate-endDate) > 0}'>
+                                <a href="<c:out value="${url }" escapeXml="false" />" class="col-12 show fn event_card" tabindex="-1">
+                                    <div class="col-12 img_box">
+                                        <c:choose>
+                                            <c:when test='${ fileList.size() > 0 }'>
+                                                <c:forEach var="file" items="${fileList }">
+                                                    <c:choose>
+                                                        <c:when test="${file.fileFieldName eq 'main_image' }">
+                                                            <img alt="에듀코카 이벤트 이미지" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </c:forEach>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </div>
+                                    <div class="col-12 text_box">
+                                        <h5><c:out value="${result.nttSj }"/></h5>
+                                        <c:choose>
+                                            <c:when test='${ (nowDate-endDate) > 0 }'>
+                                                <p class="date_tag_off">종료</p>
+                                            </c:when>
+                                            <c:when test='${ (nowDate-strDate) < 0 }'>
+                                                <p class="date_tag_on">D${strDate-nowDate}</p>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <p class="date_tag_on">진행</p>
+                                            </c:otherwise>
+                                        </c:choose>
+                                        <p class="event_date">
+                                            기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
+                                            <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                        </p>
+                                    </div>
+                                </a>
                                 <div class="e_end_back_box">
                                 </div>
                             </c:if>
@@ -253,7 +307,7 @@
             </div>
             <div class="swiper_btn_box">
                 <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
-                <div ><button type="button" class="swiper-button-next" title="다음 배너보기"></button></div>
+                <div><button type="button" class="swiper-button-next" title="다음 배너보기"></button></div>
             </div>
         </div>
         </c:if>
