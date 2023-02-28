@@ -378,15 +378,6 @@
         document.eFrm.submit();
     }
 
-    <!-- 챗봇 Js start -->
-    var ht = new Happytalk({
-        siteId: '5000100237',
-        siteName: '한국콘텐츠진흥원',
-        categoryId: '146368',
-        divisionId: '146369',
-    });
-    <!-- 챗봇 Js end -->
-
     //애니메이션 라이브러리 불러오기
     AOS.init();
 </script>
