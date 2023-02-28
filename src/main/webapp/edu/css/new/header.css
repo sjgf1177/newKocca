@@ -62,7 +62,7 @@ header nav #main_nav .navbar-nav > li > ul > li:not(:first-child):before{content
 header nav #main_nav .navbar-nav > li > ul > li:first-child{margin-left:0;}
 header nav #main_nav .navbar-nav > li > ul > li:last-child{margin-right:0;}
 header nav #main_nav .navbar-nav > li > ul > li:first-child > a{padding-left:40px;}
-header nav #main_nav .navbar-nav > li > ul > li:last-child > a{padding-right:40px;}
+/*header nav #main_nav .navbar-nav > li > ul > li:last-child > a{padding-right:40px;}*/
 header nav #main_nav .navbar-nav > li > ul > li > a{color:white; padding:0 15px 50px 15px;}
 header nav #main_nav .navbar-nav > li > ul > li > ul{display:none;}
 header nav .searchCon{height:50px; line-height:50px;}

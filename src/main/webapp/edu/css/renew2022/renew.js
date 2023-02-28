@@ -4,6 +4,29 @@
 
 $(document).ready(function() {
 
+    // 웹접근성 건너뛰기 기능 제공
+    function uiAppendHeader(){
+        var uiAppendHeader = '<div id="skip" class="skip">';
+        uiAppendHeader += '<a href="#GnbBox">메인메뉴 바로가기</a>';
+        uiAppendHeader += '<a href="#ContentBox" class="skipContents">본문 바로가기</a>';
+        uiAppendHeader += '<a href="#footer">하단메뉴 바로가기</a>';
+        uiAppendHeader += '</div>';
+        $('body').prepend(uiAppendHeader);
+    }
+    uiAppendHeader();
+
+    $('header').attr('id', 'GnbBox');
+    $('.contents_section, .sub_contents_wrap').attr('id', 'ContentBox');
+    $('.fwo_snail_box > a, .fwo_tit_box > a').attr('tabindex', '-1');
+
+
+
+
+
+
+
+
+
     // 추천 클래스 슬라이드
     var fwocard01 = new Swiper('.fwo_card01 .fwo_card', {
         /*loop: true,*/
@@ -11,6 +34,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 1 // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card01 .swiper-button-next'
@@ -389,10 +413,11 @@ $(document).ready(function() {
     /*}).resize();*/
 
     // new신규 클래스 슬라이드
+
     var onecard02 = new Swiper('.main_new_contents .one_card01', {
         /*loop: true,*/
-        autoplay : 3000
-        ,speed : 700
+        /*autoplay : 3000 */
+        speed : 700
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
@@ -401,6 +426,7 @@ $(document).ready(function() {
         ,prevButton: '.main_new_contents .swiper-button-prev'
 
     });
+
 
 
     // KOCCA교육 시설 슬라이드
@@ -412,6 +438,19 @@ $(document).ready(function() {
         ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
 
+    });
+
+    //공지사항 배너 정지버튼
+    $('.main_place_contents .swiper-button-pause').click(function() {
+        onecard01.stopAutoplay();
+        $('.main_place_contents .swiper-button-play').show();
+        $('.main_place_contents .swiper-button-pause').hide();
+    });
+    //공지사항 배너 재성버튼
+    $('.main_place_contents .swiper-button-play').click(function() {
+        onecard01.startAutoplay();
+        $('.main_place_contents .swiper-button-play').hide();
+        $('.main_place_contents .swiper-button-pause').show();
     });
 
 

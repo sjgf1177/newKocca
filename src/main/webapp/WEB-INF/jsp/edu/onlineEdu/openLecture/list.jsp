@@ -45,7 +45,7 @@
 <div class="d_flex col-12 show-table sub_board_header control_board_header mg_b20 control_board_style2">
 	<div class="col-center mw-1280">
 		<div>
-			<select class="relation_site SL02 gubunBox" ordr="3">
+			<select class="relation_site SL02 gubunBox" ordr="3" title="대분류를 선택해주세요">
 				<option value="">대분류</option>
 				<c:if test="${param.pGubun1 ne 'A' or not empty param.pGubun1}">
 					<c:forEach items="${gubunList}" var="item" varStatus="status">
@@ -53,10 +53,10 @@
 					</c:forEach>
 				</c:if>
 			</select>
-			<select class="relation_site SL03">
+			<select class="relation_site SL03" title="소분류를 선택해주세요">
 				<option value="">소분류</option>
 			</select>
-			<select class="relation_site SL04">
+			<select class="relation_site SL04" title="난이도를 선택해주세요">
 				<option value="">난이도</option>
 
 				<c:if test="${param.pGubun1 ne 'A' or not empty param.pGubun1}">

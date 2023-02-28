@@ -83,7 +83,7 @@
 			<div class="col-12 theme_process_list_con">
 				<div class="check_style_0_con">
 					<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" checked="true">
-					<label for="checkid_${list.courseSeq }"><span class="hidden">${list.courseName}_체크박스</span></label>
+					<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>
 				</div>
 				<div class="theme_process_list">
 					<div class="img_box">

@@ -204,11 +204,12 @@ System.out.println("============================= menuNo : " + menuNo);
 </c:if>
 <body class="<c:out value="${subNum }" />">
 
-<!-- <ul class="skip">
-	<li><a href="#content" class="skipContents">본문내용 바로가기</a></li>
-	<li><a href="#gnb">주메뉴 바로가기</a></li>
-</ul> -->
-<div class="sub01Head wrapper sub_layout_page contents_view_page">
+ <ul class="skip">
+	 <li><a href="#GnbBox">메인메뉴 바로가기</a></li>
+	<li><a href="#ContentBox" class="skipContents">본문 바로가기</a></li>
+	<li><a href="#footer">하단메뉴 바로가기</a></li>
+</ul>
+<div id="ContentBox" class="sub01Head wrapper sub_layout_page contents_view_page">
 
 	<!-- //header -->
 		<c:import url="/WEB-INF/jsp/testbed/inc/head.jsp" />

@@ -70,9 +70,19 @@ $(function(){
 	$(".navbar-nav").off('focusin', function(){
 			$('header').stop().animate({"height":"145px"}, 200);
     });*/
+
+	//웹접근성 nav TAB(키보드) 이동
 	$(".navbar-nav > li > a").on('focus', function(){
 		$(this).parent().addClass("active").siblings().removeClass("active");
 	});
+
+	$(".navbar-nav > li > ul li:last-child a").focusout(function(){
+		$(".navbar-nav > li").removeClass("active");
+	});
+
+
+
+
 
 	$(".gnb_menu").on("click", function(){
 		$("#main_nav_full").addClass("gnbActive");
@@ -136,6 +146,9 @@ $(function(){
 
 		}
 	});
+
+
+
 
 
 })

@@ -196,7 +196,7 @@
     <script src="/edu/css/renew2022/AOS/aos.js"></script>
 
     <!-- Required Js -->
-    <script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
+    <!--<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>-->
     <script src="/edu/css/renew2022/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>
 
@@ -392,6 +392,11 @@
 </script>
 
 <!-- html 작업본-->
+<!-- <ul class="skip"> -->
+<!-- 	<li><a href="#content" class="skipContents">본문내용 바로가기</a></li> -->
+<!-- 	<li><a href="#gnb">주메뉴 바로가기</a></li> -->
+<!-- </ul> -->
+
 <form id="frm" name="frm" action="/edu/onlineEdu/realm/list.do?menuNo=500027" method="post" class="main_online_category">
     <input type="hidden" name="pGubun1" id="pGubun1" value="">
     <input type="hidden" name="pGubun2" id="pGubun2" value="">
@@ -436,7 +441,7 @@
                 <div class="nav_search_box">
                     <form name="frmSearch2" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
                         <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='"${randomKeyword}" 검색해 보세요.'>
-                        <button class="nav_search_btn"></button>
+                        <button class="nav_search_btn" title="검색하기"></button>
                     </form>
                 </div>
 
@@ -662,7 +667,7 @@
     </header>
     <!-- //header end -->
 
-    <div class="contents_section">
+    <div id= "ContentBox" class="contents_section">
         <!-- 메인 배너 pc -->
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
@@ -738,10 +743,10 @@
                 <div class="swiper_page_all_box">
                     <div class=" swiper-pagination"></div>
                     <div class="swiper_control_box">
-                        <div class="swiper-button-prev"></div>
+                        <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
                         <button class="swiper-button-play"><img src="/edu/images/renew2022/ico_play.png" alt="배너 재생"></button>
                         <button class="swiper-button-pause"><img src="/edu/images/renew2022/ico_stop.png" alt="배너 정지"></button>
-                        <div class="swiper-button-next"></div>
+                        <div ><button type="button" class="swiper-button-next" title="다음 배너보기"></button></div>
                     </div>
                 </div>
             </div>
@@ -883,6 +888,8 @@
                                 </c:forEach>
                             </ul>
                         </div>
+                        <button class="swiper-button-play" title="슬라이드 재생하기" style="display: none;">재생</button>
+                        <button class="swiper-button-pause" title="슬라이드 정지하기">정지</button>
                         <a href="/edu/bbs/B0000011/list.do?menuNo=500008" class="">더보기</a>
                     </div>
                 </div>
@@ -894,7 +901,7 @@
         <div class="main_online_contents">
             <div class="container">
                 <!-- 신규 클래스 start -->
-                <div class="main_new_contents pc"> <!-- pc 슬라이드 -->
+                <div id="main_new_class" class="main_new_contents pc"> <!-- pc 슬라이드 -->
                     <div class="container">
                         <span class="main_title main_title_bold">
                             <a href="" alt="NEW 신규 클래스">NEW 신규 클래스</a>
@@ -969,8 +976,8 @@
                             </ul>
                         </div>
                         <div class="swiper_btn_box">
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                            <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
                         </div>
                     </div>
                 </div>
@@ -1021,7 +1028,7 @@
                 <!-- 신규 클래스 end -->
 
                 <!-- 추천 클래스 start -->
-                <div class="fwo_card_list_box fwo_card01">
+                <div id="main_best_class" class="fwo_card_list_box fwo_card01">
                     <span class="main_title animate__pulse01" style="width: auto;">추천 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -1060,14 +1067,14 @@
 
                     <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
                     <div class="swiper_btn_box">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                        <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
                     </div>
                 </div>
                 <!-- 추천 클래스 end -->
 
                 <!-- 인기 클래스 start -->
-                <div class="fwo_card_list_box fwo_card02">
+                <div id="main_hot_class" class="fwo_card_list_box fwo_card02">
                     <span class="main_title animate__pulse02" style="width: auto;">인기 클래스</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -1109,8 +1116,8 @@
                     </div>
                     <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
                     <div class="swiper_btn_box">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                        <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
                     </div>
                 </div>
                 <!-- 인기 클래스 end -->
@@ -1132,15 +1139,15 @@
 
                     <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
                     <div class="swiper_btn_box">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                        <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- 아이콘카테고리(방송영상,게임,만애캐,문화일반,인경교일) end -->
 
-        <!-- 곧 만나 볼 수 있어요 start -->
+        <!-- 진행 중 이벤트 start -->
         <div class="main_offline_contents">
             <div class="container">
                 <div class="fwo_card_list_box fwo_card03">
@@ -1208,15 +1215,15 @@
 
                     <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
                     <div class="swiper_btn_box">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                        <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 곧 만나 볼 수 있어요 end -->
+        <!-- 진행 중 이벤트 end -->
 
-        <!-- KOCCA에서 만날 수 있는 특별한 교육 사업 start -->
+        <!-- KOCCA 교육 사업 start -->
         <div class="main_study_contents">
             <div class="container">
                 <span class="main_title main_title_bold">
@@ -1316,17 +1323,17 @@
 
                     <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
                     <div class="swiper_btn_box">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                        <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                        <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- KOCCA에서 만날 수 있는 특별한 교육 사업 end -->
+        <!-- KOCCA 교육 사업 end -->
 
-        <!-- kocca는 창작자 여러분에게 열려 있습니다 start -->
+        <!-- KOCCA 교육 시설 start -->
         <div class="main_place_contents" data-aos="zoom-in">
-            <div class="container">
+            <div class="container" style="position: relative;">
                 <span class="main_title main_title_bold">
                     <a href="/testbed/main/contents.do?menuNo=700133" alt="KOCCA 교육 시설 바로가기">KOCCA 교육 시설</a>
                 </span>
@@ -1358,9 +1365,13 @@
                         </li>
                     </ul>
                 </div>
+                <div class="swiper_btn_box">
+                    <button class="swiper-button-play" title="슬라이드 재생하기" style="display: none; font-size: 16px;">재생</button>
+                    <button class="swiper-button-pause" title="슬라이드 정지하기" style="font-size: 16px;">정지</button>
+                </div>
             </div>
         </div>
-        <!-- kocca는 창작자 여러분에게 열려 있습니다 end -->
+        <!-- KOCCA 교육 시설 end -->
     </div>
     <!-- footer -->
     <div id="menu5" class="menu5">
@@ -1441,7 +1452,10 @@
 <%--                                <a href="https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2021-EP-R040" target="_black">
                                     <img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" alt="개인정보보호인증 마크" title="개인정보보호인증 새창열림">
                                 </a>--%>
-                                <img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" style="cursor:pointer;" alt="개인정보보호인증 마크" title="개인정보보호인증" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2022-EP-R039','seal','width=527,height=720,location=no,status=no,scrollbars=no')" />
+
+                                <a href="javascript:winMarkPopup('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2022-EP-R039','seal','width=527,height=720,location=no,status=no,scrollbars=no');" title="개인정보보호인증 새창열림">
+                                    <img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" style="cursor:pointer;" alt="개인정보보호인증 마크 ">
+                                </a>
                             </li>
                             <%--
                             <li>
@@ -1524,6 +1538,23 @@
                 , spaceBetween: 0 // 슬라이드 사이의 간격 px 단위
                 , autoplayDisableOnInteraction: false
             });
+
+            //공지사항 배너 정지버튼
+            $('.notice_swiper_box .swiper-button-pause').click(function() {
+                swiper7.stopAutoplay();
+                $('.notice_swiper_box .swiper-button-play').show();
+                $('.notice_swiper_box .swiper-button-pause').hide();
+            });
+            //공지사항 배너 재성버튼
+            $('.notice_swiper_box .swiper-button-play').click(function() {
+                swiper7.startAutoplay();
+                $('.notice_swiper_box .swiper-button-play').hide();
+                $('.notice_swiper_box .swiper-button-pause').show();
+            });
+
+
+
+
 
         </script>
     </div>

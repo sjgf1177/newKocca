@@ -245,8 +245,6 @@
 
                             <c:if test='${(nowDate-endDate) > 0}'>
                                 <div class="e_end_back_box">
-                                    <a href="<c:out value="${url }" escapeXml="false" />"
-                                       style="display: inline-block; width: 100%; height: 100%;"></a>
                                 </div>
                             </c:if>
                         </div>
@@ -254,8 +252,8 @@
                 </div>
             </div>
             <div class="swiper_btn_box">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                <div ><button type="button" class="swiper-button-next" title="다음 배너보기"></button></div>
             </div>
         </div>
         </c:if>
@@ -275,6 +273,7 @@
     }
 </style>
 <script>
+
     $(document).ready(function () { //모바일보다 클때만 이벤트 슬라이드 작동
         var windowWidth = $(window).width();
         if (windowWidth > 640) {

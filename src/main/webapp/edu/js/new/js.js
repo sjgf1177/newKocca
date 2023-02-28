@@ -42,17 +42,22 @@ $(function(){
         //구버전 swiper 방향표
         ,nextButton: '.swiper-button-next'
         ,prevButton: '.swiper-button-prev',
+        on: {
+            slideChange: function () {
+                alert('슬라이드 변경');
+            }
+        },
     });
 
     //메인 배너 정지버튼
-    $('.swiper-button-pause').click(function() {
+    $('.main_visual_contents .swiper-button-pause').click(function() {
         swiper0.stopAutoplay();
         swiper00.stopAutoplay();
-        $('.swiper-button-play').show();
-        $('.swiper-button-pause').hide();
+        $('.main_visual_contents .swiper-button-play').show();
+        $('.main_visual_contents .swiper-button-pause').hide();
     });
     //메인 배너 재성버튼
-    $('.swiper-button-play').click(function() {
+    $('.main_visual_contents .swiper-button-play').click(function() {
         swiper0.startAutoplay();
         swiper00.startAutoplay();
         $('.swiper-button-play').hide();
@@ -96,15 +101,16 @@ $(function(){
                 slidesPerView: 3,
                 spaceBetween: 20
             },
+
         }
     });
 
-    //메인 KOCCA는 창작자 여러분에게 열려 있습니다 슬라이드
+    //메인 KOCCA 교육 시설 슬라이드
     var swiper2 = new Swiper('.main_place_contents .swiper-container', {
 
         speed : 300
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 'auto' // 한번에 보이는 슬라이드 갯수
+        ,slidesPerView: '1' // 한번에 보이는 슬라이드 갯수
         ,keyboardControl: true
         ,spaceBetween: 20
 

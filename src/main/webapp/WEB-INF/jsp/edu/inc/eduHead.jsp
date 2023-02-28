@@ -134,7 +134,7 @@
 
 	<script src="/edu/css/renew2022/renew.js"></script>
 	<!-- Required Js -->
-	<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
+	<!--<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>-->
 	<script src="/edu/css/renew2022/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>
 

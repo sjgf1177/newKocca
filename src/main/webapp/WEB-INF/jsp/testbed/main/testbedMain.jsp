@@ -98,7 +98,7 @@ if( StringUtils.hasText(menuNo) ) {
         );
         //]]>
         </script>
-        <div class="wrapper sub_multi_content_testbed_main contents_view_page">
+        <div id="ContentBox" class="wrapper sub_multi_content_testbed_main contents_view_page">
     <!-- header -->
     <div class="col-12 header_wrap">
        	<!--GNBhead-->

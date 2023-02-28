@@ -190,7 +190,7 @@
             <div class="nav_search_box">
                 <form name="frmSearch3" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
                     <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='"${randomKeyword}" 검색해 보세요.'>
-                    <button class="nav_search_btn"></button>
+                    <button class="nav_search_btn" title="검색하기"></button>
                 </form>
             </div>
 
