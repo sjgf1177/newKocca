@@ -1249,9 +1249,9 @@
     .checkbox input[type=checkbox]{display:initial;}
     .sub_section .sub_contents_body input[type="checkbox"]{top:-5px; left:20px; height:22px;}
     .checkbox input[type=checkbox] + .cr:before{display:none;}
-    .form-group input[type="text"]::placeholder, .form-group input[type="password"]::placeholder, .form-group input[type="email"]::placeholder, .form-group .form-control::placeholder {color:#848b94 !important;}
-    .form-group input[type="text"]::-webkit-input-placeholder, .form-group input[type="password"]::-webkit-input-placeholder, .form-group input[type="email"]::-webkit-input-placeholder, .form-group .form-control::-webkit-input-placeholder {color:#848b94 !important;}
-    .form-group input[type="text"]:-ms-input-placeholder, .form-group input[type="password"]:-ms-input-placeholder, .form-group input[type="email"]:-ms-input-placeholder, .form-group .form-control:-ms-input-placeholder {color:#848b94 !important;}
+    .form-group input[type="text"]::placeholder, .form-group input[type="password"]::placeholder, .form-group input[type="email"]::placeholder, .form-group .form-control::placeholder {color:#6b727b !important;}
+    .form-group input[type="text"]::-webkit-input-placeholder, .form-group input[type="password"]::-webkit-input-placeholder, .form-group input[type="email"]::-webkit-input-placeholder, .form-group .form-control::-webkit-input-placeholder {color:#6b727b !important;}
+    .form-group input[type="text"]:-ms-input-placeholder, .form-group input[type="password"]:-ms-input-placeholder, .form-group input[type="email"]:-ms-input-placeholder, .form-group .form-control:-ms-input-placeholder {color:#6b727b !important;}
 
 
     .sub_section .sub_contents_body .warning_text > span{background-image: none; padding-left: 0;}
