@@ -762,6 +762,7 @@
                     </div>
                     <div class="swiper-slide">
                         <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75331&delCode=0&menuNo=500203&pageIndex=1">
+                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75331&delCode=0&menuNo=500203&pageIndex=1" tabindex="0">
                             <img src="/edu/images/renew2022/banner_66_1(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
                                 미디어 파사드 과정 XR을 위한 Projection Mapping
 
@@ -785,7 +786,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75330&delCode=0&menuNo=500203&pageIndex=1">
+                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75330&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
                             <img src="/edu/images/renew2022/banner_68_1(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
                                 애프터 이펙트 영상 편집 교육
                                 교육일정: 1월교육(1회) 2023.1.16~17
@@ -805,7 +806,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75332&delCode=0&menuNo=500203&pageIndex=1">
+                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75332&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
                             <img src="/edu/images/renew2022/banner_67_1(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
                                 음향 교육 Pro Tools를 활용한 믹싱&마스터링
 
@@ -1095,8 +1096,13 @@
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
-                                        <a href="https://url.kr/o8z1ua">
-                                            <img src="/edu/images/renew2022/new_class04.png" alt="">
+                                        <a href="https://url.kr/o8z1ua" tabindex="0">
+                                            <img src="/edu/images/renew2022/new_class04.png" alt="모두를 위한 즐거움 : 배리어프리
+                                            물리적, 심리적 장벽을 없애기 위한 첫 걸음.
+                                            배리어 프리(Barrier – free), 얼마나 알고 계신가요?
+                                            콘텐츠산업 내 배리어프리가 궁금하다면?
+                                            지금 에듀코카에서 확인해보세요!
+                                            ">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -1111,8 +1117,14 @@
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
-                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1103&pLectureCls=GC02">
-                                            <img src="/edu/images/renew2022/new_class03.png" alt="">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1103&pLectureCls=GC02" tabindex="-1">
+                                            <img src="/edu/images/renew2022/new_class03.png" alt="게임회사의 모든 것 (feat.직무)
+                                            게임 기업 취업, 이직을 희망하고 있다면?
+                                            실무진들의 다양한 직무 Ssul은 물론
+                                            게임 회사가 원하는 인재상부터
+                                            게임 산업의 전체 구조까지 다 알려드립니다!
+                                            지금 바로 에듀코카에서 확인해보세요.
+                                            ">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -1128,8 +1140,13 @@
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
-                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1092&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=K0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=K0&p_list_type=C&pageIndex=1">
-                                            <img src="/edu/images/renew2022/new_class02.png" alt="">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1092&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=K0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=K0&p_list_type=C&pageIndex=1" tabindex="-1">
+                                            <img src="/edu/images/renew2022/new_class02.png" alt="웹툰 회사에서는 어떤 일을 할까?
+                                            콘텐츠 IP로써 새로운 한류 문화로 자리매김한 웹툰!
+                                            웹툰 산업에서 선도적인 역할을 하고 있는 기업에서는
+                                            과연 어떤 일을 하고 있는지 궁금하다면?
+                                            지금 바로 에듀코카에서 확인하세요!
+                                            ">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -1144,7 +1161,7 @@
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
-                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1" tabindex="-1">
                                             <img src="/edu/images/renew2022/new_class.png" alt="">
                                         </a>
                                     </span>

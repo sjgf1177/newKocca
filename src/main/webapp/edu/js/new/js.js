@@ -27,7 +27,6 @@ $(function(){
         fadeEffect: {
             crossFade: true
         },
-
         autoplay: 6000
         ,loot: true
         ,speed: 700
@@ -43,7 +42,15 @@ $(function(){
         ,nextButton: '.swiper-button-next'
         ,prevButton: '.swiper-button-prev',
 
+        onSlideChangeStart : function() { //슬라이드가 완전히 바뀌었을때 실행
+            //alert(123);
+            $("#main_visual_slide .swiper-slide a").attr('tabindex','-1');
+            $("#main_visual_slide .swiper-slide-active a").attr('tabindex','0');
+        },
+
     });
+
+
 
     //메인 배너 정지버튼
     $('.main_visual_contents .swiper-button-pause').click(function() {

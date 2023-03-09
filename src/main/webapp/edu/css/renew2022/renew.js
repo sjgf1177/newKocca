@@ -418,6 +418,12 @@ $(document).ready(function() {
         ,nextButton: '.main_new_contents .swiper-button-next'
         ,prevButton: '.main_new_contents .swiper-button-prev'
 
+        ,onSlideChangeStart : function() { //슬라이드가 완전히 바뀌었을때 실행
+            //alert(123);
+            $(".main_new_contents .swiper-slide a").attr('tabindex','-1');
+            $(".main_new_contents .swiper-slide-active a").attr('tabindex','0');;
+        },
+
     });
 
 
