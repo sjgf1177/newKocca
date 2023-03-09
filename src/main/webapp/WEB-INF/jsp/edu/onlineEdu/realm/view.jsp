@@ -381,8 +381,8 @@
         </div>
         <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
         <div class="swiper_btn_box">
-            <div class="swiper-button-prev swiper-button-disabled"></div>
-            <div class="swiper-button-next"></div>
+            <div><button type="button" class="swiper-button-prev swiper-button-disabled" title="이전 배너보기"></button></div>
+            <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
         </div>
     </div>
 </c:if>
