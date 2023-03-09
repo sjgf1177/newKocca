@@ -854,7 +854,7 @@
                                 <input type="text" class="form-control mob_no input_bline h45 col-sm-8" name="mbtlnum" id="mbtlnum" placeholder="휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
                                 <input type="hidden" name="mbtlnumAuthAt" id="mbtlnumAuthAt" />
                                 <a href="javascript:crtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="mbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
-                                <a href="#self" class="btn btn-success btn-black" id="mbtlnumAuthCmt" style="display:none background; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                <a href="#self" class="btn btn-success btn-black" id="mbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
                                 <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" style="display:none; margin-right: 0; margin-bottom: 0;">보호자 휴대폰정보와 동일</a>
                             </div>
                         </div>
