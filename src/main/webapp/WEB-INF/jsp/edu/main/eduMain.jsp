@@ -608,7 +608,6 @@
                             <c:param name="menuNo" value="500077"/>
                             <c:param name="_targetUrl" value="${_targetUrl}"/>
                         </c:url>
-                        <!--
                         <span class="login_out_box">
 								<span class="show vm fontsize14 header_util_item">
 									<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
@@ -617,35 +616,6 @@
 									<a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 								</span>
 							</span>
-							-->
-                        <div class="nav_support_box">
-                            <a href="/edu/main/contents.do?menuNo=500033">
-                                <img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
-                            </a>
-                            <ul>
-                                    <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
-                                <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
-                                    <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
-                                    <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500005" title="기업맞춤교육지원">기업맞춤교육지원</a></li>--%>
-                            </ul>
-                        </div>
-                        <div class="nav_my_box pc">
-                            <a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061">
-                                <img src="/edu/images/renew2022/my.png" alt="마이페이지">
-                            </a>
-                            <ul>
-                                <li id="myPageMenu"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="마이페이지">마이페이지</a></li>
-                                <li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
-                                <li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
-                                    <%--<li><a href="/edu/job/empymnCnsl/empymnCnslListMypage.do?menuNo=500059" title="1:1컨설팅내역">1:1컨설팅내역</a></li>--%>
-                                <li><a href="/edu/onlineEdu/mylctrum/listLessonHistory.do?menuNo=500099" title="수료증 출력">수료증 출력</a></li>
-                                <li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
-                                <li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
-                                <li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
-                            </ul>
-                        </div>
-                        <input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
                     </sec:authorize>
                 </div>
 
