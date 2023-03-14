@@ -227,7 +227,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 
 .nav_my_box, .nav_support_box{display:inline-block; position: relative;}
 .nav_my_box ul, .nav_support_box ul{display:none; position:fixed; background-color: #f8f8f8; border-radius: 13px;}
-.nav_my_box.pc:hover ul, .nav_support_box:hover ul{display: block;}
+.nav_my_box.pc:hover ul, .nav_my_box.pc.active ul, .nav_support_box:hover ul, .nav_support_box.active ul{display: block;}
 .nav_my_box li, .nav_support_box li{border-bottom: 1px solid #707070; line-height: normal;}
 .nav_my_box li a, .nav_support_box li a{padding: 10px 13px; line-height:1.5rem; color:#222; font-weight: 500;}
 .nav_my_box li a:hover, .nav_support_box li a:hover{color: #3B85FF;}

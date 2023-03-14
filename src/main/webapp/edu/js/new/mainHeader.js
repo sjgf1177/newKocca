@@ -72,12 +72,13 @@ $(function(){
     });*/
 
 	//웹접근성 nav TAB(키보드) 이동
-	$(".navbar-nav > li > a").on('focus', function(){
+
+	$(".navbar-nav > li > a, .nav_support_box > a, .nav_my_box > a").on('focus', function(){
 		$(this).parent().addClass("active").siblings().removeClass("active");
 	});
 
-	$(".navbar-nav > li > ul li:last-child a").focusout(function(){
-		$(".navbar-nav > li").removeClass("active");
+	$(".navbar-nav > li > ul li:last-child a, .nav_support_box > ul li:last-child a, .nav_my_box > ul li:last-child a").focusout(function(){
+		$(".navbar-nav > li, .nav_support_box, .nav_my_box").removeClass("active");
 	});
 
 
