@@ -1545,7 +1545,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" title="WA 품질인증 마크, 웹와치(WebWatch) 2023.02.08 ~ 2024.02.09" target="_blank">
+                                <a href="http://webwatch.or.kr" title="WA 품질인증 마크, 웹와치(WebWatch) 2023.02.08 ~ 2024.02.09" target="_blank">
                                     <img src="/edu/images/bm/web_watch_mark_23.png" border="0" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2023.02.09 ~ 2024.02.08"/>
                                 </a>
                             </li>
