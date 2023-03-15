@@ -143,6 +143,11 @@ public class MainService extends DefaultCmmProgramService implements ServletCont
 			Map<String, List<FileVO>> fileMap = listHandler.getFileMap(param, openEventList);
 			model.addAttribute("fileMap", fileMap);
 
+			// 메인 배너 리스트
+			log.debug("// 메인 배너 목록");
+			List<ZValue> mainBannerList = sqlDao.listDAO("BannerDAO.selectPublishList", param);
+			model.addAttribute("mainBannerList", mainBannerList);
+
 			param.put("siteId", SiteMngService.EDU_SITE_ID); // 팝업존 siteId
 		}
 		else if (SiteMngService.EDUMOBILE_SITE_NAME.equals(param.getString("siteName"))) {

@@ -672,94 +672,17 @@
         <div class="main_visual_contents pc">
             <div class="swiper-container" id="main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75337&delCode=0&menuNo=500203&pageIndex=1" tabindex="0">
-                            <img src="/edu/images/renew2022/70_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-                                1인 크리에이터 과정
-
-                                1인 크리에이터를 위한 유튜브 영상 만들기
-
-                                교육일정: 1회차 교육: 2023.4.17 ~ 4.18
-                                         2회차 교육: 2023.4.24. ~ 4.25
-                                         (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                                모집일정:2022.2.20. ~ 2023.3.20
-                                               (마감 후 개별 통보)
-
-                                교육목표: 유튜브 생태계 이해와 크리에이터 기본 정의
-
-                                교육대상: 예비인력 및 현업인
-                                교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 2층 편집 스튜디오
-
-                                교육비용: 무료  모집인원: 8명
-
-                                한국콘텐츠진흥원">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75339&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
-                            <img src="/edu/images/renew2022/71_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-                                 미디어 파사드 과정 XR을 위한 Projection Mapping
-
-                                 교육일정: 4회차 교육: 2023.4.3. ~ 4.4.
-                                 5회차 교육: 2023.4.10. ~ 4.11.
-                                 (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                                 신청기간:2022.2.20. ~ 2023.3.20.
-                                 (마감 후 개별 통보)
-
-                                 교육대상: 예비인력 및 현업인
-                                 교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 1층 버추얼
-
-                                 교육비용: 무료  모집인원: 4명
-                                 한국콘텐츠진흥원">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75338&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
-                            <img src="/edu/images/renew2022/72_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-                                애프터 이펙트 영상편집교육
-
-                                교육일정: 4회차 교육: 2023.4.3. ~ 4.4
-                                         5회차 교육: 2023.4.6. ~ 4.7
-                                         6회차 교육: 2023.4.10. ~ 4.11
-                                         7회차 교육: 2023.4.13. ~ 4.14
-                                          (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                                모집일정:2023.2.20. ~ 3.20.
-                                               (마감 후 개별 통보)
-
-                                교육대상: 예비인력 및 현업인
-                                교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 2층 편집 스튜디오
-
-                                교육비용: 무료  모집인원: 8명
-                                한국콘텐츠진흥원">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75340&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
-                            <img src="/edu/images/renew2022/73_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-
-                                 Pro Tools를 활용한 믹싱&마스터링
-                                 Pro Tools를 활용한 영상사운드 편집 실무
-
-                                 교육일정: 4회차 교육: 2023.4.3. ~ 4.4.
-                                 5회차 교육: 2023.4.6. ~ 4.7.
-                                 6회차 교육: 2023.4.10. ~ 4.11.
-                                 7회차 교육: 2023.4.13. ~ 4.14.
-                                 8회차 교육: 2023.4.17. ~ 4.18.
-                                 9회차 교육: 2023.4.20. ~ 4.21.
-                                 (4~7회차 믹싱&마스터링/ 8~9회차 사운드 편집)
-                            (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                            모집일정:2023.2.20. ~ 2023.3.20.
-                            (마감 후 개별 통보)
-
-                            교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 2층 사운드 스튜디오
-                            교육비용: 무료  모집인원: 3명
-                            한국콘텐츠진흥원">
-                        </a>
-                    </div>
+                    <c:set var="tidx" value="0" />
+                    <c:forEach items="${mainBannerList }" var="result" varStatus="status">
+                        <c:if test="${status.index > 0}">
+                            <c:set var="tidx" value="-1" />
+                        </c:if>
+                        <div class="swiper-slide">
+                            <a href="${result.bnrUrl}" tabindex="${tidx}">
+                                <img src="/cmm/fms/getImage.do?atchFileId=${result.atchFileId}&fileSn=1" alt="${result.bnrNm}">
+                            </a>
+                        </div>
+                    </c:forEach>
                     <!-- //반복 -->
                 </div>
 
@@ -779,94 +702,17 @@
         <div class="main_visual_contents mo">
             <div class="swiper-container" id="mo_main_visual_slide" draggable="true">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75337&delCode=0&menuNo=500203&pageIndex=1" tabindex="0">
-                            <img src="/edu/images/renew2022/70_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-                                1인 크리에이터 과정
-
-                                1인 크리에이터를 위한 유튜브 영상 만들기
-
-                                교육일정: 1회차 교육: 2023.4.17 ~ 4.18
-                                         2회차 교육: 2023.4.24. ~ 4.25
-                                         (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                                모집일정:2022.2.20. ~ 2023.3.20
-                                               (마감 후 개별 통보)
-
-                                교육목표: 유튜브 생태계 이해와 크리에이터 기본 정의
-
-                                교육대상: 예비인력 및 현업인
-                                교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 2층 편집 스튜디오
-
-                                교육비용: 무료  모집인원: 8명
-
-                                한국콘텐츠진흥원">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75339&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
-                            <img src="/edu/images/renew2022/71_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-                                 미디어 파사드 과정 XR을 위한 Projection Mapping
-
-                                 교육일정: 4회차 교육: 2023.4.3. ~ 4.4.
-                                 5회차 교육: 2023.4.10. ~ 4.11.
-                                 (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                                 신청기간:2022.2.20. ~ 2023.3.20.
-                                 (마감 후 개별 통보)
-
-                                 교육대상: 예비인력 및 현업인
-                                 교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 1층 버추얼
-
-                                 교육비용: 무료  모집인원: 4명
-                                 한국콘텐츠진흥원">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75338&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
-                            <img src="/edu/images/renew2022/72_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-                                애프터 이펙트 영상편집교육
-
-                                교육일정: 4회차 교육: 2023.4.3. ~ 4.4
-                                         5회차 교육: 2023.4.6. ~ 4.7
-                                         6회차 교육: 2023.4.10. ~ 4.11
-                                         7회차 교육: 2023.4.13. ~ 4.14
-                                          (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                                모집일정:2023.2.20. ~ 3.20.
-                                               (마감 후 개별 통보)
-
-                                교육대상: 예비인력 및 현업인
-                                교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 2층 편집 스튜디오
-
-                                교육비용: 무료  모집인원: 8명
-                                한국콘텐츠진흥원">
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="https://edu.kocca.kr/edu/bbs/B0000048/view.do?nttId=75340&delCode=0&menuNo=500203&pageIndex=1" tabindex="-1">
-                            <img src="/edu/images/renew2022/73_(PC).png" alt="2023 콘텐츠인재캠퍼스 오픈클래스
-
-                                 Pro Tools를 활용한 믹싱&마스터링
-                                 Pro Tools를 활용한 영상사운드 편집 실무
-
-                                 교육일정: 4회차 교육: 2023.4.3. ~ 4.4.
-                                 5회차 교육: 2023.4.6. ~ 4.7.
-                                 6회차 교육: 2023.4.10. ~ 4.11.
-                                 7회차 교육: 2023.4.13. ~ 4.14.
-                                 8회차 교육: 2023.4.17. ~ 4.18.
-                                 9회차 교육: 2023.4.20. ~ 4.21.
-                                 (4~7회차 믹싱&마스터링/ 8~9회차 사운드 편집)
-                            (10:30 ~ 17:30 일 6시간, 총 12시간 )
-
-                            모집일정:2023.2.20. ~ 2023.3.20.
-                            (마감 후 개별 통보)
-
-                            교육장소: 콘텐츠인재캠퍼스(서울시 동대문구 회기로 66) 2층 사운드 스튜디오
-                            교육비용: 무료  모집인원: 3명
-                            한국콘텐츠진흥원">
-                        </a>
-                    </div>
+                    <c:set var="mtidx" value="0" />
+                    <c:forEach items="${mainBannerList }" var="result" varStatus="status">
+                        <c:if test="${status.index > 0}">
+                            <c:set var="mtidx" value="-1" />
+                        </c:if>
+                        <div class="swiper-slide">
+                            <a href="${result.bnrUrl}" tabindex="${mtidx}">
+                                <img src="/cmm/fms/getImage.do?atchFileId=${result.atchFileId}&fileSn=2" alt="${result.bnrNm}" style="width:100%;">
+                            </a>
+                        </div>
+                    </c:forEach>
                     <!-- //반복 -->
                 </div>
 

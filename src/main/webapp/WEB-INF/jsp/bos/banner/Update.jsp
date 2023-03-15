@@ -118,7 +118,7 @@ function checkAndSubmit() {
 					</c:if>
 				<input id="file1" name="file1" type="file" title="첨부파일1" class="board1" size="50" style="width:90%" />
 				<br/>
-				이미지 권장사이즈 : 153*38
+				이미지 권장사이즈 : 1280*360
 			</td>
 		</tr>
 		<tr>
@@ -131,19 +131,20 @@ function checkAndSubmit() {
 				</c:import>
 				<input id="file2" name="file2" type="file" title="첨부파일2" class="board1" size="50" style="width:90%" />
 				<br/>
-				이미지 권장사이즈 : 153*38
+				이미지 권장사이즈 : 640*437
 			</td>
 		</tr>
 		<tr>
-			<th scope="row"><label for="bannerNm">제목</label></th>
+			<th scope="row"><label for="bannerNm">대체 텍스트</label></th>
 			<td class="output">
-				<input type="text" id="bannerNm" name="bannerNm" value="${result.bnrNm}" style="width: 600px" class="board1" />
+				<%--<input type="text" id="bannerNm" name="bannerNm" value="${result.bnrNm}" style="width: 600px" class="board1" />--%>
+				<textarea id="bannerNm" name="bannerNm" style="width: 90%" rows="10" class="board1">${result.bnrNm}</textarea>
 			</td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="bannerUrl">링크 URL</label></th>
 			<td class="output">
-				<input type="text" id="bannerUrl" name="bannerUrl" value="${result.bnrUrl}" style="width: 600px" class="board1" />
+				<input type="text" id="bannerUrl" name="bannerUrl" value="${result.bnrUrl}" style="width: 90%" class="board1" />
 			</td>
 		</tr>
 		<tr>
