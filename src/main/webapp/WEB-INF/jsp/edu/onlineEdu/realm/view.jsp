@@ -146,7 +146,11 @@
         </div>
 
         <div class="col-12 mt15 board_util_btn_con">
-
+            <c:if test='${view.preurl != null }'>
+                <a href="javascript:openWindowPopup('${view.preurl }', '강의 미리보기', '${view.prewidth }', '${view.preheight }');" class="fl btn_style_0 green edu_prev_view online_edu" title="새창열림">
+                    강의 미리보기
+                </a>
+            </c:if>
 
             <span>
                 <a href="javascript:void(0);" class="btn_style_0 blue edit online_edu" onclick="fnCmdLrnAction('${view.year}', '', '', '', '${view.contenttype }', '${view.subj }', '${view.subjseq }', '', '${view.subjnm }', '${param.p_scupperclass }'); return false;">

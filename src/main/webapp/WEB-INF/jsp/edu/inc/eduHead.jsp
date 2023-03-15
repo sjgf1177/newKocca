@@ -142,6 +142,8 @@
 	<!-- Swiper8.4.2 JS -->
 	<%--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>--%>
 	<script src="/edu/css/renew2022/assets/js/pages/ac-alert.js"></script>
+	<!-- 챗봇js-->
+	<script id="happytalkSDK" src="//design.happytalkio.com/sdk/happytalk.chat.v2.min.js"></script>
 
 
 	<!-- renew2022 JavaScript end -->
@@ -166,6 +168,14 @@
 			}
 	    }
 	//]]>
+    <!-- 챗봇 Js start -->
+    var ht = new Happytalk({
+        siteId: '5000100237',
+        siteName: '한국콘텐츠진흥원',
+        categoryId: '146368',
+        divisionId: '146369',
+    });
+    <!-- 챗봇 Js end -->
 
 	</script>
 	</sec:authorize>

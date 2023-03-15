@@ -27,7 +27,7 @@ function winMarkPopup(theURL,winName,features) { //v2.0
                     </li>
 					<li><a href="/edu/main/contents.do?menuNo=500072" class="footer_link_item">이용약관</a></li>
 					<li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" class="footer_link_item">공지사항</a></li>
-					<li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" class="footer_link_item">FAQ</a></li>
+					<!--<li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" class="footer_link_item">FAQ</a></li>-->
 					<li><a href="/edu/main/contents.do?menuNo=500227" class="footer_link_item">찾아오시는길</a></li>
 				</ul>
 				<span>본 페이지에 게시된 이메일주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신법에 의해 처벌됨을 유념하시기 바랍니다.</span>

@@ -378,6 +378,15 @@
         document.eFrm.submit();
     }
 
+    <!-- 챗봇 Js start -->
+    var ht = new Happytalk({
+        siteId: '5000100237',
+        siteName: '한국콘텐츠진흥원',
+        categoryId: '146368',
+        divisionId: '146369',
+    });
+    <!-- 챗봇 Js end -->
+
     //애니메이션 라이브러리 불러오기
     AOS.init();
 </script>
@@ -1448,7 +1457,7 @@
                         </li>
                         <li><a href="/edu/main/contents.do?menuNo=500072" class="footer_link_item">이용약관</a></li>
                         <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" class="footer_link_item">공지사항</a></li>
-                        <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" class="footer_link_item">FAQ</a></li>
+                        <!--<li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" class="footer_link_item">FAQ</a></li>-->
                         <li><a href="/edu/main/contents.do?menuNo=500227" class="footer_link_item">찾아오시는길</a></li>
                     </ul>
                     <span>본 페이지에 게시된 이메일주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신법에 의해 처벌됨을 유념하시기 바랍니다.</span>
