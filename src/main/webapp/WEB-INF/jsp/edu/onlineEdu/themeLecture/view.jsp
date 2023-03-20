@@ -80,38 +80,40 @@
 		<div class="col-12 theme_process_list_wrap">
 			<!-- 반복 -->
 			<c:forEach items="${themeSubjList }" var="list" varStatus="status" >
-			<div class="col-12 theme_process_list_con">
-				<div class="check_style_0_con">
-					<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" checked="true">
-					<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>
-				</div>
-				<div class="theme_process_list">
-					<div class="img_box">
-						<img src="${list.imgfile}" alt="${list.courseName }">
+				<c:if test="${not empty list.courseId }">
+				<div class="col-12 theme_process_list_con">
+					<div class="check_style_0_con">
+						<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" checked="true">
+						<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>
 					</div>
-					<div class="text_box">
-						<div class="online_edu_card_icon_con">
-							<%--<span class="online_edu_card_icon">
-								<img src="/edu/images/bm/online_pc_icon.png" alt="pc에서 재생가능" title="pc에서 재생가능">
-							</span>
-							<c:if test="${list.mobileUseYn eq 'Y' }">
-							<span class="online_edu_card_icon">
-								<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일에서 재생가능" title="모바일에서 재생가능">
-							</span>
-							</c:if>--%>
-							<h5>${list.courseName }</h5>
+					<div class="theme_process_list">
+						<div class="img_box">
+							<img src="${list.imgfile}" alt="${list.courseName }">
 						</div>
-						<p class="theme_process_list_desc">
-							${list.intro }
-						</p>
-						<div class="theme_process_list_more_btn_con">
-							<a href="javascript:void(0)"  onclick="javascript:fnCmdViewPage('${list.type }', '${list.courseId }', '${list.courseName }', '${list.isonoff }', '${list.scupperclass }', '${list.uclassnm }', '${list.year }', '${list.subjseq }'); return false;" class="btn_style_0">
-								상세보기
-							</a>
+						<div class="text_box">
+							<div class="online_edu_card_icon_con">
+								<%--<span class="online_edu_card_icon">
+									<img src="/edu/images/bm/online_pc_icon.png" alt="pc에서 재생가능" title="pc에서 재생가능">
+								</span>
+								<c:if test="${list.mobileUseYn eq 'Y' }">
+								<span class="online_edu_card_icon">
+									<img src="/edu/images/bm/online_mobile_icon.png" alt="모바일에서 재생가능" title="모바일에서 재생가능">
+								</span>
+								</c:if>--%>
+								<h5>${list.courseName }</h5>
+							</div>
+							<p class="theme_process_list_desc">
+								${list.intro }
+							</p>
+							<div class="theme_process_list_more_btn_con">
+								<a href="javascript:void(0)"  onclick="javascript:fnCmdViewPage('${list.type }', '${list.courseId }', '${list.courseName }', '${list.isonoff }', '${list.scupperclass }', '${list.uclassnm }', '${list.year }', '${list.subjseq }'); return false;" class="btn_style_0">
+									상세보기
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+				</c:if>
 			</c:forEach>
 			<!-- //반복 -->
 		</div>
