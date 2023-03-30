@@ -386,7 +386,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 @media all and (max-width:1280px) {
     .radio_box_con {padding: 0;}
     .sub_section .sub_contents_body .agreeScrBtm input[type="checkbox"] + label {left: -24px;}
-    .sub_section .sub_contents_body input[type="checkbox"] + label {margin-right: 0; padding-left: 14px;}
+    .sub_section .sub_contents_body input[type="checkbox"] + label {margin-right: 0; padding-left: 22px;}
     .sub_section .sub_contents_body .table_style_0 input[type="text"], .sub_section .sub_contents_body .table_style_0 input[type="password"]{width: 100%;}
     .sub_section .sub_contents_body table.table_style_0 .input_wrap .radio_box_con, .sub_section .sub_contents_body table.table_style_0 .radio_wrap .radio_box_con{margin-bottom: 5px;}
 }

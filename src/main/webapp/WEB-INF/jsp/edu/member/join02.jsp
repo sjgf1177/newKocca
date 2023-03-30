@@ -165,12 +165,26 @@
             }
         });
 
+        //미동의 checkbox
+        $("[id^='checkbox-c']").click(function() {
+            var checkPtruecheck = $(this).parent().siblings().children("[id^='checkbox-p']").is(":checked"); //형제관계 동의함 체크박스 확인
+
+            if(checkPtruecheck == true) { //동의함 체크되어 있을 때
+                $(this).parent().siblings().children("[id^='checkbox-p']").prop("checked", false);
+                $("#checkbox-p-5").prop("checked", false);
+                $("#agreAt2").val("N");
+            } else {
+
+            }
+        });
+
         $("#checkbox-p-5").click(function() {
             if($("#checkbox-p-5").is(":checked")) {
                 $("#checkbox-p-6").prop("checked", true);
                 $("#checkbox-p-7").prop("checked", true);
                 $("#checkbox-p-8").prop("checked", true);
                 $("#agreAt2").val("Y");
+                $("[id^='checkbox-c']").prop("checked", false); // 미동의함 체크 박스 해제
             } else {
                 $("#checkbox-p-6").prop("checked", false);
                 $("#checkbox-p-7").prop("checked", false);
@@ -180,10 +194,17 @@
         });
 
         $("#checkbox-p-6, #checkbox-p-7, #checkbox-p-8").click(function() {
+            var checkCtruecheck = $(this).parent().siblings().children("[id^='checkbox-c']").is(":checked"); //형제관계 동의함 체크박스 확인
             if($("#checkbox-p-6").is(":checked") && $("#checkbox-p-7").is(":checked") && $("#checkbox-p-8").is(":checked")) {
                 $("#checkbox-p-5").prop("checked", true);
-            } else {
+            } else{
                 $("#checkbox-p-5").prop("checked", false);
+            };
+
+            if(checkCtruecheck == true) { //미동의함 체크되어 있을 때
+                $(this).parent().siblings().children("[id^='checkbox-c']").prop("checked", false);
+            } else {
+
             }
         });
 
@@ -226,6 +247,9 @@
                 $("#concertSmsAt").val("N");
             }
         });*/
+
+
+
 
     });
 
@@ -962,7 +986,11 @@
                             <div class="input_wrap mb10">
                                 <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
                                     <input type="checkbox" name="checkbox-p-6" id="checkbox-p-6" title="이용약관 동의(필수)">
-                                    <label for="checkbox-p-6" class="cr">이용약관 동의(필수)</label>
+                                    <label for="checkbox-p-6" class="cr" style="width: 159px;">이용약관 동의(필수)</label>
+                                </span>
+                                <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
+                                    <input type="checkbox" name="checkbox-c-1" id="checkbox-c-1" title="이용약관 미동의">
+                                    <label for="checkbox-c-1" class="cr">미동의</label>
                                 </span>
                                 <button type="button" onclick="$('.layer_agree_wrap01').css({'display':'block'})">내용보기</button>
                             </div>
@@ -1145,6 +1173,10 @@
                                     <input type="checkbox" name="checkbox-p-7" id="checkbox-p-7" title="개인정보 수집 동의(필수)">
                                     <label for="checkbox-p-7" class="cr">개인정보 수집 동의(필수)</label>
                                 </span>
+                                <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
+                                    <input type="checkbox" name="checkbox-c-2" id="checkbox-c-2" title="개인정보 수집 미동의">
+                                    <label for="checkbox-c-2" class="cr">미동의</label>
+                                </span>
                                 <button type="button" onclick="$('.layer_agree_wrap02').css({'display':'block'})">내용보기</button>
                             </div>
 
@@ -1188,6 +1220,10 @@
                                 <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
                                     <input type="checkbox" name="checkbox-p-8" id="checkbox-p-8" title="개인정보 수집 동의(선택)">
                                     <label for="checkbox-p-8" class="cr">개인정보 수집 동의(선택)</label>
+                                </span>
+                                <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
+                                    <input type="checkbox" name="checkbox-c-3" id="checkbox-c-3" title="개인정보 수집 미동의">
+                                    <label for="checkbox-c-3" class="cr">미동의</label>
                                 </span>
                                 <button type="button" onclick="$('.layer_agree_wrap03').css({'display':'block'})">내용보기</button>
                             </div>
