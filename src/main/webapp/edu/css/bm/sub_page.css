@@ -455,7 +455,7 @@ ul.list_style_2.requst_list > li > .sub_text > .sub_text_title{ font-size:12px; 
 .sub_section .sub_contents_body table.work_tb input[type="checkbox"]#career2 {margin-top: 10px;}
 .sub_section .sub_contents_body table.work_tb input[type="checkbox"]:focus{opacity: 1;border: 1px solid #ddd;}
 .sub_section .sub_contents_body input[type="checkbox"] + label{ display: inline-block; width: auto; height: 30px; font-size: 14.5px; font-size: 1.45rem; line-height: 20.5px; line-height: 2.05rem; color: #313131; letter-spacing: -0.025em;
-    background: url("/edu/images/bm/checkbox_style_0_w.png") no-repeat left top; padding-left: 30px; margin-right: 24px; cursor:pointer;}
+    background: url("/edu/images/bm/checkbox_style_0_w.png") no-repeat left top; padding-left: 23px; margin-right: 24px; cursor:pointer;}
 .sub_section .sub_contents_body input[type="checkbox"] + label:brfore{content:"";clear:both;display:block;}
 .sub_section .sub_contents_body table.work_tb input[type="checkbox"] + label{opacity: 2; position: relative;}
 .sub_section .sub_contents_body .agreeScrBtm input[type="checkbox"] + label{ width:auto; }
