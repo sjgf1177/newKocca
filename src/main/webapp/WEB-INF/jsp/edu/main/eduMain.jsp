@@ -678,7 +678,7 @@
                             <c:set var="tidx" value="-1" />
                         </c:if>
                         <div class="swiper-slide">
-                            <a href="${result.bnrUrl}" tabindex="${tidx}">
+                            <a href="${result.bnrUrl}" tabindex="${tidx}" <c:if test="${result.popup eq 'Y'}">target="_blank"</c:if> <c:if test="${result.popup ne 'Y'}">target="_self"</c:if>>
                                 <img src="/cmm/fms/getImage.do?atchFileId=${result.atchFileId}&fileSn=1" alt="${result.bnrNm}">
                             </a>
                         </div>
@@ -708,7 +708,7 @@
                             <c:set var="mtidx" value="-1" />
                         </c:if>
                         <div class="swiper-slide">
-                            <a href="${result.bnrUrl}" tabindex="${mtidx}">
+                            <a href="${result.bnrUrl}" tabindex="${mtidx}" <c:if test="${result.popup eq 'Y'}">target="_blank"</c:if> <c:if test="${result.popup ne 'Y'}">target="_self"</c:if>>
                                 <img src="/cmm/fms/getImage.do?atchFileId=${result.atchFileId}&fileSn=2" alt="${result.bnrNm}" style="width:100%;">
                             </a>
                         </div>
