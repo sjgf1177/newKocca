@@ -1266,9 +1266,9 @@
                                                             </span>
                                                         </li>
                                                         <li>
-                                    <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600; font-size: 17px;">
-                                        3. 개인정보 보유 및 이용기간 : 3년 혹은 회원 탈퇴 후 즉시 삭제
-                                    </span>
+                                                            <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600; font-size: 17px;">
+                                                                3. 개인정보 보유 및 이용기간 : 3년 혹은 회원 탈퇴 후 즉시 삭제
+                                                            </span>
                                                         </li>
                                                         <li><span class="dot">4. 동의거부권 및 불이익 : 개인정보 수집 및 이용에 대해 동의를 거부할 권리가 있습니다. 단 선택정보 사항을 동의하지 않더라도 서비스 이용이 가능합니다.</span></li>
                                                     </ul>
