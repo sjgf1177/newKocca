@@ -183,19 +183,21 @@
                 $("#checkbox-p-6").prop("checked", true);
                 $("#checkbox-p-7").prop("checked", true);
                 $("#checkbox-p-8").prop("checked", true);
+                $("#checkbox-p-9").prop("checked", true);
                 $("#agreAt2").val("Y");
                 $("[id^='checkbox-c']").prop("checked", false); // 미동의함 체크 박스 해제
             } else {
                 $("#checkbox-p-6").prop("checked", false);
                 $("#checkbox-p-7").prop("checked", false);
                 $("#checkbox-p-8").prop("checked", false);
+                $("#checkbox-p-9").prop("checked", false);
                 $("#agreAt2").val("N");
             }
         });
 
-        $("#checkbox-p-6, #checkbox-p-7, #checkbox-p-8").click(function() {
+        $("#checkbox-p-6, #checkbox-p-7, #checkbox-p-8, #checkbox-p-9").click(function() {
             var checkCtruecheck = $(this).parent().siblings().children("[id^='checkbox-c']").is(":checked"); //형제관계 동의함 체크박스 확인
-            if($("#checkbox-p-6").is(":checked") && $("#checkbox-p-7").is(":checked") && $("#checkbox-p-8").is(":checked")) {
+            if($("#checkbox-p-6").is(":checked") && $("#checkbox-p-7").is(":checked") && $("#checkbox-p-8").is(":checked") && $("#checkbox-p-9").is(":checked")) {
                 $("#checkbox-p-5").prop("checked", true);
             } else{
                 $("#checkbox-p-5").prop("checked", false);
@@ -639,6 +641,7 @@
 
         v.add("checkbox-p-6", { required: true });
         v.add("checkbox-p-7", { required: true });
+        v.add("checkbox-p-9", { required: true }); // 만14세이상 미체크시 alert창 띄움
 
         var result = v.validate();
 
@@ -983,6 +986,13 @@
                                 </span>
                             </div>
 
+                            <div class="input_wrap pb10 pt10" style="border-bottom: 1px solid #fff; padding:0 !important;">
+                                <span class="checkbox checkbox-primary d-inline">
+                                    <input type="checkbox" name="checkbox-p-9" id="checkbox-p-9" title="(필수)만 14세 이상입니다">
+                                    <label for="checkbox-p-9" class="cr">(필수)만 14세 이상입니다.</label>
+                                </span>
+                            </div>
+
                             <div class="input_wrap mb10">
                                 <span class="checkbox checkbox-primary d-inline" style="padding: 0;">
                                     <input type="checkbox" name="checkbox-p-6" id="checkbox-p-6" title="이용약관 동의(필수)">
@@ -1196,11 +1206,16 @@
                                                         <ul class="li_style02">
                                                             <li><span class="dot">1. 수집•이용 목적 : 회원제 서비스 제공 및 고객 맞춤형 서비스 목적</span></li>
                                                             <li><span class="dot">2. 개인정보 수집 항목</span></li>
-                                                            <li><span class="dot">- 필수항목 : 아이디, 비밀번호, 이름, 성별, 생년월일, E-mail, 휴대폰번호, 직업</span></li>
+                                                            <li><span class="dot">
+                                                                - [일반회원-14세 이상] 필수항목 : 아이디, 비밀번호, 이름, 성별, 생년월일, 이메일, 휴대폰번호, 개인식별정보(CI – Connecting Information 식별정보)
+                                                                <br><br>
+                                                                - [일반회원-14세 미만] 필수항목 : 아이디, 비밀번호, 이름, 성별, 생년월일, 이메일, 휴대폰번호, 개인식별정보(CI – Connecting Information 식별정보), 보호자성명, 보호자 연락처, 보호자의 개인식별정보(CI – Connecting Information 식별정보)
+                                                                </span>
+                                                            </li>
                                                             <li>
-                                    <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600; font-size: 17px;">
-                                        3. 개인정보 보유 및 이용기간 : 3년 혹은 회원 탈퇴 후 즉시 삭제
-                                    </span>
+                                                                <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600; font-size: 17px;">
+                                                                    3. 개인정보 보유 및 이용기간 : 3년 혹은 회원 탈퇴 후 즉시 삭제
+                                                                </span>
                                                             </li>
                                                             <li><span class="dot">4. 자동 수집 정보 : 인터넷 서비스 이용과정에서 아래 개인정보 항목이 자동으로 생성되어 수집될 수 있습니다. IP주소, 쿠키, MAC주소, 서비스 이용기록, 방문기록, 불량 이용기록</span></li>
                                                             <li><span class="dot">5. 동의거부권 및 불이익 : 개인정보 수집 및 이용에 대해 동의를 거부할 권리가 있습니다. 단, 동의 거부 시에는 회원가입 서비스의 이용이 제한됩니다.</span></li>
@@ -1245,7 +1260,11 @@
                                                     <ul class="li_style02">
                                                         <li><span class="dot">1. 수집•이용 목적 : 회원제 서비스 제공 및 고객 맞춤형 서비스 목적</span></li>
                                                         <li><span class="dot">2. 개인정보 수집 항목</span></li>
-                                                        <li><span class="dot">- 선택항목 : 에듀코카 정보수신 여부</span></li>
+                                                        <li><span class="dot">
+                                                            - [일반회원-14세 이상] 선택항목 : 에듀코카 정보수신 여부<br>
+                                                            - [일반회원-14세 미만] 필수항목 : 에듀코카 정보수신 여부
+                                                            </span>
+                                                        </li>
                                                         <li>
                                     <span class="dot" style="color: red; text-decoration: underline; text-decoration-color:red; font-weight: 600; font-size: 17px;">
                                         3. 개인정보 보유 및 이용기간 : 3년 혹은 회원 탈퇴 후 즉시 삭제
