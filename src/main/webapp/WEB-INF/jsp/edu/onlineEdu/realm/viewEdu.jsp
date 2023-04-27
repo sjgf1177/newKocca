@@ -79,23 +79,24 @@
 		<!-- 차시목록 -->
 		<div class="col-12 lectListSet" style="min-height:auto;">
 			<!-- Movie Player -->
-			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 523px !important;">
+			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 573px;">
 				<!-- 차시내용 -->
 				<div id="lectListTemp" style="display:none">
 					<jsp:include page="lectList.jsp"></jsp:include>
 				</div>
 
-				<div style="position:relative; padding-bottom:60%; height:0; max-width:870px; overflow:hidden; z-index:999; display: inline-block;" class="video_box">
+				<div style="position:relative; width:100%; height:100%; max-width:870px; overflow:hidden; z-index:999; display: inline-block;" class="video_box">
 					<iframe name="openstudy"
 						id="openstudy"
+						class=reactiveiframe"
 						src="${p_url }"
 						<%--src="http://localhost:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="--%>
-						width="870"
-						height="768"
+						
 						frameborder="0"
 						title="본 프레임은 동영상 강의 정보를 제공합니다."
 						scrolling="no"
 						allowfullscreen="true"
+						style="width:100%; height:100%;"
 						>
 					</iframe>
 				</div>
@@ -260,7 +261,13 @@
  -->
 </div>
 <!-- //차시목록 -->
-
+<style>
+@media (max-width: 780px){
+	.lectMovSet{
+		height:600px !important;
+	}
+}
+</style>
 <script type="text/javascript">
 	$(".eye_off").click(function (e) {
 		$(this).hide();
