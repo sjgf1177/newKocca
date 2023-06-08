@@ -25,7 +25,7 @@
 			<li id="tab2" class="active"><a href="/testbed/main/contents.do?menuNo=700101" title="현재탭"><span>콘텐츠문화광장 소개</span></a></li>
 			<li id="tab3"><a href="/testbed/main/contents.do?menuNo=700103"><span>시설 안내</span></a></li>
 			<li id="tab4"><a href="/testbed/main/contents.do?menuNo=700108"><span>대관 안내</span></a></li>
-			<li id="tab5"><a href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2"><span>대관 현황</span></a></li>
+			<%--<li id="tab5"><a href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2"><span>대관 현황</span></a></li>--%>
 			<li id="tab6"><a href="/testbed/main/contents.do?menuNo=700104"><span>찾아오시는 길</span></a></li>
 			<li id="tab7"><a href="/testbed/bbs/B0000066/list.do?menuNo=700126"><span>자료실</span></a></li>
 		</ul>

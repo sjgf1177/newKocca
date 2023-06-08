@@ -299,6 +299,8 @@
                                     </div>
                                 </a>
                                 <div class="e_end_back_box">
+                                    <a href="<c:out value="${url }" escapeXml="false" />"
+                                       style="display: inline-block; width: 100%; height: 100%;"></a>
                                 </div>
                             </c:if>
                         </div>

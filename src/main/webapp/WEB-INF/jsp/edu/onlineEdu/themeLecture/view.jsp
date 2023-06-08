@@ -132,7 +132,8 @@
 
 <style>
 	.board_util_btn_con .btn_style_0.img_left{padding-left: 20px;}
-	[class*="col-"] [class*="col-"] img{width: 305px;}
+	/*[class*="col-"] [class*="col-"] img{width: 305px;}*/
+	[class*="col-"] [class*="col-"] img{width: 100%;}
 	@media all and (max-width:640px) {
 		[class*="col-"] [class*="col-"] img{width:100%;}
 	}

@@ -510,11 +510,11 @@
                             <!-- nav 이벤트 two-daps start -->
                             <ul>
                                 <li><a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">콘텐츠스텝업</a></li>
-                                <li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
-                                <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>
+                                <%--<li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
+                                <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>--%>
                                 <li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">창의인재동반</a></li>
                                 <li><a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">콘텐츠인사이트</a></li>
-                                <li><a href="/edu/main/contents.do?menuNo=500213">콘텐츠임팩트</a></li>
+                                <%--<li><a href="/edu/main/contents.do?menuNo=500213">콘텐츠임팩트</a></li>--%>
                                 <li><a href="/edu/main/contents.do?menuNo=500179">콘텐츠원캠퍼스</a></li>
                                 <%--<li>
                                     <!-- 현url 에듀코카이야기에서 에듀코카페이지로 변경해야함-->
@@ -1154,7 +1154,7 @@
                             </div>
                         </li>
 
-                        <li class="swiper-slide"
+                        <%--<li class="swiper-slide"
                             data-aos="fade-up"
                             data-aos-anchor-placement="bottom-bottom"
                             data-aos-delay="400"
@@ -1167,9 +1167,9 @@
                             <div class="three_card_bottom_box">
                                 <a href="/edu/main/contents.do?menuNo=500263" alt="AI콘텐츠 창작 바로가기">바로가기</a>
                             </div>
-                        </li>
+                        </li>--%>
 
-                        <li class="swiper-slide"
+                        <%--<li class="swiper-slide"
                             data-aos="fade-up"
                             data-aos-anchor-placement="bottom-bottom"
                             data-aos-delay="700"
@@ -1182,7 +1182,7 @@
                             <div class="three_card_bottom_box">
                                 <a href="/edu/main/contents.do?menuNo=500110" alt="실감 콘텐츠 창작 바로가기">바로가기</a>
                             </div>
-                        </li>
+                        </li>--%>
 
                         <li class="swiper-slide">
                             <div class="three_card_top_box">
@@ -1191,11 +1191,11 @@
                                 <p>산·학·연·관 협력 체계 기반의 융복합 인재 양성</p>
                             </div>
                             <div class="three_card_bottom_box">
-                                <a href="" alt="콘텐츠원캠퍼스 바로가기">바로가기</a>
+                                <a href="https://edu.kocca.kr/edu/main/contents.do?menuNo=500179" alt="콘텐츠원캠퍼스 바로가기">바로가기</a>
                             </div>
                         </li>
 
-                        <li class="swiper-slide">
+                        <%--<li class="swiper-slide">
                             <div class="three_card_top_box">
                                 <span class="circle_snail_box"><img src="/edu/images/renew2022/biz_05.png" alt="콘텐츠임팩트"></span>
                                 <h3>콘텐츠임팩트</h3>
@@ -1204,7 +1204,7 @@
                             <div class="three_card_bottom_box">
                                 <a href="" alt="콘텐츠임팩트 바로가기">바로가기</a>
                             </div>
-                        </li>
+                        </li>--%>
 
                         <li class="swiper-slide">
                             <div class="three_card_top_box">
@@ -1213,7 +1213,7 @@
                                 <p>국내외 거장급 전문가 초청 열린 세미나를 통해 콘텐츠산업계 인사이트 제공</p>
                             </div>
                             <div class="three_card_bottom_box">
-                                <a href="" alt="콘텐츠 인사이트 바로가기">바로가기</a>
+                                <a href="https://edu.kocca.kr/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215" alt="콘텐츠 인사이트 바로가기">바로가기</a>
                             </div>
                         </li>
 
@@ -1224,7 +1224,7 @@
                                 <p>콘텐츠산업 트렌드를 반영한 단기특강 및 심화 교육</p>
                             </div>
                             <div class="three_card_bottom_box">
-                                <a href="" alt=">콘텐츠 스텝업 바로가기">바로가기</a>
+                                <a href="https://edu.kocca.kr/edu/progrm/master/list.do?prgSe=01&prgCl=12&menuNo=500216" alt=">콘텐츠 스텝업 바로가기">바로가기</a>
                             </div>
                         </li>
                     </ul>
