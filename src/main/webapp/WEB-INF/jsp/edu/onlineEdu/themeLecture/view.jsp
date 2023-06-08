@@ -54,7 +54,7 @@
 	</div>
 	<div class="txt_ct mb40">
 		<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
-		<img alt="${result.title }" src="${result.posterImg}" />
+		<img alt="${result.title }" src="${result.posterImg}" style="width:100%;"/>
 		</c:if>
 	</div>
 	<div class="col-12 mb17">
@@ -132,8 +132,8 @@
 
 <style>
 	.board_util_btn_con .btn_style_0.img_left{padding-left: 20px;}
-	/*[class*="col-"] [class*="col-"] img{width: 305px;}*/
-	[class*="col-"] [class*="col-"] img{width: 100%;}
+	[class*="col-"] [class*="col-"] img{width: 305px;}
+	/*[class*="col-"] [class*="col-"] img{width: 100%;}*/
 	@media all and (max-width:640px) {
 		[class*="col-"] [class*="col-"] img{width:100%;}
 	}
