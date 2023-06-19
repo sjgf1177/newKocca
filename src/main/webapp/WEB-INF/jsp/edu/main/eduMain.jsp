@@ -1184,7 +1184,11 @@
                             </div>
                         </li>--%>
 
-                        <li class="swiper-slide">
+                        <li class="swiper-slide"
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-bottom"
+                            data-aos-delay="400"
+                            data-aos-duration="300">
                             <div class="three_card_top_box">
                                 <span class="circle_snail_box"><img src="/edu/images/renew2022/biz_04.png" alt="콘텐츠원캠퍼스"></span>
                                 <h3>콘텐츠원캠퍼스</h3>
@@ -1206,7 +1210,11 @@
                             </div>
                         </li>--%>
 
-                        <li class="swiper-slide">
+                        <li class="swiper-slide"
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-bottom"
+                            data-aos-delay="700"
+                            data-aos-duration="300">
                             <div class="three_card_top_box">
                                 <span class="circle_snail_box"><img src="/edu/images/renew2022/biz_06.png" alt="콘텐츠 인사이트"></span>
                                 <h3>콘텐츠 인사이트</h3>
