@@ -1225,7 +1225,11 @@
                             </div>
                         </li>
 
-                        <li class="swiper-slide">
+                        <li class="swiper-slide"
+                            data-aos="fade-up"
+                            data-aos-anchor-placement="bottom-bottom"
+                            data-aos-delay="1000"
+                            data-aos-duration="300">
                             <div class="three_card_top_box">
                                 <span class="circle_snail_box"><img src="/edu/images/renew2022/biz_07.png" alt="콘텐츠 스텝업"></span>
                                 <h3>콘텐츠 스텝업</h3>
