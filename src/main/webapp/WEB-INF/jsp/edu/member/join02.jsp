@@ -84,35 +84,6 @@
                 return;
             }
 
-            /*
-            var flag = true;
-
-            $.ajaxSetup({
-                async: false
-            });
-            $.post(
-                "/edu/member/checkDupMbtlnum.json",
-                {mbtlnum : $("#parntsMbtlnum1").val()+"-"+$("#parntsMbtlnum2").val()+"-"+$("#parntsMbtlnum3").val()},
-                function(data)
-                {
-                    if (data.resultCode == "success") {
-                        if (data.mbtlnumCnt > 0) {
-                            alert("사용 불가능한 핸드폰번호입니다.");
-                            $("#mbtlnum1").val("");
-                            $("#mbtlnum2").val("");
-                            $("#mbtlnum3").val("");
-                            flag = false;
-                        }
-                    }
-                },"json"
-            );
-
-            if (!flag) {
-                $("#parntsMbtlnum1").focus();
-                return;
-            }
-            */
-
             val = parntsMbtlnum;
             height = "463";
             mode = "Y";
@@ -142,7 +113,7 @@
             const yearNow = today.getFullYear(); // 올해 년도 가져옴
 
             if (birthday.length <=8) {
-                if (1900 > year || year > yearNow) { // 면도의 경우 1900 보다 작거나 yearNow 보다 크다면 false를
+                if (1900 > year || year > yearNow) { // 년도의 경우 1900 보다 작거나 yearNow 보다 크다면 false를
                     alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
                     return false;
                 } else if (month < 1 || month > 12) {
@@ -161,22 +132,23 @@
                         alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
                         return false;
                     } else {
-                        alert("6");
                         return true;
                     } //end of if (day>29 || (day==29 && !isleap))
                 } else {
-                    alert("7");
                     return true;
                 }//end of if
             } else { // 입력된 생년월일이 8자 초과할때 : false
-                alert("8");
+                alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
                 return false;
             }
         };
 
         //14세이상 구분하기
         $("#brthdy").blur(function() {
-
+            if($(this).val() == "") {
+                $(this).focus();
+                return;
+            }
             // 생년월일 실제 나이 개산
             var birthday  = $(this).val();
             const year = Number(birthday.substr(0, 4)); // 입력한 값의 0~4자리까지 (년)
@@ -185,64 +157,25 @@
             let yearNow = Number(today.getFullYear()); // DATA 객체의 년도를 가져옵니다.
             let age = Number(yearNow - year -1); //소수점 버림
 
-
-            //if (birthday == "") return false;
-            //birthday = birthday.split("-");
-
             var radiochk1 = $('input:radio[id=age1]').is(':checked');
             var radiochk2 = $('input:radio[id=age2]').is(':checked');
 
-            console.log("birthday :" + birthday);
-            console.log("year :" + year);
-            console.log("today :" + today);
-            console.log("yearNow :" + yearNow);
-            console.log("age :" + age);
             birthdayCheck();
+
             if (radiochk1 == true) {
-                if (age > 14) {
-
-                    //$("#childDiv").show();
-                    //alert("생년월일 등록 결과 14세 이상입니다. 확인 후 다시 입력해 주세요");
-                    //$("#brthdy").remove(); //텍스트 초기화
-                    //$("#parntsAgreAt").val("");
-                }
-                else {
-
-                    //$("#childDiv").hide();
+                if (age < 14) {
                     alert("생년월일 등록 결과 14세 미만입니다. 확인 후 다시 입력해 주세요");
                     $("#parntsAgreAt").val("Y");
-                    /*$("#age2").prop("checked",true); //14세 이하 radio 선택
-
-                    $(".ageafterbox strong").remove();
-                    $(".age2").before("<strong>14세 미만 회원에 대한 보호자 동의를 위한 인증 </strong>");
-                    $("#childDiv").show();
-                    $("#adultDiv").hide();*/
                 }
             }
+
             if (radiochk2 == true) {
-                if (age > 14) {
-                    //$("#childDiv").show();
+                if (age >= 14) {
                     alert("생년월일 등록 결과 14세 이상입니다. 확인 후 다시 입력해 주세요");
                     $("#parntsAgreAt").val("");
-                    /*$("#age1").prop("checked",true); //14세 이상 radio 선택
-
-                    $(".ageafterbox strong").remove();
-                    $(".age1").before("<strong>14세 이상 회원의 본인 인증</strong>");
-                    $("#childDiv").hide();
-                    $("#adultDiv").show();*/
-                }
-                else {
-                    //$("#childDiv").hide();
-                    //alert("생년월일 등록 결과 14세 미만입니다. 확인 후 다시 입력해 주세요");
-                    //$("#parntsAgreAt").val("Y");
                 }
             }
-
-
         });
-
-
-
 
         $("#parntsAuthSameBtn").click(function() {
             var val = $("#parntsMbtlnum1").val();
@@ -344,8 +277,11 @@
             }
         });*/
 
-
-
+        $('#mbtlnum').keyup(function (event) {
+            event = event || window.event;
+            var _val = this.value.trim();
+            this.value = autoHypenTel(_val);
+        });
 
     });
 
@@ -701,6 +637,8 @@
     function checkForm() {
         var form = $("#agreeForm")[0];
         var v = new MiyaValidator(form);
+        var radiochk1 = $('input:radio[id=age1]').is(':checked');
+        var radiochk2 = $('input:radio[id=age2]').is(':checked');
 
         if (!checkIdFc()) {
             alert("사용 불가능한 아이디입니다.");
@@ -726,17 +664,8 @@
         v.add("email",  { required: true });
         v.add("job",    { required: true });
 
-        /*
-        v.add("checkbox-p-1", { required: true });
-        v.add("checkbox-p-2", { required: true });
-        v.add("checkbox-p-3", { required: true });
-        v.add("checkbox-p-4", { required: true });
-        */
-
-        v.add("age",    { required: true }); // 14세기준  radio 선택
         v.add("checkbox-p-6", { required: true });
         v.add("checkbox-p-7", { required: true });
-        v.add("checkbox-p-9", { required: true }); // 만14세이상 미체크시 alert창 띄움
 
         var result = v.validate();
 
@@ -759,9 +688,11 @@
         }
 
         if ($("#mbtlnumAuthAt").val() == "") { // 휴대폰인증 안했을시 체크(인증할때 자동체크)
-            alert("휴대폰 인증을 진행해 주세요.");
-            $("#mbtlnum").focus();
-            return;
+            if (radiochk1) {
+                alert("휴대폰 인증을 진행해 주세요.");
+                $("#mbtlnum").focus();
+                return;
+            }
         }else{
             if (!checkMbtlnumFc()) {
                 $("#mbtlnum").focus();
@@ -773,17 +704,16 @@
             v.add("parntsNm", { required: true });
 
             if ($("#parntsMbtlnumAuthAt").val() == "") {
-                if (!checkParntsMbtlnum()) {
-                    $("#parntsMbtlnum").focus();
+                if(radiochk2) {
+                    if (!checkParntsMbtlnum()) {
+                        $("#parntsMbtlnum").focus();
+                        return;
+                    }
+
+                    alert("보호자 휴대폰번호를 인증해야 합니다.");
                     return;
                 }
-
-                alert("보호자 휴대폰번호를 인증해야 합니다.");
-                return;
             }
-
-            //생년월일 유효성 체크
-            birthdayCheck();
         }
 
         if (!confirm("등록하시겠습니까?")) {
@@ -802,29 +732,6 @@
             return value;
         }
     }
-
-    window.onload = function(){
-        $('#mbtlnum').keyup(function (event) {
-            event = event || window.event;
-            var _val = this.value.trim();
-            this.value = autoHypenTel(_val);
-        });
-
-
-        $('#parntsMbtlnum').keyup(function (event) {
-            event = event || window.event;
-            var _val = this.value.trim();
-            this.value = autoHypenTel(_val);
-        });
-
-        $('#brthdy').keyup(function (event) {
-            event = event || window.event;
-            var _val = this.value.trim();
-            this.value = autoHypenBrthdy(_val);
-
-        });
-
-    };
 
     function autoHypenTel(str) {
         str = str.replace(/[^0-9]/g, '');
@@ -959,7 +866,6 @@
                 var title = document.title;
                 var newtitle = title.replace("이용약관동의", "입력항목작성");
                 document.title = newtitle;
-
             }
         });
 
@@ -971,6 +877,19 @@
                 var newtitle = title.replace("입력항목작성", "이용약관동의");
                 document.title = newtitle;
             }
+        });
+
+        $('#brthdy').keyup(function (event) {
+            event = event || window.event;
+            var _val = this.value.trim();
+            this.value = autoHypenBrthdy(_val);
+
+        });
+
+        $('#parntsMbtlnum').keyup(function (event) {
+            event = event || window.event;
+            var _val = this.value.trim();
+            this.value = autoHypenTel(_val);
         });
     }
 </script>
@@ -1270,7 +1189,7 @@
                         <div class="">
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input type="text" name="userId" id="userId"  value="" onkeyup="this.value=checkId(this.value)" class="form-control input_bline h45" placeholder="ID입력 (6~30자, 영문 숫자 사용 가능)" title="아이디">
+                                    <input type="text" name="userId" id="userId"  value="" onkeyup="this.value=checkId(this.value)" class="form-control input_bline h45" placeholder="ID123입력 (6~30자, 영문 숫자 사용 가능)" title="아이디">
                                     <span class="table_text on" id="id-success"></span>
                                     <span class="table_text off" id="id-danger"></span>
                                 </div>

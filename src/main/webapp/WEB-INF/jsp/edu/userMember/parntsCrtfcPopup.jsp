@@ -28,7 +28,6 @@ $(function() {
 	};
 
 	fnCheck = function() {
-
 		if (authSe == "02") {
 
 			if ($("#authNum").val() == "") {
@@ -47,11 +46,8 @@ $(function() {
 						$("#parntsMbtlnumAuth", opener.document).hide();
 						$("#parntsMbtlnumAuthCmt", opener.document).show();
 						$("#parntsMbtlnumAuthDel", opener.document).show();
-						var val = $("#parntsMbtlnum1", opener.document).val()+ "-"+$("#parntsMbtlnum2", opener.document).val()+ "-"+$("#parntsMbtlnum3", opener.document).val();
+						var val = $("#parntsMbtlnum", opener.document).val();
 						$("#parntsMbtlnum", opener.document).val(val);
-						$("#parntsMbtlnum1", opener.document).attr('disabled', true);
-						$("#parntsMbtlnum2", opener.document).attr('disabled', true);
-						$("#parntsMbtlnum3", opener.document).attr('disabled', true);
 						$("#parntsAuthSameBtn", opener.document).show();
 
 
