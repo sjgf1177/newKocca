@@ -49,6 +49,7 @@ $(function() {
 						var val = $("#parntsMbtlnum", opener.document).val();
 						$("#parntsMbtlnum", opener.document).val(val);
 						$("#parntsAuthSameBtn", opener.document).show();
+						$("#mbtlnumAuth", opener.document).show();
 
 
 						self.close();
@@ -108,7 +109,7 @@ function check_txt(value) {
 			</div>
 
 			<div class="btnSet">
-				<a href="javascript:fnCheck();" class="btn btn-primary btnBlack icoCheck">확인</a>
+				<a href="javascript:fnCheck();" class="btn btn-primary btnBlack icoCheck" style="padding: 9px 35px 8px 55px;">확인</a>
 			</div>
 
 	</div>

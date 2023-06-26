@@ -132,9 +132,11 @@
                         alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
                         return false;
                     } else {
+
                         return true;
                     } //end of if (day>29 || (day==29 && !isleap))
                 } else {
+
                     return true;
                 }//end of if
             } else { // 입력된 생년월일이 8자 초과할때 : false
@@ -166,20 +168,27 @@
                 if (age < 14) {
                     alert("생년월일 등록 결과 14세 미만입니다. 확인 후 다시 입력해 주세요");
                     $("#parntsAgreAt").val("Y");
+                    $("#brthdy").val(""); //생년월일 텍스트 초기화
+                    $("#brthdy").focus();
+
                 }
             }
 
             if (radiochk2 == true) {
+                mbtlnumAuth
                 if (age >= 14) {
                     alert("생년월일 등록 결과 14세 이상입니다. 확인 후 다시 입력해 주세요");
                     $("#parntsAgreAt").val("");
+                    $("#brthdy").val(""); //생년월일 텍스트 초기화
+                    $("#brthdy").focus();
                 }
             }
         });
 
         $("#parntsAuthSameBtn").click(function() {
-            var val = $("#parntsMbtlnum1").val();
+            var val = $("#parntsMbtlnum").val();
             $("#mbtlnum").val($("#parntsMbtlnum").val());
+
 
             if (checkMbtlnumFc()) {
                 $("#mbtlnumAuthAt").val("Y");
@@ -187,6 +196,7 @@
                 $("#mbtlnumAuthCmt").show();
                 $("#mbtlnumAuthDel").show();
                 $("#mbtlnum").attr('disabled', true);
+
                 $("#mbtlnum").val(val);
                 $("#parntsAuthSameBtn").hide();
             }
@@ -822,34 +832,51 @@
 
 
 
-    //20170904 - 20230620 수정
+    // 20230620 수정
     window.onload = function(){
 
         // 나이 radio 선택에 따른 보여짐
         $("input[class^='agechk']").on("click", function(){
             $(".ageafterbox").show();
+            $("#adultDiv").show();
 
             if($(this).hasClass("agechk01") == true){
                 $(".ageafterbox strong").remove();
                 $(".age1").before("<strong>14세 이상 회원의 본인 인증</strong>");
+                $("#mbtlnumAuth").show();
                 $("#childDiv").hide();
-                $("#adultDiv").show();
+                parntsAuthDel();
+                authDel();
 
             } else{
                 $(".ageafterbox strong").remove();
-                $(".age2").before("<strong>14세 미만 회원에 대한 보호자 동의를 위한 인증 </strong>");
+                $(".age2").before("<strong>14세 미만 회원에 대한 보호자 동의를 위한 인증</strong>");
+                $(".age1").before("<strong>14세 미만 회원의 본인 인증<br><span style='color:red;'>보호자 인증해야 본인 인증 가능합니다.</span></strong>");
                 $("#childDiv").show();
-                $("#adultDiv").hide();
+                $("#mbtlnumAuth").hide();
+                authDel();
 
             }
+
+            if($("#brthdy").val() !== 'Y'){ //생년월일 텍스트가 있을 때
+                $("#brthdy").val(""); //생년월일 텍스트 초기화
+            };
+
         });
+
+
+
 
 
 
         $("#joinNextStep3").on("click", function(){
             //alert($("input[name='checkbox-p-6']:checked").val());
-            var  agreeChk01 = $("input[name='checkbox-p-6']:checked").val();
+            var  agreeChk01 = $("input[name='checkbox-p-6']:checked").val(); //동의함
             var  agreeChk02 = $("input[name='checkbox-p-7']:checked").val();
+            var  agreeChk03 = $("input[name='checkbox-p-8']:checked").val();
+
+            var  agreeChk04 = $("input[name='checkbox-c-3']:checked").val(); //동의하지않음
+
 
             if( $("input[name='checkbox-p-6']:checked").val() !== 'on' ){
                 alert("이용약관(필수)에 동의해주세요.");
@@ -859,7 +886,11 @@
                 alert("개인정보 수집 동의(필수)에 동의해주세요.");
                     $("input[name='checkbox-p-7']").focus();
 
-            }else if(agreeChk01, agreeChk02 === 'on'){
+            }else if(( agreeChk03 !== 'on' ) && ( agreeChk04 !== 'on' )){
+                alert("개인정보 수집 동의(선택)사항에 선택해주세요.");
+                $("input[name='checkbox-p-8']").focus();
+
+            }else if((agreeChk01, agreeChk02, agreeChk03 === 'on') || (agreeChk01, agreeChk02, agreeChk04 === 'on')){
                 $("#joinStep2").hide();
                 $("#joinStep3").show();
                 $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
@@ -891,6 +922,12 @@
             var _val = this.value.trim();
             this.value = autoHypenTel(_val);
         });
+
+
+
+
+
+
     }
 </script>
 
@@ -1189,7 +1226,7 @@
                         <div class="">
                             <div class="form-group">
                                 <div class="col-sm-12">
-                                    <input type="text" name="userId" id="userId"  value="" onkeyup="this.value=checkId(this.value)" class="form-control input_bline h45" placeholder="ID123입력 (6~30자, 영문 숫자 사용 가능)" title="아이디">
+                                    <input type="text" name="userId" id="userId"  value="" onkeyup="this.value=checkId(this.value)" class="form-control input_bline h45" placeholder="ID입력 (6~30자, 영문 숫자 사용 가능)" title="아이디">
                                     <span class="table_text on" id="id-success"></span>
                                     <span class="table_text off" id="id-danger"></span>
                                 </div>
@@ -1250,23 +1287,32 @@
                                         <input name="parntsNm" id="parntsNm" type="text" class="form-control input_bline h45" placeholder="보호자 이름">
                                     </div>
                                 </div>
-                                <div class="form-group h61">
+                                <div class="form-group">
                                     <div class="col-sm-12" style="display: flex; justify-content: space-between;">
-                                        <input type="text" class="form-control mob_no input_bline h45 col-sm-8" name="parntsMbtlnum" id="parntsMbtlnum" placeholder="보호자 휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
+                                        <input type="text" class="form-control mob_no input_bline h45" name="parntsMbtlnum" id="parntsMbtlnum" placeholder="보호자 휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
                                         <input type="hidden" name="parntsMbtlnumAuthAt" id="parntsMbtlnumAuthAt" />
+                                    </div>
+                                    <div class="form-group h61" style="margin-top: 10px;">
                                         <a href="javascript:parntsCrtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="parntsMbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
                                         <a href="#self" class="btn btn-success btn-black" id="parntsMbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                        <a href="javascript:parntsAuthDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-black btn-danger" id="parntsMbtlnumAuthDel" style="display:none;" title="인증삭제">인증삭제</a>
                                     </div>
                                 </div>
                             </div>
-                            <div id="adultDiv" class="form-group h61 ageafterbox"  style="display: none;">
+                            <div id="adultDiv" class="form-group ageafterbox"  style="display: none;">
                                 <div class="col-sm-12 age1" style="display: flex; justify-content: space-between;">
-                                    <input type="text" class="form-control mob_no input_bline h45 col-sm-8" name="mbtlnum" id="mbtlnum" placeholder="휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
+                                    <input type="text" class="form-control mob_no input_bline h45" name="mbtlnum" id="mbtlnum" placeholder="휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
                                     <input type="hidden" name="mbtlnumAuthAt" id="mbtlnumAuthAt" />
+
+
+                                </div>
+                                <div class="form-group h61" style="margin-top: 10px; border-bottom:1px solid #707070 !important;">
                                     <a href="javascript:crtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="mbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
                                     <a href="#self" class="btn btn-success btn-black" id="mbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
-                                    <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" style="display:none; margin-right: 0; margin-bottom: 0;">보호자 휴대폰정보와 동일</a>
+                                    <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" style="display:none; margin-right: 0; margin-bottom: 0;">보호자와 동일</a>
+                                    <a href="javascript:authDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-black btn-danger" id="mbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;">인증삭제</a>
                                 </div>
+
                             </div>
                             <div class="form-group h61 ageafterbox"  style="display: none;">
                                 <div class="col-sm-12">
