@@ -60,7 +60,16 @@
             $("#mbtlnumAuthDel").hide();
             $("#mbtlnum").attr('disabled', false);
             $("#mbtlnum").val("");
+
+            if(radiochk2) {
+                if ($("#parntsMbtlnumAuthAt").val("Y")) {
+                    $("#parntsAuthSameBtn").show();
+                };
+            }
+
         };
+
+
 
         parntsCrtfcPopup = function() { // 이메일/휴대폰 인증 팝업창
             var val = "";
@@ -93,12 +102,27 @@
 
 
         parntsAuthDel = function() { // 휴대폰 인증 삭제
+            var radiochk2 = $('input:radio[id=age2]').is(':checked');
+
             $("#parntsMbtlnumAuthAt").val("");
             $("#parntsMbtlnumAuth").show();
             $("#parntsMbtlnumAuthCmt").hide();
             $("#parntsMbtlnumAuthDel").hide();
             $("#parntsMbtlnum").attr('disabled', false);
             $("#parntsMbtlnum").val("");
+            $("#parntsAuthSameBtn").hide(); //보호자와 동일 버튼 숨김
+
+            if(radiochk2){
+                if( $("#parntsMbtlnumAuthAt").val("Y") ){
+                    $("#mbtlnumAuthAt").val("");
+                    $("#mbtlnumAuthCmt").hide();
+                    $("#mbtlnumAuthDel").hide();
+                    $("#mbtlnum").attr('disabled', false);
+                    $("#mbtlnum").val("");
+                    $("#mbtlnumAuth").hide();
+                };
+            };
+
         };
 
         // 생년월일 유효성 검사
@@ -713,14 +737,17 @@
             if ($("#parntsAgreAt").val() == "Y") {
                 v.add("parntsNm", { required: true });
 
+                if ($("#parntsNm").val() == "") {
+                    alert("보호자 이름을 입력해야 합니다.");
+                    $("#parntsNm").focus();
+                    return;
+                }
+
                 if ($("#parntsMbtlnumAuthAt").val() == "") {
                     if(radiochk2) {
-                        if (!checkParntsMbtlnum()) {
-                            $("#parntsMbtlnum").focus();
-                            return;
-                        }
 
                         alert("보호자 휴대폰번호를 인증해야 합니다.");
+                        $("#parntsMbtlnum").focus();
                         return;
                     }
                 }
@@ -862,14 +889,27 @@
                 $("#mbtlnumAuth").show();
                 $("#childDiv").hide();
                 parntsAuthDel();
-                authDel();
+
+                $("#mbtlnumAuthAt").val("");
+                $("#mbtlnumAuth").show();
+                $("#mbtlnumAuthCmt").hide();
+                $("#mbtlnumAuthDel").hide();
+                $("#mbtlnum").attr('disabled', false);
+                $("#mbtlnum").val("");
 
             } else{
                 $(".ageafterbox strong").remove();
                 $(".age2").before("<strong>14세 미만 회원에 대한 보호자 동의를 위한 인증</strong>");
                 $(".age1").before("<strong>14세 미만 회원의 본인 인증<br><span style='color:red;'>보호자 인증해야 본인 인증 가능합니다.</span></strong>");
                 $("#childDiv").show();
-                authDel();
+
+                $("#mbtlnumAuthAt").val("");
+                $("#mbtlnumAuth").show();
+                $("#mbtlnumAuthCmt").hide();
+                $("#mbtlnumAuthDel").hide();
+                $("#mbtlnum").attr('disabled', false);
+                $("#mbtlnum").val("");
+
                 $("#mbtlnumAuth").hide();
             }
 
