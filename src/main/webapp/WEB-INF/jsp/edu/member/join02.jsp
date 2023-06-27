@@ -698,33 +698,48 @@
             }
         }
 
-        if ($("#mbtlnumAuthAt").val() == "") { // 휴대폰인증 안했을시 체크(인증할때 자동체크)
-            if (radiochk1) {
+        if(radiochk1) {
+            if ($("#mbtlnumAuthAt").val() == "") { // 휴대폰인증 안했을시 체크(인증할때 자동체크)
                 alert("휴대폰 인증을 진행해 주세요.");
                 $("#mbtlnum").focus();
                 return;
-            }
-        }else{
-            if (!checkMbtlnumFc()) {
-                $("#mbtlnum").focus();
-                return;
-            }
-        }
-
-        if ($("#parntsAgreAt").val() == "Y") {
-            v.add("parntsNm", { required: true });
-
-            if ($("#parntsMbtlnumAuthAt").val() == "") {
-                if(radiochk2) {
-                    if (!checkParntsMbtlnum()) {
-                        $("#parntsMbtlnum").focus();
-                        return;
-                    }
-
-                    alert("보호자 휴대폰번호를 인증해야 합니다.");
+            }else{
+                if (!checkMbtlnumFc()) {
+                    $("#mbtlnum").focus();
                     return;
                 }
             }
+        } else if(radiochk2) {
+            if ($("#parntsAgreAt").val() == "Y") {
+                v.add("parntsNm", { required: true });
+
+                if ($("#parntsMbtlnumAuthAt").val() == "") {
+                    if(radiochk2) {
+                        if (!checkParntsMbtlnum()) {
+                            $("#parntsMbtlnum").focus();
+                            return;
+                        }
+
+                        alert("보호자 휴대폰번호를 인증해야 합니다.");
+                        return;
+                    }
+                }
+            }
+
+            if ($("#mbtlnumAuthAt").val() == "") { // 휴대폰인증 안했을시 체크(인증할때 자동체크)
+                alert("휴대폰 인증을 진행해 주세요.");
+                $("#mbtlnum").focus();
+                return;
+            }else{
+                if (!checkMbtlnumFc()) {
+                    $("#mbtlnum").focus();
+                    return;
+                }
+            }
+        } else {
+            alert("휴대폰 인증을 진행해 주세요.");
+            $("#mbtlnum").focus();
+            return;
         }
 
         if (!confirm("등록하시겠습니까?")) {
