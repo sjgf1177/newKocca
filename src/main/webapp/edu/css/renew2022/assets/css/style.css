@@ -7808,7 +7808,7 @@ a.btn-theme.active {
 }
 
 .btn-success {
-  color: #fff;
+  color: #fff !important;
   background-color: #178267;
   border-color: #178267;
 }

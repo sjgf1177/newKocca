@@ -167,7 +167,7 @@
             if (radiochk1 == true) {
                 if (age < 14) {
                     alert("생년월일 등록 결과 14세 미만입니다. 확인 후 다시 입력해 주세요");
-                    $("#parntsAgreAt").val("Y");
+                    $("#parntsAgreAt").val("");
                     $("#brthdy").val(""); //생년월일 텍스트 초기화
                     $("#brthdy").focus();
 
@@ -175,12 +175,13 @@
             }
 
             if (radiochk2 == true) {
-                mbtlnumAuth
                 if (age >= 14) {
                     alert("생년월일 등록 결과 14세 이상입니다. 확인 후 다시 입력해 주세요");
                     $("#parntsAgreAt").val("");
                     $("#brthdy").val(""); //생년월일 텍스트 초기화
                     $("#brthdy").focus();
+                } else{
+                    $("#parntsAgreAt").val("Y");
                 }
             }
         });
@@ -853,9 +854,8 @@
                 $(".age2").before("<strong>14세 미만 회원에 대한 보호자 동의를 위한 인증</strong>");
                 $(".age1").before("<strong>14세 미만 회원의 본인 인증<br><span style='color:red;'>보호자 인증해야 본인 인증 가능합니다.</span></strong>");
                 $("#childDiv").show();
-                $("#mbtlnumAuth").hide();
                 authDel();
-
+                $("#mbtlnumAuth").hide();
             }
 
             if($("#brthdy").val() !== 'Y'){ //생년월일 텍스트가 있을 때
@@ -1294,8 +1294,8 @@
                                     </div>
                                     <div class="form-group h61" style="margin-top: 10px;">
                                         <a href="javascript:parntsCrtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="parntsMbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
-                                        <a href="#self" class="btn btn-success btn-black" id="parntsMbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
-                                        <a href="javascript:parntsAuthDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-black btn-danger" id="parntsMbtlnumAuthDel" style="display:none;" title="인증삭제">인증삭제</a>
+                                        <a href="#self" class="btn btn-success" id="parntsMbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                        <a href="javascript:parntsAuthDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-black btn-danger" id="parntsMbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;" title="인증삭제">인증삭제</a>
                                     </div>
                                 </div>
                             </div>
@@ -1308,7 +1308,7 @@
                                 </div>
                                 <div class="form-group h61" style="margin-top: 10px; border-bottom:1px solid #707070 !important;">
                                     <a href="javascript:crtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="mbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
-                                    <a href="#self" class="btn btn-success btn-black" id="mbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                    <a href="#self" class="btn btn-success" id="mbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
                                     <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" style="display:none; margin-right: 0; margin-bottom: 0;">보호자와 동일</a>
                                     <a href="javascript:authDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-black btn-danger" id="mbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;">인증삭제</a>
                                 </div>
