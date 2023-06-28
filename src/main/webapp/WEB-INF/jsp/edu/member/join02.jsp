@@ -921,8 +921,7 @@
 
 
 
-
-
+        
 
         $("#joinNextStep3").on("click", function(){
             //alert($("input[name='checkbox-p-6']:checked").val());
@@ -1350,7 +1349,7 @@
                                     <div class="form-group h61" style="margin-top: 10px;">
                                         <a href="javascript:parntsCrtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="parntsMbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
                                         <a href="#self" class="btn btn-success" id="parntsMbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
-                                        <a href="javascript:parntsAuthDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-black btn-danger" id="parntsMbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;" title="인증삭제">인증삭제</a>
+                                        <a href="javascript:parntsAuthDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-danger" id="parntsMbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;" title="인증삭제">인증삭제</a>
                                     </div>
                                 </div>
                             </div>
@@ -1365,7 +1364,7 @@
                                     <a href="javascript:crtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="mbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
                                     <a href="#self" class="btn btn-success" id="mbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
                                     <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" style="display:none; margin-right: 0; margin-bottom: 0;">보호자와 동일</a>
-                                    <a href="javascript:authDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-black btn-danger" id="mbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;">인증삭제</a>
+                                    <a href="javascript:authDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-danger" id="mbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;">인증삭제</a>
                                 </div>
 
                             </div>

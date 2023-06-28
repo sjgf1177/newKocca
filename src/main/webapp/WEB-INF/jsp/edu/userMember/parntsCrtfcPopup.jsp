@@ -50,6 +50,7 @@ $(function() {
 						$("#parntsMbtlnum", opener.document).val(val);
 						$("#parntsAuthSameBtn", opener.document).show();
 						$("#mbtlnumAuth", opener.document).show();
+						$("#parntsMbtlnum", opener.document).attr('disabled', true);
 
 
 						self.close();

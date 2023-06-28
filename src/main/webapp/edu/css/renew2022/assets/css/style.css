@@ -7871,7 +7871,7 @@ a.btn-theme.active {
 }
 
 .btn-danger {
-  color: #fff;
+  color: #fff !important;
   background-color: #f44236;
   border-color: #f44236;
 }
