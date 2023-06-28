@@ -1480,6 +1480,7 @@
     {border-color:transparent; border-bottom-color: #707070 !important; height: 45px !important; background-color: transparent;}
     .sub_section .sub_contents_body input[type="checkbox"]:checked + label{ background-image: none;}
     .sub_section .sub_contents_body input[type="checkbox"] + label{background: none; font-size: 1.4rem; padding-left: 30px;}
+    .sub_section .sub_contents_body .signup_agree_con input[type="checkbox"] + label{font-size: 1.8rem;}
     .right_check_box{padding: 20px 0;}
     .h61{height: 61px;}
 
@@ -1494,6 +1495,7 @@
         .warning_text b{display: block;}
 
         .board_util_btn_con .btn_style_0{width: 45%;}
+        .sub_section .sub_contents_body .signup_agree_con input[type="checkbox"] + label{font-size: 1.4rem;}
     }
 
     @media all and (max-width:320px) {
