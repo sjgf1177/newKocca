@@ -58,7 +58,7 @@
             $("#mbtlnumAuth").show();
             $("#mbtlnumAuthCmt").hide();
             $("#mbtlnumAuthDel").hide();
-            $("#mbtlnum").attr('disabled', false);
+            $("#mbtlnum").attr('readonly', false);
             $("#mbtlnum").val("");
 
             if(radiochk2) {
@@ -108,16 +108,17 @@
             $("#parntsMbtlnumAuth").show();
             $("#parntsMbtlnumAuthCmt").hide();
             $("#parntsMbtlnumAuthDel").hide();
-            $("#parntsMbtlnum").attr('disabled', false);
+            $("#parntsMbtlnum").attr('readonly', false);
             $("#parntsMbtlnum").val("");
             $("#parntsAuthSameBtn").hide(); //보호자와 동일 버튼 숨김
 
             if(radiochk2){
                 if( $("#parntsMbtlnumAuthAt").val("Y") ){
+                    $("#parntsMbtlnumAuthAt").val("");
                     $("#mbtlnumAuthAt").val("");
                     $("#mbtlnumAuthCmt").hide();
                     $("#mbtlnumAuthDel").hide();
-                    $("#mbtlnum").attr('disabled', false);
+                    $("#mbtlnum").attr('readonly', false);
                     $("#mbtlnum").val("");
                     $("#mbtlnumAuth").hide();
                 };
@@ -220,7 +221,7 @@
                 $("#mbtlnumAuth").hide();
                 $("#mbtlnumAuthCmt").show();
                 $("#mbtlnumAuthDel").show();
-                $("#mbtlnum").attr('disabled', true);
+                $("#mbtlnum").attr('readonly', true);
 
                 $("#mbtlnum").val(val);
                 $("#parntsAuthSameBtn").hide();
@@ -894,7 +895,7 @@
                 $("#mbtlnumAuth").show();
                 $("#mbtlnumAuthCmt").hide();
                 $("#mbtlnumAuthDel").hide();
-                $("#mbtlnum").attr('disabled', false);
+                $("#mbtlnum").attr('readonly', false);
                 $("#mbtlnum").val("");
 
             } else{
@@ -907,7 +908,7 @@
                 $("#mbtlnumAuth").show();
                 $("#mbtlnumAuthCmt").hide();
                 $("#mbtlnumAuthDel").hide();
-                $("#mbtlnum").attr('disabled', false);
+                $("#mbtlnum").attr('readonly', false);
                 $("#mbtlnum").val("");
 
                 $("#mbtlnumAuth").hide();
