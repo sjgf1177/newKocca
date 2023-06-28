@@ -1479,7 +1479,7 @@
     .form-group input[type="text"], .form-group input[type="password"], .form-group input[type="email"], .form-group .form-control
     {border-color:transparent; border-bottom-color: #707070 !important; height: 45px !important; background-color: transparent;}
     .sub_section .sub_contents_body input[type="checkbox"]:checked + label{ background-image: none;}
-    .sub_section .sub_contents_body input[type="checkbox"] + label{background: none; font-size: 1.8rem; padding-left: 30px;}
+    .sub_section .sub_contents_body input[type="checkbox"] + label{background: none; font-size: 1.4rem; padding-left: 30px;}
     .right_check_box{padding: 20px 0;}
     .h61{height: 61px;}
 
