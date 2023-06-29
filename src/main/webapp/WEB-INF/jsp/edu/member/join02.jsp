@@ -54,6 +54,7 @@
         $("#mbtlnumAuthDel").hide();
 
         authDel = function() { // 휴대폰 인증 삭제
+            var radiochk2 = $('input:radio[id=age2]').is(':checked');
             $("#mbtlnumAuthAt").val("");
             $("#mbtlnumAuth").show();
             $("#mbtlnumAuthCmt").hide();
