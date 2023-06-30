@@ -71,8 +71,6 @@
 
         };
 
-
-
         parntsCrtfcPopup = function() { // 이메일/휴대폰 인증 팝업창
             var val = "";
             var parntsMbtlnum = $("#parntsMbtlnum").val();
