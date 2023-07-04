@@ -5,8 +5,8 @@
         <hr />
         <ul>
             <li>- 내용</li>
-            <li style="padding-left: 8px;">· 세미나: 국내외 거장의 콘텐츠 산업 동향에 대한 대형 세미나</li>
-            <li style="padding-left: 8px;">· 워크숍: 콘텐츠 인사이트 연사별 멘토링 진행</li>
+            <li style="list-style: disc; margin-left: 23px;">세미나: 국내외 거장의 콘텐츠 산업 동향에 대한 대형 세미나</li>
+            <li style="list-style: disc; margin-left: 23px;">워크숍: 콘텐츠 인사이트 연사별 멘토링 진행</li>
             <li>- 일정: 11월</li>
             <li>- 대상: 해당분야 관심 있는 콘텐츠 현업인</li>
             <li>- 진행방식: (세미나) 온·오프라인 / (워크숍) 오프라인</li>
