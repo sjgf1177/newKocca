@@ -1477,6 +1477,20 @@
 
 
         </script>
+		<script type="application/ld+json">
+			//사이트 연관채널 등록 SEO
+			{
+				"@context": "http://schema.org",
+				"@type": "Person",
+				"name": "에듀코카 - 누구나 쉽게 배우는 K콘텐츠",
+				"url": "https://edu.kocca.kr",
+				"sameAs": [					
+					"https://blog.naver.com/edukocca",
+					"https://www.instagram.com/edu.kocca",
+					"https://youtube.com/@edukocca"
+				]
+			}
+		</script>
     </div>
     <!-- //footer -->
 </div>
