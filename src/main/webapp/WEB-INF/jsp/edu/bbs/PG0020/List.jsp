@@ -215,7 +215,7 @@
                     <fmt:parseNumber value="${ndt.time / (1000*60*60*24)}" integerOnly="true" var="nowDate"></fmt:parseNumber>
                     <div class="col-6 col-sm-4 tc event_card_list list go<c:if test='${(nowDate-strDate) > 0}'>e_end_box</c:if>">
                         <%--진행중인 이벤트 목록 --%>
-                        <c:if test='${(nowDate-endDate) < 0}'>
+                        <c:if test='${(nowDate-endDate) <= 0}'>
                             <a href="<c:out value="${url }" escapeXml="false" />" class="col-12 show fn event_card">
                                 <div class="col-12 img_box">
                                     <c:choose>
@@ -384,7 +384,7 @@
                 }
             });
 
-            sliderStart()
+            sliderStart();
         }
 
         //슬라이드 시작
