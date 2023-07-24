@@ -306,8 +306,14 @@ public class MemberService extends DefaultCmmProgramService {
         String password = "";
         String sttus = "";
 	    
-	    /*param.put("username", "kok547");
-	    param.put("password", "f46f0abab9477c96662b4c3e7e76c845272879df2e7223784d26473da7014df");*/
+	    param.put("username", "sjsjgg");
+	    param.put("password", "6699439411d65d9e0aa492afec1d4b8fbafd613a512bbc7196b6a5be595d2c"); //1q2w3e4r5t! // b2bf50ecada62994533dcc319724212a5f1e2bc8acc45f904eb0a204dfb1f
+
+		//param.put("username", "odradek");
+		//param.put("password", "bccc187b9613106c767bfcbbf3f8c6afa28a9a2f4e56cf631bf5f5cf927cc9d");
+
+		//param.put("username", "asoul3");
+		//param.put("password", "b97d494938f12a04277ff18c386c746877bf402ad82a0ee3a5ab88f2b9249");
 
 		if (!"".equals(ssoAuthToken)) {
 			String[] ssoResult = CookieUtil.decodeAccount(ssoAuthToken); // toLoginSSO에서 넘김
