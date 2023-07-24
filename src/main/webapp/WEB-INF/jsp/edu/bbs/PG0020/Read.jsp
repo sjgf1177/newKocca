@@ -35,7 +35,7 @@
 		<div class="evt_info_box">
 			<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
 			<%--<p class="date_tag_on">D-10</p>--%>
-			<p class="data">이벤트기간 : <span><c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></p>
+			<p class="data"><c:if test="${result.nttId ne '75371'}">이벤트기간 : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></c:if></span></p>
 		</div>
 		<div class="evt_btn_box">
 			<p>지금 참여하시겠습니까?</p>
