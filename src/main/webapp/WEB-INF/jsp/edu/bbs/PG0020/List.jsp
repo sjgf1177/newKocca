@@ -250,8 +250,14 @@
                                         </c:otherwise>
                                     </c:choose>
                                     <p class="event_date">
+                                        <c:if test="${result.nttId ne '75371'}">
                                         기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
                                         <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                        </c:if>
+                                        <c:if test="${result.nttId eq '75371'}">
+                                            <span class="show"></span>
+                                            <span class="show"></span>
+                                        </c:if>
                                     </p>
                                 </div>
                             </a>
@@ -295,6 +301,14 @@
                                         <p class="event_date">
                                             기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
                                             <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                            <c:if test="${result.nttId ne '75371'}">
+                                                기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
+                                                <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                            </c:if>
+                                            <c:if test="${result.nttId eq '75371'}">
+                                                <span class="show"></span>
+                                                <span class="show"></span>
+                                            </c:if>
                                         </p>
                                     </div>
                                 </a>
