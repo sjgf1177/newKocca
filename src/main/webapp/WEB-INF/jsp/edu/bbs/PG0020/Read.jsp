@@ -40,14 +40,14 @@
 		<div class="evt_btn_box">
 			<p>지금 참여하시겠습니까?</p>
 			<c:if test="${not empty result.option1 and result.option1 ne '' }">
-				<c:if test="${result.nttId ne '75375'}">
+				<c:if test="${result.nttId ne '75375' and result.nttId ne '75378'}">
 				<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >이벤트 참여</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75375'}">
 					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">이벤트 참여</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75378'}">
-					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">이벤트 참여</a>
+                    <a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">이벤트 참여</a>
 				</c:if>
 			</c:if>
 		</div>
