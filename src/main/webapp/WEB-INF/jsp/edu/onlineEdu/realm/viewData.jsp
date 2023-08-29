@@ -1,3 +1,5 @@
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -112,10 +114,39 @@
 									<c:set var="fileicn" value="${ext }" />
 								</c:if>
 							</c:forTokens>
-							<c:set var="url" value="https://edulms.kocca.kr/servlet/controller.library.DownloadServlet?p_savefile=${fileVO.savefile }&p_realfile=${fileVO.realfile }" />
-							<a href="${url }" class="${fileicn}">
+							<c:set var="url" value="https://edulms.kocca.kr/servlet/controller.library.DownloadServlet?p_savefile=${fileVO.savefile }&p_realfile=" />
+							<c:set var="realfilename" value="${fileVO.realfile }" />
+
+							<%
+								String f_encode = URLEncoder.encode((String)pageContext.getAttribute("realfilename"), "euc-kr");
+								String realfileconv = f_encode.replace("%5B", "[").replace("%5D", "]").replace("+", "%20");
+							%>
+
+							<a href="${url }<%= realfileconv %>" class="${fileicn}">
 								<c:out value="${fileVO.realfile }"/><br />
 							</a>
+<%--							<c:set var="realfilename" value="${fileVO.realfile }" />
+
+							<c:set var="url" value="https://edulms.kocca.kr/servlet/controller.library.DownloadServlet?p_savefile=${fileVO.savefile }&p_realfile=" />
+							&lt;%&ndash;<c:set var="url" value="http://localhost:8088/servlet/controller.library.DownloadServlet?p_savefile=${fileVO.savefile }&p_realfile=${fileVO.realfile }" />&ndash;%&gt;
+							<%
+								// [%BD%C7%BD%C0%C1%F6]%20%C0%A5%C5%F7%20%BF%F8%C0%DB%20%B5%E5%B6%F3%B8%B6%20%BD%BA%C5%E4%B8%AE%C5%DA%B8%B5.pptx
+								// [%BD%C7%BD%C0%C1%F6]%20%C0%A5%C5%F7%20%BF%F8%C0%DB%20%B5%E5%B6%F3%B8%B6%20%BD%BA%C5%E4%B8%AE%C5%DA%B8%B5.pptx
+								String aaa = URLEncoder.encode("[실습지] 웹툰 원작 드라마 스토리텔링.pptx", "UTF-8");
+								String bbb = URLEncoder.encode((String)pageContext.getAttribute("realfilename"), "euc-kr");
+								String ccc = URLEncoder.encode("[실습지] 웹툰 원작 드라마 스토리텔링.pptx", "euc-kr");
+								String ddd = "https://edulms.kocca.kr/servlet/controller.library.DownloadServlet?p_savefile=" + (String)pageContext.getAttribute("originalfilename");
+								String fff = bbb.replace("%5B", "[").replace("%5D", "]").replace("+", "%20");
+
+								System.out.println("UTF1 : " + aaa);
+								System.out.println("UTF2 : " + bbb.replace("%5B", "[").replace("%5D", "]").replace("+", "%20"));
+								System.out.println("UTF3 : " + ccc);
+							%>--%>
+
+<%--							<c:url value="http://localhost:8088/servlet/controller.library.DownloadServlet?p_savefile=${fileVO.savefile }" var="url">
+								<c:param name="p_realfile" value="${fileVO.realfile }" />
+							</c:url>--%>
+
 						</c:forEach>
 
 						<c:if test="${empty listFileData }">

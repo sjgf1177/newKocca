@@ -127,6 +127,11 @@
 	<c:when test="${param.menuNo eq '500203'}">
 		<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
 	</c:when>
+	<c:when test="${param.menuNo eq '500209'}">
+		<script>
+			location.href="https://edukocca-service.notion.site/edukocca-service/WELCOME-EDUKOCCA-5dca741674684ecd82d7746a81a4b9cd";
+		</script>
+	</c:when>
 	<c:otherwise>
 		<script type="text/javascript" src="/edu/js/bm/swiper/swiper.min.js"></script>
 	</c:otherwise>
