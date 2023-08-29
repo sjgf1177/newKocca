@@ -79,7 +79,7 @@
 		<!-- 차시목록 -->
 		<div class="col-12 lectListSet" style="min-height:auto;">
 			<!-- Movie Player -->
-			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 573px;">
+			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 576px;">
 				<!-- 차시내용 -->
 				<div id="lectListTemp" style="display:none">
 					<jsp:include page="lectList.jsp"></jsp:include>
@@ -101,7 +101,7 @@
 				</div>
 
 				<!-- //차시내용 -->
-				<div class="lectListBox eduR_lt45" style="position:relative; width:calc(100% - 68.6em); height:auto; z-index:1000; display: inline-block;" class="v_list_box">
+				<div class="lectListBox eduR_lt45" style="position:relative; width:20%; height:auto; z-index:1000; display: inline-block;" class="v_list_box">
 					<iframe id="lectFrame" style="width:100%;height:100%;" scrolling="yes" title="본 프레임은 강의 목차 정보를 제공합니다."></iframe>
 				</div>
 			</div>
