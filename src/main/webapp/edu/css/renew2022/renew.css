@@ -1089,12 +1089,14 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
 @media all and (max-width:1199px) {
     .lectMovSet{flex-direction: column;}
-    .video_box{margin-bottom: 20px; width:100%; height:calc(100% - 65%);}
+
     .lectListBox{width:100% !important; height: calc(100vh - 50vh) !important;}
     .edu_info_box .edu_txt_box .edu_tit{font-size: 2rem;}
     .edu_info_box .edu_txt_box .edu_add_txt, .edu_info_box .edu_txt_box .jindo_box{font-size: 1.4rem;}
 
     .sub_section .sub_contents_body .sub_theme_process .sub_theme_process_list{width: 23%;}
+
+    .video_box{margin-bottom: 20px; width:100%; height:calc(100% - 39%);}
 
 }
 @media all and (max-width:640px) {
@@ -1112,6 +1114,8 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
     .Listmy.roadmap_box .control_board_header .board_sorting_con fieldset{justify-content: flex-start; flex-wrap: wrap;}
     .Listmy .board_sorting_con .input_search_con{width: 100%;}
+
+    .video_box{height:calc(100% - 65%);}
 }
 
 
