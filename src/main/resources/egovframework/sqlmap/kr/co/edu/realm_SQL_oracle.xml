@@ -233,13 +233,13 @@
 							<isEqual property="pGubun1" compareValue="A">
 							AND A.SUBJ NOT IN (SELECT DISTINCT SUBJ FROM TZ_SUBJHOMEGUBUN WHERE GUBUN='GS' AND GUBUN_1 IN 'T0' )
 							</isEqual>
-					        AND (TO_CHAR (SYSDATE, 'YYYYMMDDHH24') BETWEEN A.PROPSTART AND A.PROPEND
+<!--					        AND (TO_CHAR (SYSDATE, 'YYYYMMDDHH24') BETWEEN A.PROPSTART AND A.PROPEND
 				        		<isNotEmpty property="pGubun1">
                                 	<isNotEqual prepend="OR" property="pGubun1" compareValue="A">
 				                      A.SUBJ IN (SELECT SUBJ FROM TZ_SUBJ_CLS_MNG WHERE CLS_CD = '1006')
 					        	 	</isNotEqual>
 					        	</isNotEmpty>
-                                )
+                                )-->
 					        AND SUBJ NOT IN ( SELECT SUBJ FROM TZ_SUBJ WHERE SUBJ BETWEEN 'CK14014' AND 'CK14048' OR ( A.SUBJ BETWEEN 'CK15003' AND 'CK15030' ))
 
 							<isNotEmpty property="p_type">

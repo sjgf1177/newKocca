@@ -89,8 +89,10 @@
 					<iframe name="openstudy"
 						id="openstudy"
 						class=reactiveiframe"
-						src="${p_url }"
+						<%--src="${p_url }"--%>
 						<%--src="http://localhost:8088/servlet/controller.contents.EduStart?p_subj=X%2BGGTQB1wo6qsNNedjQabg==&p_year=VVj%2B9yp%2Bizuv%2BKTF49C/2A==&p_subjseq=Ecq%2B4W18wKX28DqXrtnFfA==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="--%>
+						<%--src="http://localhost:8088/servlet/controller.contents.EduStart?p_subj=qmr1isgSyRWhDXa8kslESA==&p_year=QWR/Fc9qQUN6z0oqOcFnFg==&p_subjseq=H%2BqVKvySCgirf9FfXCHzxQ==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="--%>
+						src="http://localhost:8088/servlet/controller.contents.EduStart?p_subj=kpCjpVsLVyYBNy0/dZl5QQ==&p_year=QWR/Fc9qQUN6z0oqOcFnFg==&p_subjseq=ifRkRa3v2x%2BLqJ0FNWyh6g==&contenttype=cgnP5O2PLTpOTYNAlJAOBQ==&p_lesson=IhkJAApFvExYKK9UUNdt7Q==&p_userid=l0oE6hZ7uvOwLjE1OavcTg==&p_iurl=0&p_tobeyn=zuI1d8ZJ6SHvmAqI8pme9g=="
 						frameborder="0"
 						title="본 프레임은 동영상 강의 정보를 제공합니다."
 						scrolling="no"
