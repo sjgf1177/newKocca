@@ -819,6 +819,22 @@
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
+                                        <a href="https://url.kr/4kizp9" tabindex="-1">
+                                            <img src="/edu/images/renew2022/new_class05.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="new_txt_box">
+                                        <h3>빛나는 아티스트를 만드는 사람들</h3>
+                                        <p class="new_info_box">
+                                            전세계의 사랑을 받는 K-POP 아티스트를 꿈꾼다!
+                                            신인 개발, 매니지먼트 그리고 각종 공연 기획까지,
+                                            음악 산업의 다양한 직무와 역량이 궁금하다면?
+                                            지금 바로 에듀코카에서 확인하세요!
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
                                         <a href="https://url.kr/o8z1ua" tabindex="0">
                                             <img src="/edu/images/renew2022/new_class04.png" alt="모두를 위한 즐거움 : 배리어프리
                                             물리적, 심리적 장벽을 없애기 위한 첫 걸음.
