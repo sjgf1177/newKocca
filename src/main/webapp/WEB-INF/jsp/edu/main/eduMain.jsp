@@ -932,6 +932,13 @@
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
+                                        <a href="https://url.kr/4kizp9">
+                                            <img src="/edu/images/renew2022/m_new_class05.png" alt="">
+                                        </a>
+                                    </span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
                                         <a href="https://url.kr/o8z1ua">
                                             <img src="/edu/images/renew2022/m_new_class04.png" alt="">
                                         </a>
