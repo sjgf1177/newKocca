@@ -21,6 +21,13 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
+	<!-- 구글에서 예전 온라인교육 페이지 크롤링 차단 -->
+	<c:choose>
+		<c:when test="${param.menuNo eq '500026'}">
+			<meta name="robots" content="noindex">
+		</c:when>
+	</c:choose>
+
 
 	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css">
 	<link rel="stylesheet" type="text/css" href="/edu/css/new/bootstrap/bootstrap.min.css"/>
