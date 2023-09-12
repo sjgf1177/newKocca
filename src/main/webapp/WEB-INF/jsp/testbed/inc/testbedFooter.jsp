@@ -121,11 +121,6 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 	                  		<img src="/edu/images/bm/footer_util_link_005.png" alt="교육기부기관 교육부 Donation for Education 마크">
 	                  	</a>
 	                </li>
-                 	<li>
-                 	 	<a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="새창열림">
-                			<img src="/edu/images/bm/internet_comunication_satisfaction_logo_2019.png" alt="대한민국인터넷소통대상 (ICSI)인증마크">
-                 		</a>
-                 	</li>
 <%--                 	<li>
 	                  	<a href="javascript:winMarkPopup('/contents/temp/08_contents_certificate.html','','status=yes,scrollbars=no,width=430,height=560');" title="새창열림">
 	                     	<img src="/edu/images/bm/footer_util_link_006.png" alt="에코어워드 인증 마크">
@@ -135,6 +130,11 @@ function winMarkPopup(theURL,winName,features) { //v2.0
                  		<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" title="국가 공인 인증기관 : 웹와치 새창열림" target="_blank"><img src="/edu/images/bm/web_watch_mark.jpg" border="0" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)"/>
                  		</a>
                  	</li>
+					<li>
+<%--						<a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="새창열림">
+							<img src="/edu/images/bm/internet_comunication_satisfaction_logo_2019.png" alt="대한민국인터넷소통대상 (ICSI)인증마크">
+						</a>--%>
+					</li>
              	</ul>
          	</div>
         </div>
