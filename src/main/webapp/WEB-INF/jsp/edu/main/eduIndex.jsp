@@ -142,7 +142,8 @@
         
         <c:if test="${not empty og}">
         <meta property="og:title" content="${fn:replace(title, '"', '˝')}" />
-        <meta property="og:image" content="${image}" />
+        <!--<meta property="og:image" content="${image}" />-->
+		<meta property="og:image" content="https://edu.kocca.kr/edu/images/renew2022/og_edukocca.jpg" />
         <meta property="og:description" content="<c:out value='${description}'/>" />
         <meta property="og:type" content="website" />
         </c:if>

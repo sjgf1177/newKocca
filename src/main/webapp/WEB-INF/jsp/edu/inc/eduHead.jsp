@@ -75,7 +75,7 @@
 	<!-- SNS에 포스팅될사이트URL -->
 	<meta property="og:site" content="https://edu.kocca.kr"/>
 	<!-- SNS에 포스팅될썸네일이미지-->
-	<meta property="og:image" content="https://edu.kocca.kr/upload/about/koccaesc_logo.jpg"/>
+	<meta property="og:image" content="https://edu.kocca.kr/edu/images/renew2022/og_edukocca.jpg" />
 	<!-- SNS 포스팅될타이틀값-->
 	<!-- <meta property="og:title" content="한국콘텐츠아카데미"/> -->
 	<!-- 프로퍼티설정끝 -->

@@ -13,54 +13,84 @@
 		<ul class="col-12 linemap_con">
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
 			<li><a href="javascript:void(0);" tabindex="-1"><span>카테고리</span></a></li>
-			<li><a href="javascript:void(0);" tabindex="-1"><span>테마과정</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>학습로드맵</span></a></li>
 		</ul>
 	</div>
 </div>
 
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">테마과정</div>
+	<div class="col-center mw-1280">학습로드맵</div>
 </div>
+
+
+<%--<div class="tab_style_1_con">
+	<ul class="tab_style_1 three_tab">
+		<li class="active">
+			<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500204" title="현재탭">
+				<span>테마과정</span>
+			</a>
+		</li>
+		<li>
+			<a href="/edu/bbs/B0000048/list.do?menuNo=500205">
+				<span>이벤트</span>
+			</a>
+		</li>
+		<li>
+			<a href="/edu/bbs/B0000023/list.do?menuNo=500206">
+				<span>콘텐츠이야기</span>
+			</a>
+		</li>
+	</ul>
+</div>--%>
 
 <!--content-->
 <div class="col-center mw-1280">
 	<div class="lecture_info_box style_2">
-		<div class="col-12 mb37 alert big_box type_1">
-			<p class="alert_title" style="margin-bottom:35px; padding-left: 20px;">
+		<div class="col-12 mb37 alert big_box type_1" style="padding-left: 20px; padding-right: 20px;">
+			<p class="alert_title" style="margin-bottom:0;">
 			${result.title }
 			</p>
-			<div class="txt_ct mb40">
-				<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
-					<img alt="${result.title }" src="${result.posterImg}" style="width:100%;"/>
-				</c:if>
-			</div>
+		</div>
+	</div>
+	<div class="txt_ct mb40">
+		<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
+		<img alt="${result.title }" src="${result.posterImg}" style="width:100%;"/>
+		</c:if>
+	</div>
+	<div class="col-12 mb17">
+		<ul class="list_style_10 font_light">
+			<li>현재 <span class="point0">${fn:length(themeSubjList) }</span>개의 과정이 운영되고 있습니다. 희망하는 과정을 체크 후 신청버튼을 클릭하세요.</li>
+			<li>수료증은 <span class="point0">“나의 강의실”</span>에서 확인 및 출력이 가능합니다.(정규과정만 수료증 제공)
+				<div class="small_text_box">※ 열린강좌인 경우 수료증이 제공되지 않습니다.</div></li>
+		</ul>
+	</div>
+
+	<div class="col-12 board_util_btn_con mb40">
+		<div class="tc">
+			<a href="javascript:void(0)" class="btn_style_0 img_left edit online_edu blue" id="studySubj">
+				학습하기
+			</a>
+			<a href="/edu/onlineEdu/themeLecture/list.do?${pageQueryString }&amp;pLectureCls=${param.pLectureCls }" class="btn_style_0 gray online_edu">
+				목록가기
+			</a>
 		</div>
 	</div>
 
-	<div class="col-12 mb17">
-			<h2 class="main_title" style="margin-bottom: 10px;">PICK LIST</h2>
-			<p class="guide_txt_box">
-				아래 과정 중 수강을 원하는 과정만 선택해서 신청해 주세요.<br>
-				썸네일을 누르시면 과정을 선택 할 수 있습니다.
-			</p>
-	</div>
-
-	<div class="col-12 sub_board_body rowcard_box">
+	<div class="col-12 sub_board_body" style="padding-left: 20px;">
 		<div class="col-12 theme_process_list_wrap">
 			<!-- 반복 -->
 			<c:forEach items="${themeSubjList }" var="list" varStatus="status" >
 				<c:if test="${not empty list.courseId }">
 				<div class="col-12 theme_process_list_con">
+					<div class="check_style_0_con">
+						<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" checked="true">
+						<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>
+					</div>
 					<div class="theme_process_list">
 						<div class="img_box">
 							<img src="${list.imgfile}" alt="${list.courseName }">
 						</div>
 						<div class="text_box">
-							<div class="check_style_0_con">
-								<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }">
-								<%--<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>--%>
-								<label for="checkid_${list.courseSeq }"><span>1</span></label>
-							</div>
 							<div class="online_edu_card_icon_con">
 								<%--<span class="online_edu_card_icon">
 									<img src="/edu/images/bm/online_pc_icon.png" alt="pc에서 재생가능" title="pc에서 재생가능">
@@ -81,9 +111,7 @@
 								</a>
 							</div>
 						</div>
-
 					</div>
-					<div class="select_bg_box"></div>
 				</div>
 				</c:if>
 			</c:forEach>
@@ -91,16 +119,6 @@
 		</div>
 	</div>
 	<!--//content-->
-
-	<div class="fixbar_box">
-		<div class="inner-box col-center">
-			<p>내가 PICK한 과정 수 <span> <b>10</b></span></p>
-			<span>
-			<a href="javascript:void(0)" class="btn_style_0 img_left edit online_edu blue" id="studySubj">학습하기</a>
-			</span>
-		</div>
-	</div>
-
 	<form id="frm" name="frm" method="post" class="form-inline">
 		<input type="hidden" name="p_subj" id="p_subj" />
 		<input type="hidden" name="p_subjnm" id="p_subjnm" />
@@ -114,7 +132,8 @@
 
 <style>
 	.board_util_btn_con .btn_style_0.img_left{padding-left: 20px;}
-	/*[class*="col-"] [class*="col-"] img{width: 305px;}*/
+	[class*="col-"] [class*="col-"] img{width: 305px;}
+	/*[class*="col-"] [class*="col-"] img{width: 100%;}*/
 	@media all and (max-width:640px) {
 		[class*="col-"] [class*="col-"] img{width:100%;}
 	}
@@ -193,34 +212,6 @@ $(document).ready(function(){
 			
 		});
 	});
-
-	//card 선택 애니메이션
-
-	$('.rowcard_box .theme_process_list .img_box').click(function (){
-		//var selectbox = $(this).parent('.theme_process_list').hasClass('select');
-
-		$(this).parent('.theme_process_list').addClass('select');
-		$(this).siblings('.text_box').children('.check_style_0_con').children('.check_style_0').prop('checked',true);
-	});
-
-	$('.rowcard_box .select_bg_box').click(function (){
-		//var chkbox = $(this).siblings('.text_box').children('.check_style_0').is(':checked');
-
-		$(this).siblings('.theme_process_list').removeClass('select');
-		$(this).siblings('.theme_process_list').children('.text_box').children('.check_style_0_con').children('.check_style_0').prop('checked',false);
-
-	});
-
-	$('.check_style_0').click(function (){
-		var chkbox = $(this).is(':checked');
-		if(chkbox){
-			$(this).parents('.theme_process_list').addClass('select');
-		} else{
-			$(this).parents('.theme_process_list').removeClass('select');
-		}
-
-	});
-
 	
 });
 </script>

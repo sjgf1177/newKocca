@@ -382,6 +382,24 @@
 
 			</div>
 
+		<c:forEach items="${resultList }" var="result" varStatus="status" >
+			<c:url var="url" value="/edu/onlineEdu/themeLecture/view.do">
+				<c:param name="pId" value="${result.id }"/>
+			</c:url>
+
+			<div class="col-12 col-sm-6 sub_theme_process_list">
+				<a class="border_box" href='<c:out value="${url }" />&amp;${pageQueryString }'>
+					<div class="col-5 img_box">
+						<img src="${result.img }" alt="${result.title }">
+					</div>
+					<div class="col-12 text_box">
+						<h5>${result.title }</h5>
+						<p class="h_desc5">${result.description }</p>
+					</div>
+				</a>
+			</div>
+		</c:forEach>
+
 		</div>
 
 	<!--//content-->
