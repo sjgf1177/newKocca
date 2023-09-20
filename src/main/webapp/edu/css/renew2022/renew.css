@@ -236,32 +236,38 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 #main_nav_full{display: none !important;}
 #main_nav_full.gnbActive{display: block !important; position: fixed; width: 100%; height:1080px; top: 0; left: 0;background-color: #222; overflow-y: auto;}
 #main_nav_full h3, #main_nav_full h2, #main_nav_full li button{color:#707070; font-weight: 500;}
-#main_nav_full li button{font-size: 18px; background-color: transparent;}
-#main_nav_full li button.active{color:#fff;}
+#main_nav_full li button{font-size: 16px; padding: 5px 13px; border-radius: 18px; background-color: transparent; border:1px solid #707070;}
+#main_nav_full li button.active{color: #fff; background-color: #3B85FF; border: 1px solid #3B85FF;}
 .navbar-expand-xl #main_nav_full.gnbActive .cy_navbar-nav{max-width: 1273px; margin: 0 auto; padding: 70px 0px;}
 .gnb_close{width: 25px; height: 25px; position: absolute; top:50px; right:50px;}
-#main_nav_full h2{position:relative; font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
-.cy_list_txt.pc{position: absolute; right: 0; bottom: 0; font-size: 15px; color: #fff;}
+#main_nav_full h2{position:relative; font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070; color:#fff;}
+.cy_list_txt{color: #bdc1c6;}
+.cy_list_txt b{color:#fff; font-size: 18px;}
+.cy_list_txt.pc{display: block; font-size: 15px;}
 .cy_list_txt.mo{display: none;}
-.cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 70px;}
+.cy_contents_box{display: flex; flex-wrap: wrap; padding: 30px 0;}
 #main_nav_full h3{width: 145px; margin-right: 80px; color:#fff; text-align: center;}
 .cy_list_box{width: 33.33%; display: flex; font-size: 18px; border-bottom: 1px solid #707070;}
 .cy_list_box li{margin-bottom: 15px;}
 .cy_list_box:nth-child(1), .cy_list_box:nth-child(2){padding-bottom: 35px;}
 .cy_list_box:nth-child(n+5){padding:70px 0 35px;}
-
+.cy_navbar-nav .board_util_btn_con{margin-top: 40px;}
+.row-btn{width: 25%;}
+.gnb_close.row-btn{width: 25%; height: auto; position: static;}
+.cy_navbar-nav .board_util_btn_con .btn_style_0.blue {color: #fff; background-color: #3B85FF; border: none; font-weight: 600; font-size: 18px; padding: 13px 25px;}
 /* SUN NAV */
 .sub_layout_page header, #subContainer header{position:fixed; background: #222;}
 
 @media all and (min-width:1200px){
     #main_nav_full li button:hover{color:#fff;}
+
 }
 
 @media all and (max-width:1600px) {
     header nav, header .navbar{padding: 10px 0px;}
     #main_nav_full.gnbActive{height: 100%;}
     #main_nav_full h2{font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070;}
-    .cy_contents_box{display: flex; flex-wrap: wrap; padding-top: 40px;}
+    .cy_contents_box{display: flex; flex-wrap: wrap;}
     #main_nav_full h3{width: 145px; margin-right: 80px;}
     .cy_list_box{width: 33%; display: flex; font-size: 18px; border-bottom: 1px solid #707070;}
     .cy_list_box li{margin-bottom: 10px;}
@@ -273,7 +279,9 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 }
 @media all and (max-width:640px) {
     .cy_list_txt.pc {display: none;}
-    .cy_list_txt.mo {display: block; font-size: 15px; color: #fff; margin-bottom: 20px;}
+    .cy_list_txt.mo {display: block; font-size: 15px; margin-bottom: 20px;}
+    .cy_navbar-nav .row-btn{width: 100%;}
+
 }
 
 /* 햄버거 */

@@ -119,7 +119,7 @@
                         <!-- 로그인 후-->
                         <sec:authorize ifAnyGranted="ROLE_USER">
                             <div class="nav_my_box mo">
-                                <input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
+                                <input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">
                                 <a href="/${paramVO.siteName}/member/logout.do" class="ico4 logoutBtn" title="로그아웃" style="font-size: 18px; color: #fff; margin-left: 15px;">로그아웃</a>
                             </div>
                         </sec:authorize>
@@ -177,7 +177,7 @@
                             <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">카테고리</a>
                                 <!-- nav 카테고리 two-daps start -->
                                 <ul>
-                                    <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">학습로드맵</a></li>
+                                    <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                     <li><a href="javascript:void(0);" onclick="fnCmdGoldList('B0'); return false;">방송영상</a></li>
                                     <li><a href="javascript:void(0);" onclick="fnCmdGoldList('G0'); return false;">게임</a></li>
                                     <li><a href="javascript:void(0);" onclick="fnCmdGoldList('K0'); return false;">만화/애니/캐릭터</a></li>
@@ -262,7 +262,7 @@
                         <!-- 로그인 후-->
                         <sec:authorize ifAnyGranted="ROLE_USER">
                             <div class="nav_support_box">
-                                <a href="/edu/main/contents.do?menuNo=500033">
+                                <a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">
                                     <img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
                                 </a>
                                 <ul>
@@ -292,7 +292,7 @@
                                     <li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
                                 </ul>
                             </div>
-                            <input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
+                            <input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">
                         </sec:authorize>
 
                         <!-- 로그인 전-->
@@ -336,10 +336,10 @@
                             <a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
                                 <img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
                             </a>
-                            <input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
-                            <h2>콘텐츠커리큘럼<span class="pc cy_list_txt">아래 관심분야를 선택하시면 메인페이지에서 맞춤과정을 추천해 드립니다.(중복선택 가능)</span></h2>
+                            <input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="추천 클래스 설정 닫기" style="padding:0;">
+                            <h2>추천 클래스 설정<span class="pc cy_list_txt">아래 관심분야를 <b>선택</b>하시면 추천 클래스에서 <b>맞춤과정</b>을 <b>추천</b>해 드립니다.(다수선택 가능)</span></h2>
                             <div class="cy_contents_box">
-                                <p class="mo cy_list_txt">아래 관심분야를 선택하시면 메인페이지에서 맞춤과정을 추천해 드립니다.(중복선택 가능)</p>
+                                <p class="mo cy_list_txt">아래 관심분야를 <b>선택</b>하시면 추천 클래스에서 <b>맞춤과정</b>을 <b>추천</b>해 드립니다.(다수선택 가능)</p>
                                 <c:set var="contentType" value=""/>
                                 <c:forEach items="${curriculumList }" var="result" varStatus="status">
                                     <c:if test="${status.first eq false}">
@@ -360,7 +360,9 @@
                                 </c:forEach>
                             </div>
                         </div>
-
+                        <div class="board_util_btn_con" style="text-align: center;">
+                            <button type="button" class="btn_style_0 blue row-btn gnb_close">저장하기</button>
+                        </div>
                     </div>
                     <!-- pc 햄버거 버튼 눌렀을때 end -->
                 </nav>

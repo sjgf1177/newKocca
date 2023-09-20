@@ -90,7 +90,7 @@ $(function(){
 		$("header").css({"background":""});
 		$(".gnb_menu").css({"display":"none"});
 		$(".gnb_close").css({"display":"inline-block"});
-		$('.gnb_close').attr({"alt":"GNB 메뉴 닫기"});
+		$('input.gnb_close').attr({"alt":"추천 클래스 설정 닫기"});
 		$('.op_bg_box').addClass("active");
 		$('body').css({"overflow":"hidden"});
 	});
