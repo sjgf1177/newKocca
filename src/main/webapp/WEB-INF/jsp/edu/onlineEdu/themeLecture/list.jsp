@@ -64,19 +64,19 @@
 						<button type="button" class="btn-lightgray">전체</button>
 					</li>
 					<li>
-						<button type="button" class="btn-lightgray">애니메이션</button>
+						<button type="button" class="btn-lightgray">방송&bull;영상</button>
 					</li>
 					<li>
 						<button type="button" class="btn-lightgray">게임</button>
 					</li>
 					<li>
-						<button type="button" class="btn-lightgray">방송/출연</button>
-					</li>
-					<li>
-						<button type="button" class="btn-lightgray">음악</button>
+						<button type="button" class="btn-lightgray">애니메이션</button>
 					</li>
 					<li>
 						<button type="button" class="btn-lightgray">웹툰</button>
+					</li>
+					<li>
+						<button type="button" class="btn-lightgray">음악</button>
 					</li>
 					<li>
 						<button type="button" class="btn-lightgray">창작</button>
@@ -87,7 +87,7 @@
 			<div class="mw-1280 col-center">
 
 				<div class="tema-list-box">
-					<h2 class="main_title">애니메이션</h2>
+					<h2 class="main_title">방송&bull;영상</h2>
 					<div class="col-12 col-sm-6 sub_theme_process_list">
 						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
 							<div class="col-5 img_box">
@@ -185,56 +185,7 @@
 				</div>
 
 				<div class="tema-list-box">
-					<h2 class="main_title">방송/공연</h2>
-					<div class="col-12 col-sm-6 sub_theme_process_list">
-						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
-							<div class="col-5 img_box">
-								<img src="${result.img }" alt="${result.title }">
-							</div>
-							<div class="col-12 text_box">
-								<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
-								<div class="col-12 sub_text_box">
-									<span><b>2 COURSES</b></span>
-									<span class="h_desc5">조회수 1.2만</span>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-12 col-sm-6 sub_theme_process_list">
-						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
-							<div class="col-5 img_box">
-								<img src="${result.img }" alt="${result.title }">
-							</div>
-							<div class="col-12 text_box">
-								<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
-								<div class="col-12 sub_text_box">
-									<span><b>2 COURSES</b></span>
-									<span class="h_desc5">조회수 1.2만</span>
-								</div>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-12 col-sm-6 sub_theme_process_list">
-						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
-							<div class="col-5 img_box">
-								<img src="${result.img }" alt="${result.title }">
-							</div>
-							<div class="col-12 text_box">
-								<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
-								<div class="col-12 sub_text_box">
-									<span><b>2 COURSES</b></span>
-									<span class="h_desc5">조회수 1.2만</span>
-								</div>
-							</div>
-						</a>
-					</div>
-
-				</div>
-
-				<div class="tema-list-box">
-					<h2 class="main_title">음악</h2>
+					<h2 class="main_title">애니메이션</h2>
 					<div class="col-12 col-sm-6 sub_theme_process_list">
 						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
 							<div class="col-5 img_box">
@@ -332,7 +283,56 @@
 				</div>
 
 				<div class="tema-list-box">
-					<h2 class="main_title">정치</h2>
+					<h2 class="main_title">음악</h2>
+					<div class="col-12 col-sm-6 sub_theme_process_list">
+						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<div class="col-5 img_box">
+								<img src="${result.img }" alt="${result.title }">
+							</div>
+							<div class="col-12 text_box">
+								<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+								<div class="col-12 sub_text_box">
+									<span><b>2 COURSES</b></span>
+									<span class="h_desc5">조회수 1.2만</span>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-12 col-sm-6 sub_theme_process_list">
+						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<div class="col-5 img_box">
+								<img src="${result.img }" alt="${result.title }">
+							</div>
+							<div class="col-12 text_box">
+								<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+								<div class="col-12 sub_text_box">
+									<span><b>2 COURSES</b></span>
+									<span class="h_desc5">조회수 1.2만</span>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-12 col-sm-6 sub_theme_process_list">
+						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<div class="col-5 img_box">
+								<img src="${result.img }" alt="${result.title }">
+							</div>
+							<div class="col-12 text_box">
+								<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+								<div class="col-12 sub_text_box">
+									<span><b>2 COURSES</b></span>
+									<span class="h_desc5">조회수 1.2만</span>
+								</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+
+				<div class="tema-list-box">
+					<h2 class="main_title">창작</h2>
 					<div class="col-12 col-sm-6 sub_theme_process_list">
 						<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
 							<div class="col-5 img_box">

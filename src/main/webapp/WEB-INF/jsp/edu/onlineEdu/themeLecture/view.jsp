@@ -180,7 +180,7 @@ $(document).ready(function(){
 					var msg = "";
 // 					msg += "정규강좌 " + result.sReturnSubjCnt + "건\n"
 // 					msg += "열린강좌 " + result.sReturnGoldClassCnt + "건\n"
-					msg += "신청이 되었습니다.";
+					msg += "수강 신청이 완료되었습니다.";
 					alert(msg);
 					location.replace("/edu/onlineEdu/mylctrum/list.do?menuNo=500061");
 					return;
