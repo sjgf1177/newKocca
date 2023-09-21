@@ -103,278 +103,6 @@ $(document).ready(function() {
         }
     });
 
-    var fwocard04 = new Swiper('.fwo_card04 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card04 .swiper-button-next'
-        ,prevButton: '.fwo_card04 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-    var fwocard05 = new Swiper('.fwo_card05 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card05 .swiper-button-next'
-        ,prevButton: '.fwo_card05 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-    var fwocard06 = new Swiper('.fwo_card06 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card06 .swiper-button-next'
-        ,prevButton: '.fwo_card06 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-    var fwocard07 = new Swiper('.fwo_card07 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card07 .swiper-button-next'
-        ,prevButton: '.fwo_card07 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-
-    var fwocard08 = new Swiper('.fwo_card08 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card08 .swiper-button-next'
-        ,prevButton: '.fwo_card08 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-
-    var fwocard09 = new Swiper('.fwo_card09 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card09 .swiper-button-next'
-        ,prevButton: '.fwo_card09 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-    var fwocard10 = new Swiper('.fwo_card10 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card10 .swiper-button-next'
-        ,prevButton: '.fwo_card10 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-    var fwocard11 = new Swiper('.fwo_card11 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card11 .swiper-button-next'
-        ,prevButton: '.fwo_card11 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-    var fwocard12 = new Swiper('.fwo_card12 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card12 .swiper-button-next'
-        ,prevButton: '.fwo_card12 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
-    var fwocard13 = new Swiper('.fwo_card13 .fwo_card', {
-        /*loop: true,*/
-        speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
-        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-
-        //구버전 swiper 방향표
-        ,nextButton: '.fwo_card13 .swiper-button-next'
-        ,prevButton: '.fwo_card13 .swiper-button-prev'
-        ,breakpoints: {
-            1280: {
-                slidesPerView: 4,
-                spaceBetween: 40
-            },
-            1279: {
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: {
-                slidesPerView: 1,
-                spaceBetween: 20
-            },
-        }
-
-    });
-
 
     // KOCCA 교육 사업 슬라이드
     var threecard01 = new Swiper('.main_study_contents .three_card01', {
@@ -437,6 +165,122 @@ $(document).ready(function() {
         ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
 
+    });
+
+    //테마과정 슬라이드
+
+     //방송영상
+    var temacard01 = new Swiper('.tema-list-box01 .temacard01', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box .swiper-button-next'
+        ,prevButton: '.tema-list-box .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //게임
+    var temacard02 = new Swiper('.tema-list-box02 .temacard02', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box .swiper-button-next'
+        ,prevButton: '.tema-list-box .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //애니메이션
+    var temacard03 = new Swiper('.tema-list-box03 .temacard03', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box .swiper-button-next'
+        ,prevButton: '.tema-list-box .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //웹툰
+    var temacard04 = new Swiper('.tema-list-box04 .temacard04', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box04 .swiper-button-next'
+        ,prevButton: '.tema-list-box04 .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //음악
+    var temacard05 = new Swiper('.tema-list-box05 .temacard05', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box05 .swiper-button-next'
+        ,prevButton: '.tema-list-box05 .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //창작
+    var temacard06 = new Swiper('.tema-list-box06 .temacard06', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box06 .swiper-button-next'
+        ,prevButton: '.tema-list-box06 .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
     });
 
     //공지사항 배너 정지버튼
