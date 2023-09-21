@@ -178,8 +178,8 @@ $(document).ready(function() {
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
 
         //구버전 swiper 방향표
-        ,nextButton: '.tema-list-box .swiper-button-next'
-        ,prevButton: '.tema-list-box .swiper-button-prev'
+        ,nextButton: '.tema-list-box01 .swiper-button-next'
+        ,prevButton: '.tema-list-box01 .swiper-button-prev'
         ,breakpoints: {
             640: {
                 slidesPerView: 1.3,
@@ -197,8 +197,8 @@ $(document).ready(function() {
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
 
         //구버전 swiper 방향표
-        ,nextButton: '.tema-list-box .swiper-button-next'
-        ,prevButton: '.tema-list-box .swiper-button-prev'
+        ,nextButton: '.tema-list-box02 .swiper-button-next'
+        ,prevButton: '.tema-list-box02 .swiper-button-prev'
         ,breakpoints: {
             640: {
                 slidesPerView: 1.3,
@@ -216,8 +216,8 @@ $(document).ready(function() {
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
 
         //구버전 swiper 방향표
-        ,nextButton: '.tema-list-box .swiper-button-next'
-        ,prevButton: '.tema-list-box .swiper-button-prev'
+        ,nextButton: '.tema-list-box03 .swiper-button-next'
+        ,prevButton: '.tema-list-box03 .swiper-button-prev'
         ,breakpoints: {
             640: {
                 slidesPerView: 1.3,
