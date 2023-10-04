@@ -169,7 +169,7 @@ $(document).ready(function() {
 
     //테마과정 슬라이드
 
-     //방송영상
+     //방송기획
     var temacard01 = new Swiper('.tema-list-box01 .temacard01', {
         /*loop: true,*/
         speed : 700
@@ -188,7 +188,7 @@ $(document).ready(function() {
         }
     });
 
-    //게임
+    //방송제작
     var temacard02 = new Swiper('.tema-list-box02 .temacard02', {
         /*loop: true,*/
         speed : 700
@@ -207,7 +207,7 @@ $(document).ready(function() {
         }
     });
 
-    //애니메이션
+    //게임개발
     var temacard03 = new Swiper('.tema-list-box03 .temacard03', {
         /*loop: true,*/
         speed : 700
@@ -226,7 +226,7 @@ $(document).ready(function() {
         }
     });
 
-    //웹툰
+    //웹툰캐릭터
     var temacard04 = new Swiper('.tema-list-box04 .temacard04', {
         /*loop: true,*/
         speed : 700
@@ -245,7 +245,7 @@ $(document).ready(function() {
         }
     });
 
-    //음악
+    //애니메이션
     var temacard05 = new Swiper('.tema-list-box05 .temacard05', {
         /*loop: true,*/
         speed : 700
@@ -264,7 +264,7 @@ $(document).ready(function() {
         }
     });
 
-    //창작
+    //공연기획
     var temacard06 = new Swiper('.tema-list-box06 .temacard06', {
         /*loop: true,*/
         speed : 700
@@ -275,6 +275,44 @@ $(document).ready(function() {
         //구버전 swiper 방향표
         ,nextButton: '.tema-list-box06 .swiper-button-next'
         ,prevButton: '.tema-list-box06 .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //저작권상식
+    var temacard07 = new Swiper('.tema-list-box07 .temacard07', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box07 .swiper-button-next'
+        ,prevButton: '.tema-list-box07 .swiper-button-prev'
+        ,breakpoints: {
+            640: {
+                slidesPerView: 1.3,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    //콘텐츠교양
+    var temacard08 = new Swiper('.tema-list-box08 .temacard08', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 3 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.tema-list-box08 .swiper-button-next'
+        ,prevButton: '.tema-list-box08 .swiper-button-prev'
         ,breakpoints: {
             640: {
                 slidesPerView: 1.3,

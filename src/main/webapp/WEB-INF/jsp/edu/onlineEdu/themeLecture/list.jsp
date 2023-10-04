@@ -87,7 +87,7 @@
 			<div class="mw-1280 col-center">
 
 				<div class="tema-list-box01">
-					<h2 class="main_title">방송&bull;영상</h2>
+					<h2 class="main_title">방송기획</h2>
 					<div class="temacard01 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
@@ -162,7 +162,7 @@
 				</div>
 
 				<div class="tema-list-box02">
-					<h2 class="main_title">게임</h2>
+					<h2 class="main_title">방송제작</h2>
 					<div class="temacard02 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
@@ -237,7 +237,7 @@
 				</div>
 
 				<div class="tema-list-box03">
-					<h2 class="main_title">애니메이션</h2>
+					<h2 class="main_title">게임개발</h2>
 					<div class="temacard03 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
@@ -312,7 +312,7 @@
 				</div>
 
 				<div class="tema-list-box04">
-					<h2 class="main_title">웹툰</h2>
+					<h2 class="main_title">웹툰캐릭터</h2>
 					<div class="temacard04 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
@@ -387,7 +387,7 @@
 				</div>
 
 				<div class="tema-list-box05">
-					<h2 class="main_title">음악</h2>
+					<h2 class="main_title">애니메이션</h2>
 					<div class="temacard05 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
@@ -462,8 +462,158 @@
 				</div>
 
 				<div class="tema-list-box06">
-					<h2 class="main_title">창작</h2>
+					<h2 class="main_title">공연기획</h2>
 					<div class="temacard06 swiper-container">
+						<div class="swiper-wrapper">
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+					<div class="swiper_btn_box">
+						<div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+						<div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
+					</div>
+
+				</div>
+
+				<div class="tema-list-box07">
+					<h2 class="main_title">저작권상식</h2>
+					<div class="temacard07 swiper-container">
+						<div class="swiper-wrapper">
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+									<div class="col-5 img_box">
+										<img src="${result.img }" alt="${result.title }">
+									</div>
+									<div class="col-12 text_box">
+										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>2 COURSES</b></span>
+											<span class="h_desc5">조회수 1.2만</span>
+										</div>
+									</div>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+					<div class="swiper_btn_box">
+						<div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+						<div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
+					</div>
+
+				</div>
+
+				<div class="tema-list-box08">
+					<h2 class="main_title">콘텐츠교양</h2>
+					<div class="temacard08 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
 								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
