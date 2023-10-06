@@ -119,7 +119,21 @@ $(function(){
 			$(".navbar .gnb_close").css({"display":"none"});
 			$('.op_bg_box').removeClass("active");
 			$('body').css({"overflow":"auto"});
+
+
+
 		}
+	});
+
+	$(".navbar .gnb_save").on("click", function(){
+		$("#main_nav_full").removeClass("gnbActive");
+		$("header").css({"background":""});
+		$(".gnb_menu").css({"display":"inline-block"});
+		$(".navbar .gnb_close").css({"display":"none"});
+		$('.op_bg_box').removeClass("active");
+		$('body').css({"overflow":"auto"});
+		alert('저장되었습니다.');
+
 	});
 
 	$("#main_nav > ul > li").on("click", function(){

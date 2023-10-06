@@ -396,7 +396,7 @@
                                 </div>
                             </div>
                             <div class="board_util_btn_con" style="text-align: center;">
-                                <button type="button" class="btn_style_0 blue row-btn gnb_close">저장하기</button>
+                                <button type="button" class="btn_style_0 blue row-btn gnb_save">저장하기</button>
                             </div>
                         </div>
                         <!-- pc 햄버거 버튼 눌렀을때 end -->

@@ -40,8 +40,8 @@
 	<div class="col-12 mb17">
 			<h2 class="main_title" style="margin-bottom: 10px;">PICK LIST</h2>
 			<p class="guide_txt_box">
-				아래 과정 중 수강을 원하는 과정만 선택해서 신청해 주세요.<br>
-				썸네일을 누르시면 과정을 선택 할 수 있습니다.
+				아래 과정 중 <strong>수강을 원하는 과정</strong>만 선택해서 신청해 주세요.<br>
+				<strong>썸네일</strong>을 누르시면 과정을 <strong>선택</strong> 할 수 있습니다.
 			</p>
 	</div>
 
@@ -59,7 +59,7 @@
 							<div class="check_style_0_con">
 								<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }">
 								<%--<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>--%>
-								<label for="checkid_${list.courseSeq }"><span>1</span></label>
+								<label for="checkid_${list.courseSeq }"><span></span></label>
 							</div>
 							<div class="online_edu_card_icon_con">
 								<%--<span class="online_edu_card_icon">
@@ -94,7 +94,7 @@
 
 	<div class="fixbar_box">
 		<div class="inner-box col-center">
-			<p>내가 PICK한 과정 수 <span> <b>10</b></span></p>
+			<p>내가 PICK한 과정 수 <span> <b>0</b></span></p>
 			<span>
 			<a href="javascript:void(0)" class="btn_style_0 img_left edit online_edu blue" id="studySubj">학습하기</a>
 			</span>
@@ -201,6 +201,8 @@ $(document).ready(function(){
 
 		$(this).parent('.theme_process_list').addClass('select');
 		$(this).siblings('.text_box').children('.check_style_0_con').children('.check_style_0').prop('checked',true);
+
+		$(".fixbar_box b").text($("input:checkbox[name=checkname]:checked").length);
 	});
 
 	$('.rowcard_box .select_bg_box').click(function (){
@@ -209,6 +211,7 @@ $(document).ready(function(){
 		$(this).siblings('.theme_process_list').removeClass('select');
 		$(this).siblings('.theme_process_list').children('.text_box').children('.check_style_0_con').children('.check_style_0').prop('checked',false);
 
+		$(".fixbar_box b").text($("input:checkbox[name=checkname]:checked").length);
 	});
 
 	$('.check_style_0').click(function (){
@@ -219,6 +222,7 @@ $(document).ready(function(){
 			$(this).parents('.theme_process_list').removeClass('select');
 		}
 
+		$(".fixbar_box b").text($("input:checkbox[name=checkname]:checked").length);
 	});
 
 	

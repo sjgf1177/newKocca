@@ -234,11 +234,11 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 .nav_my_box li:last-child, .nav_support_box li:last-child{border-bottom: none;}
 /*******************************************************  NAV 콘텐츠 커리큘럼 *******************************************************/
 #main_nav_full{display: none !important;}
-#main_nav_full.gnbActive{display: block !important; position: fixed; width: 100%; height:1080px; top: 0; left: 0;background-color: #222; overflow-y: auto;}
+#main_nav_full.gnbActive{display: block !important; position: fixed; width: 100%; height: 100%; /*height:1080px;*/ top: 0; left: 0;background-color: #222; overflow-y: auto;}
 #main_nav_full h3, #main_nav_full h2, #main_nav_full li button{color:#707070; font-weight: 500;}
 #main_nav_full li button{font-size: 16px; padding: 5px 13px; border-radius: 18px; background-color: transparent; border:1px solid #707070;}
 #main_nav_full li button.active{color: #fff; background-color: #3B85FF; border: 1px solid #3B85FF;}
-.navbar-expand-xl #main_nav_full.gnbActive .cy_navbar-nav{max-width: 1273px; margin: 0 auto; padding: 70px 0px;}
+.navbar-expand-xl #main_nav_full.gnbActive .cy_navbar-nav{max-width: 1273px; margin: 0 auto; padding: 30px 0px;}
 .gnb_close{width: 25px; height: 25px; position: absolute; top:50px; right:50px;}
 #main_nav_full h2{position:relative; font-size: 30px; padding-bottom: 10px; margin-top: 20px; border-bottom: 3px solid #707070; color:#fff;}
 .cy_list_txt{color: #bdc1c6;}
@@ -250,8 +250,9 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
 .cy_list_box{width: 33.33%; display: flex; font-size: 18px; border-bottom: 1px solid #707070;}
 .cy_list_box li{margin-bottom: 15px;}
 .cy_list_box:nth-child(1), .cy_list_box:nth-child(2){padding-bottom: 35px;}
-.cy_list_box:nth-child(n+5){padding:70px 0 35px;}
-.cy_navbar-nav .board_util_btn_con{margin-top: 40px;}
+.cy_list_box:nth-child(n+5){padding:30px 0 15px;}
+
+
 .row-btn{width: 25%;}
 .gnb_close.row-btn{width: 25%; height: auto; position: static;}
 .cy_navbar-nav .board_util_btn_con .btn_style_0.blue {color: #fff; background-color: #3B85FF; border: none; font-weight: 600; font-size: 18px; padding: 13px 25px;}
@@ -272,7 +273,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
     .cy_list_box{width: 33%; display: flex; font-size: 18px; border-bottom: 1px solid #707070;}
     .cy_list_box li{margin-bottom: 10px;}
     .cy_list_box:nth-child(1),.cy_list_box:nth-child(2){padding-bottom: 30px;}
-    .cy_list_box:nth-child(n+5){padding:60px 0 30px;}
+
 }
 @media all and (max-width:1300px) {
     header nav, header .navbar{padding: 10px 20px;}
@@ -281,6 +282,7 @@ header nav .searchCon .header_util_item:first-child a:after{content: ""; positio
     .cy_list_txt.pc {display: none;}
     .cy_list_txt.mo {display: block; font-size: 15px; margin-bottom: 20px;}
     .cy_navbar-nav .row-btn{width: 100%;}
+    .cy_navbar-nav .board_util_btn_con{margin-top: 40px;}
 
 }
 
@@ -1130,7 +1132,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 [class^="tema-list-box"] .swiper-button-next{position: static; margin-top: 0; width: 48px; height: 48px; background-image: url("/edu/images/renew2022/right_on.png"); background-repeat: no-repeat; background-size: contain;}
 
 .guide_txt_box{font-size: 16px;color: #888888;line-height: 20px;}
-.fixbar_box{position: fixed; left: 0; bottom: 0; z-index: 10; width: 100%; height: 9%; background-color: #222222;}
+.fixbar_box{position: fixed; left: 0; bottom: 0; z-index: 12; width: 100%; height: 9%; background-color: #222222;}
 .fixbar_box .inner-box{width: 600px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 100%;}
 .fixbar_box .inner-box p{font-size: 16px; color:#B2B2B2; font-weight: 600;}
 .fixbar_box .inner-box p span{height: 25px; width: 60px; text-align: center; background-color: yellow; border-radius: 18px; line-height: 25px;}
@@ -1153,7 +1155,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .sub_section .sub_contents_body .rowcard_box .theme_process_list_wrap .check_style_0_con input[type="checkbox"] + label{
     background-color: #fff;
     border-radius: 18px;
-    border: 1px solid #868686;
+    border: 1px solid #999999;
     width: 30px;
     height: 30px;
     text-align: center;
@@ -1161,8 +1163,8 @@ table.board_type_0.notice thead th{font-size: 15px;}
     top: 0;
     left: -5px;
 }
-.sub_section .sub_contents_body .rowcard_box .theme_process_list_wrap .check_style_0_con input[type="checkbox"]:checked + label{background-color: yellow; background-image: none;}
-.sub_section .sub_contents_body .rowcard_box .theme_process_list_wrap .check_style_0_con input[type="checkbox"] + label span{line-height: 28px; font-weight: 600; font-size: 16px;}
+.sub_section .sub_contents_body .rowcard_box .theme_process_list_wrap .check_style_0_con input[type="checkbox"]:checked + label{background: url("/edu/images/renew2022/checked_red.png")no-repeat; background-size: contain; border: none; z-index: 12;}
+.sub_section .sub_contents_body .rowcard_box .theme_process_list_wrap .check_style_0_con input[type="checkbox"] + label span{line-height: 28px; font-weight: 600; font-size: 16px; color:#fff;}
 
 .select_bg_box{position: absolute; top:0; left:0; width: 100%; height: 100%; display: none;}
 .theme_process_list.select + .select_bg_box{display: block; z-index: 11; background-color: rgba(0,0,0,0.25); cursor: pointer;}
@@ -1200,7 +1202,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
     .video_box{height:calc(100% - 65%);}
 
-    .dark_search_box{font-size: 1rem; height: 380px; margin-bottom: 40px;}
+    .dark_search_box{font-size: 1rem; height: 380px; margin-bottom: 40px; background: url("/edu/images/renew2022/TemaBenner_bg_mobile.png") no-repeat; background-size: 100% 450px;}
     .dark_search_box .inner-box .board_sorting_con{width: 90%;}
 
     .tab-inner-box{padding: 4em 20px 2.3em 20px; justify-content: flex-start;}
@@ -1213,7 +1215,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
     .rowcard_box .theme_process_list_wrap .theme_process_list{flex-direction: column;}
     .rowcard_box .theme_process_list_wrap .img_box, .rowcard_box .theme_process_list_wrap .text_box{position: static; width: 100%;}
-    .rowcard_box .theme_process_list_wrap .text_box{padding: 0 20px 30px 20px;}
+    .rowcard_box .theme_process_list_wrap .text_box{padding: 20px 20px 30px 20px;}
     .sub_section .sub_contents_body .check_style_0_con{top:10px;}
     .rowcard_box .theme_process_list_wrap .theme_process_list .text_box h5{font-size: 2rem; line-height: 2.5rem;}
     .rowcard_box .theme_process_list_wrap .theme_process_list_desc{font-size: 14.5px; line-height: 2rem;}

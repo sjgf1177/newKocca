@@ -91,60 +91,80 @@
 					<div class="temacard01 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=92&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<img src="/upload/themeupload/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트">
+										<%--<img src="/edu/images/renew2022/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트">--%>
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>시청은 핑계고! 베테랑 제작진 레벨 테스트</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>3 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=68&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<img src="/upload/themeupload/1001.png" alt="현장에서 통하는 방송 기획">
+										<%--<img src="/edu/images/renew2022/1001.png" alt="현장에서 통하는 방송 기획">--%>
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>현장에서 통하는 방송 기획</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>7 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=58&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<img src="/upload/themeupload/1002.png" alt="다큐멘터리 글쓰기">
+										<%--<img src="/edu/images/renew2022/1002.png" alt="다큐멘터리 글쓰기">--%>
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>다큐멘터리 글쓰기</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>5 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=75&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<img src="/upload/themeupload/1003.png" alt="방송 미디어 인사이트">
+										<%--<img src="/edu/images/renew2022/1003.png" alt="방송 미디어 인사이트">--%>
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>방송 미디어 인사이트</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>5 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
+										</div>
+									</div>
+								</a>
+							</div>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=74&menuNo=500157&pageIndex=1'>
+									<div class="col-5 img_box">
+										<img src="/upload/themeupload/1004.png" alt="OSMU 원작과 창작의 성공적 사례">
+										<%--<img src="/edu/images/renew2022/1004.png" alt="OSMU 원작과 창작의 성공적 사례">--%>
+									</div>
+									<div class="col-12 text_box">
+										<h5>OSMU 원작과 창작의 성공적 사례</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>4 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
@@ -166,64 +186,68 @@
 					<div class="temacard02 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=81&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/81_368_230.jpg" alt="슬기로운 글로벌 콘텐츠 제작 생활">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>슬기로운 글로벌 콘텐츠 제작 생활</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>6 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=78&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/78_368_230.jpg" alt="당신의 상상은 현실이 된다, 리얼타임 엔진과 기술">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>당신의 상상은 현실이 된다, 리얼타임 엔진과 기술</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>5 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=80&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/80_368_230.jpg" alt="방구석 카메라 교실, 카메라 지식 플러스">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>방구석 카메라 교실, 카메라 지식 플러스</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>4 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+<%--							<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=53&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/53_368_230.jpg" alt="드라마 제작, 이것이 궁금했다!">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>드라마 제작, 이것이 궁금했다!</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>9 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
 
 						</div>
 					</div>
@@ -241,64 +265,68 @@
 					<div class="temacard03 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=90&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/90_368_230.jpg" alt="GAME분야 레벨 UP+ 시리즈">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>GAME분야 레벨 UP+ 시리즈</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>5 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=83&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/83_368_230.jpg" alt="알면 쓸모 있는 게임기획자를 위한 게임 개발법">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>알면 쓸모 있는 게임기획자를 위한 게임 개발법</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>3 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=59&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/59_368_230.jpg" alt="게임 개발시 성공 노하우는 무엇일까?">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>게임 개발시 성공 노하우는 무엇일까?</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>4 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=60&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/60_368_230.jpg" alt="이젠 제대로 알고 계약하자!!">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>이젠 제대로 알고 계약하자!!</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>7 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
 
 						</div>
 					</div>
@@ -315,65 +343,101 @@
 					<h2 class="main_title">웹툰캐릭터</h2>
 					<div class="temacard04 swiper-container">
 						<div class="swiper-wrapper">
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+<%--							<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=61&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/61_368_230.jpg" alt="웹툰 프로듀서로써의 제작 노하우">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>웹툰 프로듀서로써의 제작 노하우</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>7 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
+										</div>
+									</div>
+								</a>
+							</div>--%>
+
+							<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=85&menuNo=500157&pageIndex=1'>
+									<div class="col-5 img_box">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/85_368_230.jpg" alt="뜨는 이야기들의 공통분모, 웹 소설 IP">
+									</div>
+									<div class="col-12 text_box">
+										<h5>뜨는 이야기들의 공통분모, 웹 소설 IP</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>5 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=88&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/88_368_230.jpg" alt="나만의 개성있는 캐릭터 How to make?">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>나만의 개성있는 캐릭터 How to make?</h5>
 										<div class="col-12 sub_text_box">
 											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=70&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/70_368_230.png" alt="무한 창작 , 웹툰의 세계">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>무한 창작 , 웹툰의 세계</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>7 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=71&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/71_368_230.png" alt="내가 만든 이모티콘 제안하기">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>내가 만든 이모티콘 제안하기</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>4 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
+
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=52&menuNo=500157&pageIndex=1'>
+									<div class="col-5 img_box">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/52_368_230.jpg" alt="취향저격 캐릭터 만들기 - 캐릭터 매뉴얼북 A to Z">
+									</div>
+									<div class="col-12 text_box">
+										<h5>취향저격 캐릭터 만들기 - 캐릭터 매뉴얼북 A to Z</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>6 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
+										</div>
+									</div>
+								</a>
+							</div>--%>
 
 						</div>
 					</div>
@@ -391,64 +455,68 @@
 					<div class="temacard05 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=89&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/89_368_230.jpg" alt="국내 애니메이션이 해외 진출에 성공했던 건에 대하여">
 									</div>
 									<div class="col-12 text_box">
 										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>7 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=82&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/82_368_230.jpg" alt="애니메이션 제작 A to Z">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>애니메이션 제작 A to Z</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>3 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=62&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/62_368_230.jpg" alt="애니메이션 스토리텔링">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>애니메이션 스토리텔링</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>3 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=54&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/54_368_230.jpg" alt="애니메이션 제작 분야, 여러분의 진로는?">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>애니메이션 제작 분야, 여러분의 진로는?</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>5 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
 
 						</div>
 					</div>
@@ -466,64 +534,84 @@
 					<div class="temacard06 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=91&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/91_368_230.jpg" alt="공연에 반하다, 트렌드한 공연 기획이란?">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>공연에 반하다, 트렌드한 공연 기획이란?</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>9 COURSES</b></span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=87&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										<%--<img src="${result.img }" alt="${result.title }">--%>
+										<img src="/upload/themeupload/87_368_230.jpg" alt="당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!</h5>
 										<div class="col-12 sub_text_box">
 											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>
 									</div>
 								</a>
 							</div>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=55&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/55_368_230.jpg" alt="공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>5 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
 
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=63&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/63_368_230.jpg" alt="뮤지컬의 이해">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>뮤지컬의 이해</h5>
 										<div class="col-12 sub_text_box">
 											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
-							</div>
+							</div>--%>
+
+							<%--<div class="sub_theme_process_list swiper-slide">
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=56&menuNo=500157&pageIndex=1'>
+									<div class="col-5 img_box">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/56_368_230.jpg" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기">
+									</div>
+									<div class="col-12 text_box">
+										<h5>감독에게 직접 들어보는 뮤지컬 제작 이야기</h5>
+										<div class="col-12 sub_text_box">
+											<span><b>8 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
+										</div>
+									</div>
+								</a>
+							</div>--%>
 
 						</div>
 					</div>
@@ -536,65 +624,53 @@
 
 				</div>
 
-				<div class="tema-list-box07">
+				<%--<div class="tema-list-box07">
 					<h2 class="main_title">저작권상식</h2>
 					<div class="temacard07 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=65&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/65_368_230.jpg" alt="저작권 노하우">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>저작권 노하우</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>10 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=66&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/66_368_230.jpg" alt="저작권 노하우 (해외편)">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>저작권 노하우 (해외편)</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>4 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=72&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/72_368_230.png" alt="저작권 기초 강좌와 노하우">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>저작권 기초 강좌와 노하우</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
-										</div>
-									</div>
-								</a>
-							</div>
-
-							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
-									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
-									</div>
-									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
-										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>4 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
@@ -609,67 +685,71 @@
 						<div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
 					</div>
 
-				</div>
+				</div>--%>
 
-				<div class="tema-list-box08">
+				<%--<div class="tema-list-box08">
 					<h2 class="main_title">콘텐츠교양</h2>
 					<div class="temacard08 swiper-container">
 						<div class="swiper-wrapper">
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=67&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/67_368_230.jpg" alt="창의적인 생각의 힘">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>창의적인 생각의 힘</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>3 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=64&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/64_368_230.jpg" alt="콘텐츠 제작에 필요한 필수 강좌">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>콘텐츠 제작에 필요한 필수 강좌</h5>
 										<div class="col-12 sub_text_box">
 											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=57&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/57_368_230.jpg" alt="나만의 콘텐츠를 제작하고 싶다면??">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>나만의 콘텐츠를 제작하고 싶다면??</h5>
 										<div class="col-12 sub_text_box">
-											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											<span><b>8 COURSES</b></span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
 							</div>
 
 							<div class="sub_theme_process_list swiper-slide">
-								<a href='<c:out value="${url }" />&amp;${pageQueryString }'>
+								<a href='/edu/onlineEdu/themeLecture/view.do?pId=69&menuNo=500157&pageIndex=1'>
 									<div class="col-5 img_box">
-										<img src="${result.img }" alt="${result.title }">
+										&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+										<img src="https://edu.kocca.kr/upload/themeupload/69_368_230.png" alt="슬기로운 문화생활">
 									</div>
 									<div class="col-12 text_box">
-										<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
+										<h5>슬기로운 문화생활</h5>
 										<div class="col-12 sub_text_box">
 											<span><b>2 COURSES</b></span>
-											<span class="h_desc5">조회수 1.2만</span>
+											&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 										</div>
 									</div>
 								</a>
@@ -684,11 +764,11 @@
 						<div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
 					</div>
 
-				</div>
+				</div>--%>
 
 			</div>
 
-		<c:forEach items="${resultList }" var="result" varStatus="status" >
+<%--		<c:forEach items="${resultList }" var="result" varStatus="status" >
 			<c:url var="url" value="/edu/onlineEdu/themeLecture/view.do">
 				<c:param name="pId" value="${result.id }"/>
 			</c:url>
@@ -704,7 +784,7 @@
 					</div>
 				</a>
 			</div>
-		</c:forEach>
+		</c:forEach>--%>
 
 		</div>
 
