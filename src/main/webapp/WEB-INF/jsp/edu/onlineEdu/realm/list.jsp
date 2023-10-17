@@ -184,6 +184,10 @@
                                             ${result.subjnm }
                                     </a>
                                 </h3>
+
+                                <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
+                                <span class="tag new">NEW</span>
+
                                 <c:if test="${not empty result.lvnm}">
                                     <c:choose>
                                         <c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
@@ -243,6 +247,10 @@
                                             ${result.subjnm }
                                     </a>
                                 </h3>
+
+                                <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
+                                <span class="tag new">NEW</span>
+
                                 <c:if test="${not empty result.lvnm}">
                                     <c:choose>
                                         <c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
@@ -309,6 +317,10 @@
                             <h3 class="fwo_tit_box">
                                     ${result.subjnm }
                             </h3>
+
+                            <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
+                            <span class="tag new">NEW</span>
+
                             <c:if test="${not empty result.lvnm}">
                                 <c:choose>
                                     <c:when test="${result.lvcd eq 'L0101' or result.lvcd eq 'L0201'}">
@@ -389,6 +401,9 @@
                             <h3 class="fwo_tit_box">
                                     ${item3.subjnm }
                             </h3>
+
+                            <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
+                            <span class="tag new">NEW</span>
 
                             <c:if test="${not empty item3.lvnm}">
                                 <c:choose>

@@ -213,7 +213,8 @@
                                     <a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">카테고리</a>
                                     <!-- nav 카테고리 two-daps start -->
                                     <ul>
-                                        <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                        <!-- li태그에 class명 "new"가 붙으면 N아이콘이 생김 -->
+                                        <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                         <li><a href="javascript:void(0);" onclick="fnSearchGoldList('B0'); return false;">방송영상</a></li>
                                         <li><a href="javascript:void(0);" onclick="fnSearchGoldList('G0'); return false;">게임</a></li>
                                         <li><a href="javascript:void(0);" onclick="fnSearchGoldList('K0'); return false;">만화/애니/캐릭터</a></li>

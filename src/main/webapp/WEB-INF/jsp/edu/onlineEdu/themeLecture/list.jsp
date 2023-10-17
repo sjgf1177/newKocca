@@ -98,6 +98,10 @@
 									</div>
 									<div class="col-12 text_box">
 										<h5>시청은 핑계고! 베테랑 제작진 레벨 테스트</h5>
+
+										<!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
+										<span class="tag new">NEW</span>
+
 										<div class="col-12 sub_text_box">
 											<span><b>3 COURSES</b></span>
 											<%--<span class="h_desc5">조회수 1.2만</span>--%>

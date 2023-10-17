@@ -212,6 +212,9 @@ header nav #main_nav .navbar-nav > li > ul > li:hover a{color:#3B85FF;}
 header nav #main_nav .navbar-nav > li > ul > li:first-child > a{padding-left: 13px;}
 header nav #main_nav .navbar-nav > li > ul > li:last-child{border-bottom: none;}
 header nav #main_nav .navbar-nav > li > ul > li:not(:first-child):before{content: none;}
+header nav #main_nav .navbar-nav > li > ul > li.new a{position: relative;}
+header nav #main_nav .navbar-nav > li > ul > li.new a:after{content: ""; display: inline-block; width: 20px; height: 20px; background: url("/edu/images/renew2022/icon_nav_new.png") no-repeat; position: absolute; top:50%; right: -10px; transform: translateY(-50%);}
+header nav #main_nav .navbar-nav > li > ul > li.new:hover a:after{background: url("/edu/images/renew2022/icon_nav_new_hover.png") no-repeat;}
 
 header nav .searchCon .gnb_menu{margin-left: 0;}
 header nav .searchCon .gnb_menu:before{content: none;}
@@ -542,6 +545,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .fwo_card_list_box .swiper-button-prev{position: static; margin-top: 0; width: 48px; height: 48px; background-image: url("/edu/images/renew2022/left_on.png"); background-repeat: no-repeat; background-size: contain;}
 .fwo_card_list_box .swiper-button-next{position: static; margin-top: 0; width: 48px; height: 48px; background-image: url("/edu/images/renew2022/right_on.png"); background-repeat: no-repeat; background-size: contain;}
 [class*="tag"]{width: 54px; height: 32px; padding: 8px 10px;  font-size:1.4rem; text-align:center; border-radius: 32px; color: #fff !important; margin-bottom: 15px;}
+[class*="tag"].new{background-color: #E60020;}
 .fwo_card_list_box .tag_on{background-color: #3B85FF; color: #fff !important;}
 .bg_gray_slide_box{/*border-bottom: 1px solid #dddddd;*/ padding: 50px 0 80px 0; background-color: #F8F8F8;}
 .photoGallery2{padding-top: 0; padding-bottom: 0; margin-top: 70px; border:none;}
