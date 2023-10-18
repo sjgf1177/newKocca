@@ -510,7 +510,7 @@
                             <a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">카테고리</a>
                             <!-- nav 카테고리 two-daps start -->
                             <ul>
-                                <!-- li태그에 class명 "new"가 붙으면 N아이콘이 생김 -->
+                                <!-- li태그에 class명 "new"가 붙으면 N아이콘이 생김.. -->
                                 <c:set var='now_dt' value='${today}'/>
                                 <c:set var='chk_dt' value='2023-10-31'/>
                                 <fmt:parseDate value="${now_dt}" var="pd_now_dt" pattern="yyyy-MM-dd"/>
