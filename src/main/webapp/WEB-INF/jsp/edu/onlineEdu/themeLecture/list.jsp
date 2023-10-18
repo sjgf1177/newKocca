@@ -6,6 +6,9 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc"%>
 
+<jsp:useBean id="todayNow" class="java.util.Date"/>
+<fmt:formatDate value="${todayNow}" var="today" pattern="yyyy-MM-dd"/>
+
 <link href="/edu/css/new/videojs/video-js.css" rel="stylesheet">
 <script src="/edu/js/new/videojs/videojs-ie8.js"></script>
 <script src="/edu/js/new/videojs/video.js"></script>
@@ -100,7 +103,22 @@
 										<h5>시청은 핑계고! 베테랑 제작진 레벨 테스트</h5>
 
 										<!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
-										<span class="tag new">NEW</span>
+
+										<c:set var='now_dt' value='${today}'/>
+										<c:set var='chk_dt' value='2023-10-31'/>
+										<fmt:parseDate value="${now_dt}" var="pd_now_dt" pattern="yyyy-MM-dd"/>
+										<fmt:parseNumber value="${pd_now_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_now_dt"></fmt:parseNumber>
+										<fmt:parseDate value="${chk_dt}" var="pd_chk_dt" pattern="yyyy-MM-dd"/>
+										<fmt:parseNumber value="${pd_chk_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_chk_dt"></fmt:parseNumber>
+
+										<c:choose>
+											<c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
+												<span class="tag new">NEW</span>
+											</c:when>
+											<c:otherwise>
+												<span class="tag">NEW</span>
+											</c:otherwise>
+										</c:choose>
 
 										<div class="col-12 sub_text_box">
 											<span><b>3 COURSES</b></span>

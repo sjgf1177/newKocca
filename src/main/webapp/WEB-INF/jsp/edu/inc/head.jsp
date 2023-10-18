@@ -9,12 +9,15 @@
 <%@ page import="org.springframework.ui.ModelMap" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="kr.co.unp.util.ZValue" %>
 <%@ page import="org.springframework.context.ApplicationContext" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 
 <c:set var='siteName' value='${paramVO.siteName}'/>
+<jsp:useBean id="todayNow" class="java.util.Date"/>
+<fmt:formatDate value="${todayNow}" var="today" pattern="yyyy-MM-dd"/>
 <%
     UsersVO user = UnpUserDetailsHelper.getAuthenticatedUser();
     pageContext.setAttribute("userVO", user);
@@ -246,7 +249,22 @@
                         <!-- nav 카테고리 two-daps start -->
                         <ul>
                             <!-- li태그에 class명 "new"가 붙으면 N아이콘이 생김 -->
-                            <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                            <c:set var='now_dt' value='${today}'/>
+                            <c:set var='chk_dt' value='2023-10-31'/>
+                            <fmt:parseDate value="${now_dt}" var="pd_now_dt" pattern="yyyy-MM-dd"/>
+                            <fmt:parseNumber value="${pd_now_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_now_dt"></fmt:parseNumber>
+                            <fmt:parseDate value="${chk_dt}" var="pd_chk_dt" pattern="yyyy-MM-dd"/>
+                            <fmt:parseNumber value="${pd_chk_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_chk_dt"></fmt:parseNumber>
+
+                            <c:choose>
+                                <c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
+                                    <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                </c:when>
+                                <c:otherwise>
+                                    <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                </c:otherwise>
+                            </c:choose>
+
                             <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('B0'); return false;">방송영상</a></li>
                             <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('G0'); return false;">게임</a></li>
                             <li><a href="javascript:void(0);" onclick="fnCmdSearchGoldList('K0'); return false;">만화/애니/캐릭터</a></li>
