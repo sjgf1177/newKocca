@@ -111,16 +111,17 @@
 										<fmt:parseDate value="${chk_dt}" var="pd_chk_dt" pattern="yyyy-MM-dd"/>
 										<fmt:parseNumber value="${pd_chk_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_chk_dt"></fmt:parseNumber>
 
-										<c:choose>
-											<c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
-												<span class="tag new">NEW</span>
-											</c:when>
-											<c:otherwise>
-												<span class="tag">NEW</span>
-											</c:otherwise>
-										</c:choose>
+
 
 										<div class="col-12 sub_text_box">
+											<c:choose>
+												<c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
+													<span class="tag new" style="margin-bottom: 0; margin-right: 10px;">NEW</span>
+												</c:when>
+												<c:otherwise>
+													<span class="tag">NEW</span>
+												</c:otherwise>
+											</c:choose>
 											<span><b>3 COURSES</b></span>
 											<%--<span class="h_desc5">조회수 1.2만</span>--%>
 										</div>

@@ -1127,7 +1127,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .sub_section .sub_contents_body .sub_theme_process .sub_theme_process_list > a {width: 100%;}
 .sub_section .sub_contents_body .sub_theme_process .sub_theme_process_list .img_box img{border-radius: 18px;}
 .sub_section .sub_contents_body .sub_theme_process .sub_theme_process_list .text_box{padding: 10px 0; display: block;}
-.sub_text_box{display: flex; justify-content: space-between;}
+.sub_text_box{display: flex; /*justify-content: space-between;*/ align-items: center;}
 .sub_section .sub_contents_body .sub_theme_process .sub_theme_process_list .text_box .h_desc5{height: auto; letter-spacing: 0.1px;}
 
 [class^="tema-list-box"]{position: relative;}
