@@ -1205,7 +1205,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
     .Listmy.roadmap_box .control_board_header .board_sorting_con fieldset{justify-content: flex-start; flex-wrap: wrap;}
     .Listmy .board_sorting_con .input_search_con{width: 100%;}
 
-    .video_box{height:calc(100% - 65%);}
+    .video_box{height:calc(100% - 9%);}
 
     .dark_search_box{font-size: 1rem; height: 380px; margin-bottom: 40px; background: url("/edu/images/renew2022/TemaBenner_bg_mobile.png") no-repeat; background-size: 100% 450px;}
     .dark_search_box .inner-box .board_sorting_con{width: 90%;}
@@ -1227,6 +1227,27 @@ table.board_type_0.notice thead th{font-size: 15px;}
 
 }
 
+@media all and (max-width:500px) {
+    .video_box {
+        height: calc(100% - 40%);
+    }
+}
+@media all and (max-width:450px) {
+    .video_box {
+        height: calc(100% - 50%);
+    }
+}
+
+@media all and (max-width:420px) {
+    .video_box {
+        height: calc(100% - 60%);
+    }
+}
+@media all and (max-width:360px) {
+    .video_box {
+        height: calc(100% - 70%);
+    }
+}
 
 /* 콘텐츠인사이트 */
 .sub_section .sub_contents_body .contents_insight_header{float:left;}
