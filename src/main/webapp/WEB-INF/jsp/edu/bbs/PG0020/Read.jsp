@@ -35,19 +35,22 @@
 		<div class="evt_info_box">
 			<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
 			<%--<p class="date_tag_on">D-10</p>--%>
-			<p class="data"><c:if test="${result.nttId ne '75371'}">이벤트기간 : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></c:if></span></p>
+			<p class="data"><c:if test="${result.nttId ne '75371'}"><span>이벤트기간 : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></c:if></p>
 		</div>
 		<div class="evt_btn_box">
 			<p>지금 참여하시겠습니까?</p>
 			<c:if test="${not empty result.option1 and result.option1 ne '' }">
-				<c:if test="${result.nttId ne '75375' and result.nttId ne '75378'}">
-				<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >이벤트 참여</a>
+				<c:if test="${result.nttId ne '75375' and result.nttId ne '75378' and result.nttId ne '75405'}">
+					<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >이벤트 참여</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75375'}">
 					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">이벤트 참여</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75378'}">
                     <a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">이벤트 참여</a>
+				</c:if>
+				<c:if test="${result.nttId eq '75405'}">
+					<a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">이벤트 참여</a>
 				</c:if>
 			</c:if>
 		</div>
