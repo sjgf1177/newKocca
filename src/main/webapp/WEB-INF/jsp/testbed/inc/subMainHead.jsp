@@ -183,7 +183,7 @@
                                 <ul>
                                     <!-- li태그에 class명 "new"가 붙으면 N아이콘이 생김 -->
                                     <c:set var='now_dt' value='${today}'/>
-                                    <c:set var='chk_dt' value='2023-10-31'/>
+                                    <c:set var='chk_dt' value='2023-11-30'/>
                                     <fmt:parseDate value="${now_dt}" var="pd_now_dt" pattern="yyyy-MM-dd"/>
                                     <fmt:parseNumber value="${pd_now_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_now_dt"></fmt:parseNumber>
                                     <fmt:parseDate value="${chk_dt}" var="pd_chk_dt" pattern="yyyy-MM-dd"/>
