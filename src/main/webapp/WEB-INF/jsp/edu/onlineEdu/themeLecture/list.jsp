@@ -287,7 +287,7 @@
 									<h5>프로그래밍부터 엔진까지, 게임 개발 바이블</h5>
 									<div class="col-12 sub_text_box">
 										<c:if test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
-											<span class="tag new" style="margin-bottom: 0; margin-right: 10px;">NEW1</span>
+											<span class="tag new" style="margin-bottom: 0; margin-right: 10px;">NEW</span>
 										</c:if>
 										<span><b>6 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
