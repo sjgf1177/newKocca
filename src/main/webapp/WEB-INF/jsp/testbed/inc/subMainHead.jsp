@@ -213,11 +213,11 @@
                                 <!-- nav 이벤트 two-daps start -->
                                 <ul>
                                     <li><a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">콘텐츠스텝업</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>
+                                    <%--<li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
+                                    <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>--%>
                                     <li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">창의인재동반</a></li>
                                     <li><a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">콘텐츠인사이트</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500213">콘텐츠임팩트</a></li>
+                                    <%--<li><a href="/edu/main/contents.do?menuNo=500213">콘텐츠임팩트</a></li>--%>
                                     <li><a href="/edu/main/contents.do?menuNo=500179">콘텐츠원캠퍼스</a></li>
                                     <%--<li>
                                         <!-- 현url 에듀코카이야기에서 에듀코카페이지로 변경해야함-->
@@ -230,6 +230,7 @@
                                             주요성과
                                         </a>
                                     </li>--%>
+                                    <li><a href="https://www.ncakocca.kr/" target="_blank">뉴콘텐츠아카데미</a></li>
                                 </ul>
                                 <!-- nav 사업안내 two-daps end -->
                             </li>

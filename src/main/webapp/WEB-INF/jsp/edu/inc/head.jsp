@@ -299,6 +299,7 @@
                                     주요성과
                                 </a>
                             </li>--%>
+                            <li><a href="https://www.ncakocca.kr/" target="_blank">뉴콘텐츠아카데미</a></li>
                         </ul>
                         <!-- nav 사업안내 two-daps end -->
                     </li>
