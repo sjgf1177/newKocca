@@ -103,6 +103,110 @@ $(document).ready(function() {
         }
     });
 
+    var fwocard04 = new Swiper('.fwo_card04 .fwo_card', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.fwo_card04 .swiper-button-next'
+        ,prevButton: '.fwo_card04 .swiper-button-prev'
+        ,breakpoints: {
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 40
+            },
+            1279: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    var fwocard05 = new Swiper('.fwo_card05 .fwo_card', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.fwo_card05 .swiper-button-next'
+        ,prevButton: '.fwo_card05 .swiper-button-prev'
+        ,breakpoints: {
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 40
+            },
+            1279: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    var fwocard06 = new Swiper('.fwo_card06 .fwo_card', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.fwo_card06 .swiper-button-next'
+        ,prevButton: '.fwo_card06 .swiper-button-prev'
+        ,breakpoints: {
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 40
+            },
+            1279: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+        }
+    });
+
+    var fwocard07 = new Swiper('.fwo_card07 .fwo_card', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.fwo_card07 .swiper-button-next'
+        ,prevButton: '.fwo_card07 .swiper-button-prev'
+        ,breakpoints: {
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 40
+            },
+            1279: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+        }
+    });
+
 
     // KOCCA 교육 사업 슬라이드
     var threecard01 = new Swiper('.main_study_contents .three_card01', {
