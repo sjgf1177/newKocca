@@ -230,6 +230,37 @@
 <body>
 <script type="text/javascript">
 
+    // 레이어 팝업 열기
+    function popupOpen(popID) {
+
+        var showLength = $('#' + popID).siblings('[class^="layer_"]:visible').length;
+
+        if (showLength > 0) {
+            $('.bg_layer').css({'z-index': 1000 + (showLength + 1)});
+            $('#' + popID).css({ 'z-index': 1001 + (showLength + 2) }).fadeIn(200);
+        } else {
+            $('.bg_layer').css({'z-index': 1000}).fadeIn(200);
+            $('#' + popID).fadeIn(200);
+        }
+    };
+
+
+    // 레이어 팝업 닫기
+    function popupClose(popID) {
+
+        var showLength = $('#' + popID).siblings('[class^="layer_"]:visible').length;
+
+        $('#' + popID).fadeOut(200);
+
+        if (showLength == 0) {
+            $('.bg_layer').fadeOut(200).css({ 'z-index': 1000 });
+
+        } else {
+            $('.bg_layer').css({ 'z-index': 1000 + (showLength - 2) });
+        }
+
+    };
+
     function search2(form) {
         if (!form.q.value) {
             alert("검색어를 입력하세요.");
@@ -1539,6 +1570,22 @@
         </script>
     </div>
     <!-- //footer -->
+
+    <!-- layer 컨텐츠 인사이트 팝업-->
+    <div class="bg_layer"></div>
+    <div id="event" class="layer_event">
+        <div class="layr_header">
+            <!--<h3>이벤트</h3>-->
+            <button type="button" class="btnIcon_close" onclick="popupClose('event')" title="팝업 닫기"></button>
+        </div>
+        <div class="layr_content">
+            <div class="event_img_box">
+                <a href="http://contentinsight.co.kr/2023/" target="_blank"><img src="/edu/images/event/layer_event01.png" alt=""></a>
+            </div>
+        </div>
+        <div class="layr_footer">
+        </div>
+    </div>
 </div>
 </body>
 </html>

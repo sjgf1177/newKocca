@@ -830,6 +830,20 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .board_util_btn_con .btn_style_0.full.list{background-image: none;}
 .contents_view_area .mw-1280 > p{text-align: center;}
 
+/* layer 팝업 */
+.bg_layer{position: fixed; top:0; left:0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;}
+[class^="layer_"]{ position: fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1001; background-color: #fff; box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.05), 0 20px 24px -4px rgba(0, 0, 0, 0.08); }
+[class^="layer_"] .layr_header{padding: 3rem 6rem 3rem 3rem;}
+[class^="layer_"] .layr_header h3{font-size: 20px; font-weight: 600;}
+[class^="layer_"] .btnIcon_close{position: absolute; top:2rem; right: 2rem; background-image: url("/edu/img/gnb_close_black.png"); background-repeat: no-repeat; background-color: transparent;}
+.btnIcon_close{width: 3rem; height: 3rem;}
+[id^="layer_"] .layr_content{overflow-x: hidden; overflow-y: auto; padding: 1rem 3rem 2rem; width: 100%; max-height: 65rem;}
+[id^="layer_"] .layr_footer{padding: 2rem 3rem;}
+.layer_event{width: 600px;}
+[class^="layer_"] .event_img_box{height: 60vh;}
+
+.layr_content .event_img_box a, .layr_content .event_img_box a img{display: block; width: 100%; height: 100%;}
+
 @media all and (max-width:1280px) {
     .sub_title{
         font-size: 2.4rem;
@@ -851,6 +865,8 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .sub_section .sub_contents_body .event_card_wrap .swiper-wrapper{flex-direction: column;}
     .sub_section .sub_contents_body .event_card_wrap .event_card_list{width: 100%; max-width: 100%;}
     .e_end_back_box{height: 95%;}
+
+    .layer_event{width: 90%;}
 }
 
 /* 카테고리 */
