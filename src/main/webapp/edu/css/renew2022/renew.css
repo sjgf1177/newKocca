@@ -1198,7 +1198,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
     .edu_info_box .edu_txt_box .edu_tit{font-size: 2rem;}
     .edu_info_box .edu_txt_box .edu_add_txt, .edu_info_box .edu_txt_box .jindo_box{font-size: 1.4rem;}
 
-    .video_box{margin-bottom: 20px; width:100%; height:calc(100% - 39%);}
+    .video_box{margin-bottom: 20px; width:100%;}
 
     .rowcard_box .theme_process_list_wrap .text_box{padding: 0 30px 30px 30px;}
     .rowcard_box .check_style_0_con{right: 20px;}
@@ -1241,6 +1241,21 @@ table.board_type_0.notice thead th{font-size: 15px;}
     .rowcard_box .theme_process_list_wrap .theme_process_list .text_box h5{font-size: 2rem; line-height: 2.5rem;}
     .rowcard_box .theme_process_list_wrap .theme_process_list_desc{font-size: 14.5px; line-height: 2rem;}
 
+}
+@media screen and (min-width:1081px) and (max-width:1180px) {
+    .video_box {
+        max-width: 100%;
+    }
+}
+@media all and (max-width:960px) {
+    .video_box {
+        height: 100%;
+    }
+}
+@media all and (max-width:640px) {
+    .video_box {
+        height: calc(100% - 50%);
+    }
 }
 
 @media all and (max-width:500px) {

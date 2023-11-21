@@ -79,7 +79,7 @@
 		<!-- 차시목록 -->
 		<div class="col-12 lectListSet" style="min-height:auto;">
 			<!-- Movie Player -->
-			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex; height: 576px;">
+			<div class="lectMovSet" style="background:#ffffff; width:100%; overflow:hidden; position:relative; display: flex;">
 				<!-- 차시내용 -->
 				<div id="lectListTemp" style="display:none">
 					<jsp:include page="lectList.jsp"></jsp:include>
@@ -264,11 +264,33 @@
 </div>
 <!-- //차시목록 -->
 <style>
-@media (max-width: 780px){
-	.lectMovSet{
-		height:600px !important;
+	.lectMovSet{height: 576px;}
+
+	/* 태블릿 */
+	@media screen and (min-width:1081px) and (max-width:1180px) {
+		.lectMovSet{
+			height: 900px !important;
+		}
 	}
-}
+	@media screen and (min-width:961px) and (max-width:1080px) {
+		.lectMovSet{
+			height: 110vh !important;
+		}
+	}
+	@media screen and (min-width:641px) and (max-width:960px) {
+		.lectMovSet{
+			height: 100vh !important;
+		}
+	}
+
+	/* 모바일 */
+	@media screen and (min-width:280px) and (max-width:640px) {
+
+		.lectMovSet{
+			height: 600px !important;
+		}
+	}
+
 </style>
 <script type="text/javascript">
 	$(".eye_off").click(function (e) {
