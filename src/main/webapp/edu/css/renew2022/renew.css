@@ -832,15 +832,15 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
 /* layer 팝업 */
 .bg_layer{position: fixed; top:0; left:0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.5); z-index: 1000;}
-[class^="layer_"]{ position: fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1001; background-color: #fff; box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.05), 0 20px 24px -4px rgba(0, 0, 0, 0.08); }
+[class^="layer_new"]{ position: fixed; top:50%; left:50%; transform:translate(-50%, -50%); z-index: 1001; background-color: #fff; box-shadow: 0 8px 8px -4px rgba(0, 0, 0, 0.05), 0 20px 24px -4px rgba(0, 0, 0, 0.08); }
 [class^="layer_"] .layr_header{padding: 3rem 6rem 3rem 3rem;}
 [class^="layer_"] .layr_header h3{font-size: 20px; font-weight: 600;}
 [class^="layer_"] .btnIcon_close{position: absolute; top:2rem; right: 2rem; background-image: url("/edu/img/gnb_close_black.png"); background-repeat: no-repeat; background-color: transparent;}
 .btnIcon_close{width: 3rem; height: 3rem;}
 [id^="layer_"] .layr_content{overflow-x: hidden; overflow-y: auto; padding: 1rem 3rem 2rem; width: 100%; max-height: 65rem;}
 [id^="layer_"] .layr_footer{padding: 2rem 3rem;}
-.layer_event{width: 600px;}
-[class^="layer_"] .event_img_box{height: 60vh;}
+.layer_new_event{width: 600px;}
+/*[class^="layer_"] .event_img_box{height: 60vh;}*/
 [class^="layer_"] .swiper_btn_box button{width: 40px; height: 40px; position: absolute; top: 50%; background-repeat: no-repeat; background-size: contain;}
 [class^="layer_"] .swiper_btn_box .swiper-button-prev{left:15px; background-image: url("/edu/images/renew2022/arrow-left-circle-fill.svg")}
 [class^="layer_"] .swiper_btn_box .swiper-button-next{right:15px;background-image: url("/edu/images/renew2022/arrow-right-circle-fill.svg")}
@@ -869,7 +869,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
     .sub_section .sub_contents_body .event_card_wrap .event_card_list{width: 100%; max-width: 100%;}
     .e_end_back_box{height: 95%;}
 
-    .layer_event{width: 90%;}
+    .layer_new_event{width: 90%;}
 }
 
 /* 카테고리 */

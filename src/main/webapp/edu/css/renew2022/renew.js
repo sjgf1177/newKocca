@@ -480,7 +480,7 @@ $(document).ready(function() {
     });
 
     // 레이어 팝업 슬라이드
-    var popupsilde = new Swiper('.layer_event .layr_content', {
+    var popupsilde = new Swiper('.layer_new_event .layr_content', {
         /*loop: true,*/
         speed : 700
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
@@ -488,8 +488,8 @@ $(document).ready(function() {
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
 
         //구버전 swiper 방향표
-        ,nextButton: '.layer_event .swiper-button-next'
-        ,prevButton: '.layer_event .swiper-button-prev'
+        ,nextButton: '.layer_new_event .swiper-button-next'
+        ,prevButton: '.layer_new_event .swiper-button-prev'
 
     });
 
