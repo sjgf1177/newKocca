@@ -1504,6 +1504,7 @@
             </div>
         </div>
 
+
         <iframe name="ssoAuthFrame" id="ssoAuthFrame" style="width:0px;height:0px;border:0;" src="http://edusso.kocca.dev.kr/sso/member/checkSSO.do?service=edu&amp;menuNo=&amp;userTp=0" title="SSO 로그인 유무확인 프레임 입니다."></iframe>
 
         <script>
@@ -1578,9 +1579,18 @@
             <!--<h3>이벤트</h3>-->
             <button type="button" class="btnIcon_close" onclick="popupClose('event')" title="팝업 닫기"></button>
         </div>
-        <div class="layr_content">
-            <div class="event_img_box">
-                <a href="http://contentinsight.co.kr/2023/" target="_blank"><img src="/edu/images/event/layer_event01.png" alt=""></a>
+        <div class="layr_content swiper-container">
+            <div class="swiper-wrapper">
+                <div class="event_img_box swiper-slide">
+                    <a href="https://edu.kocca.kr/edu/archiveUser/contentsList.do?menuNo=500259&workField=1" target="_blank"><img src="/edu/images/event/layer_event02.png" alt=" 2023 창의인재동반사업 온라인 성과전시 바로가기"></a>
+                </div>
+                <div class="event_img_box swiper-slide">
+                    <a href="http://contentinsight.co.kr/2023/" target="_blank"><img src="/edu/images/event/layer_event01.png" alt="2023 현업인 참여강화를 위한 콘텐츠 인사이트 바로가기"></a>
+                </div>
+            </div>
+            <div class="swiper_btn_box">
+                <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
             </div>
         </div>
         <div class="layr_footer">

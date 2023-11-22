@@ -479,6 +479,20 @@ $(document).ready(function() {
         $(".all_list_btn").toggleClass('off'); //전체보기 버튼 보기
     });
 
+    // 레이어 팝업 슬라이드
+    var popupsilde = new Swiper('.layer_event .layr_content', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+
+        //구버전 swiper 방향표
+        ,nextButton: '.layer_event .swiper-button-next'
+        ,prevButton: '.layer_event .swiper-button-prev'
+
+    });
+
 
 
 
