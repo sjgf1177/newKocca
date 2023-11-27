@@ -1573,10 +1573,10 @@
     <!-- //footer -->
 
     <!-- layer 컨텐츠 인사이트 팝업-->
+    <!--
     <div class="bg_layer"></div>
     <div id="event" class="layer_new_event">
         <div class="layr_header">
-            <!--<h3>이벤트</h3>-->
             <button type="button" class="btnIcon_close" onclick="popupClose('event')" title="팝업 닫기"></button>
         </div>
         <div class="layr_content swiper-container">
@@ -1596,6 +1596,7 @@
         <div class="layr_footer">
         </div>
     </div>
+    -->
 </div>
 </body>
 </html>
