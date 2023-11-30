@@ -1767,7 +1767,7 @@
 												AND    SUBJSEQ = S1.SUBJSEQ) AS FAVORSUBJCNT
 										FROM   VZ_SCSUBJSEQIMGMOBILE S1
 										WHERE  S1.PROPSTART NOT IN (' ')
-										AND    '20200101000000' <= S1.INDATE
+										AND    TO_CHAR(ADD_MONTHS(SYSDATE, -36), 'yyyymmdd') || '000000' <= S1.INDATE
 									   ) A
 								WHERE  A.GRCODE = #grcode#
 								AND    A.ISUSE  = 'Y'
@@ -2015,7 +2015,7 @@
 												AND    SUBJSEQ = S1.SUBJSEQ) AS FAVORSUBJCNT
 										FROM   VZ_SCSUBJSEQIMGMOBILE S1
 										WHERE  S1.PROPSTART NOT IN (' ')
-										AND    '20200101000000' <= S1.INDATE
+										AND    TO_CHAR(ADD_MONTHS(SYSDATE, -36), 'yyyymmdd') || '000000' <= S1.INDATE
 									   ) A
 								WHERE  A.GRCODE = #grcode#
 								AND    A.ISUSE  = 'Y'
