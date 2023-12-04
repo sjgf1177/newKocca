@@ -11,6 +11,20 @@
 <sec:authentication var="user" property="credentials"/>
 <%-- <c:set value="${user != 'anonymousUser' ? user : '' }" var="userVrify" /> --%>
 <c:set value="${user }" var="userflag"/>
+<%--<link type="text/css" href="/edu/css/jplayer/reset.css" rel="stylesheet" />--%>
+<link type="text/css" href="/edu/css/jplayer/jplayer.css" rel="stylesheet" />
+<link type="text/css" href="/edu/css/jplayer/content.css" rel="stylesheet" />
+<link type="text/css" href="/edu/css/jplayer/animate.css" rel="stylesheet" />
+
+<%--<script type="text/javascript" src="/js/jplayer/jquery1.12.4.min.js"></script>--%>
+<script type="text/javascript" src="/js/jplayer/jquery.jplayer.js"></script>
+<script type="text/javascript" src="/js/jplayer/transit.js"></script>
+<script type="text/javascript" src="/js/jplayer/jquery.textillate.js"></script>
+<script type="text/javascript" src="/js/jplayer/jquery.fittext.js"></script>
+<script type="text/javascript" src="/js/jplayer/jquery.lettering.js"></script>
+<script type="text/javascript" src="/js/jplayer/siteSecurity_1.1.js"></script>
+<script type="text/javascript" src="/js/jplayer/jquery.easing.js"></script>
+<script type="text/javascript" src="/js/jplayer/common.js"></script>
 <style type="text/css">
     .lnb_con {display: none;}
     .sub_contents_wrap .sub_contents {padding-left: 0;}
@@ -113,6 +127,7 @@
 
     function fnDirectLoadMP4(file, width, height, vttPath) {
         var tagObj = "";
+        var tagObj2 = "";
 
         tagObj = '<video width="100%" height="auto" max-width="' + width + '" oncontextmenu="return false;" controls="true" controlslist="nodownload">\n';
         tagObj += '<source src="' + file + '" type="video/mp4">\n';
@@ -123,8 +138,114 @@
 
         tagObj += '</video>';
 
+        tagObj2 =  '<div id="jp_container_1" class="jp-video jp-video-360p subVideo" role="application" aria-label="media player" style="width:100%; height:auto; max-width:' + width + '">';
+        tagObj2 += '    <div class="jp-type-single">';
+        tagObj2 += '        <div id="jquery_jplayer_1" class="jp-jplayer"></div>';
+        tagObj2 += '        <div class="jpback"></div>';
+        tagObj2 += '        <div class="jp-gui">';
+        tagObj2 += '            <div class="jp-video-play"></div>';
+        tagObj2 += '            <div class="jp-gradient-box"></div>';
+        tagObj2 += '            <div class="jp-bottom-controls">';
+        tagObj2 += '                <div class="jp-progress">';
+        tagObj2 += '                    <div class="jp-seek-bar">';
+        tagObj2 += '                        <div class="jp-play-bar"></div>';
+        tagObj2 += '                    </div>';
+        tagObj2 += '                    <div class="jp-limit"></div>';
+        tagObj2 += '                </div>';
+        tagObj2 += '                <div class="jp-interface">';
+        tagObj2 += '                    <div class="jp-inbox">';
+        tagObj2 += '                        <div class="jp-controls-holder">';
+        tagObj2 += '                            <div class="jp-controls">';
+        tagObj2 += '                                <button class="jp-play tooltip" role="button" tabIndex="0" title="재생"><span class="sub_tooltip">재생</span></button>';
+        tagObj2 += '                                <div class="jp-time-display">';
+        tagObj2 += '                                    <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>';
+        tagObj2 += '                                    <div class="jp-time-line">/</div>';
+        tagObj2 += '                                    <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>';
+        tagObj2 += '                                </div>';
+        tagObj2 += '                            </div>';
+        tagObj2 += '                        </div>';
+        tagObj2 += '                        <div class="jp-volume-controls">';
+        tagObj2 += '                            <button class="jp-mute tooltip" role="button" tabIndex="0" title="볼륨"><span class="sub_tooltip">볼륨</span></button>';
+        tagObj2 += '                            <div class="jp-volume-bar">';
+        tagObj2 += '                                <div class="jp-volume-bar-value"></div>';
+        tagObj2 += '                            </div>';
+        tagObj2 += '                        </div>';
+        tagObj2 += '                        <div class="jp-util">';
+        tagObj2 += '                            <ul>';
+        tagObj2 += '                                <li><a href="javascript:;" class="u_index tooltip" title="목차"><span class="sub_tooltip">목차</span></a></li>';
+        tagObj2 += '                            </ul>';
+        tagObj2 += '                            <div class="jp-toggles">';
+        tagObj2 += '                                <div class="jp-speed">';
+        tagObj2 += '                                    <div class="jp-toggles-text tooltip" title="재생 속도"><span class="sub_tooltip">재생속도</span></div>';
+        tagObj2 += '                                    <div class="jp-speed-btn-box">';
+        tagObj2 += '                                        <button class="speed sp2" data-speed="0">0.5</button>';
+        tagObj2 += '                                        <button class="speed sp3" data-speed="2">1.0</button>';
+        tagObj2 += '                                        <button class="speed sp4" data-speed="4">1.5</button>';
+        tagObj2 += '                                        <button class="speed sp5" data-speed="6">2.0</button>';
+        tagObj2 += '                                        <h4 style="display: none">재생 속도</h4>';
+        tagObj2 += '                                    </div>';
+        tagObj2 += '                                </div>';
+        tagObj2 += '                            </div>';
 
-        $("#vodArea").html(tagObj);
+        if(vttPath.indexOf(".vtt") != -1) {
+            tagObj2 += '                        <button class="jp-script tooltip" role="button" tabIndex="0" title="자막"><span class="sub_tooltip">자막</span></button>';
+        }
+
+        tagObj2 += '                            <button class="jp-full-screen tooltip" role="button" tabIndex="0" title="전체화면"><span class="sub_tooltip">전체화면</span></button>';
+        tagObj2 += '                        </div>';
+        tagObj2 += '                    </div>';
+        tagObj2 += '                </div>';
+        tagObj2 += '            </div>';
+        tagObj2 += '            <div id="indexNavi"><div id="navigation"></div></div>';
+        tagObj2 += '            <div id="chapterNavi"><div id="chapnavigation"></div></div>';
+        tagObj2 += '        </div>';
+        tagObj2 += '        <div class="scriptWrap">';
+        tagObj2 += '            <div class="ScriptPart">';
+        tagObj2 += '                    <span class="teller"></span>';
+        tagObj2 += '                    <span class="scriptTxt"></span>';
+        tagObj2 += '            </div>';
+        tagObj2 += '        </div>';
+        tagObj2 += '    </div>';
+        tagObj2 += '    <button class="jp-play mobile" role="button" tabindex="0" title="재생"></button>';
+        tagObj2 += '</div>';
+
+        //$("#vodArea").html(tagObj);
+        $("#vodArea").html(tagObj2);
+        //$("#vodArea").hide();
+        //$("#vodArea").hide();
+
+        $('#jquery_jplayer_1').jPlayer({
+            ready: function (event) {
+                $(this).jPlayer('setMedia', {
+                    m4v: file,
+                    poster: '/images/jplayer/cover.png' //썸네일
+                });
+
+                if(!navigator.userAgent.match(/Android|Mobile|iP(hone|od|ad)|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/)){
+                    $(this).jPlayer('play');
+                }
+
+            },
+            swfPath:'js',
+            supplied:'m4v',
+            size: {
+                width:'100%',
+                height:'auto',
+                cssClass:'jp-video-360p'
+            },
+            useStateClassSkin: true,
+            autoBlur: false,
+            smoothPlayBar: true,
+            keyEnabled: true,
+            remainingDuration: false,
+            toggleDuration: false,
+            //	autohide: {restored: true, fadeIn:200},
+            volume: 0.5,
+            ended : function(){
+
+            }
+        });
+        //$("#jp_container_1").hide();
     }
 
     function fnLoadMP4(creduGateUrl, width, height) {
@@ -184,6 +305,7 @@
             } else if (vodPath.indexOf("mp4") > 0) {
                 $("#vodAreaHtml").html("<div bgcolor=\"#ffffff\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\" marginheight=\"0\"><div id=\"vodArea\"></div></div>");
                 fnDirectLoadMP4(vodPath, width, height, vttPath);
+                PlayerEvent(vttPath);
             } else {
                 $.get(vodUrl, function (data) {
                 }, 'html').done(function (data) {
@@ -309,6 +431,7 @@
         }
     }
 </script>
+
 
 <div class="over-hidden sub_contents_header">
     <div class="linemap_wrap"> <%-- fl class 삭제 --%>
@@ -456,66 +579,66 @@
 
 <%-- 연계과정 html --%>
 <c:if test="${fn:length(nextList) > 0}">
-<div class="fwo_card_list_box fwo_card01 col-center mw-1280">
-    <span class="main_title">연계과정</span>
-    <div class="fwo_card swiper-container swiper-container-horizontal">
-        <ul class="swiper-wrapper">
-            <c:forEach items="${nextList }" var="nextResult">
-                <li class="swiper-slide">
-                    <c:url var="url" value="/edu/onlineEdu/openLecture/view.do?pSeq=${nextResult.seq }&amp;${pageQueryString }&amp;pageIndex=${param.pageIndex }&amp;pageIndex2=&amp;pLectureCls=${param.pLectureCls }"/>
-                    <c:choose>
-						<c:when test="${nextResult.type == 'S'}">
-                    		<a class="show-block" href="/edu/onlineEdu/realm/view.do?p_gubun=&amp;p_subj=${nextResult.courseId }&amp;p_subjseq=${nextResult.subjseq }&amp;p_year=${nextResult.year }&amp;menuNo=500027">
-                        </c:when>
-                        <c:otherwise>
-							<a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${nextResult.type }', '${nextResult.courseId }', '${nextResult.courseName }', '${nextResult.isonoff }', '${nextResult.scupperclass }', '${nextResult.uclassnm }', '${nextResult.year }', '${nextResult.subjseq }'); return false;">
-						</c:otherwise>
-					</c:choose>
+    <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
+        <span class="main_title">연계과정</span>
+        <div class="fwo_card swiper-container swiper-container-horizontal">
+            <ul class="swiper-wrapper">
+                <c:forEach items="${nextList }" var="nextResult">
+                    <li class="swiper-slide">
+                        <c:url var="url" value="/edu/onlineEdu/openLecture/view.do?pSeq=${nextResult.seq }&amp;${pageQueryString }&amp;pageIndex=${param.pageIndex }&amp;pageIndex2=&amp;pLectureCls=${param.pLectureCls }"/>
+                        <c:choose>
+                        <c:when test="${nextResult.type == 'S'}">
+                        <a class="show-block" href="/edu/onlineEdu/realm/view.do?p_gubun=&amp;p_subj=${nextResult.courseId }&amp;p_subjseq=${nextResult.subjseq }&amp;p_year=${nextResult.year }&amp;menuNo=500027">
+                            </c:when>
+                            <c:otherwise>
+                            <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${nextResult.type }', '${nextResult.courseId }', '${nextResult.courseName }', '${nextResult.isonoff }', '${nextResult.scupperclass }', '${nextResult.uclassnm }', '${nextResult.year }', '${nextResult.subjseq }'); return false;">
+                                </c:otherwise>
+                                </c:choose>
 
-					<%-- 썸네일 start --%>
-					<div class="fwo_snail_box">
-						<img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='<c:out value="${nextResult.imgfile }" />' onerror="this.src='/edu/images/renew2022/non_img.png'"/>
-						<%-- 설명란 start --%>
-						<div class="fwo_info_box">
-							<h3 class="fwo_tit_box"><c:out value="${nextResult.courseName }" escapeXml="false"/></h3>
-							<c:if test="${not empty nextResult.lvnm}">
-								<c:choose>
-									<c:when test="${nextResult.lvcd eq 'L0101' or nextResult.lvcd eq 'L0201'}">
-										<span class="tag L1">${nextResult.lvnm}</span>
-									</c:when>
-									<c:when test="${nextResult.lvcd eq 'L0102' or nextResult.lvcd eq 'L0202'}">
-										<span class="tag L2">${nextResult.lvnm}</span>
-									</c:when>
-									<c:when test="${nextResult.lvcd eq 'L0103' or nextResult.lvcd eq 'L0203'}">
-										<span class="tag L3">${nextResult.lvnm}</span>
-									</c:when>
-								</c:choose>
-							</c:if>
-							<p>온라인교육ㆍ
-								<c:if test="${not empty nextResult.g3nm}">
-									${nextResult.g3nm}
-								</c:if>
+                                    <%-- 썸네일 start --%>
+                                <div class="fwo_snail_box">
+                                    <img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='<c:out value="${nextResult.imgfile }" />' onerror="this.src='/edu/images/renew2022/non_img.png'"/>
+                                        <%-- 설명란 start --%>
+                                    <div class="fwo_info_box">
+                                        <h3 class="fwo_tit_box"><c:out value="${nextResult.courseName }" escapeXml="false"/></h3>
+                                        <c:if test="${not empty nextResult.lvnm}">
+                                            <c:choose>
+                                                <c:when test="${nextResult.lvcd eq 'L0101' or nextResult.lvcd eq 'L0201'}">
+                                                    <span class="tag L1">${nextResult.lvnm}</span>
+                                                </c:when>
+                                                <c:when test="${nextResult.lvcd eq 'L0102' or nextResult.lvcd eq 'L0202'}">
+                                                    <span class="tag L2">${nextResult.lvnm}</span>
+                                                </c:when>
+                                                <c:when test="${nextResult.lvcd eq 'L0103' or nextResult.lvcd eq 'L0203'}">
+                                                    <span class="tag L3">${nextResult.lvnm}</span>
+                                                </c:when>
+                                            </c:choose>
+                                        </c:if>
+                                        <p>온라인교육ㆍ
+                                            <c:if test="${not empty nextResult.g3nm}">
+                                                ${nextResult.g3nm}
+                                            </c:if>
 
-								<c:if test="${empty nextResult.g3nm}">
-									${nextResult.g2nm}
-								</c:if>
-							</p>
-						</div>
-						<%-- 설명란 end --%>
-					</div>
-					<%-- 썸네일 end --%>
+                                            <c:if test="${empty nextResult.g3nm}">
+                                                ${nextResult.g2nm}
+                                            </c:if>
+                                        </p>
+                                    </div>
+                                        <%-- 설명란 end --%>
+                                </div>
+                                    <%-- 썸네일 end --%>
 
-					</a>
-                </li>
-            </c:forEach>
-        </ul>
+                            </a>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+            <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
+        <div class="swiper_btn_box">
+            <div><button type="button" class="swiper-button-prev swiper-button-disabled" title="이전 배너보기"></button></div>
+            <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
+        </div>
     </div>
-    <%-- 방향 버튼 상황에 따라 추가 삭제가능 --%>
-    <div class="swiper_btn_box">
-        <div><button type="button" class="swiper-button-prev swiper-button-disabled" title="이전 배너보기"></button></div>
-        <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
-    </div>
-</div>
 </c:if>
 
 <form id="frm" name="frm" method="post" class="form-inline">
