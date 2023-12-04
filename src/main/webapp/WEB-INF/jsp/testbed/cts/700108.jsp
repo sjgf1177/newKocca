@@ -79,7 +79,7 @@
             <th class="color_black">한국콘텐츠진흥원 로고</th>
             <td>
                 <div class="board_util_btn_con">
-                    <a href="/upload/testbed/kocca_logo_2019.zip" class="btn_style_0 share_room_download_icon_con">
+                    <a href="/upload/testbed/CI_basic_v2_new.zip" class="btn_style_0 share_room_download_icon_con">
                         다운로드<span class="share_room_download_icon"><img src="/edu/images/bm/btn_style_0_download_icon.png" alt="다운로드"></span>
                     </a>
                 </div>
@@ -97,7 +97,7 @@
             <th class="color_black">콘텐츠문화광장 로고</th>
             <td>
                 <div class="board_util_btn_con">
-                    <a href="/upload/testbed/kocca_logo_2019.zip" class="btn_style_0 share_room_download_icon_con">
+                    <a href="/upload/testbed/KOCCA_Multi_Content_Testbed_logo.zip" class="btn_style_0 share_room_download_icon_con">
                         다운로드<span class="share_room_download_icon"><img src="/edu/images/bm/btn_style_0_download_icon.png" alt="다운로드"></span>
                     </a>
                 </div>
