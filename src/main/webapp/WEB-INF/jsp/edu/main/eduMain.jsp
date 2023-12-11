@@ -554,7 +554,7 @@
                                         <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                     </c:when>
                                     <c:otherwise>
-                                        <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                        <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                     </c:otherwise>
                                 </c:choose>
 
@@ -1504,7 +1504,6 @@
             </div>
         </div>
 
-
         <iframe name="ssoAuthFrame" id="ssoAuthFrame" style="width:0px;height:0px;border:0;" src="http://edusso.kocca.dev.kr/sso/member/checkSSO.do?service=edu&amp;menuNo=&amp;userTp=0" title="SSO 로그인 유무확인 프레임 입니다."></iframe>
 
         <script>
@@ -1520,7 +1519,7 @@
                 m.parentNode.insertBefore(a, m)
             })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-96105088-12', 'auto');
+            ga('create', 'G-9L2B36ZV50', 'auto');
             ga('send', 'pageview');
         </script>
 
@@ -1573,10 +1572,10 @@
     <!-- //footer -->
 
     <!-- layer 컨텐츠 인사이트 팝업-->
+    <!--
     <div class="bg_layer"></div>
-    <div id="event" class="layer_event">
+    <div id="event" class="layer_new_event">
         <div class="layr_header">
-            <!--<h3>이벤트</h3>-->
             <button type="button" class="btnIcon_close" onclick="popupClose('event')" title="팝업 닫기"></button>
         </div>
         <div class="layr_content swiper-container">
@@ -1596,6 +1595,7 @@
         <div class="layr_footer">
         </div>
     </div>
+    -->
 </div>
 </body>
 </html>

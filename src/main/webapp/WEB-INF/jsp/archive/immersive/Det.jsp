@@ -615,7 +615,7 @@ function winMarkPopup(theURL,winName,features) { //v2.0
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-96105088-12', 'auto');
+  ga('create', 'G-9L2B36ZV50', 'auto');
   ga('send', 'pageview');
 
 </script>
