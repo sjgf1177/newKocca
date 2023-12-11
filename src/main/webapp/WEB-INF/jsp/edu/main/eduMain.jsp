@@ -230,6 +230,37 @@
 <body>
 <script type="text/javascript">
 
+    // 레이어 팝업 열기
+    function popupOpen(popID) {
+
+        var showLength = $('#' + popID).siblings('[class^="layer_"]:visible').length;
+
+        if (showLength > 0) {
+            $('.bg_layer').css({'z-index': 1000 + (showLength + 1)});
+            $('#' + popID).css({ 'z-index': 1001 + (showLength + 2) }).fadeIn(200);
+        } else {
+            $('.bg_layer').css({'z-index': 1000}).fadeIn(200);
+            $('#' + popID).fadeIn(200);
+        }
+    };
+
+
+    // 레이어 팝업 닫기
+    function popupClose(popID) {
+
+        var showLength = $('#' + popID).siblings('[class^="layer_"]:visible').length;
+
+        $('#' + popID).fadeOut(200);
+
+        if (showLength == 0) {
+            $('.bg_layer').fadeOut(200).css({ 'z-index': 1000 });
+
+        } else {
+            $('.bg_layer').css({ 'z-index': 1000 + (showLength - 2) });
+        }
+
+    };
+
     function search2(form) {
         if (!form.q.value) {
             alert("검색어를 입력하세요.");
@@ -523,7 +554,7 @@
                                         <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                     </c:when>
                                     <c:otherwise>
-                                        <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                        <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                     </c:otherwise>
                                 </c:choose>
 
@@ -1488,7 +1519,7 @@
                 m.parentNode.insertBefore(a, m)
             })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            ga('create', 'UA-96105088-12', 'auto');
+            ga('create', 'G-9L2B36ZV50', 'auto');
             ga('send', 'pageview');
         </script>
 
@@ -1539,6 +1570,32 @@
         </script>
     </div>
     <!-- //footer -->
+
+    <!-- layer 컨텐츠 인사이트 팝업-->
+    <!--
+    <div class="bg_layer"></div>
+    <div id="event" class="layer_new_event">
+        <div class="layr_header">
+            <button type="button" class="btnIcon_close" onclick="popupClose('event')" title="팝업 닫기"></button>
+        </div>
+        <div class="layr_content swiper-container">
+            <div class="swiper-wrapper">
+                <div class="event_img_box swiper-slide">
+                    <a href="https://edu.kocca.kr/edu/archiveUser/contentsList.do?menuNo=500259&workField=1" target="_blank"><img src="/edu/images/event/layer_event02.png" alt=" 2023 창의인재동반사업 온라인 성과전시 바로가기"></a>
+                </div>
+                <div class="event_img_box swiper-slide">
+                    <a href="http://contentinsight.co.kr/2023/" target="_blank"><img src="/edu/images/event/layer_event01.png" alt="2023 현업인 참여강화를 위한 콘텐츠 인사이트 바로가기"></a>
+                </div>
+            </div>
+            <div class="swiper_btn_box">
+                <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
+            </div>
+        </div>
+        <div class="layr_footer">
+        </div>
+    </div>
+    -->
 </div>
 </body>
 </html>
