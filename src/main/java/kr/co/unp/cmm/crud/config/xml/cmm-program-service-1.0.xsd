@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.unpl.co.kr/schema/cmm-program-service" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans" targetNamespace="http://www.unpl.co.kr/schema/cmm-program-service" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans" schemaLocation="http://www.springframework.org/schema/beans/spring-beans.xsd" />
+
+	<xsd:element name="cps">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="listeners" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="listener" type="listenerType" minOccurs="0" maxOccurs="50" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:group ref="beans:beanElements" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="beans:beanAttributes" />
+			<xsd:attributeGroup ref="cpsAttrGroup" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="bbs">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="listeners" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="listener" type="listenerType" minOccurs="0" maxOccurs="50" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:group ref="beans:beanElements" />
+			</xsd:sequence>
+			<xsd:attributeGroup ref="beans:beanAttributes" />
+			<xsd:attributeGroup ref="cpsAttrGroup" />
+			<xsd:attribute name="del-permanently-query-id" type="xsd:string" />
+			<xsd:attribute name="restore-query-id" type="xsd:string" />
+			<xsd:attribute name="reply-list-query-id" type="xsd:string" />
+			<xsd:attribute name="update-inqire-co-query-id" type="xsd:string" />
+			<xsd:attribute name="prev-query-id" type="xsd:string" />
+			<xsd:attribute name="next-query-id" type="xsd:string" />
+			<xsd:attribute name="pageGeneratorDAO" type="xsd:string" />
+		</xsd:complexType>
+	</xsd:element>
+
+
+	<xsd:complexType name="listenerType">
+		<xsd:attribute name="target-methods" type="xsd:string" />
+		<xsd:attribute name="ref" type="xsd:string" />
+		<xsd:attribute name="before-method" type="xsd:string" />
+		<xsd:attribute name="after-method" type="xsd:string" />
+	</xsd:complexType>
+
+	<xsd:attributeGroup name="cpsAttrGroup">
+		<xsd:attribute name="id" type="xsd:string" use="required" />
+		<xsd:attribute name="list-query-id" type="xsd:string" />
+		<xsd:attribute name="count-query-id" type="xsd:string" />
+		<xsd:attribute name="view-query-id" type="xsd:string" />
+		<xsd:attribute name="insert-query-id" type="xsd:string" />
+		<xsd:attribute name="update-query-id" type="xsd:string" />
+		<xsd:attribute name="delete-query-id" type="xsd:string" />
+		<xsd:attribute name="excel-query-id" type="xsd:string" />
+		<xsd:attribute name="sqlDao" type="xsd:string" />
+		<xsd:attribute name="fileMngService" type="xsd:string" />
+		<xsd:attribute name="listHandler" type="xsd:string" />
+		<xsd:attribute name="excelUploadService" type="xsd:string" />
+		<xsd:attribute name="pageInfo" type="xsd:string" />
+		<xsd:attribute name="pageQuery" type="xsd:string" />
+		<xsd:attribute name="accessor" type="xsd:string" />
+	</xsd:attributeGroup>
+</xsd:schema>
