@@ -261,7 +261,7 @@
                                     <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                 </c:when>
                                 <c:otherwise>
-                                    <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                    <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                 </c:otherwise>
                             </c:choose>
 

@@ -170,6 +170,13 @@ public class FnwBBSManageServiceImpl extends DefaultCmmProgramService implements
 		String bbsTyCode = masterVO.getBbsTyCode();
 		param.put("bbsTyCode", bbsTyCode);
 
+		String str = param.getString("pageIndex");
+		boolean isNumeric =  str.matches("[+-]?\\d*(\\.\\d+)?");
+
+		if(!isNumeric){
+			param.setValue("pageIndex", "1");
+		}
+
 		param.put("pageUnit", masterVO.getPageUnit());
 		param.put("pageSize", masterVO.getPageSize());
 		if ((SiteMngService.CKLMOBILE_SITE_NAME).equals(param.getString("siteName")) || (SiteMngService.EDUMOBILE_SITE_NAME).equals(param.getString("siteName"))) {

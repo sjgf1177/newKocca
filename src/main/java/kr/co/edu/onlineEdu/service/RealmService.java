@@ -66,8 +66,12 @@ public class RealmService extends DefaultCmmProgramService {
 		// 과정 ON/OFF 여부
 		if(!param.getString("p_isonoff").equals("ON") && !param.getString("p_isonoff").equals("OFF")){
 			param.setValue("p_isonoff", "");
-		}		
-		
+		}
+
+		if(!param.getString("p_list_type").equals("C")){
+			param.setValue("p_list_type", "");
+		}
+
 		// 과정분류 존재여부
 		int uClassNmCnt = lmsSqlDao.selectCount("realmListDAO.uClassNmCount", param);
 
@@ -91,6 +95,8 @@ public class RealmService extends DefaultCmmProgramService {
         	param.setValue("p_ordersnm", "");
         	param.setValue("p_orders", "");
         }
+
+		param.setValue("p_orders", "");
 		
 		// 목록 갯수 숫자형 여부 체크
 		//String strPageIndex = param.getString("pageIndex");

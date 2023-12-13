@@ -99,11 +99,11 @@
                     <input type="hidden" name="pGubun2" id="pGubun2" value='<c:out value="${not empty param.pGubun2?param.pGubun2:param.option1 }" />'/>
                     <input type="hidden" name="pGubun3" id="pGubun3" value='<c:out value="${not empty param.pGubun3?param.pGubun3:param.option5 }" />'/>
                     <input type="hidden" name="p_ordersnm" id="p_ordersnm" value='<c:out value="${param.p_ordersnm }"/>'/>
-                    <input type="hidden" name="p_orders" id="p_orders" value='<c:out value="${param.p_orders }"/>'/>
+<%--                    <input type="hidden" name="p_orders" id="p_orders" value='<c:out value="${param.p_orders }"/>'/>--%>
                     <input type="hidden" name="p_subj" id="p_subj" value=""/>
                     <input type="hidden" name="p_subjnm" id="p_subjnm" value=""/>
                     <input type="hidden" name="p_isonoff" id="p_isonoff" value=""/>
-                    <input type="hidden" name="p_scupperclass" id="p_scupperclass" value=""/>
+<%--                    <input type="hidden" name="p_scupperclass" id="p_scupperclass" value=""/>--%>
                     <input type="hidden" name="p_uclassnm" id="p_uclassnm" value=""/>
                     <input type="hidden" name="p_year" id="p_year" value=""/>
                     <input type="hidden" name="p_subjseq" id="p_subjseq" value=""/>
@@ -516,6 +516,15 @@
             $(".dae-list-box").toggleClass('off'); // 슬라이드 숨기기
             $(".category_list_btn").toggleClass('on'); // 카테고리로 버튼 보기
             $(".all_list_btn").toggleClass('off'); //전체보기 버튼 보기
+        } else {
+/*           if('${param.p_list_type}'.length > 0) {
+               $("#frm").attr({
+                   action: "/edu/onlineEdu/realm/list.do?menuNo=<c:out value='${paramVO.menuNo }'/>",
+                   method: "post",
+                   target: "_self"
+               });
+               $("#frm").submit();
+           }*/
         }
     });
 
