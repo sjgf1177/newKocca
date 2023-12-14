@@ -156,7 +156,9 @@
         tagObj2 += '                    <div class="jp-inbox">';
         tagObj2 += '                        <div class="jp-controls-holder">';
         tagObj2 += '                            <div class="jp-controls">';
+        tagObj2 += '                                <button class="jp-cur-rewind tooltip" role="button" tabIndex="0" title="10초이전"><span class="sub_tooltip">10초이전</span></button>';
         tagObj2 += '                                <button class="jp-play tooltip" role="button" tabIndex="0" title="재생"><span class="sub_tooltip">재생</span></button>';
+        tagObj2 += '                                <button class="jp-cur-forward tooltip" role="button" tabIndex="0" title="10초건너뛰기"><span class="sub_tooltip">10초건너뛰기</span></button>';
         tagObj2 += '                                <div class="jp-time-display">';
         tagObj2 += '                                    <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>';
         tagObj2 += '                                    <div class="jp-time-line">/</div>';
@@ -176,7 +178,7 @@
         tagObj2 += '                            </ul>';
         tagObj2 += '                            <div class="jp-toggles">';
         tagObj2 += '                                <div class="jp-speed">';
-        tagObj2 += '                                    <div class="jp-toggles-text tooltip" title="재생 속도"><span class="sub_tooltip">재생속도</span></div>';
+        tagObj2 += '                                    <div class="jp-toggles-text tooltip" title="재생 속도" tabIndex="0"><span class="sub_tooltip">재생속도</span></div>';
         tagObj2 += '                                    <div class="jp-speed-btn-box">';
         tagObj2 += '                                        <button class="speed sp2" data-speed="0">0.5</button>';
         tagObj2 += '                                        <button class="speed sp3" data-speed="2">1.0</button>';
@@ -206,7 +208,9 @@
         tagObj2 += '            </div>';
         tagObj2 += '        </div>';
         tagObj2 += '    </div>';
+        tagObj2 += '    <div class="circle-static-rewind"><p class="">10초이전</p></div>';
         tagObj2 += '    <button class="jp-play mobile" role="button" tabindex="0" title="재생"></button>';
+        tagObj2 += '    <div class="circle-static-forward"><p class="">10초건너뛰기</p></div>';
         tagObj2 += '</div>';
 
         //$("#vodArea").html(tagObj);
