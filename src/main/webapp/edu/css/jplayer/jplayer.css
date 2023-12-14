@@ -84,7 +84,7 @@ button{background: transparent; border: none;}
 .jp-toggles button {display:inline-block; color:#fff; font-size: 14px; font-weight: 600; padding:15px; background: transparent; border:none; cursor:pointer;}
 .jp-toggles button:hover{background: rgba(255,255,255, 0.13); border-radius: 3%;}
 .jp-toggles-text {position: relative; display:inline-block; width: 62px; height: 100%; color:#fff; background: url(/images/jplayer/svg/speed_FILL0_wght400_GRAD0_opsz48.svg) center no-repeat; cursor: pointer;}
-.jp-speed-btn-box{display:none; position: absolute; top: -246px; left: -60px; width: 180px; background:rgb(0,0,0, 0.85); flex-direction: column-reverse; box-sizing: border-box; border-radius: 4%; transition: 0.3s;}
+.jp-speed-btn-box{display:none; position: absolute; top: -192px; left: -60px; width: 180px; background:rgb(0,0,0, 0.85); flex-direction: column-reverse; box-sizing: border-box; border-radius: 4%; transition: 0.3s;}
 .jp-speed-btn-box h4{font-size: 14px; color:#fff; text-align: center; border-bottom: 1px solid rgba(255,255,255, 0.35); padding: 15px 0;}
 .jp-speed-btn-box.on{display: flex; z-index: 101;}
 
