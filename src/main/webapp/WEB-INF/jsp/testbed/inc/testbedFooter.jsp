@@ -130,11 +130,11 @@ function winMarkPopup(theURL,winName,features) { //v2.0
                  		<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" title="국가 공인 인증기관 : 웹와치 새창열림" target="_blank"><img src="/edu/images/bm/web_watch_mark.jpg" border="0" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)"/>
                  		</a>
                  	</li>
-					<li>
-<%--						<a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="새창열림">
-							<img src="/edu/images/bm/internet_comunication_satisfaction_logo_2019.png" alt="대한민국인터넷소통대상 (ICSI)인증마크">
-						</a>--%>
-					</li>
+                 	<li>
+ <%--                	 	<a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="새창열림">
+                			<img src="/edu/images/bm/internet_comunication_satisfaction_logo_2019.png" alt="대한민국인터넷소통대상 (ICSI)인증마크">
+                 		</a> --%>
+                 	</li>
              	</ul>
          	</div>
         </div>
@@ -153,7 +153,7 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 <div class="souceUrl"  style="color:#fff">*/WEB-INF/jsp${empty includePage ? currMenu.contentsPath : includePage}</div>
 </c:if>
 
-<script>
+<%--<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -162,6 +162,17 @@ function winMarkPopup(theURL,winName,features) { //v2.0
   ga('create', 'UA-96105088-12', 'auto');
   ga('send', 'pageview');
 
+</script>--%>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2B36ZV50"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-9L2B36ZV50');
 </script>
 
 <!-- UX분석 뷰저블 -->

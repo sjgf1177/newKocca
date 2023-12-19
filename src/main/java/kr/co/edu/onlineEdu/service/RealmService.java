@@ -202,6 +202,14 @@ public class RealmService extends DefaultCmmProgramService {
 		String v_subjseq = "";
 		String v_event = "N";
 
+		String cv_subj = param.getString("p_subj");
+		String cv_subjseq = param.getString("p_subjseq");
+		String cv_year = param.getString("p_year");
+
+		param.setValue("p_subj", cv_subj);
+		param.setValue("p_subjseq", cv_subjseq);
+		param.setValue("p_year", cv_year);
+
 		v_year = param.getString("p_year");
 		v_subjseq = param.getString("p_subjseq");
 		v_event = param.getString("event");

@@ -392,7 +392,7 @@
         $("#s_subjseq").val(subjseq);
 
         $("#frm").attr({
-            action: "/edu/onlineEdu/realm/view.do?menuNo=500027",
+            action: "/edu/onlineEdu/realm/view.do?menuNo=500027&p_subj=" + subj + "&p_year=" + year + "&p_subjseq=" + subjseq,
             method: "post",
             target: "_self"
         });
@@ -870,6 +870,67 @@
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1172&pLectureCls=GC01" tabindex="-1">
+                                            <img src="/edu/images/renew2022/new_class06.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="new_txt_box">
+                                        <h3>크리에이터를 만드는 크리에이터</h3>
+                                        <p class="new_info_box">
+                                            채널 컨설팅부터 마케팅과 브랜딩까지!<br>
+                                            콘텐츠의 시작과 끝을 책임진다.<br>
+                                            크리에이터와 함께하는 사람들의 이야기
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1166&pLectureCls=GC04" tabindex="-1">
+                                            <img src="/edu/images/renew2022/new_class07.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="new_txt_box">
+                                        <h3>무한한 창작, 음악에 관하여</h3>
+                                        <p class="new_info_box">
+                                            음악 콘텐츠🎵 창작엔 끝이 없다!<br>
+                                            매체별 작품 제작 사례와 함께 알아보는<br>
+                                            음악 창작과 실무 이야기
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1186&pLectureCls=GC05" tabindex="-1">
+                                            <img src="/edu/images/renew2022/new_class08.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="new_txt_box">
+                                        <h3>장애인을 고려한 접근성 높은 게임</h3>
+                                        <p class="new_info_box">
+                                            누구나 즐길 수 있는 게임?🎮<br>
+                                            게임 콘텐츠 접근성과 재미를 모두 잡는다!<br>
+                                            장애인을 위한 게임 편의성 향상 프로젝트<br>
+                                            * 본 과정은 ‘수어자막‘ 버전으로도 제공됩니다.
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1180&pLectureCls=GC01" tabindex="-1">
+                                            <img src="/edu/images/renew2022/new_class09.png" alt="">
+                                        </a>
+                                    </span>
+                                    <div class="new_txt_box">
+                                        <h3>콘텐츠, 스토리텔링을 담다</h3>
+                                        <p class="new_info_box">
+                                            탐사 보도부터 서바이벌, 스포츠 예능까지!<br>
+                                            온라인 콘텐츠로 만나는 현장의 생생함<br>
+                                            진정성, 리얼리티 그리고 공감의 이야기
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
                                         <a href="https://url.kr/4kizp9" tabindex="-1">
                                             <img src="/edu/images/renew2022/new_class05.png" alt="">
                                         </a>
@@ -981,6 +1042,34 @@
                         </span>
                         <div class="swiper-container one_card01">
                             <ul class="swiper-wrapper pc">
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1172&pLectureCls=GC01">
+                                            <img src="/edu/images/renew2022/m_new_class06.png" alt="">
+                                        </a>
+                                    </span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1166&pLectureCls=GC04">
+                                            <img src="/edu/images/renew2022/m_new_class07.png" alt="">
+                                        </a>
+                                    </span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1186&pLectureCls=GC05">
+                                            <img src="/edu/images/renew2022/m_new_class08.png" alt="">
+                                        </a>
+                                    </span>
+                                </li>
+                                <li class="swiper-slide">
+                                    <span class="new_snail_box">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1180&pLectureCls=GC01">
+                                            <img src="/edu/images/renew2022/m_new_class09.png" alt="">
+                                        </a>
+                                    </span>
+                                </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://url.kr/4kizp9">
@@ -1506,7 +1595,7 @@
 
         <iframe name="ssoAuthFrame" id="ssoAuthFrame" style="width:0px;height:0px;border:0;" src="http://edusso.kocca.dev.kr/sso/member/checkSSO.do?service=edu&amp;menuNo=&amp;userTp=0" title="SSO 로그인 유무확인 프레임 입니다."></iframe>
 
-        <script>
+<%--        <script>
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
                 i[r] = i[r] || function () {
@@ -1521,6 +1610,16 @@
 
             ga('create', 'G-9L2B36ZV50', 'auto');
             ga('send', 'pageview');
+        </script>--%>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2B36ZV50"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-9L2B36ZV50');
         </script>
 
         <script type="text/javascript">

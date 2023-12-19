@@ -143,7 +143,7 @@
         $("#s_subjseq").val(subjseq);
 
         $("#frm").attr({
-            action: "/edu/onlineEdu/realm/view.do?menuNo=500027",
+            action: "/edu/onlineEdu/realm/view.do?menuNo=500027&p_subj=" + subj + "&p_year=" + year + "&p_subjseq=" + subjseq,
             method: "post",
             target: "_self"
         });
