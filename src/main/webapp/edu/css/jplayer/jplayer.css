@@ -32,7 +32,7 @@ button{background: transparent; border: none;}
 
 
 
-.jp-controls-holder {width:160px; height:100%; z-index:10;}
+.jp-controls-holder {width:20em; height:100%; z-index:10;}
 .jp-controls {display:flex; align-items:center; width:100%; height: 100%; margin-left: 10px;}
 .jp-play {position:relative; width:38px; height:30px; padding:0;}
 .jp-play {background:url('/images/jplayer/svg/play_arrow_FILL1_wght400_GRAD0_opsz48.svg') center no-repeat; background-color:transparent;}
@@ -46,6 +46,11 @@ button{background: transparent; border: none;}
 /*.jp-script:hover {background:url('/images/jplayer/jplayer/jp_script_btn_on.png') left top no-repeat;}*/
 .jp-replay {width:40px; height:30px; padding:0; background:url('/images/jplayer/jplayer/jp_replay_btn.png') left top no-repeat;}
 /*.jp-replay:hover {background:url('/images/jplayer/jplayer/jp_replay_btn_on.png') left top no-repeat;}*/
+
+.jp-cur-rewind{position:relative; width:30px; height:30px; padding:0;}
+.jp-cur-rewind{background:url('/images/jplayer/svg/fast_rewind_FILL1_wght400_GRAD0_opsz48.svg') center no-repeat; background-color:transparent; background-size: contain;}
+.jp-cur-forward{position:relative; width:30px; height:30px; padding:0;}
+.jp-cur-forward{background:url('/images/jplayer/svg/fast_forward_FILL1_wght400_GRAD0_opsz48.svg') center no-repeat; background-color:transparent; background-size: contain;}
 
 .jp-time-display{display: flex; align-items: center; margin-left: 10px;}
 /*.jp-current-time {width:auto; top:2px; float:left; display:inline-block; cursor:default; font-size:12px; color:#0dccfa;}*/
@@ -79,7 +84,7 @@ button{background: transparent; border: none;}
 .jp-toggles button {display:inline-block; color:#fff; font-size: 14px; font-weight: 600; padding:15px; background: transparent; border:none; cursor:pointer;}
 .jp-toggles button:hover{background: rgba(255,255,255, 0.13); border-radius: 3%;}
 .jp-toggles-text {position: relative; display:inline-block; width: 62px; height: 100%; color:#fff; background: url(/images/jplayer/svg/speed_FILL0_wght400_GRAD0_opsz48.svg) center no-repeat; cursor: pointer;}
-.jp-speed-btn-box{display:none; position: absolute; top: -246px; left: -60px; width: 180px; background:rgb(0,0,0, 0.85); flex-direction: column-reverse; box-sizing: border-box; border-radius: 4%; transition: 0.3s;}
+.jp-speed-btn-box{display:none; position: absolute; top: -192px; left: -60px; width: 180px; background:rgb(0,0,0, 0.85); flex-direction: column-reverse; box-sizing: border-box; border-radius: 4%; transition: 0.3s;}
 .jp-speed-btn-box h4{font-size: 14px; color:#fff; text-align: center; border-bottom: 1px solid rgba(255,255,255, 0.35); padding: 15px 0;}
 .jp-speed-btn-box.on{display: flex; z-index: 101;}
 
@@ -186,14 +191,18 @@ button{background: transparent; border: none;}
 .play {display:none; position:absolute; left:50%; top:50%; margin:-100px 0 0 -102px; z-index:10;}
 
 
-.jp-play.mobile{position: absolute; top:50%; left:50%; width:210px; height:210px; transform: translate(-50%, -50%); cursor: pointer; display: none; background: url(/images/jplayer/svg/play_circle_FILL0_wght500_GRAD0_opsz48.svg) no-repeat; background-size: contain;}
+.jp-play.mobile{display: block; position: absolute; top:50%; left:50%; width:210px; height:210px; transform: translate(-50%, -50%); cursor: pointer; background: url(/images/jplayer/svg/play_circle_FILL0_wght500_GRAD0_opsz48.svg) no-repeat; background-size: contain;}
 .jp-state-playing .jp-play.mobile{background: url('/images/jplayer/svg/pause_circle_FILL0_wght500_GRAD0_opsz48.svg') no-repeat; background-size: contain;}
 
+[class^="circle-static"]{display:none; position: absolute; top:50%; width:110px; transform: translate(-50%, -50%); padding-top: 70px; background-repeat: no-repeat; background-size: 30px; background-position: center; background-color: rgba(0,0,0,.6); border-radius: 50%; transition: all 2s;}
+[class^="circle-static"] p{margin-bottom: 30px; font-size: 1.2rem; color:#fff;}
+.circle-static-rewind{left:20%; background-image: url("/images/jplayer/svg/fast_rewind_FILL1_wght400_GRAD0_opsz48.svg");}
+.circle-static-forward{right:10%; background-image: url("/images/jplayer/svg/fast_forward_FILL1_wght400_GRAD0_opsz48.svg");}
 
 @media screen and (max-width:1024px){
   .jp-gradient-box{height: 100%; background: rgb(0,0,0, 0.7);}
   .jp-current-time, .jp-time-line, .jp-duration{font-size: 14px;}
-  .jp-controls-holder{width: 240px;}
+  .jp-controls-holder{width: 23em;}
   
   .jp-script{position: relative;}
   .jp-script:after{left:25px;}
@@ -206,7 +215,7 @@ button{background: transparent; border: none;}
 }
 
 @media screen and (max-width:640px){
-  .jp-controls-holder{width: 105px;}
+  .jp-controls-holder{width: 16em;}
   .jp-controls .jp-play, .jp-speed{display: none;}
   .u_chapter{display: none;}
   
@@ -218,6 +227,12 @@ button{background: transparent; border: none;}
   .jp-controls .pageNext{right: 3em;}
 
   .jp-stop{width: 10em; height: 10em;}
+
+  [class^="circle-static"]{width:80px; padding-top: 50px;}
+  [class^="circle-static"] p{margin-bottom: 15px;}
+  .circle-static-forward{right: -5%;}
+
+  .jp-full-screen, .jp-script{width: 40px;}
 }
 
 @media screen and (max-width:380px){

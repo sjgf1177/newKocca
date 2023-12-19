@@ -1,20 +1,7 @@
 function PlayerEvent(vtt){
 $(function (){
 
-  // 다운로드 창
-  /*
-  $('.u_download').bind('click',function(){
-    if ($(this).is('.on')){
-      $('#tgDown').fadeOut(300);
-      $(this).removeClass('on');
-      if ($('.quiz').length > 0 || $('.jp-limit').length > 0){}else{$('#jquery_jplayer_1').jPlayer('play');}
-    } else {
-      $('#tgDown').fadeIn(300);
-      $(this).addClass('on');
-      if ($('.quiz').length > 0 || $('.jp-limit').length > 0){}else{$('#jquery_jplayer_1').jPlayer('pause');}
-    }
-  });
-  */
+
   // 스피드 변경
   $('.speed').each(function(){
     $(this).bind('click',function(){
@@ -155,6 +142,7 @@ $(function (){
     $(".jp-gui").show();
     $('.scriptWrap').css('bottom','45px');
     //$(".jp-gradient-box").show();
+    $(".jp-play.mobile").show();
 
     clearTimeout(moveTimer); //머무른시간 초기화
     moveTimer = setTimeout(function(){ //setTimeout으로 3초뒤 이벤트 실행
@@ -162,7 +150,7 @@ $(function (){
       $('.scriptWrap').css('bottom','6px');
       //$(".jp-gradient-box").fadeOut();
       $(".jp-play.mobile").hide();
-      console.log('3초동안 마우스 움직임없음');
+      //console.log('3초동안 마우스 움직임없음');
     },3000)
   });
 
@@ -172,7 +160,7 @@ $(function (){
     $(".jp-play.mobile").hide();
     $('.scriptWrap').css('bottom','6px');
 
-    console.log('컨트롤러에서 벗어남!');
+    //console.log('컨트롤러에서 벗어남!');
   });
 
 
@@ -202,7 +190,7 @@ $(function (){
       $(".jp-gui").show();
       //$(".jp-gradient-box").show();
       $(".jp-play.mobile").show();
-      console.log('모바일 123');
+      //console.log('모바일 123');
       $('.scriptWrap').css('bottom','43px');
 
     });
@@ -211,12 +199,12 @@ $(function (){
     //1024px 초과일 때
     console.log(' iframe 플레이어 가로너비 984px 초과');
 
-    $('.jp-play.mobile').hide();
+    //$('.jp-play.mobile').hide();
     //마우스올렸을때 컨트롤러 보임
     $("#jp_container_1").mouseenter(function(){
 
       $(".jp-gui").show();
-
+      $(".jp-play.mobile").show();
       //$(".jp-gradient-box").show();
       $('.scriptWrap').css('bottom','45px');
       //console.log('마우스 영역안에 들어옴');
@@ -228,6 +216,61 @@ $(function (){
   }
 
   var videoDOM = $("#jp_video_0");
+
+  //영상 10초 전,후 이동
+  $("[class^='jp-cur-']").on({
+    'click': function(){
+      var className = $(this).hasClass('jp-cur-rewind');
+      var currentTime = videoDOM[0].currentTime;
+
+      if (className) {
+        //10초전 이동
+        $('#jquery_jplayer_1').jPlayer('play',currentTime - 10);
+        $('.circle-static-rewind').fadeIn(500, function (){
+          $(this).fadeOut();
+        })
+        //console.log('10초전');
+
+      } else {
+        //10초후 이동
+        if(videoDOM[0].duration == currentTime){
+            return;
+        } else{
+          $('#jquery_jplayer_1').jPlayer('play',currentTime + 10);
+          $('.circle-static-forward').fadeIn(500, function (){
+            $(this).fadeOut();
+          })
+          //console.log('1 : ',videoDOM[0].duration);
+          //console.log('2 : ',currentTime);
+        }
+      }
+    }
+
+  });
+  
+  //키보드 제어
+  $(document).keydown(function (event){
+    var key = event.keyCode;
+    var currentTime = videoDOM[0].currentTime;
+    if(key==37){
+      //왼쪽
+      $('#jquery_jplayer_1').jPlayer('play',currentTime - 10);
+      $('.circle-static-rewind').fadeIn(500, function (){
+        $(this).fadeOut();
+      })
+    }else if(key==38){
+      //위
+    }else if(key==39){
+      //오른쪽
+      $('#jquery_jplayer_1').jPlayer('play',currentTime + 10);
+      $('.circle-static-forward').fadeIn(500, function (){
+        $(this).fadeOut();
+      })
+    }else if(key==40){
+      //아래
+    }
+
+  });
 
   /* 자막 */
   setTimeout(function() {
