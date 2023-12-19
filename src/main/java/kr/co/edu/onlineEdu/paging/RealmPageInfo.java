@@ -23,12 +23,12 @@ public class RealmPageInfo implements PageQuery<ZValue> {
 		queryString.append("&amp;p_subj=").append(param.getString("p_subj"));
 		queryString.append("&amp;p_subjnm=").append(param.getString("p_subjnm"));
 		queryString.append("&amp;p_isonoff=").append(param.getString("p_isonoff"));
-		queryString.append("&amp;p_scupperclass=").append(param.getString("p_scupperclass"));
+		/*queryString.append("&amp;p_scupperclass=").append(param.getString("p_scupperclass"));*/
 		queryString.append("&amp;p_uclassnm=").append(param.getString("p_uclassnm"));
 		queryString.append("&amp;p_year=").append(param.getString("p_year"));
 		queryString.append("&amp;p_subjseq=").append(param.getString("p_subjseq"));
 		queryString.append("&amp;p_tabselect=").append(param.getString("p_tabselect"));
-		queryString.append("&amp;p_orders=").append(param.getString("p_orders"));
+		/*queryString.append("&amp;p_orders=").append(param.getString("p_orders"));*/
 		queryString.append("&amp;p_ordersnm=").append(param.getString("p_ordersnm"));
 		queryString.append("&amp;p_searchtext=").append(param.getString("p_searchtext"));
 		
