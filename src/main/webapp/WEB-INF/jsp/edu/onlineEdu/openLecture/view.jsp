@@ -209,7 +209,7 @@
         tagObj2 += '        </div>';
         tagObj2 += '    </div>';
         tagObj2 += '    <div class="circle-static-rewind"><p class="">10초이전</p></div>';
-        tagObj2 += '    <button class="jp-play mobile" role="button" tabindex="0" title="재생"></button>';
+        tagObj2 += '    <button class="jp-play mobile" role="button" tabindex="0" title=""></button>';
         tagObj2 += '    <div class="circle-static-forward"><p class="">10초건너뛰기</p></div>';
         tagObj2 += '</div>';
 

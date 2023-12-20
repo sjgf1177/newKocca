@@ -296,9 +296,6 @@ textarea::-ms-input-placeholder { /* Internet Explorer Edge  */color:#c5c5c5;}
 
 
 @media screen and (max-width:1023px){
-	/*자막*/
-	#scriptBox{width: 95%; left:50%;}
-	#scriptBox{bottom: 3.5em;}
   
 
   /*index*/

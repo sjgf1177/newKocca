@@ -196,7 +196,7 @@ $(function (){
     });
 
   } else{
-    //1024px 초과일 때
+    //984px 초과일 때
     console.log(' iframe 플레이어 가로너비 984px 초과');
 
     //$('.jp-play.mobile').hide();
@@ -216,6 +216,23 @@ $(function (){
   }
 
   var videoDOM = $("#jp_video_0");
+
+  //영상클릭시 재생,일시정지
+  $('#jp_container_1').on({
+    
+    'click': function () {
+      var video = $(this).hasClass('jp-state-playing');
+      if(video){
+        //console.log('재생중');
+        $('#jquery_jplayer_1').jPlayer('pause');
+      } else{
+        //console.log('일시정지');
+        $('#jquery_jplayer_1').jPlayer('play');
+      }
+      
+    }
+
+  });
 
   //영상 10초 전,후 이동
   $("[class^='jp-cur-']").on({
