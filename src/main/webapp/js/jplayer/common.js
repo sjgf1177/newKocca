@@ -218,10 +218,10 @@ $(function (){
   var videoDOM = $("#jp_video_0");
 
   //영상클릭시 재생,일시정지
-  $('#jp_container_1').on({
+  $(videoDOM).on({
     
     'click': function () {
-      var video = $(this).hasClass('jp-state-playing');
+      var video = $('#jp_container_1').hasClass('jp-state-playing');
       if(video){
         //console.log('재생중');
         $('#jquery_jplayer_1').jPlayer('pause');
