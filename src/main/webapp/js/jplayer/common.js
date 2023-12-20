@@ -223,10 +223,10 @@ $(function (){
     'click': function () {
       var video = $('#jp_container_1').hasClass('jp-state-playing');
       if(video){
-        console.log('재생중');
+        //console.log('재생중');
         $('#jquery_jplayer_1').jPlayer('pause');
       } else{
-        console.log('일시정지');
+        //console.log('일시정지');
         $('#jquery_jplayer_1').jPlayer('play');
       }
       
