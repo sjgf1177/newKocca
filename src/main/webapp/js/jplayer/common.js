@@ -219,7 +219,7 @@ $(function (){
 
   //영상클릭시 재생,일시정지
   $(videoDOM).on({
-    
+
     'click': function () {
       var video = $('#jp_container_1').hasClass('jp-state-playing');
       if(video){
@@ -229,7 +229,7 @@ $(function (){
         //console.log('일시정지');
         $('#jquery_jplayer_1').jPlayer('play');
       }
-      
+
     }
 
   });
