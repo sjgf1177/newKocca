@@ -151,7 +151,7 @@ $(function (){
       //$(".jp-gradient-box").fadeOut();
       $(".jp-play.mobile").hide();
       //console.log('3초동안 마우스 움직임없음');
-    },3000)
+    },1000)
   });
 
   $(".jp-bottom-controls").on("mouseout",function(){
