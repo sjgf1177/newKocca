@@ -232,7 +232,7 @@ button{background: transparent; border: none;}
   
   .jp-util ul li .u_index, .jp-util ul li .u_chapter{display: none;}
   .jp-time-display{margin-left: 0;}
-  .jp-play.mobile{width: 7em; height: 7em; display:inline-block;}
+  .jp-play.mobile{width: 6em; height: 6em; display:inline-block;}
   .jp-controls .pagePrev, .jp-controls .pageNext{position: fixed; top:50%; transform: translateY(-50%); margin: 0; width: 70px; height: 70px;}
   .jp-controls .pagePrev{left: 3em;}
   .jp-controls .pageNext{right: 3em;}
