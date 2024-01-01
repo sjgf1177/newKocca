@@ -372,9 +372,25 @@
 			</div>
 
 			<div class="tema-list-box04">
-				<h2 class="main_title">웹툰캐릭터</h2>
+				<h2 class="main_title">웹툰/캐릭터</h2>
 				<div class="temacard04 swiper-container">
 					<div class="swiper-wrapper">
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=94&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L94.png" alt="지속가능한 창작의 원동력, 웹툰 스튜디오">
+								</div>
+								<div class="col-12 text_box">
+									<h5>지속가능한 창작의 원동력, 웹툰 스튜디오</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>5 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=61&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
@@ -416,7 +432,7 @@
 								<div class="col-12 text_box">
 									<h5>나만의 개성있는 캐릭터 How to make?</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>4 COURSES</b></span>
+										<span><b>2 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -432,7 +448,7 @@
 								<div class="col-12 text_box">
 									<h5>무한 창작 , 웹툰의 세계</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>4 COURSES</b></span>
+										<span><b>6 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -723,16 +739,67 @@
 				<h2 class="main_title">콘텐츠교양</h2>
 				<div class="temacard08 swiper-container">
 					<div class="swiper-wrapper">
-						<div class="sub_theme_process_list swiper-slide">
+<%--						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=67&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
+									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
 									<img src="/upload/themeupload/L67.png" alt="창의적인 생각의 힘">
 								</div>
 								<div class="col-12 text_box">
 									<h5>창의적인 생각의 힘</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>2 COURSES</b></span>
+										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
+									</div>
+								</div>
+							</a>
+						</div>--%>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=95&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L95.png" alt="배리어 프리, 장벽을 허무는 콘텐츠의 힘">
+								</div>
+								<div class="col-12 text_box">
+									<h5>배리어 프리, 장벽을 허무는 콘텐츠의 힘</h5>
+									<div class="col-12 sub_text_box">
+										<span class="tag new" style="margin-bottom: 0; margin-right: 10px;">NEW</span>
+										<span><b>16 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=96&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L96.png" alt="2023 콘텐츠 스텝업X플러스 현장 강의">
+								</div>
+								<div class="col-12 text_box">
+									<h5>2023 콘텐츠 스텝업X플러스 현장 강의</h5>
+									<div class="col-12 sub_text_box">
+										<span class="tag new" style="margin-bottom: 0; margin-right: 10px;">NEW</span>
+										<span><b>6 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=97&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L97.png" alt="2022 콘텐츠 플러스 현장 강의">
+								</div>
+								<div class="col-12 text_box">
+									<h5>2022 콘텐츠 플러스 현장 강의</h5>
+									<div class="col-12 sub_text_box">
+										<span class="tag new" style="margin-bottom: 0; margin-right: 10px;">NEW</span>
+										<span><b>4 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -743,12 +810,12 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=64&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L64.png" alt="콘텐츠 제작에 필요한 필수 강좌">
+									<img src="/upload/themeupload/L64.png" alt="콘텐츠 제작 필수 강좌">
 								</div>
 								<div class="col-12 text_box">
-									<h5>콘텐츠 제작에 필요한 필수 강좌</h5>
+									<h5>콘텐츠 제작 필수 강좌</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>2 COURSES</b></span>
+										<span><b>8 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -759,12 +826,12 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=57&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L57.png" alt="나만의 콘텐츠를 제작하고 싶다면??">
+									<img src="/upload/themeupload/L57.png" alt="콘텐츠 제작 기초 강좌">
 								</div>
 								<div class="col-12 text_box">
-									<h5>나만의 콘텐츠를 제작하고 싶다면??</h5>
+									<h5>콘텐츠 제작 기초 강좌</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>8 COURSES</b></span>
+										<span><b>12 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
