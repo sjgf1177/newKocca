@@ -104,7 +104,7 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 <%--	                 	<a href="#none" onclick="markPopupE('2019-R105');" title="새창열림">
 	                  		<img src="https://www.eprivacy.or.kr/seal/mark_e.gif" alt="개인정보보호우수사이트(ePrivacy) 인증마크">
 	                  	</a>--%>
-						<img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" alt="개인정보보호인증 마크" title="개인정보보호인증" style="cursor:pointer;" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2022-EP-R039','seal','width=527,height=720,location=no,status=no,scrollbars=no')" />
+						<img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" alt="개인정보보호인증 마크" title="개인정보보호인증" style="cursor:pointer;" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2023-EP-R037','seal','width=527,height=720,location=no,status=no,scrollbars=no')" />
 	                </li>
 					<%--
 					<li>

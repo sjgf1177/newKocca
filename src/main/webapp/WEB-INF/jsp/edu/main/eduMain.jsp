@@ -1553,7 +1553,7 @@
                                     <img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" alt="개인정보보호인증 마크" title="개인정보보호인증 새창열림">
                                 </a>--%>
 
-                                <a href="javascript:winMarkPopup('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2022-EP-R037','seal','width=527,height=720,location=no,status=no,scrollbars=no');" title="개인정보보호인증 새창열림">
+                                <a href="javascript:winMarkPopup('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2023-EP-R037','seal','width=527,height=720,location=no,status=no,scrollbars=no');" title="개인정보보호인증 새창열림">
                                     <img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" style="cursor:pointer;" alt="개인정보보호인증 마크 ">
                                 </a>
                             </li>
