@@ -46,7 +46,7 @@
         </div>
         <div class="col-12 img_box">
             <div>
-                <img src="/edu/images/bm/sub_home_Introduce_img_000_modify.jpg" alt="인재캠퍼스 건물 사진" style="width: 100%;" >
+                <img src="/edu/images/bm/sub_home_Introduce_img_000_modify.jpg" alt="인재캠퍼스 건물 사진">
             </div>
         </div>
     </div>
