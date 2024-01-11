@@ -18,13 +18,13 @@
         <ul class="col-12 linemap_con">
             <li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a>
             </li>
-            <li><a href="javascript:void(0);" tabindex="-1"><span>이벤트</span></a></li>
+            <li><a href="javascript:void(0);" tabindex="-1"><span>참여마당</span></a></li>
         </ul>
     </div>
 </div>
 
 <div class="sub_title s_tit02">
-    <div class="col-center mw-1280">이벤트</div>
+    <div class="col-center mw-1280">참여마당</div>
 </div>
 <form id="eventFrm" name="eventFrm" method="post">
     <input type="hidden" id="op3" name="op3" value="">
@@ -109,7 +109,7 @@
         </li>
         <li <c:if test="${paramVO.op3 eq '3'}">class='active'</c:if>>
             <a href="javascript:void(0);" onclick="goEvent('3')">
-                <span>공모참여</span>
+                <span>구인/공모</span>
             </a>
         </li>
         <li <c:if test="${paramVO.op3 eq '4'}">class='active'</c:if>>
@@ -173,8 +173,14 @@
                                         </c:otherwise>
                                     </c:choose>
                                     <p class="event_date">
+                                        <c:if test="${result.nttId ne '75371'}">
                                         기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
                                         <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                        </c:if>
+                                        <c:if test="${result.nttId eq '75371'}">
+                                            <span class="show"></span>
+                                            <span class="show"></span>
+                                        </c:if>
                                     </p>
                                 </div>
                             </a>
@@ -251,8 +257,8 @@
                                     </c:choose>
                                     <p class="event_date">
                                         <c:if test="${result.nttId ne '75371'}">
-                                        기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
-                                        <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                            기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
+                                            <span class="show"><c:out value="${result.ntceEndde }"/></span>
                                         </c:if>
                                         <c:if test="${result.nttId eq '75371'}">
                                             <span class="show"></span>
@@ -301,14 +307,6 @@
                                         <p class="event_date">
                                             기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
                                             <span class="show"><c:out value="${result.ntceEndde }"/></span>
-                                            <c:if test="${result.nttId ne '75371'}">
-                                                기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
-                                                <span class="show"><c:out value="${result.ntceEndde }"/></span>
-                                            </c:if>
-                                            <c:if test="${result.nttId eq '75371'}">
-                                                <span class="show"></span>
-                                                <span class="show"></span>
-                                            </c:if>
                                         </p>
                                     </div>
                                 </a>
