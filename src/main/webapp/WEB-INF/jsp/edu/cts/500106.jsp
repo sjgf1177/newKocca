@@ -45,8 +45,9 @@
             </ul> -->
         </div>
         <div class="col-12 img_box">
-            <div>
-                <img src="/edu/images/bm/sub_home_Introduce_img_000_modify.jpg" alt="인재캠퍼스 건물 사진">
+            <div class="injae_w_img">
+                <%--<img src="/edu/images/bm/sub_home_Introduce_img_000_modify.jpg" alt="인재캠퍼스 건물 사진">--%>
+                <img src="/edu/images/bm/injaecampus_00.jpg" alt="인재캠퍼스 건물 사진">
             </div>
         </div>
     </div>
@@ -59,8 +60,9 @@
                 콘텐츠인재캠퍼스는 국내 최고사양의 제작 지원 시설을 갖추고, 교육을 넘어 시장을 선도하는 프로젝트의 산실로서 역할을 할 것입니다.<br>
                 또한 융복합 종합 콘텐츠 및 우수한 문화콘텐츠 공연을 경험할 수 있는 콘텐츠문화광장과 함께 미래의 콘텐츠 산업을 이끌어 갈 메가플랫폼이 되겠습니다. <br>
             </p>
-            <div class="img_box" style="margin-top: 20px;">
-                <img src="/edu/images/bm/sub_home_Introduce_img_001.jpg" alt="인재캠퍼스 건물 내부 사진">
+            <div class="img_box injae_w_img" style="margin-top: 20px;">
+                <%--<img src="/edu/images/bm/sub_home_Introduce_img_001.jpg" alt="인재캠퍼스 건물 내부 사진">--%>
+                <img src="/edu/images/bm/injaecampus_01.jpg" alt="인재캠퍼스 건물 내부 사진">
             </div>
         </div>
     </div>

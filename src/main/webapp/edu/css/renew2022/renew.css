@@ -1371,6 +1371,12 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .contents_view_page ul.list_style_2 > li{background-image: url('/edu/images/renew2022/renew_list_style_2_line_contents_view.png');}
 .facilities_title{background-image: url('/edu/images/renew2022/renew_facilities_title_slash.png');}
 .sub_section .sub_contents_body.is_on_top{background-image: url('/edu/images/renew2022/renew_facilities_contents_body_top_bg.png');}
+.injae_w_img{width: 100%; text-align: center;}
+.injae_w_img img{width: 1280px;}
+
+@media screen and (max-width: 680px){
+    .injae_w_img{height: auto;}
+}
 
 
 /* 시설물 안내 */
