@@ -84,6 +84,10 @@ body{background-image: none;background-color: #fff;}
 <script type="text/javascript" src="/js/selectivizr-min.js"></script>
 <script type="text/javascript" src="/js/html5shiv.js"></script><script type="text/javascript" src="js/respond.min.js"></script>
 <![endif]-->
+<c:set var="roleYn" value="N" />
+<sec:authorize ifAnyGranted="ROLE_EDU_SUPPORT_PROJECT">
+	<c:set var="roleYn" value="Y" />
+</sec:authorize>
 
 <script type="text/javascript">
 	$(function(){
@@ -206,10 +210,20 @@ body{background-image: none;background-color: #fff;}
 							<c:when test="${x==1}"><c:set var="iconClass" value="fa-search" /></c:when>
 							</c:choose>
 			 			<c:if test="${topCategories[x].menuPopupYn=='Y'}">
-							<a href="${topCategories[x].menuLink}" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							<c:if test="${roleYn eq 'Y'}">
+								<a href="/bos/bbs/B0000079/list.do?menuNo=100267" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
+							<c:if test="${roleYn ne 'Y'}">
+								<a href="${topCategories[x].menuLink}" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
 			 			</c:if>
 			 			<c:if test="${topCategories[x].menuPopupYn!='Y'}">
-							<a href="${topCategories[x].menuLink}${fn:indexOf(topCategories[x].menuLink,'?') > -1 ? '&' : '?' }menuNo=${topCategories[x].menuNo}" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							<c:if test="${roleYn eq 'Y'}">
+								<a href="/bos/bbs/B0000079/list.do?menuNo=100267" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
+							<c:if test="${roleYn ne 'Y'}">
+								<a href="${topCategories[x].menuLink}${fn:indexOf(topCategories[x].menuLink,'?') > -1 ? '&' : '?' }menuNo=${topCategories[x].menuNo}" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
 			 			</c:if>
 						</c:forEach>
 						<a href="javascript:openPopup();"class="btn btn-success"><i class="fa fa-power-off"></i>내정보수정</a>

@@ -165,6 +165,7 @@ public class FnwBBSManageServiceImpl extends DefaultCmmProgramService implements
 	{
 		ZValue param = paramCtx.getParam();
 		ModelMap model = paramCtx.getModel();
+		UsersVO user = UnpUserDetailsHelper.getAuthenticatedUser();
 		BoardMasterVO masterVO = (BoardMasterVO)model.get("masterVO");
 		if( masterVO == null ) masterVO = new BoardMasterVO();
 		String bbsTyCode = masterVO.getBbsTyCode();
@@ -191,6 +192,15 @@ public class FnwBBSManageServiceImpl extends DefaultCmmProgramService implements
 		}
 
 		if( !StringUtils.hasText(param.getString("delcode")) ) param.put("delcode", SearchVO.NON_DELETION);
+
+		if("B0000079".equals(param.getString("bbsId"))) {
+			if("ROLE_SUPER".equals(user.getAuthorCode())) {
+				param.put("isAuthSuper", "Y");
+			} else {
+				param.put("isAuthSuper", "N");
+				param.put("userIdx", user.getUserIdx());
+			}
+		}
 
 		super.list(paramCtx);
 
