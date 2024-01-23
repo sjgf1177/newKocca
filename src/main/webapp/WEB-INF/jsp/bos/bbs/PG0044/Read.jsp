@@ -121,8 +121,9 @@
 						<tr>
 							<th scope="row">요청 처리</th>
 							<td>
-								<c:if test="${result.option2 eq 'Y'}">완료</c:if>
-								<c:if test="${result.option2 ne 'Y'}">미완료</c:if>
+								<c:if test="${result.option2 eq 'A'}">접수</c:if>
+								<c:if test="${result.option2 eq 'W'}">처리 중</c:if>
+								<c:if test="${result.option2 ne 'Y' and result.option2 ne 'W'}">미완료</c:if>
 							</td>
 						</tr>
 					</c:if>

@@ -41,8 +41,9 @@
 			<legend>게시판 게시물검색</legend>
 				<select id="reqYn" name="option2" title="홍보요청처리여부">
 					<option value="" <c:if test="${paramVO.option2 == ''}">selected="selected"</c:if> >전체</option>
-					<option value="Y" <c:if test="${paramVO.option2 == 'Y'}">selected="selected"</c:if> >홍보 요청 처리 완료</option>
-					<option value="N" <c:if test="${paramVO.option2 == 'N'}">selected="selected"</c:if> >홍보 요청 처리 미완료</option>
+					<option value="A" <c:if test="${paramVO.option2 == 'A'}">selected="selected"</c:if> >접수</option>
+					<option value="W" <c:if test="${paramVO.option2 == 'W'}">selected="selected"</c:if> >처리 중</option>
+					<option value="X" <c:if test="${paramVO.option2 == 'X'}">selected="selected"</c:if> >미완료</option>
 				</select>
 
 				<label for="stributary" class="blind"></label>
