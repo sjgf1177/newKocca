@@ -266,6 +266,7 @@
 
                         <!-- nav 이벤트 two-daps start -->
                         <ul>
+                            <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008">공지사항</a></li>
                             <li><a href="javascript:void(0);" onclick="fnEvent('1')">에듀코카 이벤트</a></li>
                             <li><a href="javascript:void(0);" onclick="fnEvent('2')">교육신청</a></li>
                             <li><a href="javascript:void(0);" onclick="fnEvent('3')">구인/공모</a></li>
