@@ -178,6 +178,13 @@ public class FnwBBSManageServiceImpl extends DefaultCmmProgramService implements
 			param.setValue("pageIndex", "1");
 		}
 
+		String tmp = param.getString("delCode");
+		boolean isDelCode =  tmp.matches("[+-]?\\d*(\\.\\d+)?");
+
+		if(!isDelCode){
+			param.setValue("delCode", "0");
+		}
+
 		param.put("pageUnit", masterVO.getPageUnit());
 		param.put("pageSize", masterVO.getPageSize());
 		if ((SiteMngService.CKLMOBILE_SITE_NAME).equals(param.getString("siteName")) || (SiteMngService.EDUMOBILE_SITE_NAME).equals(param.getString("siteName"))) {

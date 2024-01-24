@@ -72,6 +72,14 @@ public class RealmService extends DefaultCmmProgramService {
 			param.setValue("p_list_type", "");
 		}
 
+		// 페이지번호 숫자형 여부 체크
+		String tmp = param.getString("pageIndex");
+		boolean isPageIndex =  tmp.matches("[+-]?\\d*(\\.\\d+)?");
+
+		if(!isPageIndex){
+			param.setValue("pageIndex", "1");
+		}
+
 		// 과정분류 존재여부
 		int uClassNmCnt = lmsSqlDao.selectCount("realmListDAO.uClassNmCount", param);
 
