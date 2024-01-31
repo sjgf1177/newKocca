@@ -174,6 +174,7 @@
                                     </c:when>
                                     <c:otherwise>
                                         <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />"  />
+                                        <%--<img src="	https://edu.kocca.kr/upload/renewsnail/CB21005.png" alt="이미지 설명들어가는 곳">--%>
                                     </c:otherwise>
                                 </c:choose>
                             </a>
@@ -433,17 +434,17 @@
                         </div>
                         <%-- 설명란 start --%>
                     </div>
-                    <c:if test="${item3.isnew eq 'Y' }">
-                        <c:if test="${ item3.ishit eq 'N'}">
-                            <c:if test="${ item3.isrecom eq 'Y'}">
-                                <span style="color: #3B85FF;">[New]</span>
-                                <%--
-                                <img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
-                                --%>
-                            </c:if>
-                        </c:if>
-                    </c:if>
-                    ${item3.subjnm }
+<%--                    <c:if test="${item3.isnew eq 'Y' }">--%>
+<%--                        <c:if test="${ item3.ishit eq 'N'}">--%>
+<%--                            <c:if test="${ item3.isrecom eq 'Y'}">--%>
+<%--                                <span style="color: #3B85FF;">[New]</span>--%>
+<%--                                &lt;%&ndash;--%>
+<%--                                <img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >--%>
+<%--                                &ndash;%&gt;--%>
+<%--                            </c:if>--%>
+<%--                        </c:if>--%>
+<%--                    </c:if>--%>
+<%--                    ${item3.subjnm }--%>
                 </a>
             </div>
         </div>

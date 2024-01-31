@@ -209,6 +209,7 @@
 							</c:when>
 							<c:otherwise>
 								<img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value="${result.vodimg}" />" onerror="this.src='/edu/images/renew2022/non_img.png'"/>
+								<%--<img src="	https://edu.kocca.kr/upload/renewsnail/CB21005.png" alt="이미지 설명들어가는 곳">--%>
 							</c:otherwise>
 						</c:choose>
 

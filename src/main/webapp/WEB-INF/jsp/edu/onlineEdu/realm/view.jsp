@@ -106,7 +106,8 @@
             <div class="img_box">
                 <c:choose>
                     <c:when test="${view.introducefilenamenew != null and view.introducefilenamenew != '' }">
-                        <img alt="${view.subjnm }" src="<c:out value="${view.introducefilenamenew}" />" width="381px;" height="247px;"/>
+                        <img alt="${view.subjnm }" src="<c:out value="${view.introducefilenamenew}" />" />
+                        <%--<img src="	https://edu.kocca.kr/upload/renewsnail/CB21005.png" alt="이미지 설명들어가는 곳">--%>
                     </c:when>
                     <c:otherwise>
                         <img alt="${view.subjnm }" src="/edu/images/edupro/stepsub-03.png" width="381px;" height="247px;"/>

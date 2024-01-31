@@ -1132,6 +1132,7 @@
                                                 </c:when>
                                                 <c:otherwise>
                                                     <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />"/>
+                                                    <%--<img src="	https://edu.kocca.kr/upload/renewsnail/CB21005.png" alt="이미지 설명들어가는 곳">--%>
                                                 </c:otherwise>
                                             </c:choose>
                                         </a>

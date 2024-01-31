@@ -315,6 +315,9 @@ select{background-image: url(../image/relation_site_arrow.png); background-repea
     line-height: 17px;
     vertical-align: middle;
 }
+.tag:nth-child(2){
+	margin-left: 0;
+}
 .tag.open{
 	margin-left:0;
 }

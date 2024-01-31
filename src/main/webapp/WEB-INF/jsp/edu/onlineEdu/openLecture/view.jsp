@@ -491,11 +491,15 @@
 <%-- Movie Player width: 1080px;height: 630;기본 사이즈 --%>
 <div class="mt20 lectMovSet mw-1080 col-center" id="vodArea">
     <div class="">
-        <a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />','<c:out value="${result.vttPath }" />');">
-            <%-- rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" --%>
+        <%--<a href="javascript:fnViewOpenClass('<c:out value="${param.pSeq }"/>','<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.lectureType }"/>','<c:out value="${result.vodurl }" />','<c:out value="${result.vttPath }" />');">
+            &lt;%&ndash; rsg20170908 onclick="return confirm('강의를 시청하시겠습니까?');" &ndash;%&gt;
             <img src="<c:out value="${result.vodimg }"/>" style="width: 100%;height: auto;" alt="강좌보기"/>
             <span class="maskPlay"></span>
-        </a>
+        </a>--%>
+        <script>
+            fnDirectLoadMP4('<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.vttPath }" />');
+            PlayerEvent('<c:out value="${result.vttPath }" />');
+        </script>
     </div>
 </div>
 
