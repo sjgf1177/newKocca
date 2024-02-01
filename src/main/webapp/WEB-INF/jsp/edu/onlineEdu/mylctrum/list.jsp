@@ -84,7 +84,7 @@
 						<c:when test="${item.introducefilenamenew != null and item.introducefilenamenew != '' }">
 							<%-- <img alt="<c:out value="${item.subjnm }"/>" src="<c:out value="${fn:replace(item.introducefilenamenew, crlf, '/') }" />" width="290px;" height="190px;" /> --%>
 							<!-- 실서버 업로드 시 위 img 태그 주석 풀어서 사용, 아래 img 태그는 제거 -->
-							<img alt="<c:out value="${item.subjnm }"/>" src="${item.introducefilenamenew}" width="290px;" height="190px;" />
+							<img alt="<c:out value="${item.subjnm }"/>" src="${item.introducefilenamenew}" />
 						</c:when>
 						<c:otherwise>
 							<img alt="<c:out value="${item.subjnm }"/>" src="/edu/images/bm/kofac_card_img_000.jpg" width="290px;" height="190px;" />

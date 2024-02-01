@@ -187,7 +187,7 @@
                                 </h3>
 
                                 <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
-                                <span class="tag new">NEW</span>
+                                <%--<span class="tag new">NEW</span>--%>
 
                                 <c:if test="${not empty result.lvnm}">
                                     <c:choose>
@@ -250,7 +250,7 @@
                                 </h3>
 
                                 <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
-                                <span class="tag new">NEW</span>
+                                <%--<span class="tag new">NEW</span>--%>
 
                                 <c:if test="${not empty result.lvnm}">
                                     <c:choose>
@@ -320,7 +320,7 @@
                             </h3>
 
                             <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
-                            <span class="tag new">NEW</span>
+                            <%--<span class="tag new">NEW</span>--%>
 
                             <c:if test="${not empty result.lvnm}">
                                 <c:choose>
@@ -404,7 +404,7 @@
                             </h3>
 
                             <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
-                            <span class="tag new">NEW</span>
+                            <%--<span class="tag new">NEW</span>--%>
 
                             <c:if test="${not empty item3.lvnm}">
                                 <c:choose>
@@ -434,17 +434,17 @@
                         </div>
                         <%-- 설명란 start --%>
                     </div>
-<%--                    <c:if test="${item3.isnew eq 'Y' }">--%>
-<%--                        <c:if test="${ item3.ishit eq 'N'}">--%>
-<%--                            <c:if test="${ item3.isrecom eq 'Y'}">--%>
-<%--                                <span style="color: #3B85FF;">[New]</span>--%>
-<%--                                &lt;%&ndash;--%>
-<%--                                <img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >--%>
-<%--                                &ndash;%&gt;--%>
-<%--                            </c:if>--%>
-<%--                        </c:if>--%>
-<%--                    </c:if>--%>
-<%--                    ${item3.subjnm }--%>
+                    <%--<c:if test="${item3.isnew eq 'Y' }">
+                        <c:if test="${ item3.ishit eq 'N'}">
+                            <c:if test="${ item3.isrecom eq 'Y'}">
+                                <span style="color: #3B85FF;">[New]</span>
+                                &lt;%&ndash;
+                                <img src="http://mail2.kocca.kr:8090/template/template/20180703152920/561/New_2_2.jpg" alt="New" >
+                                &ndash;%&gt;
+                            </c:if>
+                        </c:if>
+                    </c:if>
+                    ${item3.subjnm }--%>
                 </a>
             </div>
         </div>
@@ -671,7 +671,7 @@
         $("#s_subjseq").val(subjseq);
 
         $("#frm").attr({
-            action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${param.menuNo }'/>&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
+            action: "/edu/onlineEdu/realm/view.do?menuNo=<c:out value='${param.menuNo }'/>&p_subj=" + subj + "&p_subjseq=" + subjseq + "&p_year=" + year + "&gubun=" + $("#pGubun1").val() + "&option1=" + $("#pGubun2").val() + "&option5=" + $("#pGubun3").val() + "&pageIndex=<c:out value='${param.pageIndex}' />",
             method: "post",
             target: "_self"
         });

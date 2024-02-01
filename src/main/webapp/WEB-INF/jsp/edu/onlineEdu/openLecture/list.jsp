@@ -130,8 +130,6 @@
 							<h3 class="fwo_tit_box">
 								<c:out value='${result.lecnm }' escapeXml="false" />
 							</h3>
-							<!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
-							<span class="tag new">NEW</span>
 
 							<c:if test="${not empty result.lvnm}">
 								<c:choose>
@@ -218,9 +216,6 @@
 							<h3 class="fwo_tit_box">
 								<c:out value='${result.lecnm }' escapeXml="false" />
 							</h3>
-
-							<!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
-							<span class="tag new">NEW</span>
 
 							<c:if test="${not empty result.lvnm}">
 								<c:choose>
