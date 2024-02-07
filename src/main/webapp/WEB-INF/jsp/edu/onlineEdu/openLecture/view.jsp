@@ -497,6 +497,7 @@
             <span class="maskPlay"></span>
         </a>--%>
         <script>
+            viewCount(<c:out value="${param.pSeq }"/>);
             fnDirectLoadMP4('<c:out value="${result.vodPath }" />','<c:out value="${result.widthS }"/>','<c:out value="${result.heightS }"/>','<c:out value="${result.vttPath }" />');
             PlayerEvent('<c:out value="${result.vttPath }" />');
         </script>
