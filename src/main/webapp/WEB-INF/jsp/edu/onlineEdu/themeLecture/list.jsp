@@ -42,7 +42,7 @@
 					<p><strong>에듀코카 테마과정으로<br class="moview"> 주요 콘텐츠 한 눈에 보기</strong></p>
 					<p>내가 원하는 콘텐츠를<br class="moview"> 주제별로 골라보세요!</p>
 				</div>
-				<div class="col-12 board_sorting_con">
+				<div class="col-12 board_sorting_con" style="display: none;"> <!-- 검색기능 개발 전까지 숨김 -->
 					<form id="frm" name="frm" action="/edu/onlineEdu/themeLecture/list.do" method="post" class="form-inline col-12">
 						<input type="hidden" name="pageQueryString" value='<c:out value="${pageQueryString }" escapeXml="false"/>' >
 						<input type="hidden" name="menuNo" value='<c:out value="${param.menuNo }" escapeXml="false"/>' >
