@@ -672,21 +672,21 @@
 
 			</div>
 
-			<div class="tema-list-box07">
+			<%--<div class="tema-list-box07">
 				<h2 class="main_title">저작권상식</h2>
 				<div class="temacard07 swiper-container">
 					<div class="swiper-wrapper">
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=65&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
+									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
 									<img src="/upload/themeupload/L65.png" alt="저작권 노하우">
 								</div>
 								<div class="col-12 text_box">
 									<h5>저작권 노하우</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>10 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 									</div>
 								</div>
 							</a>
@@ -695,14 +695,14 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=66&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
+									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
 									<img src="/upload/themeupload/L66.png" alt="저작권 노하우 (해외편)">
 								</div>
 								<div class="col-12 text_box">
 									<h5>저작권 노하우 (해외편)</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>4 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 									</div>
 								</div>
 							</a>
@@ -711,14 +711,14 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=72&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
+									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
 									<img src="/upload/themeupload/L72.png" alt="저작권 기초 강좌와 노하우">
 								</div>
 								<div class="col-12 text_box">
 									<h5>저작권 기초 강좌와 노하우</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>4 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 									</div>
 								</div>
 							</a>
@@ -733,7 +733,7 @@
 					<div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
 				</div>
 
-			</div>
+			</div>--%>
 
 			<div class="tema-list-box08">
 				<h2 class="main_title">콘텐츠교양</h2>
@@ -806,37 +806,37 @@
 							</a>
 						</div>
 
-						<div class="sub_theme_process_list swiper-slide">
+						<%--<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=64&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
+									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
 									<img src="/upload/themeupload/L64.png" alt="콘텐츠 제작 필수 강좌">
 								</div>
 								<div class="col-12 text_box">
 									<h5>콘텐츠 제작 필수 강좌</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>8 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 									</div>
 								</div>
 							</a>
-						</div>
+						</div>--%>
 
-						<div class="sub_theme_process_list swiper-slide">
+						<%--<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=57&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
+									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
 									<img src="/upload/themeupload/L57.png" alt="콘텐츠 제작 기초 강좌">
 								</div>
 								<div class="col-12 text_box">
 									<h5>콘텐츠 제작 기초 강좌</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>12 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
 									</div>
 								</div>
 							</a>
-						</div>
+						</div>--%>
 
 						<%--
                                                     <div class="sub_theme_process_list swiper-slide">
