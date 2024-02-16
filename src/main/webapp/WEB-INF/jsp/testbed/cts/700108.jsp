@@ -288,7 +288,7 @@
                 스테이지66 세부 기술 정보 - <span class="download_file_type">(pdf)</span>
             </div>
             <div class="download_file_icon">
-                <a href="/upload/testbedupload/theatre_technical_Info_MultiContentTestbed-STAGE66_202201.pdf" class="show-block">
+                <a href="/upload/testbedupload/theatre_technical_Info_MultiContentTestbed-STAGE66_202401.pdf" class="show-block">
                     <img src="/edu/images/bm/download_file_icon_icon.png" alt="다운로드">
                 </a>
             </div>
