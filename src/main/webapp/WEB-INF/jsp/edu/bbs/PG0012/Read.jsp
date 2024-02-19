@@ -57,7 +57,7 @@
 								첨부파일 : <c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte]
 							</a><br />
 							</c:forEach>
-							<c:if test="${fn:length(fileList) == 0}"><a href="javascript:void(0)">첨부파일 : 등록된 첨부파일이 없습니다.</a></c:if>
+							<c:if test="${fn:length(fileList) == 0}"><span>첨부파일 : 등록된 첨부파일이 없습니다.</span></c:if>
 						</div>
 					</div>
 					<div class="contents_view_area">

@@ -96,7 +96,7 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=92&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<img src="/upload/themeupload/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트">
+									<img src="/upload/themeupload/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트, 이거 완전 내 이야기인데? 싶은 현직+예비 PD님들 주목!, 트렌드를 쫒지 않고 나만의 콘텐츠를 만드는 노하우를 알려 드립니다.">
 									<%--<img src="/edu/images/renew2022/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트">--%>
 								</div>
 								<div class="col-12 text_box">

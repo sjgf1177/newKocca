@@ -196,9 +196,9 @@
     <script src="/edu/css/renew2022/AOS/aos.js"></script>
 
     <!-- Required Js -->
-    <script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
+    <%--<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>--%>
     <script src="/edu/css/renew2022/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>
+    <%--<script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>--%>
 
     <!-- sweet alert Js -->
     <script src="/edu/css/renew2022/assets/plugins/sweetalert/js/sweetalert.min.js"></script>
@@ -488,7 +488,7 @@
 
                 <div class="nav_search_box">
                     <form name="frmSearch2" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
-                        <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='"${randomKeyword}" 검색해 보세요.'>
+                        <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='"검색어입력(${randomKeyword}" 검색해 보세요.)'>
                         <button class="nav_search_btn" title="검색하기"></button>
                     </form>
                 </div>
@@ -537,10 +537,10 @@
 
                                 <c:choose>
                                     <c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
-                                        <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                        <li class="new" title="신규"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                     </c:when>
                                     <c:otherwise>
-                                        <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                        <li class="new" title="신규"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
                                     </c:otherwise>
                                 </c:choose>
 
@@ -720,7 +720,7 @@
                                         <c:set var="contentType" value="${result.cd1}"/>
                                     </c:if>
                                     <li>
-                                        <button type="button" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
+                                        <button type="button" title="${result.cdnm2}" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
                                     </li>
                                     </c:forEach>
                             </div>
@@ -865,14 +865,15 @@
                 <div id="main_new_class" class="main_new_contents pc"> <!-- pc 슬라이드 -->
                     <div class="container">
                         <span class="main_title main_title_bold">
-                            <a href="" alt="NEW 신규 클래스">NEW 신규 클래스</a>
+                            NEW 신규 클래스
                         </span>
                         <div class="swiper-container one_card01">
                             <ul class="swiper-wrapper pc">
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
-                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1172&pLectureCls=GC01" tabindex="-1">
-                                            <img src="/edu/images/renew2022/new_class06.png" alt="">
+                                        <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1172&pLectureCls=GC01">
+                                            <img src="/edu/images/renew2022/new_class06.png"
+                                                 alt="크리에이터를 만드는 크리에이터, 채널 컨설팅부터 마케팅과 브랜딩까지! 콘텐츠의 시작과 끝을 책임진다. 크리에이터와 함께하는 사람들의 이야기">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -887,7 +888,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1166&pLectureCls=GC04" tabindex="-1">
-                                            <img src="/edu/images/renew2022/new_class07.png" alt="">
+                                            <img src="/edu/images/renew2022/new_class07.png" alt="무한한 창작, 음악에 관하여,음악 콘텐츠🎵 창작엔 끝이 없다! 매체별 작품 제작 사례와 함께 알아보는 음악 창작과 실무 이야기">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -902,7 +903,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1186&pLectureCls=GC05" tabindex="-1">
-                                            <img src="/edu/images/renew2022/new_class08.png" alt="">
+                                            <img src="/edu/images/renew2022/new_class08.png" alt="장애인을 고려한 접근성 높은 게임, 누구나 즐길 수 있는 게임?🎮 게임 콘텐츠 접근성과 재미를 모두 잡는다!, 장애인을 위한 게임 편의성 향상 프로젝트, * 본 과정은 ‘수어자막‘ 버전으로도 제공됩니다.">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -918,7 +919,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1180&pLectureCls=GC01" tabindex="-1">
-                                            <img src="/edu/images/renew2022/new_class09.png" alt="">
+                                            <img src="/edu/images/renew2022/new_class09.png" alt="콘텐츠, 스토리텔링을 담다,탐사 보도부터 서바이벌, 스포츠 예능까지! 온라인 콘텐츠로 만나는 현장의 생생함 진정성, 리얼리티 그리고 공감의 이야기">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -933,7 +934,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://url.kr/4kizp9" tabindex="-1">
-                                            <img src="/edu/images/renew2022/new_class05.png" alt="">
+                                            <img src="/edu/images/renew2022/new_class05.png" alt="빛나는 아티스트를 만드는 사람들, 전세계의 사랑을 받는 K-POP 아티스트를 꿈꾼다!신인 개발, 매니지먼트 그리고 각종 공연 기획까지, 음악 산업의 다양한 직무와 역량이 궁금하다면? 지금 바로 에듀코카에서 확인하세요!">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -948,7 +949,7 @@
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
-                                        <a href="https://url.kr/o8z1ua" tabindex="0">
+                                        <a href="https://url.kr/o8z1ua" tabindex="-1">
                                             <img src="/edu/images/renew2022/new_class04.png" alt="모두를 위한 즐거움 : 배리어프리
                                             물리적, 심리적 장벽을 없애기 위한 첫 걸음.
                                             배리어 프리(Barrier – free), 얼마나 알고 계신가요?
@@ -1014,7 +1015,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1" tabindex="-1">
-                                            <img src="/edu/images/renew2022/new_class.png" alt="">
+                                            <img src="/edu/images/renew2022/new_class.png" alt="콘텐츠 뒤의 사람들, OTT 이야기, 빠르고, 크고, 다양하게 퍼져 나가는 OTT! 콘텐츠 기업에서 하는 일이 궁금한 사람들을 위해 준비했습니다. OTT플랫폼 현직자들과 다양한 직무분야에 대한 이야기가 궁금하다면? 에듀코카에서 확인하세요!">
                                         </a>
                                     </span>
                                     <div class="new_txt_box">
@@ -1046,63 +1047,76 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1172&pLectureCls=GC01">
-                                            <img src="/edu/images/renew2022/m_new_class06.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class06.png" alt="크리에이터를 만드는 크리에이터, 채널 컨설팅부터 마케팅과 브랜딩까지! 콘텐츠의 시작과 끝을 책임진다. 크리에이터와 함께하는 사람들의 이야기">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1166&pLectureCls=GC04">
-                                            <img src="/edu/images/renew2022/m_new_class07.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class07.png" alt="무한한 창작, 음악에 관하여,음악 콘텐츠🎵 창작엔 끝이 없다! 매체별 작품 제작 사례와 함께 알아보는 음악 창작과 실무 이야기">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1186&pLectureCls=GC05">
-                                            <img src="/edu/images/renew2022/m_new_class08.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class08.png" alt="장애인을 고려한 접근성 높은 게임, 누구나 즐길 수 있는 게임?🎮 게임 콘텐츠 접근성과 재미를 모두 잡는다!, 장애인을 위한 게임 편의성 향상 프로젝트, * 본 과정은 ‘수어자막‘ 버전으로도 제공됩니다.">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1180&pLectureCls=GC01">
-                                            <img src="/edu/images/renew2022/m_new_class09.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class09.png" alt="콘텐츠, 스토리텔링을 담다,탐사 보도부터 서바이벌, 스포츠 예능까지! 온라인 콘텐츠로 만나는 현장의 생생함 진정성, 리얼리티 그리고 공감의 이야기">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://url.kr/4kizp9">
-                                            <img src="/edu/images/renew2022/m_new_class05.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class05.png" alt="빛나는 아티스트를 만드는 사람들, 전세계의 사랑을 받는 K-POP 아티스트를 꿈꾼다!신인 개발, 매니지먼트 그리고 각종 공연 기획까지, 음악 산업의 다양한 직무와 역량이 궁금하다면? 지금 바로 에듀코카에서 확인하세요!">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://url.kr/o8z1ua">
-                                            <img src="/edu/images/renew2022/m_new_class04.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class04.png" alt="모두를 위한 즐거움 : 배리어프리
+                                            물리적, 심리적 장벽을 없애기 위한 첫 걸음.
+                                            배리어 프리(Barrier – free), 얼마나 알고 계신가요?
+                                            콘텐츠산업 내 배리어프리가 궁금하다면?
+                                            지금 에듀코카에서 확인해보세요!">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1103&pLectureCls=GC02">
-                                            <img src="/edu/images/renew2022/m_new_class03.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class03.png" alt="게임회사의 모든 것 (feat.직무)
+                                            게임 기업 취업, 이직을 희망하고 있다면?
+                                            실무진들의 다양한 직무 Ssul은 물론
+                                            게임 회사가 원하는 인재상부터
+                                            게임 산업의 전체 구조까지 다 알려드립니다!
+                                            지금 바로 에듀코카에서 확인해보세요.">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1092&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=K0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=K0&p_list_type=C&pageIndex=1">
-                                            <img src="/edu/images/renew2022/m_new_class02.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class02.png" alt="웹툰 회사에서는 어떤 일을 할까?
+                                            콘텐츠 IP로써 새로운 한류 문화로 자리매김한 웹툰!
+                                            웹툰 산업에서 선도적인 역할을 하고 있는 기업에서는
+                                            과연 어떤 일을 하고 있는지 궁금하다면?
+                                            지금 바로 에듀코카에서 확인하세요!">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1">
-                                            <img src="/edu/images/renew2022/m_new_class.png" alt="">
+                                            <img src="/edu/images/renew2022/m_new_class.png" alt="콘텐츠 뒤의 사람들, OTT 이야기, 빠르고, 크고, 다양하게 퍼져 나가는 OTT! 콘텐츠 기업에서 하는 일이 궁금한 사람들을 위해 준비했습니다. OTT플랫폼 현직자들과 다양한 직무분야에 대한 이야기가 궁금하다면? 에듀코카에서 확인하세요!">
                                         </a>
                                     </span>
                                 </li>
@@ -1125,27 +1139,28 @@
                                 <li class="swiper-slide">
                                     <!-- 썸네일 start -->
                                     <div class="fwo_snail_box">
-                                        <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+                                        <%--<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">--%>
                                             <c:choose>
                                                 <c:when test="${result.introducefilenamenew == null or result.introducefilenamenew == '' }">
-                                                    <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+                                                    <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 없음,대체 이미지" style="width: 100%; height: 100%;">
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />"/>
+                                                    <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />" style="width: 100%; height: 100%;"/>
                                                     <%--<img src="	https://edu.kocca.kr/upload/renewsnail/CB21005.png" alt="이미지 설명들어가는 곳">--%>
                                                 </c:otherwise>
                                             </c:choose>
-                                        </a>
+                                        <%--</a>--%>
 
                                         <!-- 설명란 start-->
                                         <div class="fwo_info_box">
                                             <h3 class="fwo_tit_box">
-                                                <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+                                                <%--<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
                                                         ${result.subjnm }
-                                                </a>
+                                                </a>--%>
+                                                        ${result.subjnm }
                                             </h3>
                                             <p>${result.g2nm }ㆍ${result.g3nm }</p>
-                                            <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;" class="go_page_a"></a>
+                                            <a href="javascript:void(0);" title="${result.subjnm }" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;" class="go_page_a"  title="${result.subjnm }"></a>
                                         </div>
                                         <!-- 설명란 start-->
                                     </div>
@@ -1178,24 +1193,26 @@
                                 <li class="swiper-slide">
                                     <!-- 썸네일 start -->
                                     <div class="fwo_snail_box">
-                                        <a href='<c:out value="${url }" />'>
+                                        <%--<a href='<c:out value="${url }" />'>--%>
                                             <c:choose>
                                                 <c:when test="${result.vodimg == null or result.vodimg == '' }">
-                                                    <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
+                                                    <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳" style="width: 100%; height: 100%;">
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value='${result.vodimg }'/>"/>
+                                                    <img alt="<c:out value='${result.lecnm }' escapeXml="false" /> - 메인 이미지" src="<c:out value='${result.vodimg }'/>" style="width: 100%; height: 100%;"/>
                                                 </c:otherwise>
                                             </c:choose>
-                                        </a>
+                                        <%--</a>--%>
 
                                         <!-- 설명란 start-->
                                         <div class="fwo_info_box">
                                             <h3 class="fwo_tit_box">
-                                                <a href='<c:out value="${url }" />'><c:out value='${result.lecnm }' escapeXml="false"/></a>
+                                                <%--<a href='<c:out value="${url }" />'>--%>
+                                                    <c:out value='${result.lecnm }' escapeXml="false"/>
+                                                <%--</a>--%>
                                             </h3>
                                             <p>${result.g2nm}ㆍ${result.g3nm}</p>
-                                            <a href='<c:out value="${url }" />' class="go_page_a"></a>
+                                            <a href='<c:out value="${url }" />' class="go_page_a" title="<c:out value='${result.lecnm }' escapeXml="false"/>"></a>
                                         </div>
                                         <!-- 설명란 start-->
                                     </div>
@@ -1227,11 +1244,6 @@
                         <li class="swiper-slide"><a href="javascript:void(0);" onclick="fnCmdSubjSearchList('S0', '', '', '', ''); return false;" ${selectedGubunAtag}>인문교양<br>Liberal Arts</a></li>
                     </ul>
 
-                    <!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-                    <div class="swiper_btn_box">
-                        <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
-                        <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1261,19 +1273,19 @@
                                 <li class="swiper-slide">
                                     <!-- 썸네일 start -->
                                     <div class="fwo_snail_box">
-                                        <a href="<c:out value="${url }" escapeXml="false" />">
+                                        <%--<a href="<c:out value="${url }" escapeXml="false" />">--%>
                                             <c:choose>
                                                 <c:when test='${ fileList.size() > 0 }'>
                                                     <c:forEach var="file" items="${fileList }">
                                                         <c:choose>
                                                             <c:when test="${file.fileFieldName eq 'main_image' }">
-                                                                <img alt="에듀코카 이벤트 이미지" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                                <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" style="width: 100%; height: 100%;"/>
                                                             </c:when>
                                                         </c:choose>
                                                     </c:forEach>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                                    <img alt="No Image" src="/edu/images/bm/noimage.png" style="width: 100%;" height="100%";/>
                                                 </c:otherwise>
                                             </c:choose>
                                             <c:choose>
@@ -1287,15 +1299,15 @@
                                                     <span class="tag_off" style="margin-bottom: 0;">진행</span>
                                                 </c:otherwise>
                                             </c:choose>
-                                        </a>
+                                        <%--</a>--%>
                                     </div>
                                     <!-- 썸네일 end -->
 
                                     <!-- 설명란 start-->
                                     <div class="fwo_info_box2">
-                                        <h3 class="fwo_tit_box"><a href=""><c:out value="${result.nttSj }"/></a></h3>
+                                        <h3 class="fwo_tit_box"><c:out value="${result.nttSj }"/></h3>
                                         <p>[이벤트]</p>
-                                        <a href="<c:out value="${url }" escapeXml="false" />" class="go_page_a"></a>
+                                        <a href="<c:out value="${url }" escapeXml="false" />" title="<c:out value="${result.nttSj }"/>" class="go_page_a"></a>
                                     </div>
                                     <!-- 설명란 start-->
                                 </li>
@@ -1649,6 +1661,12 @@
                 , slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
                 , spaceBetween: 0 // 슬라이드 사이의 간격 px 단위
                 , autoplayDisableOnInteraction: false
+
+                ,onSlideChangeStart : function() { //슬라이드가 완전히 바뀌었을때 실행
+                    //alert(123);
+                    $(".notice_list_box .swiper-slide a").attr('tabindex','-1');
+                    $(".notice_list_box .swiper-slide-active a").attr('tabindex','0');;
+                },
             });
 
             //공지사항 배너 정지버튼

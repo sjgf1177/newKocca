@@ -139,13 +139,13 @@
 
 	<script src="/edu/css/renew2022/renew.js"></script>
 	<!-- Required Js -->
-	<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>
+	<%--<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>--%>
 	<script src="/edu/css/renew2022/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>
+	<%--<script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>--%>
 
 	<!-- sweet alert Js -->
 	<script src="/edu/css/renew2022/assets/plugins/sweetalert/js/sweetalert.min.js"></script>
-	<!-- Swiper8.4.2 JS -->
+	<!-- Swiper8.4.2 JS -->`
 	<%--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>--%>
 	<script src="/edu/css/renew2022/assets/js/pages/ac-alert.js"></script>
 	<!-- 챗봇js-->
