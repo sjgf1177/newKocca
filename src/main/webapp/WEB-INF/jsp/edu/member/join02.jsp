@@ -137,44 +137,46 @@
             const today = new Date(); // 오늘 날짜를 가져옴
             const yearNow = today.getFullYear(); // 올해 년도 가져옴
 
-            if (birthday.length <=8) {
-                if (1900 > year || year > yearNow) { // 년도의 경우 1900 보다 작거나 yearNow 보다 크다면 false를
-                    alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
-                    return false;
-                } else if (month < 1 || month > 12) {
-                    alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
-                    return false;
-                } else if (day < 1 || day > 31) {
-                    alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
-                    return false;
-                } else if ((month==4 ||month==6 || month==9 || month==11) && day==31) {
-                    alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
-                    return false;
-                } else if (month == 2) { // 2월 달일때
-                    // 2월 29일 (윤년) 체크
-                    const isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
-                    if (day>29 || (day==29 && !isleap)) {
+            if (birthday.length > 0) {
+                if (birthday.length <= 8) {
+                    if (1900 > year || year > yearNow) { // 년도의 경우 1900 보다 작거나 yearNow 보다 크다면 false를
                         alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
                         return false;
+                    } else if (month < 1 || month > 12) {
+                        alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
+                        return false;
+                    } else if (day < 1 || day > 31) {
+                        alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
+                        return false;
+                    } else if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31) {
+                        alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
+                        return false;
+                    } else if (month == 2) { // 2월 달일때
+                        // 2월 29일 (윤년) 체크
+                        const isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+                        if (day > 29 || (day == 29 && !isleap)) {
+                            alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
+                            return false;
+                        } else {
+
+                            return true;
+                        } //end of if (day>29 || (day==29 && !isleap))
                     } else {
 
                         return true;
-                    } //end of if (day>29 || (day==29 && !isleap))
-                } else {
-
-                    return true;
-                }//end of if
-            } else { // 입력된 생년월일이 8자 초과할때 : false
-                alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
-                return false;
+                    }//end of if
+                } else { // 입력된 생년월일이 8자 초과할때 : false
+                    alert("생년월일이 올바르지 않습니다. 다시 확인해 주세요");
+                    return false;
+                }
             }
         };
 
         //14세이상 구분하기
         $("#brthdy").blur(function() {
             if($(this).val() == "") {
-                $(this).focus();
-                return;
+                //$(this).focus();
+                //return;
             }
             // 생년월일 실제 나이 개산
             var birthday  = $(this).val();
@@ -184,29 +186,31 @@
             let yearNow = Number(today.getFullYear()); // DATA 객체의 년도를 가져옵니다.
             let age = Number(yearNow - year -1); //소수점 버림
 
-            var radiochk1 = $('input:radio[id=age1]').is(':checked');
-            var radiochk2 = $('input:radio[id=age2]').is(':checked');
+            if (birthday.length > 0) {
+                var radiochk1 = $('input:radio[id=age1]').is(':checked');
+                var radiochk2 = $('input:radio[id=age2]').is(':checked');
 
-            birthdayCheck();
+                birthdayCheck();
 
-            if (radiochk1 == true) {
-                if (age < 14) {
-                    alert("생년월일 등록 결과 14세 미만입니다. 확인 후 다시 입력해 주세요");
-                    $("#parntsAgreAt").val("");
-                    $("#brthdy").val(""); //생년월일 텍스트 초기화
-                    $("#brthdy").focus();
+                if (radiochk1 == true) {
+                    if (age < 14) {
+                        alert("생년월일 등록 결과 14세 미만입니다. 확인 후 다시 입력해 주세요");
+                        $("#parntsAgreAt").val("");
+                        $("#brthdy").val(""); //생년월일 텍스트 초기화
+                        $("#brthdy").focus();
 
+                    }
                 }
-            }
 
-            if (radiochk2 == true) {
-                if (age >= 14) {
-                    alert("생년월일 등록 결과 14세 이상입니다. 확인 후 다시 입력해 주세요");
-                    $("#parntsAgreAt").val("");
-                    $("#brthdy").val(""); //생년월일 텍스트 초기화
-                    $("#brthdy").focus();
-                } else{
-                    $("#parntsAgreAt").val("Y");
+                if (radiochk2 == true) {
+                    if (age >= 14) {
+                        alert("생년월일 등록 결과 14세 이상입니다. 확인 후 다시 입력해 주세요");
+                        $("#parntsAgreAt").val("");
+                        $("#brthdy").val(""); //생년월일 텍스트 초기화
+                        $("#brthdy").focus();
+                    } else {
+                        $("#parntsAgreAt").val("Y");
+                    }
                 }
             }
         });

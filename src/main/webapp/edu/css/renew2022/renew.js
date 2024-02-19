@@ -11,7 +11,11 @@ $(document).ready(function() {
         uiAppendHeader += '<a href="#ContentBox" class="skipContents">본문 바로가기</a>';
         uiAppendHeader += '<a href="#footer">하단메뉴 바로가기</a>';
         uiAppendHeader += '</div>';
-        $('body').prepend(uiAppendHeader);
+
+        if (!$("#skip").length) {
+            $('body').prepend(uiAppendHeader);
+        }
+
     }
     uiAppendHeader();
 
