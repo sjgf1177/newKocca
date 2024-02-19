@@ -17,15 +17,26 @@ $(function (){
   $('.speed').eq(1).click();
 
   //speed 설정
-  $(".jp-toggles-text").click(function(){
+  $(".jp-toggles-text").on({
+    'click': function () {
+      var toggleclasschk = $(".jp-speed-btn-box").hasClass("on");
+      if(!toggleclasschk){
+        $(".jp-speed-btn-box, .jp-toggles-text").addClass("on");
+      } else {
+        $(".jp-speed-btn-box, .jp-toggles-text").removeClass("on");
+      }
+    },
 
-    var toggleclasschk = $(".jp-speed-btn-box").hasClass("on");
-    if(!toggleclasschk){
-      $(".jp-speed-btn-box, .jp-toggles-text").addClass("on");
-    } else {
-      $(".jp-speed-btn-box, .jp-toggles-text").removeClass("on");
+    'keyup': function () {
+      if (key.keyCode == 13) {
+        var toggleclasschk = $(".jp-speed-btn-box").hasClass("on");
+        if(!toggleclasschk){
+          $(".jp-speed-btn-box, .jp-toggles-text").addClass("on");
+        } else {
+          $(".jp-speed-btn-box, .jp-toggles-text").removeClass("on");
+        }
+      }
     }
-
   });
 
   // 인덱스 창
@@ -146,7 +157,7 @@ $(function (){
 
     clearTimeout(moveTimer); //머무른시간 초기화
     moveTimer = setTimeout(function(){ //setTimeout으로 3초뒤 이벤트 실행
-      $(".jp-gui").hide();
+      // $(".jp-gui").hide(); 웹접근성 임시 제거
       $('.scriptWrap').css('bottom','6px');
       //$(".jp-gradient-box").fadeOut();
       $(".jp-play.mobile").hide();
@@ -156,7 +167,7 @@ $(function (){
 
   $(".jp-bottom-controls").on("mouseout",function(){
     clearTimeout(moveTimer); //머무른시간 초기화
-    $(".jp-gui").hide();
+    // $(".jp-gui").hide(); 웹접근성 임시 제거
     $(".jp-play.mobile").hide();
     $('.scriptWrap').css('bottom','6px');
 
@@ -168,7 +179,7 @@ $(function (){
   //재생,일시정지 버튼 눌렀을 때
   $('.jp-play.mobile, .jp-controls .jp-play').bind('click',function(){
 
-    $(".jp-gui").hide();
+    // $(".jp-gui").hide(); 웹접근성 임시 제거
     $('.jp-play.mobile').hide();
     $(".jp-gradient-box").hide();
     $('.scriptWrap').css('bottom','6px');
@@ -177,13 +188,23 @@ $(function (){
 
   });
 
+  $('.jp-play.mobile, .jp-controls .jp-play').bind('keyup',function(){
+    if (key.keyCode == 13) {
+      // $(".jp-gui").hide(); 웹접근성 임시 제거
+      $('.jp-play.mobile').hide();
+      $(".jp-gradient-box").hide();
+      $('.scriptWrap').css('bottom','19px');
+      //console.log('버튼 누르면 숨김');
+    }
+  });
+
   //function mediaResize() {
   var windowWidth = $( window ).width(); // iframe 플레이어 가로너비 기준
 
   if (windowWidth < 984) {
     //984px 이하일 때
     console.log(' iframe 플레이어 가로너비 984px 이하');
-    $(".jp-gui").hide();
+    // $(".jp-gui").hide(); 웹접근성 임시 제거
     //마우스올렸을때 컨트롤러 보임
     $("#jp_video_0").mouseenter(function(){
 
@@ -230,6 +251,18 @@ $(function (){
         $('#jquery_jplayer_1').jPlayer('play');
       }
 
+    },
+    'keyup': function () {
+      if (key.keyCode == 13) {
+        var video = $('#jp_container_1').hasClass('jp-state-playing');
+        if(video){
+          //console.log('재생중');
+          $('#jquery_jplayer_1').jPlayer('pause');
+        } else{
+          //console.log('일시정지');
+          $('#jquery_jplayer_1').jPlayer('play');
+        }
+      }
     }
 
   });
@@ -259,6 +292,34 @@ $(function (){
           })
           //console.log('1 : ',videoDOM[0].duration);
           //console.log('2 : ',currentTime);
+        }
+      }
+    },
+
+    'keyup': function () {
+      if (key.keyCode == 13) {
+        var className = $(this).hasClass('jp-cur-rewind');
+        var currentTime = videoDOM[0].currentTime;
+
+        if (className) {
+          //10초전 이동
+          $('#jquery_jplayer_1').jPlayer('play',currentTime - 10);
+          $('.circle-static-rewind').fadeIn(500, function (){
+            $(this).fadeOut();
+          })
+          //console.log('10초전');
+        } else {
+          //10초후 이동
+          if(videoDOM[0].duration == currentTime){
+            return;
+          } else{
+            $('#jquery_jplayer_1').jPlayer('play',currentTime + 10);
+            $('.circle-static-forward').fadeIn(500, function (){
+              $(this).fadeOut();
+            })
+            //console.log('1 : ',videoDOM[0].duration);
+            //console.log('2 : ',currentTime);
+          }
         }
       }
     }

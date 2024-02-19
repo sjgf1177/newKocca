@@ -294,6 +294,9 @@
 
 </style>
 <script type="text/javascript">
+	$('.three_tab li:first-child a').attr('id', 'ContentBox');
+	$('.return_list_box.gnb_close').attr('id', 'GnbBox');
+
 	$(".eye_off").click(function (e) {
 		$(this).hide();
 		$(".movDescTxt").hide();
