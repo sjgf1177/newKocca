@@ -537,10 +537,10 @@
 
                                 <c:choose>
                                     <c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
-                                        <li class="new" title="신규"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                        <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
                                     </c:when>
                                     <c:otherwise>
-                                        <li class="new" title="신규"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                        <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
                                     </c:otherwise>
                                 </c:choose>
 
@@ -1047,42 +1047,42 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1172&pLectureCls=GC01">
-                                            <img src="/edu/images/renew2022/m_new_class06.png" alt="크리에이터를 만드는 크리에이터, 채널 컨설팅부터 마케팅과 브랜딩까지! 콘텐츠의 시작과 끝을 책임진다. 크리에이터와 함께하는 사람들의 이야기">
+                                            <img src="/edu/images/renew2022/m_new_class06.png" alt="2023 NEW CONTENT. The Story About MCN PEOPLE. 제작 지원, 마케팅홍보,콘텐츠관리, 크리에이터를 만드는 크리에이터, 채널 컨설팅부터 마케팅과 브랜딩까지! 콘텐츠의 시작과 끝을 책임진다. 크리에이터와 함께하는 사람들의 이야기">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1166&pLectureCls=GC04">
-                                            <img src="/edu/images/renew2022/m_new_class07.png" alt="무한한 창작, 음악에 관하여,음악 콘텐츠🎵 창작엔 끝이 없다! 매체별 작품 제작 사례와 함께 알아보는 음악 창작과 실무 이야기">
+                                            <img src="/edu/images/renew2022/m_new_class07.png" alt="2023 NEW CONTENT. About The Music With 23 a.k.a 김성수, 무한한 창작, 음악에 관하여,음악 콘텐츠🎵 창작엔 끝이 없다! 매체별 작품 제작 사례와 함께 알아보는 음악 창작과 실무 이야기">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1186&pLectureCls=GC05">
-                                            <img src="/edu/images/renew2022/m_new_class08.png" alt="장애인을 고려한 접근성 높은 게임, 누구나 즐길 수 있는 게임?🎮 게임 콘텐츠 접근성과 재미를 모두 잡는다!, 장애인을 위한 게임 편의성 향상 프로젝트, * 본 과정은 ‘수어자막‘ 버전으로도 제공됩니다.">
+                                            <img src="/edu/images/renew2022/m_new_class08.png" alt="2023 NEW CONTENT BARRIER FREE. The Accesible GAME. 장애인을 고려한 접근성 높은 게임, 누구나 즐길 수 있는 게임?🎮 게임 콘텐츠 접근성과 재미를 모두 잡는다!, 장애인을 위한 게임 편의성 향상 프로젝트, * 본 과정은 ‘수어자막‘ 버전으로도 제공됩니다.">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1180&pLectureCls=GC01">
-                                            <img src="/edu/images/renew2022/m_new_class09.png" alt="콘텐츠, 스토리텔링을 담다,탐사 보도부터 서바이벌, 스포츠 예능까지! 온라인 콘텐츠로 만나는 현장의 생생함 진정성, 리얼리티 그리고 공감의 이야기">
+                                            <img src="/edu/images/renew2022/m_new_class09.png" alt="STEP UP X PLUS Content With Storytelling. 콘텐츠, 스토리텔링을 담다,탐사 보도부터 서바이벌, 스포츠 예능까지! 온라인 콘텐츠로 만나는 현장의 생생함 진정성, 리얼리티 그리고 공감의 이야기">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://url.kr/4kizp9">
-                                            <img src="/edu/images/renew2022/m_new_class05.png" alt="빛나는 아티스트를 만드는 사람들, 전세계의 사랑을 받는 K-POP 아티스트를 꿈꾼다!신인 개발, 매니지먼트 그리고 각종 공연 기획까지, 음악 산업의 다양한 직무와 역량이 궁금하다면? 지금 바로 에듀코카에서 확인하세요!">
+                                            <img src="/edu/images/renew2022/m_new_class05.png" alt="PEOPLE WITH ARTIST. 신인개발, 음악제작,매니지먼트, 비주얼크리에이션, 콘서트,공연, MD디자인, 빛나는 아티스트를 만드는 사람들, 전세계의 사랑을 받는 K-POP 아티스트를 꿈꾼다!신인 개발, 매니지먼트 그리고 각종 공연 기획까지, 음악 산업의 다양한 직무와 역량이 궁금하다면? 지금 바로 에듀코카에서 확인하세요!">
                                         </a>
                                     </span>
                                 </li>
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://url.kr/o8z1ua">
-                                            <img src="/edu/images/renew2022/m_new_class04.png" alt="모두를 위한 즐거움 : 배리어프리
+                                            <img src="/edu/images/renew2022/m_new_class04.png" alt="BARRIER-FREE FUN for ALL. 수어자막제공, 모두를 위한 즐거움 : 배리어프리
                                             물리적, 심리적 장벽을 없애기 위한 첫 걸음.
                                             배리어 프리(Barrier – free), 얼마나 알고 계신가요?
                                             콘텐츠산업 내 배리어프리가 궁금하다면?
@@ -1093,7 +1093,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?menuNo=500085&pSeq=1103&pLectureCls=GC02">
-                                            <img src="/edu/images/renew2022/m_new_class03.png" alt="게임회사의 모든 것 (feat.직무)
+                                            <img src="/edu/images/renew2022/m_new_class03.png" alt="PEOPLE WHO CREATE GAME. 게임회사의 모든 것 (feat.직무)
                                             게임 기업 취업, 이직을 희망하고 있다면?
                                             실무진들의 다양한 직무 Ssul은 물론
                                             게임 회사가 원하는 인재상부터
@@ -1105,7 +1105,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1092&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=K0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=K0&p_list_type=C&pageIndex=1">
-                                            <img src="/edu/images/renew2022/m_new_class02.png" alt="웹툰 회사에서는 어떤 일을 할까?
+                                            <img src="/edu/images/renew2022/m_new_class02.png" alt="WEBTOON COMPANY. 웹툰 회사에서는 어떤 일을 할까?
                                             콘텐츠 IP로써 새로운 한류 문화로 자리매김한 웹툰!
                                             웹툰 산업에서 선도적인 역할을 하고 있는 기업에서는
                                             과연 어떤 일을 하고 있는지 궁금하다면?
@@ -1116,7 +1116,7 @@
                                 <li class="swiper-slide">
                                     <span class="new_snail_box">
                                         <a href="https://edu.kocca.kr/edu/onlineEdu/openLecture/view.do?pSeq=1087&pageIndex2=&pLectureCls=&&menuNo=500085&searchCnd=&searchWrd=&p_type=B0&p_gcd1=&p_gcd2=&p_level=&p_sort=N&pGubun1=B0&p_list_type=C&pageIndex=1">
-                                            <img src="/edu/images/renew2022/m_new_class.png" alt="콘텐츠 뒤의 사람들, OTT 이야기, 빠르고, 크고, 다양하게 퍼져 나가는 OTT! 콘텐츠 기업에서 하는 일이 궁금한 사람들을 위해 준비했습니다. OTT플랫폼 현직자들과 다양한 직무분야에 대한 이야기가 궁금하다면? 에듀코카에서 확인하세요!">
+                                            <img src="/edu/images/renew2022/m_new_class.png" alt="PEOPLE. BEHIND THE CONTENTS. 콘텐츠 뒤의 사람들, OTT 이야기, 빠르고, 크고, 다양하게 퍼져 나가는 OTT! 콘텐츠 기업에서 하는 일이 궁금한 사람들을 위해 준비했습니다. OTT플랫폼 현직자들과 다양한 직무분야에 대한 이야기가 궁금하다면? 에듀코카에서 확인하세요!">
                                         </a>
                                     </span>
                                 </li>

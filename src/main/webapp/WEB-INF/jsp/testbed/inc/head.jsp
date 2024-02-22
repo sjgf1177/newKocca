@@ -213,10 +213,10 @@
 
                                         <c:choose>
                                             <c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
-                                                <li class="new" title="신규"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                                <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
                                             </c:when>
                                             <c:otherwise>
-                                                <li class="new" title="신규"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                                <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
                                             </c:otherwise>
                                         </c:choose>
 

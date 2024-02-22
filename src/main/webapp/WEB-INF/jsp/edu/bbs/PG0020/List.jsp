@@ -271,7 +271,8 @@
 
                         <%-- 종료된 이벤트 목록 --%>
                         <c:if test='${(nowDate-endDate) > 0}'>
-                                <a href="<c:out value="${url }" escapeXml="false" />" title="<c:out value="${result.nttSj }"/>" class="col-12 show fn event_card">
+                                <%--<a href="<c:out value="${url }" escapeXml="false" />" title="<c:out value="${result.nttSj }"/>" class="col-12 show fn event_card">--%>
+                                <div class="col-12 show fn event_card">
                                     <div class="col-12 img_box">
                                         <c:choose>
                                             <c:when test='${ fileList.size() > 0 }'>
@@ -309,7 +310,7 @@
                                     <span class="show"><c:out value="${result.ntceEndde }"/></span>
                                 </p>
                             </div>
-                            </a>
+                            </div>
                             <div class="e_end_back_box">
                                 <a href="<c:out value="${url }" escapeXml="false" />" style="display: inline-block; width: 100%; height: 100%;" title="<c:out value="${result.nttSj }"/>"></a>
                                 </div>
