@@ -560,7 +560,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
 /* 240117 슬라이드 섬네일 디자인 */
 .fwo_card_list_box .fwo_card .fwo_snail_box{position:relative; width:304px; /*background-image: url("/edu/images/renew2022/non_img.png");*/ background-color: #ffffff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 1px solid #ededed; box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);}
-.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box{position:relative; width:304px; background-image: url("/edu/images/renew2022/non_img.png"); background-color: #ffffff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 0; box-shadow: initial;}
+.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box{position:relative; width:304px; height:230px; background-image: url("/edu/images/renew2022/non_img.png"); background-color: #ffffff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 0; box-shadow: initial;}
 .fwo_card_list_box .swiper-slide a{display: inline-block; width:100%; height: 100%;}
 .fwo_card_list_box .swiper-slide a img{width: 100%; height: 100%;}
 .fwo_info_box{position: absolute; bottom: 25px; left: 20px; width: 86%;}
