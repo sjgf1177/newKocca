@@ -38,14 +38,14 @@
     }
 
 
-    $(document).ready(function() {
+   /* $(document).ready(function() {
         if ($('.event_card_list .e_end_back_box').length) {
-            $('.event_card_list .event_card').attr('tab-index','-1');
+            $('.event_card_list .event_card').attr('tabindex','-1');
         }
         else {
-            $('.event_card_list .event_card').attr('tab-index','0');
+            $('.event_card_list .event_card').attr('tabindex','0');
         }
-    });
+    });*/
 </script>
 
 <%-- 7개 tabs일때
@@ -229,7 +229,7 @@
                                             <c:forEach var="file" items="${fileList }">
                                                 <c:choose>
                                                     <c:when test="${file.fileFieldName eq 'main_image' }">
-                                                        <img alt="에듀코카 이벤트 이미지" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                        <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
                                                     </c:when>
                                                     <c:otherwise>
                                                         <img alt="No Image" src="/edu/images/bm/noimage.png"/>
@@ -271,48 +271,48 @@
 
                         <%-- 종료된 이벤트 목록 --%>
                         <c:if test='${(nowDate-endDate) > 0}'>
-                                <a href="<c:out value="${url }" escapeXml="false" />" class="col-12 show fn event_card" tabindex="-1">
+                                <%--<a href="<c:out value="${url }" escapeXml="false" />" title="<c:out value="${result.nttSj }"/>" class="col-12 show fn event_card">--%>
+                                <div class="col-12 show fn event_card">
                                     <div class="col-12 img_box">
                                         <c:choose>
                                             <c:when test='${ fileList.size() > 0 }'>
                                                 <c:forEach var="file" items="${fileList }">
-                                                    <c:choose>
-                                                        <c:when test="${file.fileFieldName eq 'main_image' }">
-                                                            <img alt="에듀코카 이벤트 이미지" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
-                                                        </c:when>
-                                                        <c:otherwise>
-                                                            <img alt="No Image" src="/edu/images/bm/noimage.png"/>
-                                                        </c:otherwise>
-                                                    </c:choose>
-                                                </c:forEach>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <img alt="No Image" src="/edu/images/bm/noimage.png"/>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </div>
-                                    <div class="col-12 text_box">
-                                        <h5><c:out value="${result.nttSj }"/></h5>
-                                        <c:choose>
-                                            <c:when test='${ (nowDate-endDate) > 0 }'>
-                                                <p class="date_tag_off">종료</p>
-                                            </c:when>
-                                            <c:when test='${ (nowDate-strDate) < 0 }'>
-                                                <p class="date_tag_on">D${strDate-nowDate}</p>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <p class="date_tag_on">진행</p>
-                                            </c:otherwise>
-                                        </c:choose>
-                                        <p class="event_date">
-                                            기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
-                                            <span class="show"><c:out value="${result.ntceEndde }"/></span>
-                                        </p>
-                                    </div>
-                                </a>
-                                <div class="e_end_back_box">
-                                    <a href="<c:out value="${url }" escapeXml="false" />"
-                                       style="display: inline-block; width: 100%; height: 100%;"></a>
+                                    <c:choose>
+                                        <c:when test="${file.fileFieldName eq 'main_image' }">
+                                            <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                    </c:otherwise>
+                                    </c:choose>
+                                </div>
+                            <div class="col-12 text_box">
+                                <h5><c:out value="${result.nttSj }"/></h5>
+                                <c:choose>
+                                    <c:when test='${ (nowDate-endDate) > 0 }'>
+                                        <p class="date_tag_off">종료</p>
+                                    </c:when>
+                                    <c:when test='${ (nowDate-strDate) < 0 }'>
+                                        <p class="date_tag_on">D${strDate-nowDate}</p>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <p class="date_tag_on">진행</p>
+                                    </c:otherwise>
+                                </c:choose>
+                                <p class="event_date">
+                                    기간 : <span class="show"><c:out value="${result.ntceBgnde }"/></span> ~
+                                    <span class="show"><c:out value="${result.ntceEndde }"/></span>
+                                </p>
+                            </div>
+                            </div>
+                            <div class="e_end_back_box">
+                                <a href="<c:out value="${url }" escapeXml="false" />" style="display: inline-block; width: 100%; height: 100%;" title="<c:out value="${result.nttSj }"/>"></a>
                                 </div>
                             </c:if>
                         </div>

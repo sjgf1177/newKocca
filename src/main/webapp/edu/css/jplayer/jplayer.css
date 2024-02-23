@@ -6,7 +6,7 @@ button{background: transparent; border: none;}
 
 #jp_video_0 {position:relative;}
 /*jplay desing ==========================================================================================================================*/
-.jp-video *:focus {outline:none;}
+
 .jp-video button:-moz-focus-inner {border:0;}
 .jp-controls button {display:block; float:left;  border:none; cursor:pointer; margin: 0 7px;}
 .jp_poster_0 {width:100%;}
@@ -72,7 +72,7 @@ button{background: transparent; border: none;}
 
 .jp-volume-controls {display: flex; align-items: center;}
 .jp-volume-bar {display: inline-block; width:0; height:3px; overflow:hidden; background:rgba(255,255,255, 0.35); cursor:pointer; transition: 0.3s;}
-.jp-volume-controls:hover .jp-volume-bar {width: 54px;}
+.jp-volume-controls:hover .jp-volume-bar, .jp-volume-controls:focus .jp-volume-bar {width: 54px;}
 .jp-volume-bar-value {width:0px; height:4px; background:#fff;}
 .jp-volume-controls button { display:inline-block; border:none; cursor:pointer; }
 
@@ -130,7 +130,8 @@ button{background: transparent; border: none;}
 .u_index.tooltip  .sub_tooltip, .jp-full-screen .sub_tooltip, .jp-mute .sub_tooltip{transform: translate(-50%, 10px);}
 .jp-util ul li a span.sub_tooltip{width: auto; height: auto; margin: 0;}
 
-.tooltip:hover .sub_tooltip, .jp-util ul li a.tooltip:hover span.sub_tooltip{display: block;}
+.tooltip:hover .sub_tooltip, .jp-util ul li a.tooltip:hover span.sub_tooltip,
+.tooltip:focus .sub_tooltip, .jp-util ul li a.tooltip:focus span.sub_tooltip{display: block;}
 
 /* 스피드 */
 

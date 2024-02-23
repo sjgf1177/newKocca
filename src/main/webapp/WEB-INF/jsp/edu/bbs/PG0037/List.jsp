@@ -61,7 +61,7 @@
 							</tr>
 							<tr>
 								<td style="text-align:left; padding-left:20px; height:220px; overflow-y:hidden;">
-									<div style="height:220px; overflow-y:auto;">${result.nttCn}</div>
+									<div style="height:220px; overflow-y:auto;" tabindex="0">${result.nttCn}</div>
 								</td>
 							</tr>
 							<c:set var="endLoop" value="true"/>

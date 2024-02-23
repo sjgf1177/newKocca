@@ -57,9 +57,9 @@
 						</div>
 						<div class="text_box">
 							<div class="check_style_0_con">
-								<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }">
+								<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" title="선택">
 								<%--<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>--%>
-								<label for="checkid_${list.courseSeq }"><span></span></label>
+								<label for="checkid_${list.courseSeq }" title="선택"></label>
 							</div>
 							<div class="online_edu_card_icon_con">
 								<%--<span class="online_edu_card_icon">

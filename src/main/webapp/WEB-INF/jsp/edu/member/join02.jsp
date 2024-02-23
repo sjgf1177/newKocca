@@ -1223,7 +1223,7 @@
 
                 <div class="signup_agree_con">
                     <h3>개인정보 수집 동의(선택)</h3>
-                    <div tabindex="0" class="agreeScr" style="font-size: 1.4rem; line-height: 2.05rem;">
+                    <div class="agreeScr" style="font-size: 1.4rem; line-height: 2.05rem;">
                         <div class="personal">
                             <div class="indent01">
                                 <p>한국콘텐츠진흥원은 회원가입, 원활한 고객 상담, 각종 서비스의 제공을 위해 최초 회원가입 당시 아래와 같은 최소한의 선택정보를 수집합니다.</p>
@@ -1343,33 +1343,33 @@
                             <input type="hidden" name="parntsAgreAt" id="parntsAgreAt" value="" />
                             <div class="form-group h61 age2">
                                 <div class="col-sm-12">
-                                    <input name="parntsNm" id="parntsNm" type="text" class="form-control input_bline h45" placeholder="보호자 이름">
+                                    <input name="parntsNm" id="parntsNm" type="text" class="form-control input_bline h45" placeholder="보호자 이름" title="보호자 이름을 입력하세요.">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-12" style="display: flex; justify-content: space-between;">
-                                    <input type="text" class="form-control mob_no input_bline h45" name="parntsMbtlnum" id="parntsMbtlnum" placeholder="보호자 휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
+                                    <input type="text" class="form-control mob_no input_bline h45" name="parntsMbtlnum" id="parntsMbtlnum" placeholder="보호자 휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13" title="보호자 휴대폰번호을 입력하세요.">
                                     <input type="hidden" name="parntsMbtlnumAuthAt" id="parntsMbtlnumAuthAt" />
                                 </div>
                                 <div class="form-group h61" style="margin-top: 10px;">
                                     <a href="javascript:parntsCrtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="parntsMbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
-                                    <a href="#self" class="btn btn-success" id="parntsMbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                    <a href="#self" class="btn btn-success" id="parntsMbtlnumAuthCmt" title="인증완료" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
                                     <a href="javascript:parntsAuthDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-danger" id="parntsMbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;" title="인증삭제">인증삭제</a>
                                 </div>
                             </div>
                         </div>
                         <div id="adultDiv" class="form-group ageafterbox"  style="display: none;">
                             <div class="col-sm-12 age1" style="display: flex; justify-content: space-between;">
-                                <input type="text" class="form-control mob_no input_bline h45" name="mbtlnum" id="mbtlnum" placeholder="휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13">
+                                <input type="text" class="form-control mob_no input_bline h45" name="mbtlnum" id="mbtlnum" placeholder="휴대폰번호" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}" maxlength="13" title="휴대폰번호를 입력하세요.">
                                 <input type="hidden" name="mbtlnumAuthAt" id="mbtlnumAuthAt" />
 
 
                             </div>
                             <div class="form-group h61" style="margin-top: 10px; border-bottom:1px solid #707070 !important;">
                                 <a href="javascript:crtfcPopup('02');" title="휴대폰 인증하기(새창열기)" class="btn btn-default btn-black" id="mbtlnumAuth" style="margin-right: 0; margin-bottom: 0;">인증하기</a>
-                                <a href="#self" class="btn btn-success" id="mbtlnumAuthCmt" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
-                                <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" style="display:none; margin-right: 0; margin-bottom: 0;">보호자와 동일</a>
-                                <a href="javascript:authDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-danger" id="mbtlnumAuthDel" style="display:none; margin-right: 0; margin-bottom: 0;">인증삭제</a>
+                                <a href="#self" class="btn btn-success" id="mbtlnumAuthCmt" title="인증완료" style="display:none; margin-right: 0; margin-bottom: 0;">인증완료</a>
+                                <a href="#self" class="btn btn-default btn-black" id="parntsAuthSameBtn" title="보호자와 동일" style="display:none; margin-right: 0; margin-bottom: 0;">보호자와 동일</a>
+                                <a href="javascript:authDel();" onclick="return confirm('인증삭제를 하시겠습니까?');" class="btn btn-default btn-danger" id="mbtlnumAuthDel" title="인증삭제" style="display:none; margin-right: 0; margin-bottom: 0;">인증삭제</a>
                             </div>
 
                         </div>

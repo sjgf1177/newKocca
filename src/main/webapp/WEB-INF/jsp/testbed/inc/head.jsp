@@ -146,7 +146,7 @@
 
                         <div class="nav_search_box">
                             <form name="frmSearch4" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
-                                <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='"${randomKeyword}" 검색해 보세요.'>
+                                <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='검색어입력("${randomKeyword}" 검색해 보세요.)'>
                                 <button class="nav_search_btn" title="검색하기"></button>
                             </form>
                         </div>
@@ -213,10 +213,10 @@
 
                                         <c:choose>
                                             <c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
-                                                <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                                <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
                                             </c:when>
                                             <c:otherwise>
-                                                <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">테마과정</a></li>
+                                                <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
                                             </c:otherwise>
                                         </c:choose>
 
@@ -411,7 +411,7 @@
                                                     <c:set var="contentType" value="${result.cd1}"/>
                                         </c:if>
                                         <li>
-                                            <button type="button" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
+                                            <button type="button" title="${result.cdnm2}" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
                                         </li>
                                     </c:forEach>
                                 </div>

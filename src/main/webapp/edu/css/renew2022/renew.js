@@ -7,9 +7,9 @@ $(document).ready(function() {
     // 웹접근성 건너뛰기 기능 제공
     function uiAppendHeader(){
         var uiAppendHeader = '<div id="skip" class="skip">';
-        uiAppendHeader += '<a href="#GnbBox">메인메뉴 바로가기</a>';
         uiAppendHeader += '<a href="#ContentBox" class="skipContents">본문 바로가기</a>';
-        uiAppendHeader += '<a href="#footer">하단메뉴 바로가기</a>';
+        uiAppendHeader += '<a href="#GnbBox">메뉴 바로가기</a>';
+        uiAppendHeader += '<a href="#footer">푸터 바로가기</a>';
         uiAppendHeader += '</div>';
 
         if (!$("#skip").length) {

@@ -364,9 +364,10 @@ header nav.gnbActive{background: #222222;}
 #joinStep2 ul.list_style_4.color_gray > li{color: #444444;}
 /* 약관동의 */
 .h_subtitle5{font-size: 2rem; line-height: 4rem;}
+
 .agreeScr .m1, .agreeScr ol li{font-size: 1.5rem; line-height: 2.4rem;}
 .agreeScr .m1 li:last-child, .agreeScr ol li:last-child{margin-bottom: 20px;}
-.agreeScr
+
 .sub_section .sub_contents_body .signup_agree_con, .sub_section .sub_contents_body .signup_write_con{border-top:2px solid #999999; border-bottom: none; margin-bottom: 0;}
 .sub_section .sub_contents_body #joinStep2 div:nth-child(3) .signup_agree_con{border-top: none;}
 .agreeScrBtm{padding: 10px 15px 10px 0; border:none; text-align: left!important;}
@@ -504,7 +505,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .title{margin-right: 24px; position: relative;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .title:after{content: ""; position: absolute; right: -24px; top:-2px; width: 2px; height: 24px; background-image: url("/edu/images/renew2022/ico_line_gray.png"); background-repeat: no-repeat;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box{height: 100%; margin: 0 40px 0 24px;}
-.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a{display: flex; height: 100%; align-items: center;}
+.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a{display: flex; height: 99%; align-items: center;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a span:last-child{margin-left: 24px;}
 /*.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: center;}/*.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: center;}*/
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: right 17px; background-size: 28px; transform: rotate(90deg);}
@@ -559,7 +560,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
 /* 240117 슬라이드 섬네일 디자인 */
 .fwo_card_list_box .fwo_card .fwo_snail_box{position:relative; width:304px; /*background-image: url("/edu/images/renew2022/non_img.png");*/ background-color: #ffffff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 1px solid #ededed; box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.1);}
-.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box{position:relative; width:304px; background-image: url("/edu/images/renew2022/non_img.png"); background-color: #ffffff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 0; box-shadow: initial;}
+.main_offline_contents .fwo_card_list_box .fwo_card .fwo_snail_box{position:relative; width:304px; height:230px; background-image: url("/edu/images/renew2022/non_img.png"); background-color: #ffffff; background-repeat: no-repeat; background-position: center; background-size: contain; border: 0; box-shadow: initial;}
 .fwo_card_list_box .swiper-slide a{display: inline-block; width:100%; height: 100%;}
 .fwo_card_list_box .swiper-slide a img{width: 100%; height: 100%;}
 .fwo_info_box{position: absolute; bottom: 25px; left: 20px; width: 86%;}
@@ -1222,7 +1223,7 @@ table.board_type_0.notice thead th{font-size: 15px;}
 .rowcard_box .theme_process_list_wrap .img_box{width: 31%; margin-bottom: 0; float: none; cursor: pointer; height: 244px;}
 .rowcard_box .theme_process_list_wrap .img_box img{width: 380px;}
 .rowcard_box .theme_process_list_wrap .text_box{width: 69%; display: flex; flex-direction: column; justify-content: center; padding: 0 16px 30px 40px; position: relative;}
-.rowcard_box .theme_process_list_wrap .theme_process_list .text_box h5{font-size: 30px; line-height: 40px; font-weight:600; margin-bottom: 10px; max-width: 100%;}
+.rowcard_box .theme_process_list_wrap .theme_process_list .text_box h5{font-size: 30px; line-height: 40px; font-weight:600; margin-bottom: 10px; max-width: 96%;}
 .rowcard_box .theme_process_list_wrap .theme_process_list_desc{font-size:16px; -webkit-line-clamp:3; max-height: 75px;}
 .rowcard_box .theme_process_list_more_btn_con .btn_style_0{padding: 0; width: 90px; height: 35px; line-height: 35px; text-align: center;}
 .sub_section .sub_contents_body .rowcard_box .theme_process_list_wrap .check_style_0_con input[type="checkbox"] + label{

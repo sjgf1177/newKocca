@@ -120,7 +120,8 @@
 				<a href="javascript:void(0);" class="btn_style_0 blue openlecture_eye close_w eye_off" style="display:none; margin-right:0; margin-bottom:0;">
                     자막닫기
                 </a>
-				<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 blue openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
+				<%--<a href="javascript:void(0);" class="${(fn:length(fn:replace(lessonView.subtitle,' ','')) == 0 ? 'hidden':'') } btn_style_0 blue openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">--%>
+				<a href="javascript:void(0);" class="btn_style_0 blue openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">
                     자막보기
 				</a>
 			</div>
@@ -294,6 +295,9 @@
 
 </style>
 <script type="text/javascript">
+
+	$('.return_list_box.gnb_close').attr('id', 'GnbBox');
+
 	$(".eye_off").click(function (e) {
 		$(this).hide();
 		$(".movDescTxt").hide();

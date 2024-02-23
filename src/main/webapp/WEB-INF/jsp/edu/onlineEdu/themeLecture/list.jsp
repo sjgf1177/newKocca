@@ -96,7 +96,7 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=92&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<img src="/upload/themeupload/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트">
+									<img src="/upload/themeupload/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트, 이거 완전 내 이야기인데? 싶은 현직+예비 PD님들 주목!, 트렌드를 쫒지 않고 나만의 콘텐츠를 만드는 노하우를 알려 드립니다.">
 									<%--<img src="/edu/images/renew2022/L92.png" alt="시청은 핑계고! 베테랑 제작진 레벨 테스트">--%>
 								</div>
 								<div class="col-12 text_box">
@@ -122,7 +122,7 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=68&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<img src="/upload/themeupload/1001.png" alt="현장에서 통하는 방송 기획">
+									<img src="/upload/themeupload/1001.png" alt="현장에서 통하는 방송 기획,모두가 주목하는 콘텐츠의 비밀!은 바로 탄탄한 기획에 있다? 방송 기획력 향상을 위한 실전 TIP! 현장 고수들이 직접 전해드립니다.">
 									<%--<img src="/edu/images/renew2022/1001.png" alt="현장에서 통하는 방송 기획">--%>
 								</div>
 								<div class="col-12 text_box">
@@ -138,7 +138,7 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=58&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<img src="/upload/themeupload/1002.png" alt="다큐멘터리 글쓰기">
+									<img src="/upload/themeupload/1002.png" alt="다큐멘터리 글쓰기, 프로그램 기획부터 구성까지, 다큐멘터리 글쓰기의 모든 것 다큐멘터리 제작 노하우를 단계별로 차근차근 알아보세요.">
 									<%--<img src="/edu/images/renew2022/1002.png" alt="다큐멘터리 글쓰기">--%>
 								</div>
 								<div class="col-12 text_box">
@@ -154,7 +154,7 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=75&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<img src="/upload/themeupload/1003.png" alt="방송 미디어 인사이트">
+									<img src="/upload/themeupload/1003.png" alt="방송 미디어 인사이트, 드라마, 예능, 다큐멘터리까지!? 현장 전문가가 생생하게 전하는 방송 미디어와 인사이트지금 바로 확인하세요!">
 									<%--<img src="/edu/images/renew2022/1003.png" alt="방송 미디어 인사이트">--%>
 								</div>
 								<div class="col-12 text_box">
@@ -170,7 +170,7 @@
 						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=74&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
-									<img src="/upload/themeupload/1004.png" alt="OSMU 원작과 창작의 성공적 사례">
+									<img src="/upload/themeupload/1004.png" alt="OSMU 원작과 창작의 성공적 사례, 원작의 작품성과 의도는 유지하면서 성공적인 N차 창작물 만들기 OSMU(One-Source Multi-Use) 전략 성공 사례를 통해 확인하세요!">
 									<%--<img src="/edu/images/renew2022/1004.png" alt="OSMU 원작과 창작의 성공적 사례">--%>
 								</div>
 								<div class="col-12 text_box">
@@ -202,7 +202,8 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=81&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L81.png" alt="슬기로운 글로벌 콘텐츠 제작 생활">
+									<img src="/upload/themeupload/L81.png" alt="슬기로운 글로벌 콘텐츠 제작 생활, 글로벌향 콘텐츠 기획과 제작부터 계약까지
+세계로 뻗어나가는 콘텐츠! 한번 만들어 볼까요?">
 								</div>
 								<div class="col-12 text_box">
 									<h5>슬기로운 글로벌 콘텐츠 제작 생활</h5>
@@ -218,7 +219,8 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=78&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L78.png" alt="당신의 상상은 현실이 된다, 리얼타임 엔진과 기술">
+									<img src="/upload/themeupload/L78.png" alt="당신의 상상은 현실이 된다, 리얼타임 엔진과 기술, 아직 상상만 하고 있는 당신!을 위해 준비했습니다.
+진짜보다 더 진짜같은 VR 콘텐츠 제작 방법!?">
 								</div>
 								<div class="col-12 text_box">
 									<h5>당신의 상상은 현실이 된다, 리얼타임 엔진과 기술</h5>
@@ -234,7 +236,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=80&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L80.png" alt="방구석 카메라 교실, 카메라 지식 플러스">
+									<img src="/upload/themeupload/L80.png" alt="방구석 카메라 교실, 카메라 지식 플러스, 방송의 첫 시작, 카메라! 제대로 알고 싶다면? 촬영 전 꼭 알아야 할 카메라 지식을 소개합니다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>방구석 카메라 교실, 카메라 지식 플러스</h5>
@@ -250,7 +252,8 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=53&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L53.png" alt="드라마 제작, 이것이 궁금했다!">
+									<img src="/upload/themeupload/L53.png" alt="드라마 제작, 이것이 궁금했다!, 재밌게 보기만 했던 드라마,
+어떻게 만들어지는지 궁금하신가요? 촬영 감독과 프로듀서에게 듣는 드라마 제작 이야기와 드라마 촬영 기법!">
 								</div>
 								<div class="col-12 text_box">
 									<h5>드라마 제작, 이것이 궁금했다!</h5>
@@ -281,7 +284,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=93&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L93.png" alt="프로그래밍부터 엔진까지, 게임 개발 바이블">
+									<img src="/upload/themeupload/L93.png" alt="프로그래밍부터 엔진까지, 게임 개발 바이블, 게임 개발할 떄 꼭 필요한 필수 프로그래밍&TOOL 강좌, 파이썬부터 언리얼까지 게임 개발 바이블로 완전정복">
 								</div>
 								<div class="col-12 text_box">
 									<h5>프로그래밍부터 엔진까지, 게임 개발 바이블</h5>
@@ -300,7 +303,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=90&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L90.png" alt="GAME분야 레벨 UP+ 시리즈">
+									<img src="/upload/themeupload/L90.png" alt="GAME분야 레벨 UP+ 시리즈,초대장, 단계별 강좌로 게임 분야 MASTER로 만들어드립니다. 입문부터 심과 과정까지 게임 제작 LEVEL UP!">
 								</div>
 								<div class="col-12 text_box">
 									<h5>GAME분야 레벨 UP+ 시리즈</h5>
@@ -316,7 +319,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=83&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L83.png" alt="알면 쓸모 있는 게임기획자를 위한 게임 개발법">
+									<img src="/upload/themeupload/L83.png" alt="알면 쓸모 있는 게임기획자를 위한 게임 개발법, 나는 게임 기획자, 개발에 대해 얼마나 알아야 할까? 기획자가 알아야 할 포인트만 쏙쏙 살펴봅시다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>알면 쓸모 있는 게임기획자를 위한 게임 개발법</h5>
@@ -332,7 +335,8 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=59&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L59.png" alt="게임 개발시 성공 노하우는 무엇일까?">
+									<img src="/upload/themeupload/L59.png" alt="게임 개발시 성공 노하우는 무엇일까?, 게임 개발, 뭐부터 해야 할까?
+맨땅에 헤딩은 이제 그만! 1인 개발자가 들려주는 진짜 필요한 게임 개발 이야기">
 								</div>
 								<div class="col-12 text_box">
 									<h5>게임 개발시 성공 노하우는 무엇일까?</h5>
@@ -348,7 +352,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=60&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L60.png" alt="이젠 제대로 알고 계약하자!!">
+									<img src="/upload/themeupload/L60.png" alt="이젠 제대로 알고 계약하자!!, 게임 업계 종사자분들 주목개발만큼 중요한 게 있습니다. 내가 만든 너무 소중한 게임, 잘 지킬 수 있는 방법 꼭 확인하세요!">
 								</div>
 								<div class="col-12 text_box">
 									<h5>이젠 제대로 알고 계약하자!!</h5>
@@ -379,7 +383,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=94&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L94.png" alt="지속가능한 창작의 원동력, 웹툰 스튜디오">
+									<img src="/upload/themeupload/L94.png" alt="지속가능한 창작의 원동력, 웹툰 스튜디오, 작업 속도up, 퀄맅up, 체계적인 시스템으로 효율성을 올린다. 웹툰 산업의 지속가능성을 높이는 스튜디오 창작 시스템을 소개합니다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>지속가능한 창작의 원동력, 웹툰 스튜디오</h5>
@@ -395,7 +399,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=61&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L61.png" alt="웹툰 프로듀서로써의 제작 노하우">
+									<img src="/upload/themeupload/L61.png" alt="웹툰 프로듀서로써의 제작 노하우,웹툰 프로듀서를 꿈꾸는 당신을 위해 준비했습니다. 기획부터 로그라인까지 웹툰 제작 실무 노하우 대/공/개">
 								</div>
 								<div class="col-12 text_box">
 									<h5>웹툰 프로듀서로써의 제작 노하우</h5>
@@ -411,7 +415,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=85&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L85.png" alt="뜨는 이야기들의 공통분모, 웹 소설 IP">
+									<img src="/upload/themeupload/L85.png" alt="뜨는 이야기들의 공통분모, 웹 소설 IP, IP 무한 확장의 시대,뜨는 이야기에 숨겨진 비밀이 있다. 작은 아이디어도 웹소설 IP로 재탄생시키는 방법, 함께 확인하시죠!">
 								</div>
 								<div class="col-12 text_box">
 									<h5>뜨는 이야기들의 공통분모, 웹 소설 IP</h5>
@@ -427,7 +431,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=88&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L88.png" alt="나만의 개성있는 캐릭터 How to make?">
+									<img src="/upload/themeupload/L88.png" alt="나만의 개성있는 캐릭터 How to make? 어렵고 막막했던 캐릭터 제작, 이제 쉽고 재밌게 시작해보세요! How to make? 개성만점 나만의 캐릭터 제작과정">
 								</div>
 								<div class="col-12 text_box">
 									<h5>나만의 개성있는 캐릭터 How to make?</h5>
@@ -443,7 +447,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=70&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L70.png" alt="무한 창작 , 웹툰의 세계">
+									<img src="/upload/themeupload/L70.png" alt="무한 창작 , 웹툰의 세계짜임새 있는 스토리 구성과 다양한 연출기법 나만의 스토리를 녹인 웹툰 제작 방법 A to Z">
 								</div>
 								<div class="col-12 text_box">
 									<h5>무한 창작 , 웹툰의 세계</h5>
@@ -459,7 +463,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=71&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L71.png" alt="내가 만든 이모티콘 제안하기">
+									<img src="/upload/themeupload/L71.png" alt="내가 만든 이모티콘 제안하기, 누구나 쉽고 재미있게 만든다. 이모티콘 기획부터 제안까지 나만의 이모티콘 만드는 방법">
 								</div>
 								<div class="col-12 text_box">
 									<h5>내가 만든 이모티콘 제안하기</h5>
@@ -475,7 +479,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=52&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L52.png" alt="취향저격 캐릭터 만들기 - 캐릭터 매뉴얼북 A to Z">
+									<img src="/upload/themeupload/L52.png" alt="취향저격 캐릭터 만들기 - 캐릭터 매뉴얼북 A to Z,캐릭터를 활용한 브랜드 마케팅부터 컨셉과 적용을 위한 가이드라인까지 캐릭터 제작 매뉴얼북으로 완성하세요!">
 								</div>
 								<div class="col-12 text_box">
 									<h5>취향저격 캐릭터 만들기 - 캐릭터 매뉴얼북 A to Z</h5>
@@ -506,7 +510,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=89&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L89.png" alt="국내 애니메이션이 해외 진출에 성공했던 건에 대하여">
+									<img src="/upload/themeupload/L89.png" alt="국내 애니메이션이 해외 진출에 성공했던 건에 대하여, <레드슈즈>와 <핑크퐁 아기상어>의 캐릭터 브랜딩부터 영상 작업까지, 국내 애니메이션 성공사례를 통해 해외 진출 전략을 분석해봅니다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>국내 애니메이션이 해외 진출에 성공했던 건에 대하여</h5>
@@ -522,7 +526,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=82&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L82.png" alt="애니메이션 제작 A to Z">
+									<img src="/upload/themeupload/L82.png" alt="애니메이션 제작 A to Z눈 깜짝할 새 완성되는 애니메이션! 놓치지 말고 따라오세요. 누구나 할수있다. 시선 집중! 애니메이션 제작 방법">
 								</div>
 								<div class="col-12 text_box">
 									<h5>애니메이션 제작 A to Z</h5>
@@ -538,7 +542,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=62&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L62.png" alt="애니메이션 스토리텔링">
+									<img src="/upload/themeupload/L62.png" alt="애니메이션 스토리텔링,단편과 장편 애니메이션의 차이? VR 애니메이션 스토리텔링 기법? 애니메이션 종류별로 구분해보고 각각의 스토레텔링 단계를 구성해봅니다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>애니메이션 스토리텔링</h5>
@@ -585,7 +589,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=91&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L91.png" alt="공연에 반하다, 트렌드한 공연 기획이란?">
+									<img src="/upload/themeupload/L91.png" alt="공연에 반하다, 트렌드한 공연 기획이란?,공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>공연에 반하다, 트렌드한 공연 기획이란?</h5>
@@ -601,7 +605,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=87&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L87.png" alt="당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!">
+									<img src="/upload/themeupload/L87.png" alt="당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!, 잘 만들어진 음악, 소비자들의 마음에 콕! 박히려면? 공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!</h5>
@@ -617,7 +621,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=55&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L55.png" alt="공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인">
+									<img src="/upload/themeupload/L55.png" alt="공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인, 이 무대는 꼭 봐야해! 관중을 사로잡는 무대의 비밀? 무대 디자이너의 역할과 영상 디자인의 활용법을 알려드립니다.">
 								</div>
 								<div class="col-12 text_box">
 									<h5>공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인</h5>
@@ -633,7 +637,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=63&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L63.png" alt="뮤지컬의 이해">
+									<img src="/upload/themeupload/L63.png" alt="뮤지컬의 이해 뮤지컬 기본 개념과 장르부터 브로드웨이 뮤지컬의 제작과정까지! 뮤지컬 이해를 위한 가이드 지금 바로 확인하세요!">
 								</div>
 								<div class="col-12 text_box">
 									<h5>뮤지컬의 이해</h5>
@@ -649,7 +653,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=56&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L56.png" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기">
+									<img src="/upload/themeupload/L56.png" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기, 장르를 넘나드는 뮤지컬, 국내 뮤지컬은 어떻게 변화했을까? 뮤지컬 음악 감독이 직접 들려주는 뮤지컬과 음악 이야기">
 								</div>
 								<div class="col-12 text_box">
 									<h5>감독에게 직접 들어보는 뮤지컬 제작 이야기</h5>
@@ -759,7 +763,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=95&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L95.png" alt="배리어 프리, 장벽을 허무는 콘텐츠의 힘">
+									<img src="/upload/themeupload/L95.png" alt="배리어 프리, 장벽을 허무는 콘텐츠의 힘, 세상을 바꾸는 창의적인 생각의 힘! 당신의 가치있는 아이디어를 찾는 방법, 함께 알아볼까요?">
 								</div>
 								<div class="col-12 text_box">
 									<h5>배리어 프리, 장벽을 허무는 콘텐츠의 힘</h5>
@@ -776,7 +780,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=96&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L96.png" alt="2023 콘텐츠 스텝업X플러스 현장 강의">
+									<img src="/upload/themeupload/L96.png" alt="2023 콘텐츠 스텝업X플러스 현장 강의, Photogrammetry의 영상편집부터 Tilt Brush의 가상현실 아트까지! 콘텐츠 제작에 활용하면 좋은 실무 꿀팁을 확인하세요!">
 								</div>
 								<div class="col-12 text_box">
 									<h5>2023 콘텐츠 스텝업X플러스 현장 강의</h5>
@@ -793,7 +797,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=97&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L97.png" alt="2022 콘텐츠 플러스 현장 강의">
+									<img src="/upload/themeupload/L97.png" alt="2022 콘텐츠 플러스 현장 강의, 콘텐츠, 내가 만들면 다르지! 수없이 많은 콘텐츠들이 쏟아진다.  미디어 환경에 대한 이해부터 수익 모델까지  나만의 콘텐츠 제작을 위한 기초 상식">
 								</div>
 								<div class="col-12 text_box">
 									<h5>2022 콘텐츠 플러스 현장 강의</h5>

@@ -178,12 +178,12 @@
         tagObj2 += '                            </ul>';
         tagObj2 += '                            <div class="jp-toggles">';
         tagObj2 += '                                <div class="jp-speed">';
-        tagObj2 += '                                    <div class="jp-toggles-text tooltip" title="재생 속도" tabIndex="0"><span class="sub_tooltip">재생속도</span></div>';
+        tagObj2 += '                                    <button type="button" class="jp-toggles-text tooltip" title="재생 속도" tabIndex="0"><span class="sub_tooltip">재생속도</span></button>';
         tagObj2 += '                                    <div class="jp-speed-btn-box">';
-        tagObj2 += '                                        <button class="speed sp2" data-speed="0">0.5</button>';
-        tagObj2 += '                                        <button class="speed sp3" data-speed="2">1.0</button>';
-        tagObj2 += '                                        <button class="speed sp4" data-speed="4">1.5</button>';
-        tagObj2 += '                                        <button class="speed sp5" data-speed="6">2.0</button>';
+        tagObj2 += '                                        <button class="speed sp2" data-speed="0" title="0.5배속도">0.5</button>';
+        tagObj2 += '                                        <button class="speed sp3" data-speed="2" title="1배속도">1.0</button>';
+        tagObj2 += '                                        <button class="speed sp4" data-speed="4" title="1.5배속도">1.5</button>';
+        tagObj2 += '                                        <button class="speed sp5" data-speed="6" title="2배속도">2.0</button>';
         tagObj2 += '                                        <h4 style="display: none">재생 속도</h4>';
         tagObj2 += '                                    </div>';
         tagObj2 += '                                </div>';
