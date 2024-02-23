@@ -69,7 +69,7 @@
 							</c:otherwise>
 						</c:choose>
 						<!-- 본문이미지 대체텍스트 -->
-						<!-- <div class="hidden">${result.imgDescCn}</div> -->
+						<div class="hidden">${result.imgDescCn}</div>
 					</div>
 				</td>
 			</tr>
