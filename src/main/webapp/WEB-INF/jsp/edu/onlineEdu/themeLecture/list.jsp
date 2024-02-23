@@ -763,7 +763,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=95&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L95.png" alt="배리어 프리, 장벽을 허무는 콘텐츠의 힘, 세상을 바꾸는 창의적인 생각의 힘! 당신의 가치있는 아이디어를 찾는 방법, 함께 알아볼까요?">
+									<img src="/upload/themeupload/L95.png" alt="배리어 프리, 장벽을 허무는 콘텐츠의 힘">
 								</div>
 								<div class="col-12 text_box">
 									<h5>배리어 프리, 장벽을 허무는 콘텐츠의 힘</h5>
@@ -780,7 +780,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=96&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L96.png" alt="2023 콘텐츠 스텝업X플러스 현장 강의, Photogrammetry의 영상편집부터 Tilt Brush의 가상현실 아트까지! 콘텐츠 제작에 활용하면 좋은 실무 꿀팁을 확인하세요!">
+									<img src="/upload/themeupload/L96.png" alt="2023 콘텐츠 스텝업X플러스 현장 강의">
 								</div>
 								<div class="col-12 text_box">
 									<h5>2023 콘텐츠 스텝업X플러스 현장 강의</h5>
@@ -797,7 +797,7 @@
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=97&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L97.png" alt="2022 콘텐츠 플러스 현장 강의, 콘텐츠, 내가 만들면 다르지! 수없이 많은 콘텐츠들이 쏟아진다.  미디어 환경에 대한 이해부터 수익 모델까지  나만의 콘텐츠 제작을 위한 기초 상식">
+									<img src="/upload/themeupload/L97.png" alt="2022 콘텐츠 플러스 현장 강의">
 								</div>
 								<div class="col-12 text_box">
 									<h5>2022 콘텐츠 플러스 현장 강의</h5>
