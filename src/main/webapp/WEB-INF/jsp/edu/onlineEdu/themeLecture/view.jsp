@@ -31,7 +31,7 @@
 			</p>
 			<div class="txt_ct mb40">
 				<c:if test="${result.posterImg ne null && result.posterImg ne ''}">
-					<img alt="${result.title }" src="${result.posterImg}" style="width:100%;"/>
+					<img alt="${result.title }${result.description}" src="${result.posterImg}" style="width:100%;"/>
 				</c:if>
 			</div>
 		</div>
