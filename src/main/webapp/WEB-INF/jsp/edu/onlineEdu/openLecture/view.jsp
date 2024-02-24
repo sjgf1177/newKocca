@@ -549,8 +549,14 @@
         </div>
         <div class="openlecture_text_box_contents">
             <% pageContext.setAttribute("crlf", "\r\n"); %>
-            ${fn:replace(fn:replace(fn:escapeXml(result.tutorcareer), crlf, '<br/>') , ' ', '&nbsp;')}
-            ${fn:replace(fn:replace(fn:escapeXml(result.tutorauthor), crlf, '<br/>') , ' ', '&nbsp;')}
+            <c:if test="${result.tutorcareer ne '-'}">
+                ${fn:replace(fn:replace(fn:escapeXml(result.tutorcareer), crlf, '<br/>') , ' ', '&nbsp;')}
+            </c:if>
+
+            <c:if test="${result.tutorauthor ne '-'}">
+                <br>
+                ${fn:replace(fn:replace(fn:escapeXml(result.tutorauthor), crlf, '<br/>') , ' ', '&nbsp;')}
+            </c:if>
         </div>
     </div>
 
