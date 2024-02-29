@@ -31,7 +31,7 @@
                 <div class="col-12 col-center">
                     <p class="h_desc2">
                         <strong>콘텐츠인재캠퍼스</strong>
-                        4차 산업혁명을<br> 주도할 융합형 인재 양성의 중심 허브입니다.
+                        4차 산업혁명을 주도할<br>융합형 인재 양성의 중심 허브
                     </p>
                 </div>
             </div>
@@ -108,8 +108,8 @@
             , mousewheelControl: false // 마우스 휠로 슬라이드 움직임
             , paginationHide: true
             , autoHeight: true
-            , speed: 800
-            , autoplay: 4000
+            , speed: 1700
+            , autoplay: 10000
             //,nextButton: '.visual_arrow.right'
             //,prevButton: '.visual_arrow.left'
             //,pagination: '.main_top_rolling_icon'
