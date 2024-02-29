@@ -1438,12 +1438,15 @@ table.board_type_0.notice thead th{font-size: 15px;}
 #Introduce_slide .Itduce-slide-01{width: 100%; height:100%;}
 #Introduce_slide img{width: 100%; height:100%; object-fit: cover;}
 #Introduce_slide .swiper-slide .col-center{position: absolute; top:0; left:0; width: 100%; height: 100%; background-color: rgba(0,0,0, 0.3);}
-#Introduce_slide .swiper-slide .h_desc2{text-align: center; color: #fff; height: 100%; display: flex; justify-content: center; align-items: center; font-size: 2.6rem;}
+#Introduce_slide .swiper-slide.Itduce-slide-02 .col-center{background-color: rgba(0,0,0, 0.5);}
+#Introduce_slide .swiper-slide .h_desc2{text-align: center; color: #fff; height: 100%; display: flex; justify-content: center; align-items: center; flex-direction:column; font-size: 2.6rem;}
+#Introduce_slide .swiper-slide .h_desc2 strong{font-size: 4rem; display: block; margin-bottom: 1.5rem; color: #fff; font-weight: 400;}
 #Introduce_slide .Itduce-slide-02 .h_desc2{line-height: 4.2rem;}
 
 @media screen and (max-width: 680px){
     .injae_w_img{height: auto;}
     #Introduce_slide .swiper-slide .h_desc2{font-size: 2rem;  line-height: 2.5rem;}
+    #Introduce_slide .swiper-slide .h_desc2 strong{font-size: 3rem;}
     #Introduce_slide .Itduce-slide-02 .h_desc2{font-size: 1.6rem;}
 }
 
