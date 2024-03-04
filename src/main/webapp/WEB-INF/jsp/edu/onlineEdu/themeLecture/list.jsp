@@ -112,7 +112,7 @@
 									<fmt:parseNumber value="${pd_chk_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_chk_dt"></fmt:parseNumber>
 
 									<div class="col-12 sub_text_box">
-										<span><b>4 COURSES</b></span>
+										<span><b>3 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -144,7 +144,7 @@
 								<div class="col-12 text_box">
 									<h5>다큐멘터리 글쓰기</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>5 COURSES</b></span>
+										<span><b>4 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -160,7 +160,7 @@
 								<div class="col-12 text_box">
 									<h5>방송 미디어 인사이트</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>12 COURSES</b></span>
+										<span><b>11 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -428,22 +428,6 @@
 						</div>
 
 						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=88&menuNo=500157&pageIndex=1'>
-								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L88.png" alt="나만의 개성있는 캐릭터 How to make? 어렵고 막막했던 캐릭터 제작, 이제 쉽고 재밌게 시작해보세요! How to make? 개성만점 나만의 캐릭터 제작과정">
-								</div>
-								<div class="col-12 text_box">
-									<h5>나만의 개성있는 캐릭터 How to make?</h5>
-									<div class="col-12 sub_text_box">
-										<span><b>2 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=70&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
@@ -554,6 +538,22 @@
 							</a>
 						</div>
 
+                        <div class="sub_theme_process_list swiper-slide">
+                            <a href='/edu/onlineEdu/themeLecture/view.do?pId=88&menuNo=500157&pageIndex=1'>
+                                <div class="col-5 img_box">
+                                    <%--<img src="${result.img }" alt="${result.title }">--%>
+                                    <img src="/upload/themeupload/L88.png" alt="나만의 개성있는 캐릭터 How to make? 어렵고 막막했던 캐릭터 제작, 이제 쉽고 재밌게 시작해보세요! How to make? 개성만점 나만의 캐릭터 제작과정">
+                                </div>
+                                <div class="col-12 text_box">
+                                    <h5>나만의 개성있는 캐릭터 How to make?</h5>
+                                    <div class="col-12 sub_text_box">
+                                        <span><b>2 COURSES</b></span>
+                                        <%--<span class="h_desc5">조회수 1.2만</span>--%>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
 						<%--<div class="sub_theme_process_list swiper-slide">
                             <a href='/edu/onlineEdu/themeLecture/view.do?pId=54&menuNo=500157&pageIndex=1'>
                                 <div class="col-5 img_box">
@@ -582,19 +582,19 @@
 			</div>
 
 			<div class="tema-list-box06">
-				<h2 class="main_title">공연기획</h2>
+				<h2 class="main_title">공연기획/음악</h2>
 				<div class="temacard06 swiper-container">
 					<div class="swiper-wrapper">
 						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=91&menuNo=500157&pageIndex=1'>
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=56&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L91.png" alt="공연에 반하다, 트렌드한 공연 기획이란?,공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
+									<img src="/upload/themeupload/L56.png" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기, 장르를 넘나드는 뮤지컬, 국내 뮤지컬은 어떻게 변화했을까? 뮤지컬 음악 감독이 직접 들려주는 뮤지컬과 음악 이야기">
 								</div>
 								<div class="col-12 text_box">
-									<h5>공연에 반하다, 트렌드한 공연 기획이란?</h5>
+									<h5>감독에게 직접 들어보는 뮤지컬 제작 이야기</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>9 COURSES</b></span>
+										<span><b>8 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -602,13 +602,13 @@
 						</div>
 
 						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=87&menuNo=500157&pageIndex=1'>
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=63&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L87.png" alt="당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!, 잘 만들어진 음악, 소비자들의 마음에 콕! 박히려면? 공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
+									<img src="/upload/themeupload/L63.png" alt="뮤지컬의 이해 뮤지컬 기본 개념과 장르부터 브로드웨이 뮤지컬의 제작과정까지! 뮤지컬 이해를 위한 가이드 지금 바로 확인하세요!">
 								</div>
 								<div class="col-12 text_box">
-									<h5>당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!</h5>
+									<h5>뮤지컬의 이해</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>2 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
@@ -634,15 +634,15 @@
 						</div>
 
 						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=63&menuNo=500157&pageIndex=1'>
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=87&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L63.png" alt="뮤지컬의 이해 뮤지컬 기본 개념과 장르부터 브로드웨이 뮤지컬의 제작과정까지! 뮤지컬 이해를 위한 가이드 지금 바로 확인하세요!">
+									<img src="/upload/themeupload/L87.png" alt="당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!, 잘 만들어진 음악, 소비자들의 마음에 콕! 박히려면? 공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
 								</div>
 								<div class="col-12 text_box">
-									<h5>뮤지컬의 이해</h5>
+									<h5>당신의 귀를 열어 드립니다. 음악 마케팅의 KeyPoint!</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>2 COURSES</b></span>
+										<span><b>4 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -650,21 +650,20 @@
 						</div>
 
 						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=56&menuNo=500157&pageIndex=1'>
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=91&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L56.png" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기, 장르를 넘나드는 뮤지컬, 국내 뮤지컬은 어떻게 변화했을까? 뮤지컬 음악 감독이 직접 들려주는 뮤지컬과 음악 이야기">
+									<img src="/upload/themeupload/L91.png" alt="공연에 반하다, 트렌드한 공연 기획이란?,공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
 								</div>
 								<div class="col-12 text_box">
-									<h5>감독에게 직접 들어보는 뮤지컬 제작 이야기</h5>
+									<h5>공연에 반하다, 트렌드한 공연 기획이란?</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>8 COURSES</b></span>
+										<span><b>11 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
 							</a>
 						</div>
-
 					</div>
 				</div>
 
