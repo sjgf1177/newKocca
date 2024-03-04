@@ -166,7 +166,7 @@ $(function() {
 						</tr>
 						<tr id="ntcrDeTr">
 							<th scope="row">
-								<label for="ntceBgnde">공지기간111</label>
+								<label for="ntceBgnde">공지기간</label>
 							</th>
 							<td>
 								<input id="ntceBgnde" name="ntceBgnde" value="${result.ntceBgnde}" readonly="readonly" type="text" class="board1 sdate" title="게시시작일" /> ~ <input id="ntceEndde" name="ntceEndde" value="${result.ntceEndde}" readonly="readonly" type="text" class="board1 edate" title="게시종료일" />
