@@ -133,3 +133,6 @@
 <script src="assets/js/pages/ac-alert.js"></script>
 
 <!-- renew2022 JavaScript end -->
+
+<link rel="stylesheet" href="/edu/js/bm/swiper/swiper.min.css">
+<script type="text/javascript" src="/edu/js/bm/swiper/swiper.min.js"></script>
