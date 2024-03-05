@@ -225,7 +225,7 @@
 								<div class="col-12 text_box">
 									<h5>당신의 상상은 현실이 된다, 리얼타임 엔진과 기술</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>4 COURSES</b></span>
+										<span><b>3 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -241,7 +241,7 @@
 								<div class="col-12 text_box">
 									<h5>방구석 카메라 교실, 카메라 지식 플러스</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>4 COURSES</b></span>
+										<span><b>8 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -586,47 +586,15 @@
 				<div class="temacard06 swiper-container">
 					<div class="swiper-wrapper">
 						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=56&menuNo=500157&pageIndex=1'>
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=91&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L56.png" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기, 장르를 넘나드는 뮤지컬, 국내 뮤지컬은 어떻게 변화했을까? 뮤지컬 음악 감독이 직접 들려주는 뮤지컬과 음악 이야기">
+									<img src="/upload/themeupload/L91.png" alt="공연에 반하다, 트렌드한 공연 기획이란?,공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
 								</div>
 								<div class="col-12 text_box">
-									<h5>뮤지컬 대표 전문가가 들려주는 뮤지컬 제작 이야기</h5>
+									<h5>공연에 반하다, 공연 기획/기술의 모든 것</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>11 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=63&menuNo=500157&pageIndex=1'>
-								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L63.png" alt="뮤지컬의 이해 뮤지컬 기본 개념과 장르부터 브로드웨이 뮤지컬의 제작과정까지! 뮤지컬 이해를 위한 가이드 지금 바로 확인하세요!">
-								</div>
-								<div class="col-12 text_box">
-									<h5>뮤지컬의 이해</h5>
-									<div class="col-12 sub_text_box">
-										<span><b>2 COURSES</b></span>
-										<%--<span class="h_desc5">조회수 1.2만</span>--%>
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=55&menuNo=500157&pageIndex=1'>
-								<div class="col-5 img_box">
-									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L55.png" alt="공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인, 이 무대는 꼭 봐야해! 관중을 사로잡는 무대의 비밀? 무대 디자이너의 역할과 영상 디자인의 활용법을 알려드립니다.">
-								</div>
-								<div class="col-12 text_box">
-									<h5>공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인</h5>
-									<div class="col-12 sub_text_box">
-										<span><b>5 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -650,13 +618,45 @@
 						</div>
 
 						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=91&menuNo=500157&pageIndex=1'>
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=55&menuNo=500157&pageIndex=1'>
 								<div class="col-5 img_box">
 									<%--<img src="${result.img }" alt="${result.title }">--%>
-									<img src="/upload/themeupload/L91.png" alt="공연에 반하다, 트렌드한 공연 기획이란?,공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
+									<img src="/upload/themeupload/L55.png" alt="공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인, 이 무대는 꼭 봐야해! 관중을 사로잡는 무대의 비밀? 무대 디자이너의 역할과 영상 디자인의 활용법을 알려드립니다.">
 								</div>
 								<div class="col-12 text_box">
-									<h5>공연에 반하다, 공연 기획/기술의 모든 것</h5>
+									<h5>공연무대의 시선을 끄는 비밀, 무대디자인 & 무대영상디자인</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>5 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=63&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L63.png" alt="뮤지컬의 이해 뮤지컬 기본 개념과 장르부터 브로드웨이 뮤지컬의 제작과정까지! 뮤지컬 이해를 위한 가이드 지금 바로 확인하세요!">
+								</div>
+								<div class="col-12 text_box">
+									<h5>뮤지컬의 이해</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>2 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=56&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L56.png" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기, 장르를 넘나드는 뮤지컬, 국내 뮤지컬은 어떻게 변화했을까? 뮤지컬 음악 감독이 직접 들려주는 뮤지컬과 음악 이야기">
+								</div>
+								<div class="col-12 text_box">
+									<h5>뮤지컬 대표 전문가가 들려주는 뮤지컬 제작 이야기</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>11 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
