@@ -592,9 +592,9 @@
 									<img src="/upload/themeupload/L56.png" alt="감독에게 직접 들어보는 뮤지컬 제작 이야기, 장르를 넘나드는 뮤지컬, 국내 뮤지컬은 어떻게 변화했을까? 뮤지컬 음악 감독이 직접 들려주는 뮤지컬과 음악 이야기">
 								</div>
 								<div class="col-12 text_box">
-									<h5>감독에게 직접 들어보는 뮤지컬 제작 이야기</h5>
+									<h5>뮤지컬 대표 전문가가 들려주는 뮤지컬 제작 이야기</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>8 COURSES</b></span>
+										<span><b>11 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -656,7 +656,7 @@
 									<img src="/upload/themeupload/L91.png" alt="공연에 반하다, 트렌드한 공연 기획이란?,공연 기초 설계 및 기획부터 공연 창작의 새로운 기술 이해까지! 공연 트렌드 전반에 대해 알아봅니다.">
 								</div>
 								<div class="col-12 text_box">
-									<h5>공연에 반하다, 트렌드한 공연 기획이란?</h5>
+									<h5>공연에 반하다, 공연 기획/기술의 모든 것</h5>
 									<div class="col-12 sub_text_box">
 										<span><b>11 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
