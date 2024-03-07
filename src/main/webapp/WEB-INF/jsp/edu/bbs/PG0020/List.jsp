@@ -91,7 +91,7 @@
 --%>
 
 <div class="tab_style_1_con event-tab">
-    <ul class="tab_style_1 five_tab">
+    <ul class="tab_style_1 four_tab">
         <li <c:if test="${paramVO.op3 eq null || paramVO.op3 eq '0'}">class='active'</c:if>>
             <a href="javascript:void(0);" onclick="goEvent('0')">
                 <span>전체보기</span>
@@ -112,11 +112,11 @@
                 <span>구인/공모</span>
             </a>
         </li>
-        <li <c:if test="${paramVO.op3 eq '4'}">class='active'</c:if>>
+        <%--<li <c:if test="${paramVO.op3 eq '4'}">class='active'</c:if>>
             <a href="javascript:void(0);" onclick="goEvent('4')">
                 <span>종료 이벤트</span>
             </a>
-        </li>
+        </li>--%>
     </ul>
 </div>
 

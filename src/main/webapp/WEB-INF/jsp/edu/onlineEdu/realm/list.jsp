@@ -160,7 +160,10 @@
 <div class="bg_gray_slide_box">
     <%-- 추천 클래스 start --%>
     <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
-        <span class="main_title">추천 클래스</span>
+        <span class="main_title" style="width: auto">추천 클래스</span>
+        <sec:authorize ifAnyGranted="ROLE_USER">
+            <button type="button"  class="gnb_menu btn-black" title="추천 클래스 설정" style="padding: 8px 15px; font-size: 13px; margin-left: 10px; margin-bottom: 10px;">추천설정</button>
+        </sec:authorize>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">
                 <c:forEach  items="${eduSubjList }" var="result" >
