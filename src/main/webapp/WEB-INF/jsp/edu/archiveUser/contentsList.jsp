@@ -56,7 +56,7 @@
 					문의 : 02-6310-0623
 				</c:when>
 				<c:when test="${param.menuNo eq '500260'}">
-					문의 : 061-900-6382
+					문의 : 061-900-6383
 				</c:when>
 			</c:choose>
 		</span>
@@ -74,6 +74,7 @@
 					<li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"><span>사업소개</span></a></li>
 					<li><a href="/edu/dream/pltfomList/list.do?menuNo=500117"><span>플랫폼기관</span></a></li>
 					<li><a href="/edu/bbs/B0000041/list.do?menuNo=500211"><span>창의현장</span></a></li>
+					<li class="active"><a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1" title="현재탭"><span>성과아카이브</span></a></li>
 				</c:when>
 				<c:when test="${param.menuNo eq '500262'}">
 					<li><a href="/edu/main/contents.do?menuNo=500110" ><span>사업소개</span></a></li>
@@ -84,9 +85,9 @@
 				<c:when test="${param.menuNo eq '500260'}">
 					<li><a href="/edu/main/contents.do?menuNo=500179"><span>사업소개</span></a></li>
 					<li><a href="/edu/bbs/B0000072/list.do?menuNo=500212"><span>지원현황</span></a></li>
+					<li class="active"><a href="/edu/archiveUser/contentsList.do?menuNo=500260&amp;workField=3" title="현재탭"><span>성과아카이브</span></a></li>
 				</c:when>
 			</c:choose>
-			<li class="active"><a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1" title="현재탭"><span>성과아카이브</span></a></li>
 		</ul>
 	</div>
 
@@ -226,7 +227,7 @@
 				문의처 : 02-6310-0623
 			</c:when>
 			<c:when test="${param.menuNo eq '500260'}">
-				문의처 : 061-900-6382
+				문의처 : 061-900-6383
 			</c:when>
 		</c:choose>
 	</p>

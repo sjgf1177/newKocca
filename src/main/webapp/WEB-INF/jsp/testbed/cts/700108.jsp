@@ -89,7 +89,7 @@
             <th class="color_black">대관신청서</th>
             <td>
                 <div class="board_util_btn_con">
-                    <a href="/upload/testbedupload/testbedapply_2022.hwp" class="btn_style_0 share_room_download_icon_con">
+                    <a href="/upload/testbedupload/testbedapply_2024.hwp" class="btn_style_0 share_room_download_icon_con">
                         다운로드<span class="share_room_download_icon"><img src="/edu/images/bm/btn_style_0_download_icon.png" alt="다운로드"></span>
                     </a>
                 </div>

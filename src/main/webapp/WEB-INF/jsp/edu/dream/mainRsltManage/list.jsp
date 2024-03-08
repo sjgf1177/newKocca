@@ -33,7 +33,7 @@
 	</div>
 </div>
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">창의인재동반<span class="call_txt_box">문의 : 061-900-6383 / 6385</span></div>
+	<div class="col-center mw-1280">창의인재동반<span class="call_txt_box">문의 : 061-900-6382 / 6385</span></div>
 </div>
 <div class="col-center mw-1280 dream_list">
 	<div class="tab_style_1_con">
@@ -198,5 +198,5 @@
 			* 2012년 ~ 2021년 누적 기준
 		</div>
 	</div>
-	<p class="call_txt_box2">문의처 : 061-900-6383 / 6385</p>
+	<p class="call_txt_box2">문의처 : 061-900-6382 / 6385</p>
 </div>
