@@ -232,13 +232,13 @@
                                                         <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                                        <img alt="" src="/edu/images/bm/noimage.png"/>
                                                     </c:otherwise>
                                                 </c:choose>
                                             </c:forEach>
                                         </c:when>
                                         <c:otherwise>
-                                            <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                            <img alt="NO image" src="/edu/images/bm/noimage.png"/>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
@@ -282,13 +282,13 @@
                                             <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
                                         </c:when>
                                         <c:otherwise>
-                                            <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                            <img alt="" src="/edu/images/bm/noimage.png"/>
                                         </c:otherwise>
                                     </c:choose>
                                 </c:forEach>
                                     </c:when>
                                     <c:otherwise>
-                                        <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                        <img alt="NO image" src="/edu/images/bm/noimage.png"/>
                                     </c:otherwise>
                                     </c:choose>
                                 </div>

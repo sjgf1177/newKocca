@@ -505,7 +505,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .title{margin-right: 24px; position: relative;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .title:after{content: ""; position: absolute; right: -24px; top:-2px; width: 2px; height: 24px; background-image: url("/edu/images/renew2022/ico_line_gray.png"); background-repeat: no-repeat;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box{height: 100%; margin: 0 40px 0 24px;}
-.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a{display: flex; height: 99%; align-items: center;}
+.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a{display: flex; height: 90%; align-items: center; margin-top: 3px;}
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list .list_box a span:last-child{margin-left: 24px;}
 /*.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: center;}/*.main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: center;}*/
 .main_sns_notice_box .main_sns_notice_inner_box .notice_swiper_box .news_notice_list > a{position: relative; width:30px; height:30px; margin-left: 24px; text-indent: -9999px; background-image: url("/edu/images/renew2022/ico_notice_list.png"); background-repeat: no-repeat; background-position: right 17px; background-size: 28px; transform: rotate(90deg);}
@@ -923,6 +923,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
 /* 카테고리 */
 .sub_title.s_tit02{padding: 20px 0 12px 0; border-bottom: 1px solid #eeeeee;}
+.sub_section .sub_title.s_tit02 h3{margin-top: 50px; font-size: inherit;}
 .s_tit02.mg_b0{margin-bottom: 0;}
 .control_board_header{background-color: #efefef; padding: 10px 0 10px 10px;}
 .control_board_header [class*="mw-"]{overflow: inherit;}

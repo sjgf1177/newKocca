@@ -114,7 +114,7 @@ function check_txt(value) {
 </div>
 
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">아이디찾기</div>
+	<h3 class="col-center mw-1280">아이디찾기</h3>
 </div>
 
 <div class="col-center mw-1280">
