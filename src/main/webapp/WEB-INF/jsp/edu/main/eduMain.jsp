@@ -563,7 +563,7 @@
                                 <li><a href="javascript:void(0);" onclick="fnGoEvent('1')">에듀코카 이벤트</a></li>
                                 <li><a href="javascript:void(0);" onclick="fnGoEvent('2')">교육신청</a></li>
                                 <li><a href="javascript:void(0);" onclick="fnGoEvent('3')">구인/공모</a></li>
-                                <li><a href="javascript:void(0);" onclick="fnGoEvent('4')">종료이벤트</a></li>
+                                <%--<li><a href="javascript:void(0);" onclick="fnGoEvent('4')">종료이벤트</a></li>--%>
                             </ul>
                             <!-- nav 이벤트 two-daps end -->
                         </li>
@@ -720,7 +720,11 @@
                                         <c:set var="contentType" value="${result.cd1}"/>
                                     </c:if>
                                     <li>
-                                        <button type="button" title="${result.cdnm2}" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
+                                        <button type="button"
+                                                <c:if test="${result.chkyn eq 'Y'}">title="${result.cdnm2}(선택됨)"</c:if>
+                                                <c:if test="${result.chkyn eq 'N'}">title="${result.cdnm2}"</c:if>
+                                                onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}
+                                        </button>
                                     </li>
                                     </c:forEach>
                             </div>
