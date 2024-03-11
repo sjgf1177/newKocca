@@ -21,12 +21,31 @@
 	<div class="linemap_wrap"> <!-- fl class 삭제 -->
 		<ul class="col-12 linemap_con">
 			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
-			<li><a href="javascript:void(0);" tabindex="-1"><span>이벤트</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>참여마당</span></a></li>
+			<li>
+				<a href="javascript:void(0);" tabindex="-1">
+					<span>
+					<c:choose>
+						<c:when test="${result.option3 eq '1'}">에듀코카 이벤트</c:when>
+						<c:when test="${result.option3 eq '2'}">교육신청</c:when>
+						<c:when test="${result.option3 eq '3'}">구인/공모</c:when>
+						<c:otherwise>기타</c:otherwise>
+					</c:choose>
+					</span>
+				</a>
+			</li>
 		</ul>
 	</div>
 </div>
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">이벤트</div>
+	<div class="col-center mw-1280">
+	<c:choose>
+		<c:when test="${result.option3 eq '1'}">에듀코카 이벤트</c:when>
+		<c:when test="${result.option3 eq '2'}">교육신청</c:when>
+		<c:when test="${result.option3 eq '3'}">구인/공모</c:when>
+		<c:otherwise>기타</c:otherwise>
+	</c:choose>
+	</div>
 </div>
 
 <!-- bdView -->
@@ -35,22 +54,22 @@
 		<div class="evt_info_box">
 			<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
 			<%--<p class="date_tag_on">D-10</p>--%>
-			<p class="data"><c:if test="${result.nttId ne '75371'}"><span>이벤트기간 : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></c:if></p>
+			<p class="data"><c:if test="${result.nttId ne '75371'}"><span>모집기간 : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></c:if></p>
 		</div>
 		<div class="evt_btn_box">
-			<p>지금 참여하시겠습니까?</p>
+			<p>지금 접수하시겠습니까?</p>
 			<c:if test="${not empty result.option1 and result.option1 ne '' }">
 				<c:if test="${result.nttId ne '75375' and result.nttId ne '75378' and result.nttId ne '75405'}">
-					<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >이벤트 참여</a>
+					<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if>>접수 바로가기</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75375'}">
-					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">이벤트 참여</a>
+					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">접수 바로가기</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75378'}">
-                    <a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">이벤트 참여</a>
+                    <a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">접수 바로가기</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75405'}">
-					<a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">이벤트 참여</a>
+					<a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">접수 바로가기</a>
 				</c:if>
 			</c:if>
 		</div>
@@ -103,10 +122,8 @@
 </div>
 <div class="board_util_btn_con">
 	<div class="col-center mw-1280">
-		<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}" />
-		<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">
-			목록
-		</a>
+		<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}&op3=${paramVO.opt}" />
+		<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">목록</a>
 	</div>
 </div>
 
