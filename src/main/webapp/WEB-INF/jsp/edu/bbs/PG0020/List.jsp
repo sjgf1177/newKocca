@@ -91,7 +91,7 @@
 --%>
 
 <div class="tab_style_1_con event-tab">
-    <ul class="tab_style_1 five_tab">
+    <ul class="tab_style_1 four_tab">
         <li <c:if test="${paramVO.op3 eq null || paramVO.op3 eq '0'}">class='active'</c:if>>
             <a href="javascript:void(0);" onclick="goEvent('0')">
                 <span>전체보기</span>
@@ -112,11 +112,11 @@
                 <span>구인/공모</span>
             </a>
         </li>
-        <li <c:if test="${paramVO.op3 eq '4'}">class='active'</c:if>>
+        <%--<li <c:if test="${paramVO.op3 eq '4'}">class='active'</c:if>>
             <a href="javascript:void(0);" onclick="goEvent('4')">
                 <span>종료 이벤트</span>
             </a>
-        </li>
+        </li>--%>
     </ul>
 </div>
 
@@ -232,13 +232,13 @@
                                                         <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
                                                     </c:when>
                                                     <c:otherwise>
-                                                        <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                                        <img alt="" src="/edu/images/bm/noimage.png"/>
                                                     </c:otherwise>
                                                 </c:choose>
                                             </c:forEach>
                                         </c:when>
                                         <c:otherwise>
-                                            <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                            <img alt="NO image" src="/edu/images/bm/noimage.png"/>
                                         </c:otherwise>
                                     </c:choose>
                                 </div>
@@ -282,13 +282,13 @@
                                             <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
                                         </c:when>
                                         <c:otherwise>
-                                            <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                            <img alt="" src="/edu/images/bm/noimage.png"/>
                                         </c:otherwise>
                                     </c:choose>
                                 </c:forEach>
                                     </c:when>
                                     <c:otherwise>
-                                        <img alt="No Image" src="/edu/images/bm/noimage.png"/>
+                                        <img alt="NO image" src="/edu/images/bm/noimage.png"/>
                                     </c:otherwise>
                                     </c:choose>
                                 </div>

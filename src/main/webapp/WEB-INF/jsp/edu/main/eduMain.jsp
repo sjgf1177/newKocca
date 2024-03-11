@@ -563,7 +563,7 @@
                                 <li><a href="javascript:void(0);" onclick="fnGoEvent('1')">에듀코카 이벤트</a></li>
                                 <li><a href="javascript:void(0);" onclick="fnGoEvent('2')">교육신청</a></li>
                                 <li><a href="javascript:void(0);" onclick="fnGoEvent('3')">구인/공모</a></li>
-                                <li><a href="javascript:void(0);" onclick="fnGoEvent('4')">종료이벤트</a></li>
+                                <%--<li><a href="javascript:void(0);" onclick="fnGoEvent('4')">종료이벤트</a></li>--%>
                             </ul>
                             <!-- nav 이벤트 two-daps end -->
                         </li>
@@ -720,7 +720,11 @@
                                         <c:set var="contentType" value="${result.cd1}"/>
                                     </c:if>
                                     <li>
-                                        <button type="button" title="${result.cdnm2}" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
+                                        <button type="button"
+                                                <c:if test="${result.chkyn eq 'Y'}">title="${result.cdnm2}(선택됨)"</c:if>
+                                                <c:if test="${result.chkyn eq 'N'}">title="${result.cdnm2}"</c:if>
+                                                onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}
+                                        </button>
                                     </li>
                                     </c:forEach>
                             </div>
@@ -1132,7 +1136,12 @@
 
                 <!-- 추천 클래스 start -->
                 <div id="main_best_class" class="fwo_card_list_box fwo_card01">
-                    <span class="main_title animate__pulse01" style="width: auto;">추천 클래스</span>
+
+                        <span class="main_title animate__pulse01" style="width: auto;">추천 클래스</span>
+                        <sec:authorize ifAnyGranted="ROLE_USER">
+                            <button type="button"  class="gnb_menu btn-black" title="추천 클래스 설정" style="padding: 8px 15px; font-size: 13px; margin-left: 10px; margin-bottom: 10px;">추천설정</button>
+                        </sec:authorize>
+
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
                             <c:forEach items="${eduSubjList }" var="result">
@@ -1180,7 +1189,7 @@
 
                 <!-- 인기 클래스 start -->
                 <div id="main_hot_class" class="fwo_card_list_box fwo_card02">
-                    <span class="main_title animate__pulse02" style="width: auto;">인기 클래스</span>
+                    <span class="main_title animate__pulse02" style="width: auto;">인기클래스 Top 20</span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
                             <c:forEach items="${popularityList }" var="result">
