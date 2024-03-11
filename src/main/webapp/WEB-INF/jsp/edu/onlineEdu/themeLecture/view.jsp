@@ -57,9 +57,9 @@
 						</div>
 						<div class="text_box">
 							<div class="check_style_0_con">
-								<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }" title="선택">
+								<input type="checkbox" class="check_style_0" name="checkname" id="checkid_${list.courseSeq }" value="${list.courseSeq }">
 								<%--<label for="checkid_${list.courseSeq }"><span class="tindent">${list.courseName}_체크박스</span></label>--%>
-								<label for="checkid_${list.courseSeq }" title="선택"></label>
+								<label for="checkid_${list.courseSeq }" title="선택">${list.courseName }</label>
 							</div>
 							<div class="online_edu_card_icon_con">
 								<%--<span class="online_edu_card_icon">
@@ -113,6 +113,7 @@
 </div>
 
 <style>
+	label{position: absolute;overflow: hidden;clip: rect(0, 0, 0, 0);} /* 웹접근성 텍스트 숨김 */
 	.board_util_btn_con .btn_style_0.img_left{padding-left: 20px;}
 	/*[class*="col-"] [class*="col-"] img{width: 305px;}*/
 	@media all and (max-width:640px) {
@@ -201,6 +202,7 @@ $(document).ready(function(){
 
 		$(this).parent('.theme_process_list').addClass('select');
 		$(this).siblings('.text_box').children('.check_style_0_con').children('.check_style_0').prop('checked',true);
+		$(this).siblings('.text_box').children('.check_style_0_con').children('label').attr('title','선택해제');
 
 		$(".fixbar_box b").text($("input:checkbox[name=checkname]:checked").length);
 	});
@@ -210,6 +212,7 @@ $(document).ready(function(){
 
 		$(this).siblings('.theme_process_list').removeClass('select');
 		$(this).siblings('.theme_process_list').children('.text_box').children('.check_style_0_con').children('.check_style_0').prop('checked',false);
+		$(this).siblings('.theme_process_list').children('.text_box').children('.check_style_0_con').children('label').attr('title','선택');
 
 		$(".fixbar_box b").text($("input:checkbox[name=checkname]:checked").length);
 	});
@@ -218,8 +221,13 @@ $(document).ready(function(){
 		var chkbox = $(this).is(':checked');
 		if(chkbox){
 			$(this).parents('.theme_process_list').addClass('select');
+			//$(this).attr('title','선택해제');
+			$(this).siblings().attr('title','선택해제');
 		} else{
 			$(this).parents('.theme_process_list').removeClass('select');
+			//$(this).attr('title','선택');
+			$(this).siblings().attr('title','선택');
+
 		}
 
 		$(".fixbar_box b").text($("input:checkbox[name=checkname]:checked").length);

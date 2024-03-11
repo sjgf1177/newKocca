@@ -123,6 +123,13 @@
 <!--content-->
 <div class="col-12 event_card_wrap">
     <div class="col-center mw-1280">
+        <div style="font-size: 16px;">
+            <p style="font-weight: 600; font-size: 20px; margin-bottom: 10px;">유의사항</p>
+            <p style="color: red; font-weight: 600;">
+                * 채용 공고 내용은 본 페이지에 게시된 이후 변경될 수 있습니다.<br>
+                * 수정 공고 및 변경 사항 등은 해당 기관에 문의해 주시기 바라며, 개별 채용 홈페이지를 참고해 주시기 바랍니다.
+            </p>
+        </div>
         <%--<c:if test="${resultCnt > 0}">
             <div class="col-12 calc_wrap19 swiper">
                 <div class="swiper-wrapper">
