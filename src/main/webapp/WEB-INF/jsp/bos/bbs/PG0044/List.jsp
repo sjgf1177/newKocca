@@ -119,7 +119,9 @@
 						<td class="output" style="text-align: center; vertical-align: middle;">${result.frstRegisterPnttm}</td>
 						<td class="output" style="text-align: center; vertical-align: middle;">
 							<c:if test="${result.option2 eq 'Y'}">완료</c:if>
-							<c:if test="${result.option2 ne 'Y'}">미완료</c:if>
+							<c:if test="${result.option2 eq 'X'}">미완료</c:if>
+							<c:if test="${result.option2 eq 'W'}">처리 중</c:if>
+							<c:if test="${result.option2 eq 'A'}">접수</c:if>
 						</td>
 					</tr>
 					<c:set var="resultCnt" value="${resultCnt-1}" />

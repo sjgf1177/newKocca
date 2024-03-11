@@ -164,6 +164,7 @@
 									<option value="A" <c:if test="${paramVO.option2 == 'A'}">selected="selected"</c:if> >접수</option>
 									<option value="W" <c:if test="${paramVO.option2 == 'W'}">selected="selected"</c:if> >처리 중</option>
 									<option value="X" <c:if test="${paramVO.option2 == 'X'}">selected="selected"</c:if> >미완료</option>
+									<option value="Y" <c:if test="${paramVO.option2 == 'Y'}">selected="selected"</c:if> >완료</option>
 								</select>
 							</td>
 						</tr>
