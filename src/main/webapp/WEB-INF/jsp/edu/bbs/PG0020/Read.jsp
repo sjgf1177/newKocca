@@ -16,6 +16,38 @@
 	}
 </style>
 
+<c:set var="tmp1" value=""/>
+<c:set var="tmp2" value=""/>
+<c:set var="tmp3" value=""/>
+<c:set var="tmp4" value=""/>
+
+<c:choose>
+	<c:when test="${result.option3 eq '1'}">
+		<c:set var="tmp1" value="에듀코카 이벤트"/>
+		<c:set var="tmp2" value="참여 기간"/>
+		<c:set var="tmp3" value="지금 참여하시겠습니까?"/>
+		<c:set var="tmp4" value="이벤트 참여하기"/>
+	</c:when>
+	<c:when test="${result.option3 eq '2'}">
+		<c:set var="tmp1" value="교육신청"/>
+		<c:set var="tmp2" value="신청 기간"/>
+		<c:set var="tmp3" value="지금 신청하시겠습니까?"/>
+		<c:set var="tmp4" value="교육 신청하기"/>
+	</c:when>
+	<c:when test="${result.option3 eq '3'}">
+		<c:set var="tmp1" value="구인/공모"/>
+		<c:set var="tmp2" value="모집 기간"/>
+		<c:set var="tmp3" value="지금 접수하시겠습니까?"/>
+		<c:set var="tmp4" value="접수 바로가기"/>
+	</c:when>
+	<c:otherwise>
+		<c:set var="tmp1" value="이벤트"/>
+		<c:set var="tmp2" value="이벤트 기간"/>
+		<c:set var="tmp3" value="지금 참여하시겠습니까?"/>
+		<c:set var="tmp4" value="이벤트 참여하기"/>
+	</c:otherwise>
+</c:choose>
+
 
 <div class="over-hidden sub_contents_header">
 	<div class="linemap_wrap"> <!-- fl class 삭제 -->
@@ -24,28 +56,14 @@
 			<li><a href="javascript:void(0);" tabindex="-1"><span>참여마당</span></a></li>
 			<li>
 				<a href="javascript:void(0);" tabindex="-1">
-					<span>
-					<c:choose>
-						<c:when test="${result.option3 eq '1'}">에듀코카 이벤트</c:when>
-						<c:when test="${result.option3 eq '2'}">교육신청</c:when>
-						<c:when test="${result.option3 eq '3'}">구인/공모</c:when>
-						<c:otherwise>기타</c:otherwise>
-					</c:choose>
-					</span>
+					<span>${tmp1}</span>
 				</a>
 			</li>
 		</ul>
 	</div>
 </div>
 <div class="sub_title s_tit02">
-	<div class="col-center mw-1280">
-	<c:choose>
-		<c:when test="${result.option3 eq '1'}">에듀코카 이벤트</c:when>
-		<c:when test="${result.option3 eq '2'}">교육신청</c:when>
-		<c:when test="${result.option3 eq '3'}">구인/공모</c:when>
-		<c:otherwise>기타</c:otherwise>
-	</c:choose>
-	</div>
+	<div class="col-center mw-1280">${tmp1}</div>
 </div>
 
 <!-- bdView -->
@@ -54,22 +72,22 @@
 		<div class="evt_info_box">
 			<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
 			<%--<p class="date_tag_on">D-10</p>--%>
-			<p class="data"><c:if test="${result.nttId ne '75371'}"><span>모집기간 : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></c:if></p>
+			<p class="data"><c:if test="${result.nttId ne '75371'}"><span>${tmp2} : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></c:if></p>
 		</div>
 		<div class="evt_btn_box">
-			<p>지금 접수하시겠습니까?</p>
+			<p>${tmp3}</p>
 			<c:if test="${not empty result.option1 and result.option1 ne '' }">
 				<c:if test="${result.nttId ne '75375' and result.nttId ne '75378' and result.nttId ne '75405'}">
-					<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if>>접수 바로가기</a>
+					<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if>>${tmp4}</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75375'}">
-					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">접수 바로가기</a>
+					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">${tmp4}</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75378'}">
-                    <a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">접수 바로가기</a>
+                    <a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">${tmp4}</a>
 				</c:if>
 				<c:if test="${result.nttId eq '75405'}">
-					<a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">접수 바로가기</a>
+					<a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">${tmp4}</a>
 				</c:if>
 			</c:if>
 		</div>
