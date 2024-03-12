@@ -37,8 +37,8 @@
 	<c:when test="${result.option3 eq '3'}">
 		<c:set var="tmp1" value="구인/공모"/>
 		<c:set var="tmp2" value="모집 기간"/>
-		<c:set var="tmp3" value="지금 접수하시겠습니까?"/>
-		<c:set var="tmp4" value="접수 바로가기"/>
+		<c:set var="tmp3" value="공고 세부 내용을 보시겠습니까?"/>
+		<c:set var="tmp4" value="공고 바로가기"/>
 	</c:when>
 	<c:otherwise>
 		<c:set var="tmp1" value="이벤트"/>
