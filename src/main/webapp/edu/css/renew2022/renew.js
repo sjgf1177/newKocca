@@ -31,7 +31,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
-        ,slidesPerGroup : 1 // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+        ,slidesPerGroup : 4 // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card01 .swiper-button-next'
@@ -39,15 +39,18 @@ $(document).ready(function() {
         ,breakpoints: {
             1280: {
                 slidesPerView: 4,
-                spaceBetween: 40
+                spaceBetween: 40,
+
             },
             1279: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+                slidesPerGroup : 3
             },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 15
+                spaceBetween: 15,
+                slidesPerGroup : 1
             },
         }
 
@@ -60,6 +63,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 4
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card02 .swiper-button-next'
@@ -71,11 +75,13 @@ $(document).ready(function() {
             },
             1279: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+                slidesPerGroup : 3
             },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 20
+                spaceBetween: 20,
+                slidesPerGroup : 1
             },
         }
     });
@@ -87,6 +93,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 4
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card03 .swiper-button-next'
@@ -94,15 +101,18 @@ $(document).ready(function() {
         ,breakpoints: {
             1280: {
                 slidesPerView: 4,
-                spaceBetween: 40
+                spaceBetween: 40,
+
             },
             1279: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+                slidesPerGroup : 3
             },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 20
+                spaceBetween: 20,
+                slidesPerGroup : 1
             },
         }
     });
@@ -113,6 +123,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 4
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card04 .swiper-button-next'
@@ -124,11 +135,13 @@ $(document).ready(function() {
             },
             1279: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+                slidesPerGroup : 3
             },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 20
+                spaceBetween: 20,
+                slidesPerGroup : 1
             },
         }
     });
@@ -139,6 +152,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 4
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card05 .swiper-button-next'
@@ -150,11 +164,13 @@ $(document).ready(function() {
             },
             1279: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+                slidesPerGroup : 3
             },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 20
+                spaceBetween: 20,
+                slidesPerGroup : 1
             },
         }
     });
@@ -165,6 +181,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 4
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card06 .swiper-button-next'
@@ -176,11 +193,13 @@ $(document).ready(function() {
             },
             1279: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+                slidesPerGroup : 3
             },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 20
+                spaceBetween: 20,
+                slidesPerGroup : 1
             },
         }
     });
@@ -191,6 +210,7 @@ $(document).ready(function() {
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 4
 
         //구버전 swiper 방향표
         ,nextButton: '.fwo_card07 .swiper-button-next'
@@ -202,11 +222,42 @@ $(document).ready(function() {
             },
             1279: {
                 slidesPerView: 3,
-                spaceBetween: 30
+                spaceBetween: 30,
+                slidesPerGroup : 3
             },
             640: {
                 slidesPerView: 1,
-                spaceBetween: 20
+                spaceBetween: 20,
+                slidesPerGroup : 1
+            },
+        }
+    });
+
+    var fwocard08 = new Swiper('.fwo_card08 .fwo_card', {
+        /*loop: true,*/
+        speed : 700
+        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,slidesPerView: 4 // 한번에 보이는 슬라이드 갯수
+        ,spaceBetween: 20 // 슬라이드 사이의 간격 px 단위
+        ,slidesPerGroup : 4
+
+        //구버전 swiper 방향표
+        ,nextButton: '.fwo_card08 .swiper-button-next'
+        ,prevButton: '.fwo_card08 .swiper-button-prev'
+        ,breakpoints: {
+            1280: {
+                slidesPerView: 4,
+                spaceBetween: 40
+            },
+            1279: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                slidesPerGroup : 3
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                slidesPerGroup : 1
             },
         }
     });

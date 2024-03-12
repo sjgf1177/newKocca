@@ -55,12 +55,12 @@
 		<ul class="tab_style_1" style="display: flex; justify-content: center;">
 			<c:choose>
 				<c:when test="${param.viewType eq 'old' }">
-					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current"><span>현재학습</span></a></li>
-					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old" title="현재탭"><span>지난과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current"><span>학습중인 과정</span></a></li>
+					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old" title="현재탭"><span>완료된 과정</span></a></li>
 				</c:when>
 				<c:otherwise>
-					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current" title="현재탭"><span>현재학습</span></a></li>
-					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old"><span>지난과정</span></a></li>
+					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current" title="현재탭"><span>학습중인 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old"><span>완료된 과정</span></a></li>
 				</c:otherwise>
 			</c:choose>
 		</ul>

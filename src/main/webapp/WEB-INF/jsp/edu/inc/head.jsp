@@ -203,7 +203,8 @@
                 <!-- 로그인 후-->
                 <sec:authorize ifAnyGranted="ROLE_USER">
                     <div class="nav_my_box mo">
-                        <input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">
+                        <button type="button" class="gnb_menu myset"  title="추천 클래스 설정">맞춤 강의👆</button>
+                        <%--<input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">--%>
                         <a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃" style="font-size: 18px; color: #fff; margin-left: 15px;">로그아웃</a>
                     </div>
                     <%--<input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">--%>
@@ -356,18 +357,19 @@
             <div class="ml-auto searchCon">
                 <!-- 로그인 후-->
                 <sec:authorize ifAnyGranted="ROLE_USER">
-                    <div class="nav_support_box">
+                    <button type="button" class="gnb_menu myset"  title="추천 클래스 설정">맞춤 강의👆</button>
+                    <%--<div class="nav_support_box">
                         <a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">
                             <img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
                         </a>
                         <ul>
-                            <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
+                            &lt;%&ndash;<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>&ndash;%&gt;
                             <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
-                            <%--<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
+                            &lt;%&ndash;<li><a href="/edu/bbs/B0000076/list.do?menuNo=500221" title="함께:톡톡">함께:톡톡</a></li>
                             <li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" title="FAQ">FAQ</a></li>
-                            <li><a href="/edu/main/contents.do?menuNo=500005" title="기업맞춤교육지원">기업맞춤교육지원</a></li>--%>
+                            <li><a href="/edu/main/contents.do?menuNo=500005" title="기업맞춤교육지원">기업맞춤교육지원</a></li>&ndash;%&gt;
                         </ul>
-                    </div>
+                    </div>--%>
                     <div class="nav_my_box pc">
                         <a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061">
                             <img src="/edu/images/renew2022/my.png" alt="마이페이지">
@@ -383,7 +385,7 @@
                             <li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
                         </ul>
                     </div>
-                    <input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">
+                    <%--<input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">--%>
                 </sec:authorize>
                 <!-- 로그인 전-->
                 <sec:authorize ifNotGranted="ROLE_USER">

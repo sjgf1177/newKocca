@@ -217,6 +217,7 @@ header nav #main_nav .navbar-nav > li > ul > li.new a:after{content: ""; display
 header nav #main_nav .navbar-nav > li > ul > li.new:hover a:after{background: url("/edu/images/renew2022/icon_nav_new_hover.png") no-repeat;}
 
 header nav .searchCon .gnb_menu{margin-left: 0;}
+.gnb_menu.myset{ padding: 3px 10px; background-color: transparent; border: 1px solid #fff; height: auto; border-radius: 15px; color: #fff; line-height: initial; font-size: 14px;}
 header nav .searchCon .gnb_menu:before{content: none;}
 .nav_search_box{position: relative;}
 .nav_search_box input{height:40px; padding: 0 40px 0 15px; border-radius: 5px; font-size: 14px;}

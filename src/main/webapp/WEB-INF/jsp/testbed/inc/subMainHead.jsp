@@ -123,7 +123,8 @@
                         <!-- 로그인 후-->
                         <sec:authorize ifAnyGranted="ROLE_USER">
                             <div class="nav_my_box mo">
-                                <input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">
+                                <button type="button" class="gnb_menu myset"  title="추천 클래스 설정">맞춤 강의👆</button>
+                                <%--<input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">--%>
                                 <a href="/${paramVO.siteName}/member/logout.do" class="ico4 logoutBtn" title="로그아웃" style="font-size: 18px; color: #fff; margin-left: 15px;">로그아웃</a>
                             </div>
                         </sec:authorize>
@@ -283,15 +284,16 @@
                     <div class="ml-auto searchCon">
                         <!-- 로그인 후-->
                         <sec:authorize ifAnyGranted="ROLE_USER">
-                            <div class="nav_support_box">
+                            <button type="button" class="gnb_menu myset"  title="추천 클래스 설정">맞춤 강의👆</button>
+                            <%--<div class="nav_support_box">
                                 <a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">
                                     <img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
                                 </a>
                                 <ul>
-                                    <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
+                                    &lt;%&ndash;<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>&ndash;%&gt;
                                     <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
                                 </ul>
-                            </div>
+                            </div>--%>
                             <div class="nav_my_box pc">
                                 <c:if test="${paramVO.siteName eq 'edu' }">
                                     <c:set var="mypageNm" value="마이페이지"/>
@@ -314,7 +316,7 @@
                                     <li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
                                 </ul>
                             </div>
-                            <input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">
+                            <%--<input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">--%>
                         </sec:authorize>
 
                         <!-- 로그인 전-->
