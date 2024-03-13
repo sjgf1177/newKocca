@@ -162,7 +162,7 @@
     <div class="fwo_card_list_box fwo_card01 col-center mw-1280">
         <span class="main_title" style="width: auto">추천 클래스</span>
         <sec:authorize ifAnyGranted="ROLE_USER">
-            <button type="button"  class="gnb_menu btn-black" title="추천 클래스 설정" style="padding: 8px 15px; font-size: 13px; margin-left: 10px; margin-bottom: 10px;">추천설정</button>
+            <button type="button"  class="gnb_menu myset" title="추천 클래스 설정" style="padding:5px 10px; font-size: 13px; margin-left: 10px; margin-bottom: 10px; font-weight: 600; background-color: #303030;">맞춤 강의👆</button>
         </sec:authorize>
         <div class="fwo_card swiper-container">
             <ul class="swiper-wrapper">

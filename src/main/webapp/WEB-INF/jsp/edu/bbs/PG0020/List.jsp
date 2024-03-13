@@ -237,7 +237,14 @@
                                             <c:forEach var="file" items="${fileList }">
                                                 <c:choose>
                                                     <c:when test="${file.fileFieldName eq 'main_image' }">
-                                                        <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                        <c:choose>
+                                                            <c:when test="${paramVO.op3 eq '3'}">
+                                                                <img alt="접수기간: <c:out value="${result.ntceBgnde }"/> ~ <c:out value="${result.ntceEndde }"/>, <c:out value="${result.nttSj }"/>(<c:choose><c:when test='${ (nowDate-endDate) > 0 }'>종료</c:when><c:when test='${ (nowDate-strDate) < 0 }'>D${strDate-nowDate}</c:when><c:otherwise>진행</c:otherwise></c:choose>)" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <img alt="" src="/edu/images/bm/noimage.png"/>
@@ -287,7 +294,14 @@
                                             <c:forEach var="file" items="${fileList }">
                                                 <c:choose>
                                                     <c:when test="${file.fileFieldName eq 'main_image' }">
-                                                        <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                        <c:choose>
+                                                            <c:when test="${paramVO.op3 eq '3'}">
+                                                            <img alt="접수기간: <c:out value="${result.ntceBgnde }"/> ~ <c:out value="${result.ntceEndde }"/>, <c:out value="${result.nttSj }"/>(<c:choose><c:when test='${ (nowDate-endDate) > 0 }'>종료</c:when><c:when test='${ (nowDate-strDate) < 0 }'>D${strDate-nowDate}</c:when><c:otherwise>진행</c:otherwise></c:choose>)" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" />
+                                                            </c:otherwise>
+                                                        </c:choose>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <img alt="" src="/edu/images/bm/noimage.png"/>
@@ -320,7 +334,9 @@
                                 </div>
                             </div>
                             <div class="e_end_back_box">
-                                <a href="<c:out value="${url }" escapeXml="false" />" style="display: inline-block; width: 100%; height: 100%;" title="<c:out value="${result.nttSj }"/>"></a>
+                                <a href="<c:out value="${url }" escapeXml="false" />" style="display: inline-block; width: 100%; height: 100%;"
+                                   title="기간: <c:out value="${result.ntceBgnde }"/> ~ <c:out value="${result.ntceEndde }"/>, <c:out value="${result.nttSj }"/>(<c:choose><c:when test='${ (nowDate-endDate) > 0 }'>종료</c:when><c:when test='${ (nowDate-strDate) < 0 }'>D${strDate-nowDate}</c:when><c:otherwise>진행</c:otherwise></c:choose>)">
+                                </a>
                             </div>
                         </c:if>
                     </div>
