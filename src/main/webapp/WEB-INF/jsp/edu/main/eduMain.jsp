@@ -1265,7 +1265,7 @@
             <div class="container">
                 <div class="fwo_card_list_box fwo_card03">
                     <span class="main_title main_title_bold">
-                        <a href="/edu/bbs/B0000048/list.do?menuNo=500205" alt="진행 중 이벤트 바로가기">진행 중 이벤트</a>
+                        <a href="/edu/bbs/B0000048/list.do?menuNo=500205" alt="진행 중 이벤트 바로가기">참여마당 모아보기</a>
                     </span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
