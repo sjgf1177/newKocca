@@ -1265,7 +1265,7 @@
             <div class="container">
                 <div class="fwo_card_list_box fwo_card03">
                     <span class="main_title main_title_bold">
-                        <a href="/edu/bbs/B0000048/list.do?menuNo=500205" alt="진행 중 이벤트 바로가기">진행 중 이벤트</a>
+                        <a href="/edu/bbs/B0000048/list.do?menuNo=500205" alt="진행 중 이벤트 바로가기">참여마당 모아보기</a>
                     </span>
                     <div class="fwo_card swiper-container">
                         <ul class="swiper-wrapper">
@@ -1290,7 +1290,7 @@
                                                     <c:forEach var="file" items="${fileList }">
                                                         <c:choose>
                                                             <c:when test="${file.fileFieldName eq 'main_image' }">
-                                                                <img alt="<c:out value="${result.nttSj }"/>" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" style="width: 100%; height: 100%;"/>
+                                                                <img alt="기간: <c:out value="${result.ntceBgnde }"/> ~ <c:out value="${result.ntceEndde }"/>, <c:out value="${result.nttSj }"/>(<c:choose><c:when test='${ (nowDate-endDate) > 0 }'>종료</c:when><c:when test='${ (nowDate-strDate) < 0 }'>D${strDate-nowDate}</c:when><c:otherwise>진행</c:otherwise></c:choose>)" src="/cmm/fms/getImage.do?atchFileId=<c:out value="${file.atchFileId}" />&amp;fileSn=<c:out value="${file.fileSn}" />" style="width: 100%; height: 100%;"/>
                                                             </c:when>
                                                         </c:choose>
                                                     </c:forEach>
@@ -1318,7 +1318,7 @@
                                     <div class="fwo_info_box2">
                                         <h3 class="fwo_tit_box"><c:out value="${result.nttSj }"/></h3>
                                         <p>[이벤트]</p>
-                                        <a href="<c:out value="${url }" escapeXml="false" />" title="<c:out value="${result.nttSj }"/>" class="go_page_a"></a>
+                                        <a href="<c:out value="${url }" escapeXml="false" />" title="기간: <c:out value="${result.ntceBgnde }"/> ~ <c:out value="${result.ntceEndde }"/>, <c:out value="${result.nttSj }"/>(<c:choose><c:when test='${ (nowDate-endDate) > 0 }'>종료</c:when><c:when test='${ (nowDate-strDate) < 0 }'>D${strDate-nowDate}</c:when><c:otherwise>진행</c:otherwise></c:choose>)" class="go_page_a"></a>
                                     </div>
                                     <!-- 설명란 start-->
                                 </li>
