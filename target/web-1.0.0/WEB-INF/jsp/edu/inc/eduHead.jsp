@@ -27,7 +27,19 @@
 	<link rel="stylesheet" type="text/css" href="/edu/css/animate.min.css" />
 	<link rel="stylesheet" type="text/css" href="/edu/css/common.css">
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/layout.css"/>
-	<link rel="stylesheet" type="text/css" href="/edu/js/bm/swiper/swiper.min.css"/>
+
+<c:choose>
+	<c:when test="${param.menuNo eq '500205'}">
+		<link rel="stylesheet"  href="//unpkg.com/swiper/swiper-bundle.min.css"/>
+	</c:when>
+	<c:when test="${param.menuNo eq '500203'}">
+		<link rel="stylesheet"  href="//unpkg.com/swiper/swiper-bundle.min.css"/>
+	</c:when>
+	<c:otherwise>
+		<link rel="stylesheet" type="text/css" href="/edu/js/bm/swiper/swiper.min.css"/>
+	</c:otherwise>
+</c:choose>
+
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/animate.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/bootstrap.reset.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/common_prev.css"/>
@@ -42,9 +54,8 @@
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/main.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_layout.css"/>
 	<link rel="stylesheet" type="text/css" href="/edu/css/bm/sub_page.css"/>
-	
-
 	<link rel="stylesheet" type="text/css" href="/js/jquery-ui/jquery-ui.css" />
+
 	<c:if test="${param.menuNo  eq '500034' || param.menuNo  eq '500046'}">
 		<link rel="stylesheet" type="text/css" href="/edu/css/submain.css" />
 	</c:if>
@@ -64,7 +75,7 @@
 	<!-- SNS에 포스팅될사이트URL -->
 	<meta property="og:site" content="https://edu.kocca.kr"/>
 	<!-- SNS에 포스팅될썸네일이미지-->
-	<meta property="og:image" content="https://edu.kocca.kr/upload/about/koccaesc_logo.jpg"/>
+	<meta property="og:image" content="https://edu.kocca.kr/edu/images/renew2022/og_edukocca.jpg" />
 	<!-- SNS 포스팅될타이틀값-->
 	<!-- <meta property="og:title" content="한국콘텐츠아카데미"/> -->
 	<!-- 프로퍼티설정끝 -->
@@ -96,6 +107,69 @@
 	<script type="text/javascript" src="/edu/js/new/subjs.js"></script>
 	
 	<script type="text/javascript" src="/edu/js/new/mainHeader.js"></script>
+
+
+	<!-- Link Swiper's 8.4.2 CSS -->
+	<%--<link rel="stylesheet"  href="https://unpkg.com/swiper/swiper-bundle.min.css"/>--%>
+
+
+	<link rel="stylesheet" href="/edu/css/renew2022/assets/plugins/animation/css/animate.min.css">
+	<link rel="stylesheet" href="/edu/css/renew2022/assets/css/style.css">
+	<link rel="stylesheet" href="/edu/css/renew2022/renew.css">
+	<!-- renew2022 CSS end -->
+
+	<!-- renew2022 JavaScript start -->
+
+<c:choose>
+	<c:when test="${param.menuNo eq '500205'}">
+		<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+	</c:when>
+	<c:when test="${param.menuNo eq '500203'}">
+		<script src="//unpkg.com/swiper/swiper-bundle.min.js"></script>
+	</c:when>
+	<c:when test="${param.menuNo eq '500209'}">
+		<script>
+			location.href="https://edukocca-service.notion.site/edukocca-service/WELCOME-EDUKOCCA-5dca741674684ecd82d7746a81a4b9cd";
+		</script>
+	</c:when>
+	<c:otherwise>
+		<script type="text/javascript" src="/edu/js/bm/swiper/swiper.min.js"></script>
+	</c:otherwise>
+</c:choose>
+
+	<script src="/edu/css/renew2022/renew.js"></script>
+	<!-- Required Js -->
+	<%--<script src="/edu/css/renew2022/assets/js/vendor-all.min.js"></script>--%>
+	<script src="/edu/css/renew2022/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<%--<script src="/edu/css/renew2022/assets/js/pcoded.min.js"></script>--%>
+
+	<!-- sweet alert Js -->
+	<script src="/edu/css/renew2022/assets/plugins/sweetalert/js/sweetalert.min.js"></script>
+	<!-- Swiper8.4.2 JS -->`
+	<%--<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>--%>
+	<script src="/edu/css/renew2022/assets/js/pages/ac-alert.js"></script>
+	<!-- 챗봇js-->
+	<script id="happytalkSDK" src="//design.happytalkio.com/sdk/happytalk.chat.v2.min.js"></script>
+
+
+	<!-- renew2022 JavaScript end -->
+
+	<!-- 사이트 연관채널 등록 SEO -->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Person",
+			"name": "에듀코카 - 누구나 쉽게 배우는 K콘텐츠",
+			"url": "https://edu.kocca.kr",
+			"sameAs": [
+				"https://www.facebook.com/edukocca",
+				"https://twitter.com/edukocca",
+				"https://blog.naver.com/edukocca",
+				"https://www.instagram.com/edu.kocca",
+				"https://youtube.com/@edukocca"
+			]
+		}
+	</script>
 	
 <!-- 끝 -->
 
@@ -117,5 +191,14 @@
 			}
 	    }
 	//]]>
+    <!-- 챗봇 Js start -->
+    var ht = new Happytalk({
+        siteId: '5000100237',
+        siteName: '한국콘텐츠진흥원',
+        categoryId: '146368',
+        divisionId: '146369',
+    });
+    <!-- 챗봇 Js end -->
+
 	</script>
 	</sec:authorize>

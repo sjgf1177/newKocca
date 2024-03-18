@@ -183,7 +183,7 @@
 					  FROM  TC_BANNER a
 	 			     WHERE	DELETE_AT = 'N'
 			     		AND USE_AT = 'Y'
-			     		AND a.BANNER_SE = #gubun#
+			     		AND a.BANNER_SE = NVL(#gubun#, '01')
 			     		AND (
 			     			TO_CHAR(SYSDATE, 'YYYYMMDD') >= REPLACE(BGNDE,'-','')
 		     		   		AND TO_CHAR(SYSDATE, 'YYYYMMDD') <= REPLACE(ENDDE,'-','')

@@ -12,7 +12,7 @@ a.white:hover{color:white !important;}
 .black{color:black;}
 .main_blue{color:#1f6db5;}
 .point_blue{color:#2d9dcb;}
-.point_orange{color:#ff7800;}
+.point_orange{color:#CC8500;}
     /*background*/
 .bg_main_blue{background:#1f6db5;}
     /* seperate line */
@@ -315,6 +315,9 @@ select{background-image: url(../image/relation_site_arrow.png); background-repea
     line-height: 17px;
     vertical-align: middle;
 }
+.tag:nth-child(2){
+	margin-left: 0;
+}
 .tag.open{
 	margin-left:0;
 }
@@ -327,7 +330,7 @@ select{background-image: url(../image/relation_site_arrow.png); background-repea
     color:#fff;
 }
 .L3{
-    background-color: #FB0909;
+    background-color: #CC8500;
     color:#fff;
 }
 .gray_txt{

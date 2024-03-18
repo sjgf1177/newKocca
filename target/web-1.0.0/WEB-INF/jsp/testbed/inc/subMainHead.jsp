@@ -7,9 +7,13 @@
 <%@ page import="kr.co.unp.mpm.service.MasterMenuManager" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="kr.co.unp.main.service.MainService" %>
 <%@ page import="kr.co.unp.util.ZValue" %>
+
+<jsp:useBean id="todayNow" class="java.util.Date"/>
+<fmt:formatDate value="${todayNow}" var="today" pattern="yyyy-MM-dd"/>
 
 <%
     UsersVO user = UnpUserDetailsHelper.getAuthenticatedUser();
@@ -28,6 +32,10 @@
 
         pageContext.setAttribute("curriculumList", curriculumList);
     }
+
+    // 랜덤 키워드 조회
+    String randomKeyword = mainService.getRandomKeyword(zParam);
+    pageContext.setAttribute("randomKeyword", randomKeyword);
 %>
 
 <script type="text/javascript">
@@ -103,8 +111,10 @@
                     <!-- 모바일 햄버거 end -->
 
                     <div class="nav_search_box">
-                        <input type="text" placeholder="검색어를 입력해주세요.">
-                        <button class="nav_search_btn"></button>
+                        <form name="frmSearch4" method="post" action="/edu/search/list.do?menuNo=500079" onsubmit="return search2(this);">
+                            <input type="text" class="q2" name="q" id="q2" placeholder='"${randomKeyword}" 검색해 보세요.' title='검색어입력("${randomKeyword}" 검색해 보세요.)'>
+                            <button class="nav_search_btn" title="검색하기"></button>
+                        </form>
                     </div>
 
                     <!-- nav start -->
@@ -113,7 +123,8 @@
                         <!-- 로그인 후-->
                         <sec:authorize ifAnyGranted="ROLE_USER">
                             <div class="nav_my_box mo">
-                                <input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
+                                <button type="button" class="gnb_menu myset"  title="추천 클래스 설정">맞춤 강의👆</button>
+                                <%--<input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">--%>
                                 <a href="/${paramVO.siteName}/member/logout.do" class="ico4 logoutBtn" title="로그아웃" style="font-size: 18px; color: #fff; margin-left: 15px;">로그아웃</a>
                             </div>
                         </sec:authorize>
@@ -134,7 +145,8 @@
                                             <input type="hidden" name="redirectUrl" value="/${paramVO.siteName}/main/main.do"/>
                                         </form>
                                         <span class="show vm fontsize14 header_util_item">
-                                            <a href="/testbed/member/join01.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>
+                                            <%--<a href="/testbed/member/join02.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>--%>
+                                            <a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
                                         </span>
                                     </span>
                                 </c:when>
@@ -144,7 +156,7 @@
                                             <a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
                                         </span>
                                         <span class="show vm fontsize14 header_util_item">
-                                            <a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+                                            <a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
                                         </span>
                                     </span>
                                 </c:otherwise>
@@ -153,44 +165,61 @@
                         <!-- 모바일 로그인/회원가입 end -->
 
                         <ul class="navbar-nav">
-                            <!-- nav 이벤트 one-daps start -->
-                            <li><a href="javascript:void(0);">이벤트</a>
-                                <!-- nav 이벤트 two-daps start -->
-                                <ul>
-                                    <li><a href="javascript:void(0);" onclick="eventList('1')">에듀코카 이벤트</a></li>
-                                    <li><a href="javascript:void(0);" onclick="eventList('2')">교육신청하기</a></li>
-                                    <li><a href="javascript:void(0);" onclick="eventList('3')">공모참여하기</a></li>
-                                    <li><a href="javascript:void(0);" onclick="eventList('4')">종료이벤트</a></li>
-                                </ul>
-                                <!-- nav 이벤트 two-daps end -->
-                            </li>
-                            <!-- nav 이벤트 one-daps end -->
-
                             <!-- nav 카테고리 one-daps start -->
-                            <li><a href="javascript:void(0);">카테고리</a>
+                            <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">카테고리</a>
                                 <!-- nav 카테고리 two-daps start -->
                                 <ul>
-                                    <li><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157">학습로드맵</a></li>
+                                    <!-- li태그에 class명 "new"가 붙으면 N아이콘이 생김 -->
+                                    <c:set var='now_dt' value='${today}'/>
+                                    <c:set var='chk_dt' value='2023-11-30'/>
+                                    <fmt:parseDate value="${now_dt}" var="pd_now_dt" pattern="yyyy-MM-dd"/>
+                                    <fmt:parseNumber value="${pd_now_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_now_dt"></fmt:parseNumber>
+                                    <fmt:parseDate value="${chk_dt}" var="pd_chk_dt" pattern="yyyy-MM-dd"/>
+                                    <fmt:parseNumber value="${pd_chk_dt.time / (1000*60*60*24)}" integerOnly="true" var="pn_chk_dt"></fmt:parseNumber>
+
+                                    <c:choose>
+                                        <c:when test='${ (pn_chk_dt - pn_now_dt) >= 0 }'>
+                                            <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <li class="new"><a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500157" title="신규 테마과정">테마과정</a></li>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                     <li><a href="javascript:void(0);" onclick="fnCmdGoldList('B0'); return false;">방송영상</a></li>
                                     <li><a href="javascript:void(0);" onclick="fnCmdGoldList('G0'); return false;">게임</a></li>
                                     <li><a href="javascript:void(0);" onclick="fnCmdGoldList('K0'); return false;">만화/애니/캐릭터</a></li>
-                                    <li><a href="javascript:void(0);" onclick="fnCmdGoldList('M0'); return false;">문화일반(음악공연)</a></li>
-                                    <li><a href="javascript:void(0);" onclick="fnCmdGoldList('S0'); return false;">인문/경영/교양/일반</a></li>
+                                    <li><a href="javascript:void(0);" onclick="fnCmdGoldList('M0'); return false;">음악/공연</a></li>
+                                    <li><a href="javascript:void(0);" onclick="fnCmdGoldList('S0'); return false;">인문교양</a></li>
                                 </ul>
                                 <!-- nav 카테고리 two-daps end -->
                             </li>
                             <!-- nav 카테고리 one-daps end -->
 
+                            <!-- nav 이벤트 one-daps start -->
+                            <li><a href="/edu/bbs/B0000048/list.do?menuNo=500205">참여마당</a>
+                                <!-- nav 이벤트 two-daps start -->
+                                <ul>
+                                    <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008">공지사항</a></li>
+                                    <li><a href="javascript:void(0);" onclick="eventList('1')">에듀코카 이벤트</a></li>
+                                    <li><a href="javascript:void(0);" onclick="eventList('2')">교육신청</a></li>
+                                    <li><a href="javascript:void(0);" onclick="eventList('3')">구인/공모</a></li>
+                                    <%--<li><a href="javascript:void(0);" onclick="eventList('4')">종료이벤트</a></li>--%>
+                                </ul>
+                                <!-- nav 이벤트 two-daps end -->
+                            </li>
+                            <!-- nav 이벤트 one-daps end -->
+
                             <!-- nav 사업안내 one-daps start -->
-                            <li><a href="javascript:void(0);">사업안내</a>
+                            <li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">사업안내</a>
                                 <!-- nav 이벤트 two-daps start -->
                                 <ul>
                                     <li><a href="/edu/progrm/master/list.do?prgSe=01&amp;prgCl=12&amp;menuNo=500216">콘텐츠스텝업</a></li>
-                                    <li><a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">콘텐츠인사이트</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500213">콘텐츠임팩트</a></li>
+                                    <%--<li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
+                                    <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>--%>
                                     <li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040">창의인재동반</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500110">실감콘텐츠창작</a></li>
-                                    <li><a href="/edu/main/contents.do?menuNo=500263">AI콘텐츠창작</a></li>
+                                    <li><a href="/edu/progrm/master/list.do?prgSe=01&prgCl=13&menuNo=500215">콘텐츠인사이트</a></li>
+                                    <%--<li><a href="/edu/main/contents.do?menuNo=500213">콘텐츠임팩트</a></li>--%>
                                     <li><a href="/edu/main/contents.do?menuNo=500179">콘텐츠원캠퍼스</a></li>
                                     <%--<li>
                                         <!-- 현url 에듀코카이야기에서 에듀코카페이지로 변경해야함-->
@@ -203,13 +232,16 @@
                                             주요성과
                                         </a>
                                     </li>--%>
+                                    <li><a href="https://www.ncakocca.kr/" target="_blank">뉴콘텐츠아카데미</a></li>
                                 </ul>
                                 <!-- nav 사업안내 two-daps end -->
                             </li>
                             <!-- nav 사업안내 one-daps end -->
 
                             <!-- nav 시설안내 one-daps start -->
-                            <li><a href="javascript:void(0);">시설안내</a>
+                            <li>
+                                <a href="/testbed/main/contents.do?menuNo=700133">시설안내</a>
+
                                 <!-- nav 시설안내 two-daps start -->
                                 <ul>
                                     <li><a href="/testbed/main/main.do?menuNo=500108">콘텐츠문화광장</a></li>
@@ -225,7 +257,7 @@
                                     <a href="/testbed/main/main.do?menuNo=500108">학습지원</a>
                                     <!-- 학습지원 two-daps start -->
                                     <ul>
-                                        <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
+                                        <%--<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>--%>
                                         <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
                                     </ul>
                                     <!-- nav 학습지원 two-daps end -->
@@ -239,6 +271,7 @@
                                     <ul>
                                         <li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
                                         <li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
+                                        <li><a href="/edu/onlineEdu/mylctrum/listLessonHistory.do?menuNo=500099" title="수료증 출력">수료증 출력</a></li>
                                         <li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
                                         <li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
                                     </ul>
@@ -251,15 +284,16 @@
                     <div class="ml-auto searchCon">
                         <!-- 로그인 후-->
                         <sec:authorize ifAnyGranted="ROLE_USER">
-                            <div class="nav_support_box">
-                                <a href="/edu/main/contents.do?menuNo=500033">
+                            <button type="button" class="gnb_menu myset"  title="추천 클래스 설정">맞춤 강의👆</button>
+                            <%--<div class="nav_support_box">
+                                <a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">
                                     <img src="/edu/images/renew2022/ico_FAQ_white.png" alt="학습지원">
                                 </a>
                                 <ul>
-                                    <li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>
+                                    &lt;%&ndash;<li><a href="/edu/main/contents.do?menuNo=500033" title="지원서비스">지원서비스</a></li>&ndash;%&gt;
                                     <li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" title="공지사항">공지사항</a></li>
                                 </ul>
-                            </div>
+                            </div>--%>
                             <div class="nav_my_box pc">
                                 <c:if test="${paramVO.siteName eq 'edu' }">
                                     <c:set var="mypageNm" value="마이페이지"/>
@@ -276,12 +310,13 @@
                                     <li id="myPageMenu"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061" title="마이페이지">마이페이지</a></li>
                                     <li><a href="/edu/userMember/forUpdate.do?menuNo=500056" title="회원정보 수정">회원정보 수정</a></li>
                                     <li><a href="/edu/userMember/simpleLogin.do?menuNo=500058" title="간편로그인 설정">간편로그인 설정</a></li>
+                                    <li><a href="/edu/onlineEdu/mylctrum/listLessonHistory.do?menuNo=500099" title="수료증 출력">수료증 출력</a></li>
                                     <li><a href="/edu/progrm/applcnt/listMypage.do?menuNo=500064" title="프로그램 신청/접수">프로그램 신청/접수</a></li>
                                     <li><a href="/edu/bbs/B0000076/listMy.do?menuNo=500201" title="나의 문의내역">나의 문의내역</a></li>
                                     <li><a href="/edu/member/logout.do" class="ico4 logoutBtn" title="로그아웃">로그아웃</a></li>
                                 </ul>
                             </div>
-                            <input type="image" src="/edu/images/renew2022/all_menu_white.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">
+                            <%--<input type="image" src="/edu/images/renew2022/all_menu_white02.png" class="gnb_menu" alt="추천 클래스 설정" title="추천 클래스 설정" style="padding:0;">--%>
                         </sec:authorize>
 
                         <!-- 로그인 전-->
@@ -300,7 +335,8 @@
                                             <input type="hidden" name="redirectUrl" value="/${paramVO.siteName}/main/main.do"/>
                                         </form>
                                         <span class="show vm fontsize14 header_util_item">
-                                            <a href="/testbed/member/join01.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>
+                                           <%-- <a href="/testbed/member/join02.do?menuNo=700121" class="ico2" title="회원가입">회원가입</a>--%>
+                                            <a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
                                         </span>
                                     </span>
                                 </c:when>
@@ -310,7 +346,7 @@
 												<a href="/edu/member/forLogin.do?menuNo=500077" class="ico1" title="로그인">로그인</a>
 											</span>
 											<span class="show vm fontsize14 header_util_item">
-												<a href="/edu/member/join01.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
+												<a href="/edu/member/join02.do?menuNo=500076" class="ico2" title="회원가입">회원가입</a>
 											</span>
 										</span>
                                 </c:otherwise>
@@ -324,10 +360,10 @@
                             <a href="/edu/main/main.do" class="navbar-brand" title="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
                                 <img src="/edu/new_image/main/logo.png" alt="콘텐츠인재캠퍼스 에듀코카 로고 - 콘텐츠인재캠퍼스 메인으로 이동">
                             </a>
-                            <input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="GNB 메뉴 닫기" style="padding:0;">
-                            <h2>콘텐츠커리큘럼<span class="pc cy_list_txt">아래 관심분야를 선택하시면 메인페이지에서 맞춤과정을 추천해 드립니다.(다수선택가능)</span></h2>
+                            <input type="image" src="/edu/img/gnb_close.png" class="gnb_close" alt="추천 클래스 설정 닫기" style="padding:0;">
+                            <h2>추천 클래스 설정<span class="pc cy_list_txt">아래 관심분야를 <b>선택</b>하시면 추천 클래스에서 <b>맞춤과정</b>을 <b>추천</b>해 드립니다.(다수선택 가능)</span></h2>
                             <div class="cy_contents_box">
-                                <p class="mo cy_list_txt">아래 관심분야를 선택하시면 메인페이지에서 맞춤과정을 추천해 드립니다.(다수선택가능)</p>
+                                <p class="mo cy_list_txt">아래 관심분야를 <b>선택</b>하시면 추천 클래스에서 <b>맞춤과정</b>을 <b>추천</b>해 드립니다.(다수선택 가능)</p>
                                 <c:set var="contentType" value=""/>
                                 <c:forEach items="${curriculumList }" var="result" varStatus="status">
                                     <c:if test="${status.first eq false}">
@@ -343,12 +379,18 @@
                                             <c:set var="contentType" value="${result.cd1}"/>
                                     </c:if>
                                     <li>
-                                        <button type="button" onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}</button>
+                                        <button type="button"
+                                                <c:if test="${result.chkyn eq 'Y'}">title="${result.cdnm2}(선택됨)"</c:if>
+                                                <c:if test="${result.chkyn eq 'N'}">title="${result.cdnm2}"</c:if>
+                                                onclick="fnSaveCurriculum('${result.cd1}', '${result.cd2}', '${result.chkyn}');" <c:if test="${result.chkyn eq 'Y'}">class="active"</c:if> >${result.cdnm2}
+                                        </button>
                                     </li>
                                 </c:forEach>
                             </div>
                         </div>
-
+                        <div class="board_util_btn_con" style="text-align: center;">
+                            <button type="button" class="btn_style_0 blue row-btn gnb_save">저장하기</button>
+                        </div>
                     </div>
                     <!-- pc 햄버거 버튼 눌렀을때 end -->
                 </nav>

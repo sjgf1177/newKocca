@@ -556,12 +556,12 @@
  			INSERT INTO TM_USER (
  				MBER_SE,USER_SN,PASSWORD,USER_NM,EMAIL,MBTLNUM,BRTHDY,SEX,RESDNC_SE,SIDO,GUGUN,RESDNC_OVSEA,JOB,EMAIL_AT,SMS_AT,
  				SBSCRB_DT,PWD_CHANGE_AT,PWD_CHANGE_DT,AGRE_AT,AGRE_DT,AUTH_SE,AUTH_DT,AUTH_EMAIL_AT,USER_STTUS,
- 				USER_IP,FRST_REGISTER_ID,LAST_UPDT_PNTTM,LAST_UPDUSR_ID,USER_ID,USE_AT,RM,PARNTS_NM, PARNTS_MBTLNUM, PARNTS_AGRE_AT
+ 				USER_IP,FRST_REGISTER_ID,LAST_UPDT_PNTTM,LAST_UPDUSR_ID,USER_ID,USE_AT,RM,PARNTS_NM, PARNTS_MBTLNUM, PARNTS_AGRE_AT, AGRE_AT2
  			)
 			VALUES (
 				#mberSe#, #userSn#, #password#, #userNm#, crypto.enc('normal', #email#), crypto.enc('normal', #mbtlnum#), TO_DATE(#brthdy#, 'YYYY-MM-DD'), #sex#, #resdncSe#, #sido#, #gugun#, #resdncOvsea#, #job#, #emailAt#, #smsAt#,
 				sysdate, 'Y', sysdate, 'Y', sysdate, #authSe#, sysdate, #authEmailAt#, #userSttus#,
-				#userIp#, #userSn#, sysdate, #userSn#, #userId#, 'Y', #rm#, #parntsNm#, #parntsMbtlnum#, #parntsAgreAt#
+				#userIp#, #userSn#, sysdate, #userSn#, #userId#, 'Y', #rm#, #parntsNm#, #parntsMbtlnum#, #parntsAgreAt#, #agreAt2#
 			)
 		]]>
 	</insert>
@@ -863,10 +863,10 @@
 		</selectKey>
 		<![CDATA[
  			INSERT INTO TM_USER_SECSN (
- 				SN,USER_ID,USER_SECSN_DT
+ 				SN,USER_ID,USER_SECSN_DT, USER_NM, USER_SECSN_RESN, USER_SECSN_CD
  			)
 			VALUES (
-				#sn#, #userId#, SYSDATE
+				#sn#, #userId#, SYSDATE, #userNm#, #secsnT#, #secsnC#
 			)
 		]]>
 	</insert>

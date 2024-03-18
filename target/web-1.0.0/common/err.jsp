@@ -39,7 +39,7 @@ img{border:none}
 </head>
 <body>
 <div id="wrap">
-	<p class="logo"><a href="/"><img src="/images/common/logo.png" alt="<spring:message code='site.korName' text=''/>" /></a></p>
+	<p class="logo"><a href="/"><img src="/images/common/logo.png" width="218" alt="<spring:message code='site.korName' text=''/>" /></a></p>
 	<div class="s">
 		<p class="t"><img src="/images/common/err_txt.gif" alt="페이지가 없거나 잘못된 경로입니다. 파일 또는 페이지가 없거나 잘못된 경로입니다.경로를 다시 확인하시고 이용해 주시기 바랍니다.이용에 불편을 드려 대단히 죄송합니다." /></p>
 		<!--<p class="code">

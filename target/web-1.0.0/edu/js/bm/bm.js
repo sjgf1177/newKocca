@@ -227,7 +227,7 @@ $(function(){
         $('.gnb_dim').css( {"height": gnbHei + "px", "opacity": getCalcOpacity() } );
         $(".gnb_con > li").find("ul").css({"display":""});
         $('#all_search_label').css("display","inline-block");
-        $('.gnb_close').attr({"alt":"GNB 메뉴 닫기"});
+        //$('.gnb_close').attr({"alt":"추천 클래스 설정 닫기"});
         gnbAllMenu = false;
     });
 

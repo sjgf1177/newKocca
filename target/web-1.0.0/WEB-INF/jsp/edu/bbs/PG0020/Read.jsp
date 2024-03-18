@@ -7,75 +7,119 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc" %>
 <ccc:constantsMap className="kr.co.unp.bbs.vo.SearchVO" var="SearchVO"/>
-<div class="tab_style_1_con"> 
-	<ul class="tab_style_1 three_tab">
-		<li>
-			<a href="/edu/onlineEdu/themeLecture/list.do?menuNo=500204">
-				<span>테마과정</span>
-			</a>
-		</li>
-		<li class="active">
-			<a href="/edu/bbs/B0000048/list.do?menuNo=500205" title="현재탭">
-				<span>이벤트</span>
-			</a>
-		</li>
-		<li>
-			<a href="/edu/bbs/B0000023/list.do?menuNo=500206">
-				<span>콘텐츠이야기</span>
-			</a>
-		</li>
-	</ul>
-</div>
-	<!-- bdView -->
-<table class="board_type_0 detail notice">
-	<caption>이벤트 게시판 뷰 페이지</caption>
-	<colgroup>
-		<col width="100%">
-	</colgroup>
-	<thead>
-	<tr>
-		<th>
-			<span>
-				<c:out  value="${result.nttSj }" escapeXml="false"/>
-			</span>
-			<span class="writer_info">
-				<span>
-					Hit.<c:out value="${result.inqireCo}"></c:out>
-				</span>
-				<span>
-					<c:out value="${result.frstRegisterPnttm}" escapeXml="false" />
-				</span>
-			</span>
-		</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td>
-			<div class="table_info_header">
-				<div class="view_info">
-					<p>이벤트 기간 : <span><c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></p>
-					<c:if test="${not empty result.option1 and result.option1 ne '' }">
-						<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if> >[이벤트 페이지 바로가기]</a>
-					</c:if>
-				</div>
-			</div>
-			<div class="contents_view_area">
-				<c:choose>
-					<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
-					<c:otherwise>
-						<% pageContext.setAttribute("crlf", "\n"); %>
-						${fn:replace(result.nttCn, crlf, "<br/>")}
-					</c:otherwise>
-				</c:choose>
+<style>
+	.table_info_header{text-align: right; font-size: 15px;}
+	.upload_file a{margin-bottom: 5px;}
 
-				<!-- 본문이미지 대체텍스트 -->
-				<!-- <div class="hidden">${result.imgDescCn}</div> -->
+	@media screen and (max-width: 640px){
+		.table_info_header{margin-bottom: 10px;}
+	}
+</style>
+
+<c:set var="tmp1" value=""/>
+<c:set var="tmp2" value=""/>
+<c:set var="tmp3" value=""/>
+<c:set var="tmp4" value=""/>
+
+<c:choose>
+	<c:when test="${result.option3 eq '1'}">
+		<c:set var="tmp1" value="에듀코카 이벤트"/>
+		<c:set var="tmp2" value="참여 기간"/>
+		<c:set var="tmp3" value="지금 참여하시겠습니까?"/>
+		<c:set var="tmp4" value="이벤트 참여하기"/>
+	</c:when>
+	<c:when test="${result.option3 eq '2'}">
+		<c:set var="tmp1" value="교육신청"/>
+		<c:set var="tmp2" value="신청 기간"/>
+		<c:set var="tmp3" value="지금 신청하시겠습니까?"/>
+		<c:set var="tmp4" value="교육 신청하기"/>
+	</c:when>
+	<c:when test="${result.option3 eq '3'}">
+		<c:set var="tmp1" value="구인/공모"/>
+		<c:set var="tmp2" value="모집 기간"/>
+		<c:set var="tmp3" value="공고 세부 내용을 보시겠습니까?"/>
+		<c:set var="tmp4" value="공고 바로가기"/>
+	</c:when>
+	<c:otherwise>
+		<c:set var="tmp1" value="이벤트"/>
+		<c:set var="tmp2" value="이벤트 기간"/>
+		<c:set var="tmp3" value="지금 참여하시겠습니까?"/>
+		<c:set var="tmp4" value="이벤트 참여하기"/>
+	</c:otherwise>
+</c:choose>
+
+
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>참여마당</span></a></li>
+			<li>
+				<a href="javascript:void(0);" tabindex="-1">
+					<span>${tmp1}</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">${tmp1}</div>
+</div>
+
+<!-- bdView -->
+<div class="evt_top_box">
+	<div class="col-center mw-1280">
+		<div class="evt_info_box">
+			<h2><c:out  value="${result.nttSj }" escapeXml="false"/></h2>
+			<%--<p class="date_tag_on">D-10</p>--%>
+			<p class="data"><c:if test="${result.nttId ne '75371'}"><span>${tmp2} : <c:out value="${result.ntceBgnde}" />~<c:out value="${result.ntceEndde}" /></span></c:if></p>
+		</div>
+		<div class="evt_btn_box">
+			<p>${tmp3}</p>
+			<c:if test="${not empty result.option1 and result.option1 ne '' }">
+				<c:if test="${result.nttId ne '75375' and result.nttId ne '75378' and result.nttId ne '75405'}">
+					<a href="<c:out value="http://${result.option1 }" />"  <c:if test="${result.option2 eq 'Y' }"> title="새창열기" target="_blank" </c:if>>${tmp4}</a>
+				</c:if>
+				<c:if test="${result.nttId eq '75375'}">
+					<a href="javascript:alert('아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">${tmp4}</a>
+				</c:if>
+				<c:if test="${result.nttId eq '75378'}">
+                    <a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nesg23esg@gmail.com');">${tmp4}</a>
+				</c:if>
+				<c:if test="${result.nttId eq '75405'}">
+					<a href="javascript:alert('[이벤트 참여] 버튼 우측 하단 첨부파일 다운로드 후\n아래 이메일로 지원해 주시기 바랍니다.\nkoccaedu@gmail.com');">${tmp4}</a>
+				</c:if>
+			</c:if>
+		</div>
+	</div>
+</div>
+<div class="contents_view_area">
+	<div class="col-center mw-1280 txt_ct">
+		<div class="table_info_header">
+			<div class="upload_file">
+				<c:forEach var="fileVO" items="${fileList}" varStatus="status">
+					<c:if test="${fileVO.fileFieldName ne 'main_image'}">
+						<a href="/edu/cmm/fms/FileDown.do?atchFileId=${fileVO.atchFileId}&amp;fileSn=${fileVO.fileSn}&amp;bbsId=${param.bbsId}">
+							첨부파일 : <c:out value="${fileVO.orignlFileNm}"/>&nbsp;[<c:out value="${fileVO.fileMg}"/>&nbsp;byte]
+						</a><br />
+					</c:if>
+				</c:forEach>
 			</div>
-		</td>
-	</tr>
-	</tbody>
-</table>
+		</div>
+	<c:choose>
+		<c:when test="${result.htmlYn=='Y'}">${result.nttCn}</c:when>
+		<c:otherwise>
+			<% pageContext.setAttribute("crlf", "\n"); %>
+			${fn:replace(result.nttCn, crlf, "<br/>")}
+		</c:otherwise>
+	</c:choose>
+
+	<!-- 본문이미지 대체텍스트 -->
+	<!-- <div class="hidden">${result.imgDescCn}</div> -->
+	</div>
+</div>
+
+
 <div class="paging view_paging">
 	<ul class="pagination">
 		<c:if test="${prevNextMap['PREV'].prevNttId > 0}">
@@ -95,8 +139,9 @@
 	</ul>
 </div>
 <div class="board_util_btn_con">
-	<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}" />
-	<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">
-		목록
-	</a>
+	<div class="col-center mw-1280">
+		<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/list.do?${pageQueryString}&op3=${paramVO.opt}" />
+		<a class="btn_style_0 full list" href="<c:out value='${url}' escapeXml='false'/>">목록</a>
+	</div>
 </div>
+

@@ -10,20 +10,40 @@
 <link href="/edu/css/new/videojs/video-js.css" rel="stylesheet">
 <script src="/edu/js/new/videojs/videojs-ie8.js"></script>
 <script src="/edu/js/new/videojs/video.js"></script>
-<div class="tab_style_1_con"> 
-	<ul class="tab_style_1 two_tab">
-		<li>
-			<a href="/edu/bbs/B0000048/list.do?menuNo=500205">
-				<span>이벤트</span>
-			</a>
-		</li>
-		<li class="active">
-			<a href="/edu/bbs/B0000023/list.do?menuNo=500206" title="현재탭">
-				<span>콘텐츠이야기 </span>
-			</a>
-		</li>
-	</ul>
+
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>에듀코카</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>에듀코카이야기</span></a></li>
+		</ul>
+	</div>
 </div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">에듀코카이야기</div>
+</div>
+
+<div class="col-center mw-1280">
+	<div class="tab_style_1_con">
+		<ul class="tab_style_1 two_tab" style="display: flex; justify-content: center;">
+			<li>
+				<!-- 아직 페이지 디자인 안나옴-->
+				<a href="#">
+					<span>사업소개</span>
+				</a>
+			</li>
+			<li class="active">
+				<a href="/edu/bbs/B0000023/list.do?menuNo=500206" title="현재탭">
+					<span>콘텐츠이야기 </span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="col-center mw-1280 edu_stroy_wrap">
 <ccc:constantsMap className="kr.co.unp.bbs.vo.SearchVO" var="SearchVO" />
 
 	<c:url value="/${paramVO.siteName }/bbs/${paramVO.bbsId}/list.do?menuNo=${param.menuNo }" var="searchUrl" />
@@ -47,21 +67,21 @@
  --%>
 	<div class="col-12 img_card_wrap">
 		<div class="col-12 calc_wrap19">
-			<div class='col-6 col-sm-4 tc img_card_list'>
+			<div class=' col-sm-4 tc img_card_list'>
 				<div class="col-12 show fn img_card">
 					<div class="col-12 img_box openPopup_thumbnail thumbnail_01" style="height:auto;" tabindex="0">
 						<img src="/edu/new_image/thumbnail_01.jpg" alt="홍보영상1" style="cursor: pointer;">
 					</div>
 				</div>
 			</div>
-			<div class='col-6 col-sm-4 tc img_card_list'>
+			<div class=' col-sm-4 tc img_card_list'>
 				<div class="col-12 show fn img_card">
 					<div class="col-12 img_box openPopup_thumbnail thumbnail_02" style="height:auto;" tabindex="0">
 						<img src="/edu/new_image/thumbnail_02.jpg" alt="홍보영상2" style="cursor: pointer;">
 					</div>
 				</div>
 			</div>
-			<div class='col-6 col-sm-4 tc img_card_list mr0'>
+			<div class=' col-sm-4 tc img_card_list mr0'>
 				<div class="col-12 show fn img_card">
 					<div class="col-12 img_box openPopup_thumbnail brochure_thumbnail" style="height:auto;" tabindex="0">
 						<img src="/edu/new_image/brochure_thumbnail.jpg" alt="다운로드" style="cursor: pointer;">
@@ -82,7 +102,7 @@
 			</c:if>
 		</c:forEach>
 			<c:url var="url" value="/edu/bbs/${paramVO.bbsId}/view.do?nttId=${result.nttId}${pageQueryString}" />
-			<div class='col-6 col-sm-4 tc img_card_list <c:if test="${status.index%3 eq 2 }">mr0</c:if>'>
+			<div class='col-6 col-sm-3 tc img_card_list <c:if test="${status.index%3 eq 2 }">mr0</c:if>'>
 				<a href="${url }" class="col-12 show fn img_card">
                     <div class="col-12 img_box">
                         <c:if test="${not empty file }">
@@ -114,3 +134,4 @@
 		<!-- paging end //-->
 	</c:if>
 	<!-- //bdList -->
+</div>

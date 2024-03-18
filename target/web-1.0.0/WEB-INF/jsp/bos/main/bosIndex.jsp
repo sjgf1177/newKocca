@@ -84,6 +84,10 @@ body{background-image: none;background-color: #fff;}
 <script type="text/javascript" src="/js/selectivizr-min.js"></script>
 <script type="text/javascript" src="/js/html5shiv.js"></script><script type="text/javascript" src="js/respond.min.js"></script>
 <![endif]-->
+<c:set var="roleYn" value="N" />
+<sec:authorize ifAnyGranted="ROLE_EDU_SUPPORT_PROJECT">
+	<c:set var="roleYn" value="Y" />
+</sec:authorize>
 
 <script type="text/javascript">
 	$(function(){
@@ -190,7 +194,7 @@ body{background-image: none;background-color: #fff;}
 
 		<div id="header_wrap">
 			<div class="header">
-				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
+				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" width="218" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
 				<p class="user bold"><span class="color1">[${adminUser.deptNm}]${adminUser.userNm}(${adminUser.userId})</span>님 로그인 접속IP:${userIp}</p>
 				<c:set var="topCategories" value="${adminMenuMap['menu_0']}" />
 				<c:set var="menuKey" value="menu_${topCategories[depth01].menuNo}" />
@@ -206,10 +210,20 @@ body{background-image: none;background-color: #fff;}
 							<c:when test="${x==1}"><c:set var="iconClass" value="fa-search" /></c:when>
 							</c:choose>
 			 			<c:if test="${topCategories[x].menuPopupYn=='Y'}">
-							<a href="${topCategories[x].menuLink}" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							<c:if test="${roleYn eq 'Y'}">
+								<a href="/bos/bbs/B0000079/list.do?menuNo=100267" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
+							<c:if test="${roleYn ne 'Y'}">
+								<a href="${topCategories[x].menuLink}" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
 			 			</c:if>
 			 			<c:if test="${topCategories[x].menuPopupYn!='Y'}">
-							<a href="${topCategories[x].menuLink}${fn:indexOf(topCategories[x].menuLink,'?') > -1 ? '&' : '?' }menuNo=${topCategories[x].menuNo}" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							<c:if test="${roleYn eq 'Y'}">
+								<a href="/bos/bbs/B0000079/list.do?menuNo=100267" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
+							<c:if test="${roleYn ne 'Y'}">
+								<a href="${topCategories[x].menuLink}${fn:indexOf(topCategories[x].menuLink,'?') > -1 ? '&' : '?' }menuNo=${topCategories[x].menuNo}" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
 			 			</c:if>
 						</c:forEach>
 						<a href="javascript:openPopup();"class="btn btn-success"><i class="fa fa-power-off"></i>내정보수정</a>

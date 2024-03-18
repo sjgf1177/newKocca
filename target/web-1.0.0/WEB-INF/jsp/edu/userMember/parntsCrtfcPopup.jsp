@@ -28,7 +28,6 @@ $(function() {
 	};
 
 	fnCheck = function() {
-
 		if (authSe == "02") {
 
 			if ($("#authNum").val() == "") {
@@ -47,12 +46,11 @@ $(function() {
 						$("#parntsMbtlnumAuth", opener.document).hide();
 						$("#parntsMbtlnumAuthCmt", opener.document).show();
 						$("#parntsMbtlnumAuthDel", opener.document).show();
-						var val = $("#parntsMbtlnum1", opener.document).val()+ "-"+$("#parntsMbtlnum2", opener.document).val()+ "-"+$("#parntsMbtlnum3", opener.document).val();
+						var val = $("#parntsMbtlnum", opener.document).val();
 						$("#parntsMbtlnum", opener.document).val(val);
-						$("#parntsMbtlnum1", opener.document).attr('disabled', true);
-						$("#parntsMbtlnum2", opener.document).attr('disabled', true);
-						$("#parntsMbtlnum3", opener.document).attr('disabled', true);
 						$("#parntsAuthSameBtn", opener.document).show();
+						$("#mbtlnumAuth", opener.document).show();
+						$("#parntsMbtlnum", opener.document).attr('readonly', true);
 
 
 						self.close();
@@ -112,7 +110,7 @@ function check_txt(value) {
 			</div>
 
 			<div class="btnSet">
-				<a href="javascript:fnCheck();" class="btn btn-primary btnBlack icoCheck">확인</a>
+				<a href="javascript:fnCheck();" class="btn btn-primary btnBlack icoCheck" style="padding: 9px 35px 8px 55px;">확인</a>
 			</div>
 
 	</div>

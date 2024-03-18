@@ -43,7 +43,7 @@ $(function() {
 
     <!-- 하위스크롤 경우 // headerTopOn -->
 <header>
-	<div class="container h-100">
+	<div class="container h-10">
 		<div class="header_util_wrap">
 			<div class="show vm header_util_text_con">
 				<span class="show vm fontsize14 header_util_item">
@@ -211,6 +211,7 @@ $(function() {
 						<input type="text" class="q2" name="q" id="q2" placeholder="검색어를 입력해주세요." title="검색어를 입력해주세요.">
 						<input type="image" src="/edu/images/bm/search_icon.png" alt="검색 확인" class="all_search_image">
 					</form> --%>
+
 				</span>
 				<!-- //검색창 -->
 				<input type="image" src="/edu/img/gnb_icon.png" class="gnb_menu" alt="GNB 메뉴" style="padding:0;">

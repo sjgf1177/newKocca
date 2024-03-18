@@ -55,12 +55,19 @@
 		<ul class="tab_style_1" style="display: flex; justify-content: center;">
 			<c:choose>
 				<c:when test="${param.viewType eq 'old' }">
-					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current"><span>현재학습</span></a></li>
-					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old" title="현재탭"><span>지난과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current"><span>학습중인 과정</span></a></li>
+					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old" title="현재탭"><span>완료된 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=pick"><span>찜한 과정</span></a></li>
+				</c:when>
+				<c:when test="${param.viewType eq 'pick' }">
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current"><span>학습중인 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old"><span>완료된 과정</span></a></li>
+					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=pick" title="현재탭"><span>찜한 과정</span></a></li>
 				</c:when>
 				<c:otherwise>
-					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current" title="현재탭"><span>현재학습</span></a></li>
-					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old"><span>지난과정</span></a></li>
+					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current" title="현재탭"><span>학습중인 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old"><span>완료된 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=pick"><span>찜한 과정</span></a></li>
 				</c:otherwise>
 			</c:choose>
 		</ul>
@@ -70,7 +77,7 @@
 	<div class="mb10 alert big_box">
 		<ul class="list_style_4 no_decimal color_gray dot">
 			<li style="color:#444;">진도율 <span style="color:#3B85FF;">70% 이상</span> 되어야 수료증 출력 및 만족도 설문 가능</li>
-			<li style="color:#444;">열린강좌는 <span style="color:#3B85FF;">테마과정에 등록된 내역</span>만 확인가능합니다.</li>
+			<li style="color:#444;">'바로 수강' 강의는 <span style="color:#3B85FF;">학습로드맵(테마과정)에 등록된 내역</span>만 확인가능합니다.</li>
 		</ul>
 	</div>
 	<!-- <div style="width:100%;text-align:right;margin-bottom:10px;">진도율 60% 이상 되어야 수료증 출력 및 만족도 설문 가능</div> -->
@@ -84,7 +91,7 @@
 						<c:when test="${item.introducefilenamenew != null and item.introducefilenamenew != '' }">
 							<%-- <img alt="<c:out value="${item.subjnm }"/>" src="<c:out value="${fn:replace(item.introducefilenamenew, crlf, '/') }" />" width="290px;" height="190px;" /> --%>
 							<!-- 실서버 업로드 시 위 img 태그 주석 풀어서 사용, 아래 img 태그는 제거 -->
-							<img alt="<c:out value="${item.subjnm }"/>" src="${item.introducefilenamenew}" width="290px;" height="190px;" />
+							<img alt="<c:out value="${item.subjnm }"/>" src="${item.introducefilenamenew}" />
 						</c:when>
 						<c:otherwise>
 							<img alt="<c:out value="${item.subjnm }"/>" src="/edu/images/bm/kofac_card_img_000.jpg" width="290px;" height="190px;" />
@@ -95,10 +102,10 @@
 					<div class="mypage_online_edu_header">
 						<c:choose>
 							<c:when test="${item.contenttype eq 'GOLD' }">
-								[열린강좌]
+								[바로 수강]
 							</c:when>
 							<c:otherwise>
-								[정규과정]
+								[로그인 후 수강]
 							</c:otherwise>
 						</c:choose>
 					</div>

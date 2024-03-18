@@ -166,7 +166,7 @@
 	    </c:if>
 	</div>
 	<div class="fr" >
-		<a class="btn btn-primary" href="/bos/bbs/${paramVO.bbsId}/forUpdate.do?nttId=${result.nttId}&${pageQueryString}&${result.delcode}"><span>수정</span></a>
+		<a class="btn btn-primary" href="/bos/bbs/${paramVO.bbsId}/forUpdate.do?nttId=${result.nttId}&bbsId=${result.bbsId}${pageQueryString}&${result.delcode}"><span>수정</span></a>
 	<c:if test="${result.delcode eq '0' }" >
 		<a class="btn btn-danger" href="javascript:delPermanently();" onclick="return confirm('정말로 삭제하시겠습니까?');"><span>삭제</span></a>
 	</c:if>

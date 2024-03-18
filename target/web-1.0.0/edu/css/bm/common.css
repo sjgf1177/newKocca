@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/*
+
 @font-face {
     font-family: 'NanumSquare';
     font-style: normal;
@@ -128,7 +128,7 @@
     font-display: swap;
     src: local('Pretendard Thin'), url('/fonts/fonts/Pretendard-1.3.3/woff2/Pretendard-Thin.woff2') format('woff2'), url('/fonts/fonts/Pretendard-1.3.3/woff/Pretendard-Thin.woff') format('woff');
 }
-*/
+
 
 /*!*어그로체 *!
 @font-face {
@@ -163,7 +163,7 @@
     font-weight: normal;
     font-style: normal;
     unicode-range: U+0041-005A!*(대문자)*!, U+0061-007A!*(소문자)*!
-}*/
+}
 
 @font-face {
     font-family: 'SBAggroL';
@@ -171,7 +171,7 @@
     font-weight: normal;
     font-style: normal;
 }
-
+*/
 
 /* Reset */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
@@ -182,7 +182,7 @@ caption {text-indent:-10000px;}
 html { font-size: 10px; }
 body{ font-size: 14px; font-size: 1.4rem; line-height: 2.2rem; }
 html, body {margin: 0; padding: 0; width: 100%; height: 100%;}
-body {background-color:#fff; color:#000; line-height: 1.2; font-weight: 400; font-family: 'SBAggroL', sans-serif !important; /*font-family:"NanumSquareRound", "돋움", Dotum, Verdana, Helvetica, Sans-serif;*/}
+body {background-color:#fff; color:#000; line-height: 1.2; font-weight: 400; font-family: 'Pretendard', sans-serif !important; /*font-family:"NanumSquareRound", "돋움", Dotum, Verdana, Helvetica, Sans-serif;*/}
 input, button, textarea {font-family: inherit; font-size:1.2rem; color:#000;}
 h1, h2, h3, h4, h5, h6 {letter-spacing: 0; font-weight:normal;}
 img, fieldset, iframe {border:0 none;}

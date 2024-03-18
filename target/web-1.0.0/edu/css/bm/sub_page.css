@@ -223,7 +223,7 @@ form.login_form{width:100%; padding-bottom:30px; border-bottom:1px solid #eeeeee
 .sub_section .left_text_box{margin-bottom:20px;}
 .sub_section .sub_img_box > img{margin:5px;}
 .sub_section .board_title h5{font-size: 16px; font-size: 1.6rem; line-height: 22px; line-height: 2.2rem; color: #313131; letter-spacing: 0; margin-bottom: 0; padding-left:28px;
-    background: url('/edu/images/bm/board_title_icon.png') no-repeat left 2px;}
+    background: url('/edu/images/bm/board_title_icon_back.png') no-repeat left 2px;}
 .sub_section .board_title h5 .board_count{color:#dd7b09;}
 
 
@@ -455,7 +455,7 @@ ul.list_style_2.requst_list > li > .sub_text > .sub_text_title{ font-size:12px; 
 .sub_section .sub_contents_body table.work_tb input[type="checkbox"]#career2 {margin-top: 10px;}
 .sub_section .sub_contents_body table.work_tb input[type="checkbox"]:focus{opacity: 1;border: 1px solid #ddd;}
 .sub_section .sub_contents_body input[type="checkbox"] + label{ display: inline-block; width: auto; height: 30px; font-size: 14.5px; font-size: 1.45rem; line-height: 20.5px; line-height: 2.05rem; color: #313131; letter-spacing: -0.025em;
-    background: url("/edu/images/bm/checkbox_style_0_w.png") no-repeat left top; padding-left: 30px; margin-right: 24px; cursor:pointer;}
+    background: url("/edu/images/bm/checkbox_style_0_w.png") no-repeat left top; padding-left: 23px; margin-right: 24px; cursor:pointer;}
 .sub_section .sub_contents_body input[type="checkbox"] + label:brfore{content:"";clear:both;display:block;}
 .sub_section .sub_contents_body table.work_tb input[type="checkbox"] + label{opacity: 2; position: relative;}
 .sub_section .sub_contents_body .agreeScrBtm input[type="checkbox"] + label{ width:auto; }
@@ -623,7 +623,7 @@ ul.list_style_4 > li .list_style_4_arrow{background:url('/edu/images/bm/list_sty
 .signup_step_bar .step_box{font-size: 13px; font-size: 1.3rem; line-height: 19px; line-height: 1.9rem; font-weight: 400; color: #313131; letter-spacing: -0.025em;}
 .signup_step_bar .step_box .step_title{display: block; margin-bottom: 2px;}
 .signup_step_bar .step_line_wrap{display: table-cell; vertical-align: middle; text-align: center; background: url("/edu/images/bm/sub_signup_stepbar_dot.png") repeat-x left center;}
-.signup_step_bar .step_line_wrap .step_right_arrow {width: 15px; height: 15px; display: inline-block; background: #ced8e7 url("/edu/images/bm/sub_signup_setpbar_right.png") no-repeat center center; border-radius: 50%;}
+/*.signup_step_bar .step_line_wrap .step_right_arrow {width: 15px; height: 15px; display: inline-block; background: #ced8e7 url("/edu/images/bm/sub_signup_setpbar_right.png") no-repeat center center; border-radius: 50%;}*/
 .signup_step_bar .step_line_wrap span.sr-only{display:none;}
 .signup_step_bar.recruit_step .step_wrap{padding:0 5px;}
 .signup_step_bar.recruit_step span.sr-only{display:none;}
@@ -692,14 +692,14 @@ ul.list_style_4 > li .list_style_4_arrow{background:url('/edu/images/bm/list_sty
 /* 콘텐츠 스텝업 */
 
 .sub_section .sub_contents_body .contents_stepup_header {margin-bottom: 33px;}
-.sub_section .sub_contents_body .contents_stepup_header > .text_box {background-color:#00715F; padding: 33px 33px 38px 36px; }
+.sub_section .sub_contents_body .contents_stepup_header > .text_box {background-color:#0590ff; padding: 33px 33px 38px 36px; }
 .sub_section .sub_contents_body .contents_stepup_header > .img_box { display: none;}
 .sub_section .sub_contents_body .contents_stepup_header h5{font-size: 24px; font-size: 2.4rem; line-height: 30px; line-height: 3.0rem; font-weight: 400; color: #fff; margin-bottom: 14px;}
 .sub_section .sub_contents_body .contents_stepup_header h5 > span{ display: block; font-size: 12px; font-size: 1.2rem; line-height: 18px; line-height: 1.8rem; font-weight: normal; margin-bottom: 2px; letter-spacing: normal; color:#dad8d8;}
 .sub_section .sub_contents_body .contents_stepup_header .h_line5{display: inline-block; width: 67px; border-bottom: 1px solid #fff; margin-bottom: 23px;}
 .sub_section .sub_contents_body .contents_stepup_header ul >li {font-size: 14px; font-size: 1.4rem; line-height: 20px; line-height: 2.0rem; letter-spacing: -0.025em; color: #fff; margin-bottom: 7px;}
-.sub_section .sub_contents_body .contents_stepup_header ul >li:nth-child(3){color: #58f6dc;}
-.sub_section .sub_contents_body .contents_stepup_header ul >li:nth-child(5){color: #58f6dc;}
+.sub_section .sub_contents_body .contents_stepup_header ul >li:nth-child(3){}
+.sub_section .sub_contents_body .contents_stepup_header ul >li:nth-child(5){}
 .sub_section .sub_contents_body .contents_stepup_header ul >li:last-child{margin-bottom: 0;}
 .sub_section .sub_contents_body .contents_card_list {margin-bottom: 50px;}
 .sub_section .sub_contents_body .contents_card_con {padding: 9px 0px 10px 19px;}
@@ -720,14 +720,14 @@ ul.list_style_4 > li .list_style_4_arrow{background:url('/edu/images/bm/list_sty
 /* 콘텐츠 인사이트 */
 
 .sub_section .sub_contents_body .contents_insight_header {margin-bottom: 33px;}
-.sub_section .sub_contents_body .contents_insight_header > .text_box {background-color:#553576; padding: 33px 33px 38px 36px; }
+.sub_section .sub_contents_body .contents_insight_header > .text_box {background-color:#05d0bd; padding: 33px 33px 38px 36px; }
 .sub_section .sub_contents_body .contents_insight_header > .img_box { display: none;}
 .sub_section .sub_contents_body .contents_insight_header h5{font-size: 24px; font-size: 2.4rem; line-height: 30px; line-height: 3.0rem; font-weight: 400; color: #fff; margin-bottom: 14px;}
-.sub_section .sub_contents_body .contents_insight_header h5 > span{ display: block; font-size: 12px; font-size: 1.2rem; line-height: 18px; line-height: 1.8rem; font-weight: normal; margin-bottom: 2px; letter-spacing: normal; color: #dad8d8;}
+.sub_section .sub_contents_body .contents_insight_header h5 > span{ display: block; font-size: 12px; font-size: 1.2rem; line-height: 18px; line-height: 1.8rem; font-weight: normal; margin-bottom: 2px; letter-spacing: normal; color: #ffffff;}
 .sub_section .sub_contents_body .contents_insight_header .h_line5{display: inline-block; width: 67px; border-bottom: 1px solid #fff; margin-bottom: 23px;}
-.sub_section .sub_contents_body .contents_insight_header ul >li {font-size: 14px; font-size: 1.4rem; line-height: 20px; line-height: 2.0rem; letter-spacing: -0.025em; color: #dad8d8; margin-bottom: 7px;}
-.sub_section .sub_contents_body .contents_insight_header ul >li:nth-child(3){color: #58f6dc;}
-.sub_section .sub_contents_body .contents_insight_header ul >li:nth-child(5){color: #58f6dc;}
+.sub_section .sub_contents_body .contents_insight_header ul >li {font-size: 14px; font-size: 1.4rem; line-height: 20px; line-height: 2.0rem; letter-spacing: -0.025em; color: #ffffff; margin-bottom: 7px;}
+.sub_section .sub_contents_body .contents_insight_header ul >li:nth-child(4){}
+.sub_section .sub_contents_body .contents_insight_header ul >li:nth-child(6){}
 .sub_section .sub_contents_body .contents_insight_header ul >li:last-child{margin-bottom: 0;}
 
 /* 콘텐츠 플러스 */
@@ -1021,7 +1021,7 @@ ul.list_style_2.program > li > .sub_text:last-child{margin-bottom: 0;}
 ul.list_style_2.program > li > .sub_text > .sub_text_title{color: #313131;}
 .sub_section .sub_contents_body .program_board {margin-bottom: 74px;}
 .sub_section .sub_contents_body .sub_board_header.program .board_title h6{font-size: 16px; font-size: 1.6rem; line-height: 22px; line-height: 2.2rem; color: #313131; letter-spacing: 0; margin-bottom: 0; padding-left:28px;
-    background: url('/edu/images/bm/board_title_icon.png') no-repeat left 2px;}
+    background: url('/edu/images/bm/board_title_icon_back.png') no-repeat left 2px;}
 .sub_section .sub_contents_body .sub_board_header.program .board_title h6 .board_count{color:#dd7b09;}
 
 
@@ -1059,7 +1059,7 @@ ul.list_style_2.program > li > .sub_text > .sub_text_title{color: #313131;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad.top{ background-position-y: 5px;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list:last-child .motto_crad:last-child{margin-bottom: 0;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h5{text-align: center; font-size: 28px; font-size: 2.8rem; line-height: 34px; line-height: 3.4rem; color: #fff; font-weight: 400; letter-spacing: -0.025em; margin-bottom: 0;}
-.sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h5 > span{display: block; font-size: 18px; font-size: 1.8rem; line-height: 24px; line-height: 2.4rem; font-weight: normal; }
+.sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h5 > span{display: block; font-size: 18px; font-size: 1.8rem; line-height: 24px; line-height: 2.4rem; font-weight: normal; color:#333333;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad h6{font-size: 16px; font-size: 1.6rem; line-height: 22px; line-height: 2.2rem; color: #313131; font-weight: 400; margin-bottom: 24px; }
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .motto_crad_wrap .motto_crad_list .motto_crad .h_desc6{font-size: 15px; font-size: 1.5rem; line-height: 21px; line-height: 2.1rem; color: #313131; letter-spacing: -0.025em;}
 .sub_section .sub_contents_body .Introduce_body .Introduce_body_list .text_box_wrap{float: left; overflow: hidden; width:100%;}
@@ -2155,7 +2155,7 @@ table.eduframe_tb td{ text-align: left; font-size: 14.5px; font-size: 1.45rem; l
 .mypage_online_edu_list_wrap{margin-bottom:40px;}
 .mypage_online_edu_list_wrap .mypage_online_edu_list{border:1px solid #e5e5e5; padding-top:30px; padding-bottom:30px; padding-right:30px; padding-left:30px; margin-top:30px;}
 .mypage_online_edu_list_wrap .mypage_online_edu_inner{}
-.mypage_online_edu_list_wrap .mypage_online_edu_img_box{width:100%; height:190px; margin-bottom:20px;}
+.mypage_online_edu_list_wrap .mypage_online_edu_img_box{width:100%; height:185px; margin-bottom:20px; overflow: hidden;}
 .mypage_online_edu_list_wrap .mypage_online_edu_text_box{overflow:hidden;}
 .mypage_online_edu_list_wrap .mypage_online_edu_header{font-size:16px; line-height:22px; letter-spacing:-0.025em; color:#1da28d; margin-bottom:14px; font-weight:400;}
 .mypage_online_edu_list_wrap .mypage_online_edu_title{font-size:20px; line-height:26px; letter-spacing:-0.025em; color:#313131; margin-bottom:7px; font-weight:400;}
@@ -2176,7 +2176,7 @@ table.eduframe_tb td{ text-align: left; font-size: 14.5px; font-size: 1.45rem; l
 .my_progress_bar_wrap .my_progress_bar_value{position:absolute; background-image:url('/edu/images/bm/my_progress_bar_style_0.png'); background-repeat:repeat-x; height:3px; top:0; left:0;}
 .my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value{background-image:url('/edu/images/bm/my_progress_bar_style_1.png');}
 .my_progress_bar_wrap .my_progress_bar_value_text{display:inline-block; text-align:right; width:50px; font-size:14.5px; line-height:1em; color:#1da28d; font-weight:bold; vertical-align:top;}
-.my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value_text{color:#619cff;}
+.my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value_text{color:#4d8eff;}
 
 
 
@@ -2886,11 +2886,11 @@ input[type=text].input_style_3{font-size:14.5px; font-size:1.45rem; line-height:
 
     /* 콘텐츠 스텝업 */
     .sub_section .sub_contents_body .contents_stepup_header > .text_box {width: 353px; height: 330px;}
-    .sub_section .sub_contents_body .contents_stepup_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_stepup_img_000.jpg") no-repeat right top; background-size: cover;}
+    .sub_section .sub_contents_body .contents_stepup_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_stepup_img_002.png") no-repeat right top; background-size: cover;}
 
     /* 콘텐츠 인사이트 */
     .sub_section .sub_contents_body .contents_insight_header > .text_box {width: 353px; height: 330px;}
-    .sub_section .sub_contents_body .contents_insight_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_insite_img_001.jpg") no-repeat right top; background-size: cover;}
+    .sub_section .sub_contents_body .contents_insight_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 330px; background: url("/edu/images/bm/sub_contents_insite_img_003.png") no-repeat right top; background-size: cover;}
     /* 콘텐츠 플러스 */
     .sub_section .sub_contents_body .contents_plus_header > .text_box {width: 353px; height: 315px;}
     .sub_section .sub_contents_body .contents_plus_header > .img_box { display: inline-block; width: calc(100% - 354px); height: 315px; background: url("/edu/images/bm/sub_contents_plus_img_001.jpg") no-repeat right top; background-size: cover;}
@@ -3456,3 +3456,18 @@ input[type=text].input_style_3{font-size:14.5px; font-size:1.45rem; line-height:
 input[type=checkbox].input_delete, input[type=radio].input_delete{display:none;}
 
 textarea:disabled{background: rgba(239, 239, 239, 0.3) ! important;}
+
+@media all and (max-width:820px){
+    .mypage_online_edu_list_wrap .mypage_online_edu_img_box{height: 280px;}
+}
+
+@media all and (max-width:430px){
+    .mypage_online_edu_list_wrap .mypage_online_edu_img_box{height: 14.6em;}
+
+
+}
+
+@media all and (max-width:390px){
+    .mypage_online_edu_list_wrap .mypage_online_edu_img_box{height: 12.7em;}
+}
+

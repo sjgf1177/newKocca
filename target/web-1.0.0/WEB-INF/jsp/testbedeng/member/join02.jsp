@@ -743,7 +743,7 @@
 		<input type="hidden" name="snsAuthSe" value='<c:out value="${user.authSe}"/>' />
 		<input type="hidden" name="mberSe" id="mberSe" value='<c:out value="${user.mberSe}"/>' />
 		<div id="joinStep2">
-		
+
 			<div class="signup_step_bar">
 				<div class="step_wrap">
 					<p class="step_box">

@@ -8,9 +8,27 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://bibeault.org/tld/ccc" prefix="ccc" %>
+
+
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>기업맞춤교육지원</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>입력내용 확인</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">입력내용 확인</div>
+</div>
+
+<div class="col-center mw-1280">
+
 <ccc:constantsMap className="kr.co.unp.bbs.vo.SearchVO" var="SearchVO"/>
 		<!-- Step3 memberInfor -->
-						<div class="signup_step_bar">
+						<div class="signup_step_bar" style="margin-top: 40px;">
 							<div class="step_wrap">
 								<p class="step_box">
 									<span class="step_title">
@@ -18,9 +36,6 @@
 									</span>
 									개인정보 동의
 								</p>
-							</div>
-							<div class="step_line_wrap">
-								<div class="step_right_arrow"></div>
 							</div>
 							<div class="step_wrap">
 								<p class="step_box">
@@ -30,9 +45,6 @@
 									신청 정보 입력
 								</p>
 							</div>
-							<div class="step_line_wrap">
-								<div class="step_right_arrow"></div>
-							</div>
 							<div class="step_wrap active">
 								<p class="step_box">
 									<span class="step_title">
@@ -40,9 +52,6 @@
 									</span>
 									입력내용 확인
 								</p>
-							</div>
-							<div class="step_line_wrap">
-								<div class="step_right_arrow"></div>
 							</div>
 							<div class="step_wrap">
 								<p class="step_box">
@@ -195,3 +204,4 @@
 							<a href="javascript:void(0);" class="btn_style_0 close">취소</a>
 						</div>
 					<!-- Step3 memberInfor -->
+</div>

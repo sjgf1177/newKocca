@@ -23,10 +23,13 @@ $(function(){
 
     //메인배너 슬라이드
     var swiper0 = new Swiper('#main_visual_slide', {
+        effect : 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
         autoplay: 6000
         ,loot: true
-        ,speed : 700
-        ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
+        ,speed: 700
         ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
         ,spaceBetween: 0 // 슬라이드 사이의 간격 px 단위
         ,autoplayDisableOnInteraction: false,
@@ -38,17 +41,26 @@ $(function(){
         //구버전 swiper 방향표
         ,nextButton: '.swiper-button-next'
         ,prevButton: '.swiper-button-prev',
+
+        onSlideChangeStart : function() { //슬라이드가 완전히 바뀌었을때 실행
+            //alert(123);
+            $("#main_visual_slide .swiper-slide a").attr('tabindex','-1');
+            $("#main_visual_slide .swiper-slide-active a").attr('tabindex','0');
+        },
+
     });
 
+
+
     //메인 배너 정지버튼
-    $('.swiper-button-pause').click(function() {
+    $('.main_visual_contents .swiper-button-pause').click(function() {
         swiper0.stopAutoplay();
         swiper00.stopAutoplay();
-        $('.swiper-button-play').show();
-        $('.swiper-button-pause').hide();
+        $('.main_visual_contents .swiper-button-play').show();
+        $('.main_visual_contents .swiper-button-pause').hide();
     });
     //메인 배너 재성버튼
-    $('.swiper-button-play').click(function() {
+    $('.main_visual_contents .swiper-button-play').click(function() {
         swiper0.startAutoplay();
         swiper00.startAutoplay();
         $('.swiper-button-play').hide();
@@ -56,6 +68,7 @@ $(function(){
     });
 
     var swiper00 = new Swiper('#mo_main_visual_slide', {
+        effect : 'fade', // 페이드 효과 사용
         autoplay: 6000
         ,loot: true
         ,speed : 700
@@ -91,15 +104,16 @@ $(function(){
                 slidesPerView: 3,
                 spaceBetween: 20
             },
+
         }
     });
 
-    //메인 KOCCA는 창작자 여러분에게 열려 있습니다 슬라이드
+    //메인 KOCCA 교육 시설 슬라이드
     var swiper2 = new Swiper('.main_place_contents .swiper-container', {
 
         speed : 300
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
-        ,slidesPerView: 'auto' // 한번에 보이는 슬라이드 갯수
+        ,slidesPerView: '1' // 한번에 보이는 슬라이드 갯수
         ,keyboardControl: true
         ,spaceBetween: 20
 

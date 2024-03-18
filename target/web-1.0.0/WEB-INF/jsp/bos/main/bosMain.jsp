@@ -2,8 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <c:set var="userIp" value="<%= request.getRemoteAddr()%>" />
+<c:set var="roleYn" value="N" />
+<sec:authorize ifAnyGranted="ROLE_EDU_SUPPORT_PROJECT">
+	<c:set var="roleYn" value="Y" />
+</sec:authorize>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +40,7 @@ function openPopup()
 <body>
 		<div id="header_wrap">
 			<div class="header">
-				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
+				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" width="218" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
 				<p class="user bold"><span class="color1">[${adminUser.deptNm}]${adminUser.userNm}</span>님 로그인 접속IP:${userIp}</p>
 				<c:set var="topCategories" value="${adminMenuMap['menu_0']}" />
 				<c:set var="menuKey" value="menu_${topCategories[depth01].menuNo}" />
@@ -50,10 +56,20 @@ function openPopup()
 							<c:when test="${x==1}"><c:set var="iconClass" value="fa-search" /></c:when>
 							</c:choose>
 			 			<c:if test="${topCategories[x].menuPopupYn=='Y'}">
-							<a href="${topCategories[x].menuLink}" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							<c:if test="${roleYn eq 'Y'}">
+								<a href="/bos/bbs/B0000079/list.do?menuNo=100267" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
+							<c:if test="${roleYn ne 'Y'}">
+								<a href="${topCategories[x].menuLink}" target="_blank" title="새창열림" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
 			 			</c:if>
 			 			<c:if test="${topCategories[x].menuPopupYn!='Y'}">
-							<a href="${topCategories[x].menuLink}${fn:indexOf(topCategories[x].menuLink,'?') > -1 ? '&' : '?' }menuNo=${topCategories[x].menuNo}" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							<c:if test="${roleYn eq 'Y'}">
+								<a href="/bos/bbs/B0000079/list.do?menuNo=100267" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
+							<c:if test="${roleYn ne 'Y'}">
+								<a href="${topCategories[x].menuLink}${fn:indexOf(topCategories[x].menuLink,'?') > -1 ? '&' : '?' }menuNo=${topCategories[x].menuNo}" class="btn btn-primary"><i class="fa ${iconClass}"></i> ${topCategories[x].menuNm}</a>
+							</c:if>
 			 			</c:if>
 						</c:forEach>
 						<a href="javascript:openPopup();"class="btn btn-success"><i class="fa fa-power-off"></i>내정보수정</a>
@@ -117,7 +133,7 @@ function openPopup()
 
 
 <div class="inforSet">
-	<div class="logo"><img src="/images/common/logo.png" alt="ckl" />	</div>
+	<div class="logo"><img src="/images/common/logo.png" width="218" alt="ckl" />	</div>
 	<p>
 		안녕하세요 <em>${adminUser.userNm}</em> 님.  통합 관리자 사이트에 접속하셨습니다. <br />
 		관리자 사이트 문의사항은 <em class="col">[OOO팀] OOO OO (전화번호 : OOOO)</em>에게 문의하여 주시기 바랍니다

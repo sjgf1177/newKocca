@@ -30,20 +30,25 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 </c:choose>
 	<div class="col-xl-8 col-lg-8 col-md-12">
         <ul>
-			<li><a href="javascript:winMarkPopup('https://www.kocca.kr/kocca/subPage.do?menuNo=204912','','status=yes,scrollbars=yes,width=1280,height=800')"
-			class="footer_link_item fontweight400" title="새창열림">개인정보처리방침</a></li>
+			<li>
+				<%--<a href="javascript:winMarkPopup('https://www.kocca.kr/kocca/subPage.do?menuNo=204912','','status=yes,scrollbars=yes,width=1280,height=800')" class="footer_link_item fontweight400" title="새창열림">개인정보처리방침</a>--%>
+				<a href="https://www.kocca.kr/kocca/subPage.do?menuNo=204912" target="_blank" class="footer_link_item fontweight400" title="새창열림">개인정보처리방침</a>
+			</li>
 			<li><a href="/edu/main/contents.do?menuNo=500072" class="footer_link_item">이용약관</a></li>
 			<li><a href="/edu/bbs/B0000011/list.do?menuNo=500008" class="footer_link_item">공지사항</a></li>
-			<li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" class="footer_link_item">FAQ</a></li>
+			<!--<li><a href="/edu/bbs/B0000046/list.do?menuNo=500073" class="footer_link_item">FAQ</a></li>-->
 			<li><a href="/edu/main/contents.do?menuNo=500227" class="footer_link_item">찾아오시는길</a></li>
 		</ul>
 		<span>본 페이지에 게시된 이메일주소가 자동 수집되는 것을 거부하며, 이를 위반시 정보통신법에 의해 처벌됨을 유념하시기 바랍니다.</span>
-		<ul>
-             <li>홍릉분원 : [02456] 서울특별시 동대문구 회기로 66</li>
-             <li>본원 : [58217] 전라남도 나주시 교육길 35 한국콘텐츠진흥원 | 사업자번호 : 105-82-17272</li>
-             <li>온라인교육 02-6310-0770</li>
-             <li>Copyright 2015. Korea Creative Content Agency all rights reserved.</li>
-        </ul>
+		<div>
+			<span class="footer_logo"><img src="/edu/images/renew2022/fotter_logo.png" alt="한국콘텐츠진흥원 로고"></span>
+			<ul>
+				<li>홍릉분원 : [02456] 서울특별시 동대문구 회기로 66</li>
+				<li>본원 : [58217] 전라남도 나주시 교육길 35 한국콘텐츠진흥원 | 사업자번호 : 105-82-17272</li>
+				<li>온라인교육 02-6310-0770</li>
+				<li style="margin-top: 10px;">Copyright 2015. Korea Creative Content Agency all rights reserved.</li>
+			</ul>
+		</div>
          	<br/>
         </div>
         <!-- onchange="window.open(this.options[this.selectedIndex].value,'_blank')"  -->
@@ -90,19 +95,22 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 				<input type="button" value="이동" onclick="window.open(document.getElementById('relation_site').value,'_blank')" title="관련사이트 새창열림" class="relation_site_button">
 	            <label for="relation_site"><span style="display:block; font-size:0; height:0; line-height:0; margin:0; overflow:hidden; padding:0; width:0">관련사이트 바로가기</span></label>
 	            <ul class="footer_util_link">
-                	<li>
+<%--                	<li>
                 		<a href="#none" onclick="markPopupI('2019-R044');" title="새창열림">
                  			<img src="https://www.eprivacy.or.kr/seal/mark_i.gif" alt="인터넷 사이트 안전마크(i-Safe, 개인정보보호, 시스템보안, 소비자 보호)">
                  		</a>
-                 	</li>
+                 	</li>--%>
 	                <li>
-	                 	<a href="#none" onclick="markPopupE('2019-R105');" title="새창열림">
+<%--	                 	<a href="#none" onclick="markPopupE('2019-R105');" title="새창열림">
 	                  		<img src="https://www.eprivacy.or.kr/seal/mark_e.gif" alt="개인정보보호우수사이트(ePrivacy) 인증마크">
-	                  	</a>
+	                  	</a>--%>
+						<img src="https://www.eprivacy.or.kr/images/mng/sub/mark1_eprivacy_plus.png" alt="개인정보보호인증 마크" title="개인정보보호인증" style="cursor:pointer;" onclick="window.open('https://www.eprivacy.or.kr/front/certifiedSiteMark/certifiedSiteMarkPopup.do?certCmd=EP&certNum=2023-EP-R037','seal','width=527,height=720,location=no,status=no,scrollbars=no')" />
 	                </li>
+					<%--
 					<li>
                     	<img alt="굿콘텐츠 서비스 인증 마크" src="/edu/images/bm/footer_util_link_003.png">
                  	</li>
+                 	--%>
                  	<li>
                  		<a href="javascript:winMarkPopup('/contents/temp/04_elearning.html','','status=yes,scrollbars=no,width=430,height=560');" title="새창열림" >
                  			<img src="/edu/images/bm/footer_util_link_004.png" alt="한국u러닝연합회 e러닝전문기관인증 마크">
@@ -113,19 +121,19 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 	                  		<img src="/edu/images/bm/footer_util_link_005.png" alt="교육기부기관 교육부 Donation for Education 마크">
 	                  	</a>
 	                </li>
-                 	<li>
-                 	 	<a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="새창열림">
-                			<img src="/edu/images/bm/internet_comunication_satisfaction_logo_2019.png" alt="대한민국인터넷소통대상 (ICSI)인증마크">
-                 		</a>
-                 	</li>
-                 	<li>
+<%--                 	<li>
 	                  	<a href="javascript:winMarkPopup('/contents/temp/08_contents_certificate.html','','status=yes,scrollbars=no,width=430,height=560');" title="새창열림">
 	                     	<img src="/edu/images/bm/footer_util_link_006.png" alt="에코어워드 인증 마크">
 	                 	</a>
-					</li>
+					</li>--%>
                  	<li>
                  		<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" title="국가 공인 인증기관 : 웹와치 새창열림" target="_blank"><img src="/edu/images/bm/web_watch_mark.jpg" border="0" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)"/>
                  		</a>
+                 	</li>
+                 	<li>
+ <%--                	 	<a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="새창열림">
+                			<img src="/edu/images/bm/internet_comunication_satisfaction_logo_2019.png" alt="대한민국인터넷소통대상 (ICSI)인증마크">
+                 		</a> --%>
                  	</li>
              	</ul>
          	</div>
@@ -145,7 +153,7 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 <div class="souceUrl"  style="color:#fff">*/WEB-INF/jsp${empty includePage ? currMenu.contentsPath : includePage}</div>
 </c:if>
 
-<script>
+<%--<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -154,6 +162,17 @@ function winMarkPopup(theURL,winName,features) { //v2.0
   ga('create', 'UA-96105088-12', 'auto');
   ga('send', 'pageview');
 
+</script>--%>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L2B36ZV50"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-9L2B36ZV50');
 </script>
 
 <!-- UX분석 뷰저블 -->

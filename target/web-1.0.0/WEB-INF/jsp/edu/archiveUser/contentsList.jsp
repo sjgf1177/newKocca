@@ -12,11 +12,85 @@
 @media all and(min-width:992px){
 	.visual_wrap h2{margin-bottom:100px !important;}
 }
+@media all and (min-width: 576px){
+	.control_board_header .board_title{position: sticky;}
+}
 .lnb_wrap {display: none !important;}
 .sub_contents_wrap .sub_contents {padding-left:0 !important;}
 </style>
 
 <link rel="stylesheet" type="text/css" href="/archive/css/archive.css" /><!-- 성과아카이브 css-->
+
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>사업안내</span></a></li>
+			<c:choose>
+				<c:when test="${param.menuNo eq '500261'}">
+					<li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠임팩트</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500259'}">
+					<li><a href="javascript:void(0);" tabindex="-1"><span>창의인재동반</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500262'}">
+					<li><a href="javascript:void(0);" tabindex="-1"><span>실감콘텐츠창작</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500264'}">
+					<li><a href="javascript:void(0);" tabindex="-1"><span>AI콘텐츠창작</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500260'}">
+					<li><a href="javascript:void(0);" tabindex="-1"><span>콘텐츠원캠퍼스</span></a></li>
+				</c:when>
+			</c:choose>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>성과아카이브</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">
+		${param.menuNm}
+		<span class="call_txt_box">
+			<c:choose>
+				<c:when test="${param.menuNo eq '500261'}">
+					문의 : 02-6310-0623
+				</c:when>
+				<c:when test="${param.menuNo eq '500260'}">
+					문의 : 061-900-6383
+				</c:when>
+			</c:choose>
+		</span>
+	</div>
+</div>
+<div class="col-center mw-1280 dream_list">
+
+	<div class="tab_style_1_con">
+		<ul class="tab_style_1 four_tab size_24" style="display: flex; justify-content: center;">
+			<c:choose>
+				<c:when test="${param.menuNo eq '500261'}">
+					<li><a href="/edu/main/contents.do?menuNo=500213" ><span>사업소개</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500259'}">
+					<li><a href="/edu/dream/mainRsltManage/list.do?menuNo=500040"><span>사업소개</span></a></li>
+					<li><a href="/edu/dream/pltfomList/list.do?menuNo=500117"><span>플랫폼기관</span></a></li>
+					<li><a href="/edu/bbs/B0000041/list.do?menuNo=500211"><span>창의현장</span></a></li>
+					<li class="active"><a href="/edu/archiveUser/contentsList.do?menuNo=500259&amp;workField=1" title="현재탭"><span>성과아카이브</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500262'}">
+					<li><a href="/edu/main/contents.do?menuNo=500110" ><span>사업소개</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500264'}">
+					<li><a href="/edu/main/contents.do?menuNo=500263" ><span>사업소개</span></a></li>
+				</c:when>
+				<c:when test="${param.menuNo eq '500260'}">
+					<li><a href="/edu/main/contents.do?menuNo=500179"><span>사업소개</span></a></li>
+					<li><a href="/edu/bbs/B0000072/list.do?menuNo=500212"><span>지원현황</span></a></li>
+					<li class="active"><a href="/edu/archiveUser/contentsList.do?menuNo=500260&amp;workField=3" title="현재탭"><span>성과아카이브</span></a></li>
+				</c:when>
+			</c:choose>
+		</ul>
+	</div>
+
      <div class="sub_contents_body archive">
      <!-- archive 클래스 추가. kmy -->
         <!--content-->
@@ -92,7 +166,7 @@
                               <dd>
                                   <span class="tl input_search_con">
                                       <input type="text" name="taskNm" id="taskNm" value="${param.taskNm}" class="board_search"/>
-                                      <input type="submit" class="search_summit btn-primary" id="input2" name="input2" value="" title="검색">
+                                      <input type="submit" class="search_summit btn-primary nav_search_btn" id="input2" name="input2" value="" title="검색">
                                   </span>
                               </dd>
                         </dl>
@@ -110,6 +184,14 @@
 					<div class="col-12 online_edu_card_list">
 						<a class="show-block" href="/edu/archiveUser/contentsDeptList.do?menuNo=${param.menuNo}&taskSeq=${item3.archiveTaskSeq}">
 							<div class="img_box">
+								<c:set var="files" value="${fileMap[item3.atchFileId] }"/>
+								<c:if test="${fn:length(files) gt 0}">
+									<c:forEach var="x" begin="0" end="${fn:length(files)-1}">
+										<c:if test="${files[x].fileFieldName eq 'logImage'}">
+											<c:set var="file" value="${files[x]}" />
+										</c:if>
+									</c:forEach>
+								</c:if>
 								 <c:choose>
 									<c:when test="${item3.atchFileId == null or item3.atchFileId == '' }">
 										<img src="/edu/images/bm/kofac_card_img_001.jpg" style="width:100%" alt="${item3.atchFileId } 임시 이미지"/>
@@ -139,13 +221,21 @@
 			</c:forEach>
 		</div>
 	</div>
-	
+	<p class="call_txt_box2" style="margin-bottom: 30px;">
+		<c:choose>
+			<c:when test="${param.menuNo eq '500261'}">
+				문의처 : 02-6310-0623
+			</c:when>
+			<c:when test="${param.menuNo eq '500260'}">
+				문의처 : 061-900-6383
+			</c:when>
+		</c:choose>
+	</p>
 	<c:if test="${fn:length(resultList) > 0}">
 		<div class="paging">${pageNav}</div>
 	</c:if>
 
-
-
+</div>
 <script type="text/javascript">
 
 </script>

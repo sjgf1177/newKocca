@@ -525,6 +525,12 @@
 			</isNotEqual>
 		</isEqual>
 
+		<isEqual property="bbsId" compareValue="B0000079">
+			<isEqual prepend="AND" property="isAuthSuper" compareValue="N">
+				<![CDATA[	a.NTCR_ID = #userIdx#	]]>
+			</isEqual>
+		</isEqual>
+
 		<include refid="optionalBoardDAO.selectBoardArticleList-where" />
 
 		<!-- 일반게시판 -->

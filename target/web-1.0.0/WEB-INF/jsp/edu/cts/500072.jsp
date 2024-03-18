@@ -1,8 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>이용안내</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>이용약관</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="sub_title s_tit02">
+	<div class="col-center mw-1280">이용약관</div>
+</div>
+
+<div class="mw-1280 col-center">
+	<div class="tab_style_1_con" style="margin-bottom: 40px;">
+		<ul class="tab_style_1 three_tab" style="display: flex; justify-content: center;">
+			<li class="active"><a href="/edu/main/contents.do?menuNo=500072" title="현재탭"><span>이용약관</span></a></li>
+			<li><a href="/edu/main/contents.do?menuNo=500070"><span>저작권정책</span></a></li>
+			<li><a href="/edu/main/contents.do?menuNo=500006"><span>찾아오시는길</span></a></li>
+		</ul>
+	</div>
 
 	<div class="col-12 sub_section useful_section">
 	<div class="fontsize0 sub_contents_body">
-	<h5 class="mb_big">에듀코카 홈페이지이용약관입니다.</h5>
+	<%--<h5 class="mb_big">에듀코카 홈페이지이용약관입니다.</h5>--%>
 	<p class="h_title5">제 1장 총칙</p>
 	<p class="h_subtitle5">제 1조 (목적)</p>
 	<ul class="list_style_4 color_gray">
@@ -159,6 +181,7 @@
 	</ul>
 	</div>
 	</div>
+</div>
 
 
 

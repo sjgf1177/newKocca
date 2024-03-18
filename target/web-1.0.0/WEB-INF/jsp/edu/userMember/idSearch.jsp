@@ -103,147 +103,161 @@ function check_txt(value) {
 //]]>
 </script>
 
+<div class="over-hidden sub_contents_header">
+	<div class="linemap_wrap"> <!-- fl class 삭제 -->
+		<ul class="col-12 linemap_con">
+			<li><a href="/edu/main/main.do"><span style="clip: rect(1px, 1px, 1px, 1px); position:absolute;">Home</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>로그인</span></a></li>
+			<li><a href="javascript:void(0);" tabindex="-1"><span>아이디찾기</span></a></li>
+		</ul>
+	</div>
+</div>
 
+<div class="sub_title s_tit02">
+	<h3 class="col-center mw-1280">아이디찾기</h3>
+</div>
 
-<p class="sub_contents_body_title">
-    가입 시 입력하신 기본정보를 입력해 주시기 바랍니다.
-</p>
-<div class="sub_board_body">
-    <p class="board_caption">
-        <span>
-            표시는 필수입력 항목입니다.
-        </span>
-    </p>
-    <div class="search_wrap">
-        <form action="#" class="search_pw_form">
-            <div class="input_wrap">
-                <p class="red_star_text">
-                    이름
-                </p>
-                <div class="input_style_2_con">
-                    <input type="text" class="input_style_2" name="userNm" id="userNm" placeholder="이름을 입력해 주세요." />
-                    <!-- <label for="userNm"></label> -->
-                </div>
-            </div>
-            
-            <div class="input_wrap">
-                <p class="red_star_text">
-                    휴대폰 또는 이메일
-                </p>
-                <span class="radio_box_con">
-                    <input type="radio" id="returnTp1" name="returnTp" class="radio_style_0" value="1" checked="checked">
-                    <label for="returnTp1">이메일</label>
-                </span>
-                <span class="radio_box_con">
-                    <input type="radio" id="returnTp2" name="returnTp" class="radio_style_0" value="2">
-                    <label for="returnTp2">휴대폰</label>
-                </span>
-            </div>
-            <div class="input_wrap last">
-            	<div id="emailDiv" style="display: inline-block;">
-	                <p class="red_star_text">
-	                    이메일
-	                </p>
-	                <div class="input_style_2_con short">
-	                    <input type="text" name="email1" id="email1" class="input_style_2" placeholder="abcdefg" title="이메일 아이디" value="">
-	                    <!-- <label for="email1"></label> -->
-	                </div>
-	                <span class="show vm fontsize14">@</span>
-	                <div class="input_style_2_con middle">
-	                    <input type="text" name="email2" id="email2" class="input_style_2" placeholder="abcdefg" title="이메일 주소" value="">
-	                    <!-- <label for="email2"></label> -->
-	                </div>
-	                <div class="select_style_2_con">
-	                    <select name="email_select" id="sr_email_more" class="select_style_2" title="직접입력 선택시 자동활성화&amp;포커스 이동">
-	                        <option selected="selected">메일주소선택</option>
-							<option value="gmail.com">gmail.com</option>
-							<option value="naver.com">naver.com</option>
-		                    <option value="hanmail.net">hanmail.net</option>
-		                    <option value="daum.net">daum.net</option>
-		                    <option value="hotmail.com">hotmail.com</option>
-		                    <option value="nate.com">nate.com</option>
-		                    <option value="yahoo.co.kr">yahoo.co.kr</option>
-							<option value="emaildomain_false">직접입력</option>
-	                    </select>
-	                    <label for="sr_email_more">이메일 주소 선택</label>
-	                    <script type="text/javascript">
-						//<![CDATA[
-						jQuery(function(){
-							$('#email2').attr('readonly',true);
-							$('select#sr_email_more').change(function() {
-								if ($(this).val()=='emaildomain_false') {
-									$('#email2').val('');
-									$('#email2').attr('readonly',false).focus();
-								}
-								else {
-									$('#email2').val('');
-									$('#email2').val($(this).val());
-									$('#email2').attr('readonly',true);
-								}
+<div class="col-center mw-1280">
+	<p class="sub_contents_body_title">
+		가입 시 입력하신 기본정보를 입력해 주시기 바랍니다.
+	</p>
+	<div class="sub_board_body" style="padding-left: 20px;">
+		<p class="board_caption">
+			<span>
+				표시는 필수입력 항목입니다.
+			</span>
+		</p>
+		<div class="search_wrap">
+			<form action="#" class="search_pw_form">
+				<div class="input_wrap">
+					<p class="red_star_text">
+						이름
+					</p>
+					<div class="input_style_2_con">
+						<input type="text" class="input_style_2" name="userNm" id="userNm" placeholder="이름을 입력해 주세요." />
+						<!-- <label for="userNm"></label> -->
+					</div>
+				</div>
+
+				<div class="input_wrap">
+					<p class="red_star_text">
+						휴대폰 또는 이메일
+					</p>
+					<span class="radio_box_con">
+						<input type="radio" id="returnTp1" name="returnTp" class="radio_style_0" value="1" checked="checked">
+						<label for="returnTp1">이메일</label>
+					</span>
+					<span class="radio_box_con">
+						<input type="radio" id="returnTp2" name="returnTp" class="radio_style_0" value="2">
+						<label for="returnTp2">휴대폰</label>
+					</span>
+				</div>
+				<div class="input_wrap last">
+					<div id="emailDiv" style="display: inline-block;">
+						<p class="red_star_text">
+							이메일
+						</p>
+						<div class="input_style_2_con short">
+							<input type="text" name="email1" id="email1" class="input_style_2" placeholder="abcdefg" title="이메일 아이디" value="">
+							<!-- <label for="email1"></label> -->
+						</div>
+						<span class="show vm fontsize14">@</span>
+						<div class="input_style_2_con middle">
+							<input type="text" name="email2" id="email2" class="input_style_2" placeholder="abcdefg" title="이메일 주소" value="">
+							<!-- <label for="email2"></label> -->
+						</div>
+						<div class="select_style_2_con">
+							<select name="email_select" id="sr_email_more" class="select_style_2" title="직접입력 선택시 자동활성화&amp;포커스 이동">
+								<option selected="selected">메일주소선택</option>
+								<option value="gmail.com">gmail.com</option>
+								<option value="naver.com">naver.com</option>
+								<option value="hanmail.net">hanmail.net</option>
+								<option value="daum.net">daum.net</option>
+								<option value="hotmail.com">hotmail.com</option>
+								<option value="nate.com">nate.com</option>
+								<option value="yahoo.co.kr">yahoo.co.kr</option>
+								<option value="emaildomain_false">직접입력</option>
+							</select>
+							<label for="sr_email_more">이메일 주소 선택</label>
+							<script type="text/javascript">
+							//<![CDATA[
+							jQuery(function(){
+								$('#email2').attr('readonly',true);
+								$('select#sr_email_more').change(function() {
+									if ($(this).val()=='emaildomain_false') {
+										$('#email2').val('');
+										$('#email2').attr('readonly',false).focus();
+									}
+									else {
+										$('#email2').val('');
+										$('#email2').val($(this).val());
+										$('#email2').attr('readonly',true);
+									}
+								});
 							});
-						});
-						//]]>
-						</script>
-	                </div>
-                </div>
-            	<div id="mbtlnumDiv" style="display: none;">
-	                <p class="red_star_text">
-	                    휴대폰
-	                </p>
-	                <div class="select_style_2_con">
-	                    <select name="mbtlnum1" id="mbtlnum1" title="휴대폰 앞자리" class="select_style_2">
-	                        <option value="">선택</option>
-							<option value="010">010</option>
-							<option value="011">011</option>
-							<option value="016">016</option>
-							<option value="017">017</option>
-							<option value="018">018</option>
-							<option value="019">019</option>
-	                    </select>
-	                    <!-- <label for="sr_email_more"></label> -->
-	                </div>
-					-
-					<div class="input_style_2_con short">
-	                    <input type="text" value="" id="mbtlnum2" name="mbtlnum2" class="input_style_2" title="휴대폰 중간자리를 입력하세요." maxlength="4" onkeyup="check_txt(this.value)">
-	                    <!-- <label for="mbtlnum2"></label> -->
-	                </div>
-					
-					-
-					<div class="input_style_2_con middle">
-	                    <input type="text" value="" id="mbtlnum3" name="mbtlnum3" class="input_style_2" title="휴대폰 끝자리를 입력하세요." maxlength="4" onkeyup="check_txt(this.value)">
-	                    <!-- <label for="mbtlnum3"></label> -->
-	                </div>
-					
-					<input type="hidden" name="mbtlnum" id="mbtlnum" />
-                </div>
-                <span class="btn_style_2_con">
-                    <a href="#self" id="idSearchBtn" class="btn_style_2">
-                        확인
-                    </a>
-                </span>
-            </div>
-            <div id="findId" style="display: none;">
-	           	<div id="idList">
-		            <hr class="form_seperate_line">
-		            <p class="tc find_user_id">
-		                가입하신 아이디는 <span class="user_id_text">Abcdef**</span>입니다.
-		            </p>
-		            <p class="tc find_user_join_time">
-		                가입일시 : <span>2017.06.14 17:30</span>
-		            </p>
-	            </div>
-	            
-	            
-	            <div class="input_style_1_con submit short">
-	            	<a href="/edu/userMember/pwdSearch.do?menuNo=500084" class="input_style_1">비밀번호 찾기</a>
-	                <!-- 
-	                <input type="submit" class="input_style_1" id="search_pw_submit" name="search_pw_submit">
-	                <label for="search_pw_submit">비밀번호 찾기</label>
-	                -->
-	            </div>
-            </div>
-        </form>
-    </div>
+							//]]>
+							</script>
+						</div>
+					</div>
+					<div id="mbtlnumDiv" style="display: none;">
+						<p class="red_star_text">
+							휴대폰
+						</p>
+						<div class="select_style_2_con">
+							<select name="mbtlnum1" id="mbtlnum1" title="휴대폰 앞자리" class="select_style_2">
+								<option value="">선택</option>
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+							</select>
+							<!-- <label for="sr_email_more"></label> -->
+						</div>
+						-
+						<div class="input_style_2_con short">
+							<input type="text" value="" id="mbtlnum2" name="mbtlnum2" class="input_style_2" title="휴대폰 중간자리를 입력하세요." maxlength="4" onkeyup="check_txt(this.value)">
+							<!-- <label for="mbtlnum2"></label> -->
+						</div>
+
+						-
+						<div class="input_style_2_con middle">
+							<input type="text" value="" id="mbtlnum3" name="mbtlnum3" class="input_style_2" title="휴대폰 끝자리를 입력하세요." maxlength="4" onkeyup="check_txt(this.value)">
+							<!-- <label for="mbtlnum3"></label> -->
+						</div>
+
+						<input type="hidden" name="mbtlnum" id="mbtlnum" />
+					</div>
+					<span class="btn_style_2_con">
+						<a href="#self" id="idSearchBtn" class="btn_style_2">
+							확인
+						</a>
+					</span>
+				</div>
+				<div id="findId" style="display: none;">
+					<div id="idList">
+						<hr class="form_seperate_line">
+						<p class="tc find_user_id">
+							가입하신 아이디는 <span class="user_id_text">Abcdef**</span>입니다.
+						</p>
+						<p class="tc find_user_join_time">
+							가입일시 : <span>2017.06.14 17:30</span>
+						</p>
+					</div>
+
+
+					<div class="input_style_1_con submit short">
+						<a href="/edu/userMember/pwdSearch.do?menuNo=500084" class="input_style_1">비밀번호 찾기</a>
+						<!--
+						<input type="submit" class="input_style_1" id="search_pw_submit" name="search_pw_submit">
+						<label for="search_pw_submit">비밀번호 찾기</label>
+						-->
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 
 

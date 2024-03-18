@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-Built-By: JTL
+Built-By: 에듀코카
 Build-Jdk: Oracle OpenJDK version 1.7
 

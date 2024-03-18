@@ -44,6 +44,9 @@
 			       DUPINFO = ''
 			WHERE USERID = #userId#
 		]]>
+		<isNotEmpty prepend="AND" property="grChk">
+			<![CDATA[	GRCODE = 'N000001'		]]>
+		</isNotEmpty>
 	</update>
 
 

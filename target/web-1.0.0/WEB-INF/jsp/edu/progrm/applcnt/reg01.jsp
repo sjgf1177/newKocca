@@ -42,8 +42,12 @@ function checkForm() {
 
 //]]>
 </script>
-
-<div class="memberStep1">
+<style>
+	.sub_section .sub_contents_body .agreeScrBtm input[type="checkbox"] + label{padding-left: 27px;}
+	.board_util_btn_con .btn_style_0.close_w{background-image: none;}
+</style>
+<div class="col-center mw-1280" style="padding-top: 30px;">
+	<div class="memberStep1">
 	<div class="signup_step_bar recruit_step">
 	    <div class="step_wrap active">
 	        <p class="step_box">
@@ -214,4 +218,5 @@ function checkForm() {
 			<a href="javascript:void(0);" onclick="javascript:history.back(0);return false;" class="btn_style_0 full close_w">취소</a>
 		</div>
 	</form>
+</div>
 </div>

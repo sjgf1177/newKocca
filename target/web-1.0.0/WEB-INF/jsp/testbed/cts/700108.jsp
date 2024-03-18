@@ -22,7 +22,7 @@
             <li id="tab2"><a href="/testbed/main/contents.do?menuNo=700101"><span>콘텐츠문화광장 소개</span></a></li>
             <li id="tab3"><a href="/testbed/main/contents.do?menuNo=700103"><span>시설 안내</span></a></li>
             <li id="tab4" class="active"><a href="/testbed/main/contents.do?menuNo=700108" title="현재탭"><span>대관 안내</span></a></li>
-            <li id="tab5"><a href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2"><span>대관 현황</span></a></li>
+            <%--<li id="tab5"><a href="/testbed/concert/info/rentList.do?menuNo=700137&amp;selectedMonth=-1&amp;listType=2"><span>대관 현황</span></a></li>--%>
             <li id="tab6"><a href="/testbed/main/contents.do?menuNo=700104"><span>찾아오시는 길</span></a></li>
             <li id="tab7"><a href="/testbed/bbs/B0000066/list.do?menuNo=700126"><span>자료실</span></a></li>
         </ul>
@@ -33,13 +33,13 @@
     </div>
     <div class="article_desc">
         콘텐츠문화광장은 시연무대를 비롯해 다양한 실험, 창작, 공연ㆍ행사가 가능한 열린 공간입니다.<br/>
-        기획 대관(정기 및 수시) 공모를 통해 선정된 우수한 융복합 콘텐츠를 선보입니다.<br/>
+        대관 공모를 통해 선정된 우수한 융복합 콘텐츠를 선보입니다.<br/>
         최신의 시스템과 전문 스태프들이 창작자의 실험을 완성하고 관객을 맞이하는<br/>
         살아 있는 미래 콘텐츠 창작의 산실이 될 콘텐츠문화광장에 많은 창·제작자들의 도전을 기다립니다.
     </div>
     <div class="share_room_img_box">
         <div class="img_box">
-            <img src="/edu/images/bm/share_room_img_000.jpg" alt="콘텐츠문화광장 이미지1">
+            <img src="/edu/images/renew2022/share_room_001.jpg" alt="콘텐츠문화광장 이미지1">
         </div>
         <div class="img_box">
             <img src="/edu/images/bm/share_room_img_001.jpg" alt="콘텐츠문화광장 이미지2">
@@ -50,9 +50,9 @@
     </div>
     <div class="mb70 alert big_box type_2">
         <ul class="list_style_10 small no_margin">
-            <li><span class="point0">전화 :&nbsp;&nbsp;</span>02.6310.0665</li>
-            <li><span class="point0">이메일 :&nbsp;&nbsp;</span><a href="mailto:yhsong@kocca.kr">jw_choi@kocca.kr</a></li>
-            <li><span class="point0">대관 문의 :&nbsp;&nbsp;</span>월 ~ 금 (10:00 ~ 18:00)</li>
+            <li><span class="point0">전화 :&nbsp;&nbsp;</span>02.6310.0776</li>
+            <li><span class="point0">이메일 :&nbsp;&nbsp;</span><a href="mailto:kocca.testbed@gmail.com">kocca.testbed@gmail.com</a></li>
+            <li><span class="point0">대관 문의 :&nbsp;&nbsp;</span>월 ~ 금 (09:00 ~ 18:00)</li>
         </ul>
     </div>
     <div class="article_title">
@@ -79,7 +79,7 @@
             <th class="color_black">한국콘텐츠진흥원 로고</th>
             <td>
                 <div class="board_util_btn_con">
-                    <a href="/upload/testbed/kocca_logo_2019.zip" class="btn_style_0 share_room_download_icon_con">
+                    <a href="/upload/testbed/CI_basic_v2_new.zip" class="btn_style_0 share_room_download_icon_con">
                         다운로드<span class="share_room_download_icon"><img src="/edu/images/bm/btn_style_0_download_icon.png" alt="다운로드"></span>
                     </a>
                 </div>
@@ -89,7 +89,7 @@
             <th class="color_black">대관신청서</th>
             <td>
                 <div class="board_util_btn_con">
-                    <a href="/upload/testbedupload/testbedapply_2022.hwp" class="btn_style_0 share_room_download_icon_con">
+                    <a href="/upload/testbedupload/testbedapply_2024.hwp" class="btn_style_0 share_room_download_icon_con">
                         다운로드<span class="share_room_download_icon"><img src="/edu/images/bm/btn_style_0_download_icon.png" alt="다운로드"></span>
                     </a>
                 </div>
@@ -97,7 +97,7 @@
             <th class="color_black">콘텐츠문화광장 로고</th>
             <td>
                 <div class="board_util_btn_con">
-                    <a href="/upload/testbed/kocca_logo_2019.zip" class="btn_style_0 share_room_download_icon_con">
+                    <a href="/upload/testbed/KOCCA_Multi_Content_Testbed_logo.zip" class="btn_style_0 share_room_download_icon_con">
                         다운로드<span class="share_room_download_icon"><img src="/edu/images/bm/btn_style_0_download_icon.png" alt="다운로드"></span>
                     </a>
                 </div>
@@ -166,12 +166,12 @@
         </div>
     </div>
     <div class="article_title">
-        주요 시설
+        스테이지66
     </div>
     <div class="facilities_body_con share_room_body_con">
         <div class="facilities_body_list">
             <div class="img_box">
-                <img src="/edu/images/bm/share_room_img_003.jpg" alt="주요시설 이미지">
+                <img src="/edu/images/bm/share_room_img_003.jpg" alt="스테이지66 이미지">
             </div>
             <div class="facilities_text_box">
                 <ul class="list_style_10 on_margin">
@@ -205,7 +205,7 @@
         </div>
     </div>
     <div class="article_title">
-        문화광장 기술정보
+        스테이지66 기술정보
     </div>
     <div class="download_file_list_wrap">
         <!-- <div class="download_file_list_con">
@@ -288,7 +288,7 @@
                 스테이지66 세부 기술 정보 - <span class="download_file_type">(pdf)</span>
             </div>
             <div class="download_file_icon">
-                <a href="/upload/testbedupload/theatre_technical_Info_MultiContentTestbed-STAGE66_202201.pdf" class="show-block">
+                <a href="/upload/testbedupload/theatre_technical_Info_MultiContentTestbed-STAGE66_202401.pdf" class="show-block">
                     <img src="/edu/images/bm/download_file_icon_icon.png" alt="다운로드">
                 </a>
             </div>

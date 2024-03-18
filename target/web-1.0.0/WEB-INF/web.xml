@@ -230,6 +230,7 @@
 		<url-pattern>*.zip</url-pattern>
 		<url-pattern>*.pdf</url-pattern>
 		<url-pattern>*.txt</url-pattern>
+		<url-pattern>*.vtt</url-pattern>
 		<url-pattern>/upload/*</url-pattern>
 	</servlet-mapping>
 

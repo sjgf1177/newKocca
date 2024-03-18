@@ -188,14 +188,14 @@ wrapper.sub_layout_page 는 1depth의 하위 서브페이지들(2, 3depth)
 
 /* 게시판 */
 .sub_section .board_title h4{font-size: 16px; font-size: 1.6rem; line-height: 22px; line-height: 2.2rem; color: #313131; letter-spacing: 0; margin-bottom: 0; padding-left:28px;
-    background: url('/edu/images/bm/board_title_icon.png') no-repeat left 2px;}
+    background: url('/edu/images/bm/board_title_icon_back.png') no-repeat left 2px;}
 .sub_section .board_title h4.theme_process_title{background:none; padding-left:0;}
 .sub_section .board_title h4.theme_process_title .board_count{color:#1b96c5;}
 /*.contents_view_page .sub_section .board_title h4{background-image: url("/edu/images/bm/board_title_icon_pink.png");}*/
 .sub_section .board_title.online_edu_board_title h4{font-size:15px; font-size:1.5rem; line-height:21px; line-height:2.1rem; background:none; padding-left:0; font-weight:400;  letter-spacing:-0.025em;}
 .sub_section .board_title.online_edu_board_title h4 .board_count{color:#1b96c5; }
 .contents_view_page .sub_section .board_title h4 .board_count{color:#dc2979;}
-.sub_section .board_title h4 .board_count{color:#40abd4;}
+.sub_section .board_title h4 .board_count{color:#2682a6;}
 .board_sorting_con{font-size:0;}
 .board_sorting_con .select_box{display:inline-block; vertical-align: middle; padding:3px;}
 .board_sorting_con .select_box select.select_style_0::-ms-expand{display:none;}
@@ -273,7 +273,7 @@ table.board_type_0.detail td .contents_view_area img{width:100%;}
 table.board_type_0.detail td .contents_view_area > span{font-size:15px; font-size:1.5rem; line-height:28px; line-height:2.8rem; font-weight:200; color:#313131; letter-spacing: 0.025em;}
 table.board_type_0.detail.answer td{background-color: #fafafa;}
 table.board_type_0.detail td > .table_info_header .upload_file {float: left; width:100%; text-align:left; font-size:13px; font-size:1.3rem; line-height:19px; line-height:1.9rem; }
-table.board_type_0.detail td > .table_info_header .upload_file > a , table.board_type_0.detail td > .table_info_header .upload_file > span{display:inline-block; padding-left:25px; background:url('/edu/images/bm/upload_file_icon.png') no-repeat left center;}
+table.board_type_0.detail td > .table_info_header .upload_file > a , table.board_type_0.detail td > .table_info_header .upload_file > span, .contents_view_area .upload_file a{display:inline-block; padding-left:25px; background:url('/edu/images/bm/upload_file_icon.png') no-repeat left center;}
 table.board_type_0.online_edu{margin-bottom:0;}
 table.board_type_0.online_edu th{border-left:1px solid #f2f2f2; height:50px; padding-top:5px; padding-bottom:5px; box-sizing:border-box; font-weight:400;}
 table.board_type_0.online_edu th:first-child{border-left:none; }
