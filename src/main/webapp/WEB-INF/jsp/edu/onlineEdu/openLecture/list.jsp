@@ -114,7 +114,7 @@
 				<c:param name="pLectureCls" value="${param.pLectureCls }"/>
 			</c:url>
 			<div class="fwo_card">
-				<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
+
 					<div class="fwo_snail_box">
 						<c:choose>
 							<c:when test="${result.vodimg == null or result.vodimg == '' }">
@@ -128,7 +128,7 @@
 							<%-- 설명란 start --%>
 						<div class="fwo_info_box">
 							<h3 class="fwo_tit_box">
-								<c:out value='${result.lecnm }' escapeXml="false" />
+								<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'><c:out value='${result.lecnm }' escapeXml="false" /></a>
 							</h3>
 
 							<c:if test="${not empty result.lvnm}">
@@ -156,8 +156,9 @@
 							</p>
 						</div>
 						<%-- 설명란 end --%>
+						<button type="button" class="jim-btn" title="찜하기">찜하기</button>
 					</div>
-				</a>
+
 			</div>
 		</c:forEach>
 	</div>
@@ -198,7 +199,7 @@
 		</c:if>
 		<div class="swiper-slide">
 			<div class="">
-				<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'>
+
 					<% pageContext.setAttribute("crlf", "\\"); %>
 					<div class="fwo_snail_box">
 						<c:choose>
@@ -214,7 +215,7 @@
 							<%-- 설명란 start --%>
 						<div class="fwo_info_box">
 							<h3 class="fwo_tit_box">
-								<c:out value='${result.lecnm }' escapeXml="false" />
+								<a class="show-block" href='<c:out value="${url }" />&amp;${pageQueryString }'><c:out value='${result.lecnm }' escapeXml="false" /></a>
 							</h3>
 
 							<c:if test="${not empty result.lvnm}">
@@ -242,8 +243,9 @@
 							</p>
 						</div>
 							<%-- 설명란 end --%>
+						<button type="button" class="jim-btn" title="찜하기">찜하기</button>
 					</div>
-				</a>
+
 			</div>
 		</div>
 

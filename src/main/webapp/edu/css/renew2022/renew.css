@@ -582,6 +582,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 
 [class*="tag"]{width: 36px; height: 18px; padding: 1px 9px;  font-size:1.1rem; text-align:center; border-radius: 32px; color: #fff !important; margin-bottom: 7px;}
 [class*="tag"].new{background-color: #FB0909;}
+.mypage_online_edu_list_wrap [class*="tag"]{width: 52px; height: 24px; padding: 5px 14px; font-size: 1.4rem;}
 .fwo_card_list_box .tag_on{background-color: #3B85FF; color: #fff !important;}
 .bg_gray_slide_box{/*border-bottom: 1px solid #dddddd;*/ padding: 50px 0 80px 0; background-color: #F8F8F8;}
 .photoGallery2{padding-top: 0; padding-bottom: 0; margin-top: 70px; border:none;}

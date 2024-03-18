@@ -2165,6 +2165,7 @@ table.eduframe_tb td{ text-align: left; font-size: 14.5px; font-size: 1.45rem; l
 .mypage_online_edu_list_wrap .mypage_online_edu_link_btn_con .mypage_online_edu_link_btn{display:inline-block; font-size:16px; line-height:22px; color:#fff;
     padding-top:10px; padding-bottom:10px; padding-left:20px; padding-right:20px;
     background-repeat:no-repeat; background-position:left 21px center; background-color:#3B85FF; border-radius:4px;}
+.mypage_online_edu_list_wrap .delete-btn{padding: 10px 20px;  background-color: #121212; color: #fff; font-size: 16px; line-height: normal; border-radius: 4px;}
 .my_progress_bar_wrap{margin-top:30px; border-top:1px solid #f0f0f0; padding-top:30px;}
 .my_progress_bar_wrap .my_progress_bar_con{font-size:0; line-height:0; margin-bottom:10px;}
 .my_progress_bar_wrap .my_progress_bar_con:last-child{margin-bottom:0;}
@@ -2177,6 +2178,8 @@ table.eduframe_tb td{ text-align: left; font-size: 14.5px; font-size: 1.45rem; l
 .my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value{background-image:url('/edu/images/bm/my_progress_bar_style_1.png');}
 .my_progress_bar_wrap .my_progress_bar_value_text{display:inline-block; text-align:right; width:50px; font-size:14.5px; line-height:1em; color:#1da28d; font-weight:bold; vertical-align:top;}
 .my_progress_bar_wrap .my_progress_bar_con.style_2 .my_progress_bar_value_text{color:#4d8eff;}
+
+
 
 
 

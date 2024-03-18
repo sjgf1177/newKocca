@@ -57,10 +57,17 @@
 				<c:when test="${param.viewType eq 'old' }">
 					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current"><span>학습중인 과정</span></a></li>
 					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old" title="현재탭"><span>완료된 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=pick"><span>찜한 과정</span></a></li>
+				</c:when>
+				<c:when test="${param.viewType eq 'pick' }">
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current"><span>학습중인 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old"><span>완료된 과정</span></a></li>
+					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=pick" title="현재탭"><span>찜한 과정</span></a></li>
 				</c:when>
 				<c:otherwise>
 					<li class="active"><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=current" title="현재탭"><span>학습중인 과정</span></a></li>
 					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=old"><span>완료된 과정</span></a></li>
+					<li><a href="/edu/onlineEdu/mylctrum/list.do?menuNo=500061&viewType=pick"><span>찜한 과정</span></a></li>
 				</c:otherwise>
 			</c:choose>
 		</ul>
@@ -75,6 +82,61 @@
 	</div>
 	<!-- <div style="width:100%;text-align:right;margin-bottom:10px;">진도율 60% 이상 되어야 수료증 출력 및 만족도 설문 가능</div> -->
 	<div class="col-12 mypage_online_edu_list_wrap">
+		<!-- 찜한 과정 목록 S -->
+		<div class="col-12 mypage_online_edu_list">
+			<div class="col-12 mypage_online_edu_inner">
+				<div class="mypage_online_edu_img_box">
+					<img alt="사례를 통해 알아보는 음악 저작권의 이해" src="/upload/renewsnail/CK23010.png">
+				</div>
+				<div class="mypage_online_edu_text_box">
+					<div class="mypage_online_edu_header">[로그인 후 수강]</div>
+					<div><span class="tag L1">초급</span></div>
+					<div class="mypage_online_edu_title">사례를 통해 알아보는 음악 저작권의 이해</div>
+					<p style="color: #828282;">온라인교육, 구성 및 제작 기획</p>
+					<div class="mypage_online_edu_link_btn_con">
+						<button type="button" class="delete-btn" style="margin-top: 3rem;">삭제</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 mypage_online_edu_list">
+			<div class="col-12 mypage_online_edu_inner">
+				<div class="mypage_online_edu_img_box">
+					<img alt="사례를 통해 알아보는 음악 저작권의 이해" src="/upload/renewsnail/CK23010.png">
+				</div>
+				<div class="mypage_online_edu_text_box">
+					<div class="mypage_online_edu_header">[바로 수강]</div>
+
+					<div><span class="tag L2">중급</span></div>
+					<div class="mypage_online_edu_title">사례를 통해 알아보는 음악 저작권의 이해</div>
+					<p style="color: #828282;">온라인교육, 구성 및 제작 기획</p>
+					<div class="mypage_online_edu_link_btn_con">
+						<button type="button" class="delete-btn" style="margin-top: 3rem;">삭제</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 mypage_online_edu_list">
+			<div class="col-12 mypage_online_edu_inner">
+				<div class="mypage_online_edu_img_box">
+					<img alt="사례를 통해 알아보는 음악 저작권의 이해" src="/upload/renewsnail/CK23010.png">
+				</div>
+				<div class="mypage_online_edu_text_box">
+					<div class="mypage_online_edu_header">[바로 수강]</div>
+
+					<div><span class="tag L3">고급</span></div>
+					<div class="mypage_online_edu_title">사례를 통해 알아보는 음악 저작권의 이해</div>
+					<p style="color: #828282;">온라인교육, 구성 및 제작 기획</p>
+					<div class="mypage_online_edu_link_btn_con">
+						<button type="button" class="delete-btn" style="margin-top: 3rem;">삭제</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 찜한 과정 목록 E -->
+
 		<!-- 정규과정 학습목록 s -->
 		<c:forEach items="${resultList }" var="item" varStatus="status">
 		<div class="col-12 mypage_online_edu_list">
@@ -202,6 +264,8 @@
 			</p> --%>
 		</div>
 		</c:forEach>
+
+
 	</div>
 
 	<!--

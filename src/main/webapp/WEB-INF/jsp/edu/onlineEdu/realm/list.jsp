@@ -170,7 +170,7 @@
                     <li class="swiper-slide">
                             <%-- 썸네일 start --%>
                         <div class="fwo_snail_box">
-                            <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+                            <%--<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">--%>
                                 <c:choose>
                                     <c:when test="${result.introducefilenamenew == null or result.introducefilenamenew == '' }">
                                         <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
@@ -180,7 +180,7 @@
                                         <%--<img src="	https://edu.kocca.kr/upload/renewsnail/CB21005.png" alt="이미지 설명들어가는 곳">--%>
                                     </c:otherwise>
                                 </c:choose>
-                            </a>
+                            <%--</a>--%>
                                 <%-- 설명란 start--%>
                             <div class="fwo_info_box">
                                 <h3 class="fwo_tit_box">
@@ -210,8 +210,10 @@
                                     <%-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  --%>
                             </div>
                                 <%-- 설명란 start--%>
+                            <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                         </div>
                             <%-- 썸네일 end --%>
+
                     </li>
                 </c:forEach>
             </ul>
@@ -234,7 +236,7 @@
                     <li class="swiper-slide">
                             <%-- 썸네일 start --%>
                         <div class="fwo_snail_box">
-                            <a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+                            <%--<a href="javascript:void(0);" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">--%>
                                 <c:choose>
                                     <c:when test="${result.introducefilenamenew == null or result.introducefilenamenew == '' }">
                                         <img src="/edu/images/renew2022/fwo_snail01.png" alt="이미지 설명들어가는 곳">
@@ -243,7 +245,7 @@
                                         <img alt="${result.subjnm } - 메인 이미지" src="<c:out value="${result.introducefilenamenew}" />"  />
                                     </c:otherwise>
                                 </c:choose>
-                            </a>
+                            <%--</a>--%>
                                 <%-- 설명란 start--%>
                             <div class="fwo_info_box">
                                 <h3 class="fwo_tit_box">
@@ -273,6 +275,7 @@
                                     <%-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  --%>
                             </div>
                                 <%-- 설명란 start --%>
+                            <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                         </div>
                             <%-- 썸네일 end --%>
                     </li>
@@ -305,7 +308,7 @@
     <div class="all-list-box">
         <c:forEach  items="${subjList }"  var="result" >
             <div class="fwo_card">
-                <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">
+
                     <% pageContext.setAttribute("crlf", "\\"); %>
                     <div class="fwo_snail_box">
                         <c:choose>
@@ -319,7 +322,7 @@
                             <%-- 설명란 start--%>
                         <div class="fwo_info_box">
                             <h3 class="fwo_tit_box">
-                                    ${result.subjnm }
+                                <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;">${result.subjnm }</a>
                             </h3>
 
                             <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
@@ -350,8 +353,9 @@
                             </p>
                         </div>
                             <%-- 설명란 end--%>
+                        <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                     </div>
-                </a>
+
             </div>
         </c:forEach>
     </div>
@@ -388,9 +392,7 @@
         </c:if>
         <div class="swiper-slide">
             <div class="">
-                <a class="show-block" href="javascript:void(0);"
-                   onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
-                    <% pageContext.setAttribute("crlf", "\\"); %>
+
                     <div class="fwo_snail_box">
                         <c:choose>
                             <c:when test="${item3.introducefilenamenew == null or item3.introducefilenamenew == '' }">
@@ -403,7 +405,9 @@
                             <%-- 설명란 start --%>
                         <div class="fwo_info_box">
                             <h3 class="fwo_tit_box">
-                                    ${item3.subjnm }
+                                <a class="show-block" href="javascript:void(0);"
+                                   onclick="fnCmdViewPage('${item3.subj }', '${item3.subjnm }', '${item3.isonoff }', '${item3.scupperclass }', '${item3.uclassnm }', '${item3.scyear }', '${item3.subjseq }'); return false;">
+                                    <% pageContext.setAttribute("crlf", "\\"); %>${item3.subjnm }</a>
                             </h3>
 
                             <!-- 신규과정 일때 사용할 것 2주뒤 자동제거 기능 필요-->
@@ -436,6 +440,7 @@
                             <%-- <button type="button" class="fwo_like_box"><img src="/edu/images/renew2022/ico_like_off.png" alt="좋아요"></button>  --%>
                         </div>
                         <%-- 설명란 start --%>
+                        <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                     </div>
                     <%--<c:if test="${item3.isnew eq 'Y' }">
                         <c:if test="${ item3.ishit eq 'N'}">
@@ -448,7 +453,7 @@
                         </c:if>
                     </c:if>
                     ${item3.subjnm }--%>
-                </a>
+
             </div>
         </div>
 
