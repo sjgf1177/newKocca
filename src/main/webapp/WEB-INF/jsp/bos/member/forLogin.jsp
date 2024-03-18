@@ -80,7 +80,7 @@ body{background:#f5f5f5}
 <input type="hidden" name="siteName" value="bos" />
 <input type="hidden" name="loginFlag" value="${param.loginFlag}" />
 	<div class="bg_mng_main">
-		<p class="logo" style="top:-60px"><img src="/images/common/logo.png" alt="" /></p>
+		<p class="logo" style="top:-60px"><img src="/images/common/logo.png" alt="" width="218"/></p>
 		<h1 class="titles">ID/PW 로그인</h1>
 		<div class="tab2_main on">
             <label for="username"><i class="fa fa-user"><span class="hidden">아이디</span></i></label> <input id="username" name="username" type="text" value="" class="poab01">

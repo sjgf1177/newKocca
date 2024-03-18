@@ -263,7 +263,7 @@ form{padding:10px;}
 <body>
 	<div id="header_wrap">
 		<div class="header">
-			<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
+			<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" width="218" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
 			<p class="user bold"><span class="color1">[${adminUser.deptNm}]${adminUser.userNm}</span>님 로그인 접속IP:${userIp}</p>
 			<div class="util btn-group">
 				<a href="/bos/member/logout.do" class="btn btn-info"><i class="fa fa-power-off"></i> 로그아웃</a>
@@ -274,7 +274,7 @@ form{padding:10px;}
 	</div>
 
 	<div class="inforSet">
-		<div class="logo"><img src="/images/common/logo.png" alt="ckl" />	</div>
+		<div class="logo"><img src="/images/common/logo.png" width="218" alt="ckl" />	</div>
 		<p>
 			안녕하세요 <em>${adminUser.userNm}</em> 님.  통합 관리자 사이트에 접속하셨습니다. <br />
 			<em>회원님의 소중한 개인정보를 위해 비밀번호를 변경해주세요</em><br/>

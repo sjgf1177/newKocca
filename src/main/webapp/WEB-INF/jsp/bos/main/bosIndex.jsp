@@ -194,7 +194,7 @@ body{background-image: none;background-color: #fff;}
 
 		<div id="header_wrap">
 			<div class="header">
-				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
+				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" width="218" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
 				<p class="user bold"><span class="color1">[${adminUser.deptNm}]${adminUser.userNm}(${adminUser.userId})</span>님 로그인 접속IP:${userIp}</p>
 				<c:set var="topCategories" value="${adminMenuMap['menu_0']}" />
 				<c:set var="menuKey" value="menu_${topCategories[depth01].menuNo}" />

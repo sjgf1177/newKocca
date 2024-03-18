@@ -40,7 +40,7 @@ function openPopup()
 <body>
 		<div id="header_wrap">
 			<div class="header">
-				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
+				<h1><a href="/bos/main/main.do"><img src="/images/common/logo.png" width="218" alt="<spring:message code="site.slogan" text=""/>" /></a></h1>
 				<p class="user bold"><span class="color1">[${adminUser.deptNm}]${adminUser.userNm}</span>님 로그인 접속IP:${userIp}</p>
 				<c:set var="topCategories" value="${adminMenuMap['menu_0']}" />
 				<c:set var="menuKey" value="menu_${topCategories[depth01].menuNo}" />
@@ -133,7 +133,7 @@ function openPopup()
 
 
 <div class="inforSet">
-	<div class="logo"><img src="/images/common/logo.png" alt="ckl" />	</div>
+	<div class="logo"><img src="/images/common/logo.png" width="218" alt="ckl" />	</div>
 	<p>
 		안녕하세요 <em>${adminUser.userNm}</em> 님.  통합 관리자 사이트에 접속하셨습니다. <br />
 		관리자 사이트 문의사항은 <em class="col">[OOO팀] OOO OO (전화번호 : OOOO)</em>에게 문의하여 주시기 바랍니다
