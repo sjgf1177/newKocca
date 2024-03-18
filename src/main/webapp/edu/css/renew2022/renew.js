@@ -24,6 +24,27 @@ $(document).ready(function() {
     $('.fwo_snail_box > a, .fwo_tit_box > a').attr('tabindex', '-1');
 
 
+
+    // 찜하기
+    $('.jim-btn').on({
+        "click":function (){
+            var JimActive = $(this).hasClass('active');
+            if(!JimActive){
+                $(this).addClass('active');
+                $(this).attr('title','찜하기(선택됨)');
+                //alert("찜하기가 완료되었습니다.");
+            } else {
+                $(this).removeClass('active');
+                $(this).attr('title','찜하기');
+                //alert("찜하기가 해제되었습니다.");
+            }
+        },
+
+
+    });
+
+
+
     // 추천 클래스 슬라이드
     var fwocard01 = new Swiper('.fwo_card01 .fwo_card', {
         /*loop: true,*/
