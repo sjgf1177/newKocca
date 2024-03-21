@@ -123,8 +123,11 @@ function winMarkPopup(theURL,winName,features) { //v2.0
                         <!-- <li><a href="javascript:winMarkPopup('/contents/temp/2019_brand_selected_by_Consumer.html','','status=yes,scrollbars=no,width=430,height=560');" title="새창열림">
                             <img alt="2019 소비자가 뽑은 올해의 브랜드 대상" src="/edu/images/bm/footer_util_link_007.png">
                         </a></li> -->
-                        <li><a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" title="WA 품질인증 마크, 웹와치(WebWatch) 2022.02.09~ 2023.02.08" target="_blank"><img src="/edu/images/bm/web_watch_mark.png" border="0" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2022.02.09 ~ 2023.02.08"/>
-                        </a></li>
+                        <li>
+                            <a href="http://webwatch.or.kr" title="WA 품질인증 마크, 웹와치(WebWatch) 2024.02.09 ~ 2025.02.08" target="_blank">
+                            <img src="/edu/images/bm/web_watch_mark_24.png" border="0" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2024.02.09 ~ 2025.02.08"/>
+                            </a>
+                        </li>
                         <li>
 <%--                            <a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="대한민국인터넷소통대상 (ICSI)인증 새창열림">
                                 <img src="/edu/images/bm/internet_comunication_satisfaction_logo_2019.png" alt="대한민국인터넷소통대상 (ICSI)인증마크">

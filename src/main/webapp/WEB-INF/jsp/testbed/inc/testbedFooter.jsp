@@ -127,8 +127,9 @@ function winMarkPopup(theURL,winName,features) { //v2.0
 	                 	</a>
 					</li>--%>
                  	<li>
-                 		<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" title="국가 공인 인증기관 : 웹와치 새창열림" target="_blank"><img src="/edu/images/bm/web_watch_mark.jpg" border="0" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)"/>
-                 		</a>
+						<a href="http://webwatch.or.kr" title="WA 품질인증 마크, 웹와치(WebWatch) 2024.02.09 ~ 2025.02.08" target="_blank">
+							<img src="/edu/images/bm/web_watch_mark_24.png" border="0" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2024.02.09 ~ 2025.02.08"/>
+						</a>
                  	</li>
                  	<li>
  <%--                	 	<a href="javascript:winMarkPopup('/contents/temp/internet_comunication_satisfaction_2020.html','','status=yes,scrollbars=no,width=430,height=575');" title="새창열림">
