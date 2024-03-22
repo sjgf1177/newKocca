@@ -581,6 +581,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .fwo_card_list_box .swiper-button-next{position: static; margin-top: 0; width: 48px; height: 48px; background-image: url("/edu/images/renew2022/right_on.png"); background-repeat: no-repeat; background-size: contain;}
 
 [class*="tag"]{width: 36px; height: 18px; padding: 1px 9px;  font-size:1.1rem; text-align:center; border-radius: 32px; color: #fff !important; margin-bottom: 7px;}
+[class*="tag_L"]{width: 54px; height: 30px; padding: 5px 9px; font-size: 1.6rem;}
 [class*="tag"].new{background-color: #FB0909;}
 .mypage_online_edu_list_wrap [class*="tag"]{width: 52px; height: 24px; padding: 5px 14px; font-size: 1.4rem;}
 .fwo_card_list_box .tag_on{background-color: #3B85FF; color: #fff !important;}
@@ -596,8 +597,12 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 /* 240117 슬라이드 섬네일 디자인 */
 
 /* 240313 찜하기 */
-.jim-btn{position: absolute; bottom: 20px; right: 20px; width: 28px; height: 28px; background-image: url("/edu/images/renew2022/icon_jim.svg"); background-repeat: no-repeat; color: transparent; background-color: transparent;}
-.jim-btn.active{background-image: url("/edu/images/renew2022/ico_wish_on.svg")}
+.jim-btn{ width: 28px; height: 28px; background-image: url("/edu/images/renew2022/icons-heart-48_white.png"); background-repeat: no-repeat; color: transparent; background-color: transparent; background-position: center; background-size: 20px;}
+.jim-btn.active{background-image: url("/edu/images/renew2022/icons-heart-48-on.png")}
+.fwo_snail_box .jim-btn{position: absolute; bottom: 20px; right: 20px; background-color: #515151; border-radius: 50%;}
+.theme_process_list_more_btn_con .jim-btn{background-color: #3b85ff; background-size: 20px; height: 35px; margin-left: 10px; width: 35px; border-radius: 3px;}
+.board_util_btn_con .jim-btn{background-color: #3b85ff; background-size: 20px; height: 38px; margin-left: 10px; width: 35px; vertical-align: bottom;}
+.lecture_info_box .board_util_btn_con .jim-btn{height: 50px; width: 50px; background-size: 30px; border-radius: 3px; vertical-align: middle;  margin: 5px 0 5px 10px;}
 
 
 .sortBox.mg_t20{margin-top: 20px;}
@@ -982,7 +987,7 @@ table.conTable thead th{padding: 12px 10px 9px; text-align: center;}
 .lecture_info_box .board_util_btn_con .btn_style_0.edu_prev_view{width: 381px; text-align: center; height: 50px; line-height: 33px; font-size: 20px; border: none; background-color: #707070; background-image: url("/edu/images/renew2022/ico_prev_view_white.png"); background-position: left 100px center;}
 .lecture_info_box .board_util_btn_con .btn_style_0.blue{background-color: #3B85FF; border: none;}
 .lecture_info_box .board_util_btn_con > span{width:calc(100% - 409px);}
-.lecture_info_box .board_util_btn_con > span > a{width: 49%;}
+.lecture_info_box .board_util_btn_con > span > a{width: 45.5%;}
 .lecture_info_box .board_util_btn_con .btn_style_0.edit{height: 50px; text-align: center; line-height: 33px; font-size: 20px; background-image: none;}
 .lecture_info_box .board_util_btn_con .btn_style_0.gray{background-color: #fff; border: none; text-align: center; height: 50px; line-height: 33px; font-size: 20px; color: #222; font-weight: 500;}
 .online_edu_card_view_title{font-size: 3.3rem; line-height: 5rem;}
@@ -1024,7 +1029,8 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
     .lecture_info_box{margin-bottom: 60px;}
     .lecture_info_box .alert.big_box.type_1{padding:15px 0 30px 0;}
     .lecture_info_box .alert.big_box.type_1 .alert_title{font-size: 2.5rem; line-height: 3rem;}
-    .lecture_info_box [class*="tag"]{width: 45px; height: 25px; font-size: 1.2rem; line-height: 9px;}
+    /*.lecture_info_box [class*="tag"]{width: 45px; height: 25px; font-size: 1.2rem; line-height: 9px;}*/
+    [class*="tag_L"]{width: 54px; height: 30px; padding: 5px 9px; font-size: 1.6rem;}
     .lecture_info_box .gray_txt.view{bottom: 5px;}
     .lecture_info_box .online_edu_card_view_wrap{flex-wrap: wrap;}
     .sub_section .sub_contents_body table.contents_insight_view.style_2 th, .sub_section .sub_contents_body table.contents_insight_view td{font-size: 1.5rem;}
@@ -1039,6 +1045,7 @@ table.board_type_0 tbody tr td{border: none; background-color: #f8f8f8; border: 
     .teach_table_box li table th img{width: 100%; height: 100%; display: inline-block; border-radius: 50%;}
     .lecture_info_box .board_util_btn_con .btn_style_0.edu_prev_view{background-size: 32px; background-position: left 105px center;}
     .lecture_info_box .board_util_btn_con .btn_style_0.edit, .lecture_info_box .board_util_btn_con .btn_style_0.gray, .lecture_info_box .board_util_btn_con .btn_style_0.edu_prev_view{height: 40px; line-height: 24px; font-size: 1.6rem;}
+    .lecture_info_box .board_util_btn_con .jim-btn{height: 40px; width: 40px; background-size: 30px;}
 }
 
 /* 열린강좌 */

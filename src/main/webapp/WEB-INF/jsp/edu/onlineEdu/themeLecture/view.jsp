@@ -79,6 +79,7 @@
 								<a href="javascript:void(0)"  onclick="javascript:fnCmdViewPage('${list.type }', '${list.courseId }', '${list.courseName }', '${list.isonoff }', '${list.scupperclass }', '${list.uclassnm }', '${list.year }', '${list.subjseq }'); return false;" class="btn_style_0">
 									상세보기
 								</a>
+								<button type="button" class="jim-btn" title="찜하기">찜하기</button>
 							</div>
 						</div>
 

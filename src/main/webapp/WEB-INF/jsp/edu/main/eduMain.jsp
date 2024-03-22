@@ -1038,6 +1038,8 @@
                         </div>
                         <div class="swiper_btn_box">
                             <div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+                            <%--<button class="swiper-button-play"><img src="/edu/images/renew2022/ico_play.png" alt="배너 재생"></button>
+                            <button class="swiper-button-pause"><img src="/edu/images/renew2022/ico_stop.png" alt="배너 정지"></button>--%>
                             <div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
                         </div>
                     </div>
@@ -1173,7 +1175,8 @@
                                             <p>${result.g2nm }ㆍ${result.g3nm }</p>
                                             <a href="javascript:void(0);" title="${result.subjnm }" onclick="fnSubjViewPage('${result.subj }', '${result.subjnm }', '${result.isonoff }', '${result.scupperclass }', '${result.uclassnm }', '${result.scyear }', '${result.subjseq }'); return false;" class="go_page_a"  title="${result.subjnm }"></a>
                                         </div>
-                                        <!-- 설명란 start-->
+                                        <!-- 설명란 end -->
+                                            <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                                     </div>
                                     <!-- 썸네일 end -->
                                 </li>
@@ -1225,7 +1228,8 @@
                                             <p>${result.g2nm}ㆍ${result.g3nm}</p>
                                             <a href='<c:out value="${url }" />' class="go_page_a" title="<c:out value='${result.lecnm }' escapeXml="false"/>"></a>
                                         </div>
-                                        <!-- 설명란 start-->
+                                        <!-- 설명란 end-->
+                                            <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                                     </div>
                                     <!-- 썸네일 end -->
                                 </li>
@@ -1676,7 +1680,7 @@
                 ,onSlideChangeStart : function() { //슬라이드가 완전히 바뀌었을때 실행
                     //alert(123);
                     $(".notice_list_box .swiper-slide a").attr('tabindex','-1');
-                    $(".notice_list_box .swiper-slide-active a").attr('tabindex','0');;
+                    $(".notice_list_box .swiper-slide-active a").attr('tabindex','0');
                 },
             });
 
@@ -1686,13 +1690,12 @@
                 $('.notice_swiper_box .swiper-button-play').show();
                 $('.notice_swiper_box .swiper-button-pause').hide();
             });
-            //공지사항 배너 재성버튼
+            //공지사항 배너 재생버튼
             $('.notice_swiper_box .swiper-button-play').click(function() {
                 swiper7.startAutoplay();
                 $('.notice_swiper_box .swiper-button-play').hide();
                 $('.notice_swiper_box .swiper-button-pause').show();
             });
-
 
 
 

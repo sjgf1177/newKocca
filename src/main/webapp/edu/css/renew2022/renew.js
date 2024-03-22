@@ -317,7 +317,7 @@ $(document).ready(function() {
 
     var onecard02 = new Swiper('.main_new_contents .one_card01', {
         /*loop: true,*/
-        /*autoplay : 3000 */
+        /*autoplay : 3000*/
         speed : 700
         ,direction: 'horizontal' // 슬라이드 진행방향은 수평(vertical하면 수직으로 움직임)
         ,slidesPerView: 1 // 한번에 보이는 슬라이드 갯수
@@ -329,11 +329,10 @@ $(document).ready(function() {
         ,onSlideChangeStart : function() { //슬라이드가 완전히 바뀌었을때 실행
             //alert(123);
             $(".main_new_contents .swiper-slide a").attr('tabindex','-1');
-            $(".main_new_contents .swiper-slide-active a").attr('tabindex','0');;
+            $(".main_new_contents .swiper-slide-active a").attr('tabindex','0');
         },
 
     });
-
 
 
     // KOCCA교육 시설 슬라이드

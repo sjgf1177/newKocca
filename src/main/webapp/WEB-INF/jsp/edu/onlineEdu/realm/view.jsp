@@ -73,13 +73,13 @@
                 <c:if test="${not empty view.lvnm}">
                     <c:choose>
                         <c:when test="${view.lvcd eq 'L0101' or view.lvcd eq 'L0201'}">
-                            <span class="tag L1">${view.lvnm}</span>
+                            <span class="tag_L L1">${view.lvnm}</span>
                         </c:when>
                         <c:when test="${view.lvcd eq 'L0102' or view.lvcd eq 'L0202'}">
-                            <span class="tag L2">${view.lvnm}</span>
+                            <span class="tag_L L2">${view.lvnm}</span>
                         </c:when>
                         <c:when test="${view.lvcd eq 'L0103' or view.lvcd eq 'L0203'}">
-                            <span class="tag L3">${view.lvnm}</span>
+                            <span class="tag_L L3">${view.lvnm}</span>
                         </c:when>
                     </c:choose>
                 </c:if>
@@ -162,6 +162,7 @@
                 <a href="javascript:void(0);" class="btn_style_0 gray online_edu" onclick="fnCmdSearchList('${param.pGubun1 }', '${param.pGubun2 }', '${param.pGubun3 }', '${param.p_ordersnm }', '${param.p_orders }'); return false;">
                     다른 과정 보기
                 </a>
+                <button type="button" class="jim-btn" title="찜하기">찜하기</button>
             </span>
         </div>
     </div>
@@ -379,6 +380,7 @@
                                 </c:if>
                             </div>
                             <!-- 설명란 start-->
+                            <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                         </div>
                         <!-- 썸네일 end -->
                     </li>

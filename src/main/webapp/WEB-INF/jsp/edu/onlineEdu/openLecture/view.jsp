@@ -510,6 +510,7 @@
     <div class="col-center mw-1280">
         <a href="javascript:void(0);" class="btn_style_0 blue openlecture_eye eye_off" style="display:none; margin-right:0; margin-bottom:0;">자막닫기</a>
         <a href="javascript:void(0);" class="${(fn:length(fn:replace(result.subtitle,' ','')) == 0?'hidden':'') } btn_style_0 blue openlecture_eye eye_on" style="margin-right:0; margin-bottom:0;">자막보기</a>
+        <button type="button" class="jim-btn" title="찜하기">찜하기</button>
 
         <div class="movDescTxt" tabindex="0" style="display: none; box-sizing:border-box;font-size: 14.5px; font-size: 1.45rem; line-height: 26px; line-height: 2.6rem; color: #313131; letter-spacing: -0.025em;
 			padding-top:20px; padding-left:25px; padding-right:25px; padding-bottom:20px; border:2px solid #5ac9b7; text-align: left; max-height:300px; overflow-y: auto;
@@ -601,21 +602,25 @@
                 <c:forEach items="${nextList }" var="nextResult">
                     <li class="swiper-slide">
                         <c:url var="url" value="/edu/onlineEdu/openLecture/view.do?pSeq=${nextResult.seq }&amp;${pageQueryString }&amp;pageIndex=${param.pageIndex }&amp;pageIndex2=&amp;pLectureCls=${param.pLectureCls }"/>
-                        <c:choose>
-                        <c:when test="${nextResult.type == 'S'}">
-                        <a class="show-block" href="/edu/onlineEdu/realm/view.do?p_gubun=&amp;p_subj=${nextResult.courseId }&amp;p_subjseq=${nextResult.subjseq }&amp;p_year=${nextResult.year }&amp;menuNo=500027">
-                            </c:when>
-                            <c:otherwise>
-                            <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${nextResult.type }', '${nextResult.courseId }', '${nextResult.courseName }', '${nextResult.isonoff }', '${nextResult.scupperclass }', '${nextResult.uclassnm }', '${nextResult.year }', '${nextResult.subjseq }'); return false;">
-                                </c:otherwise>
-                                </c:choose>
+
 
                                     <%-- 썸네일 start --%>
                                 <div class="fwo_snail_box">
                                     <img alt="<c:out value="${not empty nextResult.courseName ? nextResult.courseName : '다음강좌' }" />" src='<c:out value="${nextResult.imgfile }" />' onerror="this.src='/edu/images/renew2022/non_img.png'"/>
                                         <%-- 설명란 start --%>
                                     <div class="fwo_info_box">
-                                        <h3 class="fwo_tit_box"><c:out value="${nextResult.courseName }" escapeXml="false"/></h3>
+                                        <h3 class="fwo_tit_box">
+                                            <c:choose>
+                                            <c:when test="${nextResult.type == 'S'}">
+                                            <a class="show-block" href="/edu/onlineEdu/realm/view.do?p_gubun=&amp;p_subj=${nextResult.courseId }&amp;p_subjseq=${nextResult.subjseq }&amp;p_year=${nextResult.year }&amp;menuNo=500027">
+                                                <c:out value="${nextResult.courseName }" escapeXml="false"/></a>
+                                                </c:when>
+                                                <c:otherwise>
+                                                <a class="show-block" href="javascript:void(0);" onclick="fnCmdViewPage('${nextResult.type }', '${nextResult.courseId }', '${nextResult.courseName }', '${nextResult.isonoff }', '${nextResult.scupperclass }', '${nextResult.uclassnm }', '${nextResult.year }', '${nextResult.subjseq }'); return false;">
+                                                    <c:out value="${nextResult.courseName }" escapeXml="false"/></a>
+                                                    </c:otherwise>
+                                                    </c:choose>
+                                        </h3>
                                         <c:if test="${not empty nextResult.lvnm}">
                                             <c:choose>
                                                 <c:when test="${nextResult.lvcd eq 'L0101' or nextResult.lvcd eq 'L0201'}">
@@ -640,10 +645,11 @@
                                         </p>
                                     </div>
                                         <%-- 설명란 end --%>
+                                    <button type="button" class="jim-btn" title="찜하기">찜하기</button>
                                 </div>
                                     <%-- 썸네일 end --%>
 
-                            </a>
+
                     </li>
                 </c:forEach>
             </ul>
