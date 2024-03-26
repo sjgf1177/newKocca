@@ -128,7 +128,7 @@
 								<div class="col-12 text_box">
 									<h5>현장에서 통하는 방송 기획</h5>
 									<div class="col-12 sub_text_box">
-										<span><b>7 COURSES</b></span>
+										<span><b>6 COURSES</b></span>
 										<%--<span class="h_desc5">조회수 1.2만</span>--%>
 									</div>
 								</div>
@@ -675,72 +675,9 @@
 
 			</div>
 
-			<%--<div class="tema-list-box07">
-				<h2 class="main_title">저작권상식</h2>
-				<div class="temacard07 swiper-container">
-					<div class="swiper-wrapper">
-						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=65&menuNo=500157&pageIndex=1'>
-								<div class="col-5 img_box">
-									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
-									<img src="/upload/themeupload/L65.png" alt="저작권 노하우">
-								</div>
-								<div class="col-12 text_box">
-									<h5>저작권 노하우</h5>
-									<div class="col-12 sub_text_box">
-										<span><b>10 COURSES</b></span>
-										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=66&menuNo=500157&pageIndex=1'>
-								<div class="col-5 img_box">
-									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
-									<img src="/upload/themeupload/L66.png" alt="저작권 노하우 (해외편)">
-								</div>
-								<div class="col-12 text_box">
-									<h5>저작권 노하우 (해외편)</h5>
-									<div class="col-12 sub_text_box">
-										<span><b>4 COURSES</b></span>
-										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<div class="sub_theme_process_list swiper-slide">
-							<a href='/edu/onlineEdu/themeLecture/view.do?pId=72&menuNo=500157&pageIndex=1'>
-								<div class="col-5 img_box">
-									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
-									<img src="/upload/themeupload/L72.png" alt="저작권 기초 강좌와 노하우">
-								</div>
-								<div class="col-12 text_box">
-									<h5>저작권 기초 강좌와 노하우</h5>
-									<div class="col-12 sub_text_box">
-										<span><b>4 COURSES</b></span>
-										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
-									</div>
-								</div>
-							</a>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
-				<div class="swiper_btn_box">
-					<div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
-					<div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
-				</div>
-
-			</div>--%>
-
-			<div class="tema-list-box08">
+			<div class="tema-list-box07">
 				<h2 class="main_title">콘텐츠교양</h2>
-				<div class="temacard08 swiper-container">
+				<div class="temacard07 swiper-container">
 					<div class="swiper-wrapper">
 <%--						<div class="sub_theme_process_list swiper-slide">
 							<a href='/edu/onlineEdu/themeLecture/view.do?pId=67&menuNo=500157&pageIndex=1'>
@@ -858,6 +795,117 @@
                                                         </a>
                                                     </div>
                         --%>
+
+					</div>
+				</div>
+
+				<!-- 방향 버튼 상황에 따라 추가 삭제가능 -->
+				<div class="swiper_btn_box">
+					<div><button type="button" class="swiper-button-prev" title="이전 배너보기"></button></div>
+					<div><button type="button" class="swiper-button-next" title="다음 배너가기"></button></div>
+				</div>
+
+			</div>
+
+			<div class="tema-list-box08">
+				<h2 class="main_title">저작권상식</h2>
+				<div class="temacard08 swiper-container">
+					<div class="swiper-wrapper">
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=100&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L100.png" alt="웹툰 분야 국내외 저작권 실무">
+								</div>
+								<div class="col-12 text_box">
+									<h5>웹툰 분야 국내외 저작권 실무</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>3 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=99&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L99.png" alt="창작과 인용 사이, 음악 저작물과 저작권">
+								</div>
+								<div class="col-12 text_box">
+									<h5>창작과 인용 사이, 음악 저작물과 저작권</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>3 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=98&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L98.png" alt="콘텐츠 창작과 저작권 기초">
+								</div>
+								<div class="col-12 text_box">
+									<h5>콘텐츠 창작과 저작권 기초</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>5 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=65&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L65.png" alt="저작권 노하우">
+								</div>
+								<div class="col-12 text_box">
+									<h5>직업 분야별 저작권</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>4 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
+
+<%--						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=66&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									&lt;%&ndash;<img src="${result.img }" alt="${result.title }">&ndash;%&gt;
+									<img src="/upload/themeupload/L66.png" alt="저작권 노하우 (해외편)">
+								</div>
+								<div class="col-12 text_box">
+									<h5>저작권 노하우 (해외편)</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>4 COURSES</b></span>
+										&lt;%&ndash;<span class="h_desc5">조회수 1.2만</span>&ndash;%&gt;
+									</div>
+								</div>
+							</a>
+						</div>--%>
+
+						<div class="sub_theme_process_list swiper-slide">
+							<a href='/edu/onlineEdu/themeLecture/view.do?pId=72&menuNo=500157&pageIndex=1'>
+								<div class="col-5 img_box">
+									<%--<img src="${result.img }" alt="${result.title }">--%>
+									<img src="/upload/themeupload/L72.png" alt="저작권 기초 강좌와 노하우">
+								</div>
+								<div class="col-12 text_box">
+									<h5>저작권 기초 강좌</h5>
+									<div class="col-12 sub_text_box">
+										<span><b>8 COURSES</b></span>
+										<%--<span class="h_desc5">조회수 1.2만</span>--%>
+									</div>
+								</div>
+							</a>
+						</div>
 
 					</div>
 				</div>
