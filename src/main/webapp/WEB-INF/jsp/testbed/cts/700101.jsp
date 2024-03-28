@@ -69,7 +69,7 @@
 						01
 					</div>
 					<div class="introduce_step_title">
-						문화예술 융복합 콘텐츠 발굴 · 육성123
+						문화예술 융복합 콘텐츠 발굴 · 육성
 					</div>
 					<div class="introduce_step_desc">
 						콘텐츠문화광장 인근 문화콘텐츠 연계 기반 이야기, 산업콘텐츠 발굴 및
